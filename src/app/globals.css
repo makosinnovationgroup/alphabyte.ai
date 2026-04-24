@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Base layer — brand-specific resets.
+ * Design tokens live in tailwind.config.ts; this file is for
+ * global concerns that don't fit cleanly into a utility class.
+ */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-brand-ink font-sans;
+  }
+
+  /* Selection uses brand blue per §3.0 primary colour. */
+  ::selection {
+    background-color: #00abf0;
+    color: #ffffff;
+  }
+}
