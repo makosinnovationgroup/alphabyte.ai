@@ -20,7 +20,7 @@ The project's `tailwind.config.ts` is the code-level source of truth — consume
 | Wide tracking | `tracking-brand-wide` | +0.01em (pull quotes) |
 | Brand gradient (linear) | `bg-alphabyte-gradient-linear` | blue → blue → grey → green |
 | Brand gradient (conic) | `bg-alphabyte-gradient` | free-form, heavy blue |
-| Primary font | `font-sans` | Aeonik → Arial → system |
+| Primary font | `font-sans` | Geist → system-ui → sans-serif |
 
 ## Colors
 
@@ -70,16 +70,22 @@ Black (`#000000`) and white (`#ffffff`) are used freely for text and surfaces. B
 
 ## Typography
 
-### Primary typeface: Aeonik
+### Web typeface: Geist
+
+- Origin: open-source from Vercel
+- Weights in use: Regular (400), Regular Italic, Medium (500), Bold (700), Bold Italic
+- Loaded via `next/font/local` in `src/app/layout.tsx`
+- Accessed via the `font-sans` Tailwind utility or the `--font-geist` CSS variable
+
+### Print typeface: Aeonik
 
 - Foundry: Cotype Foundry (<https://cotypefoundry.com/our-fonts/aeonik/>)
-- Weights in use: Regular, Regular Italic, Bold, Bold Italic
-- License: **paid** — must be purchased before use in production
-- In the project: wired up via `next/font/local` in `src/app/layout.tsx` (commented until files are obtained). Tailwind's `font-sans` points at `var(--font-aeonik)`.
+- Retained per brand guide §4.0 for all print collateral (business cards, letterheads, brochures, etc.)
+- Source files are `.otf` only (desktop format). If an Aeonik webfont license (`.woff2`) is obtained later, it's a drop-in swap — replace the Geist `localFont` block in `layout.tsx` and update the CSS variable from `--font-geist` to `--font-aeonik`
 
-### System fallback: Arial
+### Fallback
 
-Per brand guide §4.0 System Fonts. Used when Aeonik is unavailable (in the project this is automatic via the Tailwind font stack). No other fallback is approved.
+`system-ui` if Geist fails to load. This is rare since the fonts are self-hosted as `.woff2` files in `public/fonts/`.
 
 ### Type hierarchy
 
@@ -87,12 +93,14 @@ Exact specs from §4.0. Tailwind utilities already implement these.
 
 | Level | Weight | Tracking | Case | Tailwind |
 | --- | --- | --- | --- | --- |
-| Header | Aeonik Regular | -0.02em (-20) | Title Case | `text-display tracking-brand-tight` |
-| Sub-header | Aeonik Regular | -0.01em (-10) | Sentence case | `text-headline tracking-brand-snug` |
-| Body | Aeonik Regular | 0 | Sentence case | `text-body` |
-| Pull Quote | **Aeonik Bold** | +0.01em (+10) | Sentence case | `text-quote font-bold tracking-brand-wide` |
-| Highlight | Aeonik *Regular Italic* | 0 | Sentence case | `text-body italic` |
-| Link | Aeonik Regular | 0 | Sentence case | `text-body underline` (brand blue) |
+| Header | Regular | -0.02em (-20) | Title Case | `text-display tracking-brand-tight` |
+| Sub-header | Regular | -0.01em (-10) | Sentence case | `text-headline tracking-brand-snug` |
+| Body | Regular | 0 | Sentence case | `text-body` |
+| Pull Quote | **Bold** | +0.01em (+10) | Sentence case | `text-quote font-bold tracking-brand-wide` |
+| Highlight | *Regular Italic* | 0 | Sentence case | `text-body italic` |
+| Link | Regular | 0 | Sentence case | `text-body underline` (brand blue) |
+
+**Note:** The type hierarchy tracking values (-0.02em for headers, etc.) were originally specced for Aeonik. They work well with Geist too since both are geometric sans-serifs, but visual review is wise if anything looks off.
 
 **Leading rule:** Headers and sub-headers should use `line-height: 1` (leading matches font size). Body text uses `1.55`. Both are built into the `text-*` tokens.
 
@@ -105,8 +113,9 @@ Exact specs from §4.0. Tailwind utilities already implement these.
 
 ### When to use each weight
 
-- **Regular** is the workhorse for everything — headers, sub-headers, body, links.
-- **Bold** is reserved for pull quotes / highlights. Don't use Bold for regular body emphasis; use Italic instead.
+- **Regular (400)** is the workhorse for everything — headers, sub-headers, body, links.
+- **Medium (500)** is available for UI elements where you need a step between regular and bold (nav items, labels).
+- **Bold (700)** is reserved for pull quotes / highlights. Don't use Bold for regular body emphasis; use Italic instead.
 - **Italic** is for inline emphasis within body copy.
 
 ## Minimum sizes (§2.0)

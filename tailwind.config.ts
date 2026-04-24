@@ -38,14 +38,13 @@ const config: Config = {
       },
 
       // ----- Typography (Brand Guide §4.0) -----
-      // Primary typeface is Aeonik (Cotype Foundry, paid licence).
-      // System fallback is Arial per guide §4.0 System Fonts.
-      // Load Aeonik via next/font/local in app/layout.tsx once the
-      // licensed .woff2 files are placed in /public/fonts.
+      // Web typeface: Geist (open source, self-hosted via next/font/local).
+      // Print typeface: Aeonik (Cotype Foundry). If an Aeonik webfont
+      // license is obtained later, swap --font-geist → --font-aeonik here
+      // and in layout.tsx.
       fontFamily: {
         sans: [
-          "var(--font-aeonik)",
-          "Arial",
+          "var(--font-geist)",
           "system-ui",
           "-apple-system",
           "sans-serif",

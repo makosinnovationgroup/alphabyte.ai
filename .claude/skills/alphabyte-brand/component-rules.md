@@ -230,7 +230,7 @@ From §4.0 and the sample applications:
 When auditing an existing page or component against these rules, walk the checklist:
 
 1. Are all colors from the brand palette? (No stray blues, greys, or greens.)
-2. Is the font Aeonik (or Arial fallback)? (No Inter, no system default sneaking in.)
+2. Is the font Geist (via `font-sans`)? (No Inter, no system default sneaking in.)
 3. Is the logo used correctly, at correct size, with correct clearspace, on an approved background?
 4. Are any gradients compliant (three colors, blue-dominant, brand-only)?
 5. Is photography either human-element or abstract-data, and any overlay is Alphabyte Blue only?
@@ -239,3 +239,42 @@ When auditing an existing page or component against these rules, walk the checkl
 8. Is the copy in the Alphabyte voice (see `voice-and-tone.md`)?
 
 Flag violations with their brand-guide section number when possible, so Mitchell can trace decisions back to the source.
+
+## Motion & Animation
+
+Motion should match the brand's "calm, composed, intentional" tone (§1.0). Motion serves content — decorative motion for its own sake violates the brand.
+
+### Three tiers
+
+#### On-brand (use freely)
+
+- Scroll fade-in / slide-up (200–400ms, ease-out)
+- Hover lift on cards
+- Button color transitions (200ms)
+- Focus-visible rings
+- Page cross-fade transitions
+
+#### Selective (use with intent)
+
+- Slow-cycling gradient backgrounds (30s+ loops)
+- Hero headline word-by-word reveal
+- Subtle parallax on decorative backgrounds
+- Number counters on stats
+
+#### Off-brand (avoid)
+
+- Jittery or bouncy animations
+- Scroll-linked motion that jumps every pixel
+- Decorative motion with no purpose
+- Video backgrounds outside campaign pages
+- Cursor-follow effects
+
+### prefers-reduced-motion
+
+All animations **must** respect `prefers-reduced-motion`. The `motion` library supports this natively via the `useReducedMotion` hook and `MotionConfig` component. This is a hard rule, not a nice-to-have.
+
+### Implementation notes
+
+- Use `motion` (the library) for React-driven scroll/hover/layout animations.
+- Use Tailwind `transition-*` and `animate-*` utilities plus `tailwindcss-animate` for simple hover/focus states. Don't reach for `motion` when Tailwind will do.
+- Specific animations for each feature are decided in the PRD (see `/plan`), not hardcoded in this skill.

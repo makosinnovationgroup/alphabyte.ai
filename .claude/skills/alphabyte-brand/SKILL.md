@@ -21,7 +21,7 @@ Load the file that matches what you're doing. Don't load everything upfront.
 These are non-negotiable. If a request would require breaking one of these, stop and flag it.
 
 1. **Colors are fixed.** Only Alphabyte Blue `#00abf0`, Analytical Grey `#ebebeb`, and Code Green `#00ffa6`. No other brand colors exist. No substitutes, no "close enough" shades, no introducing purple/teal/orange.
-2. **Type is Aeonik, fallback Arial.** Don't introduce Inter, Roboto, Space Grotesk, DM Sans, or any other typeface. If Aeonik isn't loaded yet, Arial is the correct fallback per the brand guide §4.0.
+2. **Type is Geist for web, Aeonik for print.** Don't introduce Inter, Roboto, Space Grotesk, DM Sans, or any other typeface. Geist is loaded via `next/font/local`; `system-ui` is the fallback. If an Aeonik webfont license is obtained later, it's a drop-in swap.
 3. **The logo never goes on Code Green.** Illegible contrast. See `component-rules.md` for the full pairing matrix.
 4. **The logo is never modified.** No stretching, rotating, recoloring, outlining, flipping, rearranging, adding shadows, or inserting extra elements. 12 specific violations are enumerated in `component-rules.md`.
 5. **Gradients always contain a large presence of Alphabyte Blue.** No all-green gradients, no grey-dominant gradients. Per §3.0.
@@ -63,10 +63,11 @@ If a needed token doesn't exist in `tailwind.config.ts`, add it there rather tha
 Visual:
 - Reaching for a color that isn't one of the three brand colors
 - About to use a purple or purple-blue gradient (generic AI aesthetic)
-- About to use Inter, Space Grotesk, or a system font other than Arial fallback
+- About to use Inter, Space Grotesk, or any typeface other than Geist
 - Using `bg-[#...]` or `text-[#...]` arbitrary Tailwind values for colors
 - Adding shadows or effects to the logo
 - Putting the logo on a green background
+- About to add motion/animation without a reason it's there (decorative motion violates §1.0 calm tone)
 
 Verbal:
 - About to write "unlock," "leverage," "transform," "revolutionize," "harness the power of"

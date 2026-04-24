@@ -82,12 +82,40 @@ Follow the pattern in `src/components/ui/dialog.tsx`:
 | --- | --- |
 | `pnpm dev` | Start dev server |
 | `pnpm build` | Production build |
-| `pnpm start` | Run the production build |
+| `pnpm start` | Run the production build (local only, not used in static export) |
+| `pnpm export` | Alias for `next build` — produces static output in `out/` |
 | `pnpm lint` | Run ESLint |
 | `pnpm typecheck` | Run `tsc --noEmit` |
 
 ## Deployment
 
-Target: **Cloudflare Pages** (DNS for `alphabyte.ai` is already managed by
-Cloudflare). Connect this repo to a Pages project and Cloudflare will
-auto-provision the DNS records for the custom domain.
+Target: **Cloudflare Pages** — static HTML export (no SSR, no Workers runtime).
+
+### Cloudflare Pages settings
+
+| Setting | Value |
+| --- | --- |
+| Build command | `pnpm build` |
+| Build output directory | `out` |
+| Framework preset | Next.js (Static HTML Export) if available, otherwise **None** |
+| Environment variable | `NODE_VERSION` = `20` |
+
+DNS for `alphabyte.ai` is already managed by Cloudflare. Connect this repo
+to a Pages project and Cloudflare will auto-provision the DNS records for
+the custom domain.
+
+### Static export constraints
+
+With `output: 'export'` in `next.config.mjs`, the build produces fully
+static HTML/CSS/JS in the `out/` directory. The following features are
+**not available** in this mode:
+
+- API Routes
+- Server Actions
+- Middleware
+- ISR / on-demand revalidation
+- Dynamic routes without `generateStaticParams`
+
+If any of these become necessary, switch to
+[`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages)
+to run Next.js on the Workers runtime instead.
