@@ -42,6 +42,6 @@ export const navigation: NavItem[] = [
     ],
     footerLink: { label: "View all case studies", href: "/case-studies/" },
   },
+  { label: "Blog", href: "/blog/" },
   { label: "About", href: "/about/" },
-  { label: "Contact", href: "/contact/" },
 ];

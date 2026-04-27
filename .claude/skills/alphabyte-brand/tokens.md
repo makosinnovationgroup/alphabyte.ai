@@ -36,7 +36,7 @@ The project's `tailwind.config.ts` is the code-level source of truth — consume
 | Tailwind | `alphabyte-blue` |
 | Semantic alias | `brand` (= `brand.DEFAULT`) |
 
-**Usage:** the dominant brand color. Use it confidently and frequently — buttons, links, headlines on white, backgrounds for hero sections, photo overlays. Per §3.0, Alphabyte Blue should be the visual anchor.
+**Usage:** the accent color used for emphasis, links, the "AI" tag in the wordmark, and the "Claude Partner" badge. On light surfaces, Alphabyte Blue highlights individual words in editorial copy (e.g., "AI that *compounds*", "an *AI problem*", "what actually *works*") and provides the active-state indicator on tab navigation. It is not used as a hero background or dominant fill in Option C — it's the visual punctuation, not the canvas.
 
 ### Analytical Grey — secondary
 
@@ -49,7 +49,7 @@ The project's `tailwind.config.ts` is the code-level source of truth — consume
 | Tailwind | `alphabyte-grey` |
 | Semantic alias | `brand-muted` |
 
-**Usage:** subdued surfaces, dividers, muted backgrounds. Use for visual rest between blue-heavy sections. Not for body text (contrast too low on white).
+**Usage:** subdued surfaces and muted backgrounds. In Option C, `border-default` (`#e5e5e5`) replaces Analytical Grey for most divider and border uses. Analytical Grey remains available for larger muted surface areas when needed. Not for body text (contrast too low on white or canvas).
 
 ### Code Green — secondary accent
 
@@ -64,9 +64,23 @@ The project's `tailwind.config.ts` is the code-level source of truth — consume
 
 **Usage:** accents only — a highlighted word, a small UI element (notebook spine elastic, bookmark marker), a gradient endpoint. Per §3.0 color hierarchy, green gets the smallest share of visual real estate. Never a background for the logo. Never a primary background.
 
+### Surface tokens (Option C palette)
+
+Option C uses a light theme with layered surfaces:
+
+| Token | Utility | Value | Use |
+| --- | --- | --- | --- |
+| Canvas | `bg-canvas` | `#fafafa` | Page-level background — the ambient off-white behind everything |
+| White | `bg-white` | `#ffffff` | Elevated surfaces — cards, panels, modals. White sits *on* canvas to create lift |
+| Foreground | `text-foreground` | `#171717` | Primary text on light surfaces. Near-black, not pure black (pure black on off-white is harsh) |
+| Muted foreground | `text-muted-foreground` | `#737373` | Secondary copy, descriptions, metadata |
+| Border | `border-border-default` | `#e5e5e5` | Card borders, dividers, tab separators |
+
+**The canvas / white pairing** is the core visual rhythm: off-white page background establishes calm, white cards and sections create hierarchy through elevation. Don't use pure white as a page background — that's `bg-canvas`'s job.
+
 ### Black & white
 
-Black (`#000000`) and white (`#ffffff`) are used freely for text and surfaces. Black is the default body text color on white; white is the default text color on Alphabyte Blue.
+Black (`#000000`) is used for CTA buttons (filled black, white text) — not as a section background in Option C. White (`#ffffff`) is reserved for elevated card surfaces. The old default of black body text is replaced by `text-foreground` (`#171717`) for softer contrast on the off-white canvas.
 
 ## Typography
 
@@ -100,6 +114,8 @@ Exact specs from §4.0. Tailwind utilities already implement these.
 | Highlight | *Regular Italic* | 0 | Sentence case | `text-body italic` |
 | Link | Regular | 0 | Sentence case | `text-body underline` (brand blue) |
 
+**Note on Option C:** The design direction uses larger editorial headlines than the original brand guide implied. `text-display` at clamp(3rem, 6vw, 5.5rem) maps well to what's shown in the Option C hero treatments. Sub-heads are sentence-cased and roughly half the headline size, which aligns with `text-headline`. The existing tokens are correct for this direction.
+
 **Note:** The type hierarchy tracking values (-0.02em for headers, etc.) were originally specced for Aeonik. They work well with Geist too since both are geometric sans-serifs, but visual review is wise if anything looks off.
 
 **Leading rule:** Headers and sub-headers should use `line-height: 1` (leading matches font size). Body text uses `1.55`. Both are built into the `text-*` tokens.
@@ -126,6 +142,16 @@ Exact specs from §4.0. Tailwind utilities already implement these.
 | Primary icon (alone) | 0.20" | 20px | `min-w-icon-min` |
 
 **Clearspace rule:** one square unit of the Alphabyte icon's interior square on all sides. In practice, this is roughly ~0.25× the logo's height — when in doubt, leave more breathing room, not less.
+
+## CTA button colors
+
+In Option C, primary CTA buttons are **black with white text** — not Alphabyte Blue. Secondary CTAs are text-only with an arrow (→). This differs from the original brand guide which used Alphabyte Blue as the primary button color. The `button.tsx` variants should be updated to reflect this; the token-level facts are:
+
+| CTA type | Background | Text | Border |
+| --- | --- | --- | --- |
+| Primary | `#000000` (black) | `#ffffff` (white) | none |
+| Secondary (text) | transparent | `text-foreground` | none, arrow suffix |
+| Accent link | transparent | `text-alphabyte-blue` | none, underline on hover |
 
 ## Gradient specification (§3.0)
 

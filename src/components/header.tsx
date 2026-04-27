@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation, type NavItem } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,24 @@ import { Button } from "@/components/ui/button";
 function isRouteActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname.startsWith(href);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Wordmark                                                           */
+/* ------------------------------------------------------------------ */
+
+function Wordmark() {
+  return (
+    <Link
+      href="/"
+      aria-label="Alphabyte AI"
+      className="shrink-0 text-xl font-medium tracking-brand-snug"
+    >
+      <span className="text-foreground">Alphabyte</span>
+      <span className="mx-1.5 text-muted-foreground">&middot;</span>
+      <span className="text-alphabyte-blue">AI</span>
+    </Link>
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -54,10 +72,10 @@ function DesktopDropdown({
     >
       <button
         className={cn(
-          "flex items-center gap-1 px-4 min-h-[44px] text-body-sm transition-colors",
+          "flex items-center gap-1 px-4 min-h-[44px] text-body-sm font-medium transition-colors",
           active || open
             ? "text-alphabyte-blue"
-            : "text-white hover:text-alphabyte-blue",
+            : "text-foreground hover:text-alphabyte-blue",
         )}
         aria-haspopup="true"
         aria-expanded={open}
@@ -70,10 +88,6 @@ function DesktopDropdown({
         }}
       >
         {item.label}
-        <ChevronDown
-          className={cn("h-3.5 w-3.5 transition-transform", open && "rotate-180")}
-          aria-hidden
-        />
       </button>
 
       <AnimatePresence>
@@ -92,19 +106,19 @@ function DesktopDropdown({
               transition: { duration: noMotion ? 0 : 0.1, ease: "easeIn" },
             }}
           >
-            <div className="w-64 rounded-md border border-white/10 bg-black py-2 shadow-lg">
+            <div className="w-64 rounded-md border border-border-default bg-white py-2 shadow-md">
               {item.children!.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="block px-4 py-3 transition-colors hover:bg-white/5 hover:text-alphabyte-blue"
+                  className="block px-4 py-3 transition-colors hover:bg-canvas hover:text-alphabyte-blue"
                   onClick={() => setOpen(false)}
                 >
-                  <span className="block text-body-sm font-medium text-white">
+                  <span className="block text-body-sm font-medium text-foreground">
                     {child.label}
                   </span>
                   {child.description && (
-                    <span className="block text-body-sm text-white/50 mt-0.5">
+                    <span className="block text-body-sm text-muted-foreground mt-0.5">
                       {child.description}
                     </span>
                   )}
@@ -113,10 +127,10 @@ function DesktopDropdown({
 
               {item.footerLink && (
                 <>
-                  <div className="mx-4 my-2 border-t border-white/10" />
+                  <div className="mx-4 my-2 border-t border-border-default" />
                   <Link
                     href={item.footerLink.href}
-                    className="block px-4 py-2 text-body-sm text-alphabyte-blue transition-colors hover:text-white"
+                    className="block px-4 py-2 text-body-sm text-alphabyte-blue transition-colors hover:text-foreground"
                     onClick={() => setOpen(false)}
                   >
                     {item.footerLink.label}
@@ -150,18 +164,14 @@ function MobileSection({
     <li>
       <button
         className={cn(
-          "flex w-full items-center justify-between px-3 py-3 text-body min-h-[44px] transition-colors",
-          active ? "text-alphabyte-blue" : "text-white",
+          "flex w-full items-center justify-between px-3 py-3 text-body font-medium min-h-[44px] transition-colors",
+          active ? "text-alphabyte-blue" : "text-foreground",
         )}
         aria-expanded={expanded}
         aria-haspopup="true"
         onClick={() => setExpanded((v) => !v)}
       >
         {item.label}
-        <ChevronDown
-          className={cn("h-5 w-5 transition-transform", expanded && "rotate-180")}
-          aria-hidden
-        />
       </button>
 
       {expanded && (
@@ -171,7 +181,7 @@ function MobileSection({
               <Link
                 href={child.href}
                 onClick={onNavigate}
-                className="flex items-center px-3 py-3 text-body-sm text-white/70 transition-colors hover:text-alphabyte-blue min-h-[44px]"
+                className="flex items-center px-3 py-3 text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue min-h-[44px]"
               >
                 {child.label}
               </Link>
@@ -182,7 +192,7 @@ function MobileSection({
               <Link
                 href={item.footerLink.href}
                 onClick={onNavigate}
-                className="flex items-center px-3 py-3 text-body-sm text-alphabyte-blue transition-colors hover:text-white min-h-[44px]"
+                className="flex items-center px-3 py-3 text-body-sm text-alphabyte-blue transition-colors hover:text-foreground min-h-[44px]"
               >
                 {item.footerLink.label}
               </Link>
@@ -204,13 +214,12 @@ export function Header() {
   const noMotion = !!reducedMotion;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  // Close mobile menu on route change
   React.useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
   return (
-    <header className="bg-black">
+    <header className="bg-white border-b border-border-default">
       <a
         href="#main-content"
         className={cn(
@@ -222,16 +231,8 @@ export function Header() {
         Skip to content
       </a>
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link href="/" className="shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logo; next/image adds no value here */}
-          <img
-            src="/logos/alphabyte-logo-white.svg"
-            alt="Alphabyte"
-            className="h-8 w-auto min-w-logo-min"
-          />
-        </Link>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <Wordmark />
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
@@ -248,10 +249,10 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  "px-4 min-h-[44px] flex items-center text-body-sm transition-colors",
+                  "px-4 min-h-[44px] flex items-center text-body-sm font-medium transition-colors",
                   isRouteActive(pathname, item.href)
                     ? "text-alphabyte-blue"
-                    : "text-white hover:text-alphabyte-blue",
+                    : "text-foreground hover:text-alphabyte-blue",
                 )}
               >
                 {item.label}
@@ -262,8 +263,8 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block shrink-0">
-          <Button asChild>
-            <Link href="/contact/">Get started</Link>
+          <Button variant="dark" size="sm" asChild>
+            <Link href="/services/discovery/">Book a Sprint</Link>
           </Button>
         </div>
 
@@ -271,7 +272,7 @@ export function Header() {
         <DialogPrimitive.Root open={mobileOpen} onOpenChange={setMobileOpen}>
           <DialogPrimitive.Trigger asChild>
             <button
-              className="lg:hidden flex items-center justify-center min-w-[44px] min-h-[44px] text-white"
+              className="lg:hidden flex items-center justify-center min-w-[44px] min-h-[44px] text-foreground"
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
@@ -283,7 +284,7 @@ export function Header() {
               <DialogPrimitive.Portal forceMount>
                 <DialogPrimitive.Overlay asChild>
                   <motion.div
-                    className="fixed inset-0 z-40 bg-black/60"
+                    className="fixed inset-0 z-40 bg-black/40"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -296,7 +297,7 @@ export function Header() {
                   aria-label="Navigation menu"
                 >
                   <motion.div
-                    className="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-black px-6 py-4"
+                    className="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-white px-6 py-3"
                     initial={{ x: "100%" }}
                     animate={{ x: 0 }}
                     exit={{ x: "100%" }}
@@ -307,21 +308,12 @@ export function Header() {
                   >
                     {/* Mobile header row */}
                     <div className="flex items-center justify-between mb-8">
-                      <Link
-                        href="/"
-                        onClick={() => setMobileOpen(false)}
-                        className="shrink-0"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src="/logos/alphabyte-logo-white.svg"
-                          alt="Alphabyte"
-                          className="h-8 w-auto min-w-logo-min"
-                        />
-                      </Link>
+                      <div onClick={() => setMobileOpen(false)}>
+                        <Wordmark />
+                      </div>
                       <DialogPrimitive.Close asChild>
                         <button
-                          className="flex items-center justify-center min-w-[44px] min-h-[44px] text-white"
+                          className="flex items-center justify-center min-w-[44px] min-h-[44px] text-foreground"
                           aria-label="Close menu"
                         >
                           <X className="h-6 w-6" />
@@ -346,10 +338,10 @@ export function Header() {
                                 href={item.href}
                                 onClick={() => setMobileOpen(false)}
                                 className={cn(
-                                  "flex items-center px-3 py-3 text-body min-h-[44px] transition-colors",
+                                  "flex items-center px-3 py-3 text-body font-medium min-h-[44px] transition-colors",
                                   isRouteActive(pathname, item.href)
                                     ? "text-alphabyte-blue"
-                                    : "text-white hover:text-alphabyte-blue",
+                                    : "text-foreground hover:text-alphabyte-blue",
                                 )}
                               >
                                 {item.label}
@@ -361,10 +353,10 @@ export function Header() {
                     </nav>
 
                     {/* Mobile CTA */}
-                    <div className="mt-8 px-3">
-                      <Button asChild className="w-full">
-                        <Link href="/contact/" onClick={() => setMobileOpen(false)}>
-                          Get started
+                    <div className="mt-8 px-3 border-t border-border-default pt-8">
+                      <Button variant="dark" size="sm" asChild className="w-full">
+                        <Link href="/services/discovery/" onClick={() => setMobileOpen(false)}>
+                          Book a Sprint
                         </Link>
                       </Button>
                     </div>

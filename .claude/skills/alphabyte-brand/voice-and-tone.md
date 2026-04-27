@@ -136,6 +136,30 @@ Words that automatically sound like generic AI marketing. If you've typed one, r
 
 ✅ **Good:** "We're an AI and data consultancy. We work with companies that have real data problems and want to solve them properly — not prototype something that never ships. We're small, senior, and deliberate about the work we take on."
 
+## Reference copy from current direction (Option C)
+
+These are exemplar headlines and sub-heads from the chosen design direction. Use them as calibration for tone, rhythm, and structure when writing new copy.
+
+### Hero headlines
+
+- **"AI that compounds. Not pilots that stall."** — homepage hero. Short, declarative, contrast structure.
+- **"Most organizations don't have an AI problem. They have a clarity problem."** — services hero. Diagnostic framing, contrast structure.
+- **"We build with what actually works."** — tools hero. Direct, slightly anti-establishment.
+
+### Sub-heads
+
+- **"We work across four tracks. You don't need all of them. You need the right one, in the right order, for where you actually are."** — services. Empathetic, qualifying, anti-bloat.
+- **"Four tracks. Real deployments. No junior bench."** — homepage. Three short clauses, period-separated, asserts substance.
+
+### Copy patterns to follow
+
+When writing new headlines and sub-heads, these patterns recur:
+
+1. **Two-sentence contrast:** the second sentence undercuts the first. "X. Not Y." — establishes what Alphabyte does by naming what it doesn't.
+2. **Period-separated short clauses:** three brief statements separated by periods for credibility. "Fact. Fact. Fact."
+3. **Diagnostic framing:** "You don't have an X problem. You have a Y problem." — reframes the reader's assumption.
+4. **Direct anti-jargon stances:** "We don't sell platforms." "We build with what actually works." — positions against industry noise without naming competitors.
+
 ## Brand narrative (from the guide)
 
 The official narrative, for reference:

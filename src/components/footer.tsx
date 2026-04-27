@@ -3,7 +3,6 @@ import { Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation } from "@/lib/navigation";
 import { companyLinks, socialLinks, legalLinks, address } from "@/lib/footer-data";
-import { Button } from "@/components/ui/button";
 
 function BlueskyIcon({ className }: { className?: string }) {
   return (
@@ -23,7 +22,7 @@ const socialIcons = {
   bluesky: BlueskyIcon,
 } as const;
 
-const linkClasses = "text-body-sm text-white/60 transition-colors hover:text-alphabyte-blue";
+const linkClasses = "text-body-sm text-foreground transition-colors hover:text-alphabyte-blue";
 
 const servicesNav = navigation.find((item) => item.label === "Services");
 const toolsNav = navigation.find((item) => item.label === "Tools");
@@ -31,31 +30,29 @@ const caseStudiesNav = navigation.find((item) => item.label === "Case Studies");
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-canvas border-t border-border-default">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        {/* Logo + CTA row */}
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between mb-16">
-          <Link href="/" className="shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element -- SVG logo; next/image adds no value here */}
-            <img
-              src="/logos/alphabyte-logo-white.svg"
-              alt="Alphabyte"
-              className="h-10 w-auto min-w-logo-min"
-            />
+        {/* Wordmark */}
+        <div className="mb-16">
+          <Link
+            href="/"
+            aria-label="Alphabyte AI"
+            className="shrink-0 text-xl font-medium tracking-brand-snug"
+          >
+            <span className="text-foreground">Alphabyte</span>
+            <span className="mx-1.5 text-muted-foreground">&middot;</span>
+            <span className="text-alphabyte-blue">AI</span>
           </Link>
-          <Button variant="inverse" asChild>
-            <Link href="/contact/">Get started</Link>
-          </Button>
         </div>
 
         {/* Link columns */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {/* Address */}
           <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
               Address
             </p>
-            <address className="not-italic text-body-sm text-white/60 leading-relaxed">
+            <address className="not-italic text-body-sm text-muted-foreground leading-relaxed">
               {address.street}
               <br />
               {address.city}
@@ -65,7 +62,7 @@ export function Footer() {
           {/* Services */}
           {servicesNav?.children && (
             <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
                 Services
               </p>
               <ul className="space-y-3">
@@ -83,7 +80,7 @@ export function Footer() {
           {/* Tools */}
           {toolsNav?.children && (
             <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
                 Tools
               </p>
               <ul className="space-y-3">
@@ -101,7 +98,7 @@ export function Footer() {
           {/* Case Studies */}
           {caseStudiesNav?.children && (
             <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
                 Case Studies
               </p>
               <ul className="space-y-3">
@@ -118,7 +115,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
               Company
             </p>
             <ul className="space-y-3">
@@ -134,7 +131,7 @@ export function Footer() {
 
           {/* Connect (socials) */}
           <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-white mb-4">
+            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
               Connect
             </p>
             <ul className="space-y-3">
@@ -159,8 +156,8 @@ export function Footer() {
         </div>
 
         {/* Legal row */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-body-sm text-white/40">
+        <div className="mt-16 flex flex-col gap-4 border-t border-border-default pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-body-sm text-muted-foreground">
             &copy; Alphabyte {new Date().getFullYear()}
           </p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2">
@@ -168,7 +165,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-body-sm text-white/40 transition-colors hover:text-alphabyte-blue"
+                className="text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue"
               >
                 {link.label}
               </Link>

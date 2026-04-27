@@ -9,10 +9,12 @@ Alphabyte is an AI and data consultancy. The brand voice is **calm, composed, an
 
 ## How this skill is organized
 
-- **`tokens.md`** — color, type, spacing, gradient specs. Read when you need exact values.
-- **`voice-and-tone.md`** — how to write for Alphabyte. Read when producing any copy.
-- **`component-rules.md`** — logo rules, gradient construction, photography treatment, pattern usage. Read when making visual decisions.
-- **`brand-guide.pdf`** — the original brand standards manual. Authoritative when the markdown extracts are ambiguous or silent.
+**Option C — light theme, tab navigation, structured layout — is the chosen visual direction.** The 2021 brand guide PDF remains in the skill folder as foundational reference, but specifics in this skill (palette emphasis, component patterns, copy exemplars) reflect the chosen direction.
+
+- **`tokens.md`** — color, surface palette, type, spacing, gradient specs. Read when you need exact values.
+- **`voice-and-tone.md`** — how to write for Alphabyte, including reference copy from the chosen direction. Read when producing any copy.
+- **`component-rules.md`** — logo rules, surface system, tab navigation, card patterns, photography treatment. Read when making visual decisions.
+- **`brand-guide.pdf`** — the original 2021 brand standards manual. Authoritative for foundational rules (logo construction, color specs, clearspace) but superseded by this skill on questions of palette emphasis, surface treatment, and component patterns.
 
 Load the file that matches what you're doing. Don't load everything upfront.
 
@@ -20,13 +22,15 @@ Load the file that matches what you're doing. Don't load everything upfront.
 
 These are non-negotiable. If a request would require breaking one of these, stop and flag it.
 
-1. **Colors are fixed.** Only Alphabyte Blue `#00abf0`, Analytical Grey `#ebebeb`, and Code Green `#00ffa6`. No other brand colors exist. No substitutes, no "close enough" shades, no introducing purple/teal/orange.
+1. **Colors are fixed.** Only Alphabyte Blue `#00abf0`, Analytical Grey `#ebebeb`, and Code Green `#00ffa6` as brand colors. Surface tokens (`canvas`, `foreground`, `muted-foreground`, `border-default`) are the Option C neutral palette. No substitutes, no "close enough" shades, no introducing purple/teal/orange.
 2. **Type is Geist for web, Aeonik for print.** Don't introduce Inter, Roboto, Space Grotesk, DM Sans, or any other typeface. Geist is loaded via `next/font/local`; `system-ui` is the fallback. If an Aeonik webfont license is obtained later, it's a drop-in swap.
 3. **The logo never goes on Code Green.** Illegible contrast. See `component-rules.md` for the full pairing matrix.
 4. **The logo is never modified.** No stretching, rotating, recoloring, outlining, flipping, rearranging, adding shadows, or inserting extra elements. 12 specific violations are enumerated in `component-rules.md`.
-5. **Gradients always contain a large presence of Alphabyte Blue.** No all-green gradients, no grey-dominant gradients. Per §3.0.
+5. **Gradients always contain a large presence of Alphabyte Blue** when used. No all-green gradients, no grey-dominant gradients. Per §3.0. Note: gradients are not the default hero or section background in Option C.
 6. **The wordmark never appears without the icon.** The lockup is a unit.
 7. **Minimum logo size: 120px digital. Minimum icon size: 20px digital.** Below these, it stops being legible.
+8. **Blue is accent, not dominant.** Alphabyte Blue is used for emphasis, links, the AI tag, and the Claude Partner badge — not as a hero background or dominant fill. This is the Option C system.
+9. **Page backgrounds are off-white; CTA buttons are black with white text; cards use white surfaces with thin borders.** This is the Option C surface system.
 
 ## Use Tailwind tokens, not raw values
 
@@ -61,13 +65,16 @@ If a needed token doesn't exist in `tailwind.config.ts`, add it there rather tha
 ## Red flags — stop if you catch yourself
 
 Visual:
-- Reaching for a color that isn't one of the three brand colors
+- Reaching for a color that isn't one of the three brand colors or the Option C surface tokens
 - About to use a purple or purple-blue gradient (generic AI aesthetic)
 - About to use Inter, Space Grotesk, or any typeface other than Geist
 - Using `bg-[#...]` or `text-[#...]` arbitrary Tailwind values for colors
 - Adding shadows or effects to the logo
 - Putting the logo on a green background
 - About to add motion/animation without a reason it's there (decorative motion violates §1.0 calm tone)
+- **About to use Alphabyte Blue as a hero or section background** — off-direction for Option C (it was a default in the 2021 guide, but Option C uses blue as accent only)
+- **About to use the brand gradient as a default hero or section background** — off-direction for Option C (gradients are reserved for specific feature uses)
+- **About to use photography as a default visual element on a standard page** — Option C uses editorial typography, not photographic heroes
 
 Verbal:
 - About to write "unlock," "leverage," "transform," "revolutionize," "harness the power of"

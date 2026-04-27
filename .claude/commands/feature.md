@@ -16,10 +16,11 @@ Read `$ARGUMENTS`. If it's a file path, read the file. If it's inline prose, wor
 
 ### 2. Load the skills
 
-This project uses two skills that govern how work is produced. Load both at the start so their rules are in context before drafting any PRD content:
+This project uses three skills that govern how work is produced. Load all three at the start so their rules are in context before drafting any PRD content:
 
 - **`alphabyte-brand`** (at `.claude/skills/alphabyte-brand/`) — governs voice, color, typography, component patterns, photography, gradient construction, logo usage, motion. `voice-and-tone.md` is authoritative for draft copy; `component-rules.md` governs visual and motion direction; `tokens.md` is the design token reference.
 - **`seo`** (at `.claude/skills/seo/`) — governs metadata, structured data, URL conventions, and what makes a page findable. `metadata-patterns.md` covers metadata; `structured-data.md` covers JSON-LD; `page-checklist.md` is the pre-ship gate.
+- **`alphabyte-services`** (at `.claude/skills/alphabyte-services/`) — authoritative reference for what Alphabyte offers, costs, and delivers. `service-tracks.md` covers the four-track model and signature offerings; `pricing.md` covers what's publishable and what's confidential (rate card, hours, multipliers are NEVER public); `proof-points.md` covers case studies (Sprinklermatic, RecirQ, Housing Services Corp.) with public-safe framings. Load whenever a feature touches Alphabyte's offerings, pricing, case studies, or company positioning.
 
 ### 3. Classify the feature
 
@@ -48,6 +49,10 @@ Questions worth surfacing depend on the feature type. Cover at minimum:
 For **New page** features, additionally:
 - **Search intent** — what query would someone type into Google to find this page?
 - **URL slug** — preferred slug, or should the PRD propose one?
+
+For features that touch services, pricing, or case study content:
+- **Pricing display** — does this feature show prices? If yes, must use ranges or "starting at" framing per `alphabyte-services/pricing.md`. Confirm which offerings and what range/anchor.
+- **Case study claims** — does this feature make specific claims about a client engagement that go beyond the public-safe framings in `alphabyte-services/proof-points.md`? If yes, the specific claims need client approval — surface as Open Questions.
 
 For features that depend on external decisions (brand direction, CEO input, pending answers):
 - Either list the dependencies as Open Questions in the PRD and flag that it's not Ready-to-implement, or stop and tell Mitchell the PRD can't be completed until those are resolved.
@@ -135,7 +140,8 @@ If there are no feature-specific visual notes and the brand skill defaults suffi
 - Any negative criteria worth guardrailing (what must NOT happen)
 - For New page type, always: "Passes seo/page-checklist.md"
 - For any feature with copy: "Copy passes alphabyte-brand/voice-and-tone.md checks"
-- For any feature with visuals: "Visuals pass alphabyte-brand/component-rules.md review">
+- For any feature with visuals: "Visuals pass alphabyte-brand/component-rules.md review"
+- For any feature touching services/pricing/case studies: "Passes alphabyte-services hard rules — no rate card, no competitor names, no hours-as-effort, exact track and offering names">
 - [ ] <criterion>
 - [ ] <criterion>
 
@@ -162,6 +168,8 @@ If there are no feature-specific visual notes and the brand skill defaults suffi
 - **Pages & Components** — `Modifying` and `Creating` subsections both mandatory. One or both may be "None" but both sections must appear.
 - **Verbatim copy** — if copy is in Decided, it must also appear here. Decided and Verbatim should not contradict each other.
 - **Search Intent & SEO** — for New page, every subfield must have a concrete value or "draft at implement-time". "N/A" is only valid for non-new-route features.
+- **Pricing in copy** — any price referenced in Verbatim copy or Drafted-at-implement-time constraints must be a range or "starting at" anchor (per `alphabyte-services/pricing.md`). Never a per-hour rate. Never effort in hours.
+- **Track and offering names** — must be exact: Discovery, Data Readiness, Enablement, Infrastructure (the four tracks); Executive Productivity Suite, Team Citizen Dev Enablement, Strategy Sprint, Executive Quick Win, Sprawl Fix, Intelligent Enterprise (signature offerings). No paraphrasing in Decided or Verbatim copy.
 - **Acceptance Criteria** — checkbox list (`- [ ]`), each criterion observable. Good: "Page renders at /services/ml-deployment/ without console errors." Bad: "The page should be good."
 - **Dates** — today's date in YYYY-MM-DD format. Created and Last updated match on first write.
 
@@ -182,11 +190,12 @@ Output in this order:
 
 - **Every section is mandatory.** Repeatable output requires a consistent shape. `None` or `N/A` is valid; omission is not.
 - **Do not implement anything.** This command produces a document, not code.
-- **Do not restate the brand guide or SEO rules** in the PRD. Both skills are always loaded during implementation; the PRD only needs to call out feature-specific decisions.
+- **Do not restate the brand guide, SEO rules, or services reference** in the PRD. All three skills are always loaded during implementation; the PRD only needs to call out feature-specific decisions.
 - **Do not pad.** A two-sentence Summary is fine. A one-bullet Decided is fine. The mandatory structure produces consistency; volume is not a virtue.
 - **Do not guess at blocking unknowns.** If something critical is undecided, list it in Open Questions with an owner and keep the Status as Draft. A guessed decision in a PRD will be implemented faithfully — guess wrong and you've shipped wrong.
 - **Respect verbatim copy.** Copy listed under Verbatim copy is a contract with the implementer. If the CEO signs off on a headline, it doesn't get "improved" at implement-time.
 - **Voice checks apply to the PRD itself.** The Summary and any drafted copy must pass `voice-and-tone.md` forbidden-vocabulary checks. The PRD is not exempt from its own brand rules.
+- **Confidentiality applies to the PRD itself.** Do not list per-role hourly rates, after-hours multipliers, or effort-in-hours in any section of a PRD. The PRD is checked into the repo and reviewed; treat its content as if it could become public. Use weeks for timelines, ranges for prices.
 
 ## Lifecycle notes
 

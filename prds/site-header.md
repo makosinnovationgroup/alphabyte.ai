@@ -1,7 +1,7 @@
 # Site Header & Primary Navigation
 
 ## Status
-Ready to implement
+Shipped
 
 ## Type
 Cross-cutting
@@ -139,7 +139,8 @@ N/A (no new routes — the header is a component, not a page. URL slugs are deci
 - [ ] Builds without TypeScript errors or console warnings
 
 ## Related
-- `prds/backlog/followup-ceo-brand-direction.md` — brand direction decision (resolved: dark Ventures aesthetic)
+- `prds/enhance-site-header-option-c.md` — enhancement: re-theme header to Option C light direction
+- `prds/backlog/followup-ceo-brand-direction.md` — brand direction decision (resolved: dark Ventures aesthetic → Option C)
 - `.claude/skills/alphabyte-brand/component-rules.md` — button styles, motion tiers, logo rules
 - `.claude/skills/alphabyte-brand/tokens.md` — color tokens, type hierarchy, spacing
 - `.claude/skills/alphabyte-brand/voice-and-tone.md` — copy guidelines

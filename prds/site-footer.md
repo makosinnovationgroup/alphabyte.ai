@@ -1,7 +1,7 @@
 # Site Footer
 
 ## Status
-Ready to implement
+Shipped
 
 ## Type
 Cross-cutting
@@ -133,6 +133,7 @@ N/A (no new routes — the footer is a component, not a page)
 - [ ] Responsive and usable at common mobile widths (375px, 390px, 414px)
 
 ## Related
+- `prds/enhance-site-footer-option-c.md` — enhancement: re-theme footer to Option C light direction
 - `prds/site-header.md` — header PRD; source of truth for nav IA and URL slugs
 - `src/lib/navigation.ts` — shared navigation data consumed by both header and footer
 - `.claude/skills/alphabyte-brand/component-rules.md` — button styles, motion tiers, logo rules

@@ -35,6 +35,12 @@ const config: Config = {
           accent: "#00ffa6",   // sparingly — per guide, accents only
           ink: "#000000",      // body text on light bg
         },
+
+        // Surface system (Option C — light theme)
+        canvas: "#fafafa",           // page-level background
+        foreground: "#171717",       // primary text on light surfaces
+        "muted-foreground": "#737373", // secondary / muted text
+        "border-default": "#e5e5e5", // dividers and card borders
       },
 
       // ----- Typography (Brand Guide §4.0) -----

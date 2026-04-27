@@ -50,15 +50,18 @@ Do not, under any circumstances:
 
 ### Logo on colored backgrounds (§3.0)
 
+**Option C context:** pages use off-white (`bg-canvas`) and white (`bg-white`) surfaces. Blue and black are not used as section backgrounds.
+
 **Acceptable pairings:**
 
-| Background | Logo color |
-| --- | --- |
-| Alphabyte Blue | White |
-| White | Alphabyte Blue *or* Black |
-| Analytical Grey | Alphabyte Blue *or* Black |
-| Black | White *or* Alphabyte Blue *or* gradient |
-| Brand gradient | White |
+| Background | Logo color | Notes |
+| --- | --- | --- |
+| Off-white canvas (`#fafafa`) | Alphabyte Blue *(preferred)* or Black | Blue preferred for brand presence |
+| White card / panel | Alphabyte Blue *(preferred)* or Black | Same as canvas |
+| Analytical Grey | Alphabyte Blue or Black | |
+| Black (CTA buttons only in Option C) | N/A — logo does not appear on buttons | |
+| Alphabyte Blue (accent only in Option C) | N/A — blue is not used as a background surface | |
+| Brand gradient (if used) | White | |
 
 **Never pair:**
 
@@ -68,15 +71,18 @@ Do not, under any circumstances:
 - Black logo on blue or black background (contrast failure).
 - White logo on grey or white background (contrast failure).
 
-## Color usage hierarchy (§3.0)
+## Color usage hierarchy (Option C)
 
-The guide shows this as a proportion bar: Alphabyte Blue is the largest share, then white/grey, then Code Green is the smallest accent. Translate this into any design:
+Option C shifts the proportion from the original guide. The dominant surface is off-white (`bg-canvas`), not Alphabyte Blue:
 
-- **Blue** should be the anchor color of any brand surface.
-- **Grey** is for rest — surfaces, dividers, muted states.
-- **Green** is for punctuation — a highlighted word, a small UI element, one icon. If your design has lots of green, rework it.
+- **Off-white canvas** (`bg-canvas`) is the page background — the default surface.
+- **White** (`bg-white`) is for elevated surfaces — cards, panels, content sections that need visual lift.
+- **Alphabyte Blue** is an accent color — inline highlighted words, the "AI" tag, the Claude Partner badge, active tab indicators, links. Not a hero background.
+- **Black** is for CTA buttons (filled black, white text). Not used as a section background in Option C.
+- **Grey** (`border-default`) is for dividers, card borders, tab separators.
+- **Green** is for punctuation — a highlighted word, a small UI element. If your design has lots of green, rework it.
 
-Bad: a whole page in green with blue accents. Good: a predominantly blue/white page with a green underline on one keyword.
+Bad: a hero section with Alphabyte Blue background. Good: an off-white page with white cards and blue-accented text.
 
 ## Gradient construction (§3.0)
 
@@ -106,22 +112,29 @@ Use existing Tailwind utilities first:
 
 For new gradient variations, add a new entry to `backgroundImage` in `tailwind.config.ts` rather than inlining `bg-[linear-gradient(...)]`. Name it semantically (`alphabyte-gradient-hero`, `alphabyte-gradient-feature`).
 
-## Gradient applications (§3.0)
+## Gradient applications (§3.0 — updated for Option C)
 
-### 1. As an image overlay
+Option C does not use the brand gradient as a default hero or section background on any designed page. The gradient remains part of the brand system but is reserved for specific feature uses.
+
+### Where gradients are appropriate
+
+- **OG images / social cards** — the gradient is still the primary visual for meta images.
+- **Distinctive section breaks** — a thin gradient strip or divider between major content sections, if used sparingly (once per page maximum).
+- **Marketing collateral** — print materials, slide decks, event assets.
+
+### Where gradients are NOT used in Option C
+
+- Hero backgrounds (heroes use the off-white canvas with editorial typography)
+- Section backgrounds on the homepage, services, or tools pages
+- Card backgrounds
+
+### As an image overlay (still valid if photography is used)
 
 - Source image must be **black & white** with good contrast.
 - Gradient sits as a layer on top with `mix-blend-mode: screen`.
-- If the source image is too dark or too light, pick a different image — don't adjust the gradient.
 - In CSS/Tailwind: layer a div with the gradient over a greyscale image using `mix-blend-screen`.
 
-### 2. As a background
-
-- Only for hero sections, landing pages, section break slides.
-- When the logo appears on the gradient, use **white** logo, and ensure the gradient section has black or dark enough areas for contrast.
-- Text on gradient should be **black**, limited to headlines and short sub-heads. **Never** lay large paragraphs of body copy over the gradient.
-
-### 3. Inside the logo
+### Inside the logo
 
 - Special-case only (apparel, merch). Requires approval.
 - Only on a **black** background. Never on white, blue, green, or anything else.
@@ -153,15 +166,15 @@ Two categories, used together:
 - Dark / moody imagery without purpose — brand is optimistic
 - Images of competitor products or recognizable branded UI
 
-### Color overlays on photos (§6.0)
+### Photography in Option C
 
-The **only** color overlay allowed on photography is Alphabyte Blue. Process:
+Option C does not feature photography prominently on the homepage, services, or tools pages. The designed pages use editorial typography and structured layouts rather than photographic heroes. Photography is not the default visual element on any standard page.
+
+**If photography is used** (e.g., about page, case study detail, blog), the Alphabyte-Blue-multiply-on-greyscale rule still applies:
 
 1. Start with a color image.
 2. Convert to **greyscale** (ensure decent contrast — not too dark, not too flat).
 3. Add a layer of Alphabyte Blue with `mix-blend-mode: multiply`.
-
-In Tailwind/CSS, this is typically done with a pseudo-element or layered div:
 
 ```tsx
 <div className="relative">
@@ -192,29 +205,70 @@ Pattern is primarily a print/physical-goods device per the guide. On the web, us
 
 If building a pattern in code: build it as an SVG pattern with `<pattern>` in a defs block, reference it as a `fill`. Don't use CSS `background-repeat` with a raster image — you'll lose crispness.
 
-## Backgrounds and surfaces — practical guidance
+## Backgrounds and surfaces (Option C)
 
-For the web, most surfaces should be:
+The Option C surface system is layered and light:
 
-- **White** (default)
-- **Alphabyte Blue** (hero sections, feature highlights — used with conviction)
-- **Black** (moody sections, footer, testimonial sections)
-- **Analytical Grey** (muted rest surfaces, borders, dividers)
-- **Brand gradient** (hero sections or major section breaks — not more than once or twice per page)
+- **Page background:** `bg-canvas` (`#fafafa`) — the ambient off-white behind everything. This is the default, not pure white.
+- **Elevated surfaces:** `bg-white` for cards, panels, content blocks that need to visually "float" above the canvas.
+- **Borders:** `border-border-default` (`#e5e5e5`) — thin borders on cards and between tab items. Subtle, not heavy.
+- **CTA buttons:** black fill, white text. This is the only prominent use of black in Option C.
+- **Alphabyte Blue:** accent only — inline word highlights, active tab indicators, badge backgrounds, links. Not a hero background, not a section fill.
+- **Brand gradient:** available for specific feature uses (e.g., a distinctive section break, OG images, marketing collateral) but not used as the default hero or section background in Option C.
 
-Avoid a "color of the week" approach where every section has a different tinted background. The brand is **blue + white + restraint**.
+Avoid reverting to the 2021 guide's blue-dominant aesthetic. The brand on the web is **off-white + white + blue accents + restraint**.
 
-## Buttons and interactive elements
+## Buttons and interactive elements (Option C)
 
-Brand tokens from `button.tsx` variants:
+Option C uses a different button hierarchy than the original brand guide:
 
-- **Primary CTA** — Alphabyte Blue background, white text. Uses `tracking-brand-snug`. Use for the primary action in any section.
-- **Inverse** — white background, Alphabyte Blue text. Use when the surface is Alphabyte Blue.
-- **Outline** — blue border, blue text, transparent background. Use beside a primary for secondary actions.
+- **Primary CTA** — black background, white text. Uses `tracking-brand-snug`. The main action on any page or section. (Note: `button.tsx` currently uses Alphabyte Blue for primary — this needs updating to match Option C.)
+- **Secondary CTA (text + arrow)** — no background, no border, `text-foreground` with a trailing arrow (→). Used beside or below a primary CTA for softer secondary actions.
+- **Accent link** — Alphabyte Blue text, underline on hover. For inline links within body copy.
 - **Ghost** — no border, no fill. Use for tertiary actions in dense UI.
-- **Link** — underlined inline link per §4.0 link spec.
 
 Hover states: darken by 10–20%, never change hue. Focus rings use Alphabyte Blue with offset.
+
+## Tab navigation pattern (Option C)
+
+The horizontal tab bar is the distinctive structural element of Option C, used on the homepage (for service tracks) and the services page (for track detail).
+
+### Structure
+
+- Tabs are horizontal, spanning the full content width.
+- Individual tabs are separated by thin vertical lines (`border-border-default`).
+- Each tab displays a number prefix in muted grey (01, 02, 03, 04) and a label.
+
+### States
+
+| State | Text color | Indicator |
+| --- | --- | --- |
+| Active | `text-alphabyte-blue` | Top-edge blue accent line (2–3px solid `bg-alphabyte-blue`) |
+| Inactive | `text-muted-foreground` | No accent line; number prefix in muted grey |
+| Hover | Transition toward active color | Subtle, no jarring change |
+
+### Below the tabs
+
+The active tab's content fills the same column width as the tab bar. Content switches should be instant or use a very short crossfade (100–150ms, ease-out). No slide animations — the structured layout calls for crisp transitions.
+
+## Card with pills pattern (Option C)
+
+A recurring component used for tools, entry bundles, and case studies.
+
+### Structure
+
+- **Surface:** white (`bg-white`) with thin border (`border-border-default`), comfortable internal padding (`p-6` to `p-8`).
+- **Eyebrow tag** (optional): small label above the title (e.g., "Claude Partner", "DISCOVERY"). Uppercase, `text-body-sm`, `tracking-brand-wide`. May use Alphabyte Blue background with white text for badges.
+- **Title:** `text-headline` weight, sentence case.
+- **Description:** `text-body` in `text-foreground` or `text-muted-foreground`.
+- **Pill list:** "What's included" or similar items rendered as small rounded outlined chips — thin border (`border-border-default`), `text-body-sm`, `text-muted-foreground`, `rounded-full`, horizontal padding.
+- **CTA:** optional, pinned at top-right or bottom-right depending on layout context. Typically a secondary text + arrow CTA.
+
+### Do not
+
+- Use filled/colored pills — they should be outlined and muted.
+- Omit the border on the card — the thin border is what differentiates the white card from the off-white canvas.
+- Stack pills vertically — they wrap horizontally.
 
 ## Headlines and text placement
 
@@ -254,10 +308,10 @@ Motion should match the brand's "calm, composed, intentional" tone (§1.0). Moti
 - Focus-visible rings
 - Page cross-fade transitions
 
+**Option C note:** The structured, crisp layout calls for especially restrained motion. Animations should be 200–300ms ease-out, no bounce, no flashy reveals. Tab switching is instant or a very short crossfade (100–150ms). Cards appear without fanfare.
+
 #### Selective (use with intent)
 
-- Slow-cycling gradient backgrounds (30s+ loops)
-- Hero headline word-by-word reveal
 - Subtle parallax on decorative backgrounds
 - Number counters on stats
 

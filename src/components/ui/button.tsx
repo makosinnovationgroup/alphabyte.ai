@@ -26,6 +26,9 @@ const buttonVariants = cva(
         // Outline — for secondary CTAs beside a primary
         outline:
           "border border-alphabyte-blue bg-transparent text-alphabyte-blue hover:bg-alphabyte-blue hover:text-white",
+        // Dark — Option C primary CTA (black fill, white text)
+        dark:
+          "bg-foreground text-white rounded-sm hover:bg-foreground/90 active:bg-foreground/80",
         // Ghost — for tertiary actions in dense UI
         ghost:
           "bg-transparent text-brand-ink hover:bg-alphabyte-grey",

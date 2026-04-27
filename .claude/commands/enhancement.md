@@ -6,20 +6,50 @@ An enhancement is for *shipped* work. If the original feature's Status is still 
 
 ## Input
 
-`$ARGUMENTS` — a description of the change, or a path to a note/doc. May also reference an existing shipped PRD by path (e.g., `prds/site-header.md`) if that's what's being enhanced.
+`$ARGUMENTS` must contain **both** of these, in this order:
+
+1. **A path to a shipped PRD** (e.g., `prds/site-header.md`). Mandatory.
+2. **A description of the enhancement** — what's changing and why. Mandatory.
+
+Expected shape:
+
+```
+/enhancement <prd-path> <description of the change>
+```
+
+Examples:
+
+- `/enhancement prds/site-header.md mobile menu feels cramped — tighten spacing and add a backdrop blur`
+- `/enhancement prds/homepage.md replace the hero CTA with a clearer two-button pattern (primary + secondary)`
+- `/enhancement prds/services-discovery.md add a pricing range callout beneath the engagement scope section`
+
+If `$ARGUMENTS` is missing either piece, stop and ask for what's missing. Do not proceed with one input. Specifically:
+
+- **If only a PRD path is provided:** stop and respond with: "This command needs both a PRD path and a description of the enhancement. What change do you want to make to `<prd-path>`?"
+- **If only a description is provided (no PRD path):** stop and respond with: "This command needs both a PRD path and a description. Which shipped PRD in `prds/` are you enhancing?"
+- **If neither is clearly present:** stop and respond with the usage pattern and both examples.
+
+Do not guess. Do not pick a PRD that seems plausible. Do not proceed on a description alone, even if it's detailed.
 
 ## Instructions
 
-### 1. Identify the original PRD
+### 1. Validate the inputs
 
-Every enhancement must reference a shipped feature PRD. This is non-negotiable.
+Before any other work:
 
-- Ask the user which PRD is being enhanced if it's not clear from `$ARGUMENTS`.
-- Read the original PRD completely before drafting the enhancement. You need to understand what decisions are in force so you can correctly identify what's changing.
-- Verify the original PRD's Status is `Shipped`. If it's any other status (`Draft`, `Ready to implement`, `In progress`), stop and tell the user: mid-flight changes to in-progress work belong in the original PRD, not in a new enhancement.
-- If no PRD exists for the feature being enhanced — meaning the feature shipped without going through `/feature` — stop and tell the user. That's a signal the original work needs a retroactive feature PRD before this enhancement can proceed. Don't paper over the gap by treating the enhancement as the primary record.
+- **Parse `$ARGUMENTS`** into the two parts. The first token should be a path starting with `prds/` and ending in `.md`. Everything after it is the description.
+- **If the first token is not a valid-looking PRD path**, stop and respond with the usage pattern. The path must point into `prds/` specifically — paths like `prds/backlog/*.md` are backlog items, not shipped PRDs, and cannot be enhanced directly (promote them to a PRD via `/feature` first).
+- **Confirm the PRD file exists at that path.** If it doesn't, stop and report: "No file at `<path>`. Check the path and try again."
+- **Read the PRD and confirm Status is `Shipped`.** If Status is anything else (`Draft`, `Ready to implement`, `In progress`), stop and report: "`<path>` has Status `<current status>`. Enhancements are for shipped work — mid-flight changes go in the original PRD. Either finish shipping it or update that PRD directly."
+- **Confirm the description is substantive** — at least a short sentence. If the description is effectively empty ("update header", "change stuff"), stop and ask for specifics.
 
-### 2. Classify the enhancement type
+Only proceed when all four checks pass.
+
+### 2. Read and understand the inputs
+
+Read the shipped PRD completely — you need to know what decisions are in force so you can identify what's being overridden. Then parse the description to understand the scope of the change.
+
+### 3. Classify the enhancement type
 
 Decide exactly one type. This is a deliberate choice — it affects how Impact is assessed:
 
@@ -28,27 +58,29 @@ Decide exactly one type. This is a deliberate choice — it affects how Impact i
 
 If it's genuinely ambiguous (the change both adds capability and refines existing behavior), pick **Evolution** — the higher-impact classification forces more careful thinking, which is the safer failure mode.
 
-### 3. Load the skills
+### 4. Load the skills
 
-Load both project skills at the start:
+Load all three project skills at the start:
 
 - **`alphabyte-brand`** (at `.claude/skills/alphabyte-brand/`) — governs voice, color, typography, component patterns, photography, gradient construction, logo usage, motion.
 - **`seo`** (at `.claude/skills/seo/`) — governs metadata, structured data, URL conventions, page checklist.
+- **`alphabyte-services`** (at `.claude/skills/alphabyte-services/`) — authoritative reference for Alphabyte's offerings, pricing, and case studies. Required when the enhancement touches services content. Note especially: rate card, after-hours multipliers, and effort-in-hours are confidential and never publishable.
 
-### 4. Ask clarifying questions if needed
+### 5. Ask clarifying questions if needed
 
-If the enhancement description is under-specified, do not guess — ask. Ask all questions in one batch.
+Even with both inputs provided, the description may not cover everything the PRD needs. If so, ask — in a batch, not turn-by-turn.
 
 Questions specific to enhancements that are often worth surfacing:
 
-- **What's the trigger?** What happened that motivates this change now? (Design feedback, user data, CEO direction, new requirement, etc.)
-- **What's NOT changing?** Sometimes clarifying that specific pieces of the original remain intact is as important as naming what changes.
+- **What's the trigger?** What happened that motivates this change now? (Design feedback, user data, CEO direction, new requirement.)
+- **What's NOT changing?** Clarifying that specific pieces of the original remain intact is sometimes as important as naming what changes.
 - **Scope of impact** — does this affect other pages that consume the enhanced feature? Does it change URLs that other content links to?
 - **Copy changes** — if copy is being updated, is the new copy verbatim or to be drafted?
+- **Pricing or services content** — if the enhancement touches pricing or case studies, does the change comply with the public/private boundary in `alphabyte-services/pricing.md`? If a new claim is being made about a client, has it been approved?
 
-### 5. Write the enhancement PRD
+### 6. Write the enhancement PRD
 
-Write to `prds/enhance-<kebab-case-slug>.md`. The slug should describe the enhancement, not just name the feature — good slugs read like task names. Examples: `enhance-site-header-mobile-menu.md`, `enhance-homepage-hero-copy.md`, `enhance-pricing-annual-toggle.md`.
+Write to `prds/enhance-<kebab-case-slug>.md`. The slug should describe the *enhancement*, not just name the feature — good slugs read like task names. Examples: `enhance-site-header-mobile-menu.md`, `enhance-homepage-hero-two-button-cta.md`, `enhance-pricing-annual-toggle.md`.
 
 If the file already exists, ask before overwriting.
 
@@ -121,7 +153,7 @@ Use **exactly** this structure. Every section is mandatory. If a section genuine
 ## Search Intent & SEO
 <If the enhancement doesn't affect metadata, URLs, structured data, or indexable content, write "N/A (no SEO impact — enhancement does not touch metadata, URLs, or indexable content)".
 
-If it DOES affect SEO (adding a new route, changing a URL, changing meta title/description, adding structured data), fill in only the subfields that are changing. Explicitly note what's changing vs. inheriting.>
+If it DOES affect SEO, fill in only the subfields that are changing. Explicitly note what's changing vs. inheriting.>
 - **Target query:** <or "Inherits from original">
 - **URL slug:** <or "Unchanged">
 - **Meta title:** <or "Unchanged">
@@ -139,7 +171,7 @@ If it DOES affect SEO (adding a new route, changing a URL, changing meta title/d
 <Mandatory. Assess downstream effects of this enhancement. What else changes because of this? Even refinements can have impact (e.g., a copy change affects OG image, sitemap lastModified, etc.).>
 
 ### Affected pages or components
-<Bullet list of other files/pages impacted by this change, or "None beyond the modifying list above". Be specific — "pages that link to /services/ will continue to work" is not useful; "all pages referencing the old /ai-services/ URL must update their links" is.>
+<Bullet list of other files/pages impacted by this change, or "None beyond the modifying list above". Be specific.>
 - <bullet or "None">
 
 ### URL or routing changes
@@ -156,7 +188,8 @@ If it DOES affect SEO (adding a new route, changing a URL, changing meta title/d
 - Negative criteria / guardrails (e.g., "original feature behavior preserved for cases not covered by this enhancement")
 - For any enhancement that touches metadata or adds routes: "Passes seo/page-checklist.md for affected pages"
 - For any enhancement with copy: "Copy passes alphabyte-brand/voice-and-tone.md checks"
-- For any enhancement with visual changes: "Visuals pass alphabyte-brand/component-rules.md review">
+- For any enhancement with visual changes: "Visuals pass alphabyte-brand/component-rules.md review"
+- For any enhancement touching services/pricing/case studies: "Passes alphabyte-services hard rules — no rate card, no competitor names, no hours-as-effort, exact track and offering names">
 - [ ] <criterion>
 - [ ] <criterion>
 
@@ -173,7 +206,7 @@ If it DOES affect SEO (adding a new route, changing a URL, changing meta title/d
 *Last updated: YYYY-MM-DD*
 ```
 
-### 6. Field rules
+### 7. Field rules
 
 - **Status** — exactly one of: `Draft`, `Ready to implement`, `In progress`, `Shipped`. On first write, Status is `Draft` if there are blocking Open Questions, or `Ready to implement` otherwise.
 - **Type** — exactly one of: `Evolution`, `Refinement`. If ambiguous, pick Evolution.
@@ -184,11 +217,13 @@ If it DOES affect SEO (adding a new route, changing a URL, changing meta title/d
 - **Decided** — at least one bullet if Status is `Ready to implement`. If everything is TBD or inherited, either the enhancement is trivial (question whether it needs a PRD at all) or it's a Draft.
 - **In scope / Out of scope** — both subsections mandatory. Out of scope must have at least one bullet.
 - **Pages & Components** — both subsections mandatory; one or both may be "None" but both sections must appear.
+- **Pricing in copy** — any price referenced in Verbatim copy must be a range or "starting at" anchor (per `alphabyte-services/pricing.md`). Never a per-hour rate. Never effort in hours.
+- **Track and offering names** — must be exact: Discovery, Data Readiness, Enablement, Infrastructure (the four tracks); Executive Productivity Suite, Team Citizen Dev Enablement, Strategy Sprint, Executive Quick Win, Sprawl Fix, Intelligent Enterprise (signature offerings). No paraphrasing in Decided or Verbatim copy.
 - **Impact** — all three subsections (Affected pages, URL/routing changes, Content backfill) mandatory. `None` is valid; omission is not. Even Refinements deserve explicit impact assessment.
 - **Acceptance Criteria** — checkbox list, each criterion observable. Include preservation-of-unchanged-behavior as a guardrail: "Parts of the feature not covered by this enhancement behave identically to before."
 - **Dates** — today's date in YYYY-MM-DD format. Created and Last updated match on first write.
 
-### 7. Report
+### 8. Report
 
 Output in this order:
 
@@ -205,12 +240,14 @@ Output in this order:
 
 ## Constraints
 
+- **Both inputs are mandatory.** If either the PRD path or the description is missing, the command stops and asks. Do not proceed on partial input.
 - **Every section is mandatory.** Repeatable output requires a consistent shape. `None` or `N/A` is valid; omission is not.
 - **Do not implement anything.** This command produces a document, not code.
 - **Do not duplicate content from the original PRD.** Anything not listed in Changing or Decided inherits from the original. The enhancement PRD is a delta document, not a replacement.
 - **Do not promote this to a new feature PRD.** If the "enhancement" is actually a full rewrite or a net-new capability unrelated to the original, use `/feature` instead. The test: if most of the original PRD's decisions are being overridden, it's not an enhancement.
 - **Do not skip Impact assessment.** Even Refinements have impact (at minimum: sitemap lastModified updates, potential OG image regeneration). The section can say "None" in its subsections but must appear.
 - **Voice checks apply to the PRD itself.** Motivation, Summary, and any drafted copy must pass voice-and-tone.md forbidden-vocabulary checks.
+- **Confidentiality applies to the PRD itself.** Do not list per-role hourly rates, after-hours multipliers, or effort-in-hours in any section. The PRD is checked into the repo and reviewed; treat its content as if it could become public. Use weeks for timelines, ranges for prices.
 
 ## Lifecycle notes
 
