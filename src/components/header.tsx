@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation, type NavItem } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
@@ -70,16 +70,14 @@ function DesktopDropdown({
         if (!ref.current?.contains(e.relatedTarget as Node)) setOpen(false);
       }}
     >
-      <button
+      <Link
+        href={item.href}
         className={cn(
           "flex items-center gap-1 px-4 min-h-[44px] text-body-sm font-medium transition-colors",
           active || open
             ? "text-alphabyte-blue"
             : "text-foreground hover:text-alphabyte-blue",
         )}
-        aria-haspopup="true"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
         onKeyDown={(e) => {
           if (e.key === "Escape" && open) {
             setOpen(false);
@@ -88,7 +86,7 @@ function DesktopDropdown({
         }}
       >
         {item.label}
-      </button>
+      </Link>
 
       <AnimatePresence>
         {open && (
@@ -162,17 +160,31 @@ function MobileSection({
 
   return (
     <li>
-      <button
-        className={cn(
-          "flex w-full items-center justify-between px-3 py-3 text-body font-medium min-h-[44px] transition-colors",
-          active ? "text-alphabyte-blue" : "text-foreground",
-        )}
-        aria-expanded={expanded}
-        aria-haspopup="true"
-        onClick={() => setExpanded((v) => !v)}
-      >
-        {item.label}
-      </button>
+      <div className="flex items-center">
+        <Link
+          href={item.href}
+          onClick={onNavigate}
+          className={cn(
+            "flex flex-1 items-center px-3 py-3 text-body font-medium min-h-[44px] transition-colors",
+            active ? "text-alphabyte-blue" : "text-foreground",
+          )}
+        >
+          {item.label}
+        </Link>
+        <button
+          className="flex items-center justify-center min-w-[44px] min-h-[44px] text-muted-foreground transition-colors hover:text-foreground"
+          aria-expanded={expanded}
+          aria-label={`Show ${item.label} submenu`}
+          onClick={() => setExpanded((v) => !v)}
+        >
+          <ChevronDown
+            className={cn(
+              "h-4 w-4 transition-transform duration-200",
+              expanded && "rotate-180",
+            )}
+          />
+        </button>
+      </div>
 
       {expanded && (
         <ul className="pl-4 pb-2">
