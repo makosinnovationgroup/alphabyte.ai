@@ -243,7 +243,7 @@ export function Header() {
         Skip to content
       </a>
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-3">
         <Wordmark />
 
         {/* Desktop nav */}

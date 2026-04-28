@@ -16,7 +16,7 @@ const ourWorkNav = navigation.find((item) => item.label === "Our Work");
 export function Footer() {
   return (
     <footer className="bg-canvas border-t border-border-default">
-      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-[1600px] px-6 py-16 md:py-24">
         {/* Wordmark */}
         <div className="mb-10">
           <Link
