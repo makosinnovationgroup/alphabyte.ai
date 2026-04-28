@@ -7,7 +7,7 @@ const clients = [
 export function ActiveDelivery() {
   return (
     <section className="bg-alphabyte-grey px-6 py-8 md:py-10">
-      <div className="mx-auto max-w-[1400px] flex flex-wrap items-center gap-4">
+      <div className="mx-auto max-w-[1440px] flex flex-wrap items-center gap-4">
         <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
           Currently in Active Delivery for
         </p>

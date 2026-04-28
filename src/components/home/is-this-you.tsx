@@ -8,7 +8,7 @@ const scenarios = [
 export function IsThisYou() {
   return (
     <section className="bg-canvas px-6 py-10 md:py-14">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="flex items-center gap-3 mb-10">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             Is This You?
