@@ -7,7 +7,7 @@ argument-hint: <logical-name>
 
 Renders a live page in a headless browser, captures a full-page screenshot at desktop viewport, extracts structural and SEO data, and compares the result against:
 
-1. The rasterized PDF page from `design/Alphabyte_AI_Site_V6.pdf` (visual + copy + structure)
+1. The rasterized PDF page from `design/Alphabyte_AI_Site_V7.pdf` (visual + copy + structure)
 2. The `seo` skill's `page-checklist.md` rules (metadata, structured data, indexability)
 
 Produces a findings report at `qa-reports/qa-<logical-name>-<timestamp>.md` with three severity levels: Blocker, Significant, Cosmetic.
@@ -26,7 +26,7 @@ Example: `/qa homepage`
 
 - `pnpm dev` running on `localhost:3000`. The command does not start the dev server. If `localhost:3000` is unreachable, abort and tell the user to start it.
 - Playwright installed in the project (`pnpm add -D playwright` if not present).
-- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V6.pdf` present at project root.
+- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V7.pdf` present at project root.
 - `pdftoppm` available (poppler-utils).
 - `.claude/skills/seo/page-checklist.md` present (used as the SEO compliance source of truth).
 
@@ -52,7 +52,7 @@ If pdf-page is `(missing)`, abort. There is nothing to compare against.
 Look for `/tmp/page-<logical-name>-<n>.png` (the file produced by `/page`). If absent, regenerate it:
 
 ```
-pdftoppm -r 200 -f <pdf-page> -l <pdf-page> -png design/Alphabyte_AI_Site_V6.pdf /tmp/page-<logical-name>
+pdftoppm -r 200 -f <pdf-page> -l <pdf-page> -png design/Alphabyte_AI_Site_V7.pdf /tmp/page-<logical-name>
 ```
 
 This is the **reference image** for visual comparison.

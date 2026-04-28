@@ -63,7 +63,7 @@ const homeTracks: Track[] = [
     body: "Most AI projects fail because nobody validated the data underneath before the build started. Data quality audit, governance assessment, AI readiness scorecard, and a remediation pathway.",
     rightForYou:
       "You are in a regulated industry and data compliance is a hard prerequisite to any AI deployment.",
-    cta: { label: "Get started \u2192", href: "/services/data/" },
+    cta: { label: "Get started \u2192", href: "/services/data-readiness/" },
     pills: [
       "Data quality audit",
       "Governance assessment",

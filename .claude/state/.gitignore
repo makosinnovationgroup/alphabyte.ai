@@ -1,0 +1,3 @@
+# Pipeline state files - regenerated per /page run, never committed
+*.json
+!.gitkeep

@@ -21,14 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/services/data/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/services/data-readiness/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/services/enablement/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/services/executive-enablement/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
