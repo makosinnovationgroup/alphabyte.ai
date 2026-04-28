@@ -25,7 +25,7 @@ const proofPoints: ProofPoint[] = [
 export function ProofPoints() {
   return (
     <section className="bg-alphabyte-grey px-6 py-16 md:py-24">
-      <div>
+      <div className="mx-auto max-w-[1400px]">
         <div className="flex items-center gap-3 mb-10">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue whitespace-nowrap">
             Proof — What We Built. What It Produced
