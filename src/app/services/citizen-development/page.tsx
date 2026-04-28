@@ -90,7 +90,7 @@ export default function CitizenDevelopmentPage() {
           { label: "Services", href: "/services/" },
           { label: "Citizen Development" },
         ]}
-        eyebrow="Services \u00b7 Flagship Offering"
+        eyebrow="Services · Flagship Offering"
         h1="Citizen Development"
         subhead="Every employee, now an AI developer."
         body={[
