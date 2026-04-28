@@ -25,16 +25,16 @@ export function Hero() {
             </h1>
 
             <div className="space-y-4 mb-10 max-w-[60ch]">
-              <p className="text-body text-foreground">
+              <p className="text-lg text-foreground">
                 The models are ready. The tools are here. The window to get ahead
                 of your competition is open right now — and it is not going to
                 stay open.
               </p>
-              <p className="text-body text-foreground">
+              <p className="text-lg text-foreground">
                 Our flagship offering is Citizen Developer Enablement. Every
                 employee, now an AI developer.
               </p>
-              <p className="text-body text-foreground">
+              <p className="text-lg text-foreground">
                 We are not a generalist AI consultancy. Claude is our entire
                 practice — not a competency we added to a service menu.
               </p>
