@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { DiscoveryCallButton } from "@/components/discovery-call-button";
+import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
   title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
@@ -77,7 +76,7 @@ const breadcrumbSchema = {
 
 export default function InfrastructurePage() {
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -85,77 +84,95 @@ export default function InfrastructurePage() {
         }}
       />
 
-      <nav aria-label="Breadcrumb" className="bg-canvas px-6 pt-8">
-        <ol className="mx-auto flex max-w-7xl items-center gap-2 text-body-sm text-muted-foreground">
-          <li>
-            <Link
-              href="/"
-              className="transition-colors hover:text-alphabyte-blue"
-            >
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link
-              href="/services/"
-              className="transition-colors hover:text-alphabyte-blue"
-            >
-              Services
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li className="text-foreground">Infrastructure</li>
-        </ol>
-      </nav>
-
-      <section className="bg-canvas px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-6">
-              Track 04 &middot; Infrastructure
-            </p>
-            <h1 className="text-display font-sans tracking-brand-tight mb-4">
-              Infrastructure
-            </h1>
-            <p className="text-headline tracking-brand-snug text-muted-foreground mb-6">
-              How do our systems use AI?
-            </p>
-            <p className="text-body text-foreground max-w-[55ch] mb-10">
-              Custom MCP servers, autonomous agents, on-premise LLM
-              deployments, fine-tuned models. Where AI stops being a
-              productivity tool and becomes operational infrastructure.
-            </p>
-            <div className="flex flex-wrap items-center gap-6">
-              <DiscoveryCallButton variant="dark" size="lg">
-                Book a Discovery Call
-              </DiscoveryCallButton>
-              <Link
-                href="/services/"
-                className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-              >
-                &larr; Back to all services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-canvas px-6 py-16 md:py-24 border-t border-border-default">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground mb-4">
-              Coming Soon
-            </p>
-            <p className="text-body text-muted-foreground max-w-[55ch]">
-              The full Infrastructure page is in development. It will cover
-              custom MCP servers, AI agents, on-premise LLM deployment, and
-              fine-tuned model work. To talk through whether this track fits
-              your situation, book a Discovery Call or get in touch.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+      <ServicePage
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services/" },
+          { label: "Infrastructure" },
+        ]}
+        eyebrow="Services \u00b7 Infrastructure"
+        h1="Infrastructure"
+        subhead="How do our systems use AI?"
+        body={[
+          "Your team is enabled. Your data is validated. The question now is how your systems work with AI \u2014 not just your people.",
+          "Infrastructure is where Claude stops being a productivity tool on someone\u2019s laptop and starts being an operational capability connected to the systems that actually run your business.",
+          "Custom MCP servers \u2014 the connective tissue between Claude and your internal systems. Autonomous agents. On-premise LLMs. Fine-tuned models. Built in production, not in demos.",
+        ]}
+        primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
+        secondaryCta={{ label: "Back to all services", href: "/services/" }}
+        stats={[
+          {
+            value: "OAuth 2.0",
+            label: "Security standard on every MCP server we deploy",
+          },
+          {
+            value: "Full audit",
+            label: "Every tool invocation logged and traceable",
+          },
+          {
+            value: "Production",
+            label:
+              "All agents built to production engineering standards \u2014 not demos",
+          },
+        ]}
+        thirtyDays={{
+          weeks: [
+            {
+              label: "Week 1",
+              body: "Requirements and architecture \u2014 we define the systems Claude needs to connect to, the data access patterns, the security and governance requirements, and the right build sequence.",
+            },
+            {
+              label: "Weeks 2 to 3",
+              body: "Build \u2014 custom MCP server development, security configuration, tool and API integration. Agent development begins in parallel for clients pursuing that track.",
+            },
+            {
+              label: "Week 4",
+              body: "Integration testing, production deployment, knowledge transfer. Your team leaves with full technical documentation and the capability to extend what we built.",
+            },
+          ],
+          dayThirty: {
+            label: "Day 30 \u2014 what you have",
+            body: "Claude connected to your live operational systems through a production-grade MCP server. Full audit logging, OAuth 2.0 security, governed access. Your team using Claude against real data, not exports.",
+          },
+        }}
+        deliverables={[
+          {
+            icon: "\ud83d\udd27",
+            title: "Custom MCP servers",
+            body: "Model Context Protocol servers connecting Claude to your internal databases, APIs, CRM, ERP, data warehouses, and proprietary systems. Governed, auditable, real-time access \u2014 with OAuth 2.0, role-based access controls, and full audit logging.",
+          },
+          {
+            icon: "\ud83e\udd16",
+            title: "Custom AI agents",
+            body: "Purpose-built systems executing defined operational workflows end-to-end. Each agent connects through MCP, operates in an isolated cloud sandbox, and routes through human-in-the-loop approval gates at the decision points your team has defined.",
+          },
+          {
+            icon: "\ud83d\udcca",
+            title: "Agent Command Centre",
+            body: "Our observatory dashboard for the full agent estate. Real-time visibility into what every agent is doing, waiting on, completing, and flagging. Your team stays in control without inspecting logs.",
+          },
+          {
+            icon: "\ud83c\udfe2",
+            title: "On-premise LLM deployment",
+            body: "Llama, Mistral, and other capable open-source models deployed on your own infrastructure. For clients where cloud AI is ruled out by data sovereignty requirements, security classifications, or regulatory mandate.",
+          },
+          {
+            icon: "\ud83e\udde0",
+            title: "Fine-tuned custom LLMs",
+            body: "A domain-specific model trained on your proprietary data \u2014 your terminology, your document structure, your institutional knowledge \u2014 for use cases that require depth a general-purpose model cannot provide.",
+          },
+        ]}
+        rightForYou={[
+          "Your team is enabled and data is validated \u2014 ready to connect AI to live operational systems.",
+          "You have validated workflows through enablement that are worth automating end-to-end.",
+          "Data sovereignty or security policy rules out cloud AI for your environment.",
+        ]}
+        notRightForYou={[
+          "Your team is not yet using Claude consistently \u2014 infrastructure built before enablement produces systems nobody uses.",
+          "Your data foundation has not been validated \u2014 we enforce Data Readiness before any integration or agent work begins.",
+        ]}
+        timeline="4 to 36 weeks depending on scope"
+      />
+    </>
   );
 }
