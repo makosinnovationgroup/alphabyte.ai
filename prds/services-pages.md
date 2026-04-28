@@ -254,6 +254,7 @@ None — all copy is specified above.
 - [ ] No "Not Sure Where to Start" section ships — explicitly deferred
 
 ## Related
+- `prds/enhance-services-index-v6.md` — V6 redesign of the services index (decision table replaces tabbed layout)
 - `prds/homepage.md` — homepage PRD (uses the same `TrackTabs` component)
 - `prds/site-header.md` — header PRD (Services nav items link to these routes)
 - `prds/site-footer.md` — footer PRD (Services column links to these routes)

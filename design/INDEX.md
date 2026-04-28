@@ -13,10 +13,9 @@ Source: `design/Alphabyte_AI_Site_V6.pdf` (19 pages). Open Questions referenced 
 | Logical name | Action | PDF page | Route | Original PRD path | Notes |
 |---|---|---|---|---|---|
 | `homepage` | enhance | 1 | `/` | `/` | New tabs, "Currently in active delivery for" strip, "Is this you?" grid, three proof cards, closing CTA. |
-| `services-index` | enhance | 2 | `/services` | `/services` | Replace existing index with the "Where do you start?" decision table. Note OQ8 re duplication of services across home and index. |
-| `service-enablement` | new | 3 | `/services/enablement` | (none) | Combined Citizen Dev + Executive Enablement landing. Conditional on OQ2. Do not dispatch until OQ2 resolves. |
-| `service-citizen-development` | replace | 4 | `/services/citizen-development` | `/citizen-dev` (top-nav, retired) | Standalone Citizen Development page. Add redirect from old top-nav slug per `_redirects`. Conditional on OQ2 if combined Enablement page is preferred instead. |
-| `service-executive-enablement` | enhance | 3 (right column) | `/services/executive-enablement` | `/services/executive-enablement` | Pulls right-column copy from PDF page 3. No standalone PDF page. Conditional on OQ2. |
+| `services-index` | enhance | 2 | `/services` | `/services` | Replace existing index with the "Where do you start?" decision table. |
+| `service-enablement` | new | 3 | `/services/enablement` | (none) | Combined Citizen Developer Enablement + Executive Enablement page. Two-column layout per PDF page 3. |
+| `service-citizen-development` | replace | 4 | `/services/citizen-development` | `/citizen-dev` (top-nav, retired) | Standalone Citizen Development page. Add redirect from old top-nav slug per `_redirects`. |
 | `service-discovery` | enhance | 5 | `/services/discovery` | `/services/discovery` | Replace stub with PDF page 5. |
 | `service-data-readiness` | enhance | 6 | `/services/data-readiness` | `/services/data-readiness` | Replace stub with PDF page 6. |
 | `service-infrastructure` | enhance | 7 | `/services/infrastructure` | `/services/infrastructure` | Replace stub with PDF page 7. |
@@ -40,9 +39,9 @@ Source: `design/Alphabyte_AI_Site_V6.pdf` (19 pages). Open Questions referenced 
 
 After Phase 1 foundation lands (see `phase-1-foundation-prompt.md`), invoke pages roughly in this order:
 
-1. Open Question resolution where blocking (OQ2 for Citizen Dev / Enablement, OQ3 for Tools index, OQ5 for Housing Services Corp, OQ6 for redirects).
+1. Open Question resolution where blocking (OQ3 for Tools index, OQ5 for Housing Services Corp, OQ4 for blog post template).
 2. `homepage` (everything routes from here).
-3. `services-index`, then each service detail.
+3. `services-index`, then each service detail (5 services: Enablement, Citizen Development, Discovery, Data Readiness, Infrastructure).
 4. `tools-index` (after OQ3), then each tool detail.
 5. `our-work-index`, then case studies.
 6. `team-index`, then `team-adam-nameh`.
