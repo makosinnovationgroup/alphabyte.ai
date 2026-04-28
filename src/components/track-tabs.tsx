@@ -78,7 +78,7 @@ export function TrackTabs({ tracks }: { tracks: Track[] }) {
         {/* Full-height vertical divider */}
         <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-border-default" />
 
-        <div className="mx-auto grid max-w-[1370px] gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-body italic text-muted-foreground mb-4">
               &ldquo;{track.question}&rdquo;
