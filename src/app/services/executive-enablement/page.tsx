@@ -132,7 +132,7 @@ export default function ExecutiveEnablementPage() {
             },
           ],
           dayThirty: {
-            label: "Day 30",
+            label: "Day 30 \u2014 what you have",
             body: "A live Claude environment used by your entire leadership team, built from your actual operational data, with measurable productivity gains visible in the first sprint. The internal proof point that makes the broader programme significantly easier to resource.",
           },
         }}
