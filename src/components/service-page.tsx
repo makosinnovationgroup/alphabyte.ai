@@ -63,7 +63,7 @@ export function ServicePage({
   return (
     <main>
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="bg-canvas px-6 pt-6 md:px-10 lg:px-16">
+      <nav aria-label="Breadcrumb" className="border-b border-border-default bg-canvas px-6 py-4 md:px-10 lg:px-16">
         <ol className="mx-auto flex max-w-7xl items-center gap-2 text-body-sm">
           {breadcrumb.map((item, i) => {
             const isLast = i === breadcrumb.length - 1;
