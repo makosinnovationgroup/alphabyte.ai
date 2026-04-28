@@ -15,7 +15,7 @@ export function Hero() {
         <div className="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-start">
           {/* Left column */}
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
               &#9733; Claude Partner &middot; Canadian mid-market
             </span>
 
