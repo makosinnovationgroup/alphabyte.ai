@@ -3,7 +3,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export function ClosingCta() {
   return (
     <section className="bg-canvas px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-[1340px] text-center">
+      <div className="mx-auto max-w-[1370px] text-center">
         <h2 className="text-headline tracking-brand-snug mb-4 mx-auto max-w-[40ch]">
           The window is open. Let&rsquo;s find out if there is an engagement
           worth having.
