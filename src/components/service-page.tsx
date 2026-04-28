@@ -64,7 +64,7 @@ export function ServicePage({
     <main>
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="border-b border-border-default bg-canvas px-6 py-4 md:px-10 lg:px-16">
-        <ol className="mx-auto flex max-w-[1440px] items-center gap-2 text-body-sm">
+        <ol className="mx-auto flex items-center gap-2 text-body-sm">
           {breadcrumb.map((item, i) => {
             const isLast = i === breadcrumb.length - 1;
             return (
@@ -94,7 +94,7 @@ export function ServicePage({
 
       {/* 1. Hero */}
       <section className="px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             {eyebrow}
           </p>
@@ -156,7 +156,7 @@ export function ServicePage({
 
       {/* 4. 30-days box */}
       <section className="px-6 py-12 md:px-10 md:py-16 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <div className="rounded-md border border-border-default bg-alphabyte-grey/50 p-6 md:p-10">
             <h2 className="mb-6 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue md:mb-8">
               What the first 30 days look like
@@ -188,7 +188,7 @@ export function ServicePage({
 
       {/* 5. Deliverables */}
       <section className="px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <div className="flex items-center gap-4">
             <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
               What we deliver
@@ -217,7 +217,7 @@ export function ServicePage({
 
       {/* 6. Right / Not-right panels */}
       <section className="bg-alphabyte-grey/50 px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             {/* Right for you */}
             <div>

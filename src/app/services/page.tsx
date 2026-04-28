@@ -73,7 +73,7 @@ export default function ServicesPage() {
     <main>
       {/* Hero */}
       <section className="bg-canvas px-6 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <div className="max-w-3xl">
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-6">
               Our Services
@@ -100,7 +100,7 @@ export default function ServicesPage() {
 
       {/* Decision table */}
       <section className="bg-canvas px-6 py-10 md:py-14">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue whitespace-nowrap">
               Where Do You Start?
@@ -164,7 +164,7 @@ export default function ServicesPage() {
 
       {/* Closing CTA */}
       <section className="bg-alphabyte-grey border-t border-border-default px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-[1440px] text-center">
+        <div className="text-center">
           <h2 className="text-headline tracking-brand-snug text-foreground mb-4">
             Not sure which fits?
           </h2>

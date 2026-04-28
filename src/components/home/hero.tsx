@@ -11,7 +11,7 @@ const stats = [
 export function Hero() {
   return (
     <section className="bg-canvas px-6 py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto">
         <div className="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-start">
           {/* Left column */}
           <div className="max-w-3xl">
