@@ -3,26 +3,11 @@ export interface FooterLink {
   href: string;
 }
 
-export interface FooterSocialLink extends FooterLink {
-  icon: "linkedin" | "bluesky";
-}
-
 export const companyLinks: FooterLink[] = [
   { label: "About", href: "/about/" },
-  { label: "Contact", href: "/contact/" },
-];
-
-export const socialLinks: FooterSocialLink[] = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/company/alphabyte-solutions-inc",
-    icon: "linkedin",
-  },
-  {
-    label: "Bluesky",
-    href: "https://bsky.app/profile/alphabytesolutions.bsky.social",
-    icon: "bluesky",
-  },
+  { label: "Team", href: "/team/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Contact Us", href: "/contact/" },
 ];
 
 export const legalLinks: FooterLink[] = [
@@ -31,7 +16,15 @@ export const legalLinks: FooterLink[] = [
   { label: "Cookies Policy", href: "/cookies/" },
 ];
 
-export const address = {
-  street: "155 Winges Road",
-  city: "Vaughan, ON",
+export const contact = {
+  address: {
+    line1: "155 Winges Road, Unit 1",
+    line2: "Vaughan, Ontario, Canada L4L 6C7",
+  },
+  email: "hello@alphabyte.ai",
+  phone: "+1 (647) 204-4581",
+  linkedin: {
+    label: "Alphabyte AI on LinkedIn",
+    href: "https://www.linkedin.com/company/alphabyte-solutions-inc",
+  },
 };

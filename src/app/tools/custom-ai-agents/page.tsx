@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
   title: "Custom AI Agents — Autonomous Workflows with HITL Gates",
@@ -127,11 +127,9 @@ export default function CustomAiAgentsPage() {
               require it.
             </p>
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="dark" size="lg" asChild>
-                <Link href="/services/discovery/">
-                  Book a Strategy Sprint
-                </Link>
-              </Button>
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
               <Link
                 href="/tools/"
                 className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
@@ -153,7 +151,7 @@ export default function CustomAiAgentsPage() {
               This tool has a fuller page in development. Workflow automation,
               the Command Centre dashboard, HITL gate architecture, and CI/CD
               pipeline integration &mdash; all covered in depth. To talk through
-              how custom agents fit your engagement, book a Strategy Sprint or
+              how custom agents fit your engagement, book a Discovery Call or
               get in touch.
             </p>
           </div>

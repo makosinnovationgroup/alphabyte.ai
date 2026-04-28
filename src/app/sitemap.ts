@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://alphabyte.ai/",
-      lastModified: new Date("2026-04-27"),
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -69,26 +69,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/case-studies/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/our-work/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://alphabyte.ai/case-studies/sprinklermatic/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/our-work/sprinklermatic/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/case-studies/recirq/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/our-work/recirq/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/case-studies/hsc/",
-      lastModified: new Date("2026-04-27"),
+      url: "https://alphabyte.ai/our-work/housing-services-corp/",
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },

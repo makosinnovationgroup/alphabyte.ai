@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
   title: "Enablement \u2014 Executive AI & Citizen Dev Programs",
@@ -127,11 +127,9 @@ export default function EnablementPage() {
               in most engagements.
             </p>
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="dark" size="lg" asChild>
-                <Link href="/services/discovery/">
-                  Book a Strategy Sprint
-                </Link>
-              </Button>
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
               <Link
                 href="/services/"
                 className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
@@ -153,7 +151,7 @@ export default function EnablementPage() {
               The full Enablement page is in development. It will cover the
               Executive Productivity Suite, Team Citizen Dev Enablement tiers,
               and what deployment looks like in practice. To talk through
-              whether this track fits your situation, book a Strategy Sprint or
+              whether this track fits your situation, book a Discovery Call or
               get in touch.
             </p>
           </div>

@@ -1,36 +1,73 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
+
+const stats = [
+  { value: "10×", label: "Workforce output multiplier from governed citizen dev" },
+  { value: "2 wks", label: "Fastest time to a live Claude environment" },
+  { value: "3", label: "Active North American deployments in delivery today" },
+];
 
 export function Hero() {
   return (
-    <section className="bg-canvas px-6 py-24 md:py-32 lg:py-40">
+    <section className="bg-canvas px-6 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
-            &#9733; Claude Partner &middot; Canadian mid-market AI
-          </span>
+        <div className="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-start">
+          {/* Left column */}
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
+              &#9733; Claude Partner &middot; Canadian mid-market
+            </span>
 
-          <h1 className="text-display font-sans tracking-brand-tight mb-6">
-            AI that <span className="text-alphabyte-blue">compounds</span>. Not
-            pilots that stall.
-          </h1>
+            <h1 className="text-display font-sans tracking-brand-tight mb-6">
+              AI that <span className="text-alphabyte-blue">compounds</span>. Not
+              pilots that stall.
+            </h1>
 
-          <p className="text-body text-foreground max-w-[60ch] mb-10">
-            Alphabyte AI designs and delivers working AI for mid-market
-            organizations across Canada. Four tracks. Real deployments. No
-            junior bench.
-          </p>
+            <div className="space-y-4 mb-10 max-w-[60ch]">
+              <p className="text-body text-foreground">
+                The models are ready. The tools are here. The window to get ahead
+                of your competition is open right now — and it is not going to
+                stay open.
+              </p>
+              <p className="text-body text-foreground">
+                Our flagship offering is Citizen Developer Enablement. Every
+                employee, now an AI developer.
+              </p>
+              <p className="text-body text-foreground">
+                We are not a generalist AI consultancy. Claude is our entire
+                practice — not a competency we added to a service menu.
+              </p>
+            </div>
 
-          <div className="flex flex-wrap items-center gap-6">
-            <Button variant="dark" size="lg" asChild>
-              <Link href="/services/discovery/">Book a Strategy Sprint</Link>
-            </Button>
-            <Link
-              href="/services/"
-              className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-            >
-              See our services &rarr;
-            </Link>
+            <div className="flex flex-wrap items-center gap-6">
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
+              <a
+                href="#tracks"
+                className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
+              >
+                See How it Works &rarr;
+              </a>
+            </div>
+          </div>
+
+          {/* Right column — stats */}
+          <div className="flex flex-row gap-4 lg:flex-col lg:gap-4 lg:pt-16">
+            {stats.map((stat) => (
+              <div
+                key={stat.value}
+                className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
+              >
+                <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue">
+                  {stat.value}
+                </p>
+                <p className="text-body-sm text-muted-foreground mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

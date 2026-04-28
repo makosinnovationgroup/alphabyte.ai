@@ -1,11 +1,15 @@
-const clients = ["Sprinklermatic", "RecirQ", "Housing Services Corp."];
+const clients = [
+  "Sprinklermatic / EJ Capital",
+  "RecirQ / Reventory",
+  "Housing Services Corp.",
+];
 
-export function TrustedBy() {
+export function ActiveDelivery() {
   return (
-    <section className="bg-canvas border-t border-border-default px-6 py-8 md:py-10">
+    <section className="bg-alphabyte-grey px-6 py-8 md:py-10">
       <div className="mx-auto max-w-7xl flex flex-wrap items-center gap-4">
         <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
-          Trusted By
+          Currently in Active Delivery for
         </p>
         {clients.map((name) => (
           <span

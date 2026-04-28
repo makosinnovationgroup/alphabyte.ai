@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
   title: "On-Premise LLMs — Self-Hosted AI for Data Sovereignty",
@@ -127,11 +127,9 @@ export default function OnPremiseLlmPage() {
               sovereignty or security requirements.
             </p>
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="dark" size="lg" asChild>
-                <Link href="/services/discovery/">
-                  Book a Strategy Sprint
-                </Link>
-              </Button>
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
               <Link
                 href="/tools/"
                 className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
@@ -153,7 +151,7 @@ export default function OnPremiseLlmPage() {
               This tool has a fuller page in development. Model selection,
               MLOps, data sovereignty architecture, and API access patterns
               &mdash; all covered in depth. To talk through how on-premise LLMs
-              fit your engagement, book a Strategy Sprint or get in touch.
+              fit your engagement, book a Discovery Call or get in touch.
             </p>
           </div>
         </div>

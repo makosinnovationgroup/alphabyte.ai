@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
   title: "Discovery \u2014 AI Strategy & Roadmap Consulting",
@@ -128,11 +128,9 @@ export default function DiscoveryPage() {
               recommendations.
             </p>
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="dark" size="lg" asChild>
-                <Link href="/services/discovery/">
-                  Book a Strategy Sprint
-                </Link>
-              </Button>
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
               <Link
                 href="/services/"
                 className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
@@ -154,7 +152,7 @@ export default function DiscoveryPage() {
               The full Discovery page is in development. It will cover the
               Strategy Sprint format, what the workshops look like, and how the
               roadmap deliverable works. To talk through whether Discovery fits
-              your situation, book a Strategy Sprint or get in touch.
+              your situation, book a Discovery Call or get in touch.
             </p>
           </div>
         </div>

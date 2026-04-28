@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { DiscoveryCallProvider } from "@/lib/discovery-call-context";
+import { DiscoveryCallModal } from "@/components/discovery-call-modal";
 import "./globals.css";
 
 /**
@@ -77,11 +79,14 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        <Header />
-        <div id="main-content" tabIndex={-1} className="outline-none">
-          {children}
-        </div>
-        <Footer />
+        <DiscoveryCallProvider>
+          <Header />
+          <div id="main-content" tabIndex={-1} className="outline-none">
+            {children}
+          </div>
+          <Footer />
+          <DiscoveryCallModal />
+        </DiscoveryCallProvider>
       </body>
     </html>
   );

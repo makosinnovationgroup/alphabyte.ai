@@ -148,6 +148,7 @@ None. No URLs are added, removed, or redirected. `/contact/` remains a valid rou
 
 ## Related
 - `prds/site-header.md` (the feature being enhanced)
+- `prds/enhance-v6-foundation.md` — enhancement: V6 foundation (header to 7 items, discovery call modal, footer IA update)
 - `prds/backlog/followup-ceo-brand-direction.md` — brand direction decision (resolved: Option C)
 - `.claude/skills/alphabyte-brand/component-rules.md` — Option C surface system, button hierarchy, motion tiers
 - `.claude/skills/alphabyte-brand/tokens.md` — surface tokens, CTA button colors, type hierarchy

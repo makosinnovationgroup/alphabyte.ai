@@ -8,7 +8,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation, type NavItem } from "@/lib/navigation";
-import { Button } from "@/components/ui/button";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 function isRouteActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -275,9 +275,9 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block shrink-0">
-          <Button variant="dark" size="sm" asChild>
-            <Link href="/services/discovery/">Book a Sprint</Link>
-          </Button>
+          <DiscoveryCallButton variant="dark" size="sm">
+            Book a Discovery Call
+          </DiscoveryCallButton>
         </div>
 
         {/* Mobile menu */}
@@ -366,11 +366,14 @@ export function Header() {
 
                     {/* Mobile CTA */}
                     <div className="mt-8 px-3 border-t border-border-default pt-8">
-                      <Button variant="dark" size="sm" asChild className="w-full">
-                        <Link href="/services/discovery/" onClick={() => setMobileOpen(false)}>
-                          Book a Sprint
-                        </Link>
-                      </Button>
+                      <DiscoveryCallButton
+                        variant="dark"
+                        size="sm"
+                        className="w-full"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Book a Discovery Call
+                      </DiscoveryCallButton>
                     </div>
                   </motion.div>
                 </DialogPrimitive.Content>

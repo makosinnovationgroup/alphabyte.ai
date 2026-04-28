@@ -1,7 +1,7 @@
 # Homepage
 
 ## Status
-Ready to implement
+Shipped
 
 ## Type
 New page
@@ -205,6 +205,7 @@ None — all copy is verbatim.
 - [ ] No rate card, no competitor names, no hours-as-effort in any rendered content
 
 ## Related
+- `prds/enhance-homepage-v6.md` — V6 approved copy enhancement (hero rewrite, 5 tabs, qualification grid, updated proof cards)
 - `prds/backlog/gap-homepage-placeholder-copy.md` — promoted by this PRD (placeholder copy replacement)
 - `prds/enhance-site-header-option-c.md` — header already re-themed to Option C
 - `prds/enhance-site-footer-option-c.md` — footer already re-themed to Option C
