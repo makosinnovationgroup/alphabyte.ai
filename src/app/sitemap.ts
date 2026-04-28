@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://alphabyte.ai/services/discovery/",
-      lastModified: new Date("2026-04-27"),
+      lastModified: new Date("2026-04-28"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
