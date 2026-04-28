@@ -81,9 +81,9 @@ export function ToolPage({
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
-        className="border-b border-border-default bg-canvas px-6 py-4 md:px-10 lg:px-16"
+        className="border-b border-border-default px-6 py-4 md:px-10 lg:px-16"
       >
-        <ol className="mx-auto flex max-w-7xl items-center gap-2 text-body-sm">
+        <ol className="mx-auto flex max-w-[1600px] items-center gap-2 text-body-sm">
           {breadcrumb.map((item, i) => {
             const isLast = i === breadcrumb.length - 1;
             return (
@@ -112,11 +112,11 @@ export function ToolPage({
       </nav>
 
       {/* 1. Hero */}
-      <section className="px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
+      <section className="border-b border-border-default px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
         <div
-          className={`mx-auto max-w-7xl${
+          className={`mx-auto max-w-[1600px]${
             hasSidebar
-              ? " grid grid-cols-1 gap-10 md:grid-cols-[3fr_2fr] md:gap-16"
+              ? " grid grid-cols-1 gap-10 md:grid-cols-[1fr_280px] md:gap-12"
               : ""
           }`}
         >
@@ -126,12 +126,12 @@ export function ToolPage({
               {eyebrow}
             </p>
             <h1 className="mt-3 text-display tracking-brand-tight">{h1}</h1>
-            <p className="mt-3 text-headline tracking-brand-snug text-muted-foreground">
+            <p className="mt-3 text-2xl text-muted-foreground">
               {subhead}
             </p>
             <div className="mt-6 max-w-[55ch] space-y-4">
               {body.map((paragraph, i) => (
-                <p key={i} className="text-body text-foreground">
+                <p key={i} className="text-lg text-foreground">
                   {paragraph}
                 </p>
               ))}
@@ -163,7 +163,7 @@ export function ToolPage({
           {hasSidebar && (
             <div className="flex flex-col gap-6">
               <div className="rounded-md bg-foreground p-6">
-                <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
+                <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-green">
                   ★ {partnerCard!.eyebrow}
                 </p>
                 <p className="mt-3 text-body text-white">
@@ -171,16 +171,16 @@ export function ToolPage({
                 </p>
               </div>
               {usedAcrossServices && usedAcrossServices.length > 0 && (
-                <div>
+                <div className="rounded-md border border-border-default p-6">
                   <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
                     Used across all services
                   </p>
-                  <ul className="mt-3 space-y-2">
+                  <ul className="mt-3 divide-y divide-border-default">
                     {usedAcrossServices.map((service, i) => (
-                      <li key={i}>
+                      <li key={i} className="py-2 first:pt-0 last:pb-0">
                         <Link
                           href={service.href}
-                          className="text-body text-alphabyte-blue transition-colors hover:text-foreground"
+                          className="text-body text-foreground transition-colors hover:text-alphabyte-blue"
                         >
                           {service.label}
                         </Link>
@@ -196,7 +196,7 @@ export function ToolPage({
 
       {/* 2. Deliverables */}
       <section className="px-6 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16 lg:px-16">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1600px]">
           <div className="flex items-center gap-4">
             <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
               {deliverablesSectionTitle}
@@ -205,59 +205,37 @@ export function ToolPage({
           </div>
 
           {deliverablesLayout === "grid" ? (
-            <div className="mt-8">
-              {Array.from(
-                { length: Math.ceil(deliverables.length / 2) },
-                (_, rowIdx) => {
-                  const left = deliverables[rowIdx * 2];
-                  const right = deliverables[rowIdx * 2 + 1];
-                  return (
-                    <div
-                      key={rowIdx}
-                      className={`grid grid-cols-1 gap-8 py-8 md:grid-cols-2 md:gap-16${
-                        rowIdx > 0 ? " border-t border-border-default" : ""
-                      }`}
-                    >
-                      {left && (
-                        <div className="flex gap-4">
-                          <span
-                            className="mt-0.5 shrink-0 text-2xl"
-                            aria-hidden="true"
-                          >
-                            {left.icon}
-                          </span>
-                          <div>
-                            <p className="text-body font-bold text-foreground">
-                              {left.title}
-                            </p>
-                            <p className="mt-1 text-body text-muted-foreground">
-                              {left.body}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                      {right && (
-                        <div className="flex gap-4">
-                          <span
-                            className="mt-0.5 shrink-0 text-2xl"
-                            aria-hidden="true"
-                          >
-                            {right.icon}
-                          </span>
-                          <div>
-                            <p className="text-body font-bold text-foreground">
-                              {right.title}
-                            </p>
-                            <p className="mt-1 text-body text-muted-foreground">
-                              {right.body}
-                            </p>
-                          </div>
-                        </div>
-                      )}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-[1fr_1px_1fr]" style={{ gridTemplateRows: `repeat(${Math.ceil(deliverables.length / 2)}, auto)` }}>
+              {/* Vertical divider (hidden on mobile) */}
+              <div className="col-start-2 hidden bg-border-default md:block" style={{ gridRow: `1 / ${Math.ceil(deliverables.length / 2) + 1}` }} />
+              {deliverables.map((item, i) => {
+                const isLeft = i % 2 === 0;
+                const rowIdx = Math.floor(i / 2);
+                return (
+                  <div
+                    key={i}
+                    className={isLeft ? "md:col-start-1 md:pr-12" : "md:col-start-3 md:pl-12"}
+                    style={{ gridRow: rowIdx + 1 }}
+                  >
+                    <div className={`flex gap-4 py-8 border-b border-border-default${rowIdx > 0 ? " border-t" : ""}`}>
+                      <span
+                        className="mt-0.5 shrink-0 text-2xl"
+                        aria-hidden="true"
+                      >
+                        {item.icon}
+                      </span>
+                      <div>
+                        <p className="text-body font-bold text-foreground">
+                          {item.title}
+                        </p>
+                        <p className="mt-1 text-body text-muted-foreground">
+                          {item.body}
+                        </p>
+                      </div>
                     </div>
-                  );
-                },
-              )}
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <div className="mt-8 divide-y divide-border-default">
@@ -289,22 +267,25 @@ export function ToolPage({
 
       {/* 3. In active use today */}
       {inActiveUse && inActiveUse.length > 0 && (
-        <section className="bg-foreground">
+        <section className="bg-alphabyte-grey/50">
           <div className="px-6 py-12 md:px-10 md:py-16 lg:px-16">
-            <div className="mx-auto max-w-7xl">
-              <h2 className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-                {inActiveUseSectionTitle ?? "In active use today"}
-              </h2>
+            <div className="mx-auto max-w-[1600px]">
+              <div className="flex items-center gap-4">
+                <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
+                  {inActiveUseSectionTitle ?? "In active use today"}
+                </h2>
+                <div className="h-px flex-1 bg-border-default" />
+              </div>
               <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
                 {inActiveUse.map((card, i) => (
-                  <div key={i}>
+                  <div key={i} className="rounded-lg border border-border-default bg-white p-6">
                     <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
                       {card.eyebrow}
                     </p>
-                    <p className="mt-3 text-body font-bold text-white">
+                    <p className="mt-3 text-body font-bold text-foreground">
                       {card.title}
                     </p>
-                    <p className="mt-2 text-body text-white/70">
+                    <p className="mt-2 text-body text-muted-foreground">
                       {card.body}
                     </p>
                   </div>
@@ -318,7 +299,7 @@ export function ToolPage({
       {/* 4. Right for you / Not right for you */}
       {rightForYou && notRightForYou && (
         <section className="bg-alphabyte-grey/50 px-6 py-16 md:px-10 md:py-24 lg:px-16">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1600px]">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
               <div>
                 <div className="mb-6 flex items-center gap-4">
@@ -377,7 +358,7 @@ export function ToolPage({
       {/* 5. Closing CTA */}
       {closingCta && (
         <section className="border-t border-border-default px-6 py-16 md:px-10 md:py-24 lg:px-16">
-          <div className="mx-auto max-w-7xl text-center">
+          <div className="mx-auto max-w-[1600px] text-center">
             <h2 className="text-headline tracking-brand-snug text-foreground">
               {closingCta.heading}
             </h2>
