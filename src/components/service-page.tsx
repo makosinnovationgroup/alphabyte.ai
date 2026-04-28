@@ -270,12 +270,12 @@ export function ServicePage({
 
       {/* 7. Timeline footer */}
       <section className="border-t border-border-default">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
           <div>
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
               Timeline
             </p>
-            <p className="mt-1 text-headline tracking-brand-snug text-foreground">
+            <p className="mt-1 text-body text-foreground">
               {timeline}
             </p>
           </div>
