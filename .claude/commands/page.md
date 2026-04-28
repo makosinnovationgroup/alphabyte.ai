@@ -9,6 +9,14 @@ End-to-end page build. Reads `design/INDEX.md`, looks up the logical page name, 
 
 Does not produce code itself. Always dispatches.
 
+## Critical execution rule
+
+This is a multi-step pipeline. Every step from 1 through 13 must execute in a single uninterrupted run. Sub-commands (`/feature`, `/enhancement`, `/implement`, `/qa`) returning output is NOT the end of your turn. The pipeline ends only at step 13 (clean completion) or at an explicit halt condition (Open Question, dev server down, build failure, loop cap).
+
+After ANY sub-command returns, immediately continue to the next step. Do not summarize. Do not wait for user input. Do not treat sub-command reports as a stopping point. The user has already given consent at step 5; that consent covers the entire pipeline.
+
+If you find yourself thinking "the implementation is done, I should report back" — STOP. The pipeline is not done. Continue to step 8 (QA).
+
 ## Usage
 
 ```
@@ -97,6 +105,8 @@ Pipeline:
   3. QA via /qa
   4. If blockers or significant findings: generate fix PRD, re-implement once, then halt
 
+This is a single-confirmation pipeline. After you say y, all four phases run end-to-end without further prompts unless an explicit halt condition is hit (Open Question, dev server down, build failure, loop cap reached at pass 2).
+
 Framing to be passed to <command name>:
 ---
 <full framing string from step 6>
@@ -106,6 +116,8 @@ Proceed with full pipeline? (y/n)
 ```
 
 Wait for an explicit `y` (or `yes`) before proceeding. Anything else aborts.
+
+Once `y` is received, the user will not be asked for further confirmation until the pipeline ends. All subsequent steps run in sequence without intermediate prompts.
 
 ### 6. Generate the PRD
 
@@ -143,11 +155,15 @@ The full framing passed to the downstream command is: shared preamble + blank li
 
 Invoke the downstream command exactly as the project conventions specify. Capture the path to the PRD file the command produces — `/implement` will need it.
 
+**When the downstream command returns: do NOT stop. Print "PRD generated at <path>. Proceeding to /implement..." and immediately go to step 7.**
+
 ### 7. Run /implement
 
 Once the PRD is generated, invoke `/implement` against the new PRD path. Pass the same shared preamble from step 6 in the implement context so the implementing agent also treats the PDF as source of truth.
 
 Wait for `/implement` to complete. Capture its implementation report. If `/implement` fails or reports `pnpm build` / `pnpm typecheck` errors, halt before QA and surface the failure.
+
+**When `/implement` returns successfully: do NOT stop. The implementation report is NOT the end of the pipeline. Print "Implementation complete. Proceeding to /qa..." and immediately go to step 8. Do not summarize what was built. Do not wait for user input. The user gave consent at step 5 — that consent covers QA.**
 
 ### 8. Run /qa
 
@@ -157,25 +173,17 @@ Invoke `/qa <logical-name>`.
 
 `/qa` writes a findings report at `qa-reports/qa-<logical-name>-<timestamp>.md` and prints counts of Blockers, Significant, and Cosmetic findings.
 
+**When `/qa` returns: do NOT stop. Print "QA complete. Evaluating findings..." and immediately go to step 9.**
+
 ### 9. Decide loop
 
 Read the QA report.
 
-- If `Blockers == 0` and `Significant == 0`: pipeline complete. Print the QA summary and the report path. End.
-- If `Blockers > 0` or `Significant > 0` and this is the **first pass**: continue to step 10.
-- If `Blockers > 0` or `Significant > 0` and this is the **second pass**: halt. Print:
+- If `Blockers == 0` and `Significant == 0`: pipeline complete. Print the QA summary and the report path. End. (Step 13 final summary not needed for clean first-pass — print this directly.)
+- If `Blockers > 0` or `Significant > 0` and this is the **first pass**: print "Findings detected. Generating fix PRD..." and immediately continue to step 10.
+- If `Blockers > 0` or `Significant > 0` and this is the **second pass**: halt at step 13.
 
-```
-QA loop limit reached. Findings remain after one fix attempt.
-Report: qa-reports/qa-<logical-name>-<timestamp>.md
-
-Blockers:    <count>
-Significant: <count>
-
-Review manually. Run /implement against a new PRD if needed, or escalate.
-```
-
-End. Do not loop a third time.
+Do not loop more than twice.
 
 ### 10. Generate fix PRD
 
@@ -207,13 +215,19 @@ Constraint: Use the rasterized image at /tmp/page-<logical-name>-<n>.png as sour
 
 Invoke `/enhancement` with this prompt. Capture the new PRD path.
 
+**When `/enhancement` returns: do NOT stop. Print "Fix PRD generated. Proceeding to /implement..." and immediately go to step 11.**
+
 ### 11. Run /implement on the fix PRD
 
 Invoke `/implement` against the fix PRD. Wait for completion.
 
+**When `/implement` returns: do NOT stop. Print "Fix implementation complete. Proceeding to second QA pass..." and immediately go to step 12.**
+
 ### 12. Re-run /qa
 
 Invoke `/qa <logical-name>` a second time. This produces a second findings report.
+
+**When `/qa` returns: do NOT stop. Print "Second QA pass complete. Generating final summary..." and immediately go to step 13.**
 
 ### 13. Halt with final summary
 
@@ -245,6 +259,8 @@ End.
 - Never weaken the shared preamble. The PDF-as-source-of-truth posture is the entire point of this command.
 - Never skip the Open Question check in step 3. If an OQ applies and is unresolved, halt.
 - Never skip the user confirmation in step 5. Always print the full framing in the confirmation block so the user sees what the downstream agent will receive.
+- **Never stop between steps 6 and 13 unless an explicit halt condition is met.** Sub-command output is not a halt condition. Implementation reports are not a halt condition. The pipeline runs end-to-end after the user confirms at step 5.
+- **Halt conditions** (only these stop the pipeline mid-run): unresolved Open Question (step 3), missing required file or tool (any step), `/implement` build/typecheck failure (steps 7 or 11), dev server unreachable when `/qa` runs (steps 8 or 12), QA loop reaches second pass (step 9 transitions to step 13).
 - Never loop more than twice. Hard cap. Surface findings to the user after the second pass instead of looping again.
 - Never auto-fix Cosmetic findings. They are reported, not acted on.
 - If `INDEX.md` lists `pdf-page` as `(missing)`, the page cannot be built from the PDF and `/page` must halt regardless of action type.
@@ -258,7 +274,7 @@ End.
 /page service-discovery
 ```
 
-Generates PRD, implements, runs QA, QA reports zero blockers and zero significant findings, pipeline ends. One PRD, one implementation, one QA pass.
+Generates PRD, implements, runs QA, QA reports zero blockers and zero significant findings, pipeline ends. One PRD, one implementation, one QA pass. All four phases complete in one uninterrupted run.
 
 ### Fix loop runs once
 
@@ -266,7 +282,7 @@ Generates PRD, implements, runs QA, QA reports zero blockers and zero significan
 /page homepage
 ```
 
-Generates PRD, implements, runs QA. QA finds 2 blockers and 1 significant. Generates fix PRD, re-implements, re-runs QA. Second QA reports clean. Pipeline ends with two PRDs, two implementations, two QA reports.
+Generates PRD, implements, runs QA. QA finds 2 blockers and 1 significant. Generates fix PRD, re-implements, re-runs QA. Second QA reports clean. Pipeline ends with two PRDs, two implementations, two QA reports — all in one uninterrupted run.
 
 ### Fix loop hits cap
 
