@@ -267,7 +267,7 @@ export function ToolPage({
 
       {/* 3. In active use today */}
       {inActiveUse && inActiveUse.length > 0 && (
-        <section className="bg-alphabyte-grey/50">
+        <section className="border-t border-border-default bg-alphabyte-grey/50">
           <div className="px-6 py-12 md:px-10 md:py-16 lg:px-16">
             <div className="mx-auto max-w-[1600px]">
               <div className="flex items-center gap-4">
@@ -298,7 +298,7 @@ export function ToolPage({
 
       {/* 4. Right for you / Not right for you */}
       {rightForYou && notRightForYou && (
-        <section className="bg-alphabyte-grey/50 px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <section className="border-y border-border-default bg-alphabyte-grey/50 px-6 py-16 md:px-10 md:py-24 lg:px-16">
           <div className="mx-auto max-w-[1600px]">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
               <div>
@@ -308,12 +308,12 @@ export function ToolPage({
                   </h2>
                   <div className="h-px flex-1 bg-border-default" />
                 </div>
-                <div className="rounded-md bg-emerald-50 p-6 md:p-8">
-                  <ul className="divide-y divide-emerald-200/60">
+                <div className="rounded-md border border-emerald-200 bg-emerald-50 p-6 md:p-8">
+                  <ul>
                     {rightForYou.map((item, i) => (
                       <li
                         key={i}
-                        className="flex gap-3 py-4 text-body text-foreground first:pt-0 last:pb-0"
+                        className="flex gap-3 border-b border-emerald-200/60 py-4 text-body text-foreground first:pt-0"
                       >
                         <Check
                           className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500"
@@ -333,12 +333,12 @@ export function ToolPage({
                   </h2>
                   <div className="h-px flex-1 bg-border-default" />
                 </div>
-                <div className="rounded-md bg-red-50 p-6 md:p-8">
-                  <ul className="divide-y divide-red-200/60">
+                <div className="rounded-md border border-red-200 bg-red-50 p-6 md:p-8">
+                  <ul>
                     {notRightForYou.map((item, i) => (
                       <li
                         key={i}
-                        className="flex gap-3 py-4 text-body text-foreground first:pt-0 last:pb-0"
+                        className="flex gap-3 border-b border-red-200/60 py-4 text-body text-foreground first:pt-0"
                       >
                         <X
                           className="mt-0.5 h-5 w-5 shrink-0 text-red-500"

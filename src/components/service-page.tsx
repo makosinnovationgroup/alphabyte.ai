@@ -227,10 +227,10 @@ export function ServicePage({
                 </h2>
                 <div className="h-px flex-1 bg-border-default" />
               </div>
-              <div className="rounded-md bg-emerald-50 p-6 md:p-8">
-                <ul className="divide-y divide-emerald-200/60">
+              <div className="rounded-md border border-emerald-200 bg-emerald-50 p-6 md:p-8">
+                <ul>
                   {rightForYou.map((item, i) => (
-                    <li key={i} className="flex gap-3 py-4 text-body text-foreground first:pt-0 last:pb-0">
+                    <li key={i} className="flex gap-3 border-b border-emerald-200/60 py-4 text-body text-foreground first:pt-0">
                       <Check
                         className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500"
                         aria-hidden="true"
@@ -250,10 +250,10 @@ export function ServicePage({
                 </h2>
                 <div className="h-px flex-1 bg-border-default" />
               </div>
-              <div className="rounded-md bg-red-50 p-6 md:p-8">
-                <ul className="divide-y divide-red-200/60">
+              <div className="rounded-md border border-red-200 bg-red-50 p-6 md:p-8">
+                <ul>
                   {notRightForYou.map((item, i) => (
-                    <li key={i} className="flex gap-3 py-4 text-body text-foreground first:pt-0 last:pb-0">
+                    <li key={i} className="flex gap-3 border-b border-red-200/60 py-4 text-body text-foreground first:pt-0">
                       <X
                         className="mt-0.5 h-5 w-5 shrink-0 text-red-500"
                         aria-hidden="true"
