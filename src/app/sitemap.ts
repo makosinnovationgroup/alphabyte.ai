@@ -88,8 +88,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://alphabyte.ai/our-work/recirq/",
-      lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
+      lastModified: new Date("2026-04-29"),
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
