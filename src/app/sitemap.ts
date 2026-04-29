@@ -110,5 +110,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: "https://alphabyte.ai/contact/",
+      lastModified: new Date("2026-04-29"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }
