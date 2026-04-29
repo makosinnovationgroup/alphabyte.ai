@@ -100,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://alphabyte.ai/blog/",
-      lastModified: new Date("2026-04-27"),
+      lastModified: new Date("2026-04-29"),
       changeFrequency: "weekly",
       priority: 0.6,
     },
