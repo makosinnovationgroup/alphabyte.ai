@@ -1,24 +1,18 @@
 ---
-description: Compare a built page against its PDF design source using Playwright. Composes a side-by-side image for visual diff, runs structural + SEO checks, produces a findings report classified by severity.
+description: Compare a built page against its PDF design source using Playwright. Runs visual + structural + SEO checks against the seo skill page-checklist. Produces a findings report classified by severity.
 argument-hint: <logical-name>
 ---
 
 # /qa
 
-Renders a live page in a headless browser, captures a full-page screenshot at desktop viewport, extracts structural and SEO data, **composes a side-by-side comparison image** with the PDF reference, and compares the result against:
+Renders a live page in a headless browser, captures a full-page screenshot at desktop viewport, extracts structural and SEO data, and compares the result against:
 
-1. The rasterized PDF page from `design/Alphabyte_AI_Site_V7.pdf` (visual + copy + structure)
+1. The rasterized PDF page from `design/Alphabyte_AI_Site_V8.pdf` (visual + copy + structure)
 2. The `seo` skill's `page-checklist.md` rules (metadata, structured data, indexability)
 
 Produces a findings report at `qa-reports/qa-<logical-name>-<timestamp>.md` with three severity levels: Blocker, Significant, Cosmetic.
 
 Used standalone for ad-hoc design + SEO review, or invoked automatically by `/page` after implementation.
-
-## Why side-by-side
-
-The previous version of `/qa` opened the live screenshot and the PDF reference in turn and asked the model to spot differences from memory. That's vibes-based comparison and it misses obvious layout issues (column width, container alignment, spacing rhythm).
-
-This version composes both images into a single combined image (PDF on left, live render on right, with a vertical separator) and asks the model to view that one image. Side-by-side comparison is dramatically more accurate than holding one image in memory while looking at the other.
 
 ## Usage
 
@@ -32,8 +26,7 @@ Example: `/qa homepage`
 
 - `pnpm dev` running on `localhost:3000`. The command does not start the dev server. If `localhost:3000` is unreachable, abort and tell the user to start it.
 - Playwright installed in the project (`pnpm add -D playwright` if not present).
-- `sharp` installed (`pnpm add -D sharp`) — used for image composition.
-- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V7.pdf` present at project root.
+- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V8.pdf` present at project root.
 - `pdftoppm` available (poppler-utils).
 - `.claude/skills/seo/page-checklist.md` present (used as the SEO compliance source of truth).
 
@@ -59,10 +52,10 @@ If pdf-page is `(missing)`, abort. There is nothing to compare against.
 Look for `/tmp/page-<logical-name>-<n>.png` (the file produced by `/page`). If absent, regenerate it:
 
 ```
-pdftoppm -r 200 -f <pdf-page> -l <pdf-page> -png design/Alphabyte_AI_Site_V7.pdf /tmp/page-<logical-name>
+pdftoppm -r 200 -f <pdf-page> -l <pdf-page> -png design/Alphabyte_AI_Site_V8.pdf /tmp/page-<logical-name>
 ```
 
-This is the **reference image** for comparison.
+This is the **reference image** for visual comparison.
 
 ### 4. Load the SEO checklist
 
@@ -186,129 +179,13 @@ Invoke: `node qa-reports/.scripts/capture-<logical-name>.mjs "<route>" "<logical
 
 If the script fails (network error, timeout, route 404), abort and surface the error.
 
-### 7. Compose side-by-side comparison image
+### 7. Fetch the sitemap
 
-Write a Node script to `qa-reports/.scripts/compose-<logical-name>.mjs` that uses `sharp` to:
-
-1. Read both images: the PDF rasterization (`/tmp/page-<logical-name>-<n>.png`) and the live screenshot.
-2. Resize both to the same width (1200px). Maintain aspect ratio when resizing.
-3. Pad the shorter image with white at the bottom so both have equal height.
-4. Compose them horizontally with a 20px white gutter and a 2px gray vertical line between them.
-5. Add a 60px banner above each side: "DESIGN (PDF page <pdf-page>)" on the left, "LIVE (<route>)" on the right. Banner background dark gray, text white.
-6. Save the composed image to `qa-reports/screenshots/compare-<logical-name>-<timestamp>.png`.
-
-Boilerplate:
-
-```javascript
-import sharp from 'sharp';
-import fs from 'fs';
-
-const pdfPath = process.argv[2];
-const livePath = process.argv[3];
-const outPath = process.argv[4];
-const pdfPage = process.argv[5];
-const route = process.argv[6];
-
-const TARGET_WIDTH = 1200;
-const GUTTER = 20;
-const SEPARATOR = 2;
-const BANNER_HEIGHT = 60;
-
-// Resize both to target width, keep aspect ratio
-const [pdfBuf, liveBuf] = await Promise.all([
-  sharp(pdfPath).resize({ width: TARGET_WIDTH }).png().toBuffer(),
-  sharp(livePath).resize({ width: TARGET_WIDTH }).png().toBuffer(),
-]);
-
-const pdfMeta = await sharp(pdfBuf).metadata();
-const liveMeta = await sharp(liveBuf).metadata();
-const maxHeight = Math.max(pdfMeta.height, liveMeta.height);
-
-// Pad both to same height
-const pdfPadded = await sharp(pdfBuf)
-  .extend({ bottom: maxHeight - pdfMeta.height, background: '#ffffff' })
-  .toBuffer();
-const livePadded = await sharp(liveBuf)
-  .extend({ bottom: maxHeight - liveMeta.height, background: '#ffffff' })
-  .toBuffer();
-
-// Build banners as SVG
-const banner = (text, width) => Buffer.from(
-  `<svg width="${width}" height="${BANNER_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
-    <rect width="${width}" height="${BANNER_HEIGHT}" fill="#1a1a1a"/>
-    <text x="20" y="38" font-family="sans-serif" font-size="20" font-weight="bold" fill="#ffffff">${text}</text>
-  </svg>`
-);
-
-const pdfBanner = banner(`DESIGN (PDF page ${pdfPage})`, TARGET_WIDTH);
-const liveBanner = banner(`LIVE (${route})`, TARGET_WIDTH);
-
-// Stack banner over each image
-const [pdfWithBanner, liveWithBanner] = await Promise.all([
-  sharp({
-    create: { width: TARGET_WIDTH, height: maxHeight + BANNER_HEIGHT, channels: 3, background: '#ffffff' },
-  })
-    .composite([
-      { input: pdfBanner, top: 0, left: 0 },
-      { input: pdfPadded, top: BANNER_HEIGHT, left: 0 },
-    ])
-    .png()
-    .toBuffer(),
-  sharp({
-    create: { width: TARGET_WIDTH, height: maxHeight + BANNER_HEIGHT, channels: 3, background: '#ffffff' },
-  })
-    .composite([
-      { input: liveBanner, top: 0, left: 0 },
-      { input: livePadded, top: BANNER_HEIGHT, left: 0 },
-    ])
-    .png()
-    .toBuffer(),
-]);
-
-// Compose side by side with gutter and separator line
-const totalWidth = TARGET_WIDTH * 2 + GUTTER + SEPARATOR;
-const totalHeight = maxHeight + BANNER_HEIGHT;
-
-const separator = Buffer.from(
-  `<svg width="${SEPARATOR}" height="${totalHeight}" xmlns="http://www.w3.org/2000/svg">
-    <rect width="${SEPARATOR}" height="${totalHeight}" fill="#888888"/>
-  </svg>`
-);
-
-await sharp({
-  create: { width: totalWidth, height: totalHeight, channels: 3, background: '#ffffff' },
-})
-  .composite([
-    { input: pdfWithBanner, top: 0, left: 0 },
-    { input: separator, top: 0, left: TARGET_WIDTH + GUTTER / 2 },
-    { input: liveWithBanner, top: 0, left: TARGET_WIDTH + GUTTER + SEPARATOR },
-  ])
-  .png()
-  .toFile(outPath);
-
-console.log(`Composed: ${outPath}`);
-```
-
-Invoke:
-
-```
-node qa-reports/.scripts/compose-<logical-name>.mjs \
-  "/tmp/page-<logical-name>-<n>.png" \
-  "qa-reports/screenshots/live-<logical-name>-<timestamp>.png" \
-  "qa-reports/screenshots/compare-<logical-name>-<timestamp>.png" \
-  "<pdf-page>" \
-  "<route>"
-```
-
-If `sharp` is not installed, tell the user to run `pnpm add -D sharp` and abort.
-
-### 8. Fetch the sitemap
-
-Fetch `http://localhost:3000/sitemap.xml`. Parse it. Record whether `<route>` (with trailing slash matching `next.config.mjs`) is present. Used in step 11 (SEO checks).
+Fetch `http://localhost:3000/sitemap.xml`. Parse it. Record whether `<route>` (with trailing slash matching `next.config.mjs`) is present. Used in step 9 (SEO checks).
 
 If the sitemap is unavailable or returns non-200, record this as a finding but continue — sitemap absence is itself a Blocker.
 
-### 9. Structural comparison (vs PDF)
+### 8. Structural comparison (vs PDF)
 
 Open the rasterized PDF reference image with the `view` tool and read every visible string. Build a list of expected structural elements:
 
@@ -334,51 +211,9 @@ Compare to the structural JSON from step 6. Generate findings:
 | Extra section not in PDF | Cosmetic |
 | Extra CTA not in PDF | Cosmetic |
 
-### 10. Visual comparison via side-by-side image
+### 9. SEO compliance check
 
-Open the composed comparison image with the `view` tool: `qa-reports/screenshots/compare-<logical-name>-<timestamp>.png`.
-
-Both images are visible at the same scale, side by side. Walk through the page top to bottom. For each section visible in the PDF, compare the equivalent section in the live render and note differences.
-
-**Layout fidelity checks (these are common misses — explicitly verify each):**
-
-| Layout check | Severity if mismatched |
-|---|---|
-| Hero / main content width matches PDF (constrained vs full-width) | Significant |
-| Body text wraps at roughly the same column width as PDF | Significant |
-| Breadcrumb has the same container styling (banded background vs plain) | Significant |
-| Breadcrumb is in the same position (top of page band, inside content area, etc.) | Significant |
-| Section padding rhythm (vertical gaps between sections) feels comparable | Significant |
-| Two-column sections are two-column, single-column sections are single-column | Blocker |
-| Cards / stat blocks render in the same grid configuration | Blocker |
-| Background color regions match (dark stat bars are dark, light cards are light) | Significant |
-| Container has visible borders / hairlines where the PDF shows them | Significant |
-| Eyebrow labels appear in the correct position above their headings | Significant |
-| CTAs are inline / stacked / separated as the PDF shows | Significant |
-
-**Other visual differences:**
-
-| Visual difference | Severity |
-|---|---|
-| Section missing or in wrong position | Blocker |
-| Wrong CTA text or placement | Blocker |
-| Wrong color on brand elements (teal accent missing, wrong button color) | Significant |
-| Wrong typographic hierarchy (h1 too small, h2 looks like h3) | Significant |
-| Missing component (stat block, badge, eyebrow rule) | Significant |
-| Card grid layout differs (3-col vs 2-col) | Significant |
-| Hairline rule color slightly different | Cosmetic |
-| Border radius differs by 2-4px | Cosmetic |
-| Hover state, focus state, animation difference | Cosmetic |
-| Anti-aliasing, font hinting, sub-pixel rendering differences | Ignore |
-| Text appears slightly larger / smaller due to side-by-side scaling | Ignore |
-
-For each finding, capture: what's wrong, expected (from PDF side), actual (from live side), section of the page, severity.
-
-**Important:** the side-by-side image scales both images to the same width. If the live render appears to "fill more space" with the same content, that is a real layout difference (the live page is using a wider column or lacks a content max-width). Do not dismiss it as a scaling artifact.
-
-### 11. SEO compliance check
-
-Run the SEO checks against the extracted `seo` object from step 6 and the sitemap data from step 8. The rubric below applies the seo skill's `page-checklist.md` to live page data.
+Run the SEO checks against the extracted `seo` object from step 6 and the sitemap data from step 7. The rubric below applies the seo skill's `page-checklist.md` to live page data.
 
 | Check | Severity if fails |
 |---|---|
@@ -405,7 +240,33 @@ Run the SEO checks against the extracted `seo` object from step 6 and the sitema
 
 When the page-checklist.md specifies a check this rubric does not cover, add it as a finding with severity matching the checklist's emphasis. The skill is the source of truth; this rubric is the implementation.
 
-### 12. Write the findings report
+### 10. Visual comparison (vs PDF)
+
+Use the `view` tool to open both images in turn:
+- Reference: `/tmp/page-<logical-name>-<n>.png`
+- Live: `qa-reports/screenshots/live-<logical-name>-<timestamp>.png`
+
+Compare them holistically. For each visible difference, classify by severity:
+
+| Visual difference | Severity |
+|---|---|
+| Section missing or in wrong position | Blocker |
+| Wrong column structure (single-col vs two-col, etc.) | Blocker |
+| Wrong CTA text or placement | Blocker |
+| Wrong color on brand elements (teal accent missing, wrong button color) | Significant |
+| Wrong typographic hierarchy (h1 too small, h2 looks like h3) | Significant |
+| Missing component (stat block, badge, eyebrow rule) | Significant |
+| Card grid layout differs (3-col vs 2-col) | Significant |
+| Spacing rhythm visibly different across sections | Significant |
+| Spacing off by < ~16px | Cosmetic |
+| Hairline rule color slightly different | Cosmetic |
+| Border radius differs by 2-4px | Cosmetic |
+| Hover state, focus state, animation difference | Cosmetic |
+| Anti-aliasing, font hinting, sub-pixel rendering differences | Ignore |
+
+For each finding, capture: what's wrong, expected (from PDF), actual (from live), section of the page, severity.
+
+### 11. Write the findings report
 
 Write `qa-reports/qa-<logical-name>-<timestamp>.md`:
 
@@ -414,9 +275,8 @@ Write `qa-reports/qa-<logical-name>-<timestamp>.md`:
 
 **Generated:** <ISO timestamp>
 **Route:** <route>
-**Reference (PDF):** /tmp/page-<logical-name>-<n>.png (PDF page <pdf-page>)
+**Reference:** /tmp/page-<logical-name>-<n>.png (PDF page <pdf-page>)
 **Live screenshot:** qa-reports/screenshots/live-<logical-name>-<timestamp>.png
-**Side-by-side comparison:** qa-reports/screenshots/compare-<logical-name>-<timestamp>.png
 **Structural data:** qa-reports/.structural/live-<logical-name>-<timestamp>.json
 
 ## Summary
@@ -426,20 +286,19 @@ Write `qa-reports/qa-<logical-name>-<timestamp>.md`:
 - Cosmetic: <count>
 
 Breakdown by category:
-- Visual / layout (vs PDF): <blockers> blockers, <significant> significant, <cosmetic> cosmetic
-- Structural (vs PDF): <blockers> blockers, <significant> significant, <cosmetic> cosmetic
+- Visual / structural (vs PDF): <blockers> blockers, <significant> significant, <cosmetic> cosmetic
 - SEO (vs page-checklist.md): <blockers> blockers, <significant> significant, <cosmetic> cosmetic
 
 <one-paragraph overall assessment>
 
 ## Blockers
 
-<for each blocker, grouped by category (Visual, Structural, SEO):>
+<for each blocker, grouped by category (Visual/Structural, SEO):>
 
 ### <short title> [<category>]
 
 - **What's wrong:** <description>
-- **Expected:** <verbatim string from PDF, or rule from page-checklist.md, or layout description from PDF>
+- **Expected:** <verbatim string from PDF, or rule from page-checklist.md>
 - **Actual:** <description from live page>
 - **Section:** <which part of the page, or "head/metadata">
 
@@ -471,23 +330,22 @@ Captured for the record:
 
 Structural comparison: <count> headings, <count> nav items, <count> CTAs checked. Verbatim copy presence verified for <count> strings from PDF.
 
-Visual comparison: side-by-side composed image at 1200px per side. PDF reference (page <pdf-page>) on left, live render at 1440x900 viewport on right. Walked top-to-bottom checking layout fidelity (column width, container styling, section padding, grid configurations).
+Visual comparison: full-page screenshot at 1440x900 viewport compared against PDF page <pdf-page> rasterized at 200 DPI.
 
 SEO comparison: live page metadata, structured data, and sitemap presence checked against `.claude/skills/seo/page-checklist.md`.
 ```
 
-### 13. Print summary to stdout
+### 12. Print summary to stdout
 
 ```
 QA complete: <logical-name>
 
-  Blockers:    <count>  (<visual>+<structural> visual/structural, <seo> SEO)
-  Significant: <count>  (<visual>+<structural> visual/structural, <seo> SEO)
+  Blockers:    <count>  (<visual-count> visual, <seo-count> SEO)
+  Significant: <count>  (<visual-count> visual, <seo-count> SEO)
   Cosmetic:    <count>
 
 Report: qa-reports/qa-<logical-name>-<timestamp>.md
-Side-by-side: qa-reports/screenshots/compare-<logical-name>-<timestamp>.png
-Live: qa-reports/screenshots/live-<logical-name>-<timestamp>.png
+Live:   qa-reports/screenshots/live-<logical-name>-<timestamp>.png
 ```
 
 If invoked from `/page`, the calling command reads the report and the counts to decide whether to dispatch a fix loop.
@@ -496,13 +354,11 @@ If invoked from `/page`, the calling command reads the report and the counts to 
 
 - Never modify page code from inside `/qa`. This is read-only.
 - Never count anti-aliasing, font hinting, or sub-pixel rendering differences as findings. They are noise.
-- Never count side-by-side scaling as a finding. Do count column-width and container-width differences as findings — those are real even if scaling makes them more visible.
 - Never escalate Cosmetic findings. Cosmetic does not auto-trigger a fix loop.
 - Never invent SEO rules beyond `page-checklist.md`. The skill is source of truth; this command implements it.
 - Always check the dev server is reachable before launching Playwright.
-- Always include the file paths to the live screenshot, side-by-side comparison, and structural JSON in the report so a human can verify findings.
-- Always categorize each finding as Visual, Structural, or SEO so the fix PRD can scope appropriately.
-- Always use the side-by-side comparison image (step 10) as the primary visual diff input. Do not skip it and revert to comparing the two images separately.
+- Always include the file paths to the live screenshot and structural JSON in the report so a human can verify findings.
+- Always categorize each finding as Visual/Structural or SEO so the fix PRD can scope appropriately.
 
 ## Examples
 
@@ -512,11 +368,11 @@ If invoked from `/page`, the calling command reads the report and the counts to 
 /qa homepage
 ```
 
-Captures live homepage, composes side-by-side with PDF, runs visual + structural + SEO checks, writes report. No fix loop.
+Captures live homepage, runs visual + SEO checks, writes report. No fix loop.
 
 ### Invoked from /page
 
-`/page` runs `/qa <logical-name>` after `/implement` finishes. If the report shows blockers or significant findings (visual, structural, or SEO), `/page` generates a fix PRD and re-runs implement once. Cosmetic findings are logged but not acted on.
+`/page` runs `/qa <logical-name>` after `/implement` finishes. If the report shows blockers or significant findings (visual or SEO), `/page` generates a fix PRD and re-runs implement once. Cosmetic findings are logged but not acted on.
 
 ### Dev server not running
 
@@ -532,4 +388,4 @@ Captures live homepage, composes side-by-side with PDF, runs visual + structural
 /qa case-study-housing-services-corp
 ```
 
-INDEX.md lists pdf-page as `(missing)`. Abort. Nothing to compare against visually.
+INDEX.md lists pdf-page as `(missing)`. Abort. Nothing to compare against visually. (SEO checks alone are not a sufficient QA pass without a visual reference.)

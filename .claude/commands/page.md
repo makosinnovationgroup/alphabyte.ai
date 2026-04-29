@@ -1,5 +1,5 @@
 ---
-description: Build a single page from V7 PDF design end-to-end (PRD → implement → QA → fix loop). Enforced by Stop hook + state machine.
+description: Build a single page from V8 PDF design end-to-end (PRD → implement → QA → fix loop). Enforced by Stop hook + state machine.
 argument-hint: <logical-name>
 ---
 
@@ -25,7 +25,7 @@ Example: `/page service-discovery`
 
 ## Required files and tools
 
-- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V7.pdf`
+- `design/INDEX.md`, `design/MIGRATION.md`, `design/Alphabyte_AI_Site_V8.pdf`
 - `pdftoppm` (poppler-utils)
 - `jq` (JSON CLI)
 - Dev server reachable on `localhost:3000` (for QA)
@@ -56,7 +56,7 @@ Read `design/MIGRATION.md`. Pull the 7-item nav order, the Discovery Call modal 
 Run:
 
 ```
-pdftoppm -r 200 -f <PDF_PAGE> -l <PDF_PAGE> -png design/Alphabyte_AI_Site_V7.pdf /tmp/page-<logical-name>
+pdftoppm -r 200 -f <PDF_PAGE> -l <PDF_PAGE> -png design/Alphabyte_AI_Site_V8.pdf /tmp/page-<logical-name>
 ```
 
 Confirm `/tmp/page-<logical-name>-1.png` (or `-01.png`) exists.
@@ -107,27 +107,12 @@ The framing strings below are mandatory. Do not soften, paraphrase, or shorten t
 ```
 SOURCE OF TRUTH: /tmp/page-<logical-name>-1.png
 
-This image is rasterized from design/Alphabyte_AI_Site_V7.pdf page <pdf-page>, stamped APPROVED COPY. It is the canonical specification for this page. Before writing any code:
+This image is rasterized from design/Alphabyte_AI_Site_V8.pdf page <pdf-page>, stamped APPROVED COPY. It is the canonical specification for this page. Before writing any code:
 
 1. View the image with the view tool.
 2. Read every visible string. Every visible string appears verbatim in the implementation. No paraphrase. No "improvement". No truncation.
 3. Match every visible layout decision: section order, column structure, spacing rhythm, hairline rules, eyebrow labels, badge placement, CTA position, card grids, tab bars.
 4. Match every visible typographic decision: heading hierarchy, weights, tracking, the teal accent on words like "compounds", the all-caps eyebrow treatments.
-
-REUSABLE LAYOUT COMPONENTS — CHECK BEFORE WRITING LAYOUT CODE:
-
-Before writing any layout markup, check src/components/ for existing layout primitives that match this page's shape. Component candidates to look for include but are not limited to:
-
-- ServicePage — for service detail pages (eyebrow, h1, subhead, body, three-stat dark bar, "What the first 30 days" box, "What we deliver" deliverables, right/not-right panels, timeline footer)
-- CaseStudyPage — for case study detail pages (dark hero with tag pills, stats grid, two-column body with sidebar)
-- TeamMemberPage — for team member profile pages
-- Other layout primitives the project has accumulated
-
-If a layout component matches the page being built: USE the component and pass data props. Do NOT rebuild the layout from scratch. The component is the canonical implementation; rebuilding creates drift, fails QA against sibling pages, and forces every future design change to be applied N times instead of once.
-
-The implementation report must explicitly state which layout component (if any) was used. If you chose to rebuild rather than reuse a candidate component, the report must justify why — usually because the PDF page genuinely differs in structure, not because rebuilding seemed easier.
-
-If no matching layout component exists, build the page directly. The next page that needs this layout will be the one that extracts it into a component.
 
 Where the PRD and the PDF conflict, the PDF wins. The PRD describes intent and scope; the PDF defines the artifact. If you find a conflict, flag it in the implementation report rather than silently choosing.
 
@@ -141,7 +126,7 @@ Reference design/MIGRATION.md for cross-page context. Reference design/INDEX.md 
 | Action | Downstream | Action-specific framing |
 |---|---|---|
 | `new` | `/feature` | "ACTION: Build a new route at `<route>`. There is no existing implementation to preserve." |
-| `enhance` | `/enhancement` | "ACTION: Replace existing content at `<route>` with the V7 design. Preserve existing route plumbing (metadata helpers, route handlers, layout wrapping) unless the PDF clearly requires changes." |
+| `enhance` | `/enhancement` | "ACTION: Replace existing content at `<route>` with the V8 design. Preserve existing route plumbing (metadata helpers, route handlers, layout wrapping) unless the PDF clearly requires changes." |
 | `replace` | `/enhancement` | "ACTION: Replace existing content at `<route>`. Original PRD path was `<original-prd-path>`. If the route slug differs from the original, add a 301 redirect entry in `public/_redirects`. Move file content rather than duplicating." |
 | `retire` | `/enhancement` | "ACTION: Remove route `<original-prd-path>` and add a redirect to `<route>` (or to `/` if no replacement). Update `navigation.ts` and any sitemap references. Do not leave orphan files." |
 
@@ -197,12 +182,12 @@ Step 9 is the QA evaluation, performed inside the advance script. No model actio
 Construct a fix PRD prompt for `/enhancement`:
 
 ```
-PRD path: prds/enhance-v7-fix-<logical-name>.md
+PRD path: prds/enhance-v6-fix-<logical-name>.md
 
 Type: Evolution
 Enhances: <PRD path from state>
 
-Motivation: QA against design/Alphabyte_AI_Site_V7.pdf page <pdf-page> identified blockers and significant gaps in the implementation at <route>. This enhancement closes those gaps.
+Motivation: QA against design/Alphabyte_AI_Site_V8.pdf page <pdf-page> identified blockers and significant gaps in the implementation at <route>. This enhancement closes those gaps.
 
 Reference:
 - QA report: <pass_1_qa_report from state>
@@ -217,7 +202,7 @@ Out of scope:
 - Cosmetic findings from the QA report (logged but not addressed in this pass)
 - Any change not covered by a finding
 
-Constraint: Use the rasterized image at /tmp/page-<logical-name>-1.png as source of truth for every fix. Do not interpret findings — match the PDF. If the page should have been built using a reusable layout component (ServicePage, CaseStudyPage, etc.) but was rebuilt instead, this fix pass is the right time to refactor onto the component.
+Constraint: Use the rasterized image at /tmp/page-<logical-name>-1.png as source of truth for every fix. Do not interpret findings — match the PDF.
 ```
 
 Invoke `/enhancement` with this prompt. Capture the new PRD path.
@@ -264,7 +249,6 @@ The final summary is printed by the advance script when `qa-pass-2-done` runs. N
 
 - Never produce page code from inside `/page`. Always dispatch.
 - Never weaken the SOURCE OF TRUTH preamble.
-- Never weaken the REUSABLE LAYOUT COMPONENTS check. The implementer must consider existing components before rebuilding.
 - Never skip OQ checks at step 3.
 - Never skip user confirmation at step 5.
 - Never skip the advance-pipeline.sh call after each step. The Stop hook depends on state being current.
@@ -280,7 +264,7 @@ The final summary is printed by the advance script when `qa-pass-2-done` runs. N
 /page service-discovery
 ```
 
-State init → /enhancement (PRD checks for ServicePage, finds it, uses it) → advance prd-generated → /implement (passes data props to ServicePage) → advance implement-done → /qa → advance qa-done (script sees 0/0, marks complete). Pipeline ends.
+State init → /enhancement (PRD) → advance prd-generated → /implement → advance implement-done → /qa → advance qa-done (script sees 0/0, marks complete). Pipeline ends. One PRD, one implementation, one QA pass.
 
 ### Fix loop runs once
 
