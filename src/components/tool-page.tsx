@@ -238,11 +238,11 @@ export function ToolPage({
               })}
             </div>
           ) : (
-            <div className="mt-8 divide-y divide-border-default">
+            <div className="mt-8 divide-y divide-border-default border-b border-border-default">
               {deliverables.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex gap-4${i > 0 ? " pt-8" : ""} pb-8 last:pb-0`}
+                  className={`flex gap-4${i > 0 ? " pt-8" : ""} pb-8`}
                 >
                   <span
                     className="mt-0.5 shrink-0 text-2xl"
