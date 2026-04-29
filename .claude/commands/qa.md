@@ -240,29 +240,52 @@ Run the SEO checks against the extracted `seo` object from step 6 and the sitema
 
 When the page-checklist.md specifies a check this rubric does not cover, add it as a finding with severity matching the checklist's emphasis. The skill is the source of truth; this rubric is the implementation.
 
-### 10. Visual comparison (vs PDF)
+### 10. Visual comparison (vs PDF) — element-by-element
 
-Use the `view` tool to open both images in turn:
+**Do not compare "holistically." Walk through every visible element in the PDF one at a time and verify its visual properties against the live screenshot.** This is the step where mismatches get caught; a surface-level glance is not acceptable.
+
+Use the `view` tool to open both images:
 - Reference: `/tmp/page-<logical-name>-<n>.png`
 - Live: `qa-reports/screenshots/live-<logical-name>-<timestamp>.png`
 
-Compare them holistically. For each visible difference, classify by severity:
+**Procedure:** For each section visible in the PDF (top to bottom), build a comparison table in your working notes. Every row is one UI element. Every column is a visual property. Compare PDF vs live for each cell.
+
+| Element | Property | PDF (expected) | Live (actual) | Match? |
+|---|---|---|---|---|
+| Hero eyebrow | color | blue | blue | ✓ |
+| Hero h1 line 2 | color | blue | black | ✗ Significant |
+| Stat bar headline | color | green | white | ✗ Significant |
+| Card title | size | body-scale, bold | headline-scale | ✗ Significant |
+| Card subtitle | color + weight | blue, bold | grey, regular | ✗ Significant |
+| Bullet dots | color | blue | black | ✗ Significant |
+| ... | ... | ... | ... | ... |
+
+Properties to check for every element:
+- **Color** — exact brand color (blue, green, black, white, muted grey, white/50, etc.)
+- **Size / scale** — display, headline, body, body-sm? Relative to surrounding elements.
+- **Weight** — regular, medium, bold?
+- **Layout** — column count, alignment, spacing
+- **Decorative treatments** — divider lines (presence, color, opacity, position), background fills, badges/pills, accent highlights
+
+After completing the table, classify each mismatch by severity:
 
 | Visual difference | Severity |
 |---|---|
 | Section missing or in wrong position | Blocker |
 | Wrong column structure (single-col vs two-col, etc.) | Blocker |
 | Wrong CTA text or placement | Blocker |
-| Wrong color on brand elements (teal accent missing, wrong button color) | Significant |
-| Wrong typographic hierarchy (h1 too small, h2 looks like h3) | Significant |
+| Wrong color on any element (text, dots, backgrounds, accents) | Significant |
+| Wrong font size or weight on any element | Significant |
+| Missing or wrong decorative treatment (divider lines, badges, eyebrow rules) | Significant |
 | Missing component (stat block, badge, eyebrow rule) | Significant |
 | Card grid layout differs (3-col vs 2-col) | Significant |
 | Spacing rhythm visibly different across sections | Significant |
 | Spacing off by < ~16px | Cosmetic |
-| Hairline rule color slightly different | Cosmetic |
 | Border radius differs by 2-4px | Cosmetic |
 | Hover state, focus state, animation difference | Cosmetic |
 | Anti-aliasing, font hinting, sub-pixel rendering differences | Ignore |
+
+**Include the full comparison table in the QA report** (in the Methodology section or as an appendix). This makes the comparison auditable — Mitchell can see exactly what was checked and verify the "Match?" column himself.
 
 For each finding, capture: what's wrong, expected (from PDF), actual (from live), section of the page, severity.
 

@@ -52,7 +52,25 @@ Before writing styles, read `tailwind.config.ts`. This is the code-level token s
 
 If a needed token doesn't exist in the config, add it to `tailwind.config.ts` rather than inlining an arbitrary value. That keeps the token system coherent and the change auditable.
 
-### 4. Implement
+### 4. Extract visual spec from the PDF image
+
+**This step is mandatory whenever the PRD references a PDF page or a rasterized image as its source of truth.** If no image exists, skip to step 5.
+
+Before writing any code, open the rasterized PDF image with the `view` tool. Study it section by section and produce a **visual spec checklist** — a concrete, element-level inventory of what you see. For every distinct UI element on the page, record:
+
+- **Element** (e.g., "hero eyebrow", "stat bar headline 1", "tool card subtitle")
+- **Text content** (verbatim)
+- **Color** — name the closest brand token. Is it blue, green, black, white, muted grey? Don't guess "white" when the image shows green.
+- **Size / scale** — relative to other elements. Is the heading the same size as headlines on other pages, or smaller? Is it display-scale or body-scale?
+- **Weight** — regular, medium, bold?
+- **Special treatments** — divider lines (where, what color, what opacity), background fills, accent highlights, badge/pill styling
+- **Layout** — column structure, spacing rhythm, alignment (centered vs left-aligned)
+
+Output this checklist in your response before writing any code. This is your contract with the design — every code decision must trace back to a line in this checklist. If something in the PRD text contradicts what you see in the image, note the conflict and follow the image.
+
+**Do not skip this step. Do not combine it with step 5. The checklist must be visible in your response before any code appears.**
+
+### 5. Implement
 
 Build the feature. Complete **all** work specified in the PRD — all pages, all components, all copy, all behavior, all metadata, all structured data, all acceptance criteria. Do not stop early. Do not leave "TODO for later" placeholders unless the PRD explicitly defers something.
 
@@ -72,7 +90,7 @@ For features that touch Alphabyte's offerings:
 - For pricing, use ranges or "starting at" framing per `alphabyte-services/pricing.md`. Translate any internal effort-in-hours to weeks. Never publish per-role hourly rates
 - For case studies, use public-safe framings from `alphabyte-services/proof-points.md`. If the PRD requests claims beyond those framings, those should already be Open Questions resolved at planning time — if they aren't, stop and surface
 
-### 5. Code quality
+### 6. Code quality
 
 - **Minimal comments.** Only comment where the logic is truly non-obvious. Do not add comments that restate what the code does, name the feature, or explain intent that the code already conveys. Self-documenting code is the default.
 - **Component patterns.** Wrap new Radix primitives using the pattern in `src/components/ui/dialog.tsx` (re-export unstyled parts, forwardRef + `cn()` on styled parts). Use `cva` for variant-based components like `button.tsx`.
@@ -81,7 +99,7 @@ For features that touch Alphabyte's offerings:
 - **Copy.** Copy specified in the PRD is used verbatim. Copy drafted at implement-time must pass the `voice-and-tone.md` checks — no forbidden vocabulary, no hype, Title Case for headers, Sentence case elsewhere.
 - **URLs.** Short, lowercase, hyphen-separated, trailing slash (per `trailingSlash: true` in `next.config.mjs`).
 
-### 6. Compliance passes
+### 7. Compliance passes
 
 Run these three checklists before reporting done. Treat failures as blocking — fix before reporting, or if a fix is out of scope, surface it explicitly.
 
@@ -111,7 +129,7 @@ Run these three checklists before reporting done. Treat failures as blocking —
 8. Signature offering names exact: Executive Productivity Suite, Team Citizen Dev Enablement, Strategy Sprint, Executive Quick Win, Sprawl Fix, Intelligent Enterprise
 9. Case study claims match the public-safe framings in `proof-points.md`; specifics beyond those framings should have been resolved as Open Questions at planning time
 
-### 7. Update PRD status
+### 8. Update PRD status
 
 Before reporting, update the PRD's Status field:
 
@@ -119,7 +137,7 @@ Before reporting, update the PRD's Status field:
 - If implementation is partial (you hit a blocker that surfaces in the report): leave Status as `In progress`
 - Update the `Last updated:` date stamp to today
 
-### 8. Report
+### 9. Report
 
 Output, in this order:
 

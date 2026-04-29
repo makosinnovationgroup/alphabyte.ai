@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://alphabyte.ai/tools/",
-      lastModified: new Date("2026-04-27"),
+      lastModified: new Date("2026-04-29"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
