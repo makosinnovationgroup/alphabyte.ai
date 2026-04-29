@@ -7,7 +7,7 @@ const scenarios = [
 
 export function IsThisYou() {
   return (
-    <section className="bg-canvas px-6 py-10 md:py-14">
+    <section className="bg-white px-6 py-10 md:py-14">
       <div className="mx-auto max-w-[1600px]">
         <div className="flex items-center gap-3 mb-10">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
@@ -20,9 +20,9 @@ export function IsThisYou() {
           {scenarios.map((text, i) => (
             <div
               key={i}
-              className="rounded-md border border-border-default bg-white p-6 md:p-8"
+              className="rounded-xl border border-border-default bg-canvas p-6 shadow-sm md:p-8"
             >
-              <p className="text-body-sm text-muted-foreground">{text}</p>
+              <p className="text-body text-foreground">{text}</p>
             </div>
           ))}
         </div>

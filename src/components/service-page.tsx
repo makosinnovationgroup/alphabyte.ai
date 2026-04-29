@@ -99,12 +99,12 @@ export function ServicePage({
             {eyebrow}
           </p>
           <h1 className="mt-3 text-display tracking-brand-tight">{h1}</h1>
-          <p className="mt-3 text-headline tracking-brand-snug text-muted-foreground">
+          <p className="mt-3 text-2xl text-muted-foreground">
             {subhead}
           </p>
-          <div className="mt-6 max-w-[55ch] space-y-4">
+          <div className="mt-6 max-w-3xl space-y-4">
             {body.map((paragraph, i) => (
-              <p key={i} className="text-body text-foreground">
+              <p key={i} className="text-lg text-foreground">
                 {paragraph}
               </p>
             ))}
