@@ -103,7 +103,7 @@ export default function BlogPage() {
       />
 
       {/* Hero */}
-      <section className="bg-canvas px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
+      <section className="border-b border-border-default bg-white px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
         <div className="mx-auto max-w-[1600px]">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             Alphabyte AI &middot; Perspectives
