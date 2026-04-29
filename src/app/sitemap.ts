@@ -106,7 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://alphabyte.ai/about/",
-      lastModified: new Date("2026-04-27"),
+      lastModified: new Date("2026-04-29"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

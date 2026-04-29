@@ -44,8 +44,8 @@ const serviceSchema = {
   description:
     "Data quality audits, governance assessments, and AI readiness scorecards. Make sure your data foundation supports the AI you actually want to build.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/services/data-readiness/",
 };

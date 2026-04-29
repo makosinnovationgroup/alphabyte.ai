@@ -92,30 +92,30 @@ const homeTracks: Track[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Canadian Mid-Market Organizations",
+  title: "AI Consulting for Mid-Market Organizations",
   description:
-    "Alphabyte AI designs and delivers working AI for mid-market organizations across Canada. Four tracks. Real deployments. No junior bench.",
+    "Alphabyte AI designs and delivers working AI for mid-market organizations. Four tracks. Real deployments. No junior bench.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "AI Consulting for Canadian Mid-Market Organizations",
+    title: "AI Consulting for Mid-Market Organizations",
     description:
-      "Alphabyte AI designs and delivers working AI for mid-market organizations across Canada.",
+      "Alphabyte AI designs and delivers working AI for mid-market organizations.",
     url: "/",
     images: [
       {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte \u2014 AI Consulting for Canadian Mid-Market Organizations",
+        alt: "Alphabyte \u2014 AI Consulting for Mid-Market Organizations",
       },
     ],
   },
   twitter: {
-    title: "AI Consulting for Canadian Mid-Market Organizations",
+    title: "AI Consulting for Mid-Market Organizations",
     description:
-      "Alphabyte AI designs and delivers working AI for mid-market organizations across Canada.",
+      "Alphabyte AI designs and delivers working AI for mid-market organizations.",
     images: ["/og/default.png"],
   },
 };
@@ -123,9 +123,9 @@ export const metadata: Metadata = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "AI Consulting for Canadian Mid-Market Organizations",
+  name: "AI Consulting for Mid-Market Organizations",
   description:
-    "Alphabyte AI designs and delivers working AI for mid-market organizations across Canada. Four tracks. Real deployments. No junior bench.",
+    "Alphabyte AI designs and delivers working AI for mid-market organizations. Four tracks. Real deployments. No junior bench.",
   url: "https://alphabyte.ai/",
   isPartOf: {
     "@type": "WebSite",
@@ -140,11 +140,11 @@ const professionalServiceSchema = {
   name: "Alphabyte",
   url: "https://alphabyte.ai",
   description:
-    "AI and data consulting for mid-market organizations across Canada.",
+    "AI and data consulting for mid-market organizations.",
   serviceType: "AI and Data Consulting",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   priceRange: "$$$",
 };

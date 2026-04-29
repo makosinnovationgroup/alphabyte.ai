@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Custom Claude environment for your leadership team in two to four weeks. Knowledgebases, skills libraries, and prompt toolkits built from your operational data.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/services/executive-enablement/",
 };

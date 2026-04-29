@@ -16,7 +16,7 @@ export function Hero() {
           {/* Left column */}
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
-              &#9733; Claude Partner &middot; Canadian mid-market
+              &#9733; Claude Partner &middot; Mid-market
             </span>
 
             <h1 className="text-display font-sans tracking-brand-tight mb-6">

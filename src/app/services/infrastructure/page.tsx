@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models. AI as operational infrastructure, not a demo.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/services/infrastructure/",
 };

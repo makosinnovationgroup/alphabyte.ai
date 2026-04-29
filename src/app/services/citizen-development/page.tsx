@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Custom SDLC plugin, guardrails scaffolding, enablement workshop, and governed MCP data connectivity. Every employee building with Claude from a standardized, governed starting point.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/services/citizen-development/",
 };

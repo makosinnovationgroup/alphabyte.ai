@@ -5,14 +5,14 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with Canadian mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
   alternates: {
     canonical: "/our-work/",
   },
   openGraph: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with Canadian mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
+      "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
     url: "/our-work/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with Canadian mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
+      "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
     images: ["/og/default.png"],
   },
 };
@@ -36,7 +36,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with Canadian mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
   isPartOf: {
     "@type": "WebSite",
@@ -69,7 +69,7 @@ const caseStudies = [
     clientName: "Housing Services Corp.",
     projectTitle: "AI Enablement Roadmap",
     pills: ["Discovery", "Data Readiness"],
-    body: "Full current state assessment and AI enablement roadmap for a national Canadian housing organization \u2014 six strategic recommendations delivered within federal data governance requirements.",
+    body: "Full current state assessment and AI enablement roadmap for a national housing organization \u2014 six strategic recommendations delivered within federal data governance requirements.",
     href: "/our-work/housing-services-corp/",
   },
 ];

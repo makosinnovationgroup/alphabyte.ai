@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured. You own the connection, we build the server.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/tools/mcp/",
 };

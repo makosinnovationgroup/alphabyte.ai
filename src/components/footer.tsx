@@ -60,14 +60,6 @@ export function Footer() {
               </p>
               <p>
                 <a
-                  href={`tel:${contact.phone.replace(/[\s()-]/g, "")}`}
-                  className="text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue"
-                >
-                  {contact.phone}
-                </a>
-              </p>
-              <p>
-                <a
                   href={contact.linkedin.href}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -5,14 +5,14 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Housing Services Corp. — AI Enablement Roadmap",
   description:
-    "AI enablement roadmap and data strategy for a Canadian housing services organization. Claude-based agent recommendations for reporting and anomaly detection.",
+    "AI enablement roadmap and data strategy for a national housing services organization. Claude-based agent recommendations for reporting and anomaly detection.",
   alternates: {
     canonical: "/our-work/housing-services-corp/",
   },
   openGraph: {
     title: "Housing Services Corp. — AI Enablement Roadmap",
     description:
-      "AI enablement roadmap and data strategy for a Canadian housing services organization.",
+      "AI enablement roadmap and data strategy for a national housing services organization.",
     url: "/our-work/housing-services-corp/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Housing Services Corp. — AI Enablement Roadmap",
     description:
-      "AI enablement roadmap and data strategy for a Canadian housing services organization.",
+      "AI enablement roadmap and data strategy for a national housing services organization.",
     images: ["/og/default.png"],
   },
 };

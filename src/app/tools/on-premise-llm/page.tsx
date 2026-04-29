@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For clients where cloud AI is ruled out by data sovereignty or security policy.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/tools/on-premise-llm/",
 };

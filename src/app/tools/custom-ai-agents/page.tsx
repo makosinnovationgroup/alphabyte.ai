@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates where stakes require it.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/tools/custom-ai-agents/",
 };

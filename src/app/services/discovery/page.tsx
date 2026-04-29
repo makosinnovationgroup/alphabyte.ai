@@ -43,8 +43,8 @@ const serviceSchema = {
   description:
     "A four-week engagement that produces three prioritized use cases, a gap analysis, and a Findings & Recommendations document you can act on immediately.",
   areaServed: {
-    "@type": "Country",
-    name: "Canada",
+    "@type": "Place",
+    name: "North America",
   },
   url: "https://alphabyte.ai/services/discovery/",
 };
