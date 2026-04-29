@@ -1,0 +1,125 @@
+{
+  "slug": "adam-nameh",
+  "name": "Adam Nameh",
+  "role": "Co-Founder & Data Platform Architect",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/adam-nameh.jpg",
+  "eyebrow": "AUTHOR AT ALPHABYTE AI",
+  "bio": [
+    "Adam Nameh is the Co-Founder of Alphabyte Solutions Inc., a Toronto-based data and AI consulting firm that has helped over 100 clients across North America transform complex data environments into actionable business intelligence. With a decade of hands-on experience in data architecture and platform design, Adam works directly with leadership teams to deliver practical AI and data solutions that drive real business outcomes.",
+    "A graduate of the University of Toronto's Computer Engineering program, Adam served as a Data Architect at BMO Financial Group before founding Alphabyte in 2016. He is also co-founder of Parlawatch AI — featured in Maclean's and the University of Toronto Magazine — and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
+  ],
+  "contact": {
+    "linkedin": {
+      "label": "linkedin.com/in/adamnameh/",
+      "href": "https://linkedin.com/in/adamnameh/"
+    },
+    "email": {
+      "label": "adam.nameh@alphabytesolutions.com",
+      "href": "mailto:adam.nameh@alphabytesolutions.com"
+    },
+    "phone": {
+      "label": "+1 (647) 204-4581",
+      "href": "tel:+16472044581"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.A.Sc. in Computer Engineering",
+      "subtitle": "Bachelor of Applied Science"
+    },
+    "institution": {
+      "title": "University of Toronto",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "Database Systems · Software Engineering · Data Structures · Machine Learning · Systems Design"
+  },
+  "careerTimeline": [
+    {
+      "period": "2016 — Present",
+      "role": "Co-Founder & Data Platform Architect",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "Prior to 2016",
+      "role": "Data Architect",
+      "organization": "BMO Financial Group"
+    },
+    {
+      "period": "Ongoing",
+      "role": "Co-Founder",
+      "organization": "Parlawatch AI · MailSmart"
+    }
+  ],
+  "expertise": [
+    "Data Warehouse Architecture",
+    "AI & Machine Learning Solutions",
+    "Business Intelligence Strategy",
+    "Data Governance & Quality",
+    "Power BI & Tableau Implementation",
+    "Enterprise Data Integration",
+    "Microsoft SQL Server",
+    "Microsoft Dynamics 365"
+  ],
+  "achievements": [
+    "Featured in Maclean's Magazine for Parlawatch AI innovation",
+    "Featured in University of Toronto Magazine for civic technology work",
+    "10+ years leading successful data transformation projects",
+    "100+ enterprise clients served across North America",
+    "Founded three successful technology ventures"
+  ],
+  "thoughtLeadership": [
+    {
+      "type": "LinkedIn Article",
+      "title": "Trusting Your Data — What You Need to Know",
+      "description": "Comprehensive guide on data validation, cleansing, and governance.",
+      "href": null
+    },
+    {
+      "type": "Whitepaper",
+      "title": "E-Commerce Analytics",
+      "description": "Using Machine Learning to measure sales channel effectiveness despite iOS privacy changes.",
+      "href": null
+    },
+    {
+      "type": "Resource Guide",
+      "title": "E-Commerce Cheat Sheet",
+      "description": "Essential metrics for profitability-focused marketers.",
+      "href": null
+    },
+    {
+      "type": "Case Study",
+      "title": "ML Case Study",
+      "description": "Using Machine Learning to solve practical e-commerce business problems.",
+      "href": null
+    }
+  ],
+  "articles": [
+    {
+      "category": "CITIZEN DEVELOPMENT",
+      "title": "The window is open. Here is how to move before it closes.",
+      "excerpt": "Claude hit a threshold this year. Any employee who can describe their work can now build applications and automate workflows against live operational data.",
+      "date": "April 2026",
+      "slug": "window-is-open"
+    },
+    {
+      "category": "AI STRATEGY",
+      "title": "Why we start with the people, not the process.",
+      "excerpt": "Every organization has someone who has quietly built something extraordinary with Claude. We find that person, learn what she built, and install the infrastructure.",
+      "date": "April 2026",
+      "slug": "start-with-people-not-process"
+    },
+    {
+      "category": "CASE STUDIES",
+      "title": "How Sprinklermatic eliminated 40 hours per week of manual NFPA lookup.",
+      "excerpt": "A live NFPA fire codes compliance agent in production for a $200M+ fire protection contractor. The architecture, the build, and what it took to get there.",
+      "date": "March 2026",
+      "slug": "sprinklermatic-nfpa-compliance"
+    }
+  ],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  }
+}

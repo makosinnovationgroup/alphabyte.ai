@@ -1,4 +1,25 @@
 import type { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+function getBlogPostEntries(): MetadataRoute.Sitemap {
+  const blogDir = path.join(process.cwd(), "content/blog");
+  if (!fs.existsSync(blogDir)) return [];
+  return fs
+    .readdirSync(blogDir)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(blogDir, f), "utf-8");
+      const { data } = matter(raw);
+      return {
+        url: `https://alphabyte.ai/blog/${f.replace(/\.mdx$/, "")}/`,
+        lastModified: new Date(data.publishedDate as string),
+        changeFrequency: "yearly" as const,
+        priority: 0.6,
+      };
+    });
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -122,5 +143,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...getBlogPostEntries(),
   ];
 }

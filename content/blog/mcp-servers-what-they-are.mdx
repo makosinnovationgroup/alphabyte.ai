@@ -1,0 +1,76 @@
+---
+slug: "mcp-servers-what-they-are"
+title: "MCP servers: what they are, what they do, and why they matter."
+excerpt: "Model Context Protocol is the architecture that connects Claude to the systems that run your business. Here is what that means in practice, why it matters for mid-market deployment, and what a production MCP integration actually looks like."
+publishedDate: "2026-04-14"
+readTime: "7 min read"
+author: "adam-nameh"
+tags:
+  - "Data & Infrastructure"
+  - "MCP"
+topics:
+  - "Data & Infrastructure"
+  - "MCP"
+  - "Claude"
+  - "Integration"
+  - "Mid-market"
+relatedService:
+  eyebrow: "RELATED SERVICE"
+  title: "Infrastructure"
+  body: "Production MCP servers, data pipelines, and the architecture that connects AI to your operational systems."
+  ctaLabel: "Learn more →"
+  ctaHref: "/services/infrastructure/"
+readyToMoveCard:
+  heading: "Ready to move?"
+  body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
+  ctaLabel: "Book a Discovery Call"
+tableOfContents:
+  - label: "The gap between Claude and your data"
+    anchorId: "the-gap-between-claude-and-your-data"
+  - label: "What MCP actually is"
+    anchorId: "what-mcp-actually-is"
+  - label: "What a production MCP server looks like"
+    anchorId: "what-a-production-mcp-server-looks-like"
+  - label: "Why this matters for mid-market"
+    anchorId: "why-this-matters-for-mid-market"
+---
+
+## The gap between Claude and your data {#the-gap-between-claude-and-your-data}
+
+Claude is good at reasoning, writing, and analysis. But out of the box, it cannot see your CRM. It cannot query your database. It cannot read your shared drive, check your inventory system, or pull the latest numbers from your ERP.
+
+That is the gap. The model is capable. Your data exists. But they are not connected.
+
+For the past two years, the standard approach to closing this gap was custom API integrations. Write code, build connectors, maintain them. That works — if you have a software engineering team with capacity. Most mid-market organizations do not.
+
+Model Context Protocol changes that equation.
+
+## What MCP actually is {#what-mcp-actually-is}
+
+MCP is an open protocol that lets Claude connect to external systems through a standardized interface. Instead of building custom integrations for every data source, you deploy MCP servers — small, focused services that expose your data to Claude in a structured way.
+
+An MCP server for your CRM lets Claude look up customer records, check deal status, and pull account history. An MCP server for your file system lets Claude read documents, search content, and reference internal policies. An MCP server for your database lets Claude run queries and return results.
+
+The protocol handles authentication, permissions, and data formatting. Claude knows how to talk to any MCP server. You just need to point it at the right ones.
+
+> "Instead of building custom integrations for every data source, you deploy MCP servers — small, focused services that expose your data to Claude in a structured way."
+
+## What a production MCP server looks like {#what-a-production-mcp-server-looks-like}
+
+A production MCP server is not a prototype. It runs on your infrastructure. It connects to your actual systems with real credentials. It respects your existing permissions model — if a user cannot see a record in the CRM, Claude cannot see it either.
+
+The server itself is typically a few hundred lines of code. It defines the tools Claude can use (search customers, get invoice, list open tickets) and maps them to your system's API or database.
+
+We deploy MCP servers with logging, monitoring, and rate limiting. Every query Claude makes through the server is auditable. The data never leaves your network unless you want it to.
+
+The build takes days, not months. One MCP server connecting Claude to one system. Then another. Then a third. Each one is independent, testable, and reversible.
+
+## Why this matters for mid-market {#why-this-matters-for-mid-market}
+
+Enterprise companies have been building AI integrations for years. They have dedicated platform teams. They can afford six months of custom development per data source.
+
+Mid-market organizations cannot. But MCP changes the economics. A single MCP server connecting Claude to your core operational system can be built, tested, and deployed in a week. The ongoing maintenance is minimal — the protocol is stable and the server is simple.
+
+This is the infrastructure layer that makes citizen development real. When your team members build applications with Claude, they need Claude to see real data. MCP is how that happens — securely, with governance, and without requiring your team to write integration code.
+
+The organizations that deploy MCP servers against their core systems now will have a compounding advantage. Every new application their team builds inherits the connectivity. Every new workflow runs against real data from day one.

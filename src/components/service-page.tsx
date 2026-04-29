@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
+import { ThirtyDays } from "@/components/thirty-days";
 
 export interface BreadcrumbItem {
   label: string;
@@ -157,32 +158,7 @@ export function ServicePage({
       {/* 4. 30-days box */}
       <section className="px-6 py-12 md:px-10 md:py-16 lg:px-16">
         <div className="mx-auto max-w-[1600px]">
-          <div className="rounded-md border border-border-default bg-alphabyte-grey/50 p-6 md:p-10">
-            <h2 className="mb-6 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue md:mb-8">
-              What the first 30 days look like
-            </h2>
-            {thirtyDays.weeks.map((week, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 gap-2 py-6 md:grid-cols-[160px_1fr] md:gap-8 ${
-                  i > 0 ? "border-t border-border-default" : ""
-                }`}
-              >
-                <p className="text-body font-bold text-foreground">
-                  {week.label}
-                </p>
-                <p className="text-body text-foreground">{week.body}</p>
-              </div>
-            ))}
-            <div className="grid grid-cols-1 gap-2 border-t border-border-default py-6 md:grid-cols-[160px_1fr] md:gap-8">
-              <p className="text-body font-bold text-alphabyte-blue">
-                {thirtyDays.dayThirty.label}
-              </p>
-              <p className="text-body text-foreground">
-                {thirtyDays.dayThirty.body}
-              </p>
-            </div>
-          </div>
+          <ThirtyDays weeks={thirtyDays.weeks} dayThirty={thirtyDays.dayThirty} />
         </div>
       </section>
 

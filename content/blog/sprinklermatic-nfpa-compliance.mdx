@@ -1,0 +1,86 @@
+---
+slug: "sprinklermatic-nfpa-compliance"
+title: "How Sprinklermatic eliminated 40 hours per week of manual NFPA lookup."
+excerpt: "A live NFPA fire codes compliance agent in production for a $200M+ fire protection contractor. The architecture, the build, and what it took to get there."
+publishedDate: "2026-03-24"
+readTime: "9 min read"
+author: "adam-nameh"
+tags:
+  - "Case Studies"
+  - "Infrastructure"
+topics:
+  - "Case Studies"
+  - "Sprinklermatic"
+  - "NFPA"
+  - "Custom AI Agents"
+  - "MCP"
+relatedService:
+  eyebrow: "RELATED SERVICE"
+  title: "Infrastructure"
+  body: "Custom AI agents, MCP servers, and production systems built against your operational data."
+  ctaLabel: "Learn more →"
+  ctaHref: "/services/infrastructure/"
+readyToMoveCard:
+  heading: "Ready to move?"
+  body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
+  ctaLabel: "Book a Discovery Call"
+tableOfContents:
+  - label: "The problem"
+    anchorId: "the-problem"
+  - label: "Why this was hard"
+    anchorId: "why-this-was-hard"
+  - label: "What we built"
+    anchorId: "what-we-built"
+  - label: "The result"
+    anchorId: "the-result"
+  - label: "What this means for your business"
+    anchorId: "what-this-means-for-your-business"
+---
+
+## The problem {#the-problem}
+
+Sprinklermatic is a fire protection contractor. Their engineers design sprinkler systems for commercial and industrial buildings. Every design must comply with NFPA fire codes — a body of regulation that spans thousands of pages, changes annually, and varies by jurisdiction.
+
+Before this project, compliance lookup was manual. An engineer would identify the relevant code section, search the NFPA documentation, cross-reference local amendments, and verify that the design met requirements. This happened on every project, multiple times per project.
+
+The compliance team estimated that engineers spent over 40 hours per week — collectively — on manual code lookup. Not design work. Not engineering. Just finding and reading the right paragraphs in the right documents.
+
+## Why this was hard {#why-this-was-hard}
+
+NFPA codes are not simple documents. They are dense, cross-referenced, and context-dependent. A single requirement might reference three other sections, each with their own exceptions and local amendments.
+
+A basic search tool does not solve this problem. Keyword search across NFPA documents returns too many results, most of them irrelevant. The engineer still has to read through everything and make the judgment call about which section actually applies to the specific scenario.
+
+What Sprinklermatic needed was not search. It was an agent that could understand the engineering context, find the relevant code sections, resolve cross-references, account for local amendments, and deliver a clear compliance determination with citations.
+
+> "What Sprinklermatic needed was not search. It was an agent that could understand the engineering context and deliver a clear compliance determination with citations."
+
+## What we built {#what-we-built}
+
+The system has three layers.
+
+First, a custom MCP server that connects Claude to the full NFPA code library. The documents are indexed, chunked, and structured so that Claude can retrieve specific sections, follow cross-references, and identify which edition and jurisdiction applies.
+
+Second, a retrieval pipeline that narrows the search space before Claude reasons over the results. When an engineer asks a compliance question, the system identifies the relevant NFPA standard, edition, and chapter before sending anything to the model. This reduces hallucination risk and keeps responses grounded in the actual text.
+
+Third, a response layer that formats Claude's analysis into a structured compliance determination: the relevant code sections, the requirement, whether the design complies, and the specific citations an engineer needs to verify the answer.
+
+The entire system runs on Sprinklermatic's infrastructure. NFPA documents never leave their network.
+
+## The result {#the-result}
+
+The compliance agent is in production. Engineers ask questions in plain language — "Does this occupancy classification require a fire pump?" — and get back a structured answer with citations in seconds.
+
+The 40+ hours per week of manual lookup is effectively eliminated. Engineers spend their time on design, not document retrieval. The compliance team reviews the agent's output rather than doing the initial lookup themselves.
+
+The system handles code cross-references automatically. When a requirement points to another section, the agent follows the reference and includes both in the determination. Local amendments are layered on top of the base code based on the project's jurisdiction.
+
+## What this means for your business {#what-this-means-for-your-business}
+
+Sprinklermatic's problem is not unique. Every industry that operates under dense regulatory frameworks has the same pattern: skilled professionals spending hours reading documents instead of doing their actual work.
+
+Insurance underwriting. Environmental compliance. Healthcare regulation. Building codes. Financial reporting standards.
+
+If your team spends significant time looking up, cross-referencing, and interpreting regulatory or technical documentation, the same architecture applies. A custom MCP server connecting Claude to your documentation, a retrieval pipeline that narrows the search space, and a response layer that delivers structured, cited answers.
+
+The build took weeks, not months. The return was measurable in the first week of production.
