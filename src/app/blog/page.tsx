@@ -103,13 +103,13 @@ export default function BlogPage() {
       />
 
       {/* Hero */}
-      <section className="border-b border-border-default bg-white px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
+      <section className="border-b border-border-default bg-white px-6 pb-16 pt-16 md:px-10 md:pb-20 md:pt-20 lg:px-16">
         <div className="mx-auto max-w-[1600px]">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             Alphabyte AI &middot; Perspectives
           </p>
-          <h1 className="mt-3 text-display tracking-brand-tight">Blog</h1>
-          <p className="mt-4 max-w-[60ch] text-body text-muted-foreground">
+          <h1 className="mt-4 text-display tracking-brand-tight">Blog</h1>
+          <p className="mt-6 max-w-[42ch] text-body text-muted-foreground">
             Practical writing on AI deployment, citizen development, and the
             operational reality of making AI work inside a real mid-market
             business.
@@ -118,7 +118,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured post */}
-      <section className="bg-canvas px-6 md:px-10 lg:px-16">
+      <section className="bg-canvas px-6 pt-12 md:px-10 md:pt-16 lg:px-16">
         <div className="mx-auto max-w-[1600px]">
           <div className="overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md md:grid md:grid-cols-2">
             {/* Image placeholder */}
