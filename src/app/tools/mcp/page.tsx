@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { DiscoveryCallButton } from "@/components/discovery-call-button";
+import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
   title: "MCP Servers — Model Context Protocol Integration",
@@ -77,87 +76,76 @@ const breadcrumbSchema = {
 
 export default function McpPage() {
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
         }}
       />
-
-      <nav aria-label="Breadcrumb" className="bg-canvas px-6 pt-8">
-        <ol className="mx-auto flex max-w-7xl items-center gap-2 text-body-sm text-muted-foreground">
-          <li>
-            <Link
-              href="/"
-              className="transition-colors hover:text-alphabyte-blue"
-            >
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link
-              href="/tools/"
-              className="transition-colors hover:text-alphabyte-blue"
-            >
-              Tools
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li className="text-foreground">MCP</li>
-        </ol>
-      </nav>
-
-      <section className="bg-canvas px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-6">
-              Tools &middot; MCP
-            </p>
-            <h1 className="text-display font-sans tracking-brand-tight mb-4">
-              MCP Servers
-            </h1>
-            <p className="text-headline tracking-brand-snug text-muted-foreground mb-6">
-              Governed, secure access to your systems via Model Context
-              Protocol.
-            </p>
-            <p className="text-body text-foreground max-w-[55ch] mb-10">
-              We build custom MCP servers that connect Claude to your databases,
-              APIs, CRM, and ERP. OAuth 2.0 secured on every connection. You own
-              the server.
-            </p>
-            <div className="flex flex-wrap items-center gap-6">
-              <DiscoveryCallButton variant="dark" size="lg">
-                Book a Discovery Call
-              </DiscoveryCallButton>
-              <Link
-                href="/tools/"
-                className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-              >
-                &larr; Back to all tools
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-canvas px-6 py-16 md:py-24 border-t border-border-default">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground mb-4">
-              Coming Soon
-            </p>
-            <p className="text-body text-muted-foreground max-w-[55ch]">
-              This tool has a fuller page in development. SQL databases, CRM and
-              ERP integrations, REST APIs, internal tools &mdash; all covered
-              with architecture patterns and security detail. To talk through
-              how MCP fits your engagement, book a Discovery Call or get in
-              touch.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+      <ToolPage
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Tools", href: "/tools/" },
+          { label: "MCP" },
+        ]}
+        eyebrow="Tools · MCP"
+        h1="MCP"
+        subhead="Connect models to your tools."
+        body={[
+          "Model Context Protocol (MCP) is an open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives Claude governed, auditable, real-time access to your CRM, ERP, data warehouse, databases, and APIs \u2014 without any data leaving your environment through a third-party intermediary.",
+          "Before MCP: your team copies and pastes data into Claude conversations. After MCP: Claude retrieves it directly, reasons over it, and produces output in real time \u2014 all inside your governed environment, all with a full audit trail.",
+        ]}
+        primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
+        secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
+        deliverablesSectionTitle="What we build"
+        deliverablesLayout="list"
+        deliverables={[
+          {
+            icon: "\ud83d\udd27",
+            title: "Custom MCP server development",
+            body: "MCP servers built from scratch for your specific data sources and use cases. Each exposes purpose-built tools Claude can invoke to query, retrieve, and where appropriate write to your systems. The architecture defines exactly what Claude can access \u2014 nothing more.",
+          },
+          {
+            icon: "\ud83d\udd10",
+            title: "Identity and security",
+            body: "OAuth 2.0 authentication, role-based access controls, audit logging for every tool invocation, secure credential management. Every server, every time.",
+          },
+          {
+            icon: "\u2601\ufe0f",
+            title: "Cloud infrastructure",
+            body: "We provision and configure the infrastructure \u2014 typically Azure Container Apps \u2014 with monitoring, alerting, and deployment pipelines appropriate to a production workload.",
+          },
+          {
+            icon: "\ud83d\udccb",
+            title: "Context and tool definitions",
+            body: "Organizational context, system definitions, available tools, and resource configurations baked into the server. Claude understands what it has access to and how to navigate it accurately before any conversation begins.",
+          },
+        ]}
+        inActiveUseSectionTitle="In active use today"
+        inActiveUse={[
+          {
+            eyebrow: "Sprinklermatic \u00b7 Fire Protection",
+            title: "NFPA codes library connection",
+            body: "Full NFPA codes library accessible to Claude through a custom MCP server with OAuth 2.0 security. Powers the live NFPA compliance agent in production.",
+          },
+          {
+            eyebrow: "RecirQ | Reventory \u00b7 Circular Economy",
+            title: "Google BigQuery connection",
+            body: "Claude reads and writes to live BigQuery data marts through a custom MCP server \u2014 powering the real-time sales intelligence dashboard.",
+          },
+          {
+            eyebrow: "Multi-Client \u00b7 Various Industries",
+            title: "Common integrations",
+            body: "Salesforce \u00b7 HubSpot \u00b7 Microsoft Dynamics \u00b7 SAP \u00b7 JIRA \u00b7 Google BigQuery \u00b7 Google Drive \u00b7 Custom REST APIs \u00b7 Slack",
+          },
+        ]}
+        closingCta={{
+          heading: "Want to see what this looks like for your business?",
+          subhead: "45 minutes. No cost. No obligation.",
+          cta: { label: "Book a Discovery Call", action: "modal" },
+        }}
+      />
+    </>
   );
 }

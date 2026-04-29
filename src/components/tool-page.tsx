@@ -129,7 +129,7 @@ export function ToolPage({
             <p className="mt-3 text-2xl text-muted-foreground">
               {subhead}
             </p>
-            <div className="mt-6 max-w-[55ch] space-y-4">
+            <div className="mt-6 max-w-3xl space-y-4">
               {body.map((paragraph, i) => (
                 <p key={i} className="text-lg text-foreground">
                   {paragraph}
