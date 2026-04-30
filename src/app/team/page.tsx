@@ -175,8 +175,9 @@ export default function TeamPage() {
         <div className="mx-auto max-w-[1600px]">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
-              <div
+              <Link
                 key={member.slug}
+                href={`/team/${member.slug}/`}
                 className="rounded-lg border border-border-default bg-white overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
                 {/* Photo / placeholder */}
@@ -222,7 +223,7 @@ export default function TeamPage() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
