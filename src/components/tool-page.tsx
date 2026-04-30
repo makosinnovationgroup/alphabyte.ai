@@ -45,6 +45,7 @@ export interface ToolPageProps {
     eyebrow: string;
     title: string;
     body: string;
+    href?: string;
   }[];
   rightForYou?: string[];
   notRightForYou?: string[];
@@ -277,19 +278,30 @@ export function ToolPage({
                 <div className="h-px flex-1 bg-border-default" />
               </div>
               <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
-                {inActiveUse.map((card, i) => (
-                  <div key={i} className="rounded-lg border border-border-default bg-white p-6">
-                    <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-                      {card.eyebrow}
-                    </p>
-                    <p className="mt-3 text-body font-bold text-foreground">
-                      {card.title}
-                    </p>
-                    <p className="mt-2 text-body text-muted-foreground">
-                      {card.body}
-                    </p>
-                  </div>
-                ))}
+                {inActiveUse.map((card, i) => {
+                  const content = (
+                    <>
+                      <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
+                        {card.eyebrow}
+                      </p>
+                      <p className="mt-3 text-body font-bold text-foreground">
+                        {card.title}
+                      </p>
+                      <p className="mt-2 text-body text-muted-foreground">
+                        {card.body}
+                      </p>
+                    </>
+                  );
+                  return card.href ? (
+                    <Link key={i} href={card.href} className="rounded-lg border border-border-default bg-white p-6 transition-colors hover:border-alphabyte-blue">
+                      {content}
+                    </Link>
+                  ) : (
+                    <div key={i} className="rounded-lg border border-border-default bg-white p-6">
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

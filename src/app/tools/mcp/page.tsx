@@ -128,11 +128,13 @@ export default function McpPage() {
             eyebrow: "Sprinklermatic \u00b7 Fire Protection",
             title: "NFPA codes library connection",
             body: "Full NFPA codes library accessible to Claude through a custom MCP server with OAuth 2.0 security. Powers the live NFPA compliance agent in production.",
+            href: "/our-work/sprinklermatic/",
           },
           {
             eyebrow: "RecirQ | Reventory \u00b7 Circular Economy",
             title: "Google BigQuery connection",
             body: "Claude reads and writes to live BigQuery data marts through a custom MCP server \u2014 powering the real-time sales intelligence dashboard.",
+            href: "/our-work/recirq/",
           },
           {
             eyebrow: "Multi-Client \u00b7 Various Industries",

@@ -80,15 +80,6 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function EmailIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
-
 function GraduationCapIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
@@ -248,15 +239,6 @@ export function TeamMemberPage({
                   >
                     <LinkedInIcon className="h-4 w-4" />
                     <span>{contact.linkedin.label}</span>
-                  </a>
-                )}
-                {contact.email && (
-                  <a
-                    href={contact.email.href}
-                    className="flex items-center gap-2 text-body-sm text-alphabyte-blue transition-colors hover:text-foreground"
-                  >
-                    <EmailIcon className="h-4 w-4" />
-                    <span>{contact.email.label}</span>
                   </a>
                 )}
               </div>

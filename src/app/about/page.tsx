@@ -251,7 +251,7 @@ export default function AboutPage() {
             Book a Discovery Call &rarr;
           </DiscoveryCallButton>
           <p className="text-body-sm text-muted-foreground mt-8">
-            hello@alphabyte.ai &middot; 155 Wintges Road, Unit 1, Vaughan,
+            contact@alphabyte.ai &middot; 155 Wintges Road, Unit 1, Vaughan,
             Ontario
           </p>
         </div>

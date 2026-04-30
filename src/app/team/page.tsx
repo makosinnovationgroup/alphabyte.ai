@@ -178,30 +178,30 @@ export default function TeamPage() {
               <Link
                 key={member.slug}
                 href={`/team/${member.slug}/`}
-                className="rounded-lg border border-border-default bg-white overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                className="block rounded-lg border border-border-default bg-white overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
                 {/* Photo / placeholder */}
-                <div className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
+                <span className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
                   <span className="text-5xl font-medium text-white">
                     {member.name.charAt(0)}
                   </span>
-                </div>
+                </span>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h2 className="text-body font-bold text-foreground">
+                <span className="block p-6">
+                  <span className="block text-body font-bold text-foreground">
                     {member.name}
-                  </h2>
-                  <p className="text-body-sm font-medium text-alphabyte-blue mt-1">
+                  </span>
+                  <span className="block text-body-sm font-medium text-alphabyte-blue mt-1">
                     {member.role}
-                  </p>
-                  <p className="text-body-sm text-muted-foreground mt-4 leading-relaxed">
+                  </span>
+                  <span className="block text-body-sm text-muted-foreground mt-4 leading-relaxed">
                     {member.bio[0]}
-                  </p>
+                  </span>
 
                   {/* Pills */}
                   {member.pills && member.pills.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="flex flex-wrap gap-2 mt-4">
                       {member.pills.map((pill) => (
                         <span
                           key={pill}
@@ -210,19 +210,14 @@ export default function TeamPage() {
                           {pill}
                         </span>
                       ))}
-                    </div>
+                    </span>
                   )}
 
                   {/* Profile link */}
-                  <div className="mt-4">
-                    <Link
-                      href={`/team/${member.slug}/`}
-                      className="text-body-sm font-medium text-alphabyte-blue hover:underline underline-offset-4"
-                    >
-                      View full profile &rarr;
-                    </Link>
-                  </div>
-                </div>
+                  <span className="block mt-4 text-body-sm font-medium text-alphabyte-blue">
+                    View full profile &rarr;
+                  </span>
+                </span>
               </Link>
             ))}
           </div>

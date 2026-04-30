@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 interface ProofPoint {
   eyebrow: string;
   title: string;
   body: string;
+  href: string;
 }
 
 const proofPoints: ProofPoint[] = [
@@ -9,16 +12,19 @@ const proofPoints: ProofPoint[] = [
     eyebrow: "SPRINKLERMATIC / EJ CAPITAL \u00b7 FIRE PROTECTION \u00b7 GLOBAL NATIONAL",
     title: "Automated NFPA compliance review",
     body: "Eliminates 40+ hours per week of manual fire codes lookup. Live in production.",
+    href: "/our-work/sprinklermatic/",
   },
   {
     eyebrow: "RECIRQ / REVENTORY \u00b7 CIRCULAR ECONOMY \u00b7 GLOBAL",
     title: "Real-time sales intelligence dashboard",
     body: "Claude analyses every WhatsApp sales conversation and feeds structured output into a live BigQuery dashboard.",
+    href: "/our-work/recirq/",
   },
   {
     eyebrow: "HOUSING SERVICES CORP. \u00b7 PUBLIC SECTOR HOUSING \u00b7 CANADA",
     title: "AI enablement roadmap",
     body: "Six actionable recommendations including automated cross-program reporting previously requiring a team of analysts.",
+    href: "/our-work/housing-services-corp/",
   },
 ];
 
@@ -35,9 +41,10 @@ export function ProofPoints() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {proofPoints.map((pp) => (
-            <div
+            <Link
               key={pp.title}
-              className="rounded-md border border-border-default bg-white p-6 md:p-8"
+              href={pp.href}
+              className="rounded-md border border-border-default bg-white p-6 md:p-8 transition-colors hover:border-alphabyte-blue"
             >
               <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-4">
                 {pp.eyebrow}
@@ -46,7 +53,7 @@ export function ProofPoints() {
                 {pp.title}
               </h3>
               <p className="text-body-sm text-muted-foreground">{pp.body}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

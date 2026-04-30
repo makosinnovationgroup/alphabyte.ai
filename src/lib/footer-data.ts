@@ -21,7 +21,7 @@ export const contact = {
     line1: "155 Winges Road, Unit 1",
     line2: "Vaughan, Ontario, Canada L4L 6C7",
   },
-  email: "hello@alphabyte.ai",
+  email: "contact@alphabyte.ai",
   phone: "+1 (647) 204-4581",
   linkedin: {
     label: "Alphabyte AI on LinkedIn",

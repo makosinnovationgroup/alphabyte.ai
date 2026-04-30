@@ -119,10 +119,10 @@ export default function ContactPage() {
                     <div>
                       <p className="text-body font-bold text-white">Email</p>
                       <a
-                        href="mailto:hello@alphabyte.ai"
+                        href="mailto:contact@alphabyte.ai"
                         className="text-body-sm text-white/60 hover:text-alphabyte-blue"
                       >
-                        hello@alphabyte.ai
+                        contact@alphabyte.ai
                       </a>
                     </div>
                   </div>

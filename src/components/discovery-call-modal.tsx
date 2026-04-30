@@ -79,11 +79,14 @@ export function DiscoveryCallModal() {
                     ease: "easeIn",
                   },
                 }}
+                onClick={(e) => {
+                  if (e.target === e.currentTarget) close();
+                }}
               >
-                <div className="relative w-full max-w-lg rounded-md border border-border-default bg-white p-6 shadow-lg my-8 sm:p-8 md:my-0">
+                <div className="relative w-full max-w-lg md:max-w-3xl rounded-md border border-border-default bg-white p-6 shadow-lg my-4 sm:p-8">
                   <DialogPrimitive.Close asChild>
                     <button
-                      className="absolute right-4 top-4 flex items-center justify-center min-w-[44px] min-h-[44px] text-muted-foreground transition-colors hover:text-foreground"
+                      className="absolute right-4 top-4 z-10 flex items-center justify-center min-w-[44px] min-h-[44px] text-muted-foreground transition-colors hover:text-foreground"
                       aria-label="Close"
                     >
                       <X className="h-5 w-5" />
@@ -101,139 +104,148 @@ export function DiscoveryCallModal() {
                       </p>
                     </div>
                   ) : (
-                    <>
+                    <form onSubmit={handleSubmit}>
                       <h2
                         id={titleId}
                         className="text-headline tracking-brand-snug mb-2 pr-10"
                       >
                         Book a Discovery Call
                       </h2>
-                      <p className="text-body text-muted-foreground mb-8">
+                      <p className="text-body text-muted-foreground mb-6">
                         45 minutes. No cost. No obligation. You describe your
                         situation. We tell you what we would do, in what order,
                         and what you would have at day&nbsp;30.
                       </p>
 
-                      <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+                        {/* Left column — contact fields */}
+                        <div className="space-y-4">
+                          <div className="grid grid-cols-2 gap-4">
+                            <label className="block">
+                              <span className="block text-body-sm font-medium text-foreground mb-1.5">
+                                First name
+                              </span>
+                              <input
+                                type="text"
+                                name="firstName"
+                                required
+                                placeholder="Jane"
+                                autoFocus
+                                className={inputClasses}
+                              />
+                            </label>
+                            <label className="block">
+                              <span className="block text-body-sm font-medium text-foreground mb-1.5">
+                                Last name
+                              </span>
+                              <input
+                                type="text"
+                                name="lastName"
+                                required
+                                placeholder="Smith"
+                                className={inputClasses}
+                              />
+                            </label>
+                          </div>
+
                           <label className="block">
                             <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                              First name
+                              Work email
                             </span>
                             <input
-                              type="text"
-                              name="firstName"
+                              type="email"
+                              name="workEmail"
                               required
-                              placeholder="Jane"
-                              autoFocus
+                              placeholder="jane@company.com"
                               className={inputClasses}
                             />
                           </label>
+
                           <label className="block">
                             <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                              Last name
+                              Company
                             </span>
                             <input
                               type="text"
-                              name="lastName"
+                              name="company"
                               required
-                              placeholder="Smith"
+                              placeholder="Acme Corp"
+                              className={inputClasses}
+                            />
+                          </label>
+
+                          <label className="block">
+                            <span className="block text-body-sm font-medium text-foreground mb-1.5">
+                              Job title
+                            </span>
+                            <input
+                              type="text"
+                              name="jobTitle"
+                              required
+                              placeholder="VP of Operations"
                               className={inputClasses}
                             />
                           </label>
                         </div>
 
-                        <label className="block">
-                          <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                            Work email
-                          </span>
-                          <input
-                            type="email"
-                            name="workEmail"
-                            required
-                            placeholder="jane@company.com"
-                            className={inputClasses}
-                          />
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                            Company
-                          </span>
-                          <input
-                            type="text"
-                            name="company"
-                            required
-                            placeholder="Acme Corp"
-                            className={inputClasses}
-                          />
-                        </label>
-
-                        <label className="block">
-                          <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                            Job title
-                          </span>
-                          <input
-                            type="text"
-                            name="jobTitle"
-                            required
-                            placeholder="VP of Operations"
-                            className={inputClasses}
-                          />
-                        </label>
-
-                        <fieldset>
-                          <legend className="block text-body-sm font-medium text-foreground mb-3">
-                            What are you most interested in?
-                          </legend>
-                          <div className="space-y-2.5">
-                            {INTEREST_OPTIONS.map((option) => (
-                              <label
-                                key={option}
-                                className="group flex items-center gap-3 cursor-pointer"
-                              >
-                                <input
-                                  type="radio"
-                                  name="interest"
-                                  value={option}
-                                  required
-                                  className="peer sr-only"
-                                />
-                                <span
-                                  className={cn(
-                                    "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-border-default transition-colors",
-                                    "group-has-[:checked]:border-alphabyte-blue",
-                                    "peer-focus-visible:ring-2 peer-focus-visible:ring-alphabyte-blue peer-focus-visible:ring-offset-2",
-                                  )}
+                        {/* Right column — interest + situation */}
+                        <div className="flex flex-col gap-4">
+                          <fieldset>
+                            <legend className="block text-body-sm font-medium text-foreground mb-3">
+                              What are you most interested in?
+                            </legend>
+                            <div className="space-y-2">
+                              {INTEREST_OPTIONS.map((option) => (
+                                <label
+                                  key={option}
+                                  className="group flex items-center gap-3 cursor-pointer"
                                 >
-                                  <span className="h-2.5 w-2.5 rounded-full bg-alphabyte-blue scale-0 group-has-[:checked]:scale-100 transition-transform" />
-                                </span>
-                                <span className="text-body-sm text-foreground">
-                                  {option}
-                                </span>
-                              </label>
-                            ))}
-                          </div>
-                        </fieldset>
+                                  <input
+                                    type="radio"
+                                    name="interest"
+                                    value={option}
+                                    required
+                                    className="peer sr-only"
+                                  />
+                                  <span
+                                    className={cn(
+                                      "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-border-default transition-colors",
+                                      "group-has-[:checked]:border-alphabyte-blue",
+                                      "peer-focus-visible:ring-2 peer-focus-visible:ring-alphabyte-blue peer-focus-visible:ring-offset-2",
+                                    )}
+                                  >
+                                    <span className="h-2.5 w-2.5 rounded-full bg-alphabyte-blue scale-0 group-has-[:checked]:scale-100 transition-transform" />
+                                  </span>
+                                  <span className="text-body-sm text-foreground">
+                                    {option}
+                                  </span>
+                                </label>
+                              ))}
+                            </div>
+                          </fieldset>
 
-                        <label className="block">
-                          <span className="block text-body-sm font-medium text-foreground mb-1.5">
-                            Tell us about your situation{" "}
-                            <span className="font-normal text-muted-foreground">
-                              (optional)
+                          <label className="flex flex-col flex-1">
+                            <span className="block text-body-sm font-medium text-foreground mb-1.5">
+                              Tell us about your situation{" "}
+                              <span className="font-normal text-muted-foreground">
+                                (optional)
+                              </span>
                             </span>
-                          </span>
-                          <textarea
-                            name="situation"
-                            rows={3}
-                            placeholder="What are you trying to solve? What have you tried?"
-                            className={cn(
-                              inputClasses,
-                              "resize-y min-h-[80px]",
-                            )}
-                          />
-                        </label>
+                            <textarea
+                              name="situation"
+                              rows={2}
+                              placeholder="What are you trying to solve? What have you tried?"
+                              className={cn(
+                                inputClasses,
+                                "resize-y flex-1 min-h-[60px]",
+                              )}
+                            />
+                          </label>
+                        </div>
+                      </div>
 
+                      {/* Full-width submit row */}
+                      <div className="mt-6">
                         <Button
                           type="submit"
                           variant="dark"
@@ -245,13 +257,12 @@ export function DiscoveryCallModal() {
                             ? "Sending\u2026"
                             : "Book a Discovery Call \u2192"}
                         </Button>
-
-                        <p className="text-body-sm text-muted-foreground text-center">
+                        <p className="text-body-sm text-muted-foreground text-center mt-3">
                           We typically respond within one business day. Your
                           information is never shared with third parties.
                         </p>
-                      </form>
-                    </>
+                      </div>
+                    </form>
                   )}
                 </div>
               </motion.div>

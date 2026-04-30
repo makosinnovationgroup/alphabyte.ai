@@ -22,11 +22,19 @@ export function Footer() {
           <Link
             href="/"
             aria-label="Alphabyte AI"
-            className="shrink-0 text-xl font-medium tracking-brand-snug"
+            className="shrink-0 inline-flex items-center gap-2 text-xl font-medium tracking-brand-snug"
           >
-            <span className="text-foreground">Alphabyte</span>
-            <span className="mx-1.5 text-muted-foreground">&middot;</span>
-            <span className="text-alphabyte-blue">AI</span>
+            <img
+              src="/logos/alphabyte-icon-blue.svg"
+              alt=""
+              className="h-6 w-6"
+              aria-hidden="true"
+            />
+            <span>
+              <span className="text-foreground">Alphabyte</span>
+              <span className="mx-1.5 text-muted-foreground">&middot;</span>
+              <span className="text-alphabyte-blue">AI</span>
+            </span>
           </Link>
         </div>
 
