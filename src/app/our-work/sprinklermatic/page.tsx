@@ -105,7 +105,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "The Compliance Intelligence Agent" },
   {
     type: "paragraph",
-    text: "With the knowledge foundation in place, Alphabyte built the agent layer as part of a Claude Cworks project. A team member describes a project scenario \u2014 building type, system configuration, or specific installation condition \u2014 and the agent returns the applicable code standard, the relevant passage, and the source page it was retrieved from. Every response is grounded in the actual document, not inferred.",
+    text: "With the knowledge foundation in place, Alphabyte built the agent layer as part of a Claude Cowork project. A team member describes a project scenario \u2014 building type, system configuration, or specific installation condition \u2014 and the agent returns the applicable code standard, the relevant passage, and the source page it was retrieved from. Every response is grounded in the actual document, not inferred.",
   },
   {
     type: "paragraph",
@@ -183,7 +183,7 @@ export default function SprinklermaticPage() {
           ],
           technology: [
             "Claude (Anthropic)",
-            "Claude Cworks",
+            "Claude Cowork",
             "Custom MCP Server",
             "Airtop Connector",
             "Knowledge Graph + Manifest Index",

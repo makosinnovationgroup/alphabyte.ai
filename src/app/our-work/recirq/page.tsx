@@ -87,7 +87,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "AI-Powered Executive Productivity Suite" },
   {
     type: "paragraph",
-    text: "Alphabyte designed and delivered a custom Claude plugin built around how RecirQ\u2019s leadership actually operates. Deployed as a Claude Cworks project, the solution combines a structured knowledge layer with purpose-built agents and on-demand workflows.",
+    text: "Alphabyte designed and delivered a custom Claude plugin built around how RecirQ\u2019s leadership actually operates. Deployed as a Claude Cowork project, the solution combines a structured knowledge layer with purpose-built agents and on-demand workflows.",
   },
   {
     type: "paragraph",
@@ -174,7 +174,7 @@ export default function RecirqPage() {
           ],
           technology: [
             "Claude (Anthropic)",
-            "Claude Cworks",
+            "Claude Cowork",
             "Google BigQuery",
             "Slack API",
             "Monday.com",
