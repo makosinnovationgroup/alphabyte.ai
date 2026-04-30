@@ -229,13 +229,36 @@ export function Header() {
   const reducedMotion = useReducedMotion();
   const noMotion = !!reducedMotion;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [visible, setVisible] = React.useState(true);
+  const lastScrollY = React.useRef(0);
 
   React.useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
+  React.useEffect(() => {
+    function handleScroll() {
+      const currentY = window.scrollY;
+      if (currentY < 10) {
+        setVisible(true);
+      } else if (currentY < lastScrollY.current) {
+        setVisible(true);
+      } else if (currentY > lastScrollY.current) {
+        setVisible(false);
+      }
+      lastScrollY.current = currentY;
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-white border-b border-border-default">
+    <header
+      className={cn(
+        "sticky top-0 z-30 bg-white border-b border-border-default transition-transform duration-200",
+        visible ? "translate-y-0" : "-translate-y-full",
+      )}
+    >
       <a
         href="#main-content"
         className={cn(
