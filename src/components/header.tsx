@@ -27,7 +27,7 @@ function Wordmark() {
       className="shrink-0 flex items-center gap-0 text-xl font-medium tracking-brand-snug"
     >
       <img
-        src="/logos/alphabyte-logo-black.png"
+        src="/logos/alphabyte-logo-black.svg"
         alt="Alphabyte"
         className="h-10"
       />
