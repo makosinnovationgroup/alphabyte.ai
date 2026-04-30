@@ -1,0 +1,62 @@
+{
+  "slug": "rugved",
+  "name": "Rugved",
+  "role": "Claude Specialist",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/rugved.jpg",
+  "eyebrow": "CLAUDE SPECIALIST AT ALPHABYTE AI",
+  "bio": [
+    "Rugved is a dedicated Claude engineer at Alphabyte AI. He leads MCP server development, context engineering, agentic system design, and Claude Code delivery across client engagements. Trained through Anthropic Academy, he brings deep, hands-on expertise with the Claude model family.",
+    "His work spans the full Claude integration stack — from building custom MCP servers that connect Claude to internal tools and databases, to designing multi-agent orchestration patterns that run reliably in production environments."
+  ],
+  "contact": {
+    "email": {
+      "label": "rugved@alphabytesolutions.com",
+      "href": "mailto:rugved@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.Eng. in Software Engineering",
+      "subtitle": "Bachelor of Engineering"
+    },
+    "institution": {
+      "title": "University of Waterloo",
+      "subtitle": "Waterloo, Ontario, Canada"
+    },
+    "keyCoursework": "AI Systems · Distributed Computing · Software Design · Natural Language Processing · Systems Programming"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Claude Specialist",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "2023",
+      "role": "Anthropic Academy",
+      "organization": "Claude Engineering Certification"
+    }
+  ],
+  "expertise": [
+    "Claude API & Claude Code",
+    "MCP Server Development",
+    "Context Engineering",
+    "Agentic System Design",
+    "Prompt Engineering",
+    "Multi-Agent Orchestration"
+  ],
+  "achievements": [
+    "Certified through Anthropic Academy for Claude engineering",
+    "Built production MCP servers connecting Claude to enterprise data systems",
+    "Designed agentic workflows deployed across multiple client engagements"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Claude Engineering", "MCP Servers", "Context Engineering", "Agentic Systems"]
+}

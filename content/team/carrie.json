@@ -1,0 +1,62 @@
+{
+  "slug": "carrie",
+  "name": "Carrie",
+  "role": "Outbound Operations",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/carrie.jpg",
+  "eyebrow": "OUTBOUND OPERATIONS AT ALPHABYTE AI",
+  "bio": [
+    "Carrie manages outbound sales operations for Alphabyte AI. She runs prospecting, outreach sequencing, and pipeline coordination — the operational layer that connects Alphabyte's capabilities with companies that need them.",
+    "Her focus is on disciplined, targeted outreach rather than volume. She identifies the right companies, builds the right sequences, and ensures that every conversation that reaches the delivery team is a real fit."
+  ],
+  "contact": {
+    "email": {
+      "label": "carrie@alphabytesolutions.com",
+      "href": "mailto:carrie@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.B.A. in Business Administration",
+      "subtitle": "Bachelor of Business Administration"
+    },
+    "institution": {
+      "title": "Wilfrid Laurier University",
+      "subtitle": "Waterloo, Ontario, Canada"
+    },
+    "keyCoursework": "Sales Management · Business Development · CRM Systems · Data Analysis · Strategic Communication"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Outbound Operations",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "Prior to 2024",
+      "role": "Sales Development Representative",
+      "organization": "Various B2B firms"
+    }
+  ],
+  "expertise": [
+    "Outbound Sales Operations",
+    "Prospecting & Sequencing",
+    "Pipeline Management",
+    "CRM Administration",
+    "Sales Development",
+    "Account Research"
+  ],
+  "achievements": [
+    "Built the outbound prospecting pipeline for the Alphabyte AI practice launch",
+    "Established outreach sequencing that targets qualified mid-market accounts",
+    "Coordinated pipeline handoff process between sales and delivery teams"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Outbound Operations", "Sales Development", "Pipeline Management"]
+}

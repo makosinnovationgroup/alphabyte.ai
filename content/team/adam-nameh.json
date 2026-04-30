@@ -18,10 +18,6 @@
     "email": {
       "label": "adam.nameh@alphabytesolutions.com",
       "href": "mailto:adam.nameh@alphabytesolutions.com"
-    },
-    "phone": {
-      "label": "+1 (647) 204-4581",
-      "href": "tel:+16472044581"
     }
   },
   "credentials": {
@@ -118,6 +114,7 @@
       "slug": "sprinklermatic-nfpa-compliance"
     }
   ],
+  "pills": ["AI Strategy", "Data Architecture", "Client Engagement", "Programme Design"],
   "footerBio": {
     "name": "Alphabyte AI",
     "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."

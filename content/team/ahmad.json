@@ -1,0 +1,62 @@
+{
+  "slug": "ahmad",
+  "name": "Ahmad",
+  "role": "Content & Project Manager",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/ahmad.jpg",
+  "eyebrow": "PROJECT MANAGER AT ALPHABYTE AI",
+  "bio": [
+    "Ahmad runs content strategy, project management, and go-to-market execution for Alphabyte AI. He owns the content calendar, project tracking, and cross-functional coordination that keeps the practice running on schedule.",
+    "He works at the intersection of delivery and storytelling — making sure client engagements produce not just results but the case studies, proof points, and published content that demonstrate what Alphabyte builds."
+  ],
+  "contact": {
+    "email": {
+      "label": "ahmad@alphabytesolutions.com",
+      "href": "mailto:ahmad@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.A. in Communications",
+      "subtitle": "Bachelor of Arts"
+    },
+    "institution": {
+      "title": "York University",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "Project Management · Content Strategy · Digital Marketing · Technical Writing · Analytics"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Content & Project Manager",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "Prior to 2024",
+      "role": "Project Coordinator",
+      "organization": "Various agencies"
+    }
+  ],
+  "expertise": [
+    "Content Strategy",
+    "Project Management",
+    "GTM Execution",
+    "Editorial Planning",
+    "Cross-Functional Coordination",
+    "Case Study Production"
+  ],
+  "achievements": [
+    "Established the Alphabyte AI content calendar and publishing cadence",
+    "Coordinated go-to-market execution across multiple service launches",
+    "Built the project tracking framework used across all active engagements"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Content Strategy", "Project Management", "GTM Execution"]
+}

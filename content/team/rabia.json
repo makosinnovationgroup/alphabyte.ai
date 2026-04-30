@@ -1,0 +1,62 @@
+{
+  "slug": "rabia",
+  "name": "Rabia",
+  "role": "Marketing & Content",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/rabia.jpg",
+  "eyebrow": "MARKETING AT ALPHABYTE AI",
+  "bio": [
+    "Rabia leads marketing strategy and content production for Alphabyte AI. She owns the brand voice, LinkedIn presence, and consent marketing programme that drives awareness and inbound interest for the practice.",
+    "Her work covers the full marketing stack — from long-form thought leadership and social content to campaign execution and audience development. She ensures every piece of published content reflects the Alphabyte voice: calm, direct, and grounded in real work."
+  ],
+  "contact": {
+    "email": {
+      "label": "rabia@alphabytesolutions.com",
+      "href": "mailto:rabia@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.Com. in Marketing",
+      "subtitle": "Bachelor of Commerce"
+    },
+    "institution": {
+      "title": "Ryerson University",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "Digital Marketing · Brand Management · Content Marketing · Social Media Strategy · Analytics"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Marketing & Content",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "Prior to 2024",
+      "role": "Content Marketing Specialist",
+      "organization": "Various firms"
+    }
+  ],
+  "expertise": [
+    "Marketing Strategy",
+    "Content Production",
+    "Social Media Management",
+    "Brand Voice Development",
+    "LinkedIn Marketing",
+    "Consent Marketing"
+  ],
+  "achievements": [
+    "Established the Alphabyte AI brand voice and content guidelines",
+    "Built and grew the Alphabyte LinkedIn presence from launch",
+    "Designed the consent marketing programme for inbound lead generation"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Marketing Strategy", "Content Production", "Social Media", "Brand"]
+}

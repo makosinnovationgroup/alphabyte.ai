@@ -1,0 +1,62 @@
+{
+  "slug": "mitch",
+  "name": "Mitch",
+  "role": "Website & Technical Lead",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/mitch.jpg",
+  "eyebrow": "TECHNICAL LEAD AT ALPHABYTE AI",
+  "bio": [
+    "Mitch leads technical delivery and website architecture for Alphabyte AI. He is responsible for the build, deployment, and ongoing development of the Alphabyte AI platform — from static site infrastructure on Cloudflare Pages to the component library and design system that powers every page.",
+    "With deep experience across modern web stacks, Mitch owns the end-to-end pipeline: Next.js architecture, Tailwind design tokens, CI/CD, and production monitoring. He works directly with the founding team to translate design direction into shipped product."
+  ],
+  "contact": {
+    "email": {
+      "label": "mitch@alphabytesolutions.com",
+      "href": "mailto:mitch@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.Sc. in Computer Science",
+      "subtitle": "Bachelor of Science"
+    },
+    "institution": {
+      "title": "University of Toronto",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "Web Systems · Software Architecture · Database Design · Cloud Computing · DevOps"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Website & Technical Lead",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "Prior to 2024",
+      "role": "Full-Stack Engineer",
+      "organization": "Various startups"
+    }
+  ],
+  "expertise": [
+    "Next.js & React Architecture",
+    "Tailwind CSS & Design Systems",
+    "Static Site Generation",
+    "Cloudflare Pages Deployment",
+    "TypeScript",
+    "CI/CD Pipelines"
+  ],
+  "achievements": [
+    "Architected and shipped the Alphabyte AI marketing platform end-to-end",
+    "Built a component library and design token system from the brand guide",
+    "Established the static export pipeline for Cloudflare Pages"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Web Development", "Technical Architecture", "Deployment"]
+}

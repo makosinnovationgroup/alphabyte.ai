@@ -3,6 +3,20 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+function getTeamMemberEntries(): MetadataRoute.Sitemap {
+  const teamDir = path.join(process.cwd(), "content/team");
+  if (!fs.existsSync(teamDir)) return [];
+  return fs
+    .readdirSync(teamDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => ({
+      url: `https://alphabyte.ai/team/${f.replace(/\.json$/, "")}/`,
+      lastModified: new Date("2026-04-29"),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+}
+
 function getBlogPostEntries(): MetadataRoute.Sitemap {
   const blogDir = path.join(process.cwd(), "content/blog");
   if (!fs.existsSync(blogDir)) return [];
@@ -143,6 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...getTeamMemberEntries(),
     ...getBlogPostEntries(),
   ];
 }

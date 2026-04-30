@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
@@ -31,52 +33,47 @@ export const metadata: Metadata = {
   },
 };
 
-const teamMembers = [
-  {
-    name: "Adam Nameh",
-    initial: "A",
-    role: "Co-Founder & Data Platform Architect",
-    bio: "Client relationships, practice strategy, and AI programme design. 10+ years in data architecture and platform design. Formerly Data Architect at BMO Financial Group. Co-founder of Fantastik AI and MadSavi.",
-    pills: ["AI Strategy", "Data Architecture", "Client Engagement", "Programme Design"],
-    profileHref: "/team/adam-nameh/",
-    hasPhoto: true,
-  },
-  {
-    name: "Mitch",
-    initial: "M",
-    role: "Website & Technical Lead",
-    bio: "Leads technical delivery and website architecture for Alphabyte AI. Responsible for the build, deployment, and ongoing development of the Alphabyte AI platform.",
-    pills: ["Web Development", "Technical Architecture", "Deployment"],
-  },
-  {
-    name: "Rugved",
-    initial: "R",
-    role: "Claude Specialist",
-    bio: "Dedicated Claude engineer. MCP server development, context engineering, agentic system design, and Claude Code delivery. Trained through Anthropic Academy.",
-    pills: ["Claude Engineering", "MCP Servers", "Context Engineering", "Agentic Systems"],
-  },
-  {
-    name: "Ahmad",
-    initial: "A",
-    role: "Content & Project Manager",
-    bio: "Content strategy, project management, and GTM execution for Alphabyte AI. Owns the content calendar, project tracking, and cross-functional coordination.",
-    pills: ["Content Strategy", "Project Management", "GTM Execution"],
-  },
-  {
-    name: "Rabia",
-    initial: "R",
-    role: "Marketing & Content",
-    bio: "Marketing strategy and content production. Owns the Alphabyte AI brand voice, LinkedIn presence, and consent marketing programme.",
-    pills: ["Marketing Strategy", "Content Production", "Social Media", "Brand"],
-  },
-  {
-    name: "Carrie",
-    initial: "C",
-    role: "Outbound Operations",
-    bio: "Outbound sales operations. Manages prospecting, outreach sequencing, and pipeline coordination for the Alphabyte AI practice.",
-    pills: ["Outbound Operations", "Sales Development", "Pipeline Management"],
-  },
+interface TeamMemberSummary {
+  slug: string;
+  name: string;
+  role: string;
+  bio: string[];
+  avatarSrc: string;
+  pills?: string[];
+}
+
+const TEAM_DIR = path.join(process.cwd(), "content/team");
+
+const MEMBER_ORDER = [
+  "adam-nameh",
+  "mitch",
+  "rugved",
+  "ahmad",
+  "rabia",
+  "carrie",
 ];
+
+function getAllTeamMembers(): TeamMemberSummary[] {
+  if (!fs.existsSync(TEAM_DIR)) return [];
+  const files = fs
+    .readdirSync(TEAM_DIR)
+    .filter((f) => f.endsWith(".json"));
+
+  const members = files.map((f) => {
+    const data = JSON.parse(
+      fs.readFileSync(path.join(TEAM_DIR, f), "utf-8"),
+    ) as TeamMemberSummary;
+    return data;
+  });
+
+  return members.sort((a, b) => {
+    const ai = MEMBER_ORDER.indexOf(a.slug);
+    const bi = MEMBER_ORDER.indexOf(b.slug);
+    const aIdx = ai === -1 ? MEMBER_ORDER.length : ai;
+    const bIdx = bi === -1 ? MEMBER_ORDER.length : bi;
+    return aIdx - bIdx;
+  });
+}
 
 const stats = [
   { value: "20+", label: "Delivery specialists across data, cloud, and AI" },
@@ -118,6 +115,8 @@ const webPageSchema = {
 };
 
 export default function TeamPage() {
+  const teamMembers = getAllTeamMembers();
+
   return (
     <main>
       <script
@@ -177,21 +176,15 @@ export default function TeamPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
               <div
-                key={member.name}
+                key={member.slug}
                 className="rounded-lg border border-border-default bg-white overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
                 {/* Photo / placeholder */}
-                {member.hasPhoto ? (
-                  <div className="relative aspect-[4/3] bg-neutral-800">
-                    <div className="absolute inset-0 bg-alphabyte-blue/20 mix-blend-multiply" />
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
-                    <span className="text-5xl font-medium text-white">
-                      {member.initial}
-                    </span>
-                  </div>
-                )}
+                <div className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
+                  <span className="text-5xl font-medium text-white">
+                    {member.name.charAt(0)}
+                  </span>
+                </div>
 
                 {/* Content */}
                 <div className="p-6">
@@ -202,35 +195,31 @@ export default function TeamPage() {
                     {member.role}
                   </p>
                   <p className="text-body-sm text-muted-foreground mt-4 leading-relaxed">
-                    {member.bio}
+                    {member.bio[0]}
                   </p>
 
                   {/* Pills */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {member.pills.map((pill) => (
-                      <span
-                        key={pill}
-                        className="inline-flex items-center rounded-full border border-border-default bg-alphabyte-grey px-3 py-1 text-body-sm text-muted-foreground"
-                      >
-                        {pill}
-                      </span>
-                    ))}
-                  </div>
+                  {member.pills && member.pills.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {member.pills.map((pill) => (
+                        <span
+                          key={pill}
+                          className="inline-flex items-center rounded-full border border-border-default bg-alphabyte-grey px-3 py-1 text-body-sm text-muted-foreground"
+                        >
+                          {pill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
-                  {/* Profile link or coming soon */}
+                  {/* Profile link */}
                   <div className="mt-4">
-                    {member.profileHref ? (
-                      <Link
-                        href={member.profileHref}
-                        className="text-body-sm font-medium text-alphabyte-blue hover:underline underline-offset-4"
-                      >
-                        View full profile &rarr;
-                      </Link>
-                    ) : (
-                      <p className="text-body-sm italic text-muted-foreground">
-                        Bio page coming soon
-                      </p>
-                    )}
+                    <Link
+                      href={`/team/${member.slug}/`}
+                      className="text-body-sm font-medium text-alphabyte-blue hover:underline underline-offset-4"
+                    >
+                      View full profile &rarr;
+                    </Link>
                   </div>
                 </div>
               </div>
