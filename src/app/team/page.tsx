@@ -46,9 +46,11 @@ const TEAM_DIR = path.join(process.cwd(), "content/team");
 
 const MEMBER_ORDER = [
   "adam-nameh",
-  "mitch",
+  "mitch-makos",
+  "ibrahim-nameh",
   "rugved",
-  "ahmad",
+  "ahmad-nameh",
+  "kevin-seto",
   "rabia",
   "carrie",
 ];

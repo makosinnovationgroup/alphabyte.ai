@@ -1,0 +1,81 @@
+{
+  "slug": "kevin-seto",
+  "name": "Kevin Seto",
+  "role": "Director, Analytics and Project Delivery",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/kevin-seto.jpeg",
+  "eyebrow": "DIRECTOR OF ANALYTICS AT ALPHABYTE",
+  "bio": [
+    "Kevin leads analytics and project delivery at Alphabyte Solutions, helping businesses harness the power of data to identify opportunities for improvement and drive strategic decisions. He develops comprehensive BI roadmaps and data-driven strategies that enhance operations, boost revenue, and reduce costs.",
+    "His background spans e-commerce analytics, financial planning, and international investment operations — from Standard Chartered Bank in Hong Kong to leading analytics delivery across North American clients at Alphabyte."
+  ],
+  "contact": {
+    "linkedin": {
+      "label": "Kevin Seto on LinkedIn",
+      "href": "https://www.linkedin.com/in/kevin-seto/"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "Hon. B.Sc. in Statistical Sciences & Economics",
+      "subtitle": "Honours Bachelor of Science"
+    },
+    "institution": {
+      "title": "University of Toronto",
+      "subtitle": "Toronto, Ontario, Canada · 2016"
+    },
+    "keyCoursework": "Statistical Sciences · Economics · Data Analysis · Quantitative Methods"
+  },
+  "careerTimeline": [
+    {
+      "period": "2019 — Present",
+      "role": "Director, Analytics and Project Delivery",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "2018 — 2019",
+      "role": "FP&A Manager",
+      "organization": "Mango Tree"
+    },
+    {
+      "period": "2018",
+      "role": "Business Data Analyst",
+      "organization": "LMC Healthcare"
+    },
+    {
+      "period": "2018",
+      "role": "Investment Operations Specialist",
+      "organization": "Harmony Advisors Ltd. (Hong Kong)"
+    },
+    {
+      "period": "2016 — 2017",
+      "role": "Product Analyst, Unsecured Portfolio Management",
+      "organization": "Standard Chartered Bank (Hong Kong)"
+    }
+  ],
+  "expertise": [
+    "Tableau",
+    "Power BI",
+    "SQL (RDBMS)",
+    "Python",
+    "Looker Studio",
+    "Alteryx",
+    "Financial Reporting & FP&A",
+    "E-Commerce Analytics"
+  ],
+  "achievements": [
+    "Leads strategic vision for analytics and project delivery at Alphabyte, aligning data initiatives with business objectives",
+    "Designs and deploys advanced analytics solutions across multiple client engagements",
+    "Built company-wide budgeting and forecasting infrastructure at Mango Tree",
+    "International experience across Hong Kong and North American financial and banking institutions",
+    "Champions continuous improvement initiatives within analytics and project delivery processes"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Tableau", "Power BI", "SQL", "Python", "Analytics"]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "ibrahim-nameh",
+  "name": "Ibrahim Nameh",
+  "role": "IT Director",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Vaughan, Ontario, Canada",
+  "avatarSrc": "/team/ibrahim-nameh.jpeg",
+  "eyebrow": "IT DIRECTOR AT ALPHABYTE",
+  "bio": [
+    "Ibrahim is a Project Manager and Cloud Data Architect with extensive experience designing end-to-end data solutions. At Alphabyte, he serves as IT Director overseeing cloud data strategy and architecture, web application development, and account management for the company's largest clients.",
+    "His career spans enterprise-scale delivery at PepsiCo, where he led BI and Trade Promotions Management solutions, through to hands-on development of web applications and data pipelines at Alphabyte. He brings deep expertise in Azure, SQL Server, Python, and modern BI tooling."
+  ],
+  "contact": {
+    "linkedin": {
+      "label": "Ibrahim Nameh on LinkedIn",
+      "href": "https://www.linkedin.com/in/ibrahim-nameh/"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "Bachelor of Business Administration",
+      "subtitle": "Operations Management & Information Systems"
+    },
+    "institution": {
+      "title": "York University — Schulich School of Business",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "Operations Management · Information Systems · Data Science · Python · Statistics · Machine Learning"
+  },
+  "careerTimeline": [
+    {
+      "period": "2019 — Present",
+      "role": "IT Director",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "2018 — 2019",
+      "role": "Analyst, BI & Trade Promotions",
+      "organization": "PepsiCo"
+    },
+    {
+      "period": "2016 — 2018",
+      "role": "Associate Analyst, TPM",
+      "organization": "PepsiCo"
+    },
+    {
+      "period": "2015",
+      "role": "Finance Coordinator / Reporting Analyst",
+      "organization": "Parachute Canada"
+    }
+  ],
+  "expertise": [
+    "Cloud Data Architecture (Azure)",
+    "SQL Server & T-SQL",
+    "Python",
+    "Power BI & Tableau",
+    "Web Application Development (.NET)",
+    "ETL & Data Factory",
+    "Requirements Gathering & Delivery",
+    "Oracle PL/SQL"
+  ],
+  "achievements": [
+    "Oversaw development of 5 web applications used by 500+ monthly users at Alphabyte",
+    "Automated 5+ deductions processes at PepsiCo, saving the accounting team 15+ hours weekly",
+    "Developed database code and ETL to calculate commission on bill-back promotions, saving PepsiCo $100K annually",
+    "Designed Tableau reporting for PepsiCo's 2019 targets from CEO level down to field teams",
+    "Holds a Certificate in Data Science from the University of Toronto"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Azure", "SQL Server", "Python", "Power BI", ".NET"]
+}
