@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MessageSquare, Pin, Search, FileText } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -138,22 +139,22 @@ export default function DiscoveryPage() {
         }}
         deliverables={[
           {
-            icon: "\ud83d\udde3\ufe0f",
+            icon: <MessageSquare className="h-5 w-5" />,
             title: "Stakeholder sessions that surface real problems",
             body: "We talk to the people doing the actual work \u2014 operations, finance, sales, product. We are finding the workflows that are genuinely painful and the people who have already started solving them.",
           },
           {
-            icon: "\ud83d\udccc",
+            icon: <Pin className="h-5 w-5" />,
             title: "Three use cases worth building",
             body: "Not a list of twenty ideas. Three, each with a feasibility assessment, a preliminary architecture, and a concrete outcome statement. Prioritized by impact and buildability.",
           },
           {
-            icon: "\ud83d\udd0d",
+            icon: <Search className="h-5 w-5" />,
             title: "Current state and gap analysis",
             body: "What is in your environment, and what is missing, and what must be fixed before any build starts. Infrastructure, data quality, governance, security posture.",
           },
           {
-            icon: "\ud83d\udcdd",
+            icon: <FileText className="h-5 w-5" />,
             title: "Findings and Recommendations document",
             body: "Not a slide deck. Exactly what to build, in what order, with what dependencies, against what timeline. You leave with a plan, not a process.",
           },
@@ -161,7 +162,7 @@ export default function DiscoveryPage() {
         rightForYou={[
           "You have not made a meaningful AI investment yet and want to know where to start without wasting the next six months",
           "Leadership wants a credible business case before committing budget",
-          "You are in a regulated industry or the Canadian public sector and need governance in the roadmap from day one",
+          "You are in a regulated industry or the public sector and need governance in the roadmap from day one",
         ]}
         notRightForYou={[
           "You already have a clear roadmap and just need someone to execute \u2014 skip to Citizen Dev, Executive Enablement, or Infrastructure",

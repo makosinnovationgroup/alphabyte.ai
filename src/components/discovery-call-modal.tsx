@@ -28,13 +28,22 @@ export function DiscoveryCallModal() {
   );
   const titleId = "discovery-call-title";
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     const data = Object.fromEntries(new FormData(e.currentTarget));
-    // Stub: log to console until a real backend is wired up
-    console.log("Discovery call form submission:", data);
-    setTimeout(() => setStatus("success"), 800);
+    try {
+      const res = await fetch("/api/discovery-call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setStatus("success");
+    } catch {
+      setStatus("idle");
+      alert("Something went wrong. Please try again or email contact@alphabyte.ai directly.");
+    }
   }
 
   function handleOpenChange(open: boolean) {

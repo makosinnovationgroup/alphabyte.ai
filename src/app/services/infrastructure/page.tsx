@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Wrench, Bot, BarChart3, Building2, Brain } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -137,27 +138,27 @@ export default function InfrastructurePage() {
         }}
         deliverables={[
           {
-            icon: "\ud83d\udd27",
+            icon: <Wrench className="h-5 w-5" />,
             title: "Custom MCP servers",
             body: "Model Context Protocol servers connecting Claude to your internal databases, APIs, CRM, ERP, data warehouses, and proprietary systems. Governed, auditable, real-time access \u2014 with OAuth 2.0, role-based access controls, and full audit logging.",
           },
           {
-            icon: "\ud83e\udd16",
+            icon: <Bot className="h-5 w-5" />,
             title: "Custom AI agents",
             body: "Purpose-built systems executing defined operational workflows end-to-end. Each agent connects through MCP, operates in an isolated cloud sandbox, and routes through human-in-the-loop approval gates at the decision points your team has defined.",
           },
           {
-            icon: "\ud83d\udcca",
+            icon: <BarChart3 className="h-5 w-5" />,
             title: "Agent Command Centre",
             body: "Our observatory dashboard for the full agent estate. Real-time visibility into what every agent is doing, waiting on, completing, and flagging. Your team stays in control without inspecting logs.",
           },
           {
-            icon: "\ud83c\udfe2",
+            icon: <Building2 className="h-5 w-5" />,
             title: "On-premise LLM deployment",
             body: "Llama, Mistral, and other capable open-source models deployed on your own infrastructure. For clients where cloud AI is ruled out by data sovereignty requirements, security classifications, or regulatory mandate.",
           },
           {
-            icon: "\ud83e\udde0",
+            icon: <Brain className="h-5 w-5" />,
             title: "Fine-tuned custom LLMs",
             body: "A domain-specific model trained on your proprietary data \u2014 your terminology, your document structure, your institutional knowledge \u2014 for use cases that require depth a general-purpose model cannot provide.",
           },

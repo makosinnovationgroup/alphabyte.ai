@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Wrench, Lock, Cloud, ClipboardList } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
@@ -102,22 +103,22 @@ export default function McpPage() {
         deliverablesLayout="list"
         deliverables={[
           {
-            icon: "\ud83d\udd27",
+            icon: <Wrench className="h-5 w-5" />,
             title: "Custom MCP server development",
             body: "MCP servers built from scratch for your specific data sources and use cases. Each exposes purpose-built tools Claude can invoke to query, retrieve, and where appropriate write to your systems. The architecture defines exactly what Claude can access \u2014 nothing more.",
           },
           {
-            icon: "\ud83d\udd10",
+            icon: <Lock className="h-5 w-5" />,
             title: "Identity and security",
             body: "OAuth 2.0 authentication, role-based access controls, audit logging for every tool invocation, secure credential management. Every server, every time.",
           },
           {
-            icon: "\u2601\ufe0f",
+            icon: <Cloud className="h-5 w-5" />,
             title: "Cloud infrastructure",
             body: "We provision and configure the infrastructure \u2014 typically Azure Container Apps \u2014 with monitoring, alerting, and deployment pipelines appropriate to a production workload.",
           },
           {
-            icon: "\ud83d\udccb",
+            icon: <ClipboardList className="h-5 w-5" />,
             title: "Context and tool definitions",
             body: "Organizational context, system definitions, available tools, and resource configurations baked into the server. Claude understands what it has access to and how to navigate it accurately before any conversation begins.",
           },

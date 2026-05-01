@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Target, Server, CheckCircle, Plug, Wrench } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
@@ -102,27 +103,27 @@ export default function OnPremiseLlmPage() {
         deliverablesLayout="list"
         deliverables={[
           {
-            icon: "\ud83c\udfaf",
+            icon: <Target className="h-5 w-5" />,
             title: "Model selection",
             body: "Optimal model for your use cases, infrastructure, and compliance constraints. Llama and Mistral are our defaults. The decision depends on performance, memory, and regulatory requirements \u2014 not which model is trending.",
           },
           {
-            icon: "\ud83d\udda5\ufe0f",
+            icon: <Server className="h-5 w-5" />,
             title: "Infrastructure provisioning",
             body: "Compute, storage, and networking for your workload requirements. GPU or high-memory CPU as required. Network segmentation appropriate to your security posture.",
           },
           {
-            icon: "\u2705",
+            icon: <CheckCircle className="h-5 w-5" />,
             title: "Installation, configuration, and validation",
             body: "Comprehensive validation before production traffic routes to the model. Performance benchmarks, accuracy tests against your actual use cases, latency measurements under representative load.",
           },
           {
-            icon: "\ud83d\udd0c",
+            icon: <Plug className="h-5 w-5" />,
             title: "API access and service connectivity",
             body: "Standard API interface so your internal applications, agents, and MCP-connected systems communicate with the hosted model the same way they would a cloud-hosted model.",
           },
           {
-            icon: "\ud83d\udd27",
+            icon: <Wrench className="h-5 w-5" />,
             title: "MLOps and governance",
             body: "Versioning, deployment, and retraining pipelines. Logs, monitoring, metrics, role-based access, audit logging, and data handling policies aligned to your regulatory environment.",
           },

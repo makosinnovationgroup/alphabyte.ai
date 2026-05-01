@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 const interests = [
   "Citizen Development",
@@ -15,8 +15,37 @@ const inputClasses =
   "w-full rounded-md border border-border-default bg-alphabyte-grey px-4 py-3 text-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-alphabyte-blue focus:border-transparent";
 
 export function ContactForm() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setStatus("submitting");
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const res = await fetch("/api/discovery-call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setStatus("success");
+    } catch {
+      setStatus("idle");
+      alert("Something went wrong. Please try again or email contact@alphabyte.ai directly.");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="py-12 text-center">
+        <h2 className="text-headline tracking-brand-snug mb-4">
+          We received your request.
+        </h2>
+        <p className="text-body text-muted-foreground max-w-[40ch] mx-auto">
+          A member of the team will follow up within one business day to schedule your call.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -154,9 +183,10 @@ export function ContactForm() {
       {/* Submit */}
       <button
         type="submit"
-        className="w-full rounded-md bg-foreground px-6 py-4 text-body font-medium text-white transition-colors hover:bg-foreground/85 focus:outline-none focus:ring-2 focus:ring-alphabyte-blue focus:ring-offset-2"
+        disabled={status === "submitting"}
+        className="w-full rounded-md bg-foreground px-6 py-4 text-body font-medium text-white transition-colors hover:bg-foreground/85 focus:outline-none focus:ring-2 focus:ring-alphabyte-blue focus:ring-offset-2 disabled:opacity-50"
       >
-        Book a Discovery Call &rarr;
+        {status === "submitting" ? "Sending\u2026" : "Book a Discovery Call \u2192"}
       </button>
 
       <p className="text-body-sm text-muted-foreground text-center">

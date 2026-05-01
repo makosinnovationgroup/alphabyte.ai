@@ -129,7 +129,7 @@ export default function TeamPage() {
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
-        className="bg-canvas px-6 pt-6 pb-0"
+        className="bg-white px-6 pt-6 pb-0"
       >
         <div className="mx-auto max-w-[1600px]">
           <ol className="flex items-center gap-2 text-body-sm">
@@ -148,7 +148,7 @@ export default function TeamPage() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-canvas px-6 pt-12 pb-16 md:pt-16 md:pb-24">
+      <section className="bg-white px-6 pt-12 pb-16 md:pt-16 md:pb-24">
         <div className="mx-auto max-w-[1600px]">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-8">
             Our Team

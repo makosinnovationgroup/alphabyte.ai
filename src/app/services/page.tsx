@@ -72,7 +72,7 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-canvas px-6 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14">
+      <section className="bg-white px-6 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14">
         <div className="mx-auto max-w-[1600px]">
           <div className="max-w-3xl">
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-6">

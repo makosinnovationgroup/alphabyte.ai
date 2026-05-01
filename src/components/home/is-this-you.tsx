@@ -1,14 +1,26 @@
 const scenarios = [
-  "Your team is already using Claude informally — prompts in Slack threads, personal workflows nobody else can replicate, data exports running through tools IT has not reviewed.",
-  "Leadership has been asked about AI strategy and the honest answer is: we do not have one yet. The board wants something. A competitor announced something.",
-  "You have already invested in AI. A pilot ran. Something was delivered. Not much is actually being used. You want to understand what went wrong before spending again.",
-  "You are in a regulated industry or the Canadian public sector. You need an AI programme that can survive a compliance conversation, not just a demo.",
+  {
+    heading: "Shadow IT",
+    body: "Your team is already using Claude informally — prompts in Slack threads, personal workflows nobody else can replicate, data exports running through tools IT has not reviewed.",
+  },
+  {
+    heading: "No Clear Strategy",
+    body: "Leadership has been asked about AI strategy and the honest answer is: we do not have one yet. The board wants something. A competitor announced something.",
+  },
+  {
+    heading: "Stalled Investment",
+    body: "You have already invested in AI. A pilot ran. Something was delivered. Not much is actually being used. You want to understand what went wrong before spending again.",
+  },
+  {
+    heading: "Regulatory Pressure",
+    body: "You are in a regulated industry or the public sector. You need an AI programme that can survive a compliance conversation, not just a demo.",
+  },
 ];
 
 export function IsThisYou() {
   return (
     <section className="bg-white px-6 py-10 md:py-14">
-      <div className="mx-auto max-w-[1600px]">
+      <div className="mx-auto">
         <div className="flex items-center gap-3 mb-10">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             Is This You?
@@ -17,12 +29,13 @@ export function IsThisYou() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {scenarios.map((text, i) => (
+          {scenarios.map((scenario, i) => (
             <div
               key={i}
               className="rounded-xl border border-border-default bg-canvas p-6 shadow-sm md:p-8"
             >
-              <p className="text-body text-foreground">{text}</p>
+              <p className="text-body font-bold text-foreground mb-2">{scenario.heading}</p>
+              <p className="text-body text-foreground">{scenario.body}</p>
             </div>
           ))}
         </div>

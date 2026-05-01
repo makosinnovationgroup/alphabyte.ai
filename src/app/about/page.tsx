@@ -74,7 +74,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-canvas px-6 py-24 md:py-32">
+      <section className="bg-white px-6 py-24 md:py-32">
         <div className="mx-auto max-w-[1600px]">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-8">
             About Alphabyte AI

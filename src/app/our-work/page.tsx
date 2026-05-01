@@ -104,28 +104,29 @@ export default function OurWorkPage() {
         <div className="mx-auto max-w-[1600px]">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map((study) => (
-              <div
+              <Link
                 key={study.clientName}
-                className="flex flex-col overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md"
+                href={study.href}
+                className="flex flex-col overflow-hidden rounded-lg border border-border-default bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-alphabyte-blue"
               >
                 {/* Dark header band */}
-                <div className="bg-foreground px-6 pb-6 pt-8">
-                  <p className="text-[11px] font-bold uppercase tracking-brand-wide text-alphabyte-green">
+                <span className="block bg-foreground px-6 pb-6 pt-8">
+                  <span className="block text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-green">
                     {study.headerTags}
-                  </p>
-                  <h2 className="mt-3 text-lg font-bold text-white">
+                  </span>
+                  <span className="block mt-3 text-lg font-bold text-white">
                     {study.clientName}
-                  </h2>
-                </div>
+                  </span>
+                </span>
 
                 {/* Card body */}
-                <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
-                  <p className="text-body font-bold text-foreground">
+                <span className="flex flex-1 flex-col px-6 pb-6 pt-5">
+                  <span className="block text-body font-bold text-foreground">
                     {study.projectTitle}
-                  </p>
+                  </span>
 
                   {/* Service pills */}
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="mt-4 flex flex-wrap gap-2">
                     {study.pills.map((pill) => (
                       <span
                         key={pill}
@@ -134,20 +135,17 @@ export default function OurWorkPage() {
                         {pill}
                       </span>
                     ))}
-                  </div>
+                  </span>
 
-                  <p className="mt-4 flex-1 text-body-sm text-foreground">
+                  <span className="block mt-4 flex-1 text-body-sm text-foreground">
                     {study.body}
-                  </p>
+                  </span>
 
-                  <Link
-                    href={study.href}
-                    className="mt-6 text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-                  >
+                  <span className="block mt-6 text-body-sm font-medium text-alphabyte-blue">
                     Read case study &rarr;
-                  </Link>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </Link>
             ))}
           </div>
         </div>

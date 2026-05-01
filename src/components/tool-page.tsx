@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -36,7 +37,7 @@ export interface ToolPageProps {
   deliverablesSectionTitle: string;
   deliverablesLayout: "grid" | "list";
   deliverables: {
-    icon: string;
+    icon: ReactNode;
     title: string;
     body: string;
   }[];

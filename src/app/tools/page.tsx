@@ -179,12 +179,12 @@ export default function ToolsPage() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-canvas px-6 pt-10 pb-10 md:pt-14 md:pb-12">
+      <section className="bg-white px-6 pt-10 pb-10 md:pt-14 md:pb-12">
         <div className="mx-auto max-w-[1600px]">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-4">
             Our Tools
           </p>
-          <h1 className="text-headline tracking-brand-snug mb-6 max-w-2xl">
+          <h1 className="text-display tracking-brand-tight mb-6 max-w-2xl">
             We don&rsquo;t sell platforms.
             <br />
             <span className="text-alphabyte-blue">
