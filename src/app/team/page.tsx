@@ -46,11 +46,11 @@ const TEAM_DIR = path.join(process.cwd(), "content/team");
 
 const MEMBER_ORDER = [
   "adam-nameh",
-  "mitch-makos",
   "ibrahim-nameh",
-  "rugved",
   "ahmad-nameh",
+  "mitch-makos",
   "kevin-seto",
+  "rugved",
   "rabia",
   "carrie",
 ];
@@ -183,11 +183,21 @@ export default function TeamPage() {
                 className="block rounded-lg border border-border-default bg-white overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
                 {/* Photo / placeholder */}
-                <span className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
-                  <span className="text-5xl font-medium text-white">
-                    {member.name.charAt(0)}
+                {member.avatarSrc ? (
+                  <span className="block aspect-[4/3] bg-alphabyte-grey overflow-hidden">
+                    <img
+                      src={member.avatarSrc}
+                      alt={member.name}
+                      className="h-full w-full object-cover"
+                    />
                   </span>
-                </span>
+                ) : (
+                  <span className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
+                    <span className="text-5xl font-medium text-white">
+                      {member.name.charAt(0)}
+                    </span>
+                  </span>
+                )}
 
                 {/* Content */}
                 <span className="block p-6">
