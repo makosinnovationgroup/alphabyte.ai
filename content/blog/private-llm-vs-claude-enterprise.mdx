@@ -1,0 +1,90 @@
+---
+slug: "private-llm-vs-claude-enterprise"
+title: "Private LLM vs Claude Enterprise: when you need on-premise."
+excerpt: "Most mid-market companies do not need an on-premise LLM. Here is a practical decision framework for data sovereignty, compliance, and when Claude Enterprise is enough."
+publishedDate: "2026-06-02"
+readTime: "6 min read"
+sortOrder: 8
+author: "adam-nameh"
+tags:
+  - "Data & Infrastructure"
+  - "Claude"
+topics:
+  - "Private LLM"
+  - "Claude Enterprise"
+  - "Data Sovereignty"
+  - "On-Premise AI"
+  - "Mid-market"
+relatedService:
+  eyebrow: "RELATED SERVICE"
+  title: "Infrastructure"
+  body: "Production MCP servers, data pipelines, and the architecture that connects AI to your operational systems."
+  ctaLabel: "Learn more →"
+  ctaHref: "/services/infrastructure/"
+readyToMoveCard:
+  heading: "Ready to move?"
+  body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
+  ctaLabel: "Book a Discovery Call"
+tableOfContents:
+  - label: "The data sovereignty question"
+    anchorId: "the-data-sovereignty-question"
+  - label: "What Claude Enterprise already provides"
+    anchorId: "what-claude-enterprise-already-provides"
+  - label: "When on-premise actually makes sense"
+    anchorId: "when-on-premise-actually-makes-sense"
+  - label: "The decision framework"
+    anchorId: "the-decision-framework"
+---
+
+## The Data Sovereignty Question {#the-data-sovereignty-question}
+
+"Our data can't leave our network." We hear this on every third discovery call. It's the most common objection when a mid-market company considers deploying a private LLM or any cloud-based AI. Sometimes it's a genuine regulatory requirement. Sometimes it's an organizational preference inherited from a prior security review. Sometimes it's a misunderstanding of how cloud AI actually handles data.
+
+The distinction matters. A genuine compliance mandate — your regulator requires data residency within a specific jurisdiction, or your contract with a government agency prohibits third-party processing — is a hard constraint. An organizational preference is a policy decision that can be revisited when the facts change.
+
+Most of the companies we work with fall into the second category. They assume cloud AI means their proprietary data enters a training pipeline and becomes part of a public model. That assumption is outdated, and it's worth examining before committing to the cost and complexity of a self-hosted LLM.
+
+If you're building a governance framework for the first time, our [AI governance framework for mid-market](/blog/ai-governance-framework-mid-market/) post walks through the practical steps.
+
+## What Claude Enterprise Already Provides {#what-claude-enterprise-already-provides}
+
+Here is what Claude Enterprise's data handling actually looks like:
+
+- *Zero data retention.* Your prompts and outputs are not stored after processing. Your data is not used for model training.
+- *SOC 2 Type II compliance.* Anthropic maintains independent audits of its security controls.
+- *SSO and SCIM provisioning.* Your identity provider controls access. Offboarded employees lose access immediately.
+- *Admin controls and audit logging.* You can see who is using the system, what they're accessing, and enforce usage policies centrally.
+
+The common misconception is that sending data to an API means that data lives on someone else's server indefinitely. With Claude Enterprise, the data is processed and returned. It is not stored, not indexed, not used for any purpose beyond generating your response.
+
+For most mid-market companies — professional services firms, manufacturers, logistics operators, financial advisors — this meets the compliance bar. The data is encrypted in transit, processed in a SOC 2-audited environment, and not retained. That's a stronger data handling posture than most companies maintain for their own internal systems.
+
+> "The question isn't whether the cloud is secure enough. It's whether your on-premise alternative is more secure than what Anthropic already provides."
+
+## When On-Premise Actually Makes Sense {#when-on-premise-actually-makes-sense}
+
+There are legitimate cases where an on-premise LLM is the right answer. They're less common than most people assume, but they're real.
+
+*Explicit data residency mandates.* Defense contractors operating under ITAR. Healthcare organizations subject to specific state-level data residency laws. Government agencies with FedRAMP requirements that no commercial AI provider yet satisfies. If your regulator says the data cannot leave your physical infrastructure, that's the end of the conversation.
+
+*Air-gapped environments.* If your network has no external connectivity by design — common in classified environments and certain critical infrastructure — cloud AI is not an option regardless of its security posture.
+
+*High inference volume.* If you're running millions of inference calls per month against a specific, narrow use case, self-hosting a smaller model can become cost-competitive. The math only works at significant scale, and the model will be less capable than Claude, but the economics can justify it.
+
+*Specialized fine-tuning requirements.* If your use case requires a model trained on proprietary data — medical imaging analysis, specialized document classification — a self-hosted fine-tuned model may outperform a general-purpose model on that narrow task.
+
+For more detail on the infrastructure involved, see our [on-premise LLM tools page](/tools/on-premise-llm/) and our [Infrastructure service](/services/infrastructure/).
+
+## The Decision Framework {#the-decision-framework}
+
+Here's the practical decision tree we walk through with clients:
+
+**First: Is this regulatory or preferential?** Do you have a specific regulation, contract clause, or audit finding that requires data to remain on your infrastructure? Or is it an internal policy that predates the current generation of cloud AI data handling? If it's preferential, revisit the policy with current facts before committing to on-premise infrastructure.
+
+**Second: Does zero-retention satisfy the requirement?** If the mandate is "our data cannot be used for training" or "our data cannot be stored by a third party," Claude Enterprise already meets that standard. Many compliance requirements are satisfied by zero-retention processing. Read the actual regulation, not the summary someone wrote three years ago.
+
+**Third: What's the total cost of ownership?** On-premise LLM infrastructure is not a one-time purchase. You need GPU hardware (or a dedicated cloud partition), ongoing maintenance, model updates, inference optimization, and staff who understand the stack. For a mid-market company, that's typically $200K–$500K in year one and $100K+ annually after that. Compare that against an API cost that scales with actual usage.
+
+**Fourth: Is the capability gap acceptable?** On-premise models are smaller. They have to be — you're running them on your hardware, not on the infrastructure of a company that has invested billions in compute. A self-hosted 70B parameter model is capable, but it is not Claude. If your use cases require strong reasoning, long-context understanding, or nuanced language generation, the gap is significant.
+
+Most mid-market companies land on Claude Enterprise. The ones that genuinely need on-premise know it before they finish reading this post — because their compliance officer already told them.

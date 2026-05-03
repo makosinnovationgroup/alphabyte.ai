@@ -54,6 +54,7 @@ interface BlogPostSummary {
   publishedDate: string;
   readTime: string;
   tags: string[];
+  sortOrder: number;
 }
 
 function getAllPosts(): BlogPostSummary[] {
@@ -71,13 +72,10 @@ function getAllPosts(): BlogPostSummary[] {
         publishedDate: data.publishedDate as string,
         readTime: data.readTime as string,
         tags: data.tags as string[],
+        sortOrder: (data.sortOrder as number) ?? 999,
       };
     })
-    .sort(
-      (a, b) =>
-        new Date(b.publishedDate).getTime() -
-        new Date(a.publishedDate).getTime(),
-    );
+    .sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 function formatDate(isoDate: string): string {

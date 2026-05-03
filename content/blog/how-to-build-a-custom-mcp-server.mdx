@@ -1,0 +1,105 @@
+---
+slug: "how-to-build-a-custom-mcp-server"
+title: "How to build a custom MCP server for mid-market IT."
+excerpt: "A practical guide to building production MCP servers that connect Claude to the systems your business actually runs on. Architecture, patterns, and what to deploy first."
+publishedDate: "2026-05-07"
+readTime: "7 min read"
+sortOrder: 1
+author: "adam-nameh"
+tags:
+  - "Data & Infrastructure"
+  - "MCP"
+topics:
+  - "MCP"
+  - "Claude"
+  - "Integration"
+  - "Mid-market"
+  - "Infrastructure"
+relatedService:
+  eyebrow: "RELATED SERVICE"
+  title: "Infrastructure"
+  body: "Production MCP servers, data pipelines, and the architecture that connects AI to your operational systems."
+  ctaLabel: "Learn more →"
+  ctaHref: "/services/infrastructure/"
+readyToMoveCard:
+  heading: "Ready to move?"
+  body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
+  ctaLabel: "Book a Discovery Call"
+tableOfContents:
+  - label: "Why mid-market teams need custom MCP servers"
+    anchorId: "why-mid-market-teams-need-custom-mcp-servers"
+  - label: "The anatomy of a production MCP server"
+    anchorId: "the-anatomy-of-a-production-mcp-server"
+  - label: "Building your first server: the practical pattern"
+    anchorId: "building-your-first-server"
+  - label: "Governance and security from day one"
+    anchorId: "governance-and-security-from-day-one"
+  - label: "Where to start"
+    anchorId: "where-to-start"
+---
+
+## Why Mid-Market Teams Need Custom MCP Servers {#why-mid-market-teams-need-custom-mcp-servers}
+
+If you want to build a custom MCP server, you've probably already hit the wall. The pre-built connectors — Google Drive, Slack, GitHub — cover generic SaaS. They're fine for what they do. But mid-market businesses don't run on generic SaaS alone.
+
+You have a 15-year-old ERP that runs your entire supply chain. A CRM that's been customized so heavily it barely resembles the product you licensed. An industry-specific database that holds compliance records nobody outside your sector has heard of. A file system with a decade of institutional knowledge organized in ways that make sense only to the people who built it.
+
+Claude is useful out of the box. Claude connected to your actual systems is a different thing entirely. That's what the Model Context Protocol does — it gives Claude structured access to the data and operations your business runs on. If you're not familiar with the protocol itself, [this explainer covers the fundamentals](/blog/mcp-servers-what-they-are/).
+
+The pre-built connectors won't reach your custom systems. Custom MCP servers will.
+
+## The Anatomy of a Production MCP Server {#the-anatomy-of-a-production-mcp-server}
+
+An MCP server is not a large piece of software. A production server for a typical business system is a few hundred lines of code. It defines a clear contract: here are the things Claude can do, here is the data Claude can see, and here are the boundaries.
+
+Four components make up that contract.
+
+*Tools* are the actions Claude can perform. Query a database. Create a record. Generate a report. Each tool has a name, a description Claude reads to understand when to use it, and a schema that defines what inputs it accepts.
+
+*Resources* are the data Claude can read. A customer record. A compliance document. A configuration file. Resources are read-only — Claude can look at them but can't modify them through the resource interface.
+
+*Permissions* define who can use which tools and see which resources. This maps directly to your existing access control. If a user can't view a customer record in the CRM, Claude can't see it either when acting on that user's behalf.
+
+*Logging* captures every tool call and resource access. What was requested, what was returned, who initiated it, when it happened. This is not optional in a production environment — it's the audit trail that makes the whole system governable.
+
+For a deeper look at the tooling layer, see the [MCP tools reference](/tools/mcp/).
+
+## Building Your First Server: The Practical Pattern {#building-your-first-server}
+
+The pattern is the same regardless of the system you're connecting. Pick one system. Define a small set of tools. Test against real data. Deploy behind authentication.
+
+Start with the system your team interacts with most frequently. For most mid-market organizations, that's the CRM or the ERP. Not both — one.
+
+Define three to five tools. For a CRM, that might be: look up a customer, search contacts by company, retrieve recent interactions, pull a deal summary, list open tasks for an account. That's enough to be immediately useful without trying to expose the entire system surface.
+
+Each tool definition is straightforward. A name, a description in plain English, input parameters with types, and a handler function that calls your system's API or database. The MCP SDK handles the protocol layer. Your code handles the business logic — the query, the data transformation, the response formatting.
+
+Test with real data before you deploy. Not sample data, not a staging environment with three records. Real data reveals the edge cases that matter: null fields, unexpected formats, records that break your assumptions about the schema.
+
+Deploy behind your existing authentication. The MCP server inherits the requesting user's identity and permissions. This is not a service account with broad access — it's a pass-through that respects the same boundaries your systems already enforce.
+
+The build takes days, not months. For a well-documented API, a senior developer can have a working MCP server in two to three days. For a system that requires database-level integration, budget a week. Either way, this is measured in days of effort, and the [Infrastructure](/services/infrastructure/) engagement can accelerate that significantly.
+
+## Governance and Security From Day One {#governance-and-security-from-day-one}
+
+Security is not a phase two concern. The first MCP server you deploy sets the pattern for every server that follows. Get it right early.
+
+Audit logging is the foundation. Every tool invocation records the user, the inputs, the outputs, and the timestamp. When someone asks, "What did Claude access in the CRM last Tuesday?" — you can answer in seconds, not hours.
+
+Rate limiting prevents runaway usage. A misconfigured prompt that triggers hundreds of API calls in a loop can overwhelm a backend system. Rate limits at the MCP server layer catch this before it reaches your production infrastructure.
+
+Permission inheritance is the principle that makes the whole model work. The MCP server does not maintain its own access control list. It inherits permissions from the requesting user's session. If a sales rep can see her accounts but not her colleague's, Claude operating on her behalf has the same restriction. No parallel permission system to maintain. No drift between what users can do directly and what Claude can do on their behalf.
+
+> "If a user can't see a record in the CRM, Claude can't see it either."
+
+The [Sprinklermatic compliance deployment](/blog/sprinklermatic-nfpa-compliance/) followed this pattern. NFPA compliance records are sensitive. The MCP server enforced the same access boundaries the team already operated under. No new permission model. No additional risk surface.
+
+## Where to Start {#where-to-start}
+
+Pick the system your team asks about most. The one that generates the most questions, the most manual lookups, the most context-switching. That's your first MCP server.
+
+Build it. Ship it. Watch what happens when Claude can answer questions about that system in real time, inside the same conversation where your team is doing their work.
+
+Then build the next one. And the next. Each server you deploy adds to the compound connectivity — Claude doesn't just know about one system, it knows about the relationships between systems. A customer record in the CRM connected to their order history in the ERP connected to their compliance status in the regulatory database. That compound context is where the real value lives.
+
+You don't need a grand integration strategy. You need one working MCP server and the willingness to build the second one after you see what the first one does. The model context protocol is the layer that turns Claude from a general-purpose assistant into a tool that understands your business. Start building it.
