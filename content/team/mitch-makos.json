@@ -7,7 +7,7 @@
   "avatarSrc": "/team/mitch-makos.jpg",
   "eyebrow": "PRINCIPAL ARCHITECT AT ALPHABYTE AI",
   "bio": [
-    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, and PepsiCo. Creator of MakOS, a multi-agent orchestration system that compresses platform delivery from months to days.",
+    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, and PepsiCo.",
     "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He recently built a complete HIPAA-compliant healthcare platform in 18 days as a solo engineer, and authored AzureConduit — an MCP server bridging Azure, D365, M365, Fabric, and Sentinel to Claude with enterprise-grade identity enforcement."
   ],
   "contact": {
@@ -29,44 +29,14 @@
   },
   "careerTimeline": [
     {
-      "period": "2024 — Present",
-      "role": "Founder & Principal Architect",
-      "organization": "Makos Tech Solutions"
-    },
-    {
-      "period": "2024 — Present",
+      "period": "2026 — Present",
       "role": "Principal Architect & Claude Platform Engineer",
       "organization": "Alphabyte Solutions Inc."
     },
     {
-      "period": "2024 — 2026",
-      "role": "Platform Steward",
-      "organization": "The Body Healthcare"
-    },
-    {
-      "period": "2025",
-      "role": "Contract Head of Engineering",
-      "organization": "Coretext AI (via GUN.IO)"
-    },
-    {
-      "period": "2023 — 2025",
-      "role": "Contract Lead Engineer",
-      "organization": "Ultimate Knowledge Institute (via GUN.IO)"
-    },
-    {
-      "period": "2023 — 2024",
-      "role": "Contract Senior Engineer",
-      "organization": "Fidelity (via Insight Global)"
-    },
-    {
-      "period": "2021 — 2023",
-      "role": "Head of Engineering & Lead Engineer",
-      "organization": "Auto Approve"
-    },
-    {
-      "period": "2020 — 2021",
-      "role": "Lead DevOps Engineer",
-      "organization": "WeAre8"
+      "period": "2020 — Present",
+      "role": "Founder & Principal Architect",
+      "organization": "Makos Tech Solutions"
     },
     {
       "period": "2018 — 2020",
@@ -80,17 +50,19 @@
     }
   ],
   "expertise": [
-    "Multi-Agent Orchestration (MakOS)",
+    "Multi-Agent Orchestration",
     "Claude Platform Engineering",
     "MCP Server Design",
+    "Context Engineering",
     "AWS / Azure / GCP",
     "TypeScript & Node.js",
     "Terraform & Infrastructure-as-Code",
     "Kubernetes & Docker",
-    "GraphQL & Event-Driven Architecture"
+    "GraphQL",
+    "Event-Driven Architecture"
   ],
   "achievements": [
-    "Created MakOS, a multi-agent orchestration system compressing platform delivery from months to days",
+    "Built a multi-agent orchestration system compressing platform delivery from months to days",
     "Built a complete HIPAA-compliant healthcare platform in 18 days as a solo engineer",
     "Built AzureConduit MCP server bridging Azure, D365, M365, Fabric, and Sentinel to Claude",
     "Led 60 engineers in full-scale reconstruction of Auto Approve's technology stack",
