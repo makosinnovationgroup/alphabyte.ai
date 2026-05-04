@@ -5,28 +5,28 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Sprinklermatic — Compliance Intelligence Agent",
+  title: "Fire Protection Compliance — Intelligence Agent",
   description:
-    "How Alphabyte built a compliance intelligence agent for Sprinklermatic — 40+ hours per week eliminated in manual NFPA code lookup, citation-grade accuracy, live in production.",
+    "How Alphabyte built a compliance intelligence agent for a $200M+ fire protection contractor — 40+ hours per week eliminated in manual NFPA code lookup, citation-grade accuracy, live in production.",
   alternates: {
-    canonical: "/our-work/sprinklermatic/",
+    canonical: "/our-work/fire-protection-compliance/",
   },
   openGraph: {
-    title: "Sprinklermatic — Compliance Intelligence Agent",
+    title: "Fire Protection Compliance — Intelligence Agent",
     description:
       "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
-    url: "/our-work/sprinklermatic/",
+    url: "/our-work/fire-protection-compliance/",
     images: [
       {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Sprinklermatic: Compliance Intelligence Agent",
+        alt: "Alphabyte — Fire Protection Compliance: Intelligence Agent",
       },
     ],
   },
   twitter: {
-    title: "Sprinklermatic — Compliance Intelligence Agent",
+    title: "Fire Protection Compliance — Intelligence Agent",
     description:
       "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
     images: ["/og/default.png"],
@@ -52,13 +52,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Sprinklermatic",
-      item: "https://alphabyte.ai/our-work/sprinklermatic/",
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      name: "EJ Capital",
+      name: "Fire Protection Compliance",
+      item: "https://alphabyte.ai/our-work/fire-protection-compliance/",
     },
   ],
 };
@@ -67,11 +62,11 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "Background" },
   {
     type: "paragraph",
-    text: "Sprinklermatic is a fire protection company operating across multiple entities, specialising in the design, installation, and servicing of fire suppression systems. The company works against one of the most demanding compliance environments in any industry: the National Fire Protection Association (NFPA) fire code library.",
+    text: "The client is a fire protection company operating across multiple entities, specialising in the design, installation, and servicing of fire suppression systems. The company works against one of the most demanding compliance environments in any industry: the National Fire Protection Association (NFPA) fire code library.",
   },
   {
     type: "paragraph",
-    text: "With a growing portfolio of projects and a technical team that depends on precise, code-level guidance daily, Sprinklermatic engaged Alphabyte to explore how AI could solve a compliance knowledge problem that no off-the-shelf tool had addressed.",
+    text: "With a growing portfolio of projects and a technical team that depends on precise, code-level guidance daily, the client engaged Alphabyte to explore how AI could solve a compliance knowledge problem that no off-the-shelf tool had addressed.",
   },
   { type: "heading", text: "The Challenge", indent: true },
   {
@@ -92,7 +87,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "Building the Knowledge Foundation" },
   {
     type: "paragraph",
-    text: "The core technical challenge was designing a system that routes an AI agent to the exact page of the exact document required to answer any compliance query. Alphabyte built a custom processing pipeline that ingested Sprinklermatic\u2019s full NFPA code library and transformed it into a structured knowledge graph.",
+    text: "The core technical challenge was designing a system that routes an AI agent to the exact page of the exact document required to answer any compliance query. Alphabyte built a custom processing pipeline that ingested the client\u2019s full NFPA code library and transformed it into a structured knowledge graph.",
   },
   {
     type: "paragraph",
@@ -114,7 +109,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "A Platform Built for Expansion" },
   {
     type: "paragraph",
-    text: "The compliance agent is one component of a broader nine-initiative AI programme currently being developed for Sprinklermatic\u2019s operations. The agent sits within an orchestration layer that routes queries across multiple specialized agents as the programme scales. Compliance Intelligence is one domain. Estimating, operations management, and executive productivity are others in active development.",
+    text: "The compliance agent is one component of a broader nine-initiative AI programme currently being developed for the client\u2019s operations. The agent sits within an orchestration layer that routes queries across multiple specialized agents as the programme scales. Compliance Intelligence is one domain. Estimating, operations management, and executive productivity are others in active development.",
   },
   {
     type: "paragraph",
@@ -122,7 +117,7 @@ const bodySections: BodySection[] = [
   },
 ];
 
-export default function SprinklermaticPage() {
+export default function FireProtectionCompliancePage() {
   return (
     <>
       <script
@@ -135,11 +130,11 @@ export default function SprinklermaticPage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "Sprinklermatic / EJ Capital" },
+          { label: "Fire Protection Compliance" },
         ]}
         eyebrow="CASE STUDY · FIRE PROTECTION · PE-BACKED · NORTH AMERICA"
         h1="AI-Powered Compliance Intelligence Agent"
-        subhead="Sprinklermatic / EJ Capital"
+        subhead="$200M+ Fire Protection Contractor"
         tagPills={[
           "Claude AI Agent",
           "Custom MCP Server",
@@ -155,7 +150,7 @@ export default function SprinklermaticPage() {
           {
             value: "9",
             label:
-              "Parallel AI initiatives across the Sprinklermatic programme",
+              "Parallel AI initiatives across the client programme",
           },
           {
             value: "Citation-grade",
@@ -170,7 +165,7 @@ export default function SprinklermaticPage() {
         body={bodySections}
         sidebar={{
           client: {
-            name: "Sprinklermatic / EJ Capital",
+            name: "Fire Protection Contractor",
             meta: "Fire protection · PE-Backed · North America",
           },
           servicesDelivered: [

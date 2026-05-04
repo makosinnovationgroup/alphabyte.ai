@@ -116,13 +116,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://alphabyte.ai/our-work/sprinklermatic/",
+      url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
       lastModified: new Date("2026-04-29"),
       changeFrequency: "yearly",
       priority: 0.6,
     },
     {
-      url: "https://alphabyte.ai/our-work/recirq/",
+      url: "https://alphabyte.ai/our-work/circular-economy-platform/",
       lastModified: new Date("2026-04-29"),
       changeFrequency: "yearly",
       priority: 0.6,

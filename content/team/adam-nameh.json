@@ -108,10 +108,10 @@
     },
     {
       "category": "CASE STUDIES",
-      "title": "How Sprinklermatic eliminated 40 hours per week of manual NFPA lookup.",
+      "title": "How we eliminated 40 hours per week of manual NFPA lookup.",
       "excerpt": "A live NFPA fire codes compliance agent in production for a $200M+ fire protection contractor. The architecture, the build, and what it took to get there.",
       "date": "March 2026",
-      "slug": "sprinklermatic-nfpa-compliance"
+      "slug": "how-to-build-a-custom-mcp-server"
     }
   ],
   "pills": ["AI Strategy", "Data Architecture", "Client Engagement", "Programme Design"],

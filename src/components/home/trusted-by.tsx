@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const clients = [
-  { name: "Sprinklermatic / EJ Capital", href: "/our-work/sprinklermatic/" },
-  { name: "RecirQ / Reventory", href: "/our-work/recirq/" },
+  { name: "Fire Protection Contractor", href: "/our-work/fire-protection-compliance/" },
+  { name: "Circular Economy Startup", href: "/our-work/circular-economy-platform/" },
   { name: "Housing Services Corp.", href: "/our-work/housing-services-corp/" },
 ];
 

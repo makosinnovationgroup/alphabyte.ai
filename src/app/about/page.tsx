@@ -48,12 +48,12 @@ const pillars = [
 
 const activeDelivery = [
   {
-    tag: "SPRINKLERMATIC / EJ CAPITAL \u00b7 FIRE PROTECTION \u00b7 $200M+ \u00b7 PE-BACKED \u00b7 NORTH AMERICA",
+    tag: "FIRE PROTECTION CONTRACTOR · $200M+ · PE-BACKED · NORTH AMERICA",
     title: "Nine-initiative AI Command System",
     body: "Estimated 40+ hours/week of manual NFPA lookup eliminated. Custom MCP server, Claude Desktop plugin, HITL gates for five autonomous agents. Proprietary estimating tool in development.",
   },
   {
-    tag: "RECIRQ / REVENTORY \u00b7 CIRCULAR ECONOMY \u00b7 GLOBAL",
+    tag: "CIRCULAR ECONOMY STARTUP · USED SMARTPHONES · GLOBAL",
     title: "Claude Ops + Sales Intelligence",
     body: "WhatsApp Sales Command Centre \u2014 Claude semantic analysis of live sales conversations feeding real-time BigQuery dashboard. Citizen dev SDLC plugin and governed data marts deployed.",
   },

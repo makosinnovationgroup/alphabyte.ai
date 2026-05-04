@@ -9,16 +9,16 @@ interface ProofPoint {
 
 const proofPoints: ProofPoint[] = [
   {
-    eyebrow: "SPRINKLERMATIC / EJ CAPITAL \u00b7 FIRE PROTECTION \u00b7 GLOBAL NATIONAL",
+    eyebrow: "FIRE PROTECTION CONTRACTOR · PE-BACKED · NORTH AMERICA",
     title: "Automated NFPA compliance review",
     body: "Eliminates 40+ hours per week of manual fire codes lookup. Live in production.",
-    href: "/our-work/sprinklermatic/",
+    href: "/our-work/fire-protection-compliance/",
   },
   {
-    eyebrow: "RECIRQ / REVENTORY \u00b7 CIRCULAR ECONOMY \u00b7 GLOBAL",
+    eyebrow: "CIRCULAR ECONOMY STARTUP · USED SMARTPHONES · GLOBAL",
     title: "Real-time sales intelligence dashboard",
     body: "Claude analyses every WhatsApp sales conversation and feeds structured output into a live BigQuery dashboard.",
-    href: "/our-work/recirq/",
+    href: "/our-work/circular-economy-platform/",
   },
   {
     eyebrow: "HOUSING SERVICES CORP. \u00b7 PUBLIC SECTOR HOUSING \u00b7 CANADA",

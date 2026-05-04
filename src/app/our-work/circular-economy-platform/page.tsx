@@ -5,28 +5,28 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "RecirQ — AI Productivity & Auction Analytics",
+  title: "Circular Economy Platform — AI Productivity & Auction Analytics",
   description:
-    "How Alphabyte built two parallel AI programmes for RecirQ — an executive productivity suite and an auction analytics platform with predictive bid models.",
+    "How Alphabyte built two parallel AI programmes for a circular economy startup — an executive productivity suite and an auction analytics platform with predictive bid models.",
   alternates: {
-    canonical: "/our-work/recirq/",
+    canonical: "/our-work/circular-economy-platform/",
   },
   openGraph: {
-    title: "RecirQ — AI Productivity & Auction Analytics",
+    title: "Circular Economy Platform — AI Productivity & Auction Analytics",
     description:
       "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
-    url: "/our-work/recirq/",
+    url: "/our-work/circular-economy-platform/",
     images: [
       {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — RecirQ: AI Productivity & Auction Analytics",
+        alt: "Alphabyte — Circular Economy Platform: AI Productivity & Auction Analytics",
       },
     ],
   },
   twitter: {
-    title: "RecirQ — AI Productivity & Auction Analytics",
+    title: "Circular Economy Platform — AI Productivity & Auction Analytics",
     description:
       "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
     images: ["/og/default.png"],
@@ -52,13 +52,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "RecirQ",
-      item: "https://alphabyte.ai/our-work/recirq/",
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      name: "Reventory",
+      name: "Circular Economy Platform",
+      item: "https://alphabyte.ai/our-work/circular-economy-platform/",
     },
   ],
 };
@@ -67,17 +62,17 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "Background" },
   {
     type: "paragraph",
-    text: "RecirQ Global is a fast-moving technology and operations company specializing in the purchase and resale of used smartphones through weekly vendor auctions. The company acquires devices, grades them in-house, and resells them \u2014 a model that demands real-time visibility across supply, bidding performance, and sell-through at every level of the operation.",
+    text: "The client is a fast-moving technology and operations company specializing in the purchase and resale of used smartphones through weekly vendor auctions. The company acquires devices, grades them in-house, and resells them \u2014 a model that demands real-time visibility across supply, bidding performance, and sell-through at every level of the operation.",
   },
   {
     type: "paragraph",
-    text: "RecirQ had already built a solid analytics foundation and leadership was leveraging AI tools day-to-day. The foundation was there. What was missing was the intelligence layer at the executive level and within the auction operation to make all of it work together and drive faster, more confident decisions.",
+    text: "The client had already built a solid analytics foundation and leadership was using AI tools day-to-day. The foundation was there. What was missing was the intelligence layer at the executive level and within the auction operation to make all of it work together and drive faster, more confident decisions.",
   },
   { type: "heading", text: "The Challenge", indent: true },
   {
     type: "paragraph",
     indent: true,
-    text: "RecirQ operates in a market where conditions shift week to week. A new device launch, a trade-in cycle, or a sudden shift in vendor supply can change auction dynamics overnight. The company\u2019s existing tooling was strong at estimating the internal value of a device after re-grading and resale. What it could not do was answer the questions that drive auction outcomes: Is the market flooded or scarce for a specific model this week? At what bid price does the company maximize expected margin while controlling cash outlay?",
+    text: "The client operates in a market where conditions shift week to week. A new device launch, a trade-in cycle, or a sudden shift in vendor supply can change auction dynamics overnight. The company\u2019s existing tooling was strong at estimating the internal value of a device after re-grading and resale. What it could not do was answer the questions that drive auction outcomes: Is the market flooded or scarce for a specific model this week? At what bid price does the company maximize expected margin while controlling cash outlay?",
   },
   {
     type: "paragraph",
@@ -87,7 +82,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "AI-Powered Executive Productivity Suite" },
   {
     type: "paragraph",
-    text: "Alphabyte designed and delivered a custom Claude plugin built around how RecirQ\u2019s leadership actually operates. Deployed as a Claude Cowork project, the solution combines a structured knowledge layer with purpose-built agents and on-demand workflows.",
+    text: "Alphabyte designed and delivered a custom Claude plugin built around how the client\u2019s leadership actually operates. Deployed as a Claude Cowork project, the solution combines a structured knowledge layer with purpose-built agents and on-demand workflows.",
   },
   {
     type: "paragraph",
@@ -100,7 +95,7 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "AI-Driven Auction Analytics Platform" },
   {
     type: "paragraph",
-    text: "The second engagement brought AI-powered supply-side intelligence and bid decisioning directly into RecirQ\u2019s auction workflow.",
+    text: "The second engagement brought supply-side intelligence and bid decisioning directly into the client\u2019s auction workflow.",
   },
   {
     type: "paragraph",
@@ -112,7 +107,7 @@ const bodySections: BodySection[] = [
   },
 ];
 
-export default function RecirqPage() {
+export default function CircularEconomyPlatformPage() {
   return (
     <>
       <script
@@ -125,11 +120,11 @@ export default function RecirqPage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "RecirQ / Reventory" },
+          { label: "Circular Economy Platform" },
         ]}
-        eyebrow="CASE STUDY · CIRCULAR ECONOMY · LIVE SMARTWATCH · RETAIL"
+        eyebrow="CASE STUDY · CIRCULAR ECONOMY · USED SMARTPHONES · GLOBAL"
         h1="AI-Powered Executive Productivity & Auction Analytics"
-        subhead="RecirQ / Reventory"
+        subhead="Circular Economy Startup"
         tagPills={[
           "Executive Enablement",
           "Citizen Development",
@@ -161,7 +156,7 @@ export default function RecirqPage() {
         body={bodySections}
         sidebar={{
           client: {
-            name: "RecirQ / Reventory",
+            name: "Circular Economy Startup",
             meta: "Circular economy \u00b7 Used smartphones \u00b7 Retail",
           },
           servicesDelivered: [

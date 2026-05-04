@@ -126,16 +126,16 @@ export default function McpPage() {
         inActiveUseSectionTitle="In active use today"
         inActiveUse={[
           {
-            eyebrow: "Sprinklermatic \u00b7 Fire Protection",
+            eyebrow: "Fire Protection Contractor",
             title: "NFPA codes library connection",
             body: "Full NFPA codes library accessible to Claude through a custom MCP server with OAuth 2.0 security. Powers the live NFPA compliance agent in production.",
-            href: "/our-work/sprinklermatic/",
+            href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "RecirQ | Reventory \u00b7 Circular Economy",
+            eyebrow: "Circular Economy Startup",
             title: "Google BigQuery connection",
             body: "Claude reads and writes to live BigQuery data marts through a custom MCP server \u2014 powering the real-time sales intelligence dashboard.",
-            href: "/our-work/recirq/",
+            href: "/our-work/circular-economy-platform/",
           },
           {
             eyebrow: "Multi-Client \u00b7 Various Industries",

@@ -146,22 +146,22 @@ export default function ClaudePage() {
         inActiveUseSectionTitle="In active use today — what we built, what it produced"
         inActiveUse={[
           {
-            eyebrow: "Sprinklermatic \u00b7 Fire Protection \u00b7 North America",
+            eyebrow: "Fire Protection Contractor · North America",
             title: "Automated NFPA compliance review",
             body: "Eliminated 40+ hours per week of manual fire codes lookup. Custom MCP server connected to full NFPA library. Live in production.",
-            href: "/our-work/sprinklermatic/",
+            href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "RecirQ / Reventory \u00b7 Circular Economy \u00b7 Global",
+            eyebrow: "Circular Economy Startup · Global",
             title: "Real-time sales intelligence",
             body: "Claude analyses every WhatsApp sales conversation and feeds structured output into a live BigQuery dashboard.",
-            href: "/our-work/recirq/",
+            href: "/our-work/circular-economy-platform/",
           },
           {
-            eyebrow: "Sprinklermatic / EJ Capital \u00b7 Industrial PE-Backed",
+            eyebrow: "Fire Protection Contractor · PE-Backed",
             title: "Executive Claude environment",
             body: "Custom knowledgebases, skills library, and prompt toolkit deployed to the full executive team. Used daily across five functional leaders.",
-            href: "/our-work/sprinklermatic/",
+            href: "/our-work/fire-protection-compliance/",
           },
         ]}
       />

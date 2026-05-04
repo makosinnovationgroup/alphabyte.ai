@@ -5,14 +5,14 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing. Real deployments, not proofs-of-concept.",
   alternates: {
     canonical: "/our-work/",
   },
   openGraph: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
+      "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing.",
     url: "/our-work/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp.",
+      "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing.",
     images: ["/og/default.png"],
   },
 };
@@ -36,7 +36,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations. Sprinklermatic, RecirQ, Housing Services Corp. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
   isPartOf: {
     "@type": "WebSite",
@@ -48,20 +48,20 @@ const webPageSchema = {
 const caseStudies = [
   {
     headerTags: "FIRE PROTECTION \u00b7 PE-BACKED \u00b7 NORTH AMERICA",
-    clientName: "Sprinklermatic / EJ Capital",
+    clientName: "Fire Protection Contractor",
     projectTitle: "AI-Powered Compliance Intelligence Agent",
     pills: ["Citizen Development", "Infrastructure", "Custom AI Agents"],
-    body: "Purpose-built AI agent that navigates the full NFPA fire codes library with citation-grade accuracy \u2014 eliminating 40+ hours per week of manual code lookup across Sprinklermatic\u2019s technical teams.",
-    href: "/our-work/sprinklermatic/",
+    body: "Purpose-built AI agent that navigates the full NFPA fire codes library with citation-grade accuracy \u2014 eliminating 40+ hours per week of manual code lookup across the client\u2019s technical teams.",
+    href: "/our-work/fire-protection-compliance/",
   },
   {
     headerTags: "CIRCULAR ECONOMY \u00b7 USED SMARTPHONES \u00b7 GLOBAL",
-    clientName: "RecirQ / Reventory",
+    clientName: "Circular Economy Startup",
     projectTitle:
       "AI-Powered Executive Productivity & Auction Analytics",
     pills: ["Citizen Development", "Executive Enablement", "Data Readiness"],
     body: "Executive productivity suite with automated daily intelligence and a full AI-driven auction analytics platform \u2014 including a market supply index and predictive bid decisioning engine.",
-    href: "/our-work/recirq/",
+    href: "/our-work/circular-economy-platform/",
   },
   {
     headerTags:

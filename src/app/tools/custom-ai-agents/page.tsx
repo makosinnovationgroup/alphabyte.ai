@@ -131,22 +131,22 @@ export default function CustomAiAgentsPage() {
         inActiveUseSectionTitle="In active use today"
         inActiveUse={[
           {
-            eyebrow: "Sprinklermatic \u00b7 Fire Protection \u00b7 North",
+            eyebrow: "Fire Protection Contractor · North America",
             title: "NFPA compliance agent \u2014 live in production",
             body: "Eliminated 40+ hours per week of manual fire codes lookup. Operates against a custom MCP server. Citation-grade accuracy. Human review gate for edge cases.",
-            href: "/our-work/sprinklermatic/",
+            href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "Sprinklermatic | EJ Capital \u00b7 RE-Backed",
+            eyebrow: "Fire Protection Contractor · PE-Backed",
             title: "Five-agent Command System",
             body: "Five specialized autonomous agents operating in isolated Azure sandboxes, controlled through a custom Slack plugin with a human approval gate.",
-            href: "/our-work/sprinklermatic/",
+            href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "RecirQ / Reventory \u00b7 Circular Economy",
+            eyebrow: "Circular Economy Startup",
             title: "Sales Command Centre",
             body: "Claude conducts semantic analysis of live WhatsApp sales conversations and feeds structured output into a real-time BigQuery dashboard.",
-            href: "/our-work/recirq/",
+            href: "/our-work/circular-economy-platform/",
           },
         ]}
         rightForYou={[

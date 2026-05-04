@@ -37,8 +37,8 @@ export const navigation: NavItem[] = [
     label: "Our Work",
     href: "/our-work/",
     children: [
-      { label: "Sprinklermatic", href: "/our-work/sprinklermatic/" },
-      { label: "RecirQ", href: "/our-work/recirq/" },
+      { label: "Fire Protection Compliance", href: "/our-work/fire-protection-compliance/" },
+      { label: "Circular Economy Platform", href: "/our-work/circular-economy-platform/" },
       { label: "HSC", href: "/our-work/housing-services-corp/" },
     ],
     footerLink: { label: "View all work", href: "/our-work/" },
