@@ -1,0 +1,79 @@
+{
+  "slug": "rabia-arabaci",
+  "name": "Rabia Arabaci",
+  "role": "Marketing Coordinator",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/rabia-arabaci.png",
+  "eyebrow": "MARKETING AT ALPHABYTE AI",
+  "bio": [
+    "Rabia Arabaci is the Marketing Coordinator at Alphabyte Solutions, where she manages social media presence and content strategy, growing engagement through LinkedIn posts, blogs, newsletters, and targeted campaigns. She creates and delivers marketing collateral and sales enablement materials — case studies, infographics, proposals, and decks — to support business development.",
+    "Before joining Alphabyte, Rabia held marketing roles at BlackBerry, BlackBerry IoT-QNX, and Greensaver, where she led product launches, go-to-market strategies, email campaigns, and competitive analysis across cross-functional teams. She holds a BA Honours in Arts & Business from the University of Waterloo with minors in Economics and Digital Arts Communications."
+  ],
+  "contact": {
+    "linkedin": {
+      "label": "linkedin.com/in/rabia-arabaci-60749219a",
+      "href": "https://www.linkedin.com/in/rabia-arabaci-60749219a/"
+    },
+    "email": {
+      "label": "rabia@alphabytesolutions.com",
+      "href": "mailto:rabia@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "BA Honours Arts & Business (Co-op)",
+      "subtitle": "Economics Minor, Digital Arts Communications Minor · 3.7 GPA"
+    },
+    "institution": {
+      "title": "University of Waterloo",
+      "subtitle": "Waterloo, Ontario, Canada"
+    },
+    "keyCoursework": "Product Marketing · Campaign Management · Competitive Analysis · Lead Generation · Copy Writing · UX/UI Design"
+  },
+  "careerTimeline": [
+    {
+      "period": "2025 — Present",
+      "role": "Marketing Coordinator",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "2023 — 2024",
+      "role": "Marketing Communications & Product Marketing Intern",
+      "organization": "BlackBerry · BlackBerry IoT-QNX"
+    },
+    {
+      "period": "2022",
+      "role": "Digital Marketing Assistant",
+      "organization": "Greensaver"
+    },
+    {
+      "period": "2021",
+      "role": "Business Development & Sales / Digital Marketing Intern",
+      "organization": "Felton Brushes Limited · Boxbrite Technologies"
+    }
+  ],
+  "expertise": [
+    "Content Strategy & Production",
+    "Social Media Management",
+    "Product Marketing",
+    "Campaign Management",
+    "Marketing Analytics (GA4, HubSpot)",
+    "Competitive Analysis",
+    "Sales Enablement",
+    "UX/UI Design"
+  ],
+  "achievements": [
+    "Manages Alphabyte's social media presence and content strategy across all channels",
+    "Developed competitive positioning strategy for BlackBerry IoT-QNX product portfolio",
+    "Led go-to-market strategies and product launches at BlackBerry across cross-functional teams",
+    "Built and executed email marketing campaigns driving engagement with social media influencers at Greensaver"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["Content Strategy", "Product Marketing", "Campaign Management", "Analytics"]
+}

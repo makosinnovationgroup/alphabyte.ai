@@ -51,7 +51,7 @@ const MEMBER_ORDER = [
   "mitch-makos",
   "kevin-seto",
   "rugved",
-  "rabia",
+  "rabia-arabaci",
   "carrie",
 ];
 
