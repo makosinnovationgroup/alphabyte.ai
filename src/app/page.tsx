@@ -92,7 +92,7 @@ const homeTracks: Track[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Mid-Market Organizations",
+  title: "Alphabyte AI — Consulting for Mid-Market Organizations",
   description:
     "Alphabyte AI designs and delivers working AI for mid-market organizations. Four tracks. Real deployments. No junior bench.",
   alternates: {
@@ -142,9 +142,17 @@ const professionalServiceSchema = {
   description:
     "AI and data consulting for mid-market organizations.",
   serviceType: "AI and Data Consulting",
-  areaServed: {
-    "@type": "Place",
-    name: "North America",
+  areaServed: [
+    { "@type": "Country", name: "Canada" },
+    { "@type": "Country", name: "United States" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "155 Winges Road, Unit 1",
+    addressLocality: "Vaughan",
+    addressRegion: "ON",
+    postalCode: "L4L 6C7",
+    addressCountry: "CA",
   },
   priceRange: "$$$",
 };

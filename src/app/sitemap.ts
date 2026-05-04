@@ -29,7 +29,7 @@ function getBlogPostEntries(): MetadataRoute.Sitemap {
       return {
         url: `https://alphabyte.ai/blog/${f.replace(/\.mdx$/, "")}/`,
         lastModified: new Date(data.publishedDate as string),
-        changeFrequency: "yearly" as const,
+        changeFrequency: "monthly" as const,
         priority: 0.6,
       };
     });

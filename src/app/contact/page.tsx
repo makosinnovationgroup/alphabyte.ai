@@ -38,24 +38,39 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://alphabyte.ai/",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              name: "Contact Alphabyte",
+              description:
+                "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation.",
+              url: "https://alphabyte.ai/contact/",
+              isPartOf: {
+                "@type": "WebSite",
+                name: "Alphabyte",
+                url: "https://alphabyte.ai",
               },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Contact Us",
-                item: "https://alphabyte.ai/contact/",
-              },
-            ],
-          }),
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://alphabyte.ai/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Contact Us",
+                  item: "https://alphabyte.ai/contact/",
+                },
+              ],
+            },
+          ]),
         }}
       />
       <main>
@@ -147,7 +162,7 @@ export default function ContactPage() {
                     Follow Us
                   </p>
                   <a
-                    href="https://www.linkedin.com/company/alphabyte"
+                    href="https://www.linkedin.com/company/alphabyte-solutions-inc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-body-sm text-alphabyte-blue hover:underline underline-offset-4"

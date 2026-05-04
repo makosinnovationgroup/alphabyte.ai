@@ -79,8 +79,9 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-display font-sans tracking-brand-tight mb-6">
-              AI that <span className="text-alphabyte-blue">compounds.</span>{" "}
-              Not pilots that stall.
+              Five tracks. One{" "}
+              <span className="text-alphabyte-blue">methodology.</span> Start
+              where you are.
             </h1>
             <div className="space-y-4 max-w-[60ch]">
               <p className="text-body text-foreground">

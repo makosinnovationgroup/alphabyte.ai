@@ -207,8 +207,10 @@ export default async function BlogSlugPage({
     "@type": "BlogPosting",
     headline: frontmatter.title,
     description: frontmatter.excerpt,
+    url: `https://alphabyte.ai/blog/${slug}/`,
     image: "https://alphabyte.ai/og/default.png",
     datePublished: frontmatter.publishedDate,
+    dateModified: frontmatter.publishedDate,
     author: {
       "@type": "Person",
       name: author.name,
@@ -221,6 +223,11 @@ export default async function BlogSlugPage({
         "@type": "ImageObject",
         url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
       },
+    },
+    isPartOf: {
+      "@type": "Blog",
+      name: "Alphabyte Blog",
+      url: "https://alphabyte.ai/blog/",
     },
   };
 

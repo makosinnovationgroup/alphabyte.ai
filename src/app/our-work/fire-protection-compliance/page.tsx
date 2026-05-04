@@ -33,6 +33,20 @@ export const metadata: Metadata = {
   },
 };
 
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Fire Protection Compliance — Intelligence Agent",
+  description:
+    "How Alphabyte built a compliance intelligence agent for a $200M+ fire protection contractor — 40+ hours per week eliminated in manual NFPA code lookup.",
+  url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -123,7 +137,7 @@ export default function FireProtectionCompliancePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify([caseStudySchema, breadcrumbSchema]),
         }}
       />
       <CaseStudyPage

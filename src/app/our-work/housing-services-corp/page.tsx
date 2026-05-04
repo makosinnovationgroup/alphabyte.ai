@@ -31,6 +31,20 @@ export const metadata: Metadata = {
   },
 };
 
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Housing Services Corp. — AI Enablement Roadmap",
+  description:
+    "How Alphabyte delivered an AI enablement roadmap for Housing Services Corp., including six strategic recommendations within federal data governance requirements.",
+  url: "https://alphabyte.ai/our-work/housing-services-corp/",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -62,7 +76,7 @@ export default function HousingServicesCorpPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify([caseStudySchema, breadcrumbSchema]),
         }}
       />
 

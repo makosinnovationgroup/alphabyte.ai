@@ -3,14 +3,14 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Alphabyte AI — Claude-Native Consulting",
   description:
     "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench. Operating across North America since 2016.",
   alternates: {
     canonical: "/about/",
   },
   openGraph: {
-    title: "About",
+    title: "About Alphabyte AI — Claude-Native Consulting",
     description:
       "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
     url: "/about/",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "About",
+    title: "About Alphabyte AI — Claude-Native Consulting",
     description:
       "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
     images: ["/og/default.png"],
@@ -70,9 +70,27 @@ const certifications = [
   "SOC 2 Type II \u00b7 In progress",
 ];
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Alphabyte AI",
+  description:
+    "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench. Operating across North America since 2016.",
+  url: "https://alphabyte.ai/about/",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* Hero */}
       <section className="bg-white px-6 py-24 md:py-32">
         <div className="mx-auto max-w-[1600px]">
@@ -251,7 +269,7 @@ export default function AboutPage() {
             Book a Discovery Call &rarr;
           </DiscoveryCallButton>
           <p className="text-body-sm text-muted-foreground mt-8">
-            contact@alphabyte.ai &middot; 155 Wintges Road, Unit 1, Vaughan,
+            contact@alphabyte.ai &middot; 155 Winges Road, Unit 1, Vaughan,
             Ontario
           </p>
         </div>

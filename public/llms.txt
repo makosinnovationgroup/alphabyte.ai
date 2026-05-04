@@ -1,0 +1,48 @@
+# Alphabyte AI
+
+> Claude-focused AI consulting for mid-market organizations in North America. Practitioner-led, no junior bench. Operating since 2016.
+
+## Services
+- /services/discovery/ — AI strategy sprint, 3-5 weeks
+- /services/data-readiness/ — Data quality audit and governance
+- /services/citizen-development/ — Governed Claude environment for every employee
+- /services/executive-enablement/ — Custom Claude environment for leadership
+- /services/infrastructure/ — MCP servers, agents, on-premise LLMs
+
+## Tools
+- /tools/claude/ — Claude configuration and integration
+- /tools/mcp/ — Model Context Protocol servers for enterprise systems
+- /tools/custom-ai-agents/ — Purpose-built AI agents for business workflows
+- /tools/on-premise-llm/ — Private LLM deployment for regulated environments
+
+## Case Studies
+- /our-work/fire-protection-compliance/ — Compliance intelligence agent for a $200M+ fire protection contractor
+- /our-work/circular-economy-platform/ — Executive productivity suite and auction analytics
+- /our-work/housing-services-corp/ — AI enablement roadmap for a national housing organization
+
+## Blog
+- /blog/ai-governance-framework-mid-market/ — An AI governance framework for mid-market companies
+- /blog/ai-readiness-assessment/ — The 2-week AI readiness assessment for operations leaders
+- /blog/citizen-developer-enablement-playbook/ — Citizen developer enablement: the 2026 playbook
+- /blog/claude-for-finance-teams/ — Claude for finance teams: 8 workflows that replace manual reporting
+- /blog/claude-vs-chatgpt-enterprise/ — Claude vs ChatGPT for the enterprise: an honest comparison
+- /blog/claude-vs-microsoft-copilot/ — Claude vs Microsoft Copilot for mid-market knowledge work
+- /blog/how-to-build-a-custom-mcp-server/ — How to build a custom MCP server for mid-market IT
+- /blog/private-llm-vs-claude-enterprise/ — Private LLM vs Claude Enterprise: when you need on-premise
+- /blog/shadow-ai-governance/ — Shadow AI is already in your company. Here is how to govern it
+- /blog/why-ai-pilots-stall/ — Why 80% of mid-market AI pilots stall
+
+## Team
+- /team/ — 8 practitioners with full profiles
+- /team/adam-nameh/ — Co-Founder and Data Platform Architect
+- /team/mitch-makos/ — Principal Architect and Claude Platform Engineer
+- /team/ahmad-nameh/ — Business Intelligence Specialist
+- /team/ibrahim-nameh/ — IT Director
+- /team/kevin-seto/ — Director, Analytics and Project Delivery
+- /team/rugved/ — Claude Specialist
+- /team/rabia/ — Marketing and Content
+- /team/carrie/ — Outbound Operations
+
+## Company
+- /about/ — Practice description, certifications, partnerships
+- /contact/ — Book a discovery call, office address in Vaughan, Ontario

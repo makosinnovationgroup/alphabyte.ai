@@ -5,14 +5,14 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "Our Team",
+  title: "Our Team — Practitioners Behind Every Engagement",
   description:
     "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads — no junior bench.",
   alternates: {
     canonical: "/team/",
   },
   openGraph: {
-    title: "Our Team",
+    title: "Our Team — Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",
     url: "/team/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Our Team",
+    title: "Our Team — Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",
     images: ["/og/default.png"],

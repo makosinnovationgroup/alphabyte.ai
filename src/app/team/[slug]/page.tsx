@@ -117,12 +117,15 @@ export default async function TeamMemberSlugPage({
     "@type": "Person",
     name: member.name,
     jobTitle: member.role,
+    description: member.bio[0] || "",
+    image: `https://alphabyte.ai${member.avatarSrc}`,
     worksFor: {
       "@type": "Organization",
       name: member.company,
       url: "https://alphabyte.ai",
     },
     url: `https://alphabyte.ai/team/${slug}/`,
+    knowsAbout: member.expertise,
     ...(member.contact.linkedin
       ? { sameAs: [member.contact.linkedin.href] }
       : {}),

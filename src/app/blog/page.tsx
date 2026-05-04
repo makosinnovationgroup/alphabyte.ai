@@ -5,14 +5,14 @@ import matter from "gray-matter";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — AI Deployment for Mid-Market",
   description:
     "Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside a real mid-market business.",
   alternates: {
     canonical: "/blog/",
   },
   openGraph: {
-    title: "Blog",
+    title: "Blog — AI Deployment for Mid-Market",
     description:
       "Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside a real mid-market business.",
     url: "/blog/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Blog",
+    title: "Blog — AI Deployment for Mid-Market",
     description:
       "Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside a real mid-market business.",
     images: ["/og/default.png"],

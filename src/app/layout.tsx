@@ -56,13 +56,41 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Alphabyte",
-  legalName: "Alphabyte",
+  legalName: "Alphabyte Solutions Inc.",
   url: "https://alphabyte.ai",
   logo: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
   description:
     "Alphabyte is an AI and data consultancy. We work with companies that have real data problems and want production systems, not prototypes.",
-  // Fill in LinkedIn and GitHub profile URLs when those profiles exist
-  sameAs: [],
+  sameAs: [
+    "https://www.linkedin.com/company/alphabyte-solutions-inc",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "155 Winges Road, Unit 1",
+    addressLocality: "Vaughan",
+    addressRegion: "ON",
+    postalCode: "L4L 6C7",
+    addressCountry: "CA",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: "contact@alphabyte.ai",
+    availableLanguage: ["English"],
+  },
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://alphabyte.ai/#website",
+  name: "Alphabyte",
+  url: "https://alphabyte.ai",
+  publisher: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
 };
 
 export default function RootLayout({
@@ -76,7 +104,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify([organizationSchema, webSiteSchema]),
           }}
         />
         <DiscoveryCallProvider>

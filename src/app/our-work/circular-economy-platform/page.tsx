@@ -33,6 +33,20 @@ export const metadata: Metadata = {
   },
 };
 
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Circular Economy Platform — Executive Productivity & Auction Analytics",
+  description:
+    "How Alphabyte built an AI-powered executive productivity suite and auction analytics platform for a circular economy startup.",
+  url: "https://alphabyte.ai/our-work/circular-economy-platform/",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -113,7 +127,7 @@ export default function CircularEconomyPlatformPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify([caseStudySchema, breadcrumbSchema]),
         }}
       />
       <CaseStudyPage
