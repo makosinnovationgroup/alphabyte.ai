@@ -48,7 +48,7 @@ export function TrackTabs({ tracks }: { tracks: Track[] }) {
               id={`track-tab-${i}`}
               onClick={() => setActive(i)}
               className={cn(
-                "flex shrink-0 items-center gap-2 px-5 py-4 text-left transition-colors cursor-pointer",
+                "flex shrink-0 items-center justify-center gap-2 px-5 py-4 transition-colors cursor-pointer",
                 "shadow-[inset_-1px_0_0_rgba(255,255,255,0.1)]",
                 "last:shadow-none",
                 isActive
@@ -78,7 +78,7 @@ export function TrackTabs({ tracks }: { tracks: Track[] }) {
         {/* Full-height vertical divider */}
         <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-border-default" />
 
-        <div className="mx-auto grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mx-auto max-w-[1600px] grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-body italic text-muted-foreground mb-4">
               &ldquo;{track.question}&rdquo;

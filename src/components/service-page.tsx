@@ -140,7 +140,7 @@ export function ServicePage({
           {stats.map((stat, i) => (
             <div
               key={i}
-              className={`flex-1 px-6 py-10 md:px-10 md:py-14${
+              className={`flex-1 px-6 py-10 md:px-10 md:py-14 text-center${
                 i > 0
                   ? " border-t border-white/20 sm:border-l sm:border-t-0"
                   : ""
@@ -246,7 +246,7 @@ export function ServicePage({
 
       {/* 7. Timeline footer */}
       <section className="border-t border-border-default">
-        <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
+        <div className="mx-auto max-w-[1600px] flex flex-wrap items-center justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
           <div>
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
               Timeline
