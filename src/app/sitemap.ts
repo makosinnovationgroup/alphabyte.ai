@@ -12,8 +12,6 @@ function getTeamMemberEntries(): MetadataRoute.Sitemap {
     .map((f) => ({
       url: `https://alphabyte.ai/team/${f.replace(/\.json$/, "")}/`,
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
     }));
 }
 
@@ -29,8 +27,6 @@ function getBlogPostEntries(): MetadataRoute.Sitemap {
       return {
         url: `https://alphabyte.ai/blog/${f.replace(/\.mdx$/, "")}/`,
         lastModified: new Date(data.publishedDate as string),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
       };
     });
 }
@@ -40,122 +36,94 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://alphabyte.ai/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "weekly",
-      priority: 1.0,
     },
     {
       url: "https://alphabyte.ai/services/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: "https://alphabyte.ai/services/discovery/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/services/data-readiness/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/services/citizen-development/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: "https://alphabyte.ai/services/executive-enablement/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/services/infrastructure/",
       lastModified: new Date("2026-04-27"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/tools/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: "https://alphabyte.ai/tools/claude/",
       lastModified: new Date("2026-04-27"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/tools/mcp/",
       lastModified: new Date("2026-04-27"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/tools/custom-ai-agents/",
       lastModified: new Date("2026-04-27"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/tools/on-premise-llm/",
       lastModified: new Date("2026-04-27"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/our-work/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "yearly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/our-work/circular-economy-platform/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "yearly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/our-work/housing-services-corp/",
       lastModified: new Date("2026-04-28"),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/blog/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "weekly",
-      priority: 0.6,
     },
     {
       url: "https://alphabyte.ai/team/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.7,
     },
     {
       url: "https://alphabyte.ai/about/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.7,
     },
     {
       url: "https://alphabyte.ai/contact/",
       lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.7,
+    },
+    {
+      url: "https://alphabyte.ai/terms/",
+      lastModified: new Date("2026-04-29"),
+    },
+    {
+      url: "https://alphabyte.ai/privacy/",
+      lastModified: new Date("2026-04-29"),
+    },
+    {
+      url: "https://alphabyte.ai/cookies/",
+      lastModified: new Date("2026-04-29"),
     },
     ...getTeamMemberEntries(),
     ...getBlogPostEntries(),

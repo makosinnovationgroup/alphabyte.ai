@@ -5,7 +5,7 @@ import { ServicePage } from "@/components/service-page";
 export const metadata: Metadata = {
   title: "Citizen Development — AI for Every Employee",
   description:
-    "Turn informal Claude usage into governed capability. Custom SDLC plugin, guardrails scaffolding, enablement workshop, and MCP data connectivity deployed in three to twelve weeks.",
+    "Turn informal Claude usage into governed capability. SDLC plugin, guardrails, enablement workshop, and MCP connectivity deployed in three to twelve weeks.",
   alternates: {
     canonical: "/services/citizen-development/",
   },

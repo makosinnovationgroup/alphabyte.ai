@@ -6,7 +6,7 @@ import { ContactForm } from "./contact-form";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation. Describe your situation and we tell you candidly whether there is an engagement worth having.",
+    "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation. Describe your situation and we tell you candidly what we would do.",
   alternates: {
     canonical: "/contact/",
   },

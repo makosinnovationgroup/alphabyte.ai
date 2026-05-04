@@ -5,7 +5,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Services — AI & Data Consulting",
   description:
-    "Five AI consulting services for mid-market organizations. Start where your situation actually is — citizen development, executive enablement, discovery, data readiness, or infrastructure.",
+    "Five AI consulting services for mid-market organizations. Start where your situation actually is — citizen dev, executive enablement, discovery, and more.",
   alternates: {
     canonical: "/services/",
   },
