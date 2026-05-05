@@ -41,7 +41,6 @@
 - /team/kevin-seto/ — Director, Analytics and Project Delivery
 - /team/rugved-ambekar/ — Senior Engineer & AI Delivery Lead
 - /team/rabia-arabaci/ — Marketing Coordinator
-- /team/carrie/ — Outbound Operations
 
 ## Company
 - /about/ — Practice description, certifications, partnerships

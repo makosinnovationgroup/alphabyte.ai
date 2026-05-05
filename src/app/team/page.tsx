@@ -52,7 +52,6 @@ const MEMBER_ORDER = [
   "rugved-ambekar",
   "mitch-makos",
   "rabia-arabaci",
-  "carrie",
 ];
 
 function getAllTeamMembers(): TeamMemberSummary[] {
