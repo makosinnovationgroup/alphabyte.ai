@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: "/team/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/team.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Our Team",
+        alt: "Alphabyte — Our Team — Practitioners Behind Every Engagement",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Our Team — Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",
-    images: ["/og/default.png"],
+    images: ["/og/team.png"],
   },
 };
 

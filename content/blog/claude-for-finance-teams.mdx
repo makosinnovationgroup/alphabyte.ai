@@ -38,19 +38,19 @@ tableOfContents:
     anchorId: "getting-started"
 ---
 
-Claude for finance teams is the deployment we recommend most often as a starting point. Not because finance is trendy. Because finance has the highest concentration of work that AI can take over without introducing risk — if it's done right.
+Claude for finance teams is the deployment we recommend most often as a starting point. Not because finance is trendy. Because finance has the highest concentration of work that AI can take over without introducing risk - if it's done right.
 
 Monthly closes, variance reports, budget consolidations, vendor reconciliations. This work follows rules. Rules can be automated. And finance professionals are precise enough to catch when AI gets something wrong, which makes them ideal early adopters of ai for finance teams tooling.
 
-We wrote about [starting with the people who already know the work](/blog/citizen-developer-enablement-playbook/) — and finance teams are the proof. The people already have the discipline. They just need the tools.
+We wrote about [starting with the people who already know the work](/blog/citizen-developer-enablement-playbook/) - and finance teams are the proof. The people already have the discipline. They just need the tools.
 
 ## Why Finance Is the Best Starting Point {#why-finance-is-the-best-starting-point}
 
 Three things make finance the right first department for claude for finance team deployment.
 
-*The work is pattern-based.* Every month, the same reports get built from the same data sources. The structure doesn't change — the numbers do. This is exactly the kind of work where Claude excels. It can follow a defined process, apply it to new data, and produce consistent output.
+*The work is pattern-based.* Every month, the same reports get built from the same data sources. The structure doesn't change - the numbers do. This is exactly the kind of work where Claude excels. It can follow a defined process, apply it to new data, and produce consistent output.
 
-*The people are rigorous.* Accountants and FP&A analysts don't accept "close enough." They check the numbers. They reconcile. They spot when something is off by $12. This rigor means they'll catch AI errors quickly — and they'll trust the output once they've verified it enough times to know it works.
+*The people are rigorous.* Accountants and FP&A analysts don't accept "close enough." They check the numbers. They reconcile. They spot when something is off by $12. This rigor means they'll catch AI errors quickly - and they'll trust the output once they've verified it enough times to know it works.
 
 *The ROI is measurable.* When a variance commentary that took four hours now takes 20 minutes, you can put a number on it. When the monthly close moves from day eight to day five, the CFO notices. Finance gives you the clearest proof that AI deployment is worth expanding.
 
@@ -60,21 +60,21 @@ These are not aspirational. Each workflow has been built by claude for accountin
 
 1. *Variance analysis commentary.* Claude reads the monthly P&L, compares actual to budget, and drafts the narrative explanations for material variances. Your team reviews and edits. What took three to four hours of writing now takes 30 minutes of review.
 
-2. *Budget vs actual consolidation across departments.* Pull budget and actual data from multiple cost centers, consolidate into a single view, and flag departments that are off-plan. The consolidation itself is the tedious part — Claude handles it.
+2. *Budget vs actual consolidation across departments.* Pull budget and actual data from multiple cost centers, consolidate into a single view, and flag departments that are off-plan. The consolidation itself is the tedious part - Claude handles it.
 
 3. *Vendor invoice matching and exception flagging.* Match incoming invoices against POs and receiving documents. Flag discrepancies by amount, vendor, or line item. Your AP team focuses on exceptions instead of checking every invoice manually.
 
-4. *Cash flow forecasting from historical patterns.* Claude analyzes 12 to 24 months of cash flow data, identifies seasonal patterns and trends, and produces a rolling forecast. Not a replacement for your treasury function — a starting point that gets better as your team refines it.
+4. *Cash flow forecasting from historical patterns.* Claude analyzes 12 to 24 months of cash flow data, identifies seasonal patterns and trends, and produces a rolling forecast. Not a replacement for your treasury function - a starting point that gets better as your team refines it.
 
 5. *Board deck financial summary generation.* Take the monthly financial package and produce the two-page executive summary your board actually reads. Charts described in narrative. Key metrics highlighted. Trends called out. Your CFO still reviews every word, but the first draft is done in minutes.
 
 6. *Intercompany reconciliation automation.* For organizations with multiple entities, intercompany balances are a recurring headache. Claude matches transactions across entities, identifies mismatches, and produces the reconciliation workpaper.
 
-7. *Expense report audit and policy compliance checking.* Review submitted expense reports against your company's expense policy. Flag violations — meals over the per diem, missing receipts, personal charges. Your team reviews the flags instead of reading every line.
+7. *Expense report audit and policy compliance checking.* Review submitted expense reports against your company's expense policy. Flag violations - meals over the per diem, missing receipts, personal charges. Your team reviews the flags instead of reading every line.
 
 8. *Contract renewal tracking and obligation extraction.* Claude reads vendor contracts, extracts key dates (renewal, termination, notice period), and maintains a tracking schedule. No more surprises when a contract auto-renews because nobody was watching the calendar.
 
-Each of these connects to your existing financial systems via MCP. Your GL data, your AP system, your expense platform — Claude reads from them directly, with your permissions model intact. Our [Citizen Development service](/services/citizen-development/) deploys the governed environment that makes this possible.
+Each of these connects to your existing financial systems via MCP. Your GL data, your AP system, your expense platform - Claude reads from them directly, with your permissions model intact. Our [Citizen Development service](/services/citizen-development/) deploys the governed environment that makes this possible.
 
 ## The Citizen Developer Pattern for Finance {#the-citizen-developer-pattern-for-finance}
 
@@ -84,7 +84,7 @@ The controller builds the first workflow. She's tired of spending four hours eve
 
 It works. She edits the output, corrects two numbers, adjusts the narrative tone. The second month, she edits less. The third month, she shares the pattern with the FP&A analyst.
 
-The FP&A analyst adapts the same approach for forecasting. Same MCP connection to the GL. Different prompt, different output. But the *pattern* — connect to data, apply rules, produce output, review — is identical.
+The FP&A analyst adapts the same approach for forecasting. Same MCP connection to the GL. Different prompt, different output. But the *pattern* - connect to data, apply rules, produce output, review - is identical.
 
 This is the citizen developer playbook for finance. One person builds. The team learns from watching. The pattern spreads. We've documented the full progression in our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/).
 
@@ -92,7 +92,7 @@ This is the citizen developer playbook for finance. One person builds. The team 
 
 ## Governance for Financial Data {#governance-for-financial-data}
 
-Financial data is sensitive. Full stop. No financial data should ever go into consumer AI tools — not free ChatGPT, not a personal Claude account, not any tool without enterprise data controls.
+Financial data is sensitive. Full stop. No financial data should ever go into consumer AI tools - not free ChatGPT, not a personal Claude account, not any tool without enterprise data controls.
 
 The governed environment is non-negotiable for finance. That means:
 
@@ -101,7 +101,7 @@ The governed environment is non-negotiable for finance. That means:
 - *Access controls tied to your identity provider.* The AP clerk sees AP data. The controller sees the full GL. Permissions mirror what already exists in your financial systems.
 - *MCP servers on your infrastructure.* The connections between Claude and your financial systems run on infrastructure you control. Data doesn't leave your environment to reach the AI.
 
-This isn't overhead — it's the foundation that makes everything else possible. Without governance, your CFO won't approve the deployment. With it, finance becomes the model for every other department.
+This isn't overhead - it's the foundation that makes everything else possible. Without governance, your CFO won't approve the deployment. With it, finance becomes the model for every other department.
 
 ## Getting Started {#getting-started}
 

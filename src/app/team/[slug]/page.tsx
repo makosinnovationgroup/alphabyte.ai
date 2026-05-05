@@ -88,17 +88,17 @@ export async function generateMetadata({
       url: `/team/${slug}/`,
       images: [
         {
-          url: "/og/default.png",
+          url: `/og/team-${slug}.png`,
           width: 1200,
           height: 630,
-          alt: `${member.name} — Alphabyte`,
+          alt: `Alphabyte — ${member.name}, ${member.role}`,
         },
       ],
     },
     twitter: {
       title,
       description,
-      images: ["/og/default.png"],
+      images: [`/og/team-${slug}.png`],
     },
   };
 }

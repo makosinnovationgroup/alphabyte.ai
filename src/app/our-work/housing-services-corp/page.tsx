@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/our-work/housing-services-corp/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/housing-services-corp.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Housing Services Corp.: AI Enablement Roadmap",
+        alt: "Alphabyte — Housing Services Corp. — AI Enablement Roadmap",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Housing Services Corp. — AI Enablement Roadmap",
     description:
       "AI enablement roadmap and data strategy for a national housing services organization.",
-    images: ["/og/default.png"],
+    images: ["/og/housing-services-corp.png"],
   },
 };
 

@@ -38,7 +38,7 @@ tableOfContents:
 
 Shadow AI is not a theoretical risk your security team should plan for next quarter. It is happening now, in your company, on personal accounts your IT team cannot see.
 
-Someone in operations is pasting customer data into ChatGPT to draft follow-up emails. Someone in finance is using Claude to analyze spreadsheets they downloaded from your ERP. Someone in marketing has built an entire content workflow on a personal AI subscription. None of this shows up in your software inventory. None of it is governed by your data policies. And the people doing it are not trying to cause problems — they are trying to get their work done.
+Someone in operations is pasting customer data into ChatGPT to draft follow-up emails. Someone in finance is using Claude to analyze spreadsheets they downloaded from your ERP. Someone in marketing has built an entire content workflow on a personal AI subscription. None of this shows up in your software inventory. None of it is governed by your data policies. And the people doing it are not trying to cause problems - they are trying to get their work done.
 
 This is the shadow AI pattern, and it exists in every mid-market organization we have worked with.
 
@@ -46,7 +46,7 @@ This is the shadow AI pattern, and it exists in every mid-market organization we
 
 The pattern is predictable. An employee discovers that AI can save them two or three hours a week on a recurring task. They sign up for a personal account. They start using it. They get better at it. They build workflows around it. Sometimes they share tips with colleagues in Slack threads or over lunch.
 
-None of this is visible to IT. None of it is captured in ai governance policies. The data flowing into these consumer AI accounts — customer names, financial figures, internal strategies, proprietary processes — is governed only by whatever terms of service the employee clicked through on their personal credit card.
+None of this is visible to IT. None of it is captured in ai governance policies. The data flowing into these consumer AI accounts - customer names, financial figures, internal strategies, proprietary processes - is governed only by whatever terms of service the employee clicked through on their personal credit card.
 
 This is not an edge case. Surveys consistently show that 50 to 70 percent of knowledge workers are using AI tools that their employer did not provision. At mid-market scale, that means dozens or hundreds of employees with ungoverned AI workflows touching real business data every day.
 
@@ -58,7 +58,7 @@ The instinctive response is to ban personal AI use. Issue a policy. Block the UR
 
 It is not. Here is what actually happens when organizations ban AI tools.
 
-The usage goes underground. Employees switch to mobile devices, personal laptops, or tools you have not thought to block yet. You lose whatever limited visibility you had. The data exposure continues — you just stopped hearing about it.
+The usage goes underground. Employees switch to mobile devices, personal laptops, or tools you have not thought to block yet. You lose whatever limited visibility you had. The data exposure continues - you just stopped hearing about it.
 
 You lose your best people's best work. The employees using AI are not your underperformers. They are the ones who figured out how to draft a proposal in 20 minutes instead of two hours, who automated their weekly reporting, who found a way to analyze data they previously could not touch. Banning AI punishes initiative and tells your most resourceful people that efficiency is not valued.
 
@@ -70,15 +70,15 @@ The better question is not *how do we stop this* but *how do we make this visibl
 
 ## The Governance Path That Preserves Adoption {#governance-path-that-preserves-adoption}
 
-Governance does not have to mean restriction. Done well, it means your team keeps doing what they are already doing — but on infrastructure you can see and control.
+Governance does not have to mean restriction. Done well, it means your team keeps doing what they are already doing - but on infrastructure you can see and control.
 
 The path has four steps:
 
-*Acknowledge the usage.* Start by understanding what is already happening. Survey your teams. Ask what tools they are using, what tasks they are automating, what data they are working with. This is not an audit — it is discovery. You need to know the landscape before you can govern it. Our [Discovery service](/services/discovery/) includes a shadow AI assessment as part of the initial sprint.
+*Acknowledge the usage.* Start by understanding what is already happening. Survey your teams. Ask what tools they are using, what tasks they are automating, what data they are working with. This is not an audit - it is discovery. You need to know the landscape before you can govern it. Our [Discovery service](/services/discovery/) includes a shadow AI assessment as part of the initial sprint.
 
 *Provide a governed alternative.* Deploy enterprise AI accounts with SSO, data retention policies, and audit logging. Claude for business offers all three. The key is that the governed alternative must be *at least as capable* as what people are already using. If the enterprise tool is slower, more restricted, or harder to access, people will stay on their personal accounts.
 
-*Migrate existing workflows.* This is the step most organizations skip. It is not enough to provision enterprise accounts and send a memo. You need to actively help teams move their existing workflows into the governed environment. The employee who built a content workflow on a personal Claude account needs help rebuilding it on the enterprise account — with the same functionality, plus the governance layer.
+*Migrate existing workflows.* This is the step most organizations skip. It is not enough to provision enterprise accounts and send a memo. You need to actively help teams move their existing workflows into the governed environment. The employee who built a content workflow on a personal Claude account needs help rebuilding it on the enterprise account - with the same functionality, plus the governance layer.
 
 *Build guardrails that enable.* Define what data can and cannot be shared with AI tools. Set up data loss prevention rules. Configure retention policies. But do this in a way that enables work rather than blocking it. A guardrail that says "customer PII must be anonymized before AI processing" is better than one that says "no customer data in AI tools." The first gives people a path forward. The second sends them back to personal accounts. Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) covers how this works for development teams specifically.
 
@@ -88,11 +88,11 @@ In practice, governed AI usage looks like this:
 
 Every employee accesses AI through your enterprise account, authenticated via SSO. No personal accounts, no consumer tools, no data leaving your environment through side channels.
 
-Every interaction is logged. Not to surveil employees — to understand usage patterns, identify high-value workflows, and maintain an audit trail for compliance. When a regulator or auditor asks how your organization uses AI, you have an answer.
+Every interaction is logged. Not to surveil employees - to understand usage patterns, identify high-value workflows, and maintain an audit trail for compliance. When a regulator or auditor asks how your organization uses AI, you have an answer.
 
 Data stays in your tenant. Conversations, uploaded files, and generated outputs are retained according to your policies and deleted according to your schedules. Your data is not used to train models. Your proprietary information stays proprietary.
 
-Guardrails operate at the platform level. Sensitive data categories are flagged automatically. Certain types of queries are routed or restricted based on the user's role and the data classification. The system enforces the rules — individual employees do not have to remember them.
+Guardrails operate at the platform level. Sensitive data categories are flagged automatically. Certain types of queries are routed or restricted based on the user's role and the data classification. The system enforces the rules - individual employees do not have to remember them.
 
 And the workflows your team built on personal accounts still work. The analyst still gets their weekly data summary. The marketer still drafts content with AI assistance. The operations lead still automates their reporting. The difference is that now you can see it, support it, and build on it.
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   },
   description:
     "Alphabyte is an AI and data consultancy. We work with companies that have real data problems and want production systems, not prototypes.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     siteName: "Alphabyte",
@@ -50,6 +55,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#00ABF0",
 };
 
 const organizationSchema = {

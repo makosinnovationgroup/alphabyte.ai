@@ -2,12 +2,31 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cookies Policy",
+  alternates: {
+    canonical: "/cookies/",
+  },
   robots: { index: false, follow: true },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Cookies Policy",
+  url: "https://alphabyte.ai/cookies/",
+  description:
+    "How Alphabyte uses cookies on its websites and online services.",
+  isPartOf: {
+    "@id": "https://alphabyte.ai/#website",
+  },
 };
 
 export default function CookiesPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <h1 className="text-headline font-sans tracking-brand-snug mb-6">
         Cookies Policy
       </h1>

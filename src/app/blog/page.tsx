@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: "/blog/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/blog.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Blog",
+        alt: "Alphabyte — Blog — AI Deployment for Mid-Market",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Blog — AI Deployment for Mid-Market",
     description:
       "Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside a real mid-market business.",
-    images: ["/og/default.png"],
+    images: ["/og/blog.png"],
   },
 };
 

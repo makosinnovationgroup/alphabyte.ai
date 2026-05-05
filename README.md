@@ -104,6 +104,17 @@ DNS for `alphabyte.ai` is already managed by Cloudflare. Connect this repo
 to a Pages project and Cloudflare will auto-provision the DNS records for
 the custom domain.
 
+### Preview host
+
+Production domain: **alphabyte.ai**
+
+The Cloudflare Pages preview host (`alphabyte-ai.pages.dev`) remains live
+after connecting the custom domain. It is intended for QA only — an
+`X-Robots-Tag: noindex` header is set in `public/_headers` to prevent
+search engine indexation. For a clean production launch, configure a
+**301 redirect** from `*.pages.dev` to `alphabyte.ai` at the Cloudflare
+dashboard level (Rules → Single Redirect or Bulk Redirects).
+
 ### Static export constraints
 
 With `output: 'export'` in `next.config.mjs`, the build produces fully

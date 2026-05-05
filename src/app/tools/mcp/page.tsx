@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/tools/mcp/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/mcp.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — MCP Servers: Model Context Protocol Integration",
+        alt: "Alphabyte — MCP Servers — Model Context Protocol Integration",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "MCP Servers — Model Context Protocol Integration",
     description:
       "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured.",
-    images: ["/og/default.png"],
+    images: ["/og/mcp.png"],
   },
 };
 

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/services/infrastructure/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/infrastructure.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte \u2014 Infrastructure: Custom MCP, AI Agents, On-Premise LLMs",
+        alt: "Alphabyte \u2014 Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
     description:
       "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models.",
-    images: ["/og/default.png"],
+    images: ["/og/infrastructure.png"],
   },
 };
 

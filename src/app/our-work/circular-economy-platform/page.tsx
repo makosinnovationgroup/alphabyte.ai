@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: "/our-work/circular-economy-platform/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/circular-economy-platform.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Circular Economy Platform: AI Productivity & Auction Analytics",
+        alt: "Alphabyte — Circular Economy Platform — AI Productivity & Auction Analytics",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Circular Economy Platform — AI Productivity & Auction Analytics",
     description:
       "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
-    images: ["/og/default.png"],
+    images: ["/og/circular-economy-platform.png"],
   },
 };
 

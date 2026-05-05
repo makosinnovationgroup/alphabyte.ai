@@ -3,12 +3,31 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  alternates: {
+    canonical: "/privacy/",
+  },
   robots: { index: false, follow: true },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy",
+  url: "https://alphabyte.ai/privacy/",
+  description:
+    "How Alphabyte collects, uses, and protects your personal information.",
+  isPartOf: {
+    "@id": "https://alphabyte.ai/#website",
+  },
 };
 
 export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <h1 className="text-headline font-sans tracking-brand-snug mb-6">
         Privacy Policy
       </h1>

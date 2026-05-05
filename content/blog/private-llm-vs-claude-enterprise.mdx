@@ -40,7 +40,7 @@ tableOfContents:
 
 "Our data can't leave our network." We hear this on every third discovery call. It's the most common objection when a mid-market company considers deploying a private LLM or any cloud-based AI. Sometimes it's a genuine regulatory requirement. Sometimes it's an organizational preference inherited from a prior security review. Sometimes it's a misunderstanding of how cloud AI actually handles data.
 
-The distinction matters. A genuine compliance mandate — your regulator requires data residency within a specific jurisdiction, or your contract with a government agency prohibits third-party processing — is a hard constraint. An organizational preference is a policy decision that can be revisited when the facts change.
+The distinction matters. A genuine compliance mandate - your regulator requires data residency within a specific jurisdiction, or your contract with a government agency prohibits third-party processing - is a hard constraint. An organizational preference is a policy decision that can be revisited when the facts change.
 
 Most of the companies we work with fall into the second category. They assume cloud AI means their proprietary data enters a training pipeline and becomes part of a public model. That assumption is outdated, and it's worth examining before committing to the cost and complexity of a self-hosted LLM.
 
@@ -57,7 +57,7 @@ Here is what Claude Enterprise's data handling actually looks like:
 
 The common misconception is that sending data to an API means that data lives on someone else's server indefinitely. With Claude Enterprise, the data is processed and returned. It is not stored, not indexed, not used for any purpose beyond generating your response.
 
-For most mid-market companies — professional services firms, manufacturers, logistics operators, financial advisors — this meets the compliance bar. The data is encrypted in transit, processed in a SOC 2-audited environment, and not retained. That's a stronger data handling posture than most companies maintain for their own internal systems.
+For most mid-market companies - professional services firms, manufacturers, logistics operators, financial advisors - this meets the compliance bar. The data is encrypted in transit, processed in a SOC 2-audited environment, and not retained. That's a stronger data handling posture than most companies maintain for their own internal systems.
 
 > "The question isn't whether the cloud is secure enough. It's whether your on-premise alternative is more secure than what Anthropic already provides."
 
@@ -67,11 +67,11 @@ There are legitimate cases where an on-premise LLM is the right answer. They're 
 
 *Explicit data residency mandates.* Defense contractors operating under ITAR. Healthcare organizations subject to specific state-level data residency laws. Government agencies with FedRAMP requirements that no commercial AI provider yet satisfies. If your regulator says the data cannot leave your physical infrastructure, that's the end of the conversation.
 
-*Air-gapped environments.* If your network has no external connectivity by design — common in classified environments and certain critical infrastructure — cloud AI is not an option regardless of its security posture.
+*Air-gapped environments.* If your network has no external connectivity by design - common in classified environments and certain critical infrastructure - cloud AI is not an option regardless of its security posture.
 
 *High inference volume.* If you're running millions of inference calls per month against a specific, narrow use case, self-hosting a smaller model can become cost-competitive. The math only works at significant scale, and the model will be less capable than Claude, but the economics can justify it.
 
-*Specialized fine-tuning requirements.* If your use case requires a model trained on proprietary data — medical imaging analysis, specialized document classification — a self-hosted fine-tuned model may outperform a general-purpose model on that narrow task.
+*Specialized fine-tuning requirements.* If your use case requires a model trained on proprietary data - medical imaging analysis, specialized document classification - a self-hosted fine-tuned model may outperform a general-purpose model on that narrow task.
 
 For more detail on the infrastructure involved, see our [on-premise LLM tools page](/tools/on-premise-llm/) and our [Infrastructure service](/services/infrastructure/).
 
@@ -85,6 +85,6 @@ Here's the practical decision tree we walk through with clients:
 
 **Third: What's the total cost of ownership?** On-premise LLM infrastructure is not a one-time purchase. You need GPU hardware (or a dedicated cloud partition), ongoing maintenance, model updates, inference optimization, and staff who understand the stack. For a mid-market company, that's typically $200K–$500K in year one and $100K+ annually after that. Compare that against an API cost that scales with actual usage.
 
-**Fourth: Is the capability gap acceptable?** On-premise models are smaller. They have to be — you're running them on your hardware, not on the infrastructure of a company that has invested billions in compute. A self-hosted 70B parameter model is capable, but it is not Claude. If your use cases require strong reasoning, long-context understanding, or nuanced language generation, the gap is significant.
+**Fourth: Is the capability gap acceptable?** On-premise models are smaller. They have to be - you're running them on your hardware, not on the infrastructure of a company that has invested billions in compute. A self-hosted 70B parameter model is capable, but it is not Claude. If your use cases require strong reasoning, long-context understanding, or nuanced language generation, the gap is significant.
 
-Most mid-market companies land on Claude Enterprise. The ones that genuinely need on-premise know it before they finish reading this post — because their compliance officer already told them.
+Most mid-market companies land on Claude Enterprise. The ones that genuinely need on-premise know it before they finish reading this post - because their compliance officer already told them.

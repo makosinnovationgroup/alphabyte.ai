@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Alphabyte AI · 10 Launch Blog Topics: Keyword Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#00ABF0;
+    --brand-ink:#0089c0;
+    --ink:#0a0a0a;
+    --muted:#5b5b5b;
+    --line:#e6e6e6;
+    --bg:#ffffff;
+    --soft:#fafafa;
+    --green:#0e9f6e;
+    --amber:#b45309;
+    --red:#b91c1c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;font-feature-settings:"ss01","cv11";-webkit-font-smoothing:antialiased}
+  a{color:var(--brand-ink);text-decoration:none;border-bottom:1px solid rgba(0,171,240,.25)}
+  a:hover{border-bottom-color:var(--brand)}
+  code,.mono{font-family:"Geist Mono",ui-monospace,Menlo,monospace;font-size:.86em}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:48px 32px 96px}
+  header.hero{border-bottom:1px solid var(--ink);padding-bottom:40px;margin-bottom:48px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:#fff;border:1px solid var(--ink);padding:6px 12px;border-radius:999px}
+  .eyebrow .dot{width:8px;height:8px;border-radius:999px;background:var(--brand)}
+  h1{font-size:clamp(40px,5.5vw,68px);line-height:1.02;letter-spacing:-.025em;font-weight:700;margin:24px 0 16px;color:var(--ink)}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:780px}
+  .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:28px;font-size:13px;color:var(--muted)}
+  .meta b{color:var(--ink);font-weight:600}
+
+  /* Strategy cards */
+  .grid-strategy{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink);margin:0 0 56px}
+  .strat{padding:20px;border-right:1px solid var(--ink)}
+  .strat:last-child{border-right:0}
+  .strat .num{font-family:"Geist Mono",monospace;font-size:11px;color:var(--muted)}
+  .strat h3{margin:6px 0 8px;font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .strat p{margin:0;font-size:13px;line-height:1.5;color:var(--muted)}
+  @media(max-width:900px){.grid-strategy{grid-template-columns:repeat(2,1fr)}.strat{border-bottom:1px solid var(--ink)}}
+
+  /* Section */
+  section{margin-bottom:56px}
+  h2{font-size:28px;font-weight:600;letter-spacing:-.018em;margin:0 0 8px;display:flex;align-items:baseline;gap:14px}
+  h2 .rank{font-family:"Geist Mono",monospace;font-size:14px;color:var(--brand);font-weight:500}
+  .h2sub{color:var(--muted);font-size:14px;margin:0 0 24px}
+
+  /* Topic card */
+  .topic{border:1px solid var(--line);border-left:3px solid var(--brand);padding:28px 32px;margin-bottom:18px;background:#fff;transition:border-color .2s}
+  .topic:hover{border-color:var(--ink);border-left-color:var(--brand)}
+  .topic .head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+  .topic .num{font-family:"Geist Mono",monospace;font-size:13px;color:var(--brand-ink);font-weight:500;letter-spacing:.04em}
+  .topic h3{margin:6px 0 0;font-size:24px;line-height:1.2;letter-spacing:-.018em;font-weight:600;max-width:780px}
+  .topic .tier{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--ink);border-radius:999px;white-space:nowrap}
+  .tier.flag{background:var(--ink);color:#fff}
+  .tier.pillar{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .tier.comp{background:#fff;color:var(--ink)}
+  .tier.pain{background:#fff;color:var(--ink);border-style:dashed}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .kpi{padding:14px 16px;border-right:1px solid var(--line)}
+  .kpi:last-child{border-right:0}
+  .kpi .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:4px}
+  .kpi .val{font-family:"Geist Mono",monospace;font-size:18px;font-weight:500;color:var(--ink)}
+  .kpi .sub{font-size:11px;color:var(--muted);margin-top:2px}
+  @media(max-width:700px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(1),.kpi:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  .row{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;line-height:1.55}
+  .row:last-child{border-bottom:0}
+  .row .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+  .row .v{color:var(--ink)}
+  .row .v b{color:var(--brand-ink)}
+  .kw{display:inline-block;font-family:"Geist Mono",monospace;font-size:12px;background:#fafafa;border:1px solid var(--line);padding:2px 8px;border-radius:4px;margin:2px 4px 2px 0;color:var(--ink)}
+  .kw.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .difficulty{display:inline-block;font-family:"Geist Mono",monospace;font-size:12px;font-weight:600;padding:2px 8px;border-radius:4px}
+  .kd-easy{background:#e7f9f0;color:var(--green);border:1px solid #b9ecd1}
+  .kd-med{background:#fff5e6;color:var(--amber);border:1px solid #f5dab2}
+  .kd-hard{background:#fde8e8;color:var(--red);border:1px solid #f5c2c2}
+
+  /* footer / appendix */
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  td.num{font-family:"Geist Mono",monospace;text-align:right}
+  .footnote{margin-top:48px;padding-top:32px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.6}
+
+  .legend{display:flex;flex-wrap:wrap;gap:18px;margin:8px 0 20px;font-size:12px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px}
+
+  ul.why{margin:8px 0 0;padding:0;list-style:none}
+  ul.why li{position:relative;padding:4px 0 4px 20px;font-size:14px;line-height:1.55}
+  ul.why li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:1px;background:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span> Launch Blog Strategy · Keyword Research</span>
+  <h1>10 launch posts to put <em>Alphabyte AI</em> on the map for mid-market Claude buyers.</h1>
+  <p class="lede">Research-backed topic recommendations for the alphabyte-ai.pages.dev launch. Each post is matched to a winnable keyword, a real reader, and a service you already deliver. Volumes are Google US monthly searches; difficulty is scored 0–100 (lower is easier). Prioritised by realistic ranking probability in the first 90 days, then by buyer intent.</p>
+</header>
+
+<section>
+  <div class="grid-strategy">
+    <div class="strat">
+      <div class="num">01 / Strategy</div>
+      <h3>Win the MCP question</h3>
+      <p>"mcp server" is 60.5K/mo in the US at KD 8–24. Anthropic-aligned authority is wide open. One pillar piece anchors the Infrastructure service.</p>
+    </div>
+    <div class="strat">
+      <div class="num">02 / Strategy</div>
+      <h3>Own the comparison</h3>
+      <p>Claude vs ChatGPT (27.1K, KD 8) and Claude vs Copilot (880, low KD) are how mid-market buyers actually start. Be the honest source.</p>
+    </div>
+    <div class="strat">
+      <div class="num">03 / Strategy</div>
+      <h3>Define citizen dev for AI</h3>
+      <p>The legacy "citizen developer" term still gets 720/mo at KD 18, most ranking content is Microsoft/low-code. Re-frame it for the Claude era.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="rank">/ legend</span> How to read each card</h2>
+  <p class="h2sub">Volume = Google US monthly searches (most recent month). KD = ranking difficulty. Tier = where the post sits in the funnel.</p>
+  <div class="legend">
+    <span><i style="background:var(--ink)"></i> FLAGSHIP: featured at the top of the blog</span>
+    <span><i style="background:var(--brand)"></i> PILLAR: long-form, evergreen authority</span>
+    <span><i style="background:#fff;border:1px solid var(--ink)"></i> COMPARISON: capture buyer-mode searches</span>
+    <span><i style="background:#fff;border:1px dashed var(--ink)"></i> PAIN-POINT: narrative, ungated lead-gen</span>
+  </div>
+</section>
+
+<!-- ===================== TOPIC 1 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 01 · FLAGSHIP</div>
+      <h3>How to Build a Custom MCP Server: A Practical Guide for Mid-Market IT Teams</h3>
+    </div>
+    <span class="tier flag">Flagship</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">390 <span class="sub">/mo (US)</span></div><div class="sub">"build mcp server"</div></div>
+    <div class="kpi"><div class="lbl">Halo keyword volume</div><div class="val">60,500 <span class="sub">/mo "mcp server"</span></div><div class="sub">+ 14,800 "what is mcp"</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 8</span></div><div class="sub">very low, open SERP</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Informational → Commercial</div><div class="sub">developer/IT lead evaluating</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">How to Build a Custom MCP Server (with Claude): A Practical Guide for Mid-Market IT Teams</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">build mcp server</span><span class="kw">custom mcp server</span><span class="kw">mcp server tutorial</span><span class="kw">model context protocol</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Practitioner with a real integration problem, wants a runnable example, not a whitepaper. Ranking for this also captures "what is MCP" readers further up the funnel.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>MCP is the <b>most under-served high-volume topic in our orbit</b>, KD 8, 60.5K/mo halo. We're an Anthropic Claude Partner; this is our home turf.</li><li>Anchors the <b>/tools/mcp</b> and <b>/services/infrastructure</b> service pages.</li><li>Becomes the page IT teams cite when they pitch us internally. The Sprinklermatic and RecirQ case studies both have governed-MCP angles to draw from.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 2 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 02 · PILLAR</div>
+      <h3>Citizen Developer Enablement: The 2026 Playbook for AI-Native Mid-Market Teams</h3>
+    </div>
+    <span class="tier pillar">Pillar</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">720 <span class="sub">/mo (US)</span></div><div class="sub">"citizen developer"</div></div>
+    <div class="kpi"><div class="lbl">Secondary</div><div class="val">210 <span class="sub">"citizen development"</span></div><div class="sub">+ branded "citizen developer enablement"</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 16–18</span></div><div class="sub">low, most SERPs are 2019-era PowerApps</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Informational</div><div class="sub">ops/IT leader scoping a programme</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Citizen Developer Enablement in the Claude Era: The 2026 Mid-Market Playbook</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">citizen developer enablement</span><span class="kw">citizen developer</span><span class="kw">citizen development</span><span class="kw">no code ai</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Buyer is researching the category language for a programme they're being asked to scope. The existing top-10 is dominated by Microsoft/Power Platform vendor blogs, we own the LLM-native re-frame.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>This is <b>our flagship service named in our own term</b>. Own the SERP, own the category.</li><li>"Bottom-up vs boardroom" is already our differentiator copy. Turn the homepage argument into a 2,500-word pillar with the Sprinklermatic NFPA story as the proof.</li><li>Internal linking magnet for every other post on this list.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 3 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 03 · COMPARISON</div>
+      <h3>Claude vs ChatGPT for the Enterprise: An Honest Mid-Market Comparison (2026)</h3>
+    </div>
+    <span class="tier comp">Comparison</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">27,100 <span class="sub">/mo (US)</span></div><div class="sub">"claude vs chatgpt"</div></div>
+    <div class="kpi"><div class="lbl">12-mo trend</div><div class="val">+170% <span class="sub">YoY</span></div><div class="sub">110K in March 2026</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 8</span></div><div class="sub">extraordinary signal: high volume + low KD</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial investigation</div><div class="sub">decision-maker pre-purchase</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Claude vs ChatGPT for the Enterprise: An Honest Mid-Market Comparison</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">claude vs chatgpt</span><span class="kw">claude for business</span><span class="kw">claude enterprise</span><span class="kw">claude for enterprise</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Buyer comparing platforms, often after a pilot. Mid-market angle is conspicuously missing from the SERP, top results are consumer/feature-by-feature.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li><b>Highest-leverage post on the list:</b> 27K/mo at KD 8 is borderline anomalous. Even a top-10 finish drives material traffic.</li><li>As a Claude Partner we can write this with credibility ChatGPT-shop consultancies cannot.</li><li>Natural CTA: "skeptical of strategy decks, want to see something running" → Discovery Call.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 4 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 04 · COMPARISON</div>
+      <h3>Claude vs Microsoft Copilot for Mid-Market Knowledge Work</h3>
+    </div>
+    <span class="tier comp">Comparison</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">880 <span class="sub">/mo (US)</span></div><div class="sub">"claude vs copilot"</div></div>
+    <div class="kpi"><div class="lbl">12-mo trend</div><div class="val">+1,614% <span class="sub">YoY</span></div><div class="sub">3,600 in March 2026</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD &lt; 10</span></div><div class="sub">competition index = 2</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial investigation</div><div class="sub">CIO/IT director procurement-stage</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Claude vs Microsoft Copilot: Which One Wins for Mid-Market Knowledge Work?</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">claude vs copilot</span><span class="kw">claude vs microsoft copilot</span><span class="kw">claude for business</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Reader has an M365 stack, is being upsold Copilot, and wants to know if Claude is the better choice. CPC is $26, an unusually high commercial-intent signal.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>Most Canadian mid-market orgs are Microsoft houses. This is the literal procurement question on our discovery calls.</li><li>Trend curve is vertical (+1,614% YoY), early entrants will compound.</li><li>Pairs with the citizen-dev pillar: "Copilot adds AI to apps, citizen dev gives every employee a developer."</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 5 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 05 · PAIN-POINT</div>
+      <h3>Shadow AI Is Already in Your Company. Here's How to Govern It Without Killing Adoption.</h3>
+    </div>
+    <span class="tier pain">Pain-point</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">2,400 <span class="sub">/mo (US)</span></div><div class="sub">"shadow ai"</div></div>
+    <div class="kpi"><div class="lbl">CPC signal</div><div class="val">$31.85 <span class="sub">avg CPC</span></div><div class="sub">very high commercial value</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 20</span></div><div class="sub">low for the volume</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Informational → Solution-aware</div><div class="sub">CISO / IT / Compliance</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Shadow AI Is Already in Your Company. Here's How to Govern It Without Killing Adoption.</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">shadow ai</span><span class="kw">ai governance</span><span class="kw">claude for business</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Reader read an article about a sensitive prompt leaking and is worried. They want diagnosis + a path, not a fear-based pitch.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li><b>Mirrors our homepage opener verbatim</b>: "prompts in Slack threads, personal workflows nobody else can replicate." We've already written half this post.</li><li>Bridges directly to Citizen Developer Enablement as the constructive answer, not a ban.</li><li>Strong fit for the "burned by AI consultancies" reader, pragmatic, not preachy.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 6 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 06 · PILLAR</div>
+      <h3>An AI Governance Framework for Mid-Market Companies (with PIPEDA &amp; Bill C-27 in mind)</h3>
+    </div>
+    <span class="tier pillar">Pillar</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">4,400 <span class="sub">/mo (US)</span></div><div class="sub">"ai governance framework"</div></div>
+    <div class="kpi"><div class="lbl">Secondary</div><div class="val">4,400 <span class="sub">"ai governance"</span></div><div class="sub">+ 590/mo CA market</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-med">KD 31</span></div><div class="sub">moderate, Big-Four dominate</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial investigation</div><div class="sub">compliance / GC / public-sector buyer</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">An AI Governance Framework for Mid-Market Companies (Built for PIPEDA &amp; Bill C-27)</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">ai governance framework</span><span class="kw">ai governance</span><span class="kw">ai governance canada</span><span class="kw">ai governance mid market</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Reader needs to put a programme on paper for a board, regulator, or audit committee. SERP is dominated by IBM/Deloitte/PwC enterprise content, there is no mid-market angle.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>Targets the homepage's <b>"Canadian public sector / regulated industry"</b> reader directly. HSC case study is the proof.</li><li>Only Claude-partner content addressing PIPEDA + Bill C-27 specifically, sharp differentiation from US-centric SERP.</li><li>Anchor for the Discovery and Data Readiness service pages.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 7 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 07 · PAIN-POINT</div>
+      <h3>Why 80% of Mid-Market AI Pilots Stall, and the Bottom-Up Pattern That Actually Compounds</h3>
+    </div>
+    <span class="tier pain">Pain-point</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">low <span class="sub">long-tail</span></div><div class="sub">"why ai pilots fail" · "ai pilot to production"</div></div>
+    <div class="kpi"><div class="lbl">Halo</div><div class="val">390 <span class="sub">"ai roi"</span></div><div class="sub">+ social/LinkedIn distribution</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">low</span></div><div class="sub">narrative-style, ranks on relevance</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Solution-aware</div><div class="sub">buyer who's already lost money once</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Why 80% of Mid-Market AI Pilots Stall, and the Bottom-Up Pattern That Actually Compounds</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">why ai pilots fail</span><span class="kw">ai pilot to production</span><span class="kw">ai pilot purgatory</span><span class="kw">ai roi</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Burned-once buyer doing post-mortem reading. Search volume is small, but this is the post that gets shared in Slack channels and becomes the LinkedIn cornerstone for Q2/Q3.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>Speaks directly to the homepage's <b>"You have already invested in AI. A pilot ran… not much is being used"</b> persona.</li><li>Lower SEO ceiling but <b>highest narrative leverage</b>: gateway from LinkedIn into discovery calls.</li><li>10× output multiplier and "live in week three" claims have native homes here.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 8 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 08 · PILLAR</div>
+      <h3>The 2-Week AI Readiness Assessment for Mid-Market Operations Leaders</h3>
+    </div>
+    <span class="tier pillar">Pillar</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">590 <span class="sub">/mo (US)</span></div><div class="sub">"ai readiness assessment"</div></div>
+    <div class="kpi"><div class="lbl">CPC signal</div><div class="val">$42.53 <span class="sub">avg CPC</span></div><div class="sub">elite commercial intent</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 15</span></div><div class="sub">low</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial investigation</div><div class="sub">VP Ops, CIO, CDO</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">The 2-Week AI Readiness Assessment: A Mid-Market Operations Leader's Self-Diagnostic</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">ai readiness assessment</span><span class="kw">ai roadmap</span><span class="kw">data readiness</span><span class="kw">ai use cases</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Reader has been asked to "assess where we are" and is shopping for either a tool or a consultant. SERP is mostly enterprise consultancy. Mid-market gap is wide open.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>Direct funnel into the <b>Discovery</b> service, the post is essentially the lead-gen version of our scoped offer.</li><li>$42 CPC is one of the highest in our keyword universe, paid would be expensive, organic is cheap.</li><li>Ships with a downloadable scorecard or checklist as natural lead capture.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 9 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 09 · COMPARISON</div>
+      <h3>When Mid-Market Companies Actually Need a Private LLM (and When Claude Enterprise Is Enough)</h3>
+    </div>
+    <span class="tier comp">Comparison</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">880 <span class="sub">/mo "private llm"</span></div><div class="sub">+ 590 "self hosted llm"</div></div>
+    <div class="kpi"><div class="lbl">Secondary</div><div class="val">110 <span class="sub">"on premise llm"</span></div><div class="sub">+ 2,900 "claude enterprise"</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 3–7</span></div><div class="sub">extraordinarily low</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial investigation</div><div class="sub">IT/CISO scoping data sovereignty</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Private LLM vs Claude Enterprise: When Mid-Market Companies Actually Need On-Premise AI</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">private llm</span><span class="kw">self hosted llm</span><span class="kw">on premise llm</span><span class="kw">claude enterprise</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Buyer is wrestling with a real data-residency or compliance question and trying not to over-engineer it. The right answer is usually "you don't need on-prem yet", which is exactly the consultative posture we want to be known for.</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>KD 3–7 is genuinely rare for any keyword that converts. Almost free real estate.</li><li>Anchors <b>/tools/on-premise-llm</b> and <b>/services/infrastructure</b>.</li><li>Reinforces the underpromise/overdeliver posture, most readers walk away with "Claude Enterprise is enough for now," and that builds trust.</li></ul></div></div>
+</article>
+
+<!-- ===================== TOPIC 10 ===================== -->
+<article class="topic">
+  <div class="head">
+    <div>
+      <div class="num">POST 10 · PILLAR</div>
+      <h3>Claude for Finance Teams: 8 Citizen-Developer Workflows That Replace Excel Macros and Manual Reporting</h3>
+    </div>
+    <span class="tier pillar">Pillar</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Primary keyword volume</div><div class="val">590 <span class="sub">/mo (US)</span></div><div class="sub">"claude for finance"</div></div>
+    <div class="kpi"><div class="lbl">12-mo trend</div><div class="val">+1,375% <span class="sub">YoY</span></div><div class="sub">1,600 in Mar 2026</div></div>
+    <div class="kpi"><div class="lbl">Difficulty</div><div class="val"><span class="difficulty kd-easy">KD 16</span></div><div class="sub">low</div></div>
+    <div class="kpi"><div class="lbl">Intent</div><div class="val">Commercial / use-case</div><div class="sub">CFO, FP&amp;A lead, Controller</div></div>
+  </div>
+  <div class="row"><div class="k">Title</div><div class="v">Claude for Finance Teams: 8 Workflows That Replace Excel Macros and Manual Reporting</div></div>
+  <div class="row"><div class="k">Target keywords</div><div class="v"><span class="kw primary">claude for finance</span><span class="kw">claude for finance team</span><span class="kw">ai for finance teams</span><span class="kw">claude for accounting</span></div></div>
+  <div class="row"><div class="k">Search intent</div><div class="v">Finance leader looking for concrete workflows, not vendor copy. Top-of-funnel for one of our target buyer personas (mid-market Finance leader, 50–2,500 employees).</div></div>
+  <div class="row"><div class="k">Why this for us</div><div class="v"><ul class="why"><li>Finance is the easiest <b>citizen-dev landing zone</b>, high prompt frequency, structured data, clear ROI per workflow.</li><li>Trend is +1,375% YoY. Almost no Claude-native content exists for FP&amp;A; SERP is generic "AI for finance."</li><li>Sets the template for repeating the format vertical-by-vertical (Sales, Ops, Legal), your launch-month flywheel.</li></ul></div></div>
+</article>
+
+<!-- ===================== APPENDIX ===================== -->
+<section style="margin-top:72px">
+  <h2><span class="rank">/ appendix</span> Keyword data table</h2>
+  <p class="h2sub">Full set of keywords analysed. Highlighted rows feed the 10 recommended posts. US market unless noted.</p>
+  <table>
+    <thead><tr><th>Keyword</th><th>Mkt</th><th class="num">Vol /mo</th><th class="num">Mar-26</th><th class="num">KD</th><th class="num">CPC</th><th>Comp</th><th>Maps to post</th></tr></thead>
+    <tbody>
+      <tr><td>build mcp server</td><td>US</td><td class="num">390</td><td class="num">390</td><td class="num">8</td><td class="num">$8.15</td><td>Low</td><td>01</td></tr>
+      <tr><td>mcp server</td><td>US</td><td class="num">60,500</td><td class="num">74,000</td><td class="num">n/a</td><td class="num">$6.41</td><td>Low</td><td>01 (halo)</td></tr>
+      <tr><td>custom mcp server</td><td>US</td><td class="num">110</td><td class="num">170</td><td class="num">24</td><td class="num">$6.54</td><td>Low</td><td>01</td></tr>
+      <tr><td>what is mcp</td><td>US</td><td class="num">14,800</td><td class="num">22,200</td><td class="num">47</td><td class="num">$2.07</td><td>Low</td><td>01 (halo)</td></tr>
+      <tr><td>model context protocol</td><td>US</td><td class="num">22,200</td><td class="num">14,800</td><td class="num">66</td><td class="num">$8.80</td><td>Low</td><td>01 (halo)</td></tr>
+      <tr><td>citizen developer</td><td>US</td><td class="num">720</td><td class="num">880</td><td class="num">18</td><td class="num">$16.60</td><td>Low</td><td>02</td></tr>
+      <tr><td>citizen development</td><td>US</td><td class="num">210</td><td class="num">260</td><td class="num">16</td><td class="num">n/a</td><td>Low</td><td>02</td></tr>
+      <tr><td>claude vs chatgpt</td><td>US</td><td class="num">27,100</td><td class="num">110,000</td><td class="num">8</td><td class="num">$5.91</td><td>Low</td><td>03</td></tr>
+      <tr><td>claude for business</td><td>US</td><td class="num">590</td><td class="num">2,900</td><td class="num">19</td><td class="num">$8.53</td><td>Med</td><td>03 / 04</td></tr>
+      <tr><td>claude enterprise</td><td>US</td><td class="num">2,900</td><td class="num">14,800</td><td class="num">21</td><td class="num">$12.60</td><td>Low</td><td>03 / 09</td></tr>
+      <tr><td>claude for enterprise</td><td>US</td><td class="num">480</td><td class="num">1,300</td><td class="num">24</td><td class="num">$15.37</td><td>Low</td><td>03</td></tr>
+      <tr><td>claude vs copilot</td><td>US</td><td class="num">880</td><td class="num">3,600</td><td class="num">n/a</td><td class="num">$26.29</td><td>Low</td><td>04</td></tr>
+      <tr><td>shadow ai</td><td>US</td><td class="num">2,400</td><td class="num">3,600</td><td class="num">20</td><td class="num">$31.85</td><td>Med</td><td>05</td></tr>
+      <tr><td>ai governance</td><td>US</td><td class="num">4,400</td><td class="num">8,100</td><td class="num">31</td><td class="num">$41.05</td><td>Med</td><td>05 / 06</td></tr>
+      <tr><td>ai governance framework</td><td>US</td><td class="num">4,400</td><td class="num">1,900</td><td class="num">31</td><td class="num">$36.49</td><td>Med</td><td>06</td></tr>
+      <tr><td>ai governance</td><td>CA</td><td class="num">590</td><td class="num">880</td><td class="num">n/a</td><td class="num">$32.84</td><td>Med</td><td>06</td></tr>
+      <tr><td>ai governance framework</td><td>CA</td><td class="num">170</td><td class="num">210</td><td class="num">n/a</td><td class="num">$39.38</td><td>Med</td><td>06</td></tr>
+      <tr><td>ai readiness assessment</td><td>US</td><td class="num">590</td><td class="num">880</td><td class="num">15</td><td class="num">$42.53</td><td>Low</td><td>08</td></tr>
+      <tr><td>ai roadmap</td><td>US</td><td class="num">720</td><td class="num">720</td><td class="num">36</td><td class="num">$11.19</td><td>Med</td><td>08</td></tr>
+      <tr><td>ai use cases</td><td>US</td><td class="num">1,300</td><td class="num">1,600</td><td class="num">39</td><td class="num">$11.49</td><td>Low</td><td>08 (halo)</td></tr>
+      <tr><td>ai roi</td><td>US</td><td class="num">390</td><td class="num">720</td><td class="num">n/a</td><td class="num">$46.88</td><td>Low</td><td>07</td></tr>
+      <tr><td>private llm</td><td>US</td><td class="num">880</td><td class="num">1,000</td><td class="num">7</td><td class="num">$6.46</td><td>Low</td><td>09</td></tr>
+      <tr><td>self hosted llm</td><td>US</td><td class="num">590</td><td class="num">720</td><td class="num">3</td><td class="num">$5.39</td><td>Low</td><td>09</td></tr>
+      <tr><td>on premise llm</td><td>US</td><td class="num">110</td><td class="num">140</td><td class="num">n/a</td><td class="num">$10.97</td><td>Low</td><td>09</td></tr>
+      <tr><td>claude for finance</td><td>US</td><td class="num">590</td><td class="num">1,600</td><td class="num">16</td><td class="num">$3.95</td><td>Med</td><td>10</td></tr>
+      <tr><td>claude code</td><td>US</td><td class="num">368,000</td><td class="num">1,000,000</td><td class="num">62</td><td class="num">$13.28</td><td>Med</td><td>too hard for launch</td></tr>
+      <tr><td>agentic ai</td><td>US</td><td class="num">110,000</td><td class="num">110,000</td><td class="num">55</td><td class="num">$20.65</td><td>Med</td><td>round-2 candidate</td></tr>
+      <tr><td>ai agents</td><td>US</td><td class="num">60,500</td><td class="num">90,500</td><td class="num">68</td><td class="num">$24.34</td><td>Med</td><td>too hard for launch</td></tr>
+      <tr><td>claude skills</td><td>US</td><td class="num">27,100</td><td class="num">90,500</td><td class="num">50</td><td class="num">$20.32</td><td>Low</td><td>round-2 candidate</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="rank">/ rollout</span> Suggested launch sequence</h2>
+  <p class="h2sub">Order matters: front-load the two flagship pillars (citizen dev + MCP) so internal links from later posts compound. Comparisons drive traffic; pain-points drive shares.</p>
+  <table>
+    <thead><tr><th class="num" style="width:60px">Wk</th><th>Post</th><th>Why this slot</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>02 · Citizen Developer Enablement (pillar)</td><td>Anchor for every other post. Internal-linking centre of gravity.</td></tr>
+      <tr><td class="num">1</td><td>01 · How to Build a Custom MCP Server (flagship)</td><td>Sits at the top of the blog index, technical credibility on day one.</td></tr>
+      <tr><td class="num">2</td><td>03 · Claude vs ChatGPT</td><td>Drives volume traffic immediately while pillars index.</td></tr>
+      <tr><td class="num">2</td><td>05 · Shadow AI</td><td>Strongest LinkedIn share piece. Mirrors homepage opener.</td></tr>
+      <tr><td class="num">3</td><td>08 · 2-Week AI Readiness Assessment</td><td>Discovery-call magnet with downloadable companion.</td></tr>
+      <tr><td class="num">3</td><td>06 · AI Governance Framework (PIPEDA / Bill C-27)</td><td>Canada / public-sector authority. Cite HSC.</td></tr>
+      <tr><td class="num">4</td><td>04 · Claude vs Microsoft Copilot</td><td>Late but evergreen, capture the procurement question.</td></tr>
+      <tr><td class="num">4</td><td>10 · Claude for Finance Teams</td><td>First vertical use-case template; sets cadence for Sales/Ops/Legal next.</td></tr>
+      <tr><td class="num">5</td><td>09 · Private LLM vs Claude Enterprise</td><td>Niche but KD 3–7, books traffic for years.</td></tr>
+      <tr><td class="num">5</td><td>07 · Why 80% of AI Pilots Stall</td><td>Closes the launch month with the strongest narrative for repeat sharing.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="rank">/ also-rans</span> Strong topics we set aside (and why)</h2>
+  <table>
+    <thead><tr><th>Topic</th><th>Reason it didn't make the 10</th></tr></thead>
+    <tbody>
+      <tr><td>"agentic ai" deep-dive</td><td>110K/mo is huge but KD 55 + every consultancy on earth is publishing, not winnable in launch quarter. Revisit Q3.</td></tr>
+      <tr><td>"claude skills" tutorial</td><td>27K/mo and trending vertically, but KD 50 and Anthropic's own docs dominate. Better as a follow-up after MCP post earns authority.</td></tr>
+      <tr><td>"claude code" guide</td><td>368K/mo, a developer-tool audience, not our buyer. Dilutes positioning.</td></tr>
+      <tr><td>"ai agents" overview</td><td>KD 68. Skip the head term; pick up the volume via long-tail later.</td></tr>
+      <tr><td>"claude api" tutorial</td><td>Developer audience, not mid-market ops/finance/IT decision-makers.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="footnote">
+  <b>Recommended next step before publishing.</b> Run a fresh SERP check on the primary keyword for posts 01, 03, 06, and 09 the day before drafting. The model context protocol space is moving weekly and we want to read the top-3 ranking pieces before we write against them.
+</div>
+
+</div>
+</body>
+</html>

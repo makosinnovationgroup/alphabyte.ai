@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     url: "/services/data-readiness/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/data-readiness.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Data Readiness: AI Data Quality & Governance",
+        alt: "Alphabyte — Data Readiness — AI Data Quality & Governance",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Data Readiness — AI Data Quality & Governance",
     description:
       "Data quality audits, governance assessments, and AI readiness scorecards for mid-market organizations.",
-    images: ["/og/default.png"],
+    images: ["/og/data-readiness.png"],
   },
 };
 

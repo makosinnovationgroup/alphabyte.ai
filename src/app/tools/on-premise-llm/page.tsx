@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/tools/on-premise-llm/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/on-premise-llm.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — On-Premise LLM: Self-Hosted AI",
+        alt: "Alphabyte — On-Premise LLM — Self-Hosted AI",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "On-Premise LLM — Self-Hosted AI",
     description:
       "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For data sovereignty and security.",
-    images: ["/og/default.png"],
+    images: ["/og/on-premise-llm.png"],
   },
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { PhoneInput } from "@/components/phone-input";
 
 const interests = [
   "Citizen Development",
@@ -102,6 +103,18 @@ export function ContactForm() {
           required
           className={inputClasses}
         />
+      </div>
+
+      {/* Phone */}
+      <div>
+        <label
+          htmlFor="phone"
+          className="block text-body-sm font-medium text-foreground mb-2"
+        >
+          Phone number{" "}
+          <span className="font-normal text-muted-foreground">(optional)</span>
+        </label>
+        <PhoneInput id="phone" inputClassName={inputClasses} />
       </div>
 
       {/* Company */}

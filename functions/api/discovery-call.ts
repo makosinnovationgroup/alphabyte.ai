@@ -11,6 +11,8 @@ interface FormBody {
   firstName: string;
   lastName: string;
   workEmail: string;
+  countryCode?: string;
+  phone?: string;
   company: string;
   jobTitle: string;
   interest: string;
@@ -27,7 +29,11 @@ export async function onRequestPost(context: EventContext): Promise<Response> {
   try {
     const body = (await context.request.json()) as FormBody;
 
-    const { firstName, lastName, workEmail, company, jobTitle, interest, situation } = body;
+    const { firstName, lastName, workEmail, countryCode, phone, company, jobTitle, interest, situation } = body;
+
+    const phoneDisplay = phone
+      ? `${(countryCode || "+1").split("-")[0]} ${phone}`
+      : "";
 
     if (!firstName || !lastName || !workEmail || !company || !interest) {
       return new Response(
@@ -35,6 +41,17 @@ export async function onRequestPost(context: EventContext): Promise<Response> {
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
       );
     }
+
+    const phoneRow = phoneDisplay
+      ? `<tr>
+              <td style="padding:12px 0;border-bottom:1px solid #f5f5f5;vertical-align:top;width:140px;">
+                <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#00abf0;">Phone</span>
+              </td>
+              <td style="padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:15px;">
+                <a href="tel:${phoneDisplay.replace(/\s/g, "")}" style="color:#00abf0;text-decoration:none;">${phoneDisplay}</a>
+              </td>
+            </tr>`
+      : "";
 
     const situationRow = situation
       ? `<tr>
@@ -109,6 +126,7 @@ export async function onRequestPost(context: EventContext): Promise<Response> {
                 <a href="mailto:${workEmail}" style="color:#00abf0;text-decoration:none;">${workEmail}</a>
               </td>
             </tr>
+            ${phoneRow}
             <tr>
               <td style="padding:12px 0;border-bottom:1px solid #f5f5f5;vertical-align:top;width:140px;">
                 <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#00abf0;">Company</span>
@@ -160,7 +178,7 @@ export async function onRequestPost(context: EventContext): Promise<Response> {
 </body>
 </html>`;
 
-    const emailText = `New Discovery Call Request\n\nName: ${firstName} ${lastName}\nEmail: ${workEmail}\nCompany: ${company}\nJob Title: ${jobTitle || "—"}\nInterested In: ${interest}\nSituation: ${situation || "—"}`;
+    const emailText = `New Discovery Call Request\n\nName: ${firstName} ${lastName}\nEmail: ${workEmail}${phoneDisplay ? `\nPhone: ${phoneDisplay}` : ""}\nCompany: ${company}\nJob Title: ${jobTitle || "—"}\nInterested In: ${interest}\nSituation: ${situation || "—"}`;
 
     const sgResponse = await fetch("https://api.sendgrid.com/v3/mail/send", {
       method: "POST",

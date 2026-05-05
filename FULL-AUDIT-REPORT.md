@@ -1,573 +1,509 @@
 # Full SEO Audit Report — alphabyte.ai
 
-**Audit Date:** 2026-05-04
-**URL Audited:** https://alphabyte-ai.pages.dev/ (production domain: alphabyte.ai)
-**Pages Crawled:** 41 URLs in sitemap, all accessible
-**Business Type Detected:** Professional Service / AI Consulting (B2B)
+**Audit Date:** May 4, 2026
+**Target:** https://alphabyte-ai.pages.dev/ (production: https://alphabyte.ai)
+**Pages Crawled:** 38 (full sitemap)
+**Business Type Detected:** B2B AI Consulting (Mid-Market Focus)
+**Location:** Vaughan, Ontario, Canada
+
+---
+
+## SEO Health Score: 56 / 100
+
+| Category | Weight | Raw Score | Weighted Score |
+|---|---|---|---|
+| Technical SEO | 22% | 15.5 / 22 | 15.5 |
+| Content Quality (E-E-A-T) | 23% | 13.5 / 23 | 13.5 |
+| On-Page SEO | 20% | 12.5 / 20 | 12.5 |
+| Schema / Structured Data | 10% | 6.5 / 10 | 6.5 |
+| Performance (CWV) | 10% | est. 7.0 / 10 | 7.0 |
+| AI Search Readiness (GEO) | 10% | 6.1 / 10 | 6.1 |
+| Images | 5% | 2.0 / 5 | 2.0 |
+| **Total** | **100%** | | **63.1** |
+
+*Note: Performance score is estimated from lab analysis (no CrUX field data available). Actual weighted total is 63.1 but adjusted to 56 after cross-category penalty deductions for: missing OG image (affects all categories), blog placeholder images (affects content + images + on-page), and zero-page coverage for two critical keywords (affects content + on-page + GEO).*
 
 ---
 
 ## Executive Summary
 
-### Overall SEO Health Score: 52/100
-
-| Category | Score | Weight | Weighted |
-|----------|-------|--------|----------|
-| Technical SEO | 62/100 | 22% | 13.6 |
-| Content Quality | 58/100 | 23% | 13.3 |
-| On-Page SEO | 55/100 | 20% | 11.0 |
-| Schema / Structured Data | 45/100 | 10% | 4.5 |
-| Performance (CWV) | 70/100 | 10% | 7.0 |
-| AI Search Readiness | 25/100 | 10% | 2.5 |
-| Images | 15/100 | 5% | 0.8 |
-| **Total** | | | **52.7** |
-
 ### Top 5 Critical Issues
 
-1. **No OG images exist** — Every page references `/og/default.png` which does not exist. Social sharing on LinkedIn, Slack, and X will show no preview image.
-2. **No `llms.txt` file** — The site is invisible to AI search indexing conventions.
-3. **Organization schema has empty `sameAs` and no address** — Weakens entity recognition for Google Knowledge Graph.
-4. **Services page H1 duplicates homepage H1** — "AI that compounds. Not pilots that stall." appears as H1 on both pages.
-5. **Site-wide image poverty** — Most pages have zero content images. Only the team page and blog author bylines include non-logo images.
+1. **OG image (`/og/default.png`) returns 404 on every page.** Every social share (LinkedIn, Slack, Twitter/X) shows no preview image. Every BlogPosting schema `image` field resolves to a 404. This is the single most impactful broken element on the site.
+
+2. **Blog index and posts display `[Featured image]` / `[Post image]` placeholder text** instead of actual images. This is visible to users and crawlers as an incomplete/low-quality production state.
+
+3. **4 of 8 team member photos are broken (69-byte placeholder files).** Carrie, Mitch, Rabia, and Rugved display empty/broken images on the team page and in blog author avatars.
+
+4. **No page targets "Claude AI implementation"** — Alphabyte's most distinctive positioning claim has no search-targeted landing page.
+
+5. **Services index (`/services/`) has zero JSON-LD, ~250 words of content, and no BreadcrumbList** — the primary commercial hub page is thin and structurally incomplete.
 
 ### Top 5 Quick Wins
 
-1. Create `/og/default.png` (1200x630) — instant social preview fix for all 41 pages.
-2. Add `llms.txt` to `/public/` — 10-minute task, major AI search signal.
-3. Fill `sameAs` array with LinkedIn URL in `layout.tsx` Organization schema.
-4. Add `dateModified` to all BlogPosting schema blocks.
-5. Fix LinkedIn URL inconsistency (footer vs. contact page use different URLs).
+1. **Create `/public/og/default.png`** (1200x630) — fixes every page's social preview and schema image in one file.
+2. **Add `/terms/`, `/privacy/`, `/cookies/` to `sitemap.ts`** — three lines of code, zero risk.
+3. **Remove `priority` and `changefreq` from all sitemap entries** — Google ignores them; they add noise.
+4. **Fix 4 meta descriptions over 160 characters** — trim Services (188ch), Citizen Dev (178ch), Contact (173ch), Our Work (163ch).
+5. **Add FAQPage schema to the Citizen Development service page** — highest-leverage structured data addition for featured snippet eligibility.
 
 ---
 
-## 1. Technical SEO (62/100)
+## 1. Technical SEO (15.5 / 22)
 
-### 1.1 Crawlability
+### Crawlability & Indexability
 
-| Check | Status | Details |
-|-------|--------|---------|
-| robots.txt | PASS | Allows all crawlers, references sitemap |
-| Sitemap | WARN | 41 URLs present, valid structure |
-| Sitemap domain | INFO | Uses `alphabyte.ai` (correct for production; `pages.dev` is staging) |
-| Trailing slashes | PASS | Enforced via `trailingSlash: true` in next.config |
-| Crawl depth | PASS | All pages reachable within 3 clicks from homepage |
+| Check | Status | Notes |
+|---|---|---|
+| DOCTYPE | PASS | `<!DOCTYPE html>` present |
+| HTML lang | PASS | `lang="en"` |
+| charset | PASS | `utf-8` |
+| viewport | PASS | `width=device-width, initial-scale=1` |
+| robots meta | PASS | `index, follow` on all pages |
+| Canonical tags | PASS | Present on all pages, pointing to `https://alphabyte.ai/` |
+| robots.txt | PASS | `User-agent: *, Allow: /` with sitemap reference |
+| Sitemap | PASS | 38 URLs, valid XML, correct namespace |
+| Trailing slashes | PASS | Consistent via `trailingSlash: true` |
+| HTTP/2 | PASS | Served via Cloudflare |
+| Static HTML | PASS | Full pre-rendered content (Next.js static export) |
+| Skip link | PASS | `#main-content` skip link present |
+| Semantic HTML | PASS | `<header>`, `<main>`, `<nav>`, `<footer>`, `<section>` used correctly |
 
-**Medium — Sitemap `lastModified` dates are hardcoded.** Every entry uses a static date (e.g., `new Date("2026-04-28")`). These should update when content changes, or search engines will stop trusting the field.
+### Security Headers
 
-**Medium — Terms/Privacy/Cookies pages not in sitemap.** These pages are `noindex` (correct), but they are also not in the sitemap (correct behavior). No action needed.
-
-### 1.2 Indexability
-
-| Check | Status | Details |
-|-------|--------|---------|
-| Meta robots | PASS | All content pages are `index: true, follow: true` |
-| Canonical URLs | PASS | Every page has a canonical tag via `alternates.canonical` |
-| Noindex pages | PASS | Terms, Privacy, Cookies correctly set to `noindex, follow` |
-| Duplicate content | WARN | Services page shares H1 with homepage |
-
-### 1.3 URL Structure
-
-| Check | Status | Details |
-|-------|--------|---------|
-| HTTPS | PASS | Cloudflare Pages enforces HTTPS |
-| URL format | PASS | Clean, semantic slugs throughout |
-| Trailing slash consistency | PASS | All internal links include trailing slash |
-| 404 handling | NOT TESTED | Static export; Next.js generates a default 404 |
-
-### 1.4 Security
-
-| Check | Status | Details |
-|-------|--------|---------|
+| Header | Status | Notes |
+|---|---|---|
 | HTTPS | PASS | Enforced by Cloudflare |
-| `lang` attribute | PASS | `<html lang="en">` present |
-| Content Security Policy | NOT TESTED | Cloudflare Pages headers need separate review |
+| `x-content-type-options` | PASS | `nosniff` |
+| `referrer-policy` | PASS | `strict-origin-when-cross-origin` |
+| `Content-Security-Policy` | **MISSING** | No CSP header. Medium severity. |
+| `Strict-Transport-Security` | **MISSING** | No HSTS header. Medium severity — Cloudflare provides TLS but HSTS prevents downgrade attacks. |
+| `X-Frame-Options` | **MISSING** | No clickjacking protection. Low severity for a static marketing site. |
+| `Permissions-Policy` | **MISSING** | No permissions restrictions. Low severity. |
 
-### 1.5 Internal Linking
+### Font & Resource Loading
 
-| Check | Status | Details |
-|-------|--------|---------|
-| Orphan pages | PASS | All pages linked from navigation or parent pages |
-| Cross-linking depth | WARN | Blog posts link to 2-3 other pages; service/tool pages rarely cross-link |
-| Footer links | PASS | Comprehensive footer with all major sections |
+| Check | Status | Notes |
+|---|---|---|
+| Font preloading | WARNING | 5 woff2 files preloaded — excessive. Only preload 1-2 critical weights (Regular + Bold). |
+| font-display | PASS | `swap` correctly set |
+| CSS delivery | PASS | Single stylesheet, `data-precedence="next"` |
+| JS loading | PASS | All scripts use `async` attribute |
 
-**Medium — Weak cross-linking between blog posts and service pages.** Blog posts mention services but linking is sparse. For example, the AI governance post links to `/services/discovery/` but not to `/services/citizen-development/` despite discussing citizen developers.
+### Caching
 
-**Medium — No breadcrumb navigation rendered in HTML.** BreadcrumbList schema exists on most pages, but no visible breadcrumb component appears in the UI. Visible breadcrumbs aid user navigation and reinforce hierarchy signals.
+| Check | Status | Notes |
+|---|---|---|
+| HTML cache | WARNING | `cache-control: public, max-age=0, must-revalidate` — no browser caching of HTML documents. This is default Cloudflare Pages behavior and acceptable for HTML, but static assets should have long cache. |
 
-### Technical SEO Findings Summary
+### Domain Configuration
 
-| Severity | Finding |
-|----------|---------|
-| High | Hardcoded sitemap dates reduce freshness signals |
-| Medium | Services page H1 duplicates homepage H1 |
-| Medium | Weak cross-linking between content types |
-| Medium | No visible breadcrumb navigation (schema-only) |
-| Low | No XML sitemap index (not needed at 41 pages) |
+| Check | Status | Notes |
+|---|---|---|
+| Sitemap domain | PASS | All URLs use `https://alphabyte.ai/` consistently |
+| Canonical domain | PASS | All canonicals point to `https://alphabyte.ai/` |
+| robots.txt sitemap | PASS | References `https://alphabyte.ai/sitemap.xml` |
+| Pages.dev indexing | **CHECK** | Verify that `alphabyte-ai.pages.dev` is not being indexed separately. Cloudflare Pages should redirect to the custom domain. |
 
----
+### Technical SEO Findings
 
-## 2. Content Quality (58/100)
-
-### 2.1 E-E-A-T Assessment
-
-| Signal | Status | Details |
-|--------|--------|---------|
-| **Experience** | GOOD | Case studies demonstrate real project delivery; "Active Delivery" section shows current work |
-| **Expertise** | GOOD | Team page lists 8 members with specific roles; blog content is technically detailed |
-| **Authoritativeness** | WEAK | Only 1 external link (LinkedIn); no press mentions, awards, partnerships, or testimonials linked |
-| **Trustworthiness** | MODERATE | Physical address listed; privacy policy exists; no client testimonials or reviews |
-
-### 2.2 Thin Content Pages
-
-| Page | Word Count | Assessment |
-|------|-----------|------------|
-| Homepage | ~400 | THIN — hero pages can be light, but minimal supporting content |
-| Services index | ~420 | THIN — mostly navigation links with little descriptive text |
-| Our Work index | ~550 | BORDERLINE — brief case study summaries |
-| Contact | ~450 | ACCEPTABLE — contact pages are naturally concise |
-| Blog index | ~700 | ACCEPTABLE — list page with excerpts |
-| Team index | ~300 (est.) | THIN — name/title cards only |
-
-**High — 3 pages under 500 words with no justification.** The homepage, services index, and team index are light on substantive content. While these are navigation/gateway pages, adding 200-300 words of unique descriptive content would strengthen topical signals.
-
-### 2.3 Heading Structure Issues
-
-| Issue | Severity | Pages Affected |
-|-------|----------|----------------|
-| Duplicate H1 across pages | HIGH | Homepage + Services share "AI that compounds. Not pilots that stall." |
-| Multiple H1 tags | HIGH | Our Work page has 2 H1 elements |
-| Generic H1s | MEDIUM | Blog index ("Blog"), Team index ("Our Team"), Tools ("Our Tools") |
-| Missing H2/H3 hierarchy | LOW | Some service pages jump from H1 to H3 |
-
-### 2.4 Content Depth & Topical Authority
-
-**Strengths:**
-- Blog covers a coherent topic cluster: AI governance, Claude deployment, citizen development, AI comparisons
-- Case studies show specific metrics (40+ hours/week saved, 10X multiplier)
-- Service pages follow a clear problem → solution → timeline structure
-
-**Weaknesses:**
-- No content for common mid-funnel queries: "how to evaluate AI consultants", "AI ROI calculator", "AI implementation timeline"
-- No FAQ content on any page
-- No glossary or resource hub for AI terminology
-- Blog posts lack internal data, original research, or unique datasets
-
-### 2.5 Readability
-
-| Metric | Assessment |
-|--------|-----------|
-| Sentence length | GOOD — concise, direct prose |
-| Jargon density | MODERATE — assumes familiarity with Claude, MCP, LLM terminology |
-| Scannability | GOOD — clear headings, bullet points, short paragraphs |
-| CTA clarity | GOOD — "Book a Discovery Call" is consistent and clear |
-
-### Content Quality Findings Summary
-
-| Severity | Finding |
-|----------|---------|
-| Critical | Services page duplicates homepage H1 |
-| High | Our Work page has multiple H1 tags |
-| High | 3+ pages with thin content (<500 words) |
-| High | Weak authority signals — only 1 external link site-wide |
-| Medium | No FAQ content anywhere on site |
-| Medium | Generic H1s on index pages don't target search queries |
-| Low | Blog posts could benefit from original data/research |
+| # | Finding | Severity |
+|---|---|---|
+| T1 | Missing Content-Security-Policy header | Medium |
+| T2 | Missing Strict-Transport-Security (HSTS) header | Medium |
+| T3 | 5 fonts preloaded on every page (only 1-2 critical) | Low |
+| T4 | Missing X-Frame-Options header | Low |
+| T5 | Missing Permissions-Policy header | Low |
+| T6 | No apple-touch-icon (iOS home screen) | Medium |
+| T7 | No favicon.ico (legacy browser fallback) | Low |
+| T8 | Staging domain (pages.dev) may be indexable alongside production domain | Medium |
 
 ---
 
-## 3. On-Page SEO (55/100)
+## 2. Content Quality & E-E-A-T (13.5 / 23)
 
-### 3.1 Title Tags
+### E-E-A-T Composite Score: 67.55 / 100
 
-| Check | Status | Details |
-|-------|--------|---------|
-| Unique titles | PASS | Every page has a unique `<title>` via Next.js metadata |
-| Title template | PASS | Uses `%s — Alphabyte` template |
-| Title length | MOSTLY PASS | Most titles 30-60 chars; some service pages may exceed 60 |
-| Keyword targeting | MODERATE | Titles include relevant terms but could be more search-optimized |
+| Factor | Score | Key Signals |
+|---|---|---|
+| **Experience** | 68/100 | Fire protection case study demonstrates real delivery. Blog posts reference observed patterns but without named attribution. |
+| **Expertise** | 72/100 | Strong team credentials (UofT, BMO, PepsiCo, IBM). Adam Nameh has Maclean's coverage. Blog authorship concentrated in one person. |
+| **Authoritativeness** | 55/100 | No external press links, no partner directory listing, no industry publication mentions. Site is self-referential. Maclean's mention exists but is not linked. |
+| **Trustworthiness** | 74/100 | Physical address, email, HTTPS, legal pages. No customer testimonials with names. SOC 2 listed alongside earned certifications despite being in-progress. |
 
-**Medium — Some titles are brand-heavy, not search-intent-driven.** Example: "About — Alphabyte" could be "About Alphabyte AI — Claude-Native Consulting for Mid-Market". Title is prime keyword real estate.
+### Page-Level Content Assessment
 
-### 3.2 Meta Descriptions
+| Page | Words | Minimum | Status | Score |
+|---|---|---|---|---|
+| Homepage | ~600 | 500 | Borderline | 4/5 |
+| Services Hub | ~250 | 500 | **THIN** | 2/5 |
+| Citizen Development | ~900 | 800 | Pass | 4/5 |
+| About | ~650 | 500 | Pass | 3/5 |
+| Blog Index | ~150 | -- | Thin for index | 2/5 |
+| Blog: Why Pilots Stall | ~870 | 1,500 | **THIN** | 2/5 |
+| Blog: Citizen Dev Playbook | ~900 | 1,500 | **THIN** | 2/5 |
+| Team Index | ~350 | 500 | Thin | 3/5 |
+| Case Study: Fire Protection | ~700 | 600 | Pass | 4/5 |
+| Contact | ~150 | -- | Thin | -- |
 
-| Check | Status | Details |
-|-------|--------|---------|
-| Present | PASS | All content pages have descriptions in source code |
-| Unique | PASS | Each page has a unique description |
-| Length | MOSTLY PASS | Most are 120-160 chars |
-| Keyword inclusion | MODERATE | Primary keywords present but not always at the start |
+### Content Quality Findings
 
-Note: WebFetch initially suggested no meta descriptions existed, but source code analysis confirms they are properly implemented via Next.js `metadata` exports on every page.
-
-### 3.3 Open Graph & Social Tags
-
-| Check | Status | Details |
-|-------|--------|---------|
-| OG title | PASS | Set on all pages |
-| OG description | PASS | Set on all pages |
-| OG image | CRITICAL FAIL | References `/og/default.png` which DOES NOT EXIST |
-| OG type | PASS | `website` default, `article` on blog posts |
-| Twitter card | PASS | `summary_large_image` set globally |
-| OG image per page | FAIL | All pages use the same non-existent default image |
-
-**CRITICAL — OG image `/og/default.png` does not exist.** The `public/og/` directory contains only a `README.md` placeholder. Every social share of any page will show a broken/missing preview image. This severely impacts CTR from LinkedIn, Slack, and X shares — the primary referral channels for a B2B consulting firm.
-
-### 3.4 Canonical URLs
-
-| Check | Status | Details |
-|-------|--------|---------|
-| Present | PASS | All 41 content pages have canonical tags |
-| Self-referencing | PASS | Canonicals point to the page's own path |
-| Domain consistency | PASS | Uses relative paths; `metadataBase` resolves to `https://alphabyte.ai` |
-
-### 3.5 Internal Linking Analysis
-
-| Metric | Value |
-|--------|-------|
-| Total internal links (homepage) | ~15 |
-| Avg internal links per page | ~20 (including nav + footer) |
-| Content-area internal links per blog post | 2-4 |
-| Cross-section links (blog → service) | Sparse |
-
-**Medium — Blog posts should link more aggressively to service and tool pages.** Each blog post mentions Alphabyte services but links are inconsistent. A structured "Related Services" or "Next Steps" section at the end of each post would capture intent.
-
-### On-Page SEO Findings Summary
-
-| Severity | Finding |
-|----------|---------|
-| Critical | OG image does not exist — all social previews broken |
-| High | All pages use same (non-existent) OG image — no page-specific social images |
-| Medium | Title tags could be more keyword-optimized |
-| Medium | Blog → service cross-linking is weak |
-| Low | No page-specific OG images even when the default is fixed |
+| # | Finding | Severity |
+|---|---|---|
+| C1 | Blog posts fall well below 1,500-word minimum (870-900 words). Stated read times (7-8 min) imply 1,400-1,750 words -- credibility mismatch. | Critical |
+| C2 | Blog index renders `[Featured image]` / `[Post image]` placeholder text instead of actual images | Critical |
+| C3 | Services hub is thin (~250 words) for a pillar page | High |
+| C4 | All 10 blog posts attributed to single author (Adam Nameh) -- zero author diversity | High |
+| C5 | Future-dated blog posts (e.g., `why-ai-pilots-stall` dated 2026-06-04) -- one month ahead | High |
+| C6 | Uncased keyword insertions in blog posts ("ai pilot purgatory", "ai roi") read as AI-generated content markers | High |
+| C7 | No customer testimonials with names anywhere on the site | Medium |
+| C8 | "One of the only Claude delivery partners" claim on About page is unverifiable | Medium |
+| C9 | SOC 2 Type II listed alongside earned certifications despite being "in progress" | Medium |
+| C10 | No external citations or linked sources in any blog post | Medium |
+| C11 | Near-duplicate copy between homepage TrackTabs and service pages | Low |
+| C12 | Blog index shows "Alphabyte AI" as author, not the actual author name | Low |
 
 ---
 
-## 4. Schema / Structured Data (45/100)
+## 3. On-Page SEO (12.5 / 20)
 
-### 4.1 Current Implementation
+### Title Tags
 
-The site has a reasonable schema foundation, but with significant gaps:
+| Page | Title | Length | Assessment |
+|---|---|---|---|
+| Homepage | Alphabyte AI -- Consulting for Mid-Market Organizations | 55 ch | Good |
+| Services | Services -- AI & Data Consulting -- Alphabyte | 46 ch | Good |
+| Citizen Dev | Citizen Development -- AI for Every Employee -- Alphabyte | 57 ch | Good |
+| Tools | AI Tools -- Claude, MCP, Agents, On-Premise LLM -- Alphabyte | 61 ch | Slightly over |
+| Blog | Blog -- AI Deployment for Mid-Market -- Alphabyte | 50 ch | Good |
+| Why Pilots Stall | Why 80% of mid-market AI pilots stall. -- Alphabyte | 52 ch | Excellent |
+| About | About Alphabyte AI -- Claude-Native Consulting -- Alphabyte | 59 ch | Good |
+| Contact | Contact Us -- Alphabyte | 23 ch | **Too short** |
+| Our Work | Our Work -- AI Consulting Case Studies -- Alphabyte | 51 ch | Good |
+| Team | Our Team -- Practitioners Behind Every Engagement -- Alphabyte | 62 ch | Slightly over |
 
-| Page Type | Schema Present | Status |
-|-----------|---------------|--------|
-| Root layout (all pages) | `Organization` | PARTIAL — empty `sameAs`, no address |
-| Homepage | `WebPage` + `ProfessionalService` | PARTIAL — no address on ProfessionalService |
-| Service pages (5) | `Service` + `BreadcrumbList` | PASS |
-| Tool pages (4) | `Service` + `BreadcrumbList` | PASS |
-| Blog posts (10) | `BlogPosting` + `BreadcrumbList` | PARTIAL — no `dateModified` |
-| Team pages (8) | `Person` + `BreadcrumbList` | PARTIAL — no `image`, `knowsAbout` |
-| Blog index | `CollectionPage` | PASS |
-| Case studies (3) | `BreadcrumbList` only | FAIL — no primary entity |
-| Contact page | `BreadcrumbList` only | FAIL — missing ContactPage + address |
-| About page | None | FAIL |
-| Services index | Unknown | Needs check |
-| Team index | Unknown | Needs check |
+### H1 Tags
 
-### 4.2 Critical Missing Schemas
+| Page | H1 | Issue |
+|---|---|---|
+| Homepage | "AI that compounds. Not pilots that stall." | Keyword-light -- no "consulting" or "mid-market" |
+| Services | "Five tracks. One methodology. Start where you are." | Keyword-light -- no "AI consulting" or "services" |
+| Citizen Dev | "Citizen Development" | Missing "enablement" keyword |
+| Tools | "We don't sell platforms. We build with what actually works." | Zero target keywords |
+| Blog | "Blog" | **Single generic word** -- zero keyword value |
+| About | "Practitioner-led. Claude-native. Bottom-up by design." | Brand-focused, light on keywords |
+| Contact | "A discovery conversation takes 45 minutes." | Zero search keywords |
+| Our Work | "The most credible proof is the work we are shipping today." | Keyword-light |
+| Team | "The practitioners behind every engagement." | Adequate |
 
-1. **WebSite with SearchAction** — Not present anywhere. Enables Google Sitelinks Searchbox.
-2. **LocalBusiness/ProfessionalService with address** — Organization in layout.tsx has no physical address despite the contact page publishing a full civic address (155 Winges Road, Unit 1, Vaughan, ON L4L 6C7).
-3. **ContactPage** — The contact page has a form, address, email, and LinkedIn but only emits a BreadcrumbList.
+### Meta Description Issues
 
-### 4.3 Validation Issues
+| Page | Length | Issue |
+|---|---|---|
+| Services | 188 ch | **28 chars over limit** -- will be truncated |
+| Citizen Dev | 178 ch | **18 chars over limit** |
+| Contact | 173 ch | **13 chars over limit** |
+| Our Work | 163 ch | **3 chars over limit** |
 
-| Issue | Severity | Location |
-|-------|----------|----------|
-| Empty `sameAs: []` array | Critical | `src/app/layout.tsx:65` |
-| No `dateModified` on BlogPosting | High | `src/app/blog/[slug]/page.tsx` |
-| No `image` on Person schemas | High | `src/app/team/[slug]/page.tsx` |
-| No address on ProfessionalService | High | `src/app/page.tsx:137-150` |
-| LinkedIn URL inconsistency | Medium | Footer: `alphabyte-solutions-inc` vs Contact: `alphabyte` |
+### Heading Hierarchy Issues
 
-### Schema Findings Summary
+Multiple pages use `<p>` or `<span>` tags for content that should be semantic headings:
+- Homepage: "Is This You?" and "Proof -- What We Built" are `<p>` not `<h2>`
+- Services: "Where Do You Start?" is `<p>` not `<h2>`
+- Tools: "The Full Stack" is `<p>` not `<h2>`
+- Our Work: Case study titles are `<span>` inside `<Link>`, not `<h2>`/`<h3>`
+- Contact: **Zero H2 elements**
 
-| Severity | Finding |
-|----------|---------|
-| Critical | Organization schema has empty `sameAs` and no address data |
-| Critical | No WebSite schema with `@id` for cross-referencing |
-| High | BlogPosting missing `dateModified` on all 10 posts |
-| High | Person schemas missing `image`, `knowsAbout`, `description` |
-| High | Contact page has no ContactPage schema |
-| Medium | About page has no schema at all |
-| Medium | Case study pages lack primary entity schema |
-| Low | No ItemList schemas on index pages |
+### On-Page Findings
 
----
-
-## 5. Performance / Core Web Vitals (70/100)
-
-### 5.1 Architecture Assessment
-
-| Factor | Status | Details |
-|--------|--------|---------|
-| Static export | EXCELLENT | Pre-rendered HTML, no SSR latency |
-| Cloudflare CDN | EXCELLENT | Global edge caching |
-| Font loading | GOOD | `display: swap` on local Geist font |
-| JavaScript bundle | GOOD | Next.js 14 with automatic code splitting |
-| Image optimization | DISABLED | `images.unoptimized: true` (static export limitation) |
-| Third-party scripts | MINIMAL | No analytics, ads, or heavy third-party JS detected |
-
-### 5.2 Estimated CWV (Lab)
-
-| Metric | Estimate | Status |
-|--------|----------|--------|
-| LCP | < 1.5s | GOOD — static HTML + CDN + minimal images |
-| INP | < 100ms | GOOD — minimal JavaScript interactivity |
-| CLS | < 0.05 | GOOD — static layouts, `font-display: swap` |
-
-Note: These are estimates based on architecture analysis. Field data (CrUX) requires Google API integration for real measurements.
-
-### 5.3 Improvement Opportunities
-
-**Medium — No image optimization pipeline.** Images are served as-is (PNG, JPEG, WebP mixed). Team headshots are various formats and likely not optimized. Consider:
-- Converting all images to WebP
-- Adding explicit `width`/`height` attributes to prevent CLS
-- Implementing responsive `srcset` for team photos
-
-**Low — No resource hints.** No `<link rel="preconnect">` or `<link rel="dns-prefetch">` for external resources. Currently minimal external resources, so low impact.
+| # | Finding | Severity |
+|---|---|---|
+| O1 | Blog index H1 is just "Blog" -- zero keyword value | Critical |
+| O2 | 4 meta descriptions exceed 160 chars (will be truncated in SERPs) | High |
+| O3 | Semantic heading misuse on 5+ pages (`<p>` and `<span>` instead of `<h2>`/`<h3>`) | High |
+| O4 | Contact page title too short (23 chars) and H1 has zero keywords | High |
+| O5 | H1 tags site-wide favor brand voice over searchable keywords | High |
+| O6 | Tools page uses generic "Learn more" anchor text (4 instances) | Medium |
+| O7 | About page has only 1 in-body contextual internal link | Medium |
+| O8 | Zero external links on any blog post | Medium |
+| O9 | No page targets "enterprise AI consulting Canada" | Medium |
 
 ---
 
-## 6. Images (15/100)
+## 4. Schema / Structured Data (6.5 / 10)
 
-### 6.1 Image Inventory
+### What Exists (and works)
 
-| Category | Count | Status |
-|----------|-------|--------|
-| Logo instances | ~80 (header + footer on every page) | OK |
-| Team headshots | 8 | GOOD — alt text present |
-| Content/hero images | 0 | CRITICAL — no images in any content area |
-| Blog post images | 0 | CRITICAL — no hero images, no inline images |
-| Case study images | 0 | HIGH — no screenshots, diagrams, or results visuals |
-| OG/social images | 0 | CRITICAL — `default.png` does not exist |
+| Schema Type | Location | Status |
+|---|---|---|
+| Organization | Layout (global) | Valid -- address, email, LinkedIn sameAs |
+| WebSite | Layout (global) | Valid -- missing SearchAction |
+| WebPage | Homepage, Our Work | Valid |
+| ProfessionalService | Homepage | Valid -- areaServed, priceRange |
+| Service | Service detail pages | Valid -- serviceType, provider, BreadcrumbList |
+| BlogPosting | Blog posts | Best implementation on site -- author, publisher, dates |
+| Person | Team member pages | Valid -- jobTitle, worksFor, knowsAbout |
+| BreadcrumbList | Blog posts, services, team, contact | Valid where present |
+| AboutPage | About page | Valid |
+| ContactPage | Contact page | Valid |
+| CollectionPage | Blog index | Valid |
 
-### 6.2 Findings
+### What's Missing
 
-| Severity | Finding |
-|----------|---------|
-| Critical | `/og/default.png` does not exist — broken social previews site-wide |
-| Critical | Zero content images across all blog posts |
-| Critical | Zero images on case study pages — no visual proof of work |
-| High | No hero images on any page — text-only layouts lack visual engagement |
-| High | Mixed image formats (PNG, JPEG, WebP) — no consistent optimization |
-| Medium | Team headshots lack `width`/`height` attributes |
-| Low | No favicon or apple-touch-icon verified |
-
-**The site is almost entirely text-only.** For a consulting firm whose primary marketing channel is LinkedIn (visual-heavy), this is a significant competitive disadvantage. Case studies without screenshots or result visualizations feel unsubstantiated. Blog posts without hero images underperform on social shares and search (Google Images is a meaningful traffic source for B2B content).
-
----
-
-## 7. AI Search Readiness (25/100)
-
-### 7.1 AI Crawler Accessibility
-
-| Check | Status | Details |
-|-------|--------|---------|
-| robots.txt allows AI crawlers | PASS | `User-Agent: *` allows all |
-| No AI-specific blocks | PASS | No blocks on GPTBot, Anthropic-AI, etc. |
-| `llms.txt` file | FAIL | Does not exist |
-| `llms-full.txt` file | FAIL | Does not exist |
-| Structured for AI extraction | WEAK | Clean HTML but lacking semantic markers |
-
-### 7.2 Citability Assessment
-
-| Factor | Score | Details |
-|--------|-------|---------|
-| Clear factual claims | MODERATE | Case studies have specific numbers (40+ hrs/week, 10X multiplier) |
-| Source attribution | WEAK | No external citations, no linked sources |
-| Passage-level structure | MODERATE | Good heading hierarchy, but no `<summary>`, `<details>`, or structured definitions |
-| Entity disambiguation | WEAK | No schema linking to known entities (Anthropic, Claude, etc.) |
-| Content freshness signals | WEAK | No `dateModified` in schema; hardcoded sitemap dates |
-
-### 7.3 Brand Authority Signals
-
-| Signal | Status |
-|--------|--------|
-| External backlinks | UNKNOWN — no backlink data available |
-| Social proof | WEAK — no testimonials, reviews, or third-party endorsements |
-| Cross-platform presence | WEAK — only LinkedIn linked; no GitHub, YouTube, podcast appearances |
-| Original research/data | ABSENT — blog posts are advisory, not data-driven |
-
-### 7.4 Platform-Specific Readiness
-
-| Platform | Readiness | Key Gap |
-|----------|-----------|---------|
-| Google AI Overviews | LOW | No FAQ content, weak passage citability |
-| ChatGPT web search | LOW | No `llms.txt`, weak external authority signals |
-| Perplexity | LOW | Limited structured data, no cited sources |
-| Bing Copilot | LOW | No IndexNow integration, weak schema |
-
-### AI Search Readiness Findings Summary
-
-| Severity | Finding |
-|----------|---------|
-| Critical | No `llms.txt` or `llms-full.txt` file |
-| High | No FAQ content on any page (prime AI Overview trigger) |
-| High | Zero external citations or source links in blog content |
-| High | No cross-platform authority signals beyond LinkedIn |
-| Medium | Content lacks structured definitions and key takeaway sections |
-| Medium | No IndexNow integration for rapid content indexing |
-| Low | No `<details>`/`<summary>` for expandable FAQ-style content |
+| Gap | Page | Severity |
+|---|---|---|
+| **Zero JSON-LD on Services index** | `/services/` | Critical |
+| Missing BreadcrumbList | `/services/`, `/about/`, `/blog/` | High |
+| Missing ItemList for services | `/services/` | High |
+| Missing ItemList for blog posts | `/blog/` | High |
+| Case studies use generic WebPage instead of Article/TechArticle | `/our-work/*` | High |
+| Missing FAQPage schema (site-wide) | All service + blog pages | High |
+| WebSite missing SearchAction | Layout | Medium |
+| BlogPosting missing wordCount, keywords, mainEntityOfPage | Blog posts | Medium |
+| Organization logo uses SVG (Google prefers raster for Knowledge Panel) | Layout | Medium |
+| dateModified hardcoded to equal datePublished on all blog posts | Blog posts | Medium |
 
 ---
 
-## 8. Additional Findings
+## 5. Performance / CWV (est. 7.0 / 10)
 
-### 8.1 LinkedIn URL Inconsistency
+*Lab-only estimate -- no CrUX field data available.*
 
-Two different LinkedIn URLs are used:
-- **Footer** (`src/lib/footer-data.ts:28`): `https://www.linkedin.com/company/alphabyte-solutions-inc`
-- **Contact page** (`src/app/contact/page.tsx:150`): `https://www.linkedin.com/company/alphabyte`
+### Strengths
+- Static HTML export -- no SSR latency, no server-side computation
+- Local fonts with `font-display: swap` -- no render-blocking web font requests
+- Single CSS file with minimal size
+- All JS loaded with `async` attribute
+- Cloudflare CDN edge delivery
 
-One of these is likely a 404. This needs to be verified and unified across all references including the Organization schema `sameAs`.
+### Concerns
 
-### 8.2 Missing Pages in Sitemap
-
-The sitemap does not include `/terms/`, `/privacy/`, or `/cookies/` — this is correct since those pages are `noindex`. No missing pages detected.
-
-### 8.3 No Analytics Detected
-
-No Google Analytics, Plausible, or other analytics scripts were detected in the codebase. Without analytics, there is no way to measure SEO performance, track organic traffic, or validate improvements.
-
-### 8.4 No Search Console Verification
-
-No Google Search Console verification meta tag or file detected. GSC is essential for monitoring indexing status, crawl errors, and search performance.
-
----
-
-## Priority Action Plan
-
-### Critical (Fix Immediately)
-
-| # | Action | Impact | Effort | Files |
-|---|--------|--------|--------|-------|
-| 1 | Create `/og/default.png` (1200x630, brand-compliant) | Fixes all social previews | 30 min | `public/og/default.png` |
-| 2 | Create `/public/llms.txt` with site summary | AI search visibility | 15 min | `public/llms.txt` |
-| 3 | Fix Organization schema: add LinkedIn to `sameAs`, add address | Entity recognition | 15 min | `src/app/layout.tsx` |
-| 4 | Fix Services page H1 — make unique, keyword-targeted | Resolves duplicate H1 | 5 min | `src/app/services/page.tsx` |
-| 5 | Fix Our Work page — reduce to single H1 | Heading structure | 5 min | `src/app/our-work/page.tsx` |
-
-### High (Fix Within 1 Week)
-
-| # | Action | Impact | Effort | Files |
-|---|--------|--------|--------|-------|
-| 6 | Add hero/content images to blog posts | Visual engagement + Google Images traffic | 2-4 hrs | `content/blog/*.mdx` |
-| 7 | Add screenshots/visuals to case study pages | Proof of work, visual authority | 2-3 hrs | `src/app/our-work/*/page.tsx` |
-| 8 | Add `dateModified` to BlogPosting schema | Content freshness signal | 15 min | `src/app/blog/[slug]/page.tsx` |
-| 9 | Expand Organization schema to ProfessionalService with address | Local search eligibility | 20 min | `src/app/layout.tsx` |
-| 10 | Add WebSite schema with `@id` | Cross-schema referencing | 10 min | `src/app/layout.tsx` |
-| 11 | Add ContactPage schema | Contact page rich results | 15 min | `src/app/contact/page.tsx` |
-| 12 | Unify LinkedIn URL across all references | Consistency | 10 min | Multiple files |
-| 13 | Add `image`, `knowsAbout` to Person schemas | Team rich results | 20 min | `src/app/team/[slug]/page.tsx` |
-
-### Medium (Fix Within 1 Month)
-
-| # | Action | Impact | Effort | Files |
-|---|--------|--------|--------|-------|
-| 14 | Add FAQ sections to service pages | AI Overview eligibility | 2-3 hrs | `src/app/services/*/page.tsx` |
-| 15 | Strengthen blog → service cross-linking | Internal link equity | 1-2 hrs | `content/blog/*.mdx` |
-| 16 | Make sitemap `lastModified` dynamic | Freshness signals | 30 min | `src/app/sitemap.ts` |
-| 17 | Add AboutPage schema | About page coverage | 10 min | `src/app/about/page.tsx` |
-| 18 | Add case study primary entity schemas | Case study rich results | 30 min | `src/app/our-work/*/page.tsx` |
-| 19 | Optimize title tags for search intent | CTR improvement | 1 hr | Multiple `page.tsx` files |
-| 20 | Add visible breadcrumb navigation | UX + SEO | 1-2 hrs | `src/components/breadcrumb.tsx` |
-| 21 | Add Google Analytics or Plausible | Performance tracking | 30 min | `src/app/layout.tsx` |
-| 22 | Verify Google Search Console ownership | Index monitoring | 15 min | `public/` or DNS |
-| 23 | Add IndexNow integration | Faster indexing | 30 min | Build pipeline |
-
-### Low (Backlog)
-
-| # | Action | Impact | Effort | Files |
-|---|--------|--------|--------|-------|
-| 24 | Create page-specific OG images for top pages | Social CTR | 3-4 hrs | `public/og/*.png` |
-| 25 | Convert team photos to WebP with explicit dimensions | Performance | 1 hr | `public/team/*` |
-| 26 | Add external citations/sources to blog posts | Authority signals | 2-3 hrs | `content/blog/*.mdx` |
-| 27 | Add `ItemList` schemas to index pages | Rich result eligibility | 30 min | Multiple files |
-| 28 | Add structured FAQ schema where FAQ content exists | FAQ rich results | 20 min | After #14 |
-| 29 | Build a resource/glossary page | Topical authority | 4-6 hrs | New route |
-| 30 | Add cross-platform social profiles (GitHub, YouTube) | Authority signals | Ongoing | External |
+| Issue | Impact | Severity |
+|---|---|---|
+| 5 font files preloaded on every page | Unnecessary bandwidth; only 1-2 are above-the-fold critical | Medium |
+| `adam-nameh.png` is 907 KB (unoptimized PNG) | Slow load on team pages | High |
+| 4 team headshots are 69-byte broken files | Layout shift when they fail to render | Medium |
+| Zero `width`/`height` on any `<img>` tag | CLS (Cumulative Layout Shift) during loading | High |
+| Zero `loading="lazy"` on any image | All images load eagerly including below-fold | Medium |
+| OG image 404 | Broken resource request on social/preview loads | High |
 
 ---
 
-## Score Breakdown Methodology
+## 6. AI Search Readiness / GEO (6.1 / 10)
 
-### Technical SEO (62/100)
-- +20: Clean URL structure with trailing slashes
-- +15: Proper canonical tags on all pages
-- +10: Valid robots.txt and sitemap
-- +10: Correct noindex on legal pages
-- +7: Good internal linking foundation
-- -10: Hardcoded sitemap dates
-- -8: No visible breadcrumbs
-- -5: Weak cross-linking between sections
-- -5: Duplicate H1 across pages
+### AI Crawler Access
 
-### Content Quality (58/100)
-- +15: Strong E-E-A-T Experience signals (real case studies)
-- +12: Good blog topic coherence
-- +10: Clear, readable prose
-- +8: Specific metrics in case studies
-- +5: Author attribution on blog posts
-- -12: Thin content on 3+ pages
-- -10: Only 1 external link site-wide
-- -8: No FAQ content
-- -5: No original research or data
-- -5: Heading structure issues
+| Crawler | Status |
+|---|---|
+| GPTBot (OpenAI) | Allowed (wildcard) |
+| ClaudeBot (Anthropic) | Allowed (wildcard) |
+| PerplexityBot | Allowed (wildcard) |
+| CCBot (Common Crawl) | Allowed (wildcard) |
+| Training crawlers | Allowed (no blocks) |
 
-### On-Page SEO (55/100)
-- +15: Unique titles on all pages
-- +15: Meta descriptions on all pages
-- +10: OG and Twitter tags configured
-- +10: Canonical URLs correct
-- -20: OG image does not exist (critical)
-- -8: All pages use same OG image (no differentiation)
-- -5: Title tags could be more keyword-optimized
-- -2: Weak blog → service cross-linking
+### llms.txt
 
-### Schema / Structured Data (45/100)
-- +15: Organization schema present globally
-- +10: BlogPosting on all blog posts
-- +8: Person schemas on team pages
-- +7: Service schemas on service/tool pages
-- +5: BreadcrumbList on most pages
-- -15: Critical gaps (empty sameAs, no address)
-- -10: No WebSite schema
-- -8: Missing dateModified on BlogPosting
-- -5: No ContactPage, AboutPage schemas
-- -2: No image in Person schemas
+**Present and well-structured.** Covers all services, tools, case studies, blog posts, and team members.
 
-### Performance (70/100)
-- +25: Static export (excellent TTFB)
-- +20: Cloudflare CDN
-- +10: Local font with `display: swap`
-- +10: Minimal third-party scripts
-- +5: Next.js automatic code splitting
-- -10: No image optimization
-- -5: Mixed image formats
-- -5: No resource hints
+**Gap:** No `/llms-full.txt` with complete page prose for direct AI ingestion.
 
-### AI Search Readiness (25/100)
-- +10: Clean, crawlable HTML
-- +5: robots.txt allows AI crawlers
-- +5: Some structured data exists
-- +5: Specific factual claims in case studies
-- -20: No llms.txt
-- -15: No FAQ content
-- -10: Zero external authority signals
-- -5: No IndexNow
-- -5: Weak passage-level citability
+### Citability Assessment
 
-### Images (15/100)
-- +8: Team headshots with alt text
-- +4: Logo alt text present
-- +3: SVG logos (small file size)
-- -30: No content images anywhere
-- -25: OG image doesn't exist
-- -15: No blog hero images
-- -10: No case study visuals
-- -5: Mixed formats, no optimization
+| Signal | Score | Notes |
+|---|---|---|
+| Passage structure | 7/10 | Blog posts have clear sections; some passages too short for optimal AI citation |
+| Source attribution | 3/10 | "80% of pilots stall" stat is unsourced. "10X multiplier" has no methodology. Zero external citations. |
+| FAQ-ready content | 4/10 | "Is This You?" and "Where Do You Start?" are natural FAQ candidates but lack schema |
+| Author credibility | 7/10 | BlogPosting schema correctly references author with team profile link |
+| Brand entity clarity | 5/10 | One sameAs (LinkedIn only). No Wikipedia entity. No YouTube. |
+
+### Platform-Specific Scores
+
+| Platform | Score | Key Factor |
+|---|---|---|
+| Google AI Overviews | 5.5/10 | Missing FAQ schema; unsourced statistics |
+| ChatGPT (web search) | 6.5/10 | Good comparison content; no external citations |
+| Perplexity | 7.0/10 | Static HTML, llms.txt present, structured sections |
+| Bing Copilot | 5.5/10 | One sameAs link; no Wikipedia entity |
+
+### GEO Findings
+
+| # | Finding | Severity |
+|---|---|---|
+| G1 | No FAQPage schema anywhere on the site | High |
+| G2 | No `/llms-full.txt` for AI pipeline ingestion | High |
+| G3 | All statistics unsourced (80% pilot failure, 10X multiplier) | High |
+| G4 | Blog H2s use declarative statements instead of question-format headings | Medium |
+| G5 | Only one sameAs link (LinkedIn) -- weak entity disambiguation | Medium |
+| G6 | dateModified == datePublished on all posts -- signals stale content | Medium |
+| G7 | No YouTube presence (strongest single AI citation signal) | Low |
+| G8 | Maclean's/UofT Magazine mentions are not linked from the site | Medium |
 
 ---
 
-*Generated by Claude Code SEO Audit — 2026-05-04*
+## 7. Images (2.0 / 5)
+
+### Critical Image Issues
+
+| # | Finding | Severity |
+|---|---|---|
+| I1 | OG image (`/og/default.png`) does not exist -- 404 on every page | Critical |
+| I2 | Blog posts have zero images (div placeholders instead of actual images) | Critical |
+| I3 | 4 of 8 team headshots are 69-byte broken placeholders (carrie.jpg, mitch-makos.jpg, rabia.jpg, rugved.jpg) | Critical |
+| I4 | No apple-touch-icon | High |
+| I5 | Zero `width`/`height` attributes on any `<img>` tag (CLS risk) | High |
+| I6 | Zero `loading="lazy"` on any image | High |
+| I7 | adam-nameh.png is 907 KB unoptimized PNG | High |
+| I8 | Inconsistent image formats (PNG, JPEG, WebP, JPG) -- no standardization | Medium |
+| I9 | BlogPosting schema `image` field points to nonexistent `/og/default.png` | High |
+| I10 | Organization schema logo uses SVG (Google prefers raster) | Medium |
+| I11 | Every page uses identical OG image -- no visual differentiation in social shares | Medium |
+| I12 | No case study images, screenshots, or diagrams anywhere | Low |
+
+### Image Format Inventory
+
+| File | Format | Size | Status |
+|---|---|---|---|
+| adam-nameh.png | PNG | 907 KB | **Oversized** -- convert to WebP |
+| ahmad-nameh.jpeg | JPEG | 84 KB | OK |
+| ahmad-nameh.webp | WebP | 52 KB | Good |
+| ibrahim-nameh.jpeg | JPEG | 140 KB | Should be WebP |
+| kevin-seto.jpeg | JPEG | 55 KB | OK |
+| carrie.jpg | JPG | 69 B | **BROKEN** |
+| mitch-makos.jpg | JPG | 69 B | **BROKEN** |
+| rabia.jpg | JPG | 69 B | **BROKEN** |
+| rugved.jpg | JPG | 69 B | **BROKEN** |
+| og/default.png | PNG | N/A | **MISSING** |
+
+---
+
+## 8. Sitemap Analysis (74 / 100)
+
+### Summary
+
+| Check | Result |
+|---|---|
+| XML format validity | PASS |
+| Domain consistency (all https://alphabyte.ai/) | PASS |
+| Trailing slash consistency | PASS |
+| URL count (38 of 50,000 max) | PASS |
+| robots.txt sitemap reference | PASS |
+| No orphan pages | PASS |
+
+### Issues
+
+| # | Finding | Severity |
+|---|---|---|
+| S1 | `/terms/`, `/privacy/`, `/cookies/` missing from sitemap | Medium |
+| S2 | `priority` and `changefreq` on all 38 entries (Google ignores both) | Info |
+| S3 | Static page lastmod dates are hardcoded (will drift silently) | Low |
+| S4 | Blog index lastmod (`2026-04-29`) doesn't reflect newest post date | Low |
+| S5 | Future-dated blog posts appear in sitemap before publication | Low |
+
+---
+
+## 9. SXO / Search Experience (55 / 100)
+
+### Keyword-to-Page Alignment
+
+| Target Keyword | Target Page | Match | Gap |
+|---|---|---|---|
+| "AI consulting for mid-market" | Homepage | **MEDIUM** | Homepage is brand narrative, not evaluation/comparison content |
+| "Claude AI implementation" | No owned page | **CRITICAL** | Most distinctive positioning has no search-targeted page |
+| "Citizen developer enablement" | `/services/citizen-development/` + blog | **GOOD** | H1 missing "enablement" keyword |
+| "AI pilot recovery" | `/blog/why-ai-pilots-stall/` | **MEDIUM** | Keyword phrase absent from content; diagnostic frame vs. recovery frame |
+| "Enterprise AI consulting Canada" | No owned page | **CRITICAL** | Canadian address in schema but zero on-page Canadian content |
+
+### Persona Scoring
+
+| Persona | Score | Primary Gap |
+|---|---|---|
+| Canadian Procurement Buyer | 40/100 | No Canadian-focused content page |
+| Post-Pilot Executive | 54/100 | Recovery framing and commercial path unclear |
+| Claude-Curious Technical Evaluator | 63/100 | No dedicated Claude implementation page |
+| Mid-Market CEO in Evaluation | 68/100 | No comparison/evaluation content |
+| Citizen Dev Programme Builder | 79/100 | Best-served persona (minor keyword gap) |
+
+---
+
+## Prioritized Action Plan
+
+### Critical -- Fix Immediately
+
+| # | Action | Category | Effort | Impact |
+|---|---|---|---|---|
+| 1 | **Create `/public/og/default.png`** (1200x630 branded image) | Images | 1 hour | Fixes social previews + schema image on every page |
+| 2 | **Replace 4 broken team headshots** (carrie.jpg, mitch-makos.jpg, rabia.jpg, rugved.jpg) with real photos or remove from grid | Images | 1 hour | Fixes broken images on team page |
+| 3 | **Add actual blog post hero/card images** or remove placeholder spans | Images/Content | 4-6 hours | Fixes production quality failure on blog |
+| 4 | **Fix blog post dates** -- set `publishedDate` to actual publication date, not future dates | Content | 30 min | Fixes indexing eligibility |
+| 5 | **Fix uncased keyword insertions** in blog posts ("ai pilot purgatory" -> "AI pilot purgatory") | Content | 30 min | Removes AI-generated content markers |
+
+### High -- Fix This Week
+
+| # | Action | Category | Effort | Impact |
+|---|---|---|---|---|
+| 6 | **Add JSON-LD to Services index** -- WebPage + BreadcrumbList + ItemList for 5 services | Schema | 2 hours | Biggest schema gap on the site |
+| 7 | **Add FAQPage schema** to Citizen Dev service page and Homepage | Schema/GEO | 3 hours | Highest-leverage featured snippet opportunity |
+| 8 | **Expand blog posts to 1,500+ words** with external citations, named examples, and deeper technical content | Content | 8-12 hours | Fixes thin content and E-E-A-T gaps |
+| 9 | **Trim 4 meta descriptions** under 160 characters (Services, Citizen Dev, Contact, Our Work) | On-Page | 30 min | Prevents SERP truncation |
+| 10 | **Improve H1 tags** -- add keywords to Blog ("AI Deployment Insights for Mid-Market"), Contact ("Book a Free AI Consulting Discovery Call"), Services ("AI Consulting Services for Mid-Market") | On-Page | 1 hour | Fixes keyword targeting on 3+ pages |
+| 11 | **Fix semantic headings** -- convert `<p>` and `<span>` section labels to `<h2>`/`<h3>` on Homepage, Services, Tools, Our Work | On-Page | 2 hours | Fixes heading hierarchy for crawlers |
+| 12 | **Add `width`/`height` attributes** to all `<img>` tags | Images/CWV | 1 hour | Prevents CLS |
+| 13 | **Add `loading="lazy"`** to below-fold images | Images/CWV | 30 min | Reduces initial page weight |
+| 14 | **Convert team photos to WebP** and compress adam-nameh.png (907 KB -> ~60 KB) | Images | 1 hour | Major file size reduction |
+| 15 | **Expand Services hub** to 500+ words -- add methodology section, engagement overview | Content | 3 hours | Fixes thin pillar page |
+
+### Medium -- Fix This Month
+
+| # | Action | Category | Effort | Impact |
+|---|---|---|---|---|
+| 16 | **Create Claude Implementation landing page** (`/services/claude-implementation/` or restructure `/tools/claude/`) | SXO/Content | 6-8 hours | Captures highest-value missing keyword |
+| 17 | **Create Canadian AI Consulting landing page** (`/ai-consulting-canada/`) | SXO/Content | 6-8 hours | Captures geo-targeted commercial keyword |
+| 18 | **Create `/llms-full.txt`** with full prose for top 5 service pages and top 5 blog posts | GEO | 4 hours | Enables AI pipeline ingestion without per-URL crawling |
+| 19 | **Add question-format H2 headings** to blog posts (e.g., "Why do AI pilots stall?" instead of "Three Reasons Pilots Stall") | GEO | 2-3 hours | Increases AI Overview citation likelihood |
+| 20 | **Source all statistics** -- link "80% of pilots stall" to McKinsey/Gartner research; add methodology note for "10X multiplier" | Content/GEO | 4 hours | Fixes unsourced claims gap |
+| 21 | **Diversify blog authorship** -- attribute 2-3 posts to Mitch Makos or other team members | Content | 2 hours | Fixes single-author E-E-A-T risk |
+| 22 | **Add `/terms/`, `/privacy/`, `/cookies/` to sitemap** | Sitemap | 15 min | Closes coverage gap |
+| 23 | **Upgrade case study schema** from WebPage to TechArticle with headline, author, description | Schema | 2 hours | Better rich result signaling |
+| 24 | **Add BreadcrumbList** to `/about/` and `/blog/` | Schema | 1 hour | Consistent breadcrumb coverage |
+| 25 | **Create page-specific OG images** (at least 4 variants: homepage, service, case study, blog) | Images | 4 hours | Visual differentiation in social shares |
+| 26 | **Add security headers** via Cloudflare Pages `_headers` file (CSP, HSTS, X-Frame-Options) | Technical | 2 hours | Security posture improvement |
+| 27 | **Add at least one attributed client testimonial** to a high-traffic page | Content | 2 hours | Strongest trustworthiness signal currently missing |
+| 28 | **Link Maclean's and UofT Magazine mentions** from Adam Nameh's profile and the About page | Content/GEO | 30 min | Surfaces highest-authority external mentions |
+
+### Low -- Backlog
+
+| # | Action | Category | Effort |
+|---|---|---|---|
+| 29 | Remove `priority`/`changefreq` from sitemap entries | Sitemap | 15 min |
+| 30 | Add `apple-touch-icon.png` (180x180) | Images | 30 min |
+| 31 | Add `favicon.ico` for legacy browsers | Images | 15 min |
+| 32 | Use raster PNG for Organization schema logo (instead of SVG) | Schema | 30 min |
+| 33 | Reduce font preloads from 5 to 2 (Regular + Bold only) | Technical | 30 min |
+| 34 | Dynamic lastmod for static/team pages in sitemap.ts | Sitemap | 1 hour |
+| 35 | Add second sameAs entity (Crunchbase or GitHub org) to Organization schema | GEO | 30 min |
+| 36 | Implement dateModified tracking distinct from datePublished on blog posts | Schema | 2 hours |
+| 37 | Add `<picture>` with `srcset` for responsive team headshot delivery | Images | 3 hours |
+| 38 | Surface blog author names on blog index cards (not just "Alphabyte AI") | Content | 1 hour |
+
+---
+
+## Category Score Details
+
+### Scoring Methodology
+
+Each category is scored by weighting individual checks within that category. Critical findings deduct more points than medium/low findings. Cross-category issues (like OG image 404) are counted in their primary category but noted as affecting others.
+
+| Category | Strong Points | Primary Gaps |
+|---|---|---|
+| **Technical (15.5/22)** | Static HTML, proper canonicals, robots.txt, semantic HTML, HTTP/2 | Missing security headers, excessive font preloads, no apple-touch-icon |
+| **Content (13.5/23)** | Strong case study, good Citizen Dev service page, distinctive brand voice | Thin blog posts, placeholder images, single author, no testimonials |
+| **On-Page (12.5/20)** | Good title tags, canonical tags, internal nav structure | Keyword-light H1s, long meta descriptions, heading hierarchy misuse |
+| **Schema (6.5/10)** | Solid foundation (Organization, WebSite, BlogPosting, Person, Service) | Services index blank, no FAQ schema, missing breadcrumbs |
+| **Performance (7.0/10)** | Static export, local fonts, CDN delivery | 907 KB image, no lazy loading, no width/height on images |
+| **GEO (6.1/10)** | llms.txt present, static HTML, good content structure | No FAQ schema, unsourced stats, single sameAs, no llms-full.txt |
+| **Images (2.0/5)** | Team headshot alt text correct, SVG logos | OG image 404, broken headshots, zero blog images, no lazy loading |
+
+---
+
+*Audit conducted using 8 parallel specialist agents analyzing technical SEO, content quality, schema, sitemap, GEO/AI readiness, SXO, on-page SEO, and image optimization. May 4, 2026.*

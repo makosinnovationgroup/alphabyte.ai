@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: "/our-work/fire-protection-compliance/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/fire-protection-compliance.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Fire Protection Compliance: Intelligence Agent",
+        alt: "Alphabyte — Fire Protection Compliance — Intelligence Agent",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Fire Protection Compliance — Intelligence Agent",
     description:
       "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
-    images: ["/og/default.png"],
+    images: ["/og/fire-protection-compliance.png"],
   },
 };
 

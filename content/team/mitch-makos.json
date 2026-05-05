@@ -4,11 +4,11 @@
   "role": "Principal Architect & Claude Platform Engineer",
   "company": "Alphabyte Solutions Inc.",
   "location": "Tampa, Florida, USA",
-  "avatarSrc": "/team/mitch-makos.jpg",
+  "avatarSrc": "/team/mitch-makos.png",
   "eyebrow": "PRINCIPAL ARCHITECT AT ALPHABYTE AI",
   "bio": [
-    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, and PepsiCo.",
-    "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He recently built a complete HIPAA-compliant healthcare platform in 18 days as a solo engineer, and authored AzureConduit — an MCP server bridging Azure, D365, M365, Fabric, and Sentinel to Claude with enterprise-grade identity enforcement."
+    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, Royal Bank of Canada, Pacific Gas & Electric, and Erie Insurance.",
+    "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He designs the agentic systems, custom MCP servers, and governed AI environments that mid-market organizations run in production — connecting their existing tools, knowledge bases, and cloud infrastructure into Claude workflows their teams actually use."
   ],
   "contact": {
     "linkedin": {

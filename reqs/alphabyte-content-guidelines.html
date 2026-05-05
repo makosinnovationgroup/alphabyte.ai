@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Alphabyte AI · Blog Writing Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#00ABF0;
+    --brand-ink:#0089c0;
+    --ink:#0a0a0a;
+    --muted:#5b5b5b;
+    --line:#e6e6e6;
+    --bg:#ffffff;
+    --soft:#fafafa;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;font-feature-settings:"ss01","cv11";-webkit-font-smoothing:antialiased}
+  code,.mono{font-family:"Geist Mono",ui-monospace,Menlo,monospace;font-size:.86em}
+
+  .wrap{max-width:880px;margin:0 auto;padding:48px 32px 96px}
+  header.hero{border-bottom:1px solid var(--ink);padding-bottom:36px;margin-bottom:48px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:#fff;border:1px solid var(--ink);padding:6px 12px;border-radius:999px}
+  .eyebrow .dot{width:8px;height:8px;border-radius:999px;background:var(--brand)}
+  h1{font-size:clamp(36px,4.8vw,56px);line-height:1.05;letter-spacing:-.025em;font-weight:700;margin:24px 0 16px;color:var(--ink)}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lede{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 14px}
+  .lede:last-child{margin-bottom:0}
+
+  section{margin-bottom:56px}
+  h2{font-size:24px;font-weight:600;letter-spacing:-.018em;margin:0 0 8px;display:flex;align-items:baseline;gap:14px}
+  h2 .rank{font-family:"Geist Mono",monospace;font-size:13px;color:var(--brand);font-weight:500}
+  .h2sub{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 22px}
+
+  .checklist{border:1px solid var(--ink);background:#fff;padding:26px 30px}
+  .checklist ul{margin:0;padding:0;list-style:none}
+  .checklist li{position:relative;padding:11px 0 11px 34px;font-size:15px;line-height:1.55;border-bottom:1px dashed var(--line);color:var(--ink)}
+  .checklist li:last-child{border-bottom:0}
+  .checklist li::before{content:"";position:absolute;left:2px;top:15px;width:14px;height:14px;border:1.5px solid var(--ink);border-radius:3px;background:#fff}
+  .checklist li b{font-weight:600}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:0;border:1px solid var(--ink)}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  th{background:#0a0a0a;color:#fff;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+  td:first-child{width:130px;font-weight:600;color:var(--ink)}
+  td:last-child{width:130px;font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
+  td .desc{color:var(--muted);font-size:14px;line-height:1.5;display:block;margin-top:2px;font-weight:400}
+
+  .footnote{margin-top:48px;padding-top:28px;border-top:1px solid var(--ink);font-size:13px;color:var(--muted);line-height:1.65}
+  .footnote b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span> Blog Writing Guidelines</span>
+  <h1>Two things to follow for every <em>Alphabyte</em> blog post.</h1>
+  <p class="lede">A pre-publish checklist and a default post structure. The current blog reads like internal documentation, with long unbroken paragraphs, no internal links, no cited statistics, and no hooks. The two blocks below are everything needed to fix that.</p>
+</header>
+
+<section>
+  <h2><span class="rank">/ 01</span> Pre-publish checklist</h2>
+  <p class="h2sub">No post ships until every box is checked. The check takes about ten minutes and is what prevents the patterns this guide exists to kill from creeping back in.</p>
+
+  <div class="checklist">
+    <ul>
+      <li><b>Hook in the first two sentences.</b> Direct answer in the first paragraph. No definition openers, no history lessons.</li>
+      <li><b>At least three external citations</b> to named, reputable sources (Anthropic, Gartner, Forrester, McKinsey, Deloitte, Statista, official Canadian government data, Search Engine Land, peer-reviewed papers). Each is linked and named in the body text.</li>
+      <li><b>At least five internal links</b> to Alphabyte service, tool, case study, blog, or team pages. Anchor text is the descriptive keyword, never "click here".</li>
+      <li><b>FAQ section at the bottom</b> with three to five real questions (pulled from discovery calls, "People Also Ask", and the inbox). FAQPage JSON-LD shipped on the page.</li>
+      <li><b>Title 50 to 55 characters.</b> Meta description 140 to 155 characters. Primary keyword in the first 40 of the title and first 90 of the meta. Slug is clean: three to six lowercase hyphenated words, primary keyword first.</li>
+      <li><b>No paragraph over four sentences.</b> Most paragraphs are two or three. White space is what makes long-form readable on a phone and gives an LLM a clean unit to extract.</li>
+      <li><b>Every H2 and H3 is a question or a complete-sentence position.</b> No "Background", "Context", or "Conclusion" labels.</li>
+      <li><b>Each section answers its heading directly in the first one to two sentences.</b> Reasoning, nuance, and examples come after.</li>
+      <li><b>At least one specific "what we have seen" passage</b> drawing on real Alphabyte engagement experience. This is the E-E-A-T signal Google rewards and the kind of original passage AI engines preferentially cite.</li>
+      <li><b>No em dashes. Anywhere.</b> Search the final draft for the character before publishing. Use periods, commas, colons, or parentheses instead.</li>
+      <li><b>Canadian English spelling throughout</b> ("optimise", "organisation", "behaviour"). Numerals from 10 onward. Spell out one through nine.</li>
+      <li><b>Every image has descriptive alt text and a caption</b> that adds a point rather than repeating the image. No stock photography. No people-in-offices, no glowing brains.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><span class="rank">/ 02</span> Default post structure</h2>
+  <p class="h2sub">Not every post follows this exactly, but most should. Use it as the scaffold for the first draft. The structure is engineered to maximise both human scan-readability and AI-engine extractability.</p>
+
+  <table>
+    <thead><tr><th>Section</th><th>What goes in it</th><th>Length</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>H1</td>
+        <td><span class="desc">Descriptive, sentence-style. Includes the primary keyword. Can be longer than the title tag.</span></td>
+        <td>One line</td>
+      </tr>
+      <tr>
+        <td>Hook</td>
+        <td><span class="desc">Two sentences that frame the question and the friction. No definitions, no history.</span></td>
+        <td>2 sentences</td>
+      </tr>
+      <tr>
+        <td>Direct answer</td>
+        <td><span class="desc">The thesis of the post in one paragraph. Three to four sentences. This is what AI engines extract.</span></td>
+        <td>1 paragraph</td>
+      </tr>
+      <tr>
+        <td>Why now</td>
+        <td><span class="desc">One paragraph with one external citation. Why this matters in 2026 specifically.</span></td>
+        <td>1 to 2 paragraphs</td>
+      </tr>
+      <tr>
+        <td>Body H2 #1</td>
+        <td><span class="desc">First major section. Heading is a question or position. Lead with the answer. Cite once.</span></td>
+        <td>200 to 350 words</td>
+      </tr>
+      <tr>
+        <td>Body H2 #2</td>
+        <td><span class="desc">Second major section. Same rules. Include one "what we have seen" passage.</span></td>
+        <td>200 to 350 words</td>
+      </tr>
+      <tr>
+        <td>Body H2 #3</td>
+        <td><span class="desc">Third major section. Often a comparison or counter-argument. Link to a relevant case study.</span></td>
+        <td>200 to 350 words</td>
+      </tr>
+      <tr>
+        <td>Body H2 #4</td>
+        <td><span class="desc">(Optional) Fourth section. Use if the topic genuinely needs it. Do not pad.</span></td>
+        <td>200 to 350 words</td>
+      </tr>
+      <tr>
+        <td>FAQ</td>
+        <td><span class="desc">Three to five real questions, each answered in one to three sentences. Wrapped in FAQPage schema.</span></td>
+        <td>250 to 450 words</td>
+      </tr>
+      <tr>
+        <td>Closing</td>
+        <td><span class="desc">One short paragraph that ties back to the hook and points to a relevant Alphabyte service. Not a sales paragraph.</span></td>
+        <td>2 to 4 sentences</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="footnote">
+  <b>How to use this.</b> Open the checklist in a second tab while editing. Match the draft to the structure table for the first three or four posts until the pattern becomes muscle memory. Target total length 1,200 to 2,200 words. Cadence two to four posts per month. Quality over volume: two posts that follow these rules will outperform six that do not.
+</div>
+
+</div>
+</body></html>

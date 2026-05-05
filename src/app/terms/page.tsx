@@ -3,12 +3,31 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  alternates: {
+    canonical: "/terms/",
+  },
   robots: { index: false, follow: true },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Terms of Service",
+  url: "https://alphabyte.ai/terms/",
+  description:
+    "Terms governing your use of the Alphabyte website and services.",
+  isPartOf: {
+    "@id": "https://alphabyte.ai/#website",
+  },
 };
 
 export default function TermsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <h1 className="text-headline font-sans tracking-brand-snug mb-6">
         Terms of Service
       </h1>

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/tools/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — AI Tools: Claude, MCP, Agents, On-Premise LLM",
+        alt: "Alphabyte — AI Tools — Claude, MCP, Agents, On-Premise LLM",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
     description:
       "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
-    images: ["/og/default.png"],
+    images: ["/og/tools.png"],
   },
 };
 

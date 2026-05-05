@@ -171,17 +171,17 @@ export async function generateMetadata({
       publishedTime: frontmatter.publishedDate,
       images: [
         {
-          url: "/og/default.png",
+          url: `/og/blog-${slug}.png`,
           width: 1200,
           height: 630,
-          alt: `${frontmatter.title} — Alphabyte`,
+          alt: `Alphabyte — ${frontmatter.title}`,
         },
       ],
     },
     twitter: {
       title: frontmatter.title,
       description: frontmatter.excerpt,
-      images: ["/og/default.png"],
+      images: [`/og/blog-${slug}.png`],
     },
   };
 }
@@ -208,7 +208,7 @@ export default async function BlogSlugPage({
     headline: frontmatter.title,
     description: frontmatter.excerpt,
     url: `https://alphabyte.ai/blog/${slug}/`,
-    image: "https://alphabyte.ai/og/default.png",
+    image: `https://alphabyte.ai/og/blog-${slug}.png`,
     datePublished: frontmatter.publishedDate,
     dateModified: frontmatter.publishedDate,
     author: {

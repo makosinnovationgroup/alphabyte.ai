@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/services/executive-enablement/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/executive-enablement.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Executive Enablement: AI for Leadership Teams",
+        alt: "Alphabyte — Executive Enablement — AI for Leadership Teams",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Executive Enablement — AI for Leadership Teams",
     description:
       "Custom Claude environment for your leadership team in two to four weeks. Built from your operational data.",
-    images: ["/og/default.png"],
+    images: ["/og/executive-enablement.png"],
   },
 };
 

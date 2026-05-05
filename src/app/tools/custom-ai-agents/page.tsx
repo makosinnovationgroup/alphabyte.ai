@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: "/tools/custom-ai-agents/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/custom-ai-agents.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Custom AI Agents: Task Automation",
+        alt: "Alphabyte — Custom AI Agents — Task Automation",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Custom AI Agents — Task Automation",
     description:
       "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates.",
-    images: ["/og/default.png"],
+    images: ["/og/custom-ai-agents.png"],
   },
 };
 

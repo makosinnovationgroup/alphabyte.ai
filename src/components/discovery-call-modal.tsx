@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDiscoveryCall } from "@/lib/discovery-call-context";
 import { Button } from "@/components/ui/button";
+import { PhoneInput } from "@/components/phone-input";
 
 const INTEREST_OPTIONS = [
   "Citizen Development",
@@ -168,6 +169,16 @@ export function DiscoveryCallModal() {
                               placeholder="jane@company.com"
                               className={inputClasses}
                             />
+                          </label>
+
+                          <label className="block">
+                            <span className="block text-body-sm font-medium text-foreground mb-1.5">
+                              Phone number{" "}
+                              <span className="font-normal text-muted-foreground">
+                                (optional)
+                              </span>
+                            </span>
+                            <PhoneInput inputClassName={inputClasses} />
                           </label>
 
                           <label className="block">
