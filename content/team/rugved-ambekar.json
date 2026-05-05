@@ -1,0 +1,95 @@
+{
+  "slug": "rugved-ambekar",
+  "name": "Rugved Ambekar",
+  "role": "Senior Engineer & AI Delivery Lead",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/rugved-ambekar.png",
+  "eyebrow": "SENIOR ENGINEER & AI DELIVERY LEAD AT ALPHABYTE AI",
+  "bio": [
+    "Rugved Ambekar is an AI applications engineer with 15+ years shipping software across mobile, full-stack, desktop, and AI. He has led three fractional CTO engagements, raised a $1.3M seed round, and solo-built entire SaaS platforms. At Alphabyte, Rugved builds AI agents, custom MCP servers, and governed environments for mid-market clients.",
+    "A graduate of the University of Toronto's Computer Engineering programme, Rugved spent his early career at IBM, CaseWare, and Agilent before becoming a contract Android engineer at Samsung, Bose, RBC, and The RealReal. He served as Fractional CTO at HOMI SmartHome (Hong Kong) and Coretext Sidekick, where he hired and managed engineering teams while staying hands-on in the code. His current focus is building AI products and enabling engineering teams to ship 2-3x faster with AI-first workflows."
+  ],
+  "contact": {
+    "email": {
+      "label": "rugved@alphabytesolutions.com",
+      "href": "mailto:rugved@alphabytesolutions.com"
+    }
+  },
+  "credentials": {
+    "degree": {
+      "title": "B.A.Sc. in Computer Engineering",
+      "subtitle": "Bachelor of Applied Science"
+    },
+    "institution": {
+      "title": "University of Toronto",
+      "subtitle": "Toronto, Ontario, Canada"
+    },
+    "keyCoursework": "AI Systems · Distributed Computing · Software Design · Natural Language Processing · Systems Programming"
+  },
+  "careerTimeline": [
+    {
+      "period": "2024 — Present",
+      "role": "Senior Engineer & AI Delivery Lead",
+      "organization": "Alphabyte Solutions Inc."
+    },
+    {
+      "period": "2025",
+      "role": "Fractional CTO",
+      "organization": "Coretext Sidekick"
+    },
+    {
+      "period": "2024 — Present",
+      "role": "Fractional CTO",
+      "organization": "Fraq"
+    },
+    {
+      "period": "2022 — 2024",
+      "role": "Senior Android Developer",
+      "organization": "ThoughtWorks"
+    },
+    {
+      "period": "2019 — 2022",
+      "role": "Fractional CTO",
+      "organization": "HOMI SmartHome"
+    },
+    {
+      "period": "2013 — 2018",
+      "role": "Contract Android Engineer",
+      "organization": "Samsung · Bose · RBC · The RealReal"
+    },
+    {
+      "period": "2009 — 2013",
+      "role": "Developer",
+      "organization": "IBM · CaseWare · Agilent Technologies"
+    }
+  ],
+  "expertise": [
+    "AI Agent Development",
+    "MCP Server Development",
+    "Claude API & Claude Code",
+    "Context Engineering",
+    "Multi-Agent Orchestration",
+    "Kotlin Multiplatform & Android",
+    "Next.js & TypeScript",
+    "Tauri & Desktop Applications",
+    "GraphQL & API Design",
+    "Team Enablement & AI-First Workflows"
+  ],
+  "achievements": [
+    "Led three fractional CTO engagements with full product ownership",
+    "Raised $1.3M seed round for HOMI SmartHome (SeedPlus, Singapore)",
+    "Built production MCP servers across stdio, HTTP+SSE, and Streamable HTTP transports with OAuth 2.0",
+    "Built AI agents deployed in financial services, investment banking, and restaurant operations",
+    "Enabled engineering teams to reach 2-3x velocity through AI-first workflow adoption",
+    "Solo-built Coretext Sidekick desktop MCP client (Tauri 2, Rust, React) and cross-platform Fraq property platform",
+    "Shipped Android apps at Samsung, Bose, RBC, and The RealReal used by millions"
+  ],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": ["AI Agents", "MCP Servers", "Fractional CTO", "Claude Engineering", "Kotlin Multiplatform"]
+}

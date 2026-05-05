@@ -48,9 +48,9 @@ const MEMBER_ORDER = [
   "adam-nameh",
   "ibrahim-nameh",
   "ahmad-nameh",
-  "mitch-makos",
   "kevin-seto",
-  "rugved",
+  "rugved-ambekar",
+  "mitch-makos",
   "rabia-arabaci",
   "carrie",
 ];

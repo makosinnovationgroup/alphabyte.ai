@@ -27,6 +27,7 @@ content/
    - `relatedService` — object: `eyebrow`, `title`, `body`, `ctaLabel`, `ctaHref`
    - `readyToMoveCard` — object: `heading`, `body`, `ctaLabel` (button always opens the Discovery Call modal)
    - `tableOfContents` — array of `{ label, anchorId }` objects matching `## Heading {#anchor-id}` syntax in the body
+   - `faq` — (optional) array of `{ question, answer }` objects. When present, generates a FAQPage JSON-LD schema and renders a visible FAQ section after the body content. Each `question` is a string (the question text) and `answer` is a string (the answer text).
 3. Body is MDX. Use `## Heading {#anchor-id}` to create anchors that match the table of contents.
 4. Use `>` blockquote syntax for pull-quotes.
 5. Use the `<ThirtyDays />` component for embedded "What the first 30 days look like" boxes.

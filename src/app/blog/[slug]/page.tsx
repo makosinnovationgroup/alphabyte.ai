@@ -46,6 +46,7 @@ interface BlogFrontmatter {
     dayThirty: { label: string; body: string };
   };
   tableOfContents: { label: string; anchorId: string }[];
+  faq?: { question: string; answer: string }[];
 }
 
 interface TeamMember {
@@ -256,6 +257,24 @@ export default async function BlogSlugPage({
     ],
   };
 
+  const faqSchema =
+    frontmatter.faq && frontmatter.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: frontmatter.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
+  const schemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
   const components = buildMdxComponents(frontmatter.tableOfContents, frontmatter.thirtyDays);
 
   const bodyContent = (
@@ -267,7 +286,7 @@ export default async function BlogSlugPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([blogPostingSchema, breadcrumbSchema]),
+          __html: JSON.stringify(schemas),
         }}
       />
       <BlogPostPage
@@ -295,6 +314,7 @@ export default async function BlogSlugPage({
         readyToMoveCard={frontmatter.readyToMoveCard}
         topics={frontmatter.topics}
         heroImage={`/blog/${slug}-hero.webp`}
+        faq={frontmatter.faq}
         moreFromBlog={otherPosts.map((p) => ({
           tags: p.tags,
           title: p.title,

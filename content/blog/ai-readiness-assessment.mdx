@@ -1,9 +1,9 @@
 ---
 slug: "ai-readiness-assessment"
-title: "The 2-week AI readiness assessment for operations leaders."
-excerpt: "A structured self-diagnostic for mid-market operations leaders. Assess your data, your team, and your workflows in two weeks. No vendor required to start."
+title: "AI Readiness Assessment: A Practical 2-Week Diagnostic"
+excerpt: "AI readiness assessment you can run in two weeks alongside regular operations. Score your data, workflows, and team readiness without a vendor."
 publishedDate: "2026-05-19"
-readTime: "7 min read"
+readTime: "8 min read"
 sortOrder: 3
 author: "adam-nameh"
 tags:
@@ -26,83 +26,90 @@ readyToMoveCard:
   body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
   ctaLabel: "Book a Discovery Call"
 tableOfContents:
-  - label: "Why most assessments take too long"
-    anchorId: "why-most-assessments-take-too-long"
-  - label: "Week one: data and systems"
+  - label: "Why do enterprise assessment frameworks fail mid-market teams?"
+    anchorId: "why-enterprise-frameworks-fail"
+  - label: "Week one: what does your data actually look like?"
     anchorId: "week-one-data-and-systems"
-  - label: "Week two: people and workflows"
+  - label: "Week two: where do people spend time on repeatable work?"
     anchorId: "week-two-people-and-workflows"
-  - label: "Scoring and next steps"
-    anchorId: "scoring-and-next-steps"
-  - label: "When to bring in outside help"
-    anchorId: "when-to-bring-in-outside-help"
+  - label: "How should you score and interpret your results?"
+    anchorId: "scoring-and-interpretation"
+  - label: "When does outside help make sense?"
+    anchorId: "when-outside-help-makes-sense"
+faq:
+  - question: "How long does an AI readiness assessment take?"
+    answer: "A practical AI readiness assessment can be completed in two weeks alongside regular operations. Week one covers data and systems inventory. Week two covers people, workflows, and team readiness. No dedicated strategy team or consulting budget is required."
+  - question: "What are the three dimensions of AI readiness?"
+    answer: "The three dimensions are data readiness (quality, accessibility, and structure of your operational data), workflow complexity (how predictable and well-documented your target processes are), and team readiness (whether your people have AI experience and openness to new tools)."
+  - question: "Do I need a consultant to assess AI readiness?"
+    answer: "No. A VP of Operations or Director of IT can run a self-directed assessment using a structured framework. Outside help becomes valuable when data is fragmented across many systems, when the team has no AI experience, or when regulatory requirements add governance complexity."
+  - question: "What score means we are ready to deploy AI?"
+    answer: "If you score three or higher on all three dimensions (data readiness, workflow complexity, and team readiness) on a one-to-five scale, you are ready to identify specific use cases and build a deployment roadmap. Any dimension below three becomes your starting point before AI work begins."
 ---
 
-## Why Most Assessments Take Too Long {#why-most-assessments-take-too-long}
+Every mid-market operations leader faces the same question: is our organisation ready for AI, or are we about to waste six months learning we weren't? Most assessment frameworks were designed for enterprises with dedicated strategy teams and six-figure consulting budgets, leaving mid-market companies without a practical starting point.
 
-Most AI readiness assessment frameworks were built for enterprises. They assume a dedicated strategy team, a six-figure consulting budget, and three to six months of runway. The output is an 80-page deck that sits in a shared drive. By the time the recommendations are ready, the market has moved.
+An AI readiness assessment does not need to take three months or produce an 80-page deck. A structured two-week self-diagnostic, run alongside regular operations, gives you enough information to make a clear decision: move forward with a specific use case, or fix the gap that would cause a deployment to fail. The foundation is [data readiness](/services/data-readiness/). If the data is not ready, nothing built on it will work. This framework addresses data first, then people, then gives you a scoring model that points to a next step.
 
-Mid-market operations leaders don't have that luxury. You're running a team, hitting quarterly targets, and trying to figure out where AI fits - all at the same time. You need a framework you can run in two weeks alongside your regular work. Not a research project. A diagnostic.
+## Why Do Enterprise Assessment Frameworks Fail Mid-Market Teams? {#why-enterprise-frameworks-fail}
 
-This is that framework. It won't tell you everything. It will tell you enough to make a decision: are we ready to move, or do we need to fix something first? That's the question that matters. The rest is detail.
+Enterprise AI readiness frameworks assume resources that mid-market organisations do not have. They expect a dedicated strategy team, three to six months of runway, and a budget large enough to justify the consulting engagement itself. The output is a research project, not a decision tool. According to McKinsey's 2024 "The state of AI" survey, organisations that moved fastest on AI adoption were those that focused on a small number of high-impact use cases rather than comprehensive assessments ([McKinsey, 2024](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)).
 
-The foundation of any AI readiness assessment is [data readiness](/services/data-readiness/). If the data isn't ready, nothing built on top of it will work. Week one addresses that directly.
+Mid-market operations leaders are running a team, hitting quarterly targets, and trying to figure out where AI fits at the same time. You need a framework that produces a decision within two weeks. Not a roadmap that takes longer to build than the first deployment would.
 
-## Week One: Data and Systems {#week-one-data-and-systems}
+In our engagements, we have seen this pattern repeatedly. A housing services organisation we worked with had spent months on a vendor-led assessment before engaging us for an [AI enablement roadmap](/services/discovery/). The assessment was thorough but had not produced a single actionable recommendation. The two-week diagnostic format we use now exists because of experiences like that one.
 
-The first week is about understanding what you have. Not what you wish you had. Not what a vendor told you they could connect to. What actually exists today.
+The goal is not to answer every question. It is to answer the first one: are we ready, or what do we need to fix?
 
-Start with an inventory. List every system that holds operational data. Your ERP, your CRM, your project management tools, your spreadsheets, your email inboxes. All of it. Most mid-market organizations have between five and 15 systems that matter. Some have more.
+## What Does Your Data Actually Look Like? {#week-one-data-and-systems}
 
-For each system, answer four questions:
+Week one is about documenting what exists today. Not what you wish you had. Not what a vendor told you they could connect to. What is actually accessible right now.
 
-- *Can you export the data?* Not theoretically. Can you actually get a CSV or connect an API today?
-- *How current is the data?* Real-time, daily, weekly, or "whenever someone remembers to update it"?
-- *What's the quality like?* Are records complete? Are fields consistent? Are there obvious duplicates or gaps?
-- *Is the system connected to anything else?* Or is it an island?
+Start with an inventory. List every system that holds operational data: your ERP, your CRM, your project management tools, your spreadsheets, your email inboxes. Most mid-market organisations have between five and 15 systems that matter. For each system, answer four questions:
 
-Don't try to fix anything this week. Just document. You're building a map, not a plan. Most leaders are surprised by what they find - not because the situation is worse than expected, but because they've never seen all the data sources listed in one place.
+- Can you export the data? Not theoretically. Can you get a CSV or connect an API today?
+- How current is the data? Real-time, daily, weekly, or "whenever someone remembers to update it"?
+- What is the quality like? Are records complete? Are fields consistent? Are there obvious duplicates or gaps?
+- Is the system connected to anything else, or is it isolated?
 
-If you want a deeper framework for evaluating data quality, our [Data Readiness](/services/data-readiness/) service uses a structured audit that scores each source on five dimensions. But for this self-assessment, the four questions above are enough to separate the viable from the problematic.
+Do not try to fix anything this week. You are building a map, not a plan. Most leaders are surprised by what they find, not because the situation is worse than expected, but because they have never seen all the data sources listed in one place. The inventory itself is valuable. It reveals which systems are genuinely connected and which ones rely on someone manually exporting a spreadsheet every Friday.
 
-## Week Two: People and Workflows {#week-two-people-and-workflows}
+Deloitte's "State of AI in the Enterprise" survey found that data quality and data integration remain the top barriers to AI deployment across industries ([Deloitte, 2024](https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-ai-in-the-enterprise.html)). Your week-one inventory tells you whether that barrier applies to your organisation. If you want a deeper framework for evaluating data quality, our [Data Readiness](/services/data-readiness/) service uses a structured audit that scores each source on five dimensions. For this self-assessment, the four questions above are enough to separate the viable from the problematic.
+
+## Where Do People Spend Time on Repeatable Work? {#week-two-people-and-workflows}
 
 Week two shifts focus from systems to humans. The goal is to map the human layer onto the data layer you documented in week one.
 
-Start by identifying your most repetitive-task-heavy roles. Which team members spend hours each week on work that follows a predictable pattern? Data entry. Report generation. Invoice matching. Schedule coordination. Status updates across systems. These are the workflows where AI use cases tend to be highest-value and lowest-risk.
+Start by identifying your most repetitive-task-heavy roles. Which team members spend hours each week on work that follows a predictable pattern? Data entry, report generation, invoice matching, schedule coordination, status updates across systems. These are the workflows where AI use cases tend to be highest-value and lowest-risk.
 
-Next, find out who's already using AI. In most mid-market organizations, someone is. They're pasting data into ChatGPT to draft emails, using Copilot to write formulas, or running customer records through a free tool they found online. This isn't a problem to punish - it's a signal. It tells you where the pain is sharpest and where adoption will be fastest. Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) covers how to channel this energy productively.
+Next, find out who is already using AI. In most mid-market organisations, someone is. They are pasting data into ChatGPT to draft emails, using Copilot to write formulas, or running customer records through a free tool they found online. This is not a problem to punish. It is a signal. It tells you where the pain is sharpest and where adoption will be fastest. Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) covers how to channel this energy productively rather than suppressing it. If informal AI usage concerns you from a governance perspective, our [shadow AI governance](/blog/shadow-ai-governance/) post addresses that directly.
 
-Finally, assess comfort level. Not everyone needs to be an AI expert. But you need at least a few people on your team who are willing to test, give feedback, and iterate. If your entire team is resistant, your first project isn't an AI deployment. It's education.
+Finally, assess comfort level. You need at least a few people on your team who are willing to test, give feedback, and iterate. If your entire team is resistant, your first project is not an AI deployment. It is education. Our [executive enablement](/services/executive-enablement/) programme is designed for exactly that situation.
 
-> "Find out who's already using AI informally. That's not a problem to punish - it's a signal."
+By the end of week two, you should have a clear picture: here is our data, here is where people spend their time on repeatable work, and here is how ready the team is to try something new.
 
-By the end of week two, you should have a clear picture: here's our data, here's where people spend their time on repeatable work, and here's how ready the team is to try something new.
-
-## Scoring and Next Steps {#scoring-and-next-steps}
+## How Should You Score and Interpret Your Results? {#scoring-and-interpretation}
 
 Score yourself on three dimensions, each on a scale of one to five.
 
 *Data readiness.* A one means your data is scattered, inconsistent, and inaccessible. A five means your data is clean, connected, and exportable via API.
 
-*Workflow complexity.* A one means your target workflows are highly variable with constant exceptions. A five means they're predictable, pattern-based, and well-documented.
+*Workflow complexity.* A one means your target workflows are highly variable with constant exceptions. A five means they are predictable, pattern-based, and well-documented.
 
 *Team readiness.* A one means no AI experience and active resistance. A five means multiple team members already experimenting and open to change.
 
-If you score three or higher on all three dimensions, you're ready to identify specific AI use cases and start building an AI roadmap. The question isn't *whether* to deploy, but *where* to start.
+If you score three or higher on all three dimensions, you are ready to identify specific AI use cases and start building an [AI roadmap](/services/discovery/). The question is not whether to deploy, but where to start. If one dimension is below three, that is your starting point. A low data readiness score means you need a data cleanup project before any AI work makes sense. A low workflow score means you need to simplify and document your processes first. A low team score means you need training and exposure before deploying anything.
 
-If one dimension is below three, that's your starting point. A low data readiness score means you need a data cleanup project before any AI work makes sense. A low workflow score means you need to simplify and document your processes first. A low team score means you need training and exposure before deploying anything.
+This is not a grade. It is a map. It tells you where you are and what comes next. Gartner's Hype Cycle for AI consistently notes that organisations with structured readiness assessments are more likely to move past the pilot stage into production deployment ([Gartner, 2024](https://www.gartner.com/en/articles/what-s-new-in-artificial-intelligence-from-the-2024-gartner-hype-cycle)).
 
-This isn't a grade. It's a map. It tells you where you are and what comes next.
-
-## When to Bring in Outside Help {#when-to-bring-in-outside-help}
+## When Does Outside Help Make Sense? {#when-outside-help-makes-sense}
 
 The two-week assessment is designed to be self-directed. A VP of Operations or a Director of IT can run it without outside help. But there are situations where bringing in a partner makes sense.
 
-If your data is fragmented across many systems with no integration layer, scoping the cleanup is hard to do from the inside. You're too close to the workarounds you've built over the years. An outside perspective helps identify what's essential and what's accumulated complexity.
+If your data is fragmented across many systems with no integration layer, scoping the cleanup is hard to do from the inside. You are too close to the workarounds you have built over the years. An outside perspective helps identify what is essential and what is accumulated complexity. We built a [custom MCP server](/blog/how-to-build-a-custom-mcp-server/) for a fire protection contractor in exactly this situation, connecting NFPA compliance records that had been spread across three disconnected systems.
 
-If your team has no AI experience at all, the gap between "we scored ourselves" and "we know what to build" can be wide. A structured [Discovery](/services/discovery/) engagement compresses that gap. It takes the self-assessment output and turns it into a prioritized list of use cases with effort estimates and expected impact.
+If your team has no AI experience at all, the gap between "we scored ourselves" and "we know what to build" can be wide. A structured [Discovery](/services/discovery/) engagement compresses that gap. It takes the self-assessment output and turns it into a prioritised list of use cases with effort estimates and expected impact.
 
-If you're in a regulated industry - healthcare, financial services, insurance - governance requirements add a layer of complexity. What data can go into an AI system? What decisions can AI inform versus make? These questions have compliance implications that are easier to navigate with someone who's done it before.
+If you are in a regulated industry, governance requirements add a layer of complexity. What data can go into an AI system? What decisions can AI inform versus make? Canadian organisations working under PIPEDA or preparing for Bill C-27 need to answer these questions with specific compliance implications in mind. Our [AI governance framework](/blog/ai-governance-framework-mid-market/) walks through the practical steps.
 
-The point of the self-assessment isn't to answer every question. It's to answer the first one: are we ready, or what do we need to fix? Everything after that is a decision, not a mystery.
+The point of the self-assessment is not to answer every question. It is to answer the first one: are we ready, or what do we need to fix? If the answer is clear, the [Discovery service](/services/discovery/) is where most organisations go next.

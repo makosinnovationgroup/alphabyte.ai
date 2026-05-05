@@ -43,6 +43,11 @@ export interface BlogMorePost {
   heroImage?: string;
 }
 
+export interface BlogFaqEntry {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPostPageProps {
   breadcrumb: { items: BlogBreadcrumbItem[] };
   tags: string[];
@@ -56,6 +61,7 @@ export interface BlogPostPageProps {
   topics: string[];
   moreFromBlog: BlogMorePost[];
   heroImage?: string;
+  faq?: BlogFaqEntry[];
 }
 
 export function BlogPostPage({
@@ -71,6 +77,7 @@ export function BlogPostPage({
   topics,
   moreFromBlog,
   heroImage,
+  faq,
 }: BlogPostPageProps) {
   return (
     <main>
@@ -195,6 +202,22 @@ export function BlogPostPage({
             <div className="blog-body space-y-5">
               {bodyContent}
             </div>
+
+            {faq && faq.length > 0 && (
+              <div className="mt-12 space-y-6">
+                <h2 className="text-lg font-bold text-foreground">
+                  Frequently Asked Questions
+                </h2>
+                {faq.map((entry) => (
+                  <div key={entry.question} className="space-y-2">
+                    <h3 className="text-body font-bold text-foreground">
+                      {entry.question}
+                    </h3>
+                    <p className="text-body text-foreground">{entry.answer}</p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Author bio */}
             <div className="mt-12 rounded-md border border-border-default bg-canvas p-6 md:p-8">

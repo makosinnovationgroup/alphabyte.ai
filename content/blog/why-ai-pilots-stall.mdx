@@ -1,9 +1,9 @@
 ---
 slug: "why-ai-pilots-stall"
-title: "Why 80% of mid-market AI pilots stall."
-excerpt: "The pattern is consistent. A pilot runs, the demo works, and then nothing ships to production. Here is the bottom-up model that actually compounds."
+title: "Why Most Mid-Market AI Pilots Stall Before They Ship"
+excerpt: "Mid-market AI pilots stall because the deployment model is wrong, not the technology. A bottom-up programme that compounds is the alternative."
 publishedDate: "2026-06-04"
-readTime: "7 min read"
+readTime: "8 min read"
 sortOrder: 10
 author: "adam-nameh"
 tags:
@@ -26,68 +26,79 @@ readyToMoveCard:
   body: "45 minutes. No cost. No obligation. We tell you what we would build and what you would have at day 30."
   ctaLabel: "Book a Discovery Call"
 tableOfContents:
-  - label: "The pilot that worked in the demo"
-    anchorId: "the-pilot-that-worked-in-the-demo"
-  - label: "Three reasons pilots stall"
-    anchorId: "three-reasons-pilots-stall"
-  - label: "The bottom-up alternative"
+  - label: "What does a stalled AI pilot look like?"
+    anchorId: "what-a-stalled-pilot-looks-like"
+  - label: "Three deployment failures that kill pilots before production"
+    anchorId: "three-deployment-failures"
+  - label: "The bottom-up programme is the alternative"
     anchorId: "the-bottom-up-alternative"
-  - label: "What compounding looks like"
+  - label: "What compounding looks like over twelve months"
     anchorId: "what-compounding-looks-like"
+faq:
+  - question: "Why do most AI pilots fail to reach production?"
+    answer: "Most AI pilots stall because of deployment failures, not technology failures. The three most common causes are choosing use cases top-down without consulting the people who do the work, running pilots on clean demo data that does not reflect production conditions, and having no owner for the path from pilot to daily operations."
+  - question: "What is a bottom-up AI deployment model?"
+    answer: "A bottom-up AI deployment gives a small group of employees governed access to AI tools connected to one real system. They build workflows that solve their own problems. Each new workflow reuses infrastructure and governance from previous ones, creating a compounding pattern that a top-down pilot never produces."
+  - question: "How long does it take to see ROI from a bottom-up AI programme?"
+    answer: "In the bottom-up model, measurable time savings appear within the first month as initial users automate their own workflows. By month three, twelve or more workflows are typically running against production data. By month six, the compounding effect means new workflows take days rather than weeks to deploy."
+  - question: "What is AI pilot purgatory?"
+    answer: "AI pilot purgatory describes the state where a proof of concept has demonstrated that the technology works, but the project never ships to production. The demo succeeded, the budget was spent, but no one uses the system in daily operations. This is the most common outcome for top-down mid-market AI pilots."
+  - question: "How do I prevent my AI pilot from stalling?"
+    answer: "Start with a workflow someone does every day, not the most impressive use case for a board presentation. Use real production data from day one. Assign an owner for the production path, not just the pilot phase. Better yet, adopt a bottom-up model where the people who do the work build the workflows they need."
 ---
 
-## The Pilot That Worked in the Demo {#the-pilot-that-worked-in-the-demo}
+A vendor approaches with a compelling AI pilot. The demo runs on clean data. The results look impressive. Six months later, the pilot is "on hold" and the budget is spent. Why do AI pilots fail so consistently at mid-market companies?
 
-The pattern is remarkably consistent. A vendor approaches with a compelling AI pilot. The use case sounds right - document processing, customer service automation, predictive analytics. The demo runs against clean sample data and the results are impressive. Leadership signs off. Budget is allocated.
+The technology is not the problem. The deployment model is. Top-down pilots fail because they optimise for the demo rather than for daily operations. A bottom-up programme, where the people who do the work build the workflows they need against real data, produces something a pilot never does: a pattern that compounds. Each new workflow is cheaper and faster than the last because the infrastructure, the governance, and the institutional knowledge already exist.
 
-Then reality arrives. The production data has inconsistencies the demo data didn't. The integration with your ERP takes three months, not the two weeks quoted. The use case that looked perfect in the demo doesn't map to how your team actually works - because nobody asked your team before choosing it.
+### Why this matters now
 
-Six months later, the pilot is "on hold." The budget is spent. The vendor is pointing to the demo as proof the technology works. And it did work - in conditions that don't exist inside your business. This is why AI pilots fail at the rate they do. The technology isn't the problem. The deployment model is.
+McKinsey's 2024 "The state of AI" survey found that organisations reporting meaningful AI ROI were those that had moved beyond isolated pilots into broader operational adoption ([McKinsey, 2024](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)). The gap between organisations that deployed AI into production and those still running pilots widened significantly year over year. For mid-market companies, the cost of a stalled pilot is not just the budget spent. It is the months of lost compounding while competitors who adopted the right model pull further ahead.
 
-> "The pilot worked. The demo proved it. And then nothing shipped to production."
+## What Does a Stalled AI Pilot Look Like? {#what-a-stalled-pilot-looks-like}
 
-This is what ai pilot purgatory looks like. A successful proof of concept that never becomes a production system. The gap between demo and daily use is where most mid-market AI investments go to die.
+The pattern is consistent across industries. A use case is selected, usually something that sounds impressive: document processing, customer service automation, predictive analytics. The vendor runs the demo against curated sample data. Leadership signs off and budget is allocated.
 
-## Three Reasons Pilots Stall {#three-reasons-pilots-stall}
+Then reality arrives. The production data has inconsistencies the demo data did not. The integration with the ERP takes three months, not the two weeks quoted. The use case that looked perfect in the demo does not map to how your team actually works, because nobody asked your team before choosing it.
+
+Six months later, the pilot is in purgatory: a successful proof of concept that never becomes a production system. The vendor points to the demo as proof the technology works. And it did work, in conditions that do not exist inside your business. In our engagements, we have seen this exact pattern at organisations across manufacturing, professional services, and financial services. A housing services organisation we worked with had run two separate pilots with two different vendors before engaging us for an [AI enablement roadmap](/services/discovery/). Both pilots had produced successful demos. Neither had produced a single workflow anyone used daily.
+
+The gap between demo and daily use is where most mid-market AI investments go to fail. The vendor is not lying when they say the technology works. It does work, in conditions that bear no resemblance to your Tuesday morning. Understanding why requires examining the deployment model, not the technology.
+
+## Three Deployment Failures That Kill Pilots Before Production {#three-deployment-failures}
 
 The failure modes are predictable. We see the same three on nearly every stalled engagement.
 
-*The use case was chosen top-down.* Leadership picked the most impressive-sounding application - the one that would look best in a board presentation - instead of the one that maps to an actual workflow someone does every day. The best AI use cases aren't glamorous. They're the tedious, repetitive tasks that consume four hours of someone's Tuesday. But nobody asks the person with the tedious Tuesday.
+*The use case was chosen top-down.* Leadership picked the most impressive-sounding application, the one that would look best in a board presentation, instead of the one that maps to an actual workflow someone does every day. The best AI use cases are not glamorous. They are the tedious, repetitive tasks that consume four hours of someone's Tuesday. But nobody asks the person with the tedious Tuesday. Our [executive enablement programme](/services/executive-enablement/) addresses this directly by connecting leadership to the operational workflows that matter.
 
-*The pilot ran on clean data.* Every demo uses curated data. Production data is never curated. It has missing fields, inconsistent formatting, legacy encoding, and edge cases that represent 30% of actual volume. Nobody budgeted for data readiness because the demo didn't require it. When the team tries to move from pilot to production, the data work alone takes longer than the entire original timeline.
+*The pilot ran on clean data.* Every demo uses curated data. Production data is never curated. It has missing fields, inconsistent formatting, legacy encoding, and edge cases that represent 30 percent of actual volume. Nobody budgeted for [data readiness](/services/data-readiness/) because the demo did not require it. In our experience, data cleanup is the single most underestimated line item in AI pilot budgets. Teams allocate weeks for model configuration and days for data preparation, when the ratio should be reversed. When the team tries to move from pilot to production, the data work alone takes longer than the entire original timeline.
 
-*Nobody owned the production path.* The pilot had a champion - usually someone in IT or innovation. But that person's job was to run the pilot, not to move it into daily operations. There was no integration plan, no training plan, no support model. The pilot existed in a vacuum, and when the champion moved on to the next initiative, the pilot stopped moving entirely.
+*Nobody owned the production path.* The pilot had a champion, usually someone in IT or innovation. But that person's job was to run the pilot, not to move it into daily operations. There was no integration plan, no training plan, no support model. The pilot existed in a vacuum, and when the champion moved on to the next initiative, the pilot stopped moving entirely. We have seen this pattern repeatedly: the person who ran the demo is not the person who would use the tool daily, and nobody bridged that gap.
 
-These aren't technology failures. They're deployment failures. And they're the reason most mid-market organizations have spent money on AI without seeing ai roi that justifies the investment.
+These are not technology failures. They are deployment failures. Deloitte's "State of AI in the Enterprise" survey consistently identifies the gap between pilot and production as the primary barrier to AI ROI ([Deloitte, 2024](https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-ai-in-the-enterprise.html)). Our [AI governance framework](/blog/ai-governance-framework-mid-market/) covers how to build the operational structure that prevents these failures.
 
-Our [Executive Enablement service](/services/executive-enablement/) is designed specifically to avoid these patterns by connecting AI deployment to real operational workflows from day one.
-
-## The Bottom-Up Alternative {#the-bottom-up-alternative}
+## The Bottom-Up Programme Is the Alternative {#the-bottom-up-alternative}
 
 The alternative to a top-down pilot is a bottom-up programme. Instead of picking one big use case and building toward a demo, you start with the people already doing the work.
 
-Give three people governed access to Claude. Connect it to one real system - your CRM, your ERP, your document repository. Let them build what they actually need. Not what would look impressive in a presentation. What would save them two hours on Thursday.
+Give three people governed access to [Claude](/tools/claude/). Connect it to one real system: your CRM, your ERP, your document repository. Let them build what they actually need. Not what would look impressive in a presentation. What would save them two hours on Thursday.
 
-The first workflow is small. Maybe it's a report that used to take 45 minutes and now takes five. The second workflow borrows the data connection pattern from the first. The third one is built by someone who saw the first person's output and asked, "Can it do this for my process too?"
+The first workflow is small. Maybe it is a report that used to take 45 minutes and now takes five. The second workflow borrows the data connection pattern from the first. The third one is built by someone who saw the first person's output and asked, "Can it do this for my process too?"
 
-By the tenth workflow, you have something a pilot never produces: a pattern that compounds. Each new workflow is cheaper and faster than the last because the infrastructure, the governance, and the institutional knowledge already exist.
+By the tenth workflow, you have something a pilot never produces: a pattern that compounds. Each new workflow is cheaper and faster than the last because the infrastructure, the governance, and the institutional knowledge already exist. The MCP connections are already configured. The permission model is already in place. The team already knows how to describe their work to Claude and review the output. This is the model we describe in our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/). The key difference from the top-down approach: nobody waits for a perfect use case. You start with a good-enough workflow, prove it against real data, and build from there.
 
-This is the model we describe in our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/). It's also why [the window for mid-market AI adoption](/blog/window-is-open/) is measured in months, not years - the compounding effect means early movers pull further ahead with each passing quarter.
+Anthropic's documentation on [Claude for enterprise](https://docs.anthropic.com/en/docs) outlines the usage patterns that support this model: team-level access controls, audit logging, and API integration that lets you connect Claude to internal systems through the same governed infrastructure your team already operates under. The governance is not a separate project. It is part of the first deployment, and every subsequent workflow inherits it automatically.
 
-The key difference from the ai pilot to production path: nobody waits for a perfect use case. You start with a good-enough workflow, prove it against real data, and build from there.
+## What Compounding Looks Like Over Twelve Months {#what-compounding-looks-like}
 
-## What Compounding Looks Like {#what-compounding-looks-like}
+Here is the timeline we see when organisations adopt the bottom-up model.
 
-Here's the timeline we see when organizations adopt the bottom-up model:
+*Month one.* Three people are automating their own workflows. The outputs are small: a reporting shortcut, an automated data pull, a document drafting tool. Each one saves a few hours per week. Individually, none of them would justify a board presentation.
 
-*Month one.* Three people are automating their own workflows. The outputs are small - a reporting shortcut, an automated data pull, a document drafting tool. Each one saves a few hours per week. Individually, none of them would justify a board presentation.
+*Month three.* Twelve workflows are running against real production data. The original three builders are helping colleagues adapt patterns for adjacent use cases. The governance framework that was built in week two is handling the volume without issues. Total time saved across the organisation: measurable and growing.
 
-*Month three.* Twelve workflows are running against real production data. The original three builders are helping colleagues adapt patterns for adjacent use cases. The governance framework that was built in week two is handling the volume without issues. Total time saved across the organization: measurable and growing.
+*Month six.* The team that started first is training the next team. The pattern library has enough proven templates that new workflows take days, not weeks. Someone in finance built a forecasting tool by adapting what someone in operations built for scheduling. We deployed a similar compounding pattern for a fire protection contractor: the [NFPA compliance intelligence agent](/our-work/fire-protection-compliance/) started as a single lookup tool and grew into a system that the entire team relied on for daily compliance checks.
 
-*Month six.* The team that started first is training the next team. The pattern library has enough proven templates that new workflows take days, not weeks. Someone in finance built a forecasting tool by adapting what someone in operations built for scheduling. The compounding has started.
+*Month twelve.* You do not have one AI application. You have 40 or 50, built by the people who understand the work, running against the systems that matter, governed by a framework that was battle-tested from month one. The total time saved across the organisation is measurable in full-time equivalents, and the cost per workflow has dropped to a fraction of what the original pilot budget allocated for a single use case.
 
-*Month twelve.* You don't have one AI application. You have 40 or 50, built by the people who understand the work, running against the systems that matter, governed by a framework that was battle-tested from month one.
-
-This is the model that produces real return - not the pilot that produces a demo. The difference isn't the technology. It's who builds, what they build against, and whether anyone owns the path from first workflow to fiftieth.
-
-Most organizations that ask us about AI strategy are recovering from a stalled pilot. The conversation is always the same: the technology worked, the deployment didn't. The fix isn't a better pilot. It's a different model entirely.
+Most organisations that ask us about [AI strategy](/blog/ai-readiness-assessment/) are recovering from a stalled pilot. The conversation is always the same: the technology worked, the deployment did not. The fix is not a better pilot. It is a different model entirely. If that describes your situation, [Discovery](/services/discovery/) is where we would start.

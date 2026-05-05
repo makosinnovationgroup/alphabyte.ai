@@ -1,11 +1,11 @@
 {
   "slug": "mitch-makos",
   "name": "Mitchell Makos",
-  "role": "Principal Architect & Claude Platform Engineer",
+  "role": "Principal Architect & AI Delivery Lead",
   "company": "Alphabyte Solutions Inc.",
   "location": "Tampa, Florida, USA",
   "avatarSrc": "/team/mitch-makos.png",
-  "eyebrow": "PRINCIPAL ARCHITECT AT ALPHABYTE AI",
+  "eyebrow": "PRINCIPAL ARCHITECT & AI DELIVERY LEAD AT ALPHABYTE AI",
   "bio": [
     "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, Royal Bank of Canada, Pacific Gas & Electric, and Erie Insurance.",
     "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He designs the agentic systems, custom MCP servers, and governed AI environments that mid-market organizations run in production — connecting their existing tools, knowledge bases, and cloud infrastructure into Claude workflows their teams actually use."
@@ -30,7 +30,7 @@
   "careerTimeline": [
     {
       "period": "2026 — Present",
-      "role": "Principal Architect & Claude Platform Engineer",
+      "role": "Principal Architect & AI Delivery Lead",
       "organization": "Alphabyte Solutions Inc."
     },
     {
