@@ -294,11 +294,13 @@ export default async function BlogSlugPage({
         relatedService={frontmatter.relatedService}
         readyToMoveCard={frontmatter.readyToMoveCard}
         topics={frontmatter.topics}
+        heroImage={`/blog/${slug}-hero.webp`}
         moreFromBlog={otherPosts.map((p) => ({
           tags: p.tags,
           title: p.title,
           excerpt: p.excerpt,
           href: `/blog/${p.slug}/`,
+          heroImage: `/blog/${p.slug}-hero.webp`,
         }))}
       />
     </>

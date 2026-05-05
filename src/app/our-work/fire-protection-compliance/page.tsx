@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/our-work/fire-protection-compliance/",
     images: [
       {
-        url: "/og/fire-protection-compliance.png",
+        url: "/og/our-work-fire-protection-compliance.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Fire Protection Compliance — Intelligence Agent",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Fire Protection Compliance — Intelligence Agent",
     description:
       "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
-    images: ["/og/fire-protection-compliance.png"],
+    images: ["/og/our-work-fire-protection-compliance.png"],
   },
 };
 
@@ -205,6 +205,11 @@ export default function FireProtectionCompliancePage() {
             "Want to explore what we could build for your compliance environment?",
           subhead: "45 minutes. No cost. No obligation.",
           cta: { label: "Book a Discovery Call", action: "modal" },
+        }}
+        figure={{
+          src: "/our-work/fire-protection-compliance-knowledge-graph.webp",
+          alt: "A knowledge graph routing a compliance query through a manifest index to a specific code page",
+          caption: "Figure 1 — Knowledge graph + manifest index architecture (illustrative concept).",
         }}
       />
     </>

@@ -15,6 +15,12 @@ export interface BodySection {
   indent?: boolean;
 }
 
+export interface CaseStudyFigure {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface CaseStudyPageProps {
   breadcrumb: BreadcrumbItem[];
   eyebrow: string;
@@ -34,6 +40,7 @@ export interface CaseStudyPageProps {
     subhead: string;
     cta: { label: string; action: "modal" };
   };
+  figure?: CaseStudyFigure;
 }
 
 export function CaseStudyPage({
@@ -46,6 +53,7 @@ export function CaseStudyPage({
   body,
   sidebar,
   closingCta,
+  figure,
 }: CaseStudyPageProps) {
   return (
     <main>
@@ -104,24 +112,64 @@ export function CaseStudyPage({
         </div>
       </section>
 
-      {/* 2. Stats grid */}
-      <section className="border-b border-border-default px-6 py-10 md:px-10 md:py-12 lg:px-16">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="rounded-lg border border-border-default bg-white px-6 py-8"
-            >
-              <p className="text-headline tracking-brand-snug text-alphabyte-blue">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-body-sm text-muted-foreground">
-                {stat.label}
-              </p>
+      {/* 2. Figure (left) + stats (right, vertical) — combined when figure provided.
+              Falls back to full-width 4-col stats grid when no figure. */}
+      {figure ? (
+        <section className="border-b border-border-default bg-white px-6 py-10 md:px-10 md:py-12 lg:px-16">
+          <div className="mx-auto grid max-w-[1600px] gap-8 lg:grid-cols-[7fr_2fr] lg:items-start lg:gap-10">
+            {/* Figure (left) */}
+            <figure className="overflow-hidden rounded-md border border-border-default">
+              <img
+                src={figure.src}
+                alt={figure.alt}
+                className="w-full"
+                width={1200}
+                height={800}
+              />
+              {figure.caption && (
+                <figcaption className="border-t border-border-default bg-canvas px-4 py-3 text-body-sm text-muted-foreground">
+                  {figure.caption}
+                </figcaption>
+              )}
+            </figure>
+
+            {/* Stats (right, vertical on desktop, 2-up on mobile) — homepage stat card pattern */}
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-1 lg:gap-4">
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
+                >
+                  <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue break-words">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-body-sm text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        <section className="border-b border-border-default px-6 py-10 md:px-10 md:py-12 lg:px-16">
+          <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
+              >
+                <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue break-words">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-body-sm text-muted-foreground">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 3. Two-column body */}
       <section className="border-b border-border-default">

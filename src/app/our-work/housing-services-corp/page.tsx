@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/our-work/housing-services-corp/",
     images: [
       {
-        url: "/og/housing-services-corp.png",
+        url: "/og/our-work-housing-services-corp.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Housing Services Corp. — AI Enablement Roadmap",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Housing Services Corp. — AI Enablement Roadmap",
     description:
       "AI enablement roadmap and data strategy for a national housing services organization.",
-    images: ["/og/housing-services-corp.png"],
+    images: ["/og/our-work-housing-services-corp.png"],
   },
 };
 
@@ -134,6 +134,23 @@ export default function HousingServicesCorpPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-10 md:py-12 border-t border-border-default">
+        <div className="mx-auto max-w-7xl">
+          <figure className="overflow-hidden rounded-md border border-border-default">
+            <img
+              src="/our-work/housing-services-corp-roadmap-concept.webp"
+              alt="A six-step AI enablement roadmap from current state to delivered recommendations"
+              className="w-full"
+              width={1200}
+              height={800}
+            />
+            <figcaption className="border-t border-border-default bg-canvas px-4 py-3 text-body-sm text-muted-foreground">
+              Figure 1 — Six-step AI enablement roadmap (illustrative concept).
+            </figcaption>
+          </figure>
         </div>
       </section>
 
