@@ -124,7 +124,7 @@ export default function BlogPage() {
               <img
                 src={`/blog/${featured.slug}-hero.webp`}
                 alt={featured.title}
-                className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full"
+                className="aspect-[4/3] w-full object-cover object-top md:aspect-auto md:h-full"
                 width={800}
                 height={600}
               />
@@ -174,7 +174,7 @@ export default function BlogPage() {
                   <img
                     src={`/blog/${post.slug}-hero.webp`}
                     alt={post.title}
-                    className="aspect-[16/9] w-full object-cover"
+                    className="aspect-[16/9] w-full object-cover object-top"
                     width={800}
                     height={450}
                   />

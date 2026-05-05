@@ -186,7 +186,7 @@ export function BlogPostPage({
             <img
               src={heroImage}
               alt={h1}
-              className="aspect-[16/9] w-full rounded-md object-cover"
+              className="aspect-[16/9] w-full rounded-md object-cover object-top"
               width={1600}
               height={900}
             />
@@ -323,7 +323,7 @@ export function BlogPostPage({
                 <img
                   src={post.heroImage ?? "/og/default.png"}
                   alt={post.title}
-                  className="h-40 w-full rounded-t-md object-cover"
+                  className="h-40 w-full rounded-t-md object-cover object-top"
                   width={400}
                   height={160}
                 />
