@@ -51,11 +51,13 @@ tableOfContents:
 
 Every mid-market leader deploying AI faces the same friction: your team is already using AI tools, but you have no formal governance around them. The enterprise frameworks published by major consultancies assume you have a Chief AI Officer and a 12-month runway. You have neither.
 
-A mid-market AI governance framework needs to be lightweight enough for one leader to own part-time, structured enough to satisfy regulators and auditors, and practical enough that people actually follow it. The good news is that the framework itself is not complicated. It has four layers, it can be stood up in eight weeks, and it starts producing value the moment you publish an acceptable use policy. The hard part is not building the framework. It is balancing governance with adoption so that your team uses the approved path instead of routing around it.
+A mid-market AI governance framework needs to be lightweight enough for one leader to own part-time, structured enough to satisfy regulators and auditors, and practical enough that people actually follow it. The good news is that the framework itself is not complicated. It has four layers, it can be stood up in eight weeks, and it starts producing value the moment you publish an acceptable use policy.
+
+The hard part is not building the framework. It is balancing governance with adoption so that your team uses the approved path instead of routing around it.
 
 ## Why governance matters more in 2026 {#why-governance-matters-more-in-2026}
 
-AI adoption at mid-market companies has accelerated sharply. McKinsey's 2024 "The state of AI" survey found that 72 percent of organisations now use AI in at least one business function. That figure was 55 percent just one year prior. For mid-market teams, the implication is clear: your people are using AI whether you have a governance framework or not.
+AI adoption at mid-market companies has accelerated sharply. [McKinsey's 2024 "The state of AI" survey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that 72 percent of organisations now use AI in at least one business function. That figure was 55 percent just one year prior. For mid-market teams, the implication is clear: your people are using AI whether you have a governance framework or not.
 
 At the same time, Canada's regulatory landscape is catching up. [Bill C-27](https://www.parl.ca/legisinfo/en/bill/44-1/c-27), the Digital Charter Implementation Act, introduces AI-specific obligations that did not exist when most mid-market companies started experimenting with AI tools. The organisations that wait for regulation to force their hand will be scrambling. The ones that build a framework now will already be compliant.
 
@@ -63,33 +65,47 @@ At the same time, Canada's regulatory landscape is catching up. [Bill C-27](http
 
 Every major consultancy has published an AI governance framework. They are thorough. They are also built for organisations with a dedicated compliance team and a 12-month implementation timeline.
 
-Mid-market companies have none of those things. You have a VP or Director who already owns three other priorities. You have a small IT team that is already stretched. You might not even have a formal data governance programme yet, let alone one for AI. The enterprise frameworks are not wrong. They are just not built for you.
+Mid-market companies have none of those things. You have a VP or Director who already owns three other priorities. You have a small IT team that is already stretched. You might not even have a formal data governance programme yet, let alone one for AI.
 
-When a 500-person company tries to adopt a framework designed for 50,000, two things happen: the framework gets abandoned because it is too heavy, or it gets partially implemented in ways that create a false sense of security. Meanwhile, your team is already pasting customer data into free tools, building workflows with personal accounts, and making decisions informed by models nobody audited. This is [shadow AI](/blog/shadow-ai-governance/), and it is the real risk. Not the absence of a 200-page policy document.
+The enterprise frameworks are not wrong. They are just not built for you.
+
+When a 500-person company tries to adopt a framework designed for 50,000, two things happen: the framework gets abandoned because it is too heavy, or it gets partially implemented in ways that create a false sense of security.
+
+Meanwhile, your team is already pasting customer data into free tools, building workflows with personal accounts, and making decisions informed by models nobody audited. This is [shadow AI](/blog/shadow-ai-governance/), and it is the real risk. Not the absence of a 200-page policy document.
 
 ## Four layers make a working AI governance programme {#four-layers-make-a-working-ai-governance-programme}
 
 A practical AI governance framework for mid-market has four layers. Each one builds on the last.
 
-**Layer one: acceptable use policy.** This is a single document, ideally one page, that defines what AI can and cannot be used for in your organisation. Can employees use AI to draft customer communications? To analyse financial data? To make recommendations about staffing? The policy does not need to cover every scenario. It needs to draw clear lines on the obvious cases and establish a process for the grey areas.
+**Layer one: acceptable use policy.** This is a single document, ideally one page, that defines what AI can and cannot be used for in your organisation. Can employees use AI to draft customer communications? To analyse financial data? To make recommendations about staffing?
 
-**Layer two: data classification.** Not every piece of data carries the same risk. A simple three-tier system works: public data (marketing materials, public filings), internal data (operational metrics, project details), and restricted data (personal information, financial records, health data). The classification determines what data can go into which AI systems. Restricted data never goes into a consumer-grade tool. Internal data requires an enterprise account with audit logging.
+The policy does not need to cover every scenario. It needs to draw clear lines on the obvious cases and establish a process for the grey areas.
 
-**Layer three: tool governance.** This means approved tools, enterprise accounts, and audit trails. If your team is going to use [Claude](/tools/claude/), they use an enterprise account, not personal subscriptions. If they are building workflows, they use approved platforms with SSO and logging. For teams considering on-premise options for restricted data, our [on-premise LLM page](/tools/on-premise-llm/) covers the tradeoffs. This layer is about visibility, not control.
+**Layer two: data classification.** Not every piece of data carries the same risk. A simple three-tier system works: public data (marketing materials, public filings), internal data (operational metrics, project details), and restricted data (personal information, financial records, health data).
 
-**Layer four: review and graduation.** How does an AI-built workflow move from experiment to production? Someone builds a draft-generation tool using an approved AI platform. It works well. Now what? The review process defines what "ready for production" means: accuracy thresholds, human review requirements, data handling compliance, and ongoing monitoring. Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) covers how to support the people building in layers three and four without killing their momentum.
+The classification determines what data can go into which AI systems. Restricted data never goes into a consumer-grade tool. Internal data requires an enterprise account with audit logging.
+
+**Layer three: tool governance.** This means approved tools, enterprise accounts, and audit trails. If your team is going to use [Claude](/tools/claude/), they use an enterprise account, not personal subscriptions. If they are building workflows, they use approved platforms with SSO and logging.
+
+For teams considering on-premise options for restricted data, our [on-premise LLM page](/tools/on-premise-llm/) covers the tradeoffs. This layer is about visibility, not control.
+
+**Layer four: review and graduation.** How does an AI-built workflow move from experiment to production? Someone builds a draft-generation tool using an approved AI platform. It works well. Now what?
+
+The review process defines what "ready for production" means: accuracy thresholds, human review requirements, data handling compliance, and ongoing monitoring. Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) covers how to support the people building in layers three and four without killing their momentum.
 
 ## What do PIPEDA and Bill C-27 require for AI? {#what-do-pipeda-and-bill-c-27-require-for-ai}
 
 Canadian companies operating with AI need to understand two pieces of legislation.
 
-[PIPEDA](https://laws-lois.justice.gc.ca/eng/acts/p-8.6/), the Personal Information Protection and Electronic Documents Act, governs how private-sector organisations collect, use, and disclose personal information. It has been in force since 2000. The core principles are consent, purpose limitation, and accountability. If you are putting personal information into an AI system, PIPEDA applies.
+[PIPEDA](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/), the Personal Information Protection and Electronic Documents Act, governs how private-sector organisations collect, use, and disclose personal information. It has been in force since 2000. The core principles are consent, purpose limitation, and accountability. If you are putting personal information into an AI system, PIPEDA applies.
 
 [Bill C-27](https://www.parl.ca/legisinfo/en/bill/44-1/c-27) introduces the Artificial Intelligence and Data Act (AIDA), which adds AI-specific requirements. The bill establishes transparency obligations for high-impact AI systems: systems that affect decisions about employment, access to services, or other significant outcomes for individuals. If your AI system influences hiring decisions, credit assessments, or customer eligibility, you will need to document how it works and what data it uses.
 
-For mid-market AI governance in Canada, the practical implications are straightforward. Know what data you are feeding into AI systems. If it includes personal information, you need consent and a clear purpose. Keep audit logs so that if a decision was informed by AI, you can explain how. Maintain a human in the loop for decisions that materially affect individuals. Automated recommendations are fine. Fully automated consequential decisions are where the risk concentrates. Finally, maintain a registry that lists each AI system, what it does, what data it uses, and who owns it.
+For mid-market AI governance in Canada, the practical implications are straightforward. Know what data you are feeding into AI systems. If it includes personal information, you need consent and a clear purpose. Keep audit logs so that if a decision was informed by AI, you can explain how.
 
-In our engagements with mid-market teams, we have found that the four-layer framework above, applied with awareness of where personal data flows, satisfies these requirements without requiring a compliance department. The Deloitte "State of AI in the Enterprise" survey reinforces this: organisations that embed governance into their deployment process from the start report fewer compliance incidents than those that retrofit governance after the fact.
+Maintain a human in the loop for decisions that materially affect individuals. Automated recommendations are fine. Fully automated consequential decisions are where the risk concentrates. Finally, maintain a registry that lists each AI system, what it does, what data it uses, and who owns it.
+
+In our engagements with mid-market teams, we have found that the four-layer framework above, applied with awareness of where personal data flows, satisfies these requirements without requiring a compliance department. [Deloitte's "State of AI in the Enterprise" survey](https://www.deloitte.com/global/en/issues/data-and-analytics/state-of-ai-in-the-enterprise.html) reinforces this: organisations that embed governance into their deployment process from the start report fewer compliance incidents than those that retrofit governance after the fact.
 
 ## You can build the framework in eight weeks {#you-can-build-the-framework-in-eight-weeks}
 
@@ -97,9 +113,13 @@ The mistake is trying to build all four layers at once. Sequence them instead.
 
 **Weeks one and two: acceptable use policy.** Draft it, circulate it, get leadership sign-off. One page. This is the fastest way to move from "no governance" to "some governance," and it immediately reduces your highest risk: people using AI in ways the organisation has not sanctioned.
 
-**Weeks three and four: data classification.** Audit your data sources. Assign each one a tier. Map which AI tools are approved for which tiers. This connects directly to the data inventory work in our [Data Readiness](/services/data-readiness/) service. If you have already been through that engagement, you have most of this done.
+**Weeks three and four: data classification.** Audit your data sources. Assign each one a tier. Map which AI tools are approved for which tiers.
 
-**Weeks five and six: tool governance.** Migrate from personal accounts to enterprise accounts. Set up SSO. Enable audit logging. This is an IT project, and it is usually simpler than people expect. Most major AI platforms support enterprise deployment with standard identity providers. We delivered an [AI enablement roadmap for a housing services organisation](/our-work/community-housing-organisation/) that included this migration as part of the initial sprint.
+This connects directly to the data inventory work in our [Data Readiness](/services/data-readiness/) service. If you have already been through that engagement, you have most of this done.
+
+**Weeks five and six: tool governance.** Migrate from personal accounts to enterprise accounts. Set up SSO. Enable audit logging. This is an IT project, and it is usually simpler than people expect.
+
+Most major AI platforms support enterprise deployment with standard identity providers. We delivered an [AI enablement roadmap for a housing services organisation](/our-work/community-housing-organisation/) that included this migration as part of the initial sprint.
 
 **Weeks seven and eight: review process.** By now, your team has been building under the first three layers. You have real workflows to evaluate. Define what "production-ready" means and apply that standard to whatever has been built. Our [Discovery service](/services/discovery/) often produces the initial use case inventory that feeds directly into this review layer.
 
@@ -107,10 +127,18 @@ Eight weeks. One leader owning it part-time. That is the timeline for a working 
 
 ## Governance that kills adoption is worse than no governance {#governance-that-kills-adoption-is-worse-than-no-governance}
 
-Here is the tension nobody talks about enough. Governance that is too heavy kills adoption. People route around it. They go back to personal accounts and free tools because the approved path has too much friction. You end up with a governance framework that looks good on paper and governs nothing.
+Here is the tension nobody talks about enough. Governance that is too heavy kills adoption. People route around it.
+
+They go back to personal accounts and free tools because the approved path has too much friction. You end up with a governance framework that looks good on paper and governs nothing.
 
 No governance is worse. Sensitive data ends up in systems you do not control. Decisions get made based on outputs nobody validated. When something goes wrong, and eventually it will, you have no audit trail.
 
-The balance is design, not policy. Make the governed path easier than the ungoverned path. If the approved AI tool requires seven clicks and a justification form, but a personal account requires zero, you have already lost. Enterprise accounts should be pre-provisioned. Templates should be ready. Access should be instant. The organisations that get AI governance right treat it as a product, not a compliance exercise. They measure adoption of governed tools the same way they measure adoption of any internal system. Low adoption is not a people problem. It is a design problem.
+The balance is design, not policy. Make the governed path easier than the ungoverned path. If the approved AI tool requires seven clicks and a justification form, but a personal account requires zero, you have already lost.
 
-Governance exists to reduce risk. But the biggest risk is not that people use AI irresponsibly. It is that they use it invisibly. A governance framework that drives AI usage underground is worse than no framework at all. Build one that people actually want to use, and start with a [Discovery engagement](/services/discovery/) to understand where AI is already showing up in your organisation.
+Enterprise accounts should be pre-provisioned. Templates should be ready. Access should be instant.
+
+The organisations that get AI governance right treat it as a product, not a compliance exercise. They measure adoption of governed tools the same way they measure adoption of any internal system. Low adoption is not a people problem. It is a design problem.
+
+Governance exists to reduce risk. But the biggest risk is not that people use AI irresponsibly. It is that they use it invisibly.
+
+A governance framework that drives AI usage underground is worse than no framework at all. Build one that people actually want to use, and start with a [Discovery engagement](/services/discovery/) to understand where AI is already showing up in your organisation.

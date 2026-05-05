@@ -186,7 +186,7 @@ export function BlogPostPage({
             <img
               src={heroImage}
               alt={h1}
-              className="aspect-[16/9] w-full rounded-md object-cover object-top"
+              className="w-full rounded-md"
               width={1600}
               height={900}
             />

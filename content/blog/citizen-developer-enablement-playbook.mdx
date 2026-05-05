@@ -60,11 +60,15 @@ faq:
 
 Your employees already know how to do their work. The reason they cannot build tools around that knowledge is that the interface has always required them to think like developers. That constraint is gone.
 
-Citizen developer enablement in 2026 is not about low-code platforms with drag-and-drop builders. It is about giving every employee a governed path from describing their work in plain English to running a production tool against live data. The architecture that makes this possible combines Claude as the reasoning layer, [MCP servers](/tools/mcp/) for data connectivity, and an SDLC plugin for governance. Organisations that deploy this model correctly see their first working tools within weeks, not quarters. The hard part is not the technology; it is the decision to start.
+Citizen developer enablement in 2026 is not about low-code platforms with drag-and-drop builders. It is about giving every employee a governed path from describing their work in plain English to running a production tool against live data. The architecture that makes this possible combines Claude as the reasoning layer, [MCP servers](/tools/mcp/) for data connectivity, and an SDLC plugin for governance.
+
+Organisations that deploy this model correctly see their first working tools within weeks, not quarters. The hard part is not the technology; it is the decision to start.
 
 ### Why now
 
-The timing matters because two things converged in the past year. First, large language models became reliable enough to follow multi-step business logic without constant correction. [Anthropic's documentation on Claude's capabilities](https://docs.anthropic.com/en/docs) details the reasoning improvements that make this practical. Second, the Model Context Protocol (MCP) created a standard way to connect AI to enterprise systems, which means citizen-built tools can work against real CRM, ERP, and document data instead of sample datasets.
+The timing matters because two things converged in the past year. First, large language models became reliable enough to follow multi-step business logic without constant correction. Anthropic's documentation on [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) details the reasoning improvements that make this practical.
+
+Second, the [Model Context Protocol (MCP)](https://docs.anthropic.com/en/docs/agents-and-tools/mcp) created a standard way to connect AI to enterprise systems, which means citizen-built tools can work against real CRM, ERP, and document data instead of sample datasets.
 
 [McKinsey's 2024 "The state of AI" survey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that organisations now report the highest AI adoption rates ever recorded, with a growing share of that adoption driven by non-technical users. The citizen developer wave is not theoretical. It is happening, and organisations without a governed programme are watching it happen on personal accounts they cannot see.
 
@@ -72,7 +76,9 @@ The timing matters because two things converged in the past year. First, large l
 
 The original citizen developer model promised that business users could build their own applications. The reality was narrower. Platforms like Power Apps, Mendix, and OutSystems let non-technical people build forms, wire up simple logic, and connect to a limited set of data sources.
 
-It worked for basic CRUD operations. Need a request form that writes to a SharePoint list? Done. Need an approval workflow with three steps? Covered. But the moment a citizen developer needed to touch real business logic (pulling data from a legacy ERP, writing conditional rules against complex datasets, building something beyond drag-and-drop), they were back in IT's queue.
+It worked for basic CRUD operations. Need a request form that writes to a SharePoint list? Done. Need an approval workflow with three steps? Covered.
+
+But the moment a citizen developer needed to touch real business logic (pulling data from a legacy ERP, writing conditional rules against complex datasets, building something beyond drag-and-drop), they were back in IT's queue.
 
 The model had a ceiling, and most organisations hit it quickly. Citizen development became a label for form builders and basic automation. The hard work stayed where it always was. The operations manager who needed to pull data from three systems, apply conditional logic, and produce a formatted output was still filing a ticket with IT and waiting weeks for a response.
 
@@ -82,19 +88,27 @@ In our engagements, we have seen this ceiling firsthand. When we deployed [citiz
 
 The constraint was never the people. It was the interface. Business users understood their work deeply. They just could not express that understanding in a way that produced working software.
 
-Claude changes the interface. An operations manager who can describe her weekly compliance review in plain English can now build a working tool that performs that review against live data. Not a form. Not a simple automation. A tool that reads documents, applies rules, and produces output she would trust.
+Claude changes the interface. An operations manager who can describe her weekly compliance review in plain English can now build a working tool that performs that review against live data.
 
-The architecture has three parts. Claude provides the reasoning and generation layer. [MCP servers](/tools/mcp/) connect Claude to your actual systems: your CRM, your ERP, your file storage. And a governed environment with an SDLC plugin ensures that everything built is auditable, versioned, and replicable. We have written about [how to build custom MCP servers](/blog/how-to-build-a-custom-mcp-server/) for organisations that need connections to proprietary systems.
+Not a form. Not a simple automation. A tool that reads documents, applies rules, and produces output she would trust.
 
-The difference from the low-code era is not incremental. When you give people an interface that matches how they think (natural language, against real data), the set of problems they can solve expands dramatically. [Gartner's Hype Cycle for AI](https://www.gartner.com/en/articles/what-s-new-in-artificial-intelligence-from-the-2023-gartner-hype-cycle) identifies this natural-language interface shift as a key enabler for enterprise AI adoption beyond pilot stage.
+The architecture has three parts. Claude provides the reasoning and generation layer. [MCP servers](/tools/mcp/) connect Claude to your actual systems: your CRM, your ERP, your file storage. And a governed environment with an SDLC plugin ensures that everything built is auditable, versioned, and replicable.
+
+We have written about [how to build custom MCP servers](/blog/how-to-build-a-custom-mcp-server/) for organisations that need connections to proprietary systems.
+
+The difference from the low-code era is not incremental. When you give people an interface that matches how they think (natural language, against real data), the set of problems they can solve expands dramatically. [Gartner's Hype Cycle for AI](https://www.gartner.com/en/articles/what-s-new-in-artificial-intelligence-from-the-2024-gartner-hype-cycle) identifies this natural-language interface shift as a key enabler for enterprise AI adoption beyond pilot stage.
 
 ## Four steps to a governed citizen developer programme {#four-steps-governed-programme}
 
 Citizen developer programmes fail when they start with technology and hope adoption follows. They succeed when they start with the people who are already motivated and install infrastructure around them.
 
-**Step one: find the people already using AI.** Every mid-market organisation has them. Someone in operations who has been pasting data into Claude. Someone in finance who built a prompt template for monthly reporting. Find them. Learn what they built. That is your first proof point and your best signal for where to invest. Our [shadow AI governance post](/blog/shadow-ai-governance/) covers how to surface this existing usage.
+**Step one: find the people already using AI.** Every mid-market organisation has them. Someone in operations who has been pasting data into Claude. Someone in finance who built a prompt template for monthly reporting. Find them. Learn what they built.
 
-**Step two: install governance and guardrails.** Before you scale anything, the governed environment needs to be in place. The SDLC plugin enforces review. Permissions are scoped. Sensitive data is classified. Every project has a defined boundary. This is not bureaucracy. It is the infrastructure that lets you say yes to more people building more things. We cover the governance framework in detail in our [AI governance post](/blog/ai-governance-framework-mid-market/).
+That is your first proof point and your best signal for where to invest. Our [shadow AI governance post](/blog/shadow-ai-governance/) covers how to surface this existing usage.
+
+**Step two: install governance and guardrails.** Before you scale anything, the governed environment needs to be in place. The SDLC plugin enforces review. Permissions are scoped. Sensitive data is classified. Every project has a defined boundary.
+
+This is not bureaucracy. It is the infrastructure that lets you say yes to more people building more things. We cover the governance framework in detail in our [AI governance post](/blog/ai-governance-framework-mid-market/).
 
 **Step three: connect to real data via MCP.** The value of a citizen-built tool is directly proportional to the data it can access. Pre-wired [MCP connections](/tools/mcp/) to your operational systems (your CRM, your ERP, your document stores) mean the first tool someone builds works against real data, not a sample dataset. Our [custom AI agents](/tools/custom-ai-agents/) page explains how these connections work in practice.
 
@@ -110,7 +124,9 @@ We have run this playbook enough times to know what the timeline looks like when
 
 The speed matters. Not because fast is better than careful, but because the feedback loop between building and learning is the mechanism that makes the programme work. Every week your team spends planning instead of building is a week without the data that tells you what actually works. The sooner your team is building real things in a governed environment, the sooner you know which workflows matter and which do not.
 
-In our engagements, we have seen this timeline hold consistently. The [compliance intelligence agent](/our-work/fire-protection-compliance/) we built for a construction firm started with a single domain expert describing regulatory compliance rules in plain English. Within two weeks, the governed environment was deployed, MCP connections to the code library were configured, and the team was building against real data. By day 30, the tool was handling compliance lookups that previously required hours of manual cross-referencing.
+In our engagements, we have seen this timeline hold consistently. The [compliance intelligence agent](/our-work/fire-protection-compliance/) we built for a construction firm started with a single domain expert describing regulatory compliance rules in plain English.
+
+Within two weeks, the governed environment was deployed, MCP connections to the code library were configured, and the team was building against real data. By day 30, the tool was handling compliance lookups that previously required hours of manual cross-referencing.
 
 ## Mid-market organisations have the right conditions for this {#mid-market-right-conditions}
 
@@ -118,8 +134,10 @@ Enterprise organisations have the budget for citizen development platforms. They
 
 Mid-market is different. You have enough operational complexity to benefit: real workflows, real pain points, real data. You also have the organisational agility to move from decision to deployment in weeks, not quarters.
 
-[Microsoft's Work Trend Index](https://www.microsoft.com/en-us/worklab/work-trend-index) reports that mid-market organisations consistently adopt AI tools faster than enterprise counterparts, precisely because shorter decision chains allow faster iteration. Our work with a [housing services organisation](/our-work/community-housing-organisation/) confirmed this pattern. The team went from initial assessment to governed deployment faster than any enterprise engagement we have seen.
+[Microsoft's Work Trend Index](https://www.microsoft.com/en-us/worklab/work-trend-index/) reports that mid-market organisations consistently adopt AI tools faster than enterprise counterparts, precisely because shorter decision chains allow faster iteration. Our work with a [housing services organisation](/our-work/community-housing-organisation/) confirmed this pattern. The team went from initial assessment to governed deployment faster than any enterprise engagement we have seen.
 
 That speed is not available at enterprise scale. And at small-business scale, the operational complexity rarely justifies the investment. Mid-market is the zone where the economics, the organisational structure, and the problem set all align. You have enough pain points to make it worth doing and enough agility to start doing it this month.
 
-The playbook is not complicated. Find the people. Install the governance. Connect the data. Build the graduation path. If you are ready to start, [our Citizen Development service](/services/citizen-development/) deploys the full governed environment in the first sprint.
+The playbook is not complicated. Find the people. Install the governance. Connect the data. Build the graduation path.
+
+If you are ready to start, [our Citizen Development service](/services/citizen-development/) deploys the full governed environment in the first sprint.

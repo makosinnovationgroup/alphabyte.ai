@@ -127,6 +127,12 @@ function buildMdxComponents(
         />
       );
     },
+    a: (props: React.ComponentPropsWithoutRef<"a">) => (
+      <a
+        {...props}
+        className="text-alphabyte-blue underline decoration-alphabyte-blue/30 underline-offset-2 transition-colors hover:decoration-alphabyte-blue"
+      />
+    ),
     p: (props: React.ComponentPropsWithoutRef<"p">) => (
       <p {...props} className="text-body text-foreground" />
     ),

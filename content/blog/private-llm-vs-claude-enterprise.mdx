@@ -49,23 +49,31 @@ faq:
 
 "Our data cannot leave our network." We hear this on every third discovery call. Sometimes it is a genuine regulatory requirement. Sometimes it is an organisational preference inherited from a prior security review that predates how cloud AI actually handles data.
 
-The distinction matters. A genuine compliance mandate is a hard constraint that points toward on-premise infrastructure. An organisational preference is a policy decision that can be revisited when the facts change. Most mid-market companies fall into the second category. They assume cloud AI means their proprietary data enters a training pipeline and becomes part of a public model. That assumption is outdated. Before committing to the cost and complexity of a [private LLM](/tools/on-premise-llm/), it is worth examining whether the constraint is regulatory or preferential.
+The distinction matters. A genuine compliance mandate is a hard constraint that points toward on-premise infrastructure. An organisational preference is a policy decision that can be revisited when the facts change.
+
+Most mid-market companies fall into the second category. They assume cloud AI means their proprietary data enters a training pipeline and becomes part of a public model. That assumption is outdated. Before committing to the cost and complexity of a [private LLM](/tools/on-premise-llm/), it is worth examining whether the constraint is regulatory or preferential.
 
 ### Why this matters now
 
-The cost gap between on-premise LLM infrastructure and cloud AI has widened, not narrowed. GPU hardware costs remain high, and the capability gap between self-hosted open-weight models and frontier models like Claude continues to grow. Anthropic's enterprise offerings now include [zero-retention processing and SOC 2 Type II compliance](https://docs.anthropic.com/en/docs), which satisfy the data handling requirements that most mid-market companies actually face. Meanwhile, Canadian organisations preparing for Bill C-27 (the Digital Charter Implementation Act) need to understand what their specific compliance obligations actually require, rather than defaulting to on-premise because it sounds safer.
+The cost gap between on-premise LLM infrastructure and cloud AI has widened, not narrowed. GPU hardware costs remain high, and the capability gap between self-hosted open-weight models and frontier models like Claude continues to grow.
+
+Anthropic's enterprise offerings now include [zero-retention processing and SOC 2 Type II compliance](https://docs.anthropic.com/en/docs), which satisfy the data handling requirements that most mid-market companies actually face. Meanwhile, Canadian organisations preparing for [Bill C-27](https://www.parl.ca/legisinfo/en/bill/44-1/c-27) (the Digital Charter Implementation Act) need to understand what their specific compliance obligations actually require, rather than defaulting to on-premise because it sounds safer.
 
 ## Is Your Data Constraint Regulatory or Preferential? {#regulatory-or-preferential}
 
 The first question in the private LLM decision is whether your data sovereignty requirement comes from a regulator or from an internal policy. These are fundamentally different constraints with different implications.
 
-A regulatory constraint is specific and verifiable. Your regulator requires data residency within a specific jurisdiction. Your contract with a government agency prohibits third-party processing. An audit finding requires that certain data categories never leave your physical infrastructure. These are hard constraints. If your compliance officer has identified a specific regulation, clause, or audit finding, the conversation about on-premise is straightforward.
+A regulatory constraint is specific and verifiable. Your regulator requires data residency within a specific jurisdiction. Your contract with a government agency prohibits third-party processing. An audit finding requires that certain data categories never leave your physical infrastructure.
+
+These are hard constraints. If your compliance officer has identified a specific regulation, clause, or audit finding, the conversation about on-premise is straightforward.
 
 A preferential constraint is an organisational policy, often written before the current generation of cloud AI data handling existed. "We do not send data to third parties" is a common policy. But it was written when "sending data to a third party" meant that data would be stored, indexed, and potentially accessible indefinitely. That is not how [Claude Enterprise](/tools/claude/) works.
 
-In our engagements, we have seen this distinction matter repeatedly. A housing services organisation we worked with had a blanket policy against cloud AI. When we reviewed the actual regulatory requirements with their compliance team, the mandate was about data retention, not data processing. Claude Enterprise's zero-retention model satisfied the requirement without any on-premise infrastructure. If you are building a governance framework for the first time, our [AI governance framework for mid-market](/blog/ai-governance-framework-mid-market/) post walks through how to distinguish between regulatory and preferential constraints.
+In our engagements, we have seen this distinction matter repeatedly. A housing services organisation we worked with had a blanket policy against cloud AI. When we reviewed the actual regulatory requirements with their compliance team, the mandate was about data retention, not data processing.
 
-Deloitte's "State of AI in the Enterprise" survey found that data privacy and security concerns remain the most cited barrier to AI adoption, but that organisations which conducted specific policy reviews (rather than applying blanket restrictions) were significantly more likely to move into production deployment ([Deloitte, 2024](https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-ai-in-the-enterprise.html)).
+Claude Enterprise's zero-retention model satisfied the requirement without any on-premise infrastructure. If you are building a governance framework for the first time, our [AI governance framework for mid-market](/blog/ai-governance-framework-mid-market/) post walks through how to distinguish between regulatory and preferential constraints.
+
+[Deloitte's "State of AI in the Enterprise" survey](https://www.deloitte.com/global/en/issues/data-and-analytics/state-of-ai-in-the-enterprise.html) found that data privacy and security concerns remain the most cited barrier to AI adoption. Organisations which conducted specific policy reviews, rather than applying blanket restrictions, were significantly more likely to move into production deployment.
 
 ## Claude Enterprise Already Provides Zero-Retention Processing {#what-claude-enterprise-provides}
 
@@ -78,9 +86,11 @@ Here is what Claude Enterprise's data handling actually looks like:
 
 The common misconception is that sending data to an API means that data lives on someone else's server indefinitely. With Claude Enterprise, the data is processed and returned. It is not stored, not indexed, not used for any purpose beyond generating your response. Anthropic's [data handling documentation](https://docs.anthropic.com/en/docs) provides the full technical specification.
 
-For most mid-market companies, this meets the compliance bar. Professional services firms, manufacturers, logistics operators, and financial advisors all operate under data handling requirements that zero-retention processing satisfies. That is a stronger data handling posture than most companies maintain for their own internal systems. The question is not whether the cloud is secure enough. It is whether your on-premise alternative would actually be more secure than what Anthropic already provides.
+For most mid-market companies, this meets the compliance bar. Professional services firms, manufacturers, logistics operators, and financial advisors all operate under data handling requirements that zero-retention processing satisfies.
 
-For Canadian organisations, PIPEDA requires that personal information be protected by appropriate safeguards during processing. Zero-retention processing, SOC 2 compliance, and administrative access controls satisfy this standard for most use cases. The [shadow AI governance](/blog/shadow-ai-governance/) risk is often greater: employees using ungoverned consumer AI tools with no data handling guarantees at all.
+That is a stronger data handling posture than most companies maintain for their own internal systems. The question is not whether the cloud is secure enough. It is whether your on-premise alternative would actually be more secure than what Anthropic already provides.
+
+For Canadian organisations, [PIPEDA](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/) requires that personal information be protected by appropriate safeguards during processing. Zero-retention processing, SOC 2 compliance, and administrative access controls satisfy this standard for most use cases. The [shadow AI governance](/blog/shadow-ai-governance/) risk is often greater: employees using ungoverned consumer AI tools with no data handling guarantees at all.
 
 ## When Does On-Premise Actually Make Sense? {#when-on-premise-makes-sense}
 
@@ -94,7 +104,7 @@ There are legitimate cases where a [private LLM](/tools/on-premise-llm/) is the 
 
 *Specialised fine-tuning requirements.* If your use case requires a model trained on proprietary data, such as medical imaging analysis or specialised document classification, a self-hosted fine-tuned model may outperform a general-purpose model on that narrow task. This applies primarily to organisations with large, domain-specific training datasets and the ML engineering staff to maintain the fine-tuning pipeline.
 
-McKinsey's 2024 "The state of AI" survey noted that only a minority of organisations reported deploying self-hosted models, and that the primary driver in nearly every case was a specific regulatory mandate rather than a general security preference ([McKinsey, 2024](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)). For more detail on what the [Infrastructure service](/services/infrastructure/) involves when on-premise is the right call, that page covers the full engagement model.
+[McKinsey's 2024 "The state of AI" survey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) noted that only a minority of organisations reported deploying self-hosted models, and that the primary driver in nearly every case was a specific regulatory mandate rather than a general security preference. For more detail on what the [Infrastructure service](/services/infrastructure/) involves when on-premise is the right call, that page covers the full engagement model.
 
 ## How Should You Decide Between Private LLM and Cloud AI? {#the-decision-framework}
 
@@ -106,8 +116,12 @@ Here is the decision tree we walk through with clients.
 
 **Third: what is the total cost of ownership?** On-premise LLM infrastructure is not a one-time purchase. You need GPU hardware (or a dedicated cloud partition), ongoing maintenance, model updates, inference optimisation, and staff who understand the stack. For a mid-market company, that is typically $200K to $500K in year one and $100K or more annually after that. Compare that against API-based pricing that scales with actual usage.
 
-**Fourth: is the capability gap acceptable?** On-premise models are smaller. A self-hosted 70B parameter model is capable, but it is not Claude. If your use cases require strong reasoning, long-context understanding, or nuanced language generation, the gap is significant. We saw this directly when building an [executive productivity suite](/our-work/circular-economy-platform/) with purpose-built Claude agents: the quality of [Claude's reasoning](/tools/claude/) on complex cross-system queries was materially better than what open-weight alternatives produced.
+**Fourth: is the capability gap acceptable?** On-premise models are smaller. A self-hosted 70B parameter model is capable, but it is not Claude. If your use cases require strong reasoning, long-context understanding, or nuanced language generation, the gap is significant.
+
+We saw this directly when building an [executive productivity suite](/our-work/circular-economy-platform/) with purpose-built Claude agents: the quality of [Claude's reasoning](/tools/claude/) on complex cross-system queries was materially better than what open-weight alternatives produced.
 
 Most mid-market companies land on Claude Enterprise. The ones that genuinely need on-premise know it before they finish reading this post, because their compliance officer already told them.
 
-In our engagements, the private LLM conversation usually resolves in the first week. The actual data handling requirements, once reviewed against current cloud AI safeguards, rarely require on-premise. The more productive conversation is about which systems to connect to Claude first and how to govern the rollout. If you are still deciding, a [Discovery engagement](/services/discovery/) is where we help you map the specific requirements to the right infrastructure model. If you are comparing Claude to other cloud options, our [Claude vs ChatGPT Enterprise](/blog/claude-vs-chatgpt-enterprise/) and [Claude vs Microsoft Copilot](/blog/claude-vs-microsoft-copilot/) comparisons cover that ground.
+In our engagements, the private LLM conversation usually resolves in the first week. The actual data handling requirements, once reviewed against current cloud AI safeguards, rarely require on-premise. The more productive conversation is about which systems to connect to Claude first and how to govern the rollout.
+
+If you are still deciding, a [Discovery engagement](/services/discovery/) is where we help you map the specific requirements to the right infrastructure model. If you are comparing Claude to other cloud options, our [Claude vs ChatGPT Enterprise](/blog/claude-vs-chatgpt-enterprise/) and [Claude vs Microsoft Copilot](/blog/claude-vs-microsoft-copilot/) comparisons cover that ground.

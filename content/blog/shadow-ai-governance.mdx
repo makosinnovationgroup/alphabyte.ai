@@ -47,17 +47,23 @@ faq:
 
 Your employees are already using AI on personal accounts your IT team cannot see. The question is not whether shadow AI exists in your organisation, but whether you govern it before it creates a compliance incident.
 
-Shadow AI governance does not require banning personal tools or restricting productivity. It requires making existing usage visible, providing a governed alternative that is at least as capable, and migrating workflows into an environment you control. The goal is to bring existing productivity into a governed environment, not to eliminate it. Organisations that treat shadow AI as an adoption signal rather than a compliance failure move faster and retain their most productive people. The [Discovery service](/services/discovery/) we run with mid-market teams starts with exactly this assessment.
+Shadow AI governance does not require banning personal tools or restricting productivity. It requires making existing usage visible, providing a governed alternative that is at least as capable, and migrating workflows into an environment you control. The goal is to bring existing productivity into a governed environment, not to eliminate it.
+
+Organisations that treat shadow AI as an adoption signal rather than a compliance failure move faster and retain their most productive people. The [Discovery service](/services/discovery/) we run with mid-market teams starts with exactly this assessment.
 
 ## Most mid-market organisations already have a shadow AI problem {#most-orgs-already-have-shadow-ai}
 
 The pattern is predictable. An employee discovers that AI saves two or three hours a week on a recurring task. They sign up for a personal account, start using it, and build workflows around it. Sometimes they share tips with colleagues in Slack threads or over lunch. None of this is visible to IT.
 
-According to [McKinsey's 2024 "The state of AI" survey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), 72 percent of organisations now report AI adoption, up from 55 percent the prior year. But much of that adoption happens outside formal programmes. At mid-market scale, that means dozens or hundreds of employees with ungoverned AI workflows touching real business data every day. The usage is not occasional or experimental. These are weekly workflows that people depend on, and each one represents data flowing outside your governance perimeter.
+According to [McKinsey's 2024 "The state of AI" survey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), 72 percent of organisations now report AI adoption, up from 55 percent the prior year. But much of that adoption happens outside formal programmes. At mid-market scale, that means dozens or hundreds of employees with ungoverned AI workflows touching real business data every day.
 
-The data flowing into consumer AI accounts (customer names, financial figures, internal strategies, proprietary processes) is governed only by whatever terms of service the employee accepted on a personal credit card. Under Canadian privacy legislation like [PIPEDA and the proposed Bill C-27](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/), this creates real compliance exposure. The employee may not even realise they are creating a liability. They are solving a problem, and the consumer tool was the fastest path to a solution.
+The usage is not occasional or experimental. These are weekly workflows that people depend on, and each one represents data flowing outside your governance perimeter.
 
-In our engagements, we have seen this pattern at every mid-market organisation we assess. When we delivered an [AI enablement roadmap for a housing services organisation](/our-work/community-housing-organisation/), the first finding was that multiple teams had already built personal AI workflows for reporting and document review. The risk was not that employees were using AI. The risk was that nobody could see it, control it, or account for what data was leaving the organisation.
+The data flowing into consumer AI accounts (customer names, financial figures, internal strategies, proprietary processes) is governed only by whatever terms of service the employee accepted on a personal credit card. Under Canadian privacy legislation like [PIPEDA](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/) and the proposed [Bill C-27](https://www.parl.ca/legisinfo/en/bill/44-1/c-27), this creates real compliance exposure. The employee may not even realise they are creating a liability. They are solving a problem, and the consumer tool was the fastest path to a solution.
+
+In our engagements, we have seen this pattern at every mid-market organisation we assess. When we delivered an [AI enablement roadmap for a housing services organisation](/our-work/community-housing-organisation/), the first finding was that multiple teams had already built personal AI workflows for reporting and document review.
+
+The risk was not that employees were using AI. The risk was that nobody could see it, control it, or account for what data was leaving the organisation.
 
 ## Banning AI tools makes the problem worse {#banning-ai-makes-problem-worse}
 
@@ -65,9 +71,11 @@ The instinctive response is to issue a policy, block the URLs, and declare the p
 
 First, usage goes underground. Employees switch to mobile devices, personal laptops, or tools you have not thought to block. You lose whatever limited visibility you had. The data exposure continues; you just stopped hearing about it.
 
-Second, you lose your best people's best work. The employees using AI are not your underperformers. They are the ones who figured out how to draft a proposal in 20 minutes instead of two hours, who automated weekly reporting, who found a way to analyse data they previously could not touch. Banning AI penalises initiative and tells your most resourceful people that efficiency is not valued. In our engagements, we have seen top-performing analysts and operations leads quietly revert to manual processes after a ban, losing hours per week they had already reclaimed.
+Second, you lose your best people's best work. The employees using AI are not your underperformers. They are the ones who figured out how to draft a proposal in 20 minutes instead of two hours, who automated weekly reporting, who found a way to analyse data they previously could not touch.
 
-Third, you fall behind. [Deloitte's "State of AI in the Enterprise" survey](https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-ai-in-the-enterprise.html) consistently finds that organisations with formal AI governance programmes scale adoption faster than those without. Every month spent on prohibition is a month your competitors spend on adoption. The gap compounds.
+Banning AI penalises initiative and tells your most resourceful people that efficiency is not valued. In our engagements, we have seen top-performing analysts and operations leads quietly revert to manual processes after a ban, losing hours per week they had already reclaimed.
+
+Third, you fall behind. [Deloitte's "State of AI in the Enterprise" survey](https://www.deloitte.com/global/en/issues/data-and-analytics/state-of-ai-in-the-enterprise.html) consistently finds that organisations with formal AI governance programmes scale adoption faster than those without. Every month spent on prohibition is a month your competitors spend on adoption. The gap compounds.
 
 The better question is not "how do we stop this" but "how do we make this visible and safe." Our [citizen developer enablement playbook](/blog/citizen-developer-enablement-playbook/) addresses the adoption side of this equation in detail. For teams already dealing with ungoverned usage, our [shadow AI assessment](/services/discovery/) maps the current landscape before any governance decisions are made.
 
@@ -77,21 +85,37 @@ Governance does not have to mean restriction. Done well, it means your team keep
 
 **Acknowledge the usage.** Start by understanding what is already happening. Survey your teams. Ask what tools they are using, what tasks they are automating, what data they are working with. This is not an audit; it is discovery. You need to know the landscape before you can govern it. Our [Discovery service](/services/discovery/) includes a shadow AI assessment as part of the initial sprint.
 
-**Provide a governed alternative.** Deploy enterprise AI accounts with SSO, data retention policies, and audit logging. [Anthropic's enterprise offering](https://docs.anthropic.com/en/docs) provides all three. The key is that the governed alternative must be at least as capable as what people are already using. If the enterprise tool is slower, more restricted, or harder to access, people will stay on their personal accounts. We have seen this firsthand: one organisation deployed an enterprise AI tool with a restrictive usage policy, and adoption stalled at under 15 percent. The personal accounts stayed active because the governed option felt like a downgrade.
+**Provide a governed alternative.** Deploy enterprise AI accounts with SSO, data retention policies, and audit logging. [Anthropic's enterprise offering](https://docs.anthropic.com/en/docs) provides all three. The key is that the governed alternative must be at least as capable as what people are already using. If the enterprise tool is slower, more restricted, or harder to access, people will stay on their personal accounts.
 
-**Migrate existing workflows.** This is the step most organisations skip. It is not enough to provision enterprise accounts and send a memo. You need to actively help teams move their existing workflows into the governed environment. The employee who built a content workflow on a personal Claude account needs help rebuilding it on the enterprise account, with the same functionality plus the governance layer. Our [citizen development service](/services/citizen-development/) handles this migration.
+We have seen this firsthand: one organisation deployed an enterprise AI tool with a restrictive usage policy, and adoption stalled at under 15 percent. The personal accounts stayed active because the governed option felt like a downgrade.
 
-**Build guardrails that enable.** Define what data can and cannot be shared with AI tools. Set up data loss prevention rules. Configure retention policies. A guardrail that says "customer PII must be anonymised before AI processing" is better than one that says "no customer data in AI tools." The first gives people a path forward. The second sends them back to personal accounts. The distinction matters: enabling guardrails increase usage of the governed platform, while restrictive guardrails push usage back to ungoverned tools. We have written about [how to build governance frameworks for mid-market organisations](/blog/ai-governance-framework-mid-market/) that balance security with usability.
+**Migrate existing workflows.** This is the step most organisations skip. It is not enough to provision enterprise accounts and send a memo. You need to actively help teams move their existing workflows into the governed environment.
+
+The employee who built a content workflow on a personal Claude account needs help rebuilding it on the enterprise account, with the same functionality plus the governance layer. Our [citizen development service](/services/citizen-development/) handles this migration.
+
+**Build guardrails that enable.** Define what data can and cannot be shared with AI tools. Set up data loss prevention rules. Configure retention policies.
+
+A guardrail that says "customer PII must be anonymised before AI processing" is better than one that says "no customer data in AI tools." The first gives people a path forward. The second sends them back to personal accounts.
+
+The distinction matters: enabling guardrails increase usage of the governed platform, while restrictive guardrails push usage back to ungoverned tools. We have written about [how to build governance frameworks for mid-market organisations](/blog/ai-governance-framework-mid-market/) that balance security with usability.
 
 ## What governed AI usage looks like in practice {#governed-ai-usage-in-practice}
 
-In a governed environment, every employee accesses AI through your enterprise account, authenticated via SSO. No personal accounts, no consumer tools, no data leaving your environment through side channels. Every interaction is logged (not to surveil employees, but to understand usage patterns, identify high-value workflows, and maintain an audit trail for compliance).
+In a governed environment, every employee accesses AI through your enterprise account, authenticated via SSO. No personal accounts, no consumer tools, no data leaving your environment through side channels.
 
-Data stays in your tenant. Conversations, uploaded files, and generated outputs are retained according to your policies and deleted according to your schedules. Your data is not used to train models. Guardrails operate at the platform level: sensitive data categories are flagged automatically, and certain types of queries are routed or restricted based on the user's role and the data classification.
+Every interaction is logged (not to surveil employees, but to understand usage patterns, identify high-value workflows, and maintain an audit trail for compliance).
 
-The difference for the employee is minimal. They still use AI in the same way. They still get the same quality of output. The difference for the organisation is significant: full visibility, full control, and a defensible answer when a regulator or client asks how you handle AI and data privacy. For organisations in regulated industries, this shift from invisible consumer usage to visible governed usage is not optional. It is a requirement that grows more urgent as Canadian privacy legislation evolves.
+Data stays in your tenant. Conversations, uploaded files, and generated outputs are retained according to your policies and deleted according to your schedules. Your data is not used to train models.
 
-The workflows your team built on personal accounts still work. The analyst still gets their weekly data summary. The operations lead still automates their reporting. The difference is that now you can see it, support it, and build on it. When a regulator or auditor asks how your organisation uses AI, you have an answer.
+Guardrails operate at the platform level: sensitive data categories are flagged automatically, and certain types of queries are routed or restricted based on the user's role and the data classification.
+
+The difference for the employee is minimal. They still use AI in the same way. They still get the same quality of output.
+
+The difference for the organisation is significant: full visibility, full control, and a defensible answer when a regulator or client asks how you handle AI and data privacy. For organisations in regulated industries, this shift from invisible consumer usage to visible governed usage is not optional. It is a requirement that grows more urgent as Canadian privacy legislation evolves.
+
+The workflows your team built on personal accounts still work. The analyst still gets their weekly data summary. The operations lead still automates their reporting.
+
+The difference is that now you can see it, support it, and build on it. When a regulator or auditor asks how your organisation uses AI, you have an answer.
 
 In our engagements, we have seen organisations complete this transition in weeks, not months. The construction firm we worked with on [compliance intelligence](/our-work/fire-protection-compliance/) moved from ungoverned personal AI usage to a fully governed environment with [custom MCP connections](/tools/mcp/) to their regulatory code library. The team kept their productivity gains. The organisation gained visibility and control.
 
