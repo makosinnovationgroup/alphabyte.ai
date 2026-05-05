@@ -131,21 +131,21 @@ export default function CustomAiAgentsPage() {
         inActiveUseSectionTitle="In active use today"
         inActiveUse={[
           {
-            eyebrow: "Fire Protection Contractor · North America",
-            title: "NFPA compliance agent \u2014 live in production",
-            body: "Eliminated 40+ hours per week of manual fire codes lookup. Operates against a custom MCP server. Citation-grade accuracy. Human review gate for edge cases.",
+            eyebrow: "Construction Firm · North America",
+            title: "Compliance intelligence agent, live in production",
+            body: "Custom AI agent navigating a full regulatory code library via knowledge graph. Operates against a custom MCP server. Citation-grade accuracy with traceable source pages.",
             href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "Fire Protection Contractor · PE-Backed",
-            title: "Five-agent Command System",
-            body: "Five specialized autonomous agents operating in isolated Azure sandboxes, controlled through a custom Slack plugin with a human approval gate.",
+            eyebrow: "Construction Firm · Multi-Entity",
+            title: "Modular agent architecture",
+            body: "Agent architecture built for expansion across estimating, operations management, and project documentation. Each agent operates within established access controls.",
             href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "Circular Economy Startup",
-            title: "Sales Command Centre",
-            body: "Claude conducts semantic analysis of live WhatsApp sales conversations and feeds structured output into a real-time BigQuery dashboard.",
+            eyebrow: "Major Supplier · Reverse Logistics",
+            title: "Executive productivity suite",
+            body: "Purpose-built agents delivering automated morning briefs, spend reports, and post-call summaries across GSuite, Slack, Power BI, and Fireflies.",
             href: "/our-work/circular-economy-platform/",
           },
         ]}

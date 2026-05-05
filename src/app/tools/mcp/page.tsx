@@ -126,15 +126,15 @@ export default function McpPage() {
         inActiveUseSectionTitle="In active use today"
         inActiveUse={[
           {
-            eyebrow: "Fire Protection Contractor",
-            title: "NFPA codes library connection",
-            body: "Full NFPA codes library accessible to Claude through a custom MCP server with OAuth 2.0 security. Powers the live NFPA compliance agent in production.",
+            eyebrow: "Construction Firm",
+            title: "Regulatory code library connection",
+            body: "Full regulatory code library accessible to Claude through a custom MCP server integrated into Claude Desktop. Powers the live compliance intelligence agent in production.",
             href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "Circular Economy Startup",
-            title: "Google BigQuery connection",
-            body: "Claude reads and writes to live BigQuery data marts through a custom MCP server \u2014 powering the real-time sales intelligence dashboard.",
+            eyebrow: "Major Supplier · Reverse Logistics",
+            title: "Multi-system integration",
+            body: "Custom Claude plugin connecting GSuite, Slack, Power BI, Fireflies, and more through purpose-built agents. Automated briefs and on-demand workflows.",
             href: "/our-work/circular-economy-platform/",
           },
           {

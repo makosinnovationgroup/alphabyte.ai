@@ -37,9 +37,9 @@ export const navigation: NavItem[] = [
     label: "Our Work",
     href: "/our-work/",
     children: [
-      { label: "Fire Protection Compliance", href: "/our-work/fire-protection-compliance/" },
-      { label: "Circular Economy Platform", href: "/our-work/circular-economy-platform/" },
-      { label: "HSC", href: "/our-work/housing-services-corp/" },
+      { label: "Construction Compliance Agent", href: "/our-work/fire-protection-compliance/" },
+      { label: "Executive Productivity Suite", href: "/our-work/circular-economy-platform/" },
+      { label: "Community Housing Organisation", href: "/our-work/community-housing-organisation/" },
     ],
     footerLink: { label: "View all work", href: "/our-work/" },
   },

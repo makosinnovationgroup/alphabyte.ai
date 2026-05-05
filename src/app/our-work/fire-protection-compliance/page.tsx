@@ -5,30 +5,30 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Fire Protection Compliance — Intelligence Agent",
+  title: "Construction Firm — Compliance Intelligence Agent",
   description:
-    "How Alphabyte built a compliance intelligence agent for a $200M+ fire protection contractor — 40+ hours per week eliminated in manual NFPA code lookup, citation-grade accuracy, live in production.",
+    "How Alphabyte built an AI compliance agent for a multi-entity construction firm. Knowledge graph navigation across regulatory code libraries with citation-grade accuracy.",
   alternates: {
     canonical: "/our-work/fire-protection-compliance/",
   },
   openGraph: {
-    title: "Fire Protection Compliance — Intelligence Agent",
+    title: "Construction Firm — Compliance Intelligence Agent",
     description:
-      "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
+      "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
     url: "/our-work/fire-protection-compliance/",
     images: [
       {
         url: "/og/our-work-fire-protection-compliance.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Fire Protection Compliance — Intelligence Agent",
+        alt: "Alphabyte — Construction Firm — Compliance Intelligence Agent",
       },
     ],
   },
   twitter: {
-    title: "Fire Protection Compliance — Intelligence Agent",
+    title: "Construction Firm — Compliance Intelligence Agent",
     description:
-      "40+ hours per week eliminated in manual NFPA code lookup. Citation-grade accuracy. Live in production.",
+      "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
     images: ["/og/our-work-fire-protection-compliance.png"],
   },
 };
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Fire Protection Compliance — Intelligence Agent",
+  name: "Construction Firm — Compliance Intelligence Agent",
   description:
-    "How Alphabyte built a compliance intelligence agent for a $200M+ fire protection contractor — 40+ hours per week eliminated in manual NFPA code lookup.",
+    "How Alphabyte built a custom AI compliance agent for a multi-entity construction firm, navigating regulatory code libraries with knowledge graph architecture and citation-grade accuracy.",
   url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
   isPartOf: {
     "@type": "WebSite",
@@ -66,7 +66,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Fire Protection Compliance",
+      name: "Construction Firm — Compliance Agent",
       item: "https://alphabyte.ai/our-work/fire-protection-compliance/",
     },
   ],
@@ -76,58 +76,43 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "Background" },
   {
     type: "paragraph",
-    text: "The client is a fire protection company operating across multiple entities, specialising in the design, installation, and servicing of fire suppression systems. The company works against one of the most demanding compliance environments in any industry: the National Fire Protection Association (NFPA) fire code library.",
-  },
-  {
-    type: "paragraph",
-    text: "With a growing portfolio of projects and a technical team that depends on precise, code-level guidance daily, the client engaged Alphabyte to explore how AI could solve a compliance knowledge problem that no off-the-shelf tool had addressed.",
+    text: "A multi-entity construction firm operating across specialised trades is subject to mandatory national and state building codes across multiple jurisdictions. Project teams depend on precise, code-level guidance daily and had accumulated a large regulatory library spanning dozens of dense code-books with no scalable way to navigate it.",
   },
   { type: "heading", text: "The Challenge", indent: true },
   {
     type: "paragraph",
     indent: true,
-    text: "Fire protection work is code-driven at every level. Every system design, installation decision, and inspection outcome traces back to specific passages within the NFPA code library \u2014 dozens of large PDF documents totaling hundreds of pages of dense regulatory content.",
+    text: "Every design decision and installation specification traces back to a specific passage in a specific code document. Searching manually across hundreds of pages of cross-referential regulatory content was slow, inconsistent, and error-prone.",
   },
   {
     type: "paragraph",
     indent: true,
-    text: "Technical staff had to manually search through large, cross-referenced PDFs to locate the exact passage applicable to each project scenario. The volume and complexity made consistent, accurate lookups time-consuming and prone to human error. General-purpose AI tools could not solve this \u2014 context window limitations produce incomplete or unreliable outputs at this document scale.",
+    text: "General-purpose AI tools made it worse: fed a large document, they hit context limits and return answers that sound authoritative but cannot be verified. In a compliance environment where a missed reference carries safety and liability consequences, that is not good enough.",
+  },
+  { type: "heading", text: "Solution" },
+  {
+    type: "paragraph",
+    text: "Alphabyte built a custom AI compliance agent that navigates the firm's full regulatory library with precision. A team member describes a project scenario and the agent returns the applicable standard, the relevant passage, and the exact source page in seconds. Every response is traceable and citable.",
+  },
+  {
+    type: "paragraph",
+    text: "At the core is a knowledge graph: a structured map of how every section, chapter, and standard in the library connects. Instead of scanning documents blindly, the agent follows a documented path to the exact page it needs. When code editions are updated, new documents are processed through the same pipeline and added without rebuilding the architecture.",
+  },
+  { type: "heading", text: "MCP Integration and Org-Wide Access", indent: true },
+  {
+    type: "paragraph",
+    indent: true,
+    text: "The final solution integrated the raw compliance corpus and navigation knowledge graph into a custom MCP server for the organisation. Integrated into Claude Desktop, it enabled org-wide access so all departments have direct compliance context within their existing workflows.",
   },
   {
     type: "paragraph",
     indent: true,
-    text: "For a company where a missed or incorrect code reference carries real safety and liability consequences, an answer that is approximately right is not acceptable.",
+    text: "The MCP server also powers custom AI agentic workflows for automated compliance review of project blueprints and architecture plans.",
   },
-  { type: "heading", text: "Building the Knowledge Foundation" },
+  { type: "heading", text: "Built for Any Regulatory Domain" },
   {
     type: "paragraph",
-    text: "The core technical challenge was designing a system that routes an AI agent to the exact page of the exact document required to answer any compliance query. Alphabyte built a custom processing pipeline that ingested the client\u2019s full NFPA code library and transformed it into a structured knowledge graph.",
-  },
-  {
-    type: "paragraph",
-    text: "The knowledge graph maps every code standard, chapter, section, and cross-reference in the library. It generates a master manifest that serves as a navigation index: when a compliance question is submitted, the agent consults the manifest, identifies the applicable code family, routes to the correct chapters, and retrieves the specific page required. The agent follows a structured, documented path to every answer and does not generate responses from memory.",
-  },
-  {
-    type: "paragraph",
-    text: "This architecture was necessary given the nature of the source material. Without a routing and indexing mechanism, a language model will either hallucinate or fail to surface the correct passage. In fire code compliance, neither outcome is operationally acceptable.",
-  },
-  { type: "heading", text: "The Compliance Intelligence Agent" },
-  {
-    type: "paragraph",
-    text: "With the knowledge foundation in place, Alphabyte built the agent layer as part of a Claude Cowork project. A team member describes a project scenario \u2014 building type, system configuration, or specific installation condition \u2014 and the agent returns the applicable code standard, the relevant passage, and the source page it was retrieved from. Every response is grounded in the actual document, not inferred.",
-  },
-  {
-    type: "paragraph",
-    text: "The agent is modular by design. Code editions are updated on a cycle and jurisdictional requirements vary by project. New or updated code sets can be processed through the same pipeline and incorporated into the knowledge graph without rebuilding the system architecture.",
-  },
-  { type: "heading", text: "A Platform Built for Expansion" },
-  {
-    type: "paragraph",
-    text: "The compliance agent is one component of a broader nine-initiative AI programme currently being developed for the client\u2019s operations. The agent sits within an orchestration layer that routes queries across multiple specialized agents as the programme scales. Compliance Intelligence is one domain. Estimating, operations management, and executive productivity are others in active development.",
-  },
-  {
-    type: "paragraph",
-    text: "A proprietary AI-powered fire protection estimating and design tool is under active development, with commercialization planned for 2026 and into 2027.",
+    text: "Built on Claude and Claude Cowork, the agent is modular by design and applies to any regulatory domain. AI agents like this one have further use cases in estimating, operations management, and project documentation.",
   },
 ];
 
@@ -144,61 +129,57 @@ export default function FireProtectionCompliancePage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "Fire Protection Compliance" },
+          { label: "Construction Firm — Compliance Agent" },
         ]}
-        eyebrow="CASE STUDY · FIRE PROTECTION · PE-BACKED · NORTH AMERICA"
+        eyebrow="CASE STUDY · CONSTRUCTION · MULTI-ENTITY · NORTH AMERICA"
         h1="AI-Powered Compliance Intelligence Agent"
-        subhead="$200M+ Fire Protection Contractor"
+        subhead="Multi-Entity Construction Firm"
         tagPills={[
           "Claude AI Agent",
           "Custom MCP Server",
-          "NFPA Compliance",
           "Knowledge Graph",
-          "Human-in-the-Loop",
+          "Compliance",
+          "Claude Cowork",
         ]}
         stats={[
           {
-            value: "40+ hrs",
-            label: "Per week eliminated in manual NFPA code lookup",
-          },
-          {
-            value: "9",
-            label:
-              "Parallel AI initiatives across the client programme",
-          },
-          {
             value: "Citation-grade",
-            label:
-              "Accuracy \u2014 every answer grounded in the actual document",
+            label: "Every answer grounded in the actual document and page",
+          },
+          {
+            value: "Org-wide",
+            label: "Access via Claude Desktop and custom MCP server",
+          },
+          {
+            value: "Modular",
+            label: "Architecture applies to any regulatory domain",
           },
           {
             value: "Live",
-            label: "NFPA compliance agent in active production use",
+            label: "Compliance agent in active production use",
           },
         ]}
         body={bodySections}
         sidebar={{
           client: {
-            name: "Fire Protection Contractor",
-            meta: "Fire protection · PE-Backed · North America",
+            name: "Construction Firm",
+            meta: "Construction · Multi-entity · North America",
           },
           servicesDelivered: [
             "AI Solutions Discovery",
             "Custom MCP Server Development",
             "Knowledge Graph Architecture",
             "Claude Agent Development",
-            "Human-in-the-Loop Governance",
-            "Agent Command Centre",
+            "Org-Wide Deployment",
           ],
           technology: [
-            "Claude (Anthropic)",
+            "Anthropic Claude",
             "Claude Cowork",
+            "Custom Knowledge Graph Pipeline",
             "Custom MCP Server",
-            "Airtop Connector",
-            "Knowledge Graph + Manifest Index",
           ],
           pullQuote:
-            "Every response is grounded in the actual document, not inferred. The agent follows a structured, documented path to every answer.",
+            "Every response is traceable and citable. The agent follows a documented path to the exact page it needs.",
         }}
         closingCta={{
           heading:
@@ -208,8 +189,8 @@ export default function FireProtectionCompliancePage() {
         }}
         figure={{
           src: "/our-work/fire-protection-compliance-knowledge-graph.webp",
-          alt: "A knowledge graph routing a compliance query through a manifest index to a specific code page",
-          caption: "Figure 1 — Knowledge graph + manifest index architecture (illustrative concept).",
+          alt: "A query being routed through a knowledge graph to a cited page-level response",
+          caption: "Figure 1 — Knowledge graph routing a compliance query to the exact source page.",
         }}
       />
     </>

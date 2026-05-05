@@ -63,7 +63,7 @@ If you are reading this, you have probably already hit the wall. The pre-built c
 
 You have a CRM that has been customised so heavily it barely resembles the product you licensed. An industry-specific database that holds compliance records nobody outside your sector has heard of. A file system with a decade of institutional knowledge organised in ways that make sense only to the people who built it. If you are not familiar with the protocol itself, [our tools page covers the fundamentals](/tools/mcp/).
 
-Claude is useful out of the box. Claude connected to your actual systems is a different capability entirely. In our engagements, we built a [custom MCP server for a fire protection contractor](/our-work/fire-protection-compliance/) that connected Claude to NFPA compliance records spread across three disconnected systems. Before the MCP server, a compliance lookup required a technician to check three separate databases manually. After, Claude could answer the same question in a single conversation.
+Claude is useful out of the box. Claude connected to your actual systems is a different capability entirely. In our engagements, we built a [custom MCP server for a construction firm](/our-work/fire-protection-compliance/) that connected Claude to regulatory compliance records spread across multiple disconnected systems. Before the MCP server, a compliance lookup required a team member to check several sources manually. After, Claude could answer the same question in a single conversation.
 
 The pre-built connectors will not reach your custom systems. Custom MCP servers will. That is the practical gap this tutorial addresses.
 
@@ -103,7 +103,7 @@ Rate limiting prevents runaway usage. A misconfigured prompt that triggers hundr
 
 Permission inheritance is the principle that makes the whole model work. The MCP server does not maintain its own access control list. It inherits permissions from the requesting user's session. If a sales rep can see her accounts but not her colleague's, Claude operating on her behalf has the same restriction. No drift between what users can do directly and what Claude can do on their behalf.
 
-The compliance deployment we built for a fire protection contractor followed this pattern. NFPA compliance records are sensitive. The [MCP server enforced the same access boundaries](/our-work/fire-protection-compliance/) the team already operated under. No new permission model. No additional risk surface. If [shadow AI](/blog/shadow-ai-governance/) is a concern in your organisation, a governed MCP server is how you bring informal usage into a controlled environment.
+The compliance deployment we built for a construction firm followed this pattern. Regulatory code records are sensitive. The [MCP server enforced the same access boundaries](/our-work/fire-protection-compliance/) the team already operated under. No new permission model. No additional risk surface. If [shadow AI](/blog/shadow-ai-governance/) is a concern in your organisation, a governed MCP server is how you bring informal usage into a controlled environment.
 
 ## Where Should You Start and What Comes Next? {#where-to-start}
 
@@ -113,6 +113,6 @@ Build it. Ship it. Watch what happens when Claude can answer questions about tha
 
 Then build the next one. Each server you deploy adds to compound connectivity. Claude does not just know about one system. It knows about the relationships between systems. A customer record in the CRM connected to their order history in the ERP connected to their compliance status in the regulatory database. That compound context is where the real value lives.
 
-We deployed this compounding pattern with a WhatsApp Sales Command Centre that used Claude-powered semantic analysis. The first [custom AI agent](/tools/custom-ai-agents/) handled message classification. The second connected to the CRM for customer context. The third pulled sales pipeline data. Each server took less time to build than the last because the patterns were established.
+We deployed this compounding pattern with an [executive productivity suite](/our-work/circular-economy-platform/) for a major supplier. The first [custom AI agent](/tools/custom-ai-agents/) handled email and calendar intelligence. The second connected to Slack for team activity. The third pulled financial data from Power BI. Each server took less time to build than the last because the patterns were established.
 
 You do not need a grand integration strategy. You need one working MCP server and the willingness to build the second one after you see what the first one does. The [MCP tools page](/tools/mcp/) has the technical reference. The [Infrastructure service](/services/infrastructure/) is where we start when organisations want to build their first production server with support. Start building.

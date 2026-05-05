@@ -9,22 +9,22 @@ interface ProofPoint {
 
 const proofPoints: ProofPoint[] = [
   {
-    eyebrow: "FIRE PROTECTION CONTRACTOR · PE-BACKED · NORTH AMERICA",
-    title: "Automated NFPA compliance review",
-    body: "Eliminates 40+ hours per week of manual fire codes lookup. Live in production.",
+    eyebrow: "CONSTRUCTION FIRM · MULTI-ENTITY · NORTH AMERICA",
+    title: "AI compliance intelligence agent",
+    body: "Custom MCP server and knowledge graph navigating a full regulatory code library with citation-grade accuracy. Live in production.",
     href: "/our-work/fire-protection-compliance/",
   },
   {
-    eyebrow: "CIRCULAR ECONOMY STARTUP · USED SMARTPHONES · GLOBAL",
-    title: "Real-time sales intelligence dashboard",
-    body: "Claude analyses every WhatsApp sales conversation and feeds structured output into a live BigQuery dashboard.",
+    eyebrow: "MAJOR SUPPLIER · REVERSE LOGISTICS · GLOBAL",
+    title: "Executive productivity suite",
+    body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Automated morning briefs and on-demand workflows.",
     href: "/our-work/circular-economy-platform/",
   },
   {
-    eyebrow: "HOUSING SERVICES CORP. \u00b7 PUBLIC SECTOR HOUSING \u00b7 CANADA",
+    eyebrow: "COMMUNITY HOUSING \u00b7 PUBLIC SECTOR \u00b7 CANADA",
     title: "AI enablement roadmap",
-    body: "Six actionable recommendations including automated cross-program reporting previously requiring a team of analysts.",
-    href: "/our-work/housing-services-corp/",
+    body: "Seven-recommendation roadmap from data governance to five purpose-built Claude agents, executable within 90 days.",
+    href: "/our-work/community-housing-organisation/",
   },
 ];
 

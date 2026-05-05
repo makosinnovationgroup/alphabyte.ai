@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-04-29"),
     },
     {
-      url: "https://alphabyte.ai/our-work/housing-services-corp/",
+      url: "https://alphabyte.ai/our-work/community-housing-organisation/",
       lastModified: new Date("2026-04-28"),
     },
     {

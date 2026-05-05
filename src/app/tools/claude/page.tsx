@@ -95,11 +95,11 @@ export default function ClaudePage() {
         subhead="Reasoning, writing, and analysis."
         body={[
           "Claude is the intelligence layer across every engagement we deliver — configured around your organizational data, your team\u2019s workflows, and your operational context.",
-          "We are an Anthropic Claude Partner. Every engineer in our practice works exclusively with Claude — not evaluating which model to use on each engagement. That focus means faster configuration, deeper expertise, and a coherent architectural point of view that a firm evaluating ten different models cannot match.",
+          "We are Anthropic Claude Certified. Every engineer in our practice works exclusively with Claude — not evaluating which model to use on each engagement. That focus means faster configuration, deeper expertise, and a coherent architectural point of view that a firm evaluating ten different models cannot match.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         partnerCard={{
-          eyebrow: "Claude Partner",
+          eyebrow: "Claude Certified",
           body: "Anthropic-certified delivery team. Every engagement, every engineer, exclusively Claude.",
         }}
         usedAcrossServices={[
@@ -146,21 +146,21 @@ export default function ClaudePage() {
         inActiveUseSectionTitle="In active use today — what we built, what it produced"
         inActiveUse={[
           {
-            eyebrow: "Fire Protection Contractor · North America",
-            title: "Automated NFPA compliance review",
-            body: "Eliminated 40+ hours per week of manual fire codes lookup. Custom MCP server connected to full NFPA library. Live in production.",
+            eyebrow: "Construction Firm · North America",
+            title: "Compliance intelligence agent",
+            body: "Custom AI agent navigating a full regulatory code library via knowledge graph and MCP server. Citation-grade accuracy. Live in production.",
             href: "/our-work/fire-protection-compliance/",
           },
           {
-            eyebrow: "Circular Economy Startup · Global",
-            title: "Real-time sales intelligence",
-            body: "Claude analyses every WhatsApp sales conversation and feeds structured output into a live BigQuery dashboard.",
+            eyebrow: "Major Supplier · Reverse Logistics",
+            title: "Executive productivity suite",
+            body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Automated briefs delivered daily.",
             href: "/our-work/circular-economy-platform/",
           },
           {
-            eyebrow: "Fire Protection Contractor · PE-Backed",
+            eyebrow: "Construction Firm · Multi-Entity",
             title: "Executive Claude environment",
-            body: "Custom knowledgebases, skills library, and prompt toolkit deployed to the full executive team. Used daily across five functional leaders.",
+            body: "Custom knowledgebases, skills library, and prompt toolkit deployed to the full executive team. Used daily across multiple functional leaders.",
             href: "/our-work/fire-protection-compliance/",
           },
         ]}

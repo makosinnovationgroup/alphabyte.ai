@@ -52,7 +52,7 @@ const breadcrumbSchema = {
 
 const stats = [
   {
-    headline: "Anthropic Claude Partner",
+    headline: "Anthropic Claude Certified",
     description: "Certified delivery team \u2014 exclusively Claude",
   },
   {

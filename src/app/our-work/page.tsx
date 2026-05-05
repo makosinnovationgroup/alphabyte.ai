@@ -5,14 +5,14 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing. Real deployments, not POCs.",
+    "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not POCs.",
   alternates: {
     canonical: "/our-work/",
   },
   openGraph: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing.",
+      "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
     url: "/our-work/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Our Work — AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing.",
+      "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
     images: ["/og/our-work.png"],
   },
 };
@@ -36,7 +36,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Work — AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across fire protection, circular economy, and public sector housing. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
   isPartOf: {
     "@type": "WebSite",
@@ -47,30 +47,30 @@ const webPageSchema = {
 
 const caseStudies = [
   {
-    headerTags: "FIRE PROTECTION \u00b7 PE-BACKED \u00b7 NORTH AMERICA",
-    clientName: "Fire Protection Contractor",
+    headerTags: "CONSTRUCTION \u00b7 MULTI-ENTITY \u00b7 NORTH AMERICA",
+    clientName: "Construction Firm",
     projectTitle: "AI-Powered Compliance Intelligence Agent",
-    pills: ["Citizen Development", "Infrastructure", "Custom AI Agents"],
-    body: "Purpose-built AI agent that navigates the full NFPA fire codes library with citation-grade accuracy \u2014 eliminating 40+ hours per week of manual code lookup across the client\u2019s technical teams.",
+    pills: ["Custom MCP Server", "Knowledge Graph", "Claude Cowork"],
+    body: "Custom AI compliance agent that navigates the firm's full regulatory code library with citation-grade accuracy. Knowledge graph architecture integrated into a custom MCP server with org-wide Claude Desktop access.",
     href: "/our-work/fire-protection-compliance/",
   },
   {
-    headerTags: "CIRCULAR ECONOMY \u00b7 USED SMARTPHONES \u00b7 GLOBAL",
-    clientName: "Circular Economy Startup",
+    headerTags: "REVERSE LOGISTICS \u00b7 ELECTRONICS \u00b7 GLOBAL",
+    clientName: "Major Supplier",
     projectTitle:
-      "AI-Powered Executive Productivity & Auction Analytics",
-    pills: ["Citizen Development", "Executive Enablement", "Data Readiness"],
-    body: "Executive productivity suite with automated daily intelligence and a full AI-driven auction analytics platform \u2014 including a market supply index and predictive bid decisioning engine.",
+      "AI-Powered Executive Productivity Suite",
+    pills: ["Executive Enablement", "Claude Cowork", "Multi-System Integration"],
+    body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, Fireflies, and more. Purpose-built agents delivering automated morning briefs, spend reports, and post-call summaries.",
     href: "/our-work/circular-economy-platform/",
   },
   {
     headerTags:
-      "PUBLIC SECTOR \u00b7 HOUSING \u00b7 NATIONAL \u00b7 CANADA",
-    clientName: "Housing Services Corp.",
-    projectTitle: "AI Enablement Roadmap",
-    pills: ["Discovery", "Data Readiness"],
-    body: "Full current state assessment and AI enablement roadmap for a national housing organization \u2014 six strategic recommendations delivered within federal data governance requirements.",
-    href: "/our-work/housing-services-corp/",
+      "PUBLIC SECTOR \u00b7 COMMUNITY HOUSING \u00b7 CANADA",
+    clientName: "Community Housing Organisation",
+    projectTitle: "AI Enablement: Foundation for an Intelligent Organisation",
+    pills: ["Discovery", "Data Readiness", "AI Enablement"],
+    body: "End-to-end Data and AI readiness assessment with a seven-recommendation roadmap. Data governance, workflow documentation, and a shared analytical foundation leading to five purpose-built Claude agents.",
+    href: "/our-work/community-housing-organisation/",
   },
 ];
 

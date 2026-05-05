@@ -48,14 +48,14 @@ const pillars = [
 
 const activeDelivery = [
   {
-    tag: "FIRE PROTECTION CONTRACTOR · $200M+ · PE-BACKED · NORTH AMERICA",
-    title: "Nine-initiative AI Command System",
-    body: "Estimated 40+ hours/week of manual NFPA lookup eliminated. Custom MCP server, Claude Desktop plugin, HITL gates for five autonomous agents. Proprietary estimating tool in development.",
+    tag: "CONSTRUCTION FIRM · MULTI-ENTITY · NORTH AMERICA",
+    title: "AI-Powered Compliance Intelligence Agent",
+    body: "Custom MCP server and knowledge graph navigating a full regulatory code library with citation-grade accuracy. Integrated into Claude Desktop with org-wide access. Modular architecture for expansion into estimating and operations.",
   },
   {
-    tag: "CIRCULAR ECONOMY STARTUP · USED SMARTPHONES · GLOBAL",
-    title: "Claude Ops + Sales Intelligence",
-    body: "WhatsApp Sales Command Centre \u2014 Claude semantic analysis of live sales conversations feeding real-time BigQuery dashboard. Citizen dev SDLC plugin and governed data marts deployed.",
+    tag: "MAJOR SUPPLIER · REVERSE LOGISTICS · GLOBAL",
+    title: "AI-Powered Executive Productivity Suite",
+    body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Purpose-built agents delivering automated briefs and on-demand workflows org-wide.",
   },
   {
     tag: "HOUSING SERVICES CORP. \u00b7 PUBLIC SECTOR \u00b7 HOUSING \u00b7 NATIONAL \u00b7 CANADA",
@@ -66,7 +66,7 @@ const activeDelivery = [
 
 const certifications = [
   "Microsoft Solutions Partner \u00b7 Data & AI",
-  "Anthropic Academy \u00b7 Claude Partner Network",
+  "Anthropic Academy \u00b7 Claude Certified",
   "SOC 2 Type II \u00b7 In progress",
 ];
 
@@ -248,7 +248,7 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="text-body-sm text-muted-foreground">
-            We are one of the only Claude delivery partners explicitly focused
+            We are one of the only Claude Certified teams explicitly focused
             on mid-market &mdash; not enterprise, not startups.
           </p>
         </div>

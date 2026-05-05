@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const clients = [
-  { name: "Fire Protection Contractor", href: "/our-work/fire-protection-compliance/" },
-  { name: "Circular Economy Startup", href: "/our-work/circular-economy-platform/" },
-  { name: "Housing Services Corp.", href: "/our-work/housing-services-corp/" },
+  { name: "Construction Firm", href: "/our-work/fire-protection-compliance/" },
+  { name: "Major Supplier", href: "/our-work/circular-economy-platform/" },
+  { name: "Community Housing Organisation", href: "/our-work/community-housing-organisation/" },
 ];
 
 export function ActiveDelivery() {

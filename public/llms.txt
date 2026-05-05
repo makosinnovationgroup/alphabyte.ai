@@ -16,9 +16,9 @@
 - /tools/on-premise-llm/ — Private LLM deployment for regulated environments
 
 ## Case Studies
-- /our-work/fire-protection-compliance/ — Compliance intelligence agent for a $200M+ fire protection contractor
-- /our-work/circular-economy-platform/ — Executive productivity suite and auction analytics
-- /our-work/housing-services-corp/ — AI enablement roadmap for a national housing organization
+- /our-work/fire-protection-compliance/ — AI compliance intelligence agent for a multi-entity construction firm
+- /our-work/circular-economy-platform/ — AI-powered executive productivity suite for a major supplier
+- /our-work/community-housing-organisation/ — AI enablement assessment and seven-recommendation roadmap for a community housing organisation
 
 ## Blog
 - /blog/ai-governance-framework-mid-market/ — An AI governance framework for mid-market companies

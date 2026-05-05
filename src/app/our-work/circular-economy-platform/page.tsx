@@ -5,30 +5,30 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Circular Economy Platform — AI Productivity & Auction Analytics",
+  title: "Major Supplier — Executive Productivity Suite",
   description:
-    "How Alphabyte built two parallel AI programmes for a circular economy startup — an executive productivity suite and an auction analytics platform with predictive bid models.",
+    "How Alphabyte built a custom Claude plugin that gives leadership a single command surface across GSuite, Slack, Power BI, Fireflies, and more. Priority alerts and briefs delivered automatically.",
   alternates: {
     canonical: "/our-work/circular-economy-platform/",
   },
   openGraph: {
-    title: "Circular Economy Platform — AI Productivity & Auction Analytics",
+    title: "Major Supplier — Executive Productivity Suite",
     description:
-      "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
+      "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",
     url: "/our-work/circular-economy-platform/",
     images: [
       {
         url: "/og/our-work-circular-economy-platform.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Circular Economy Platform — AI Productivity & Auction Analytics",
+        alt: "Alphabyte — Major Supplier — Executive Productivity Suite",
       },
     ],
   },
   twitter: {
-    title: "Circular Economy Platform — AI Productivity & Auction Analytics",
+    title: "Major Supplier — Executive Productivity Suite",
     description:
-      "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
+      "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",
     images: ["/og/our-work-circular-economy-platform.png"],
   },
 };
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Circular Economy Platform — Executive Productivity & Auction Analytics",
+  name: "Major Supplier — AI-Powered Executive Productivity Suite",
   description:
-    "How Alphabyte built an AI-powered executive productivity suite and auction analytics platform for a circular economy startup.",
+    "How Alphabyte built a custom Claude plugin for a major supplier in electronic reverse logistics, giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies.",
   url: "https://alphabyte.ai/our-work/circular-economy-platform/",
   isPartOf: {
     "@type": "WebSite",
@@ -66,7 +66,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Circular Economy Platform",
+      name: "Major Supplier — Executive Productivity",
       item: "https://alphabyte.ai/our-work/circular-economy-platform/",
     },
   ],
@@ -76,48 +76,43 @@ const bodySections: BodySection[] = [
   { type: "heading", text: "Background" },
   {
     type: "paragraph",
-    text: "The client is a fast-moving technology and operations company specializing in the purchase and resale of used smartphones through weekly vendor auctions. The company acquires devices, grades them in-house, and resells them \u2014 a model that demands real-time visibility across supply, bidding performance, and sell-through at every level of the operation.",
-  },
-  {
-    type: "paragraph",
-    text: "The client had already built a solid analytics foundation and leadership was using AI tools day-to-day. The foundation was there. What was missing was the intelligence layer at the executive level and within the auction operation to make all of it work together and drive faster, more confident decisions.",
+    text: "A major supplier in the electronic reverse logistics space had strong business intelligence in place. Dashboards gave the team visibility into operational data, and leadership had begun building out a knowledge environment in Claude. The foundation was there. What was missing was the layer that connected executive workflows to operational data in real time.",
   },
   { type: "heading", text: "The Challenge", indent: true },
   {
     type: "paragraph",
     indent: true,
-    text: "The client operates in a market where conditions shift week to week. A new device launch, a trade-in cycle, or a sudden shift in vendor supply can change auction dynamics overnight. The company\u2019s existing tooling was strong at estimating the internal value of a device after re-grading and resale. What it could not do was answer the questions that drive auction outcomes: Is the market flooded or scarce for a specific model this week? At what bid price does the company maximize expected margin while controlling cash outlay?",
+    text: "BI tools are not designed to reach across communication, calendar, and financial systems and surface what needs attention right now. That layer did not exist. Leadership was spending time they did not have pulling context from multiple platforms before every decision.",
   },
   {
     type: "paragraph",
     indent: true,
-    text: "At the same time, leadership was managing a high volume of daily decisions across multiple teams and platforms. Critical signals \u2014 credit alerts, operations updates, open commitments, financial spend \u2014 were scattered across Slack, Monday.com, Fireflies, QuickBooks, and calendar systems. There was no unified intelligence layer that surfaced what mattered, when it mattered.",
+    text: "The gap was not in the data. It was in the effort required to use it.",
   },
-  { type: "heading", text: "AI-Powered Executive Productivity Suite" },
+  { type: "heading", text: "Solution" },
   {
     type: "paragraph",
-    text: "Alphabyte designed and delivered a custom Claude plugin built around how the client\u2019s leadership actually operates. Deployed as a Claude Cowork project, the solution combines a structured knowledge layer with purpose-built agents and on-demand workflows.",
-  },
-  {
-    type: "paragraph",
-    text: "Scheduled intelligence runs autonomously: a Daily Brief reads 12+ Slack channels and the day\u2019s calendar to deliver a morning summary, delivering a prioritized summary covering credit live alerts, prepack holds, team activity, and a curated \u201cNeeds Your Attention\u201d list. A Weekly Digest provides a full-work-week rollup. An Ops Report generates every Monday morning from four Monday.com boards. A Call Update monitors new recordings, generates a summary for each, and routes it to the appropriate Slack channel.",
+    text: "We built a custom Claude plugin that gives leadership a single command surface across every system they use: GSuite (email, calendar), Slack, Power BI, Fireflies, and more. Priority alerts, meeting briefs, spend reports, and post-call summaries are delivered automatically every morning or triggered on demand, without switching tools or assembling context manually.",
   },
   {
     type: "paragraph",
-    text: "On-demand workflows handle high-value commands: Call Prep delivers a one-page pre-meeting brief with talking points pulled from Slack History, transcripts, and calendar records. Meeting Summary produces post-call debriefs with decisions and action items by owner. The Spend Report generates a four-tab Excel workbook from the General Ledger, Amex, and Capital One data. Four isolated agents handle execution, each scoped strictly to the tools it requires.",
+    text: "The system knows the business: the people, the accounts, the processes, and the guardrails.",
   },
-  { type: "heading", text: "AI-Driven Auction Analytics Platform" },
+  { type: "heading", text: "Modular Agent Architecture", indent: true },
   {
     type: "paragraph",
-    text: "The second engagement brought supply-side intelligence and bid decisioning directly into the client\u2019s auction workflow.",
-  },
-  {
-    type: "paragraph",
-    text: "Phase 1 delivered operational visibility through a structured Bronze, Silver, and Gold data environment ingesting over a year of vendor auction data. Two core KPI systems were delivered: the Market Supply Index (MSI), a statistical signal that detects how this week\u2019s listed supply for any given device model, grade, and storage combination compares to the 52-week norm; and the Auction and Bid Performance Suite, a single view per auction showing coverage, win rates, cost per unit, and realization metrics.",
+    indent: true,
+    text: "Built on Claude and Claude Cowork, the solution uses purpose-built agents each scoped strictly to the tools they require, keeping the system fast, accurate, and secure. New workflows and agents can be added as the business grows with no rebuild required.",
   },
   {
     type: "paragraph",
-    text: "Phase 2 extends the platform into machine learning. Three predictive models are in development: a censored quantile model estimating the distribution of winning prices for a given device cohort, a lot-to-win probability curve estimating the probability of winning at any given price, and an optimal bid price band that combines the pricing calculator with the probability model to recommend conservative, base, and aggressive bid levels with associated expected margin, units captured, and cash outlay.",
+    indent: true,
+    text: "Several skills were published across the organisation to give context and functionality to all domains and employees in teams.",
+  },
+  { type: "heading", text: "Technologies" },
+  {
+    type: "paragraph",
+    text: "Anthropic Claude, Claude Cowork, Slack, GSuite, Microsoft 365, Monday, QBO, and Fireflies.",
   },
 ];
 
@@ -134,74 +129,71 @@ export default function CircularEconomyPlatformPage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "Circular Economy Platform" },
+          { label: "Major Supplier — Executive Productivity" },
         ]}
-        eyebrow="CASE STUDY · CIRCULAR ECONOMY · USED SMARTPHONES · GLOBAL"
-        h1="AI-Powered Executive Productivity & Auction Analytics"
-        subhead="Circular Economy Startup"
+        eyebrow="CASE STUDY · REVERSE LOGISTICS · ELECTRONICS · GLOBAL"
+        h1="AI-Powered Executive Productivity Suite"
+        subhead="Major Supplier in Electronic Reverse Logistics"
         tagPills={[
           "Executive Enablement",
-          "Citizen Development",
-          "Anomaly Analytics",
-          "Predictive Bid Station",
-          "Citizen Command",
+          "Claude Cowork",
+          "Custom Plugin",
+          "Multi-System Integration",
         ]}
         stats={[
           {
-            value: "2",
-            label: "Parallel AI programmes delivered simultaneously",
+            value: "6+",
+            label: "Systems connected into a single command surface",
           },
           {
-            value: "12+",
-            label:
-              "Slack channels read daily by the executive intelligence agent",
+            value: "Automated",
+            label: "Morning briefs, spend reports, and post-call summaries",
           },
           {
-            value: "52-week",
-            label:
-              "Market supply baseline powering the auction analytics platform",
+            value: "Modular",
+            label: "Purpose-built agents scoped to specific tools",
           },
           {
-            value: "Phase 2",
-            label:
-              "Predictive bid decomposition models in active R&D",
+            value: "Org-wide",
+            label: "Skills published across all domains and teams",
           },
         ]}
         body={bodySections}
         sidebar={{
           client: {
-            name: "Circular Economy Startup",
-            meta: "Circular economy \u00b7 Used smartphones \u00b7 Retail",
+            name: "Major Supplier",
+            meta: "Electronic reverse logistics · Global",
           },
           servicesDelivered: [
             "Executive Productivity Suite",
-            "Citizen Dev Enablement",
-            "Data Architecture (Bronze/Silver/Gold)",
-            "Auction Analytics Platform",
-            "Market Supply Index (MSI)",
-            "Predictive Bid Decisioning (Phase 2)",
+            "Custom Claude Plugin",
+            "Multi-System Integration",
+            "Org-Wide Skill Deployment",
           ],
           technology: [
-            "Claude (Anthropic)",
+            "Anthropic Claude",
             "Claude Cowork",
-            "Google BigQuery",
-            "Slack API",
-            "Monday.com",
+            "Slack",
+            "GSuite",
+            "Microsoft 365",
+            "Monday",
+            "QBO",
             "Fireflies",
+            "Power BI",
           ],
           pullQuote:
-            "Two parallel AI programmes \u2014 executive intelligence and auction analytics \u2014 each communicating on a shared data architecture.",
+            "The gap was not in the data. It was in the effort required to use it. One command surface, every system, every morning.",
         }}
         closingCta={{
           heading:
-            "Want to explore what we could build for your operations?",
+            "Want to explore what we could build for your leadership team?",
           subhead: "45 minutes. No cost. No obligation.",
           cta: { label: "Book a Discovery Call", action: "modal" },
         }}
         figure={{
           src: "/our-work/circular-economy-platform-msi-concept.webp",
-          alt: "A schematic market-supply-index curve with a derived three-tier bid band",
-          caption: "Figure 1 — Market Supply Index + bid-band concept (illustrative).",
+          alt: "Architecture diagram showing the custom Claude plugin connecting isolated agents to business tools",
+          caption: "Figure 1 — Plugin architecture: isolated agents connected to business systems (illustrative).",
         }}
       />
     </>
