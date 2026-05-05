@@ -1,0 +1,700 @@
+# =============================================================================
+# Alphabyte AI — Image Inventory (Stage 1 of 7)
+# =============================================================================
+# Generated: 2026-05-01
+# Branch: images/seo-generation-plan
+# Source audit: FULL-AUDIT-REPORT.md (2026-05-04)
+# Brand spec: ../../../../brand-spec.md
+# Skill: .claude/skills/alphabyte-brand/
+# Design: design/Alphabyte_AI_Site_V8.pdf (pages 1, 14, 15, 16, 21 inspected)
+#
+# Convention reminder:
+#   - OG images: 1200x630 PNG, ≤200KB
+#   - Blog hero: 1600x900 WebP, 16:9, ≤180KB above-fold
+#   - Blog inline figure: 1200x800 WebP, 3:2, ≤80KB below-fold
+#   - Case study supporting: 1200x800 WebP, 3:2, ≤80KB below-fold
+#   - All images use only: #00ABF0 (alphabyte-blue), #00FFA6 (alphabyte-green),
+#     #171717 (foreground), #FAFAFA (canvas), #EBEBEB (alphabyte-grey),
+#     #E5E5E5 (border), #737373 (muted), #FFFFFF
+#   - No client logos, no real product UI, no faces, no emoji icons,
+#     no purple/violet, no deep navy.
+#   - Type for any baked copy: Geist + Geist Mono. British English.
+# =============================================================================
+
+# ===== TIER 1: CRITICAL (Audit Action #1) ====================================
+
+- id: og-default
+  path: public/og/default.png
+  width: 1200
+  height: 630
+  format: png
+  type: og
+  priority: critical
+  scope: in_scope
+  audit_ref: "Action #1 in Priority Action Plan; section 3.3 OG image fail; section 6 (Images, score 15/100)"
+  source_route: "(site-wide fallback)"
+  source_files:
+    - "src/app/layout.tsx:39"
+    - "src/app/page.tsx:107"
+    - "src/app/about/page.tsx:19"
+    - "src/app/services/page.tsx:19"
+    - "src/app/our-work/page.tsx:19"
+    - "src/app/blog/page.tsx:21"
+    - "src/app/blog/[slug]/page.tsx:174"
+    - "src/app/our-work/fire-protection-compliance/page.tsx:21"
+    - "src/app/our-work/circular-economy-platform/page.tsx:21"
+    - "src/app/our-work/housing-services-corp/page.tsx:21"
+  triggers:
+    - "Every page (~41 URLs) references /og/default.png as the OG image, but the file does not exist."
+    - "All LinkedIn/Slack/X shares of any page currently render with a broken/missing preview."
+    - "public/og/README.md explicitly flags: 'default.png does not exist yet ... must be created before production deployment.'"
+  earns_its_place: |
+    Yes. Critical SEO + distribution miss. Every page on the site shares the same
+    broken preview. Audit weights this as #1. One image fixes 41 broken previews.
+  concept: |
+    Wordmark lockup "alphabyte · AI" on off-white canvas, with the headline
+    "AI consulting that compounds." set in Geist (large, tight tracking).
+    Brand-blue accent on the word "compounds." Subtle byte-cube glyph motif
+    in the lower-right corner at low opacity. Composition is editorial,
+    centred-left, with generous whitespace. No photography.
+  brand_guard:
+    - "No purple/violet. No deep navy."
+    - "No emoji. No stock photography."
+    - "Wordmark must be paired with the icon (logo lockup is a unit)."
+    - "Logo never on green; here it sits on canvas off-white."
+    - "Brand-blue used as accent only — not a hero fill."
+  composition:
+    focal_zone: "Centre-left — headline dominates; logo top-left; glyph motif bottom-right"
+    safe_areas:
+      - "Left 60% holds headline + sub-line"
+      - "Top-left 22% holds wordmark"
+      - "Bottom-right 25% reserved for glyph or eyebrow"
+  alt: "Alphabyte — AI consulting that compounds"
+  performance_budget_kb: 200
+  status: planned
+  metadata_sidecar: public/og/default.json
+
+# ===== TIER 2: HIGH PRIORITY — PAGE-SPECIFIC OG IMAGES =======================
+# Audit section 3.3: "All pages use same OG image — no page-specific social
+# images" (HIGH). Action #24 backlog at LOW for "all top pages" but the audit
+# explicitly notes that page-specific OG images materially affect CTR for B2B
+# (LinkedIn-primary). We include OGs only for pages that (a) get directly
+# shared as cold links (the three case studies — used in proposals/decks) and
+# (b) the homepage marketing copy variant. Other page OGs deferred to Phase 2
+# under the principle "earns its place".
+
+- id: og-our-work-fire-protection-compliance
+  path: public/og/our-work-fire-protection-compliance.png
+  width: 1200
+  height: 630
+  format: png
+  type: og
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6/7 (case study visuals); section 3.3 (per-page OG)"
+  source_route: "/our-work/fire-protection-compliance/"
+  source_files:
+    - "src/app/our-work/fire-protection-compliance/page.tsx:14-33"
+  triggers:
+    - "Case study is the most credible asset Alphabyte links to in cold outreach."
+    - "When pasted into LinkedIn or a deck, a case-specific preview communicates the work in one tile."
+    - "Default OG would only show the brand mark — wastes the share moment."
+  earns_its_place: |
+    Yes. The three case studies are the highest-friction pages to read but
+    the lowest-friction to share. A specific preview increases click-through
+    in cold contexts (sales emails, proposal links).
+  concept: |
+    Off-white canvas. Eyebrow "CASE STUDY · FIRE PROTECTION" in green at top.
+    Headline "40+ hrs/week eliminated in NFPA code lookup." in foreground ink.
+    A schematic suggestion of stacked code-document spines (no real text on them)
+    rendered as thin outlined rectangles in border-default grey, with one
+    rectangle highlighted in alphabyte-blue. Logo lockup top-left.
+  brand_guard:
+    - "NO client logo (Sprinklermatic / EJ Capital). Anonymised: 'Fire Protection Contractor'."
+    - "NO real NFPA document covers/text — generic stacked rectangles only."
+    - "Green eyebrow tag is on-brand (case-study eyebrow uses green per V8 page 15)."
+  composition:
+    focal_zone: "Centre-left — headline; right third — schematic document stack"
+    safe_areas:
+      - "Top-left 22% logo"
+      - "Top 8% eyebrow"
+      - "Right 35% reserved for schematic"
+  alt: "Alphabyte case study — fire protection compliance intelligence agent"
+  performance_budget_kb: 200
+  status: planned
+  metadata_sidecar: public/og/our-work-fire-protection-compliance.json
+
+- id: og-our-work-circular-economy-platform
+  path: public/og/our-work-circular-economy-platform.png
+  width: 1200
+  height: 630
+  format: png
+  type: og
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6/7 (case study visuals); section 3.3 (per-page OG)"
+  source_route: "/our-work/circular-economy-platform/"
+  source_files:
+    - "src/app/our-work/circular-economy-platform/page.tsx:14-33"
+  triggers:
+    - "Same as fire-protection: case study is a direct-share asset."
+  earns_its_place: |
+    Yes — same logic as the fire-protection case study OG. A bespoke preview
+    communicates the work in one tile.
+  concept: |
+    Off-white canvas. Eyebrow "CASE STUDY · CIRCULAR ECONOMY" in green.
+    Headline "Executive intelligence + auction analytics." A small abstract
+    line-chart motif (52-week index baseline) in alphabyte-blue, sitting in
+    the right third — no axis labels, no real data, just a smoothed curve.
+    Logo lockup top-left.
+  brand_guard:
+    - "NO client name (RecirQ / Reventory). Anonymised: 'Circular Economy Startup'."
+    - "NO real platform UI screenshot. Schematic curve only."
+    - "No green dominance — green only on eyebrow tag."
+  composition:
+    focal_zone: "Centre-left headline; right third holds curve"
+    safe_areas:
+      - "Top-left 22% logo"
+      - "Top 8% eyebrow tag"
+  alt: "Alphabyte case study — circular economy executive productivity and auction analytics"
+  performance_budget_kb: 200
+  status: planned
+  metadata_sidecar: public/og/our-work-circular-economy-platform.json
+
+- id: og-our-work-housing-services-corp
+  path: public/og/our-work-housing-services-corp.png
+  width: 1200
+  height: 630
+  format: png
+  type: og
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6/7 (case study visuals); section 3.3 (per-page OG)"
+  source_route: "/our-work/housing-services-corp/"
+  source_files:
+    - "src/app/our-work/housing-services-corp/page.tsx:14-33"
+  triggers:
+    - "Public-sector roadmap is a referenceable proof point in tenders."
+  earns_its_place: |
+    Yes — public-sector procurement contexts heavily reuse case-study links.
+    A specific preview is materially better than the generic default.
+  concept: |
+    Off-white canvas. Eyebrow "CASE STUDY · PUBLIC SECTOR · HOUSING" in green.
+    Headline "AI enablement roadmap for a national housing organization."
+    A schematic of a multi-step roadmap (six small numbered nodes connected
+    by thin lines) rendered in foreground ink with one node highlighted in
+    alphabyte-blue. Logo lockup top-left.
+  brand_guard:
+    - "Generic 'Housing Services Corp.' framing is fine — already anonymised."
+    - "No federal / governmental insignia of any kind."
+    - "Schematic only — no real org names on the nodes."
+  composition:
+    focal_zone: "Centre-left headline; right third holds the six-node roadmap"
+    safe_areas:
+      - "Top-left 22% logo"
+  alt: "Alphabyte case study — AI enablement roadmap for public sector housing"
+  performance_budget_kb: 200
+  status: planned
+  metadata_sidecar: public/og/our-work-housing-services-corp.json
+
+# ===== TIER 2: HIGH PRIORITY — BLOG HERO IMAGES (10 posts) ===================
+# Audit Action #6 (HIGH): "Add hero/content images to blog posts." Earns its
+# place because:
+#   - The blog index template already has dedicated image slots (featured 4:3
+#     and grid 16:9) currently rendering as flat foreground placeholders —
+#     src/app/blog/page.tsx:122-128 and 171-176.
+#   - The blog-post-page "More from blog" cards also have placeholder slots
+#     — src/components/blog-post-page.tsx:282 (h-40 bg-foreground div).
+#   - Google Images is a non-trivial source of B2B blog traffic (audit 6.2).
+#   - LinkedIn shares of blog posts heavily benefit from a specific hero.
+#
+# These are blog-hero (1600x900 WebP, top-of-post) — the same image is reused
+# at lower resolution as the index card thumbnail and the related-posts thumb.
+# That triple use case is what makes them earn their place vs. decoration.
+
+- id: blog-hero-why-ai-pilots-stall
+  path: public/blog/why-ai-pilots-stall-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/why-ai-pilots-stall/"
+  source_files:
+    - "content/blog/why-ai-pilots-stall.mdx:1-15"
+    - "src/app/blog/page.tsx:122-128"
+    - "src/components/blog-post-page.tsx:282"
+  triggers:
+    - "Featured-card image slot exists; currently rendering as flat dark placeholder."
+    - "Topic — pilot stall / production fail-rate — has a clear visual concept."
+    - "Reused at 3 sizes (hero, index featured card, related-posts thumb)."
+  earns_its_place: |
+    Yes. Pilot-stall is the most-shared blog topic for B2B AI consultancies,
+    and the post is currently in the featured slot (sortOrder 10 — see notes).
+    Image carries information the copy doesn't: the visual contrast between
+    a flat-line "pilot" and a stepwise compounding curve.
+  concept: |
+    Two abstract trajectories on off-white canvas: a flat line (the stall —
+    in muted-foreground grey) versus a stepwise rising curve (the compounding
+    deployment — in alphabyte-blue). No axis labels, no chart frame. Editorial
+    minimalism. Optional faint byte-cube glyph at bottom-right.
+  brand_guard:
+    - "No literal 'crashed plane / falling chart' clichés."
+    - "No purple/violet."
+    - "Curve uses alphabyte-blue only; flat line in grey."
+  composition:
+    focal_zone: "Two parallel curves spanning the centre band; right end of blue curve dominant"
+    safe_areas:
+      - "Top 15% empty (post UI may overlay)"
+  alt: "Two trajectories — a flat-lining AI pilot versus a stepwise compounding deployment"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/why-ai-pilots-stall-hero.json
+
+- id: blog-hero-citizen-developer-enablement-playbook
+  path: public/blog/citizen-developer-enablement-playbook-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/citizen-developer-enablement-playbook/"
+  source_files:
+    - "content/blog/citizen-developer-enablement-playbook.mdx:1-30"
+  triggers:
+    - "Flagship topic linked from /services/citizen-development/ (the starred service)."
+    - "Sortorder 2 — second-most-prominent in blog index."
+  earns_its_place: |
+    Yes. Citizen Dev is Alphabyte's flagship offer (★ on homepage and services).
+    The image carries a concept the copy alludes to but doesn't show: a path
+    from informal prompt to governed production.
+  concept: |
+    A horizontal three-stage flow on off-white canvas: prompt-line (handwritten
+    chat-style stroke) → guarded module (rounded-rect with thin border) →
+    deployed system (filled blue rectangle). Stages connected by thin lines.
+    Geist Mono small labels under each stage ("prompt", "governed", "production").
+  brand_guard:
+    - "Mono labels stay grey/muted — no decorative type."
+    - "Final stage is the only solid blue element."
+  composition:
+    focal_zone: "Horizontal centre band; rightmost stage carries the blue weight"
+    safe_areas:
+      - "Top 15% empty"
+  alt: "A three-stage flow from informal prompt to governed Claude production"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/citizen-developer-enablement-playbook-hero.json
+
+- id: blog-hero-ai-readiness-assessment
+  path: public/blog/ai-readiness-assessment-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/ai-readiness-assessment/"
+  source_files:
+    - "content/blog/ai-readiness-assessment.mdx:1-30"
+  triggers:
+    - "How-to / self-diagnostic content benefits visibly from a structural visual."
+  earns_its_place: |
+    Yes. The post offers a 2-week self-diagnostic; a visual scorecard layout
+    communicates the deliverable instantly. Image adds information (the shape
+    of the assessment) that the body explains.
+  concept: |
+    A schematic 'readiness scorecard' grid: 3x3 cells on off-white canvas,
+    each cell showing a thin horizontal bar (border-default grey) of varying
+    fill — three filled in alphabyte-blue, others in canvas. No labels, no
+    real numbers. Cards have hairline borders.
+  brand_guard:
+    - "No real percentage numerals — pure schematic."
+    - "Use border-default grey for cell borders."
+  composition:
+    focal_zone: "Centre — 3x3 grid"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "A schematic AI readiness scorecard — three of nine indicators highlighted"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/ai-readiness-assessment-hero.json
+
+- id: blog-hero-ai-governance-framework-mid-market
+  path: public/blog/ai-governance-framework-mid-market-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/ai-governance-framework-mid-market/"
+  source_files:
+    - "content/blog/ai-governance-framework-mid-market.mdx:1-30"
+  triggers:
+    - "Governance topic is the highest mid-funnel intent — Google Images/Search."
+    - "Frequently shared in compliance / RFP contexts."
+  earns_its_place: |
+    Yes. Governance posts are heavily linked from procurement docs; the image
+    needs to communicate 'framework' at a glance — a structural diagram.
+  concept: |
+    A nested-rectangles framework: an outer rectangle (governance perimeter)
+    containing four inner rectangles (the four control domains discussed in
+    the post). All in border-default grey outlines on off-white canvas, with
+    the rectangle for 'data governance' filled in alphabyte-blue. No labels,
+    purely structural.
+  brand_guard:
+    - "No legal / gavel imagery."
+    - "No flags."
+    - "British English in any baked copy ('programme')."
+  composition:
+    focal_zone: "Centre — nested framework diagram"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "A nested governance framework — four control domains within a single perimeter"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/ai-governance-framework-mid-market-hero.json
+
+- id: blog-hero-shadow-ai-governance
+  path: public/blog/shadow-ai-governance-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/shadow-ai-governance/"
+  source_files:
+    - "content/blog/shadow-ai-governance.mdx:1-30"
+  triggers:
+    - "Topic name itself ('shadow AI') has a strong visual hook."
+  earns_its_place: |
+    Yes. The visual concept of 'invisible AI use surfacing into governance'
+    is hard to convey in copy alone. Image earns its place.
+  concept: |
+    A scattering of small grey dots across the off-white canvas (the shadow
+    activity), with three of them connected by thin alphabyte-blue lines into
+    a small clustered shape on the right (the governed cluster). Editorial
+    spacing, no labels.
+  brand_guard:
+    - "No 'spy / hooded figure / hacker' clichés."
+    - "No green dominance — green not used here."
+    - "No red — red is not in the palette."
+  composition:
+    focal_zone: "Right third — small connected cluster"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "Scattered shadow AI activity resolving into a small governed cluster"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/shadow-ai-governance-hero.json
+
+- id: blog-hero-claude-vs-chatgpt-enterprise
+  path: public/blog/claude-vs-chatgpt-enterprise-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/claude-vs-chatgpt-enterprise/"
+  source_files:
+    - "content/blog/claude-vs-chatgpt-enterprise.mdx:1-30"
+  triggers:
+    - "Comparison content is high-traffic and benefits from a comparison-shape visual."
+  earns_its_place: |
+    Yes. Comparison posts are a primary search-intent driver. A 'two-column
+    comparison frame' visual signals exactly what the post delivers.
+  concept: |
+    Two columns of equal width on off-white canvas — left column outlined in
+    border-default grey with three blank rule-lines, right column outlined in
+    alphabyte-blue with three blank rule-lines. No vendor logos, no vendor
+    names. Pure side-by-side schematic.
+  brand_guard:
+    - "NO competitor logos (OpenAI / ChatGPT branding is forbidden — copyright + brand-neutrality)."
+    - "NO Anthropic / Claude logo either — keep it abstract."
+  composition:
+    focal_zone: "Centre — two equal columns"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "A side-by-side comparison frame — two equal columns evaluated side by side"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/claude-vs-chatgpt-enterprise-hero.json
+
+- id: blog-hero-claude-vs-microsoft-copilot
+  path: public/blog/claude-vs-microsoft-copilot-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/claude-vs-microsoft-copilot/"
+  source_files:
+    - "content/blog/claude-vs-microsoft-copilot.mdx:1-30"
+  triggers:
+    - "Same comparison-content rationale as the ChatGPT post."
+  earns_its_place: |
+    Yes. Mid-market M365-shop audience overlaps heavily with this query.
+    Comparison-frame visual delivers the post's structure.
+  concept: |
+    A variation on the comparison-frame: left column with a wider, fuller
+    set of horizontal bars (representing 'Office surface'), right column
+    with fewer but blue-filled bars (representing 'Claude depth'). Off-white
+    canvas, no logos, no labels.
+  brand_guard:
+    - "NO Microsoft / Copilot logo or wordmark."
+    - "Visual must distinguish itself from blog-hero-claude-vs-chatgpt-enterprise."
+  composition:
+    focal_zone: "Centre — two columns of bars, asymmetric weights"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "A side-by-side comparison — broad surface coverage versus deeper integration"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/claude-vs-microsoft-copilot-hero.json
+
+- id: blog-hero-claude-for-finance-teams
+  path: public/blog/claude-for-finance-teams-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/claude-for-finance-teams/"
+  source_files:
+    - "content/blog/claude-for-finance-teams.mdx:1-30"
+  triggers:
+    - "Vertical-specific content — finance audience reads differently."
+    - "8 workflows is a clear visual hook."
+  earns_its_place: |
+    Yes. The post enumerates eight concrete workflows; an 8-tile grid visual
+    communicates the structure of the deliverable instantly.
+  concept: |
+    A 4x2 grid of eight identical thin-bordered tiles on off-white canvas.
+    Two tiles in the top row are filled with alphabyte-blue (the 'first two
+    workflows you should run'). All tiles are blank inside — no icons, no
+    text. Hairline border-default grey.
+  brand_guard:
+    - "No spreadsheets, no $$$ icons, no calculator clichés."
+    - "No green — finance accents stay blue/grey only."
+  composition:
+    focal_zone: "Centre — 4x2 grid of tiles"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "An eight-tile grid of finance workflows — two tiles highlighted in brand blue"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/claude-for-finance-teams-hero.json
+
+- id: blog-hero-how-to-build-a-custom-mcp-server
+  path: public/blog/how-to-build-a-custom-mcp-server-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/how-to-build-a-custom-mcp-server/"
+  source_files:
+    - "content/blog/how-to-build-a-custom-mcp-server.mdx:1-30"
+  triggers:
+    - "Technical how-to with strong intent — image carries architecture concept."
+    - "Sortorder 1 — top-of-blog-index position."
+  earns_its_place: |
+    Yes. MCP-server architecture is the post's core; a topology visual
+    delivers value the prose cannot — readers can grok the shape immediately.
+  concept: |
+    A simple topology diagram on off-white canvas: a Claude node (filled blue
+    circle) connected by thin lines to three system nodes (outlined squares
+    in border-default grey) — labelled abstractly as 'system A / B / C' in
+    Geist Mono small grey, OR no labels at all (preferred). The MCP-server
+    sits as a small filled square between Claude and the systems.
+  brand_guard:
+    - "No real product logos (no Salesforce / Slack icons etc.)."
+    - "No code screenshots."
+  composition:
+    focal_zone: "Centre — Claude node with three radiating connections"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "An MCP-server topology — Claude connected to three systems through a single server"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/how-to-build-a-custom-mcp-server-hero.json
+
+- id: blog-hero-private-llm-vs-claude-enterprise
+  path: public/blog/private-llm-vs-claude-enterprise-hero.webp
+  width: 1600
+  height: 900
+  format: webp
+  type: blog-hero
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #6"
+  source_route: "/blog/private-llm-vs-claude-enterprise/"
+  source_files:
+    - "content/blog/private-llm-vs-claude-enterprise.mdx:1-30"
+  triggers:
+    - "Decision-framework content benefits from a decision-tree visual."
+  earns_its_place: |
+    Yes. The post is structured as a 'when do you actually need on-premise'
+    decision framework; a small tree visual communicates the framework shape.
+  concept: |
+    A simple two-branch decision tree on off-white canvas: a single root node
+    splitting into two paths — left path leads to a filled blue circle
+    ('Claude Enterprise'), right path leads to a smaller outlined circle
+    ('Private LLM'). The blue path visually dominates because most readers
+    should land there. No labels (or minimal Geist Mono labels in muted grey).
+  brand_guard:
+    - "No server-room or data-centre photography clichés."
+    - "Asymmetric weight is intentional — most clients don't need on-prem."
+  composition:
+    focal_zone: "Centre — two-path decision tree, left path heavier"
+    safe_areas:
+      - "Outer 10% empty"
+  alt: "A two-branch decision tree — Claude Enterprise as the primary path, on-premise as the exception"
+  performance_budget_kb: 180
+  status: planned
+  metadata_sidecar: public/blog/private-llm-vs-claude-enterprise-hero.json
+
+# ===== TIER 2: HIGH PRIORITY — CASE STUDY SUPPORTING VISUALS =================
+# Audit Action #7: "Add screenshots/visuals to case study pages."
+# IMPORTANT TENSION: V8 PDF pages 15 and 16 (case study templates) are
+# entirely editorial — NO image slots in the template. Adding hero images
+# would contradict V8.
+#
+# Resolution: NO case-study HERO images (V8 design wins on hero).
+# But ONE supporting "concept diagram" per case study earns its place because
+# the audit specifically calls out visual proof of work as missing, and the
+# diagram carries information the editorial copy hints at but cannot show
+# (the architectural shape of the work). These will need a small CaseStudyPage
+# component update to support an inline figure — flagged for stage 5.
+#
+# Each visual is anonymised concept-art, NOT a real product UI screenshot.
+
+- id: case-study-fire-protection-knowledge-graph
+  path: public/our-work/fire-protection-compliance-knowledge-graph.webp
+  width: 1200
+  height: 800
+  format: webp
+  type: case-study-supporting
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #7 (case study visuals)"
+  source_route: "/our-work/fire-protection-compliance/"
+  source_files:
+    - "src/app/our-work/fire-protection-compliance/page.tsx:101-113"
+    - "src/components/case-study-page.tsx (component update needed for figure slot)"
+  triggers:
+    - "Body section 'Building the Knowledge Foundation' describes a knowledge graph + manifest index — pure prose, no diagram."
+    - "Audit explicitly calls out 'no visuals on case study pages' as HIGH."
+  earns_its_place: |
+    Yes. The knowledge-graph + manifest concept is the technical heart of the
+    engagement and the body describes it in three dense paragraphs. A single
+    schematic transforms 'how does it actually work' from imagined to obvious.
+  concept: |
+    A node-and-edge knowledge-graph diagram on off-white canvas. A central
+    blue 'manifest index' node radiates to ~12 outlined grey 'code chapter'
+    nodes, which in turn connect to ~30 small dot 'page' nodes. One path is
+    highlighted in alphabyte-blue showing the route from query to page. No
+    real NFPA chapter names or numbers — labels are abstract ('chapter A1',
+    'chapter B2') in Geist Mono muted grey, or omitted entirely.
+  brand_guard:
+    - "NO real NFPA chapter codes, NO real page numbers."
+    - "NO client logo or branded colour."
+    - "Highlighted blue path is the only filled element — rest is outlines."
+  composition:
+    focal_zone: "Centre — manifest hub; right side — the highlighted path"
+    safe_areas:
+      - "10% margin all sides"
+  alt: "A knowledge graph routing a compliance query through a manifest index to a specific code page"
+  performance_budget_kb: 80
+  status: planned
+  metadata_sidecar: public/our-work/fire-protection-compliance-knowledge-graph.json
+
+- id: case-study-circular-economy-msi-dashboard-concept
+  path: public/our-work/circular-economy-platform-msi-concept.webp
+  width: 1200
+  height: 800
+  format: webp
+  type: case-study-supporting
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #7 (case study visuals)"
+  source_route: "/our-work/circular-economy-platform/"
+  source_files:
+    - "src/app/our-work/circular-economy-platform/page.tsx:109-122"
+  triggers:
+    - "Body describes the Market Supply Index (MSI) and bid-band model — copy alone cannot convey the shape."
+  earns_its_place: |
+    Yes. MSI is a statistical concept the copy describes in two dense
+    paragraphs. A schematic chart of '52-week supply baseline + this week's
+    deviation' makes it immediately legible.
+  concept: |
+    Off-white canvas with a single horizontal time-series area: a flat baseline
+    band (52-week median) in border-default grey, with a smoothed curve on top
+    in alphabyte-blue showing 'this week' deviating above/below. A small
+    rectangular 'bid band' bracket (conservative / base / aggressive — three
+    horizontal strokes in muted grey + one in blue) sits to the right. No
+    real numbers, no axis labels — pure schematic.
+  brand_guard:
+    - "NO client name, NO real device models, NO real auction prices."
+    - "NO realistic stock-chart styling — keep editorial / minimal."
+  composition:
+    focal_zone: "Centre — supply-index curve; right third — bid band"
+    safe_areas:
+      - "10% margin all sides"
+  alt: "A schematic market-supply-index curve with a derived three-tier bid band"
+  performance_budget_kb: 80
+  status: planned
+  metadata_sidecar: public/our-work/circular-economy-platform-msi-concept.json
+
+- id: case-study-housing-services-roadmap-concept
+  path: public/our-work/housing-services-corp-roadmap-concept.webp
+  width: 1200
+  height: 800
+  format: webp
+  type: case-study-supporting
+  priority: high
+  scope: in_scope
+  audit_ref: "Action #7 (case study visuals)"
+  source_route: "/our-work/housing-services-corp/"
+  source_files:
+    - "src/app/our-work/housing-services-corp/page.tsx:121-124"
+  triggers:
+    - "Page is currently a stub ('Coming Soon') — a roadmap visual is the strongest content investment available before fuller copy is written."
+  earns_its_place: |
+    Yes — and arguably more than the others, because the page itself is thin
+    ('Coming Soon' state). One schematic visual of the six-recommendation
+    roadmap converts the page from placeholder to substantive overnight.
+  concept: |
+    A horizontal six-step roadmap on off-white canvas. Six small numbered
+    nodes (01–06) connected by a single thin line. Each node is an outlined
+    square in border-default grey; node 01 ('current state') and node 06
+    ('roadmap delivered') are filled in alphabyte-blue. Geist Mono mini-labels
+    under each ('current', 'data', 'governance', 'use cases', 'agents',
+    'roadmap') in muted grey.
+  brand_guard:
+    - "Generic 'public sector' framing, no governmental insignia, no flags."
+    - "Numerals stay neutral — Geist regular, not stylised."
+  composition:
+    focal_zone: "Horizontal centre band — six-node sequence"
+    safe_areas:
+      - "10% margin all sides"
+  alt: "A six-step AI enablement roadmap from current state to delivered recommendations"
+  performance_budget_kb: 80
+  status: planned
+  metadata_sidecar: public/our-work/housing-services-corp-roadmap-concept.json

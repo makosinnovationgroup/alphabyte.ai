@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/our-work/circular-economy-platform/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/our-work-circular-economy-platform.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Circular Economy Platform: AI Productivity & Auction Analytics",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Circular Economy Platform — AI Productivity & Auction Analytics",
     description:
       "Two parallel AI programmes — executive intelligence and auction analytics — built for a circular economy company.",
-    images: ["/og/default.png"],
+    images: ["/og/our-work-circular-economy-platform.png"],
   },
 };
 
@@ -197,6 +197,11 @@ export default function CircularEconomyPlatformPage() {
             "Want to explore what we could build for your operations?",
           subhead: "45 minutes. No cost. No obligation.",
           cta: { label: "Book a Discovery Call", action: "modal" },
+        }}
+        figure={{
+          src: "/our-work/circular-economy-platform-msi-concept.webp",
+          alt: "A schematic market-supply-index curve with a derived three-tier bid band",
+          caption: "Figure 1 — Market Supply Index + bid-band concept (illustrative).",
         }}
       />
     </>

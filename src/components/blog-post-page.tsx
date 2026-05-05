@@ -40,6 +40,7 @@ export interface BlogMorePost {
   title: string;
   excerpt: string;
   href: string;
+  heroImage?: string;
 }
 
 export interface BlogPostPageProps {
@@ -54,6 +55,7 @@ export interface BlogPostPageProps {
   readyToMoveCard: BlogReadyToMoveCard;
   topics: string[];
   moreFromBlog: BlogMorePost[];
+  heroImage?: string;
 }
 
 export function BlogPostPage({
@@ -68,6 +70,7 @@ export function BlogPostPage({
   readyToMoveCard,
   topics,
   moreFromBlog,
+  heroImage,
 }: BlogPostPageProps) {
   return (
     <main>
@@ -168,6 +171,21 @@ export function BlogPostPage({
           </div>
         </div>
       </section>
+
+      {/* Hero image (optional) */}
+      {heroImage && (
+        <section className="border-b border-border-default bg-white">
+          <div className="mx-auto max-w-[1600px] px-6 py-8 md:px-10 md:py-10 lg:px-16">
+            <img
+              src={heroImage}
+              alt={h1}
+              className="aspect-[16/9] w-full rounded-md object-cover"
+              width={1600}
+              height={900}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Two-column body */}
       <section>
@@ -278,8 +296,14 @@ export function BlogPostPage({
                 href={post.href}
                 className="group rounded-md border border-border-default bg-white transition-colors hover:border-alphabyte-blue/40"
               >
-                {/* Dark thumbnail placeholder */}
-                <div className="h-40 rounded-t-md bg-foreground" />
+                {/* Thumbnail */}
+                <img
+                  src={post.heroImage ?? "/og/default.png"}
+                  alt={post.title}
+                  className="h-40 w-full rounded-t-md object-cover"
+                  width={400}
+                  height={160}
+                />
 
                 <div className="p-6">
                   {/* Tag pills */}

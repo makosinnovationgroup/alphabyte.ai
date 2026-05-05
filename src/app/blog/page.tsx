@@ -120,12 +120,14 @@ export default function BlogPage() {
               href={`/blog/${featured.slug}/`}
               className="group overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md md:grid md:grid-cols-2"
             >
-              {/* Image placeholder */}
-              <div className="flex aspect-[4/3] items-center justify-center bg-foreground md:aspect-auto">
-                <span className="text-body-sm text-muted-foreground">
-                  [Featured image]
-                </span>
-              </div>
+              {/* Featured hero image */}
+              <img
+                src={`/blog/${featured.slug}-hero.webp`}
+                alt={featured.title}
+                className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full"
+                width={800}
+                height={600}
+              />
 
               {/* Content */}
               <div className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-10">
@@ -168,12 +170,14 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}/`}
                   className="group flex flex-col overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md"
                 >
-                  {/* Image placeholder */}
-                  <div className="flex aspect-[16/9] items-center justify-center bg-foreground">
-                    <span className="text-body-sm text-muted-foreground">
-                      [Post image]
-                    </span>
-                  </div>
+                  {/* Post hero image */}
+                  <img
+                    src={`/blog/${post.slug}-hero.webp`}
+                    alt={post.title}
+                    className="aspect-[16/9] w-full object-cover"
+                    width={800}
+                    height={450}
+                  />
 
                   {/* Card body */}
                   <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
