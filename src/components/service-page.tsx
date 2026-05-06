@@ -12,6 +12,11 @@ export interface BreadcrumbItem {
   href?: string;
 }
 
+export interface ServiceFaqEntry {
+  question: string;
+  answer: string;
+}
+
 export interface ServicePageProps {
   breadcrumb: BreadcrumbItem[];
   eyebrow: string;
@@ -44,6 +49,7 @@ export interface ServicePageProps {
   rightForYou: string[];
   notRightForYou: string[];
   timeline: string;
+  faq?: ServiceFaqEntry[];
 }
 
 export function ServicePage({
@@ -60,6 +66,7 @@ export function ServicePage({
   rightForYou,
   notRightForYou,
   timeline,
+  faq,
 }: ServicePageProps) {
   return (
     <main>
@@ -244,7 +251,33 @@ export function ServicePage({
         </div>
       </section>
 
-      {/* 7. Timeline footer */}
+      {/* 7. FAQ */}
+      {faq && faq.length > 0 && (
+        <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16">
+          <div className="mx-auto max-w-[1600px]">
+            <div className="mb-10 flex items-center gap-4">
+              <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
+                Frequently Asked Questions
+              </h2>
+              <div className="h-px flex-1 bg-border-default" />
+            </div>
+            <dl className="divide-y divide-border-default">
+              {faq.map((entry, i) => (
+                <div key={i} className="py-6 first:pt-0 last:pb-0">
+                  <dt className="text-body font-bold text-foreground">
+                    {entry.question}
+                  </dt>
+                  <dd className="mt-3 text-body text-muted-foreground max-w-3xl">
+                    {entry.answer}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
+      {/* 8. Timeline footer */}
       <section className="border-t border-border-default">
         <div className="mx-auto max-w-[1600px] flex flex-wrap items-center justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
           <div>

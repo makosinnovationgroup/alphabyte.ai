@@ -76,13 +76,42 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    question: "Why do we need data readiness before building AI?",
+    answer: "Most AI projects fail because the data underneath was not validated before the build started. This engagement finds problems in week two, not month six after significant budget has been spent. If the data is not ready, nothing built on top of it will work.",
+  },
+  {
+    question: "What does the AI readiness scorecard measure?",
+    answer: "Five dimensions: data quality, data governance, infrastructure readiness, security posture, and integration maturity. Each dimension is scored and benchmarked so you know exactly where you stand and what needs fixing.",
+  },
+  {
+    question: "Does this cover Canadian privacy compliance?",
+    answer: "Yes. The governance assessment includes alignment against PIPEDA, FIPPA, and SOC 2 requirements. Retention policies, data classification, and DLP tagging are reviewed from a Claude deployment perspective.",
+  },
+  {
+    question: "What if our data is worse than expected?",
+    answer: "The remediation pathway gives specific, prioritized steps to close each gap. You know exactly what to fix and in what order before any build begins. No surprises after your investment starts.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+};
+
 export default function DataReadinessPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 
@@ -176,6 +205,7 @@ export default function DataReadinessPage() {
           "You have recent, validated data documentation and just need a scoped integration \u2014 we will confirm this in the first conversation",
         ]}
         timeline="4 to 8 weeks from kickoff"
+        faq={faq}
       />
     </>
   );

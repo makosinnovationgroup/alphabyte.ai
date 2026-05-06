@@ -75,13 +75,46 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    question: "What is citizen developer enablement with Claude?",
+    answer: "A governed path for non-engineers to build working tools using natural language against live operational data. Claude provides the reasoning layer, MCP servers connect to your systems, and an SDLC plugin enforces governance. It is not low-code drag-and-drop \u2014 there is no ceiling on what your team can build.",
+  },
+  {
+    question: "How long does it take to get the first tool into production?",
+    answer: "Most clients have something running by week three. The governed environment is configured in week two, and the enablement workshop in week three gets your team building immediately. Full programme deployment is three to twelve weeks depending on scope and team size.",
+  },
+  {
+    question: "What governance is built into the environment?",
+    answer: "Every environment ships with an SDLC plugin enforcing review and versioning, branch protection on Claude-generated code, per-project sandbox environments, least-privilege data access via MCP, and full audit logging on every tool invocation.",
+  },
+  {
+    question: "Do employees need technical skills to use this?",
+    answer: "No. Employees describe their work in plain English. Claude builds the tool. The governed environment catches mistakes. The people who know the work build the tools \u2014 they do not need to write code.",
+  },
+  {
+    question: "What happens after the engagement ends?",
+    answer: "You receive a graduation playbook with a documented path to production, hypercare support with a dedicated channel and weekly syncs, and your team runs the environment independently. We stay on until it is running reliably.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+};
+
 export default function CitizenDevelopmentPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 
@@ -191,6 +224,7 @@ export default function CitizenDevelopmentPage() {
           "You are looking for a pilot with no defined governance or production path \u2014 we do not deliver proofs of concept that are not designed to ship",
         ]}
         timeline="3 to 12 weeks from kickoff depending on delivery tier"
+        faq={faq}
       />
     </>
   );

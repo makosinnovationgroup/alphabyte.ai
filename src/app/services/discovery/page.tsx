@@ -75,13 +75,42 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    question: "How is this different from a typical AI strategy engagement?",
+    answer: "Four weeks, not six months. We come in with a point of view, not a blank whiteboard. You leave with three buildable use cases with preliminary architecture and a Findings and Recommendations document you can execute immediately \u2014 not a slide deck.",
+  },
+  {
+    question: "What does the deliverable look like?",
+    answer: "A Findings and Recommendations document. It specifies exactly what to build, in what order, with what dependencies, against what timeline. It is a plan scoped for execution, not a research report.",
+  },
+  {
+    question: "Do we need AI experience before starting Discovery?",
+    answer: "No. Discovery is designed for organizations that have not made a meaningful AI investment yet and want to know where to start without spending six months figuring it out.",
+  },
+  {
+    question: "What happens if our data is not ready?",
+    answer: "The gap analysis in week three identifies exactly what needs fixing \u2014 infrastructure, data quality, governance, and security posture. Data Readiness is the natural next step if data quality is a blocker.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+};
+
 export default function DiscoveryPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 
@@ -169,6 +198,7 @@ export default function DiscoveryPage() {
           "You want a strategic document to satisfy a stakeholder without a real intent to execute \u2014 we scope for execution, not for optics",
         ]}
         timeline="3 to 5 weeks from kickoff"
+        faq={faq}
       />
     </>
   );

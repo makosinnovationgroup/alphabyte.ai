@@ -75,13 +75,42 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    question: "What is a custom MCP server?",
+    answer: "A lightweight application that gives Claude structured access to your business systems \u2014 CRM, ERP, databases, file storage. Each server inherits your existing permissions, logs every interaction, and connects through OAuth 2.0 with role-based access controls.",
+  },
+  {
+    question: "Do we need to complete enablement before infrastructure work?",
+    answer: "Yes. Infrastructure built before enablement produces systems nobody uses. Your team needs to be using Claude consistently before we connect it to live operational systems. We enforce Data Readiness before any integration or agent work.",
+  },
+  {
+    question: "Can we keep our data on-premise?",
+    answer: "Yes. On-premise LLM deployment using Llama, Mistral, or other open-source models is available for environments where cloud AI is ruled out by regulation or policy. We deploy on your own infrastructure with full control.",
+  },
+  {
+    question: "What security is built into MCP servers and agents?",
+    answer: "OAuth 2.0 authentication, role-based access controls, and full audit logging on every tool invocation. Agents run in isolated cloud sandboxes with human-in-the-loop approval gates at decision points. Every action is traceable.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+};
+
 export default function InfrastructurePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 
@@ -173,6 +202,7 @@ export default function InfrastructurePage() {
           "Your data foundation has not been validated \u2014 we enforce Data Readiness before any integration or agent work begins.",
         ]}
         timeline="4 to 36 weeks depending on scope"
+        faq={faq}
       />
     </>
   );

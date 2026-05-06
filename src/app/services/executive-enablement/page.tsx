@@ -75,13 +75,42 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    question: "What does the executive team actually get?",
+    answer: "A custom Claude environment populated with your operational data \u2014 knowledgebases built from your policies, SOPs, board materials, and product data. Custom skills that automate your leadership team\u2019s specific workflows. A prompt toolkit tested against your actual data. Each functional leader gets a differentiated experience.",
+  },
+  {
+    question: "How much time does the executive team need to invest?",
+    answer: "One-on-one discovery sessions in week one, typically thirty to sixty minutes each. Then a hands-on knowledge transfer session for the full cohort. Active use is required for the environment to produce value \u2014 this is not a demo.",
+  },
+  {
+    question: "How quickly does this produce measurable results?",
+    answer: "Most executives see time savings in the first sprint. When variance commentary that took four hours now takes twenty minutes, the CFO notices. That visible proof point is what makes the broader programme easy to resource.",
+  },
+  {
+    question: "Is this a standalone engagement or does it lead somewhere?",
+    answer: "It works standalone as a fast leadership win. Most clients use it as the internal proof point to resource Citizen Development for the wider team. The executive environment stays live and continues to compound.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+};
+
 export default function ExecutiveEnablementPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 
@@ -180,6 +209,7 @@ export default function ExecutiveEnablementPage() {
           "You are expecting a one-size-fits-all environment \u2014 the value is in the customisation, which requires time from your executives in week one",
         ]}
         timeline="2 to 4 weeks from kickoff"
+        faq={faq}
       />
     </>
   );
