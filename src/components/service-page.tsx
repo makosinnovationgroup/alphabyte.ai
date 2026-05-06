@@ -275,7 +275,7 @@ export function ServicePage({
                     </span>
                   </Accordion.Trigger>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <p className="pb-5 text-body text-muted-foreground max-w-3xl">
+                    <p className="pb-5 text-body text-muted-foreground">
                       {entry.answer}
                     </p>
                   </Accordion.Content>
