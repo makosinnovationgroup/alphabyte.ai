@@ -36,7 +36,7 @@
 - /team/ — 8 practitioners with full profiles
 - /team/adam-nameh/ — Co-Founder and Data Platform Architect
 - /team/mitch-makos/ — Principal Architect & AI Delivery Lead
-- /team/ahmad-nameh/ — Business Intelligence Specialist
+- /team/ahmad-nameh/ — Co-Founder & Lead Consultant
 - /team/ibrahim-nameh/ — IT Director
 - /team/kevin-seto/ — Director, Analytics and Project Delivery
 - /team/rugved-ambekar/ — Senior Engineer & AI Delivery Lead

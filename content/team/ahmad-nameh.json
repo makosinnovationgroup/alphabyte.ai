@@ -1,14 +1,14 @@
 {
   "slug": "ahmad-nameh",
   "name": "Ahmad Nameh",
-  "role": "Business Intelligence Specialist",
-  "company": "Alphabyte Inc.",
+  "role": "Co-Founder & Lead Consultant",
+  "company": "Alphabyte Solutions Inc.",
   "location": "Toronto, Ontario, Canada",
   "avatarSrc": "/team/ahmad-nameh.png",
-  "eyebrow": "BUSINESS INTELLIGENCE SPECIALIST AT ALPHABYTE",
+  "eyebrow": "CO-FOUNDER & LEAD CONSULTANT AT ALPHABYTE",
   "bio": [
-    "Ahmad is a Data Analysis and Reporting Expert with extensive experience producing end-to-end data solutions for clients across a wide array of industries. His background spans data collection, automation, transformation, cleansing, aggregation, analysis, and reporting.",
-    "At Alphabyte, Ahmad manages a team of 10 analysts and leads the Reporting and Analysis wing of the organization, working with clients across the US and Canada to deliver comprehensive BI solutions."
+    "Ahmad co-founded Alphabyte and leads the firm's business intelligence and digital advisory practice. He partners with executive teams at mid-market companies across many industries, guiding them through the strategic choices that turn data, reporting, and operations into competitive advantage rather than overhead.",
+    "His engagements focus on the leadership questions that sit above tooling: where the business is trying to go, which capabilities matter most, what to invest in now versus later, and how to sequence the work so it compounds. He brings a senior advisor's judgment to clients navigating modernisation, growth, and operational complexity."
   ],
   "contact": {
     "linkedin": {
@@ -18,8 +18,8 @@
   },
   "credentials": {
     "degree": {
-      "title": "Bachelor of Commerce",
-      "subtitle": "Accounting Specialization, Economics Minor"
+      "title": "Bachelor of Commerce — Accounting Specialization, Economics Minor",
+      "subtitle": "Bachelor of Commerce"
     },
     "institution": {
       "title": "University of Toronto",
@@ -30,13 +30,8 @@
   "careerTimeline": [
     {
       "period": "2016 — Present",
-      "role": "Business Intelligence Specialist",
-      "organization": "Alphabyte Inc."
-    },
-    {
-      "period": "2017 — 2022",
-      "role": "Business Intelligence Analyst",
-      "organization": "Metabolic Living"
+      "role": "Co-Founder & Lead Consultant",
+      "organization": "Alphabyte Solutions Inc."
     },
     {
       "period": "2015 — 2016",
@@ -44,37 +39,27 @@
       "organization": "Rogers Communications Inc."
     },
     {
-      "period": "2015 — Present",
-      "role": "Sr. Business Analyst",
-      "organization": "Royal Building Products"
-    },
-    {
       "period": "2013 — 2014",
-      "role": "Data Analyst — Sales",
+      "role": "Data Analyst, Sales",
       "organization": "Toys R Us Canada"
     },
     {
       "period": "2012 — 2013",
-      "role": "Data Analyst — Procurement",
+      "role": "Data Analyst, Procurement",
       "organization": "Sears Canada Inc."
     }
   ],
   "expertise": [
-    "Microsoft Power BI",
-    "Tableau",
-    "SQL Server",
-    "Data Modeling",
-    "Financial Reporting",
-    "Forecasting",
-    "Power Apps",
-    "Azure Data Factory"
+    "Business Intelligence Strategy",
+    "Digital Advisory",
+    "Data Strategy & Readiness",
+    "Reporting & Analytics Modernisation",
+    "Mid-Market Operational Improvement"
   ],
   "achievements": [
-    "Manages a team of 10 analysts leading the Reporting and Analysis wing at Alphabyte",
-    "Developed a forecast model with 98% accuracy for ROAS/ROI at the ad level at Metabolic Living",
-    "Onboarded multiple organizations to Power BI across Canadian and US divisions",
-    "Revamped entire sales and inventory reporting infrastructure at Royal Building Products, automating 25+ dashboards",
-    "Led a data clean-up effort that reconciled company financials to the penny"
+    "Co-founded Alphabyte in 2016 and built it into a Canadian consulting firm serving mid-market clients across many industries",
+    "Leads BI and digital advisory engagements end-to-end, working with executive teams from strategy through delivery and adoption",
+    "Has guided mid-market organisations across multiple industries through reporting modernisation, data strategy, and operational improvement programmes"
   ],
   "thoughtLeadership": [],
   "articles": [],
@@ -82,5 +67,5 @@
     "name": "Alphabyte AI",
     "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
   },
-  "pills": ["Power BI", "Tableau", "SQL", "Data Modeling", "Forecasting"]
+  "pills": ["Business Intelligence", "Digital Advisory", "Data Strategy", "Reporting", "Mid-Market"]
 }
