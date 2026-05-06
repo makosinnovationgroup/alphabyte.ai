@@ -455,9 +455,9 @@ export function TeamMemberPage({
                   <img
                     src={`/blog/${article.slug}-hero.webp`}
                     alt={article.title}
-                    className="aspect-[16/9] w-full rounded-t-md object-cover object-top"
-                    width={400}
-                    height={225}
+                    className="w-full rounded-t-md"
+                    width={1551}
+                    height={1014}
                   />
                   <div className="p-6">
                     <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
