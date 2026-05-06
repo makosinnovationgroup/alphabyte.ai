@@ -1,0 +1,41 @@
+{
+  "slug": "alfaz-khan",
+  "name": "Alfaz Khan",
+  "role": "Security and Compliance Officer",
+  "company": "Alphabyte Solutions Inc.",
+  "location": "Toronto, Ontario, Canada",
+  "avatarSrc": "/team/alfaz-khan.jpeg",
+  "eyebrow": "SECURITY AND COMPLIANCE OFFICER AT ALPHABYTE AI",
+  "bio": [
+    "Alfaz Khan is the Security and Compliance Officer at Alphabyte Solutions. Bio to be completed.",
+    ""
+  ],
+  "contact": {},
+  "credentials": {
+    "degree": {
+      "title": "To be completed",
+      "subtitle": ""
+    },
+    "institution": {
+      "title": "To be completed",
+      "subtitle": ""
+    },
+    "keyCoursework": ""
+  },
+  "careerTimeline": [
+    {
+      "period": "2025 — Present",
+      "role": "Security and Compliance Officer",
+      "organization": "Alphabyte Solutions Inc."
+    }
+  ],
+  "expertise": [],
+  "achievements": [],
+  "thoughtLeadership": [],
+  "articles": [],
+  "footerBio": {
+    "name": "Alphabyte AI",
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+  },
+  "pills": []
+}

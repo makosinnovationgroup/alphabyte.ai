@@ -50,6 +50,7 @@ const MEMBER_ORDER = [
   "ahmad-nameh",
   "kevin-seto",
   "rugved-ambekar",
+  "alfaz-khan",
   "mitch-makos",
   "rabia-arabaci",
 ];
@@ -183,15 +184,15 @@ export default function TeamPage() {
               >
                 {/* Photo / placeholder */}
                 {member.avatarSrc ? (
-                  <span className="block aspect-[4/3] bg-alphabyte-grey overflow-hidden">
+                  <span className="block aspect-square bg-alphabyte-grey overflow-hidden">
                     <img
                       src={member.avatarSrc}
                       alt={member.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                   </span>
                 ) : (
-                  <span className="flex items-center justify-center aspect-[4/3] bg-alphabyte-blue">
+                  <span className="flex items-center justify-center aspect-square bg-alphabyte-blue">
                     <span className="text-5xl font-medium text-white">
                       {member.name.charAt(0)}
                     </span>

@@ -40,6 +40,7 @@
 - /team/ibrahim-nameh/ — IT Director
 - /team/kevin-seto/ — Director, Analytics and Project Delivery
 - /team/rugved-ambekar/ — Senior Engineer & AI Delivery Lead
+- /team/alfaz-khan/ — Security and Compliance Officer
 - /team/rabia-arabaci/ — Marketing Coordinator
 
 ## Company
