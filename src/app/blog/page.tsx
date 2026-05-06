@@ -103,7 +103,7 @@ export default function BlogPage() {
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             Alphabyte AI &middot; Perspectives
           </p>
-          <h1 className="mt-4 text-display tracking-brand-tight">Blog</h1>
+          <h1 className="mt-4 text-display tracking-brand-tight">AI Deployment for Mid-Market</h1>
           <p className="mt-6 max-w-[42ch] text-body text-muted-foreground">
             Practical writing on AI deployment, citizen development, and the
             operational reality of making AI work inside a real mid-market

@@ -38,11 +38,16 @@ const webPageSchema = {
   description:
     "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
-  },
+  isPartOf: { "@id": "https://alphabyte.ai/#website" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alphabyte.ai/" },
+    { "@type": "ListItem", position: 2, name: "Our Work", item: "https://alphabyte.ai/our-work/" },
+  ],
 };
 
 const caseStudies = [
@@ -79,7 +84,7 @@ export default function OurWorkPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema]) }}
       />
 
       {/* Hero */}

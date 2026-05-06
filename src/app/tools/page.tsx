@@ -50,6 +50,16 @@ const breadcrumbSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
+  description:
+    "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
+  url: "https://alphabyte.ai/tools/",
+  isPartOf: { "@id": "https://alphabyte.ai/#website" },
+};
+
 const stats = [
   {
     headline: "Anthropic Claude Certified",
@@ -152,7 +162,7 @@ export default function ToolsPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema]) }}
       />
 
       {/* Breadcrumb */}

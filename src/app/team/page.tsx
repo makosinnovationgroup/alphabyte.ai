@@ -188,6 +188,7 @@ export default function TeamPage() {
                     <img
                       src={member.avatarSrc}
                       alt={member.name}
+                      loading="lazy"
                       className="h-full w-full object-cover object-top"
                     />
                   </span>
