@@ -60,6 +60,7 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://alphabyte.ai/#organization",
   name: "Alphabyte",
   legalName: "Alphabyte Solutions Inc.",
   url: "https://alphabyte.ai",
@@ -92,9 +93,7 @@ const webSiteSchema = {
   name: "Alphabyte",
   url: "https://alphabyte.ai",
   publisher: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
 };
 

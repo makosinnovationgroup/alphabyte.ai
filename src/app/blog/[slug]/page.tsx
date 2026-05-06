@@ -25,6 +25,7 @@ interface BlogFrontmatter {
   title: string;
   excerpt: string;
   publishedDate: string;
+  modifiedDate?: string;
   readTime: string;
   author: string;
   tags: string[];
@@ -217,7 +218,7 @@ export default async function BlogSlugPage({
     url: `https://alphabyte.ai/blog/${slug}/`,
     image: `https://alphabyte.ai/blog/${slug}-hero.webp`,
     datePublished: frontmatter.publishedDate,
-    dateModified: frontmatter.publishedDate,
+    dateModified: frontmatter.modifiedDate || frontmatter.publishedDate,
     author: {
       "@type": "Person",
       name: author.name,

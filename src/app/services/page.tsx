@@ -68,9 +68,34 @@ const decisionRows = [
   },
 ];
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "AI Consulting Services for Mid-Market Organizations",
+  description:
+    "Five AI consulting services for mid-market organizations. Start where your situation actually is.",
+  url: "https://alphabyte.ai/services/",
+  isPartOf: { "@id": "https://alphabyte.ai/#website" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alphabyte.ai/" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://alphabyte.ai/services/" },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([webPageSchema, breadcrumbSchema]),
+        }}
+      />
       {/* Hero */}
       <section className="bg-white px-6 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14">
         <div className="mx-auto max-w-[1600px]">
