@@ -173,7 +173,7 @@ export function CaseStudyPage({
 
       {/* 3. Two-column body */}
       <section className="border-b border-border-default">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_340px]">
+        <div className="mx-auto max-w-[1600px] grid grid-cols-1 md:grid-cols-[1fr_340px]">
           {/* Left column — body content */}
           <div className="space-y-5 py-12 pl-6 pr-6 md:py-16 md:pl-10 md:pr-12 lg:pl-16">
             {(() => {

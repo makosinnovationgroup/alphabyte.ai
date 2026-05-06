@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/our-work/fire-protection-compliance/",
     images: [
       {
-        url: "/og/our-work-fire-protection-compliance.png",
+        url: "/our-work/fire-protection-compliance-knowledge-graph.webp",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Construction Firm — Compliance Intelligence Agent",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Construction Firm — Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
-    images: ["/og/our-work-fire-protection-compliance.png"],
+    images: ["/our-work/fire-protection-compliance-knowledge-graph.webp"],
   },
 };
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/our-work/community-housing-organisation/",
     images: [
       {
-        url: "/og/our-work-community-housing-organisation.png",
+        url: "/our-work/community-housing-organisation-roadmap-concept.webp",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Community Housing Organisation — AI Enablement",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Community Housing Organisation — AI Enablement",
     description:
       "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation.",
-    images: ["/og/our-work-community-housing-organisation.png"],
+    images: ["/our-work/community-housing-organisation-roadmap-concept.webp"],
   },
 };
 

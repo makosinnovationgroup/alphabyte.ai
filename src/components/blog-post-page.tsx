@@ -88,7 +88,7 @@ export function BlogPostPage({
           aria-label="Breadcrumb"
           className="border-b border-border-default px-6 py-4 md:px-10 lg:px-16"
         >
-          <ol className="flex items-center gap-2 text-body-sm">
+          <ol className="mx-auto max-w-[1600px] flex items-center gap-2 text-body-sm">
             {breadcrumb.items.map((item, i) => {
               const isLast = i === breadcrumb.items.length - 1;
               return (
@@ -116,9 +116,9 @@ export function BlogPostPage({
           </ol>
         </nav>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_420px]">
+        <div className="mx-auto max-w-[1600px] grid grid-cols-1 md:grid-cols-[1fr_420px]">
           {/* Left — hero content */}
-          <div className="px-6 pb-10 pt-10 md:pb-12 md:pl-10 md:pr-12 md:pt-14 lg:max-w-[70vw] lg:pl-16">
+          <div className="px-6 pb-10 pt-10 md:pb-12 md:pl-10 md:pr-12 md:pt-14 lg:pl-16">
             {/* Tag pills */}
             <div className="flex flex-wrap gap-2">
               {tags.map((tag, i) => (
@@ -196,9 +196,9 @@ export function BlogPostPage({
 
       {/* Two-column body */}
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_420px]">
+        <div className="mx-auto max-w-[1600px] grid grid-cols-1 md:grid-cols-[1fr_420px]">
           {/* Left column — MDX content + author bio */}
-          <div className="py-12 pl-6 pr-6 md:py-16 md:pl-10 md:pr-12 lg:max-w-[70vw] lg:pl-16">
+          <div className="py-12 pl-6 pr-6 md:py-16 md:pl-10 md:pr-12 lg:pl-16">
             <div className="blog-body space-y-5">
               {bodyContent}
             </div>
@@ -308,6 +308,7 @@ export function BlogPostPage({
       {/* MORE FROM THE BLOG */}
       {moreFromBlog.length > 0 && (
         <section className="bg-alphabyte-grey/50 px-6 py-12 md:px-10 md:py-16 lg:px-16">
+          <div className="mx-auto max-w-[1600px]">
           <p className="mb-8 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
             More from the blog
           </p>
@@ -323,9 +324,9 @@ export function BlogPostPage({
                 <img
                   src={post.heroImage ?? "/og/default.png"}
                   alt={post.title}
-                  className="h-40 w-full rounded-t-md object-cover object-top"
-                  width={400}
-                  height={160}
+                  className="w-full rounded-t-md"
+                  width={1551}
+                  height={1014}
                 />
 
                 <div className="p-6">
@@ -353,6 +354,7 @@ export function BlogPostPage({
                 </div>
               </Link>
             ))}
+          </div>
           </div>
         </section>
       )}

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/our-work/circular-economy-platform/",
     images: [
       {
-        url: "/og/our-work-circular-economy-platform.png",
+        url: "/our-work/circular-economy-platform-msi-concept.webp",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Major Supplier — Executive Productivity Suite",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Major Supplier — Executive Productivity Suite",
     description:
       "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",
-    images: ["/og/our-work-circular-economy-platform.png"],
+    images: ["/our-work/circular-economy-platform-msi-concept.webp"],
   },
 };
 
