@@ -194,7 +194,7 @@ export async function onRequestPost(context: EventContext): Promise<Response> {
           },
         ],
         from: {
-          email: "contact@alphabyte.ai",
+          email: "no-reply@alphabyte.ai",
           name: "Alphabyte Website",
         },
         reply_to: {
