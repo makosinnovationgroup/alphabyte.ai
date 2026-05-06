@@ -91,29 +91,7 @@
       "href": null
     }
   ],
-  "articles": [
-    {
-      "category": "CITIZEN DEVELOPMENT",
-      "title": "The window is open. Here is how to move before it closes.",
-      "excerpt": "Claude hit a threshold this year. Any employee who can describe their work can now build applications and automate workflows against live operational data.",
-      "date": "April 2026",
-      "slug": "window-is-open"
-    },
-    {
-      "category": "AI STRATEGY",
-      "title": "Why we start with the people, not the process.",
-      "excerpt": "Every organization has someone who has quietly built something extraordinary with Claude. We find that person, learn what she built, and install the infrastructure.",
-      "date": "April 2026",
-      "slug": "start-with-people-not-process"
-    },
-    {
-      "category": "CASE STUDIES",
-      "title": "How we built a compliance intelligence agent.",
-      "excerpt": "A live AI compliance agent for a multi-entity construction firm. Knowledge graph architecture, custom MCP server, and org-wide Claude Desktop access.",
-      "date": "March 2026",
-      "slug": "how-to-build-a-custom-mcp-server"
-    }
-  ],
+  "articles": [],
   "pills": ["AI Strategy", "Data Architecture", "Client Engagement", "Programme Design"],
   "footerBio": {
     "name": "Alphabyte AI",

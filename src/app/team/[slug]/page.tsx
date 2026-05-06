@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { TeamMemberPage } from "@/components/team-member-page";
 
 const TEAM_DIR = path.join(process.cwd(), "content/team");
+const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
 interface TeamMemberData {
   slug: string;
@@ -55,6 +57,27 @@ function getTeamMember(slug: string): TeamMemberData | null {
   const filePath = path.join(TEAM_DIR, `${slug}.json`);
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+}
+
+function getArticlesByAuthor(authorSlug: string) {
+  if (!fs.existsSync(BLOG_DIR)) return [];
+  return fs
+    .readdirSync(BLOG_DIR)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, f), "utf-8");
+      const { data } = matter(raw);
+      return data;
+    })
+    .filter((d) => d.author === authorSlug)
+    .sort((a, b) => new Date(b.publishedDate as string).getTime() - new Date(a.publishedDate as string).getTime())
+    .map((d) => ({
+      category: ((d.tags as string[]) || [])[0] || "Blog",
+      title: d.title as string,
+      excerpt: d.excerpt as string,
+      date: new Date(d.publishedDate as string + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }),
+      slug: d.slug as string,
+    }));
 }
 
 export function generateStaticParams() {
@@ -185,7 +208,7 @@ export default async function TeamMemberSlugPage({
         expertise={member.expertise}
         achievements={member.achievements}
         thoughtLeadership={member.thoughtLeadership}
-        articles={member.articles}
+        articles={getArticlesByAuthor(slug)}
         footerBio={member.footerBio}
       />
     </>

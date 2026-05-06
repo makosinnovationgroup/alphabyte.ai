@@ -174,9 +174,9 @@ export default function BlogPage() {
                   <img
                     src={`/blog/${post.slug}-hero.webp`}
                     alt={post.title}
-                    className="aspect-[16/9] w-full object-cover object-top"
-                    width={800}
-                    height={450}
+                    className="w-full"
+                    width={1551}
+                    height={1014}
                   />
 
                   {/* Card body */}

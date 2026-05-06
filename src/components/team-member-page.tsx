@@ -452,7 +452,13 @@ export function TeamMemberPage({
                   href={`/blog/${article.slug}/`}
                   className="group rounded-md border border-border-default bg-white transition-colors hover:border-alphabyte-blue/40"
                 >
-                  <div className="h-40 rounded-t-md bg-foreground" />
+                  <img
+                    src={`/blog/${article.slug}-hero.webp`}
+                    alt={article.title}
+                    className="aspect-[16/9] w-full rounded-t-md object-cover object-top"
+                    width={400}
+                    height={225}
+                  />
                   <div className="p-6">
                     <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
                       {article.category}
