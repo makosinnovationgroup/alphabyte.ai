@@ -6,17 +6,13 @@ import { DiscoveryCallProvider } from "@/lib/discovery-call-context";
 import { DiscoveryCallModal } from "@/components/discovery-call-modal";
 import "./globals.css";
 
-/**
- * Geist is the web typeface. Aeonik is the print typeface per brand guide
- * §4.0; if a webfont license for Aeonik is obtained later, swap this block.
- */
-const geist = localFont({
+const aeonik = localFont({
   src: [
-    { path: "../../public/fonts/Geist-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../public/fonts/Geist-RegularItalic.woff2", weight: "400", style: "italic" },
-    { path: "../../public/fonts/Geist-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../public/fonts/Geist-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../../public/fonts/Geist-BoldItalic.woff2", weight: "700", style: "italic" },
+    { path: "../../public/fonts/Aeonik-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Aeonik-RegularItalic.woff2", weight: "400", style: "italic" },
+    { path: "../../public/fonts/Aeonik-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Aeonik-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/Aeonik-BoldItalic.woff2", weight: "700", style: "italic" },
   ],
   variable: "--font-geist",
   display: "swap",
@@ -108,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="en" className={aeonik.variable}>
       <body>
         <script
           type="application/ld+json"
