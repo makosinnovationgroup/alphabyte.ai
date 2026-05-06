@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/services/discovery/",
     images: [
       {
-        url: "/og/discovery.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Discovery — AI Strategy & Roadmap Consulting",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Discovery — AI Strategy & Roadmap Consulting",
     description:
       "Four weeks from kickoff to a clear AI strategy. Three use cases, gap analysis, and a plan you can execute immediately.",
-    images: ["/og/discovery.png"],
+    images: ["/og/default.png"],
   },
 };
 

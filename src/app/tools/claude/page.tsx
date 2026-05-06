@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/tools/claude/",
     images: [
       {
-        url: "/og/claude.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Claude — The Intelligence Layer for AI Engagements",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Claude — The Intelligence Layer for AI Engagements",
     description:
       "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits.",
-    images: ["/og/claude.png"],
+    images: ["/og/default.png"],
   },
 };
 

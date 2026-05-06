@@ -111,7 +111,7 @@ export async function generateMetadata({
       url: `/team/${slug}/`,
       images: [
         {
-          url: `/og/team-${slug}.png`,
+          url: "/og/default.png",
           width: 1200,
           height: 630,
           alt: `Alphabyte — ${member.name}, ${member.role}`,
@@ -121,7 +121,7 @@ export async function generateMetadata({
     twitter: {
       title,
       description,
-      images: [`/og/team-${slug}.png`],
+      images: ["/og/default.png"],
     },
   };
 }

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/contact/",
     images: [
       {
-        url: "/og/contact.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Contact Us",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Contact Us",
     description:
       "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation.",
-    images: ["/og/contact.png"],
+    images: ["/og/default.png"],
   },
 };
 

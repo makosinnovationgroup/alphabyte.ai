@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/services/citizen-development/",
     images: [
       {
-        url: "/og/citizen-development.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Citizen Development — AI for Every Employee",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Citizen Development — AI for Every Employee",
     description:
       "Turn informal Claude usage into governed capability. SDLC plugin, guardrails, and MCP connectivity deployed in weeks.",
-    images: ["/og/citizen-development.png"],
+    images: ["/og/default.png"],
   },
 };
 

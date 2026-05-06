@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/og/home.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte \u2014 AI Consulting for Mid-Market Organizations",
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     title: "AI Consulting for Mid-Market Organizations",
     description:
       "Alphabyte AI designs and delivers working AI for mid-market organizations.",
-    images: ["/og/home.png"],
+    images: ["/og/default.png"],
   },
 };
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/services/",
     images: [
       {
-        url: "/og/services.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — Services — AI & Data Consulting",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Services — AI & Data Consulting",
     description:
       "Five AI consulting services for mid-market organizations. Start where your situation actually is.",
-    images: ["/og/services.png"],
+    images: ["/og/default.png"],
   },
 };
 

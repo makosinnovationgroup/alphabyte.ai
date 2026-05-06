@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/about/",
     images: [
       {
-        url: "/og/about.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "Alphabyte — About Alphabyte AI — Claude-Native Consulting",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "About Alphabyte AI — Claude-Native Consulting",
     description:
       "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
-    images: ["/og/about.png"],
+    images: ["/og/default.png"],
   },
 };
 

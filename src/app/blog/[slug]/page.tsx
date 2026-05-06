@@ -178,9 +178,9 @@ export async function generateMetadata({
       publishedTime: frontmatter.publishedDate,
       images: [
         {
-          url: `/og/blog-${slug}.png`,
-          width: 1200,
-          height: 630,
+          url: `/blog/${slug}-hero.webp`,
+          width: 1551,
+          height: 1014,
           alt: `Alphabyte — ${frontmatter.title}`,
         },
       ],
@@ -188,7 +188,7 @@ export async function generateMetadata({
     twitter: {
       title: frontmatter.title,
       description: frontmatter.excerpt,
-      images: [`/og/blog-${slug}.png`],
+      images: [`/blog/${slug}-hero.webp`],
     },
   };
 }
@@ -215,7 +215,7 @@ export default async function BlogSlugPage({
     headline: frontmatter.title,
     description: frontmatter.excerpt,
     url: `https://alphabyte.ai/blog/${slug}/`,
-    image: `https://alphabyte.ai/og/blog-${slug}.png`,
+    image: `https://alphabyte.ai/blog/${slug}-hero.webp`,
     datePublished: frontmatter.publishedDate,
     dateModified: frontmatter.publishedDate,
     author: {
