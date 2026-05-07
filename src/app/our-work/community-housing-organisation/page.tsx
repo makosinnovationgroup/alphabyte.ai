@@ -35,11 +35,21 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "CreativeWork",
   name: "Community Housing Organisation — AI Enablement",
   description:
     "How Alphabyte delivered an AI enablement roadmap for a community housing infrastructure organisation, including a seven-recommendation roadmap from data governance to purpose-built Claude agents.",
   url: "https://alphabyte.ai/our-work/community-housing-organisation/",
+  author: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+  about: {
+    "@type": "Service",
+    name: "AI Enablement Assessment",
+    provider: { "@type": "Organization", name: "Alphabyte" },
+  },
   isPartOf: {
     "@type": "WebSite",
     name: "Alphabyte",

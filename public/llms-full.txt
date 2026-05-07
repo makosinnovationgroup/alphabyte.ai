@@ -1,0 +1,97 @@
+# Alphabyte AI — Extended Site Index
+
+> Claude-focused AI consulting for mid-market organizations in North America. Practitioner-led, no junior bench. Operating since 2016. Headquartered in Vaughan, Ontario, Canada.
+
+Alphabyte Solutions Inc. is a data and AI consulting firm that works exclusively with Claude (by Anthropic). The practice serves mid-market organizations — typically 200 to 5,000 employees — across industries including construction, supply chain, financial services, healthcare, and housing. Every engineer on the team works with Claude full-time. The firm is Anthropic Claude Certified.
+
+## Services
+
+- /services/ — Five consulting tracks organized by where an organization sits in its AI journey. Clients start where they are and progress through the tracks as capability compounds.
+
+- /services/discovery/ — AI strategy sprint delivered in three to five weeks. Includes stakeholder sessions, use case development (three prioritized use cases), current-state gap analysis, and a Findings and Recommendations document. For organizations that have not yet made a meaningful AI investment and want a clear starting point.
+
+- /services/data-readiness/ — Data quality audit, governance assessment, AI readiness scorecard, and remediation pathway. Delivered in four to eight weeks. For regulated industries where data compliance is a prerequisite to any AI deployment.
+
+- /services/citizen-development/ — Governed Claude environment deployed to an entire team. Includes a custom SDLC plugin, knowledgebases, guardrails framework, and MCP data connectivity. Most clients have something running in week three. Delivered in three to twelve weeks.
+
+- /services/executive-enablement/ — Custom Claude environment built for leadership: knowledgebases populated with operational data, a skills library, a prompt toolkit, and Claude Teams configuration. Designed to produce a measurable proof point before a broader programme rollout. Delivered in two to four weeks.
+
+- /services/infrastructure/ — Custom MCP servers, autonomous AI agents, Agent Command Centre, on-premise LLM deployment, and fine-tuned models. For organizations where Claude moves from a productivity tool to an operational capability connected to live systems. Delivered in four to thirty-six weeks.
+
+## Tools
+
+- /tools/ — The technology stack Alphabyte builds with. Four layers: Claude (intelligence), MCP (data connectivity), custom AI agents (automation), and on-premise LLMs (private deployment).
+
+- /tools/claude/ — Claude is the intelligence layer across every Alphabyte engagement. Configured with custom knowledgebases, SDLC plugins, skills libraries, prompt toolkits, and MCP connectivity. Alphabyte is Anthropic Claude Certified. Claude ships in three tiers: Teams, Enterprise, and API.
+
+- /tools/mcp/ — Model Context Protocol (MCP) is an open standard from Anthropic for secure communication between AI models and external systems. Alphabyte builds custom MCP servers that give Claude governed, auditable, real-time access to CRM, ERP, data warehouses, databases, and APIs. Common integrations: Salesforce, HubSpot, Microsoft Dynamics, SAP, JIRA, Google BigQuery, Slack, Power BI.
+
+- /tools/custom-ai-agents/ — Purpose-built AI agents that execute defined workflows end-to-end. Each agent connects to data through MCP, operates in an isolated cloud sandbox, and routes to humans at defined approval gates. Ships with CI/CD pipelines, monitoring, rollback capability, and the Agent Command Centre dashboard.
+
+- /tools/on-premise-llm/ — Open-source LLM deployment (Llama, Mistral) on client infrastructure for organizations where cloud AI is ruled out by data sovereignty, security classifications, or regulatory mandates. Includes model selection, infrastructure provisioning, API access, MLOps, fine-tuning pipelines, and governance.
+
+## Case Studies
+
+- /our-work/ — Active client engagements demonstrating production AI systems, not prototypes.
+
+- /our-work/fire-protection-compliance/ — AI compliance intelligence agent built for a multi-entity construction firm. Navigates a full regulatory code library using a knowledge graph architecture. Returns applicable standards, relevant passages, and exact source pages in seconds. Integrated into Claude Desktop via a custom MCP server for org-wide access. Built on Claude and Claude Cowork. Live in production.
+
+- /our-work/circular-economy-platform/ — AI-powered executive productivity suite for a major supplier in reverse logistics. Custom Claude plugin connecting GSuite, Slack, Power BI, and Fireflies through purpose-built agents. Delivers automated morning briefs, spend reports, and post-call summaries.
+
+- /our-work/community-housing-organisation/ — AI enablement assessment and seven-recommendation roadmap for a community housing organisation. Evaluated current data estate, identified three priority use cases, and delivered a Findings and Recommendations document with an implementation pathway.
+
+## Blog
+
+- /blog/ — Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside mid-market organizations.
+
+- /blog/why-ai-pilots-stall/ — Analysis of why 80% of mid-market AI pilots fail to reach production. Identifies three deployment failures (top-down focus, over-engineering, weak governance) and presents the bottom-up programme as the alternative. Cites McKinsey 2024 and Deloitte surveys. Author: Adam Nameh.
+
+- /blog/ai-governance-framework-mid-market/ — A practical AI governance framework for mid-market companies. Covers policy structure, risk classification, data handling, and oversight mechanisms without enterprise-scale bureaucracy. Author: Adam Nameh.
+
+- /blog/ai-readiness-assessment/ — The two-week AI readiness assessment for operations leaders. Describes how to evaluate an organization's data estate, team capability, and infrastructure in a compressed timeline. Author: Adam Nameh.
+
+- /blog/citizen-developer-enablement-playbook/ — The 2026 playbook for citizen developer enablement. How to move from informal Claude usage to a governed, compounding capability across the organization. Author: Rugved Ambekar.
+
+- /blog/claude-for-finance-teams/ — Eight practical Claude workflows for finance teams: automated reporting, variance analysis, budget commentary, and more. Author: Kevin Seto.
+
+- /blog/claude-vs-chatgpt-enterprise/ — Honest comparison of Claude and ChatGPT Enterprise for mid-market buyers. Claude is stronger for operational depth and MCP integration; ChatGPT is stronger for broad adoption and plugin ecosystem. Author: Rugved Ambekar.
+
+- /blog/claude-vs-microsoft-copilot/ — Claude vs Microsoft Copilot for mid-market knowledge work. Compares reasoning depth, integration patterns, and total cost of ownership. Author: Rugved Ambekar.
+
+- /blog/private-llm-vs-claude-enterprise/ — Decision framework for choosing between on-premise LLM deployment and Claude Enterprise. Covers data sovereignty, cost structure, and capability trade-offs. Author: Alfaz Khan.
+
+- /blog/shadow-ai-governance/ — Shadow AI is already in most mid-market companies. This guide covers how to identify unauthorized AI usage, assess risk, and implement governance without killing adoption. Author: Adam Nameh.
+
+- /blog/how-to-build-a-custom-mcp-server/ — Technical guide to building a custom MCP server for mid-market IT. Covers architecture decisions, authentication patterns, tool definitions, and deployment infrastructure. Author: Rugved Ambekar.
+
+## Team
+
+- /team/ — Eight practitioners. No junior bench. Two dedicated Claude engineers backed by a twenty-person delivery organization.
+
+- /team/adam-nameh/ — Co-Founder and Data Platform Architect. B.A.Sc. in Computer Engineering from the University of Toronto. Former Data Architect at BMO Financial Group. Founded Alphabyte in 2016. Has served 100+ North American clients.
+
+- /team/ahmad-nameh/ — Co-Founder and Lead Consultant. Leads the firm's business intelligence and digital advisory practice. Partners with executive teams at mid-market companies across many industries.
+
+- /team/mitch-makos/ — Principal Architect and AI Delivery Lead. Senior platform architect and full-stack engineer with a decade of experience at IBM Cloud Garage, Hertz, NCR, Fidelity, Royal Bank of Canada, Pacific Gas and Electric, and Erie Insurance.
+
+- /team/rugved-ambekar/ — Senior Engineer and AI Delivery Lead. 15+ years shipping software across mobile, full-stack, desktop, and AI. Three fractional CTO engagements. Raised a $1.3M seed round. Builds AI agents, custom MCP servers, and governed environments.
+
+- /team/ibrahim-nameh/ — IT Director. Project Manager and Cloud Data Architect overseeing cloud data strategy, web application development, and account management for the company's largest clients.
+
+- /team/kevin-seto/ — Director, Analytics and Project Delivery. Leads analytics practice, develops BI roadmaps and data-driven strategies for operations, revenue, and cost optimization.
+
+- /team/alfaz-khan/ — Infrastructure Architect and Security Practitioner. 15+ years in enterprise IT operations. CISSP, CCSP (ISC2), ITIL v4 Foundation, Azure Solutions Architect Expert. Specializes in multi-site infrastructure, cybersecurity governance, and hybrid cloud environments.
+
+- /team/rabia-arabaci/ — Marketing Coordinator. Manages social media, content strategy, and marketing collateral including case studies, newsletters, and sales enablement materials.
+
+## Company
+
+- /about/ — Alphabyte AI is the Claude-focused practice of Alphabyte Solutions Inc. Practitioner-led, Claude-native, bottom-up by design. Three principles: start with the person already building, use Claude exclusively, and staff only senior practitioners.
+
+- /contact/ — Book a 45-minute discovery call. Office: 155 Winges Road, Unit 1, Vaughan, Ontario, Canada L4L 6C7. Email: contact@alphabyte.ai.
+
+## Legal
+
+- /terms/ — Terms of service
+- /privacy/ — Privacy policy
+- /cookies/ — Cookie policy

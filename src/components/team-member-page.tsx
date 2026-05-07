@@ -456,8 +456,9 @@ export function TeamMemberPage({
                     src={`/blog/${article.slug}-hero.webp`}
                     alt={article.title}
                     className="w-full rounded-t-md"
-                    width={1551}
-                    height={1014}
+                    width={1200}
+                    height={785}
+                    loading="lazy"
                   />
                   <div className="p-6">
                     <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
@@ -494,6 +495,9 @@ export function TeamMemberPage({
               src="/logos/alphabyte-icon-blue.svg"
               alt="Alphabyte"
               className="h-10 w-10 shrink-0"
+              width={40}
+              height={40}
+              loading="lazy"
             />
             <div>
               <p className="font-bold text-foreground">{footerBio.name}</p>

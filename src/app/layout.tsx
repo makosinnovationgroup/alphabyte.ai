@@ -88,6 +88,22 @@ const organizationSchema = {
   },
 };
 
+const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: "Main Navigation",
+  url: "https://alphabyte.ai",
+  hasPart: [
+    { "@type": "WebPage", name: "Services", url: "https://alphabyte.ai/services/" },
+    { "@type": "WebPage", name: "Tools", url: "https://alphabyte.ai/tools/" },
+    { "@type": "WebPage", name: "Our Work", url: "https://alphabyte.ai/our-work/" },
+    { "@type": "WebPage", name: "Team", url: "https://alphabyte.ai/team/" },
+    { "@type": "WebPage", name: "About", url: "https://alphabyte.ai/about/" },
+    { "@type": "WebPage", name: "Blog", url: "https://alphabyte.ai/blog/" },
+    { "@type": "WebPage", name: "Contact", url: "https://alphabyte.ai/contact/" },
+  ],
+};
+
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -110,7 +126,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, webSiteSchema]),
+            __html: JSON.stringify([organizationSchema, webSiteSchema, siteNavigationSchema]),
           }}
         />
         <DiscoveryCallProvider>

@@ -35,11 +35,21 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "CreativeWork",
   name: "Major Supplier — AI-Powered Executive Productivity Suite",
   description:
     "How Alphabyte built a custom Claude plugin for a major supplier in electronic reverse logistics, giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies.",
   url: "https://alphabyte.ai/our-work/circular-economy-platform/",
+  author: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    url: "https://alphabyte.ai",
+  },
+  about: {
+    "@type": "Service",
+    name: "Executive AI Productivity Suite",
+    provider: { "@type": "Organization", name: "Alphabyte" },
+  },
   isPartOf: {
     "@type": "WebSite",
     name: "Alphabyte",

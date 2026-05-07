@@ -108,13 +108,26 @@ const faqSchema = {
   })),
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How Alphabyte deploys Citizen Development in 30 days",
+  description: "A governed Claude environment deployed across your team in three weeks.",
+  step: [
+    { "@type": "HowToStep", name: "Week 1 — Discovery and design", text: "Talk to the people doing the actual work, find what they have already built, and design the SDLC plugin and guardrails architecture." },
+    { "@type": "HowToStep", name: "Week 2 — Build and configure", text: "Build the custom SDLC plugin with purpose-built skills, configure guardrails, and connect the governed data layer through MCP." },
+    { "@type": "HowToStep", name: "Week 3 — Deploy and enable", text: "Plugin goes live in Claude Teams. Hands-on enablement workshop where every participant builds something on their own laptop." },
+    { "@type": "HowToStep", name: "Day 30 — What you have", text: "A governed Claude environment deployed across your team with live data connectivity through MCP and a graduation path to production." },
+  ],
+};
+
 export default function CitizenDevelopmentPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema, howToSchema]),
         }}
       />
 

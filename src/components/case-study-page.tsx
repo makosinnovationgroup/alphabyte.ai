@@ -125,6 +125,7 @@ export function CaseStudyPage({
                 className="w-full"
                 width={1200}
                 height={800}
+                loading="lazy"
               />
               {figure.caption && (
                 <figcaption className="border-t border-border-default bg-canvas px-4 py-3 text-body-sm text-muted-foreground">

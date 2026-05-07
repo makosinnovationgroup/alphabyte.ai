@@ -175,8 +175,9 @@ export default function BlogPage() {
                     src={`/blog/${post.slug}-hero.webp`}
                     alt={post.title}
                     className="w-full"
-                    width={1551}
-                    height={1014}
+                    width={1200}
+                    height={785}
+                    loading="lazy"
                   />
 
                   {/* Card body */}

@@ -75,13 +75,60 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between a Claude environment and a custom AI agent?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Claude environment is a configured workspace where people interact with Claude directly. A custom AI agent operates autonomously against a defined workflow, connecting to systems through MCP and routing to humans only at specified decision points.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does the Agent Command Centre show?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Real-time visibility into every agent in your estate: what each agent is doing, waiting on, completing, and flagging for human review.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do human-in-the-loop approval workflows work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You define decision points where a human must approve before the agent continues. The agent pauses at approval gates and notifies the assigned reviewer. This is an architectural requirement built in from day one.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can agents be updated after deployment?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Every agent ships with a CI/CD pipeline, automated testing, and rollback mechanisms for production updates.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens when an agent makes a mistake?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The self-improvement feedback system lets your team flag incorrect outputs in real time. That feedback refines agent behaviour during hypercare and subsequent iterations. Human-in-the-loop gates catch errors before they reach downstream systems.",
+      },
+    },
+  ],
+};
+
 export default function CustomAiAgentsPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
       <ToolPage
@@ -94,8 +141,9 @@ export default function CustomAiAgentsPage() {
         h1="Custom AI Agents"
         subhead="Purpose-built task automation."
         body={[
-          "A custom AI agent executes a defined operational workflow end-to-end without someone manually running it. It connects to your data through MCP. It operates in an isolated cloud sandbox. It routes to a human at the decision points you define as requiring oversight. It runs in production \u2014 not in a demo environment that never ships.",
+          "A custom AI agent executes a defined operational workflow end-to-end without someone manually running it. It connects to your data through MCP. It operates in an isolated cloud sandbox. It routes to a human at the decision points you define as requiring oversight. It runs in production — not in a demo environment that never ships.",
           "Production systems with CI/CD pipelines, monitoring, and rollback capability. Built to the same engineering standards as any other production software in your organization.",
+          "Agents sit at the top of the stack — they depend on Claude for reasoning, MCP for data access, and your governance framework for guardrails. That is why we build agents after enablement and data connectivity are in place. An agent built before people are using Claude and data is connected produces a system nobody trusts and nobody uses.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
@@ -157,6 +205,28 @@ export default function CustomAiAgentsPage() {
         notRightForYou={[
           "Your team is not yet using Claude consistently \u2014 agents built before enablement produce systems nobody uses",
           "Your workflows are not yet well-defined enough to automate \u2014 Discovery or Citizen Dev first",
+        ]}
+        faq={[
+          {
+            question: "What is the difference between a Claude environment and a custom AI agent?",
+            answer: "A Claude environment is a configured workspace where people interact with Claude directly — knowledgebases, skills, and prompt libraries. A custom AI agent operates autonomously against a defined workflow, connecting to systems through MCP, executing tasks, and routing to humans only at the decision points you specify. People use Claude environments. Agents run on their own.",
+          },
+          {
+            question: "What does the Agent Command Centre show?",
+            answer: "Real-time visibility into every agent in your estate: what each agent is doing right now, what it is waiting on, what it has completed, and what it has flagged for human review. Your team stays in control without reading logs or checking dashboards across multiple systems.",
+          },
+          {
+            question: "How do human-in-the-loop approval workflows work?",
+            answer: "You define the decision points where a human must approve before the agent continues. The agent executes its workflow, reaches an approval gate, pauses, and notifies the assigned reviewer. The reviewer approves or rejects. The agent continues or stops. This is an architectural requirement built into the agent from day one, not a feature added after something goes wrong.",
+          },
+          {
+            question: "Can agents be updated after deployment?",
+            answer: "Yes. Every agent ships with a CI/CD pipeline, automated testing, and rollback mechanisms. Your team can update agent logic, modify approval workflows, and add new tool integrations through the same deployment process used for any other production software.",
+          },
+          {
+            question: "What happens when an agent makes a mistake?",
+            answer: "The self-improvement feedback system lets your team flag incorrect outputs with a thumbs-up or thumbs-down in real time. That feedback is used to refine agent behaviour during the hypercare period and in subsequent iterations. For high-stakes workflows, the human-in-the-loop gates catch errors before they reach downstream systems.",
+          },
         ]}
         closingCta={{
           heading: "Want to see what this looks like for your business?",

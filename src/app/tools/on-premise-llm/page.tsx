@@ -75,13 +75,60 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Which open-source models do you deploy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Llama and Mistral are our defaults. The specific model depends on your use cases, compute budget, and accuracy requirements. We benchmark candidates against your actual data before recommending.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What hardware do we need?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A 7B-parameter model can run on a single high-memory GPU server. Larger models or higher concurrency need multi-GPU infrastructure. We scope hardware requirements during the engagement.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can an on-premise LLM connect to MCP like Claude does?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. MCP servers expose a standard interface that works with both Claude in the cloud and Llama on your hardware. You can run sensitive workflows on-premise and less restricted workflows through Claude using the same MCP infrastructure.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does fine-tuning work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fine-tuning adapts a base model to your specific domain. We prepare training datasets from your existing data, run the pipeline on your infrastructure, and validate against accuracy benchmarks. The fine-tuned model and training data never leave your environment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is on-premise always the right choice for regulated industries?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not always. Claude Enterprise provides strong data handling commitments. On-premise is the right choice when regulations explicitly prohibit data transmission to any third party, or when your security posture requires air-gapped infrastructure.",
+      },
+    },
+  ],
+};
+
 export default function OnPremiseLlmPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
       <ToolPage
@@ -95,7 +142,8 @@ export default function OnPremiseLlmPage() {
         subhead="Private, self-hosted models."
         body={[
           "Some organizations cannot send their data to a cloud AI provider. Data sovereignty requirements. Security classifications. Regulatory mandates. Institutional risk posture. For those clients, we deploy capable open-source language models on their own infrastructure.",
-          "The model runs inside your environment. Your team interacts with it through a standard API. Your data never leaves your control. Production deployment \u2014 compute, MLOps, observability, and governance from the start.",
+          "The model runs inside your environment. Your team interacts with it through a standard API. Your data never leaves your control. Production deployment — compute, MLOps, observability, and governance from the start.",
+          "We deploy Llama and Mistral as defaults — proven, well-documented models with strong performance across enterprise use cases. The choice depends on your compute constraints, accuracy requirements, and regulatory environment. We benchmark candidates against your actual data and use cases before selecting a model, not after.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
@@ -136,6 +184,28 @@ export default function OnPremiseLlmPage() {
         notRightForYou={[
           "You are not yet clear on your use cases \u2014 on-premise deployment without a defined application is significant compute investment with no return",
           "Cloud AI is available to you \u2014 on-premise adds infrastructure overhead that cloud deployments do not carry",
+        ]}
+        faq={[
+          {
+            question: "Which open-source models do you deploy?",
+            answer: "Llama and Mistral are our defaults. The specific model and parameter count depend on your use cases, compute budget, and accuracy requirements. We benchmark two to three candidates against your actual data before recommending a model — not based on benchmarks from someone else's dataset.",
+          },
+          {
+            question: "What hardware do we need?",
+            answer: "It depends on the model size and expected throughput. A 7B-parameter model for internal use cases can run on a single high-memory GPU server. Larger models or higher concurrency requirements need multi-GPU infrastructure. We scope hardware requirements during the engagement and provision accordingly — you are not buying GPUs before you know what you need.",
+          },
+          {
+            question: "Can an on-premise LLM connect to MCP like Claude does?",
+            answer: "Yes. The MCP servers we build expose a standard interface. Whether the model calling them is Claude in the cloud or Llama on your hardware, the integration pattern is the same. This means you can run sensitive workflows on-premise and less restricted workflows through Claude — same MCP infrastructure for both.",
+          },
+          {
+            question: "How does fine-tuning work?",
+            answer: "Fine-tuning adapts a base model to your specific domain — your terminology, your document formats, your decision patterns. We prepare training datasets from your existing data, run the fine-tuning pipeline on your infrastructure, and validate the results against accuracy benchmarks. The fine-tuned model stays on your hardware. We never remove training data from your environment.",
+          },
+          {
+            question: "Is on-premise always the right choice for regulated industries?",
+            answer: "Not always. Claude Enterprise provides strong data handling commitments — conversations are not used for training, and Anthropic offers contractual data protection. For many regulated clients, Claude Enterprise with MCP is sufficient. On-premise is the right choice when regulations explicitly prohibit data transmission to any third party, or when your security posture requires air-gapped infrastructure.",
+          },
         ]}
         closingCta={{
           heading: "Want to see what this looks like for your business?",

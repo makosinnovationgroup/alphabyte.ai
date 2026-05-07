@@ -187,8 +187,8 @@ export function BlogPostPage({
               src={heroImage}
               alt={h1}
               className="w-full rounded-md"
-              width={1600}
-              height={900}
+              width={1200}
+              height={785}
             />
           </div>
         </section>
@@ -226,6 +226,9 @@ export function BlogPostPage({
                   src={author.avatarSrc}
                   alt={author.name}
                   className="h-12 w-12 shrink-0 rounded-full bg-foreground object-cover"
+                  width={48}
+                  height={48}
+                  loading="lazy"
                 />
                 <div>
                   <p className="text-body font-bold text-foreground">{author.name}</p>
@@ -325,8 +328,9 @@ export function BlogPostPage({
                   src={post.heroImage ?? "/og/default.png"}
                   alt={post.title}
                   className="w-full rounded-t-md"
-                  width={1551}
-                  height={1014}
+                  width={1200}
+                  height={785}
+                  loading="lazy"
                 />
 
                 <div className="p-6">

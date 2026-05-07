@@ -1,80 +1,124 @@
 # SEO Action Plan — alphabyte.ai
 
-**Generated:** May 4, 2026
-**Current Score:** 56 / 100
-**Target Score:** 78+ / 100 (achievable with Critical + High items)
+**Generated:** 2026-05-07
+**Current Score:** 81 / 100
+**Target Score:** 90+ / 100
 
 ---
 
-## Phase 1: Critical Fixes (Week 1) — Target: +10 points
+## Critical — Fix Immediately
 
-| # | Action | Est. Effort | Score Impact |
-|---|---|---|---|
-| 1 | Create `/public/og/default.png` (1200x630 branded image) | 1 hr | +3 (images, schema, content) |
-| 2 | Replace 4 broken team headshots or remove from grid | 1 hr | +2 (images, CWV) |
-| 3 | Add actual blog post images or remove placeholder text | 4-6 hrs | +3 (images, content, on-page) |
-| 4 | Fix future-dated blog post `publishedDate` values | 30 min | +1 (content) |
-| 5 | Fix uncased keyword insertions ("ai pilot purgatory" etc.) | 30 min | +1 (content) |
+### 1. Compress blog hero images
+**Impact:** Performance +15 pts | Current: 1.1–1.3 MB each | Target: <200 KB each
+**Files:** `public/blog/*-hero.webp` (10 images)
+**Action:** Re-export at quality 75–80, max width 1600px. Consider generating responsive variants (800px, 1200px, 1600px) with `srcset`.
+**Estimated savings:** ~10 MB
 
-## Phase 2: High-Priority Fixes (Week 2-3) — Target: +12 points
-
-| # | Action | Est. Effort | Score Impact |
-|---|---|---|---|
-| 6 | Add JSON-LD to Services index (WebPage + BreadcrumbList + ItemList) | 2 hrs | +2 (schema) |
-| 7 | Add FAQPage schema to Citizen Dev + Homepage | 3 hrs | +2 (schema, GEO) |
-| 8 | Expand blog posts to 1,500+ words with external citations | 8-12 hrs | +3 (content, GEO) |
-| 9 | Trim 4 meta descriptions under 160 chars | 30 min | +1 (on-page) |
-| 10 | Improve H1 tags with keywords (Blog, Contact, Services) | 1 hr | +1 (on-page) |
-| 11 | Fix semantic headings (p/span -> h2/h3) on 5+ pages | 2 hrs | +1 (on-page) |
-| 12 | Add width/height to all img tags | 1 hr | +1 (CWV) |
-| 13 | Add loading="lazy" to below-fold images | 30 min | +0.5 (CWV) |
-| 14 | Convert team photos to WebP, compress adam-nameh.png | 1 hr | +0.5 (images) |
-| 15 | Expand Services hub to 500+ words | 3 hrs | +1 (content) |
-
-## Phase 3: Strategic Content (Month 2) — Target: +6 points
-
-| # | Action | Est. Effort | Score Impact |
-|---|---|---|---|
-| 16 | Create Claude Implementation landing page | 6-8 hrs | +2 (SXO, content) |
-| 17 | Create Canadian AI Consulting landing page | 6-8 hrs | +2 (SXO, GEO) |
-| 18 | Create /llms-full.txt | 4 hrs | +1 (GEO) |
-| 19 | Add question-format H2 headings to blog posts | 2-3 hrs | +0.5 (GEO) |
-| 20 | Source all statistics with linked references | 4 hrs | +1 (content, GEO) |
-| 21 | Diversify blog authorship | 2 hrs | +0.5 (content) |
-
-## Phase 4: Polish & Signals (Month 2-3)
-
-| # | Action | Est. Effort |
-|---|---|---|
-| 22 | Add /terms/, /privacy/, /cookies/ to sitemap | 15 min |
-| 23 | Upgrade case study schema to TechArticle | 2 hrs |
-| 24 | Add BreadcrumbList to /about/ and /blog/ | 1 hr |
-| 25 | Create 4 page-specific OG images | 4 hrs |
-| 26 | Add security headers via Cloudflare _headers file | 2 hrs |
-| 27 | Add attributed client testimonial | 2 hrs |
-| 28 | Link Maclean's/UofT mentions from About page | 30 min |
-| 29-38 | Backlog items (see FULL-AUDIT-REPORT.md) | ~10 hrs total |
+### 2. Convert team headshots from PNG to WebP
+**Impact:** Performance +10 pts | Current: 888 KB–2.1 MB each | Target: <150 KB each
+**Files:** `public/team/*.png` (8 images)
+**Action:** Convert to WebP, resize to max 600x600px, quality 80. Update all `<img>` `src` references from `.png` to `.webp`.
+**Estimated savings:** ~12 MB
 
 ---
 
-## Estimated Total Effort
+## High — Fix Within 1 Week
 
-| Phase | Hours | Timeline |
-|---|---|---|
-| Phase 1 (Critical) | 7-9 hrs | Week 1 |
-| Phase 2 (High) | 22-26 hrs | Weeks 2-3 |
-| Phase 3 (Strategic) | 24-29 hrs | Month 2 |
-| Phase 4 (Polish) | 14-16 hrs | Month 2-3 |
-| **Total** | **67-80 hrs** | **~8 weeks** |
+### 3. Generate page-specific OG images
+**Impact:** Social CTR, brand differentiation
+**Current:** 40+ pages share `/og/default.png` (948 KB)
+**Action:** Create unique OG images for at minimum:
+- 5 service pages
+- 4 tool pages
+- 3 case study pages
+- About, Contact, Team, Blog index pages
+
+Use WebP or compressed PNG, target <300 KB each at 1200x630px.
+
+### 4. Compress or replace default OG image
+**Impact:** Social preview load speed
+**Current:** `/og/default.png` at 948 KB
+**Action:** Compress to <300 KB or convert to WebP.
+
+### 5. Add security headers via Cloudflare Pages `_headers` file
+**Impact:** Security score, browser trust signals
+**Action:** Create `public/_headers` with:
+```
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+```
+
+### 6. Expand tool page content
+**Impact:** Content quality +5 pts, keyword rankings
+**Pages:** `/tools/claude/`, `/tools/mcp/`, `/tools/custom-ai-agents/`, `/tools/on-premise-llm/`
+**Current:** ~500 words each | **Target:** 1,000+ words
+**Add:** Use cases, configuration examples, integration architecture, FAQ section
+**Priority:** `/tools/claude/` and `/tools/mcp/` first
 
 ---
 
-## Score Projection
+## Medium — Fix Within 1 Month
 
-| Milestone | Projected Score |
-|---|---|
-| Current state | 56 / 100 |
-| After Phase 1 | ~66 / 100 |
-| After Phase 2 | ~78 / 100 |
-| After Phase 3 | ~84 / 100 |
-| After Phase 4 | ~88 / 100 |
+### 7. Add quantifiable metrics to case studies
+**Impact:** E-E-A-T, AI citability, conversion
+**Pages:** All 3 case study pages
+**Action:** Add specific numbers: time saved, error reduction, users enabled.
+
+### 8. Remove unused Geist font files
+**Impact:** Reduced deploy size (~220 KB)
+**Files to remove:** `public/fonts/Geist-Bold.woff2`, `Geist-BoldItalic.woff2`, `Geist-Medium.woff2`, `Geist-Regular.woff2`, `Geist-RegularItalic.woff2`
+
+### 9. Add responsive image markup
+**Impact:** Mobile performance, LCP
+**Action:** Add `srcset` and `sizes` attributes to hero images and team photos with 2–3 size variants.
+
+### 10. Add `loading="lazy"` to below-fold images
+**Impact:** Initial page load performance
+**Action:** Audit all `<img>` tags. Hero images = eager. Below-fold = lazy.
+
+### 11. Add `modifiedDate` to all blog frontmatter
+**Impact:** Content freshness signals
+**Action:** Add `modifiedDate` field to blog posts where missing.
+
+### 12. Create `llms-full.txt` with expanded descriptions
+**Impact:** AI search depth
+**Action:** Extended `llms.txt` with 2–3 sentence descriptions per page.
+
+---
+
+## Low — Backlog
+
+### 13. Add `SiteNavigationElement` schema
+### 14. Use `CreativeWork` schema for case studies
+### 15. Add `HowTo` schema to service pages
+### 16. Add Organization `telephone` property
+### 17. Create custom 404 page
+### 18. Optimize H1 keyword targeting on Tools and About pages
+
+---
+
+## Progress Tracker
+
+| # | Priority | Task | Status |
+|---|---|---|---|
+| 1 | Critical | Compress blog hero images | ⬜ |
+| 2 | Critical | Convert team PNGs to WebP | ⬜ |
+| 3 | High | Generate page-specific OG images | ⬜ |
+| 4 | High | Compress default OG image | ⬜ |
+| 5 | High | Add security headers | ⬜ |
+| 6 | High | Expand tool page content | ⬜ |
+| 7 | Medium | Add metrics to case studies | ⬜ |
+| 8 | Medium | Remove unused Geist fonts | ⬜ |
+| 9 | Medium | Add responsive image markup | ⬜ |
+| 10 | Medium | Add lazy loading to below-fold images | ⬜ |
+| 11 | Medium | Add modifiedDate to blog posts | ⬜ |
+| 12 | Medium | Create llms-full.txt | ⬜ |
+| 13 | Low | SiteNavigationElement schema | ⬜ |
+| 14 | Low | CreativeWork for case studies | ⬜ |
+| 15 | Low | HowTo schema for services | ⬜ |
+| 16 | Low | Organization telephone | ⬜ |
+| 17 | Low | Custom 404 page | ⬜ |
+| 18 | Low | H1 keyword optimization | ⬜ |

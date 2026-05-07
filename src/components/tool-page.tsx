@@ -2,9 +2,15 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check, X, Plus, XIcon } from "lucide-react";
+import * as Accordion from "@radix-ui/react-accordion";
 import { Button } from "@/components/ui/button";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
+
+export interface ToolFaqEntry {
+  question: string;
+  answer: string;
+}
 
 export interface BreadcrumbItem {
   label: string;
@@ -50,6 +56,7 @@ export interface ToolPageProps {
   }[];
   rightForYou?: string[];
   notRightForYou?: string[];
+  faq?: ToolFaqEntry[];
   closingCta?: {
     heading: string;
     subhead: string;
@@ -72,6 +79,7 @@ export function ToolPage({
   deliverables,
   inActiveUseSectionTitle,
   inActiveUse,
+  faq,
   rightForYou,
   notRightForYou,
   closingCta,
@@ -368,7 +376,41 @@ export function ToolPage({
         </section>
       )}
 
-      {/* 5. Closing CTA */}
+      {/* 5. FAQ */}
+      {faq && faq.length > 0 && (
+        <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16">
+          <div className="mx-auto max-w-[1600px]">
+            <div className="mb-10 flex items-center gap-4">
+              <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
+                Frequently Asked Questions
+              </h2>
+              <div className="h-px flex-1 bg-border-default" />
+            </div>
+            <Accordion.Root type="single" collapsible className="divide-y divide-border-default border-t border-border-default">
+              {faq.map((entry, i) => (
+                <Accordion.Item key={i} value={`faq-${i}`} className="group">
+                  <Accordion.Trigger className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-alphabyte-blue">
+                    <span className="text-body font-bold text-foreground group-hover:text-alphabyte-blue transition-colors">
+                      {entry.question}
+                    </span>
+                    <span className="shrink-0 text-muted-foreground">
+                      <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
+                      <XIcon className="h-5 w-5 hidden group-data-[state=open]:block" />
+                    </span>
+                  </Accordion.Trigger>
+                  <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                    <p className="pb-5 text-body text-muted-foreground">
+                      {entry.answer}
+                    </p>
+                  </Accordion.Content>
+                </Accordion.Item>
+              ))}
+            </Accordion.Root>
+          </div>
+        </section>
+      )}
+
+      {/* 6. Closing CTA */}
       {closingCta && (
         <section className="border-t border-border-default px-6 py-16 md:px-10 md:py-24 lg:px-16">
           <div className="mx-auto max-w-[1600px] text-center">

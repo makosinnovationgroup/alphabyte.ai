@@ -104,13 +104,26 @@ const faqSchema = {
   })),
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How Alphabyte deploys Executive Enablement in 30 days",
+  description: "A custom Claude environment for leadership with measurable productivity gains in the first sprint.",
+  step: [
+    { "@type": "HowToStep", name: "Week 1 — Executive workflow discovery", text: "One-on-one sessions with each leader. Map highest-frequency workflows and identify interventions most likely to produce measurable time savings." },
+    { "@type": "HowToStep", name: "Week 2 — Build", text: "Ingest organizational data into structured Claude knowledgebases, build custom skills, and configure the Claude Teams environment with domain-level context." },
+    { "@type": "HowToStep", name: "Weeks 3–4 — Deploy and transfer", text: "Environment goes live. Hands-on knowledge transfer session with the full executive cohort. Recorded for onboarding of future executives." },
+    { "@type": "HowToStep", name: "Day 30 — What you have", text: "A live Claude environment used by your entire leadership team, built from actual operational data, with measurable productivity gains visible in the first sprint." },
+  ],
+};
+
 export default function ExecutiveEnablementPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema, howToSchema]),
         }}
       />
 

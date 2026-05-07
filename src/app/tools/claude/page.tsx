@@ -75,13 +75,60 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between Claude Teams and Claude Enterprise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Claude Teams provides a governed shared workspace with usage controls, conversation history, and team-level administration. Claude Enterprise adds SSO/SAML, domain verification, expanded context windows, higher rate limits, and enterprise-grade admin controls. Most mid-market clients start with Teams and move to Enterprise when they reach 50+ active users or need SSO integration.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can Claude access our internal data without sending it to Anthropic?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers — Claude queries the data in real time without it leaving your environment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to get a Claude environment configured?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A basic Claude Teams environment with knowledgebases, an SDLC plugin, and a prompt library is typically running within three weeks. Enterprise deployments with SSO, custom MCP integrations, and a full skills library take six to twelve weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why does Alphabyte only work with Claude?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Focus produces depth. Every engineer on our team configures Claude full-time. That means faster delivery, fewer configuration errors, and architectural patterns that compound across clients.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens after the engagement ends?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You own everything we build — the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently.",
+      },
+    },
+  ],
+};
+
 export default function ClaudePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
       <ToolPage
@@ -96,6 +143,7 @@ export default function ClaudePage() {
         body={[
           "Claude is the intelligence layer across every engagement we deliver — configured around your organizational data, your team\u2019s workflows, and your operational context.",
           "We are Anthropic Claude Certified. Every engineer in our practice works exclusively with Claude — not evaluating which model to use on each engagement. That focus means faster configuration, deeper expertise, and a coherent architectural point of view that a firm evaluating ten different models cannot match.",
+          "Claude ships in three tiers: Claude Teams for governed team environments, Claude Enterprise for organization-wide deployment with SSO and admin controls, and Claude API for custom integrations and agent development. We configure whichever tier fits your scale, security posture, and use cases — most mid-market clients start with Teams and expand as their programme grows.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         partnerCard={{
@@ -143,6 +191,15 @@ export default function ClaudePage() {
             body: "Custom MCP servers connecting Claude to your databases, APIs, CRM, and ERP \u2014 secure, governed access, full audit logging.",
           },
         ]}
+        rightForYou={[
+          "Your team is already using Claude informally and you want to govern it, scale it, and connect it to real data",
+          "Leadership wants a concrete proof point before resourcing a broader AI programme",
+          "You want one AI platform across the organization — not a different tool per team",
+        ]}
+        notRightForYou={[
+          "You need a model comparison exercise — we only work with Claude, and that focus is the point",
+          "You want a chatbot on your website — Claude is an operational tool, not a customer-facing widget",
+        ]}
         inActiveUseSectionTitle="In active use today — what we built, what it produced"
         inActiveUse={[
           {
@@ -164,6 +221,33 @@ export default function ClaudePage() {
             href: "/our-work/fire-protection-compliance/",
           },
         ]}
+        faq={[
+          {
+            question: "What is the difference between Claude Teams and Claude Enterprise?",
+            answer: "Claude Teams provides a governed shared workspace with usage controls, conversation history, and team-level administration. Claude Enterprise adds SSO/SAML, domain verification, expanded context windows, higher rate limits, and enterprise-grade admin controls. Most mid-market clients start with Teams and move to Enterprise when they reach 50+ active users or need SSO integration.",
+          },
+          {
+            question: "Can Claude access our internal data without sending it to Anthropic?",
+            answer: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers — Claude queries the data in real time without it leaving your environment. For the most restrictive requirements, we deploy on-premise LLMs that run entirely inside your infrastructure.",
+          },
+          {
+            question: "How long does it take to get a Claude environment configured?",
+            answer: "A basic Claude Teams environment with knowledgebases, an SDLC plugin, and a prompt library is typically running within three weeks. Enterprise deployments with SSO, custom MCP integrations, and a full skills library take six to twelve weeks depending on the number of source systems involved.",
+          },
+          {
+            question: "Why does Alphabyte only work with Claude?",
+            answer: "Focus produces depth. Every engineer on our team configures Claude full-time — not switching between GPT, Gemini, and Claude depending on the engagement. That means faster delivery, fewer configuration errors, and architectural patterns that compound across clients. Firms that evaluate ten models on every engagement spread expertise thin.",
+          },
+          {
+            question: "What happens after the engagement ends?",
+            answer: "You own everything we build — the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently. Most clients bring us back for quarterly reviews or new capability sprints, but there is no lock-in.",
+          },
+        ]}
+        closingCta={{
+          heading: "Want to see what Claude looks like configured for your team?",
+          subhead: "45 minutes. No cost. No obligation.",
+          cta: { label: "Book a Discovery Call", action: "modal" },
+        }}
       />
     </>
   );
