@@ -5,14 +5,14 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Major Supplier — Executive Productivity Suite",
+  title: "Major Supplier - Executive Productivity Suite",
   description:
     "How Alphabyte built a custom Claude plugin that gives leadership a single command surface across GSuite, Slack, Power BI, Fireflies, and more. Priority alerts and briefs delivered automatically.",
   alternates: {
     canonical: "/our-work/circular-economy-platform/",
   },
   openGraph: {
-    title: "Major Supplier — Executive Productivity Suite",
+    title: "Major Supplier - Executive Productivity Suite",
     description:
       "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",
     url: "/our-work/circular-economy-platform/",
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
         url: "/our-work/circular-economy-platform-msi-concept.webp",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Major Supplier — Executive Productivity Suite",
+        alt: "Alphabyte - Major Supplier - Executive Productivity Suite",
       },
     ],
   },
   twitter: {
-    title: "Major Supplier — Executive Productivity Suite",
+    title: "Major Supplier - Executive Productivity Suite",
     description:
       "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",
     images: ["/our-work/circular-economy-platform-msi-concept.webp"],

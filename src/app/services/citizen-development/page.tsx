@@ -3,31 +3,31 @@ import { Search, Monitor, GraduationCap, ClipboardList, Shield, Link2, Wrench } 
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
-  title: "Citizen Development — AI for Every Employee",
+  title: "Citizen Development - AI for Every Employee",
   description:
     "Turn informal Claude usage into governed capability. SDLC plugin, guardrails, enablement workshop, and MCP connectivity deployed in three to twelve weeks.",
   alternates: {
     canonical: "/services/citizen-development/",
   },
   openGraph: {
-    title: "Citizen Development — AI for Every Employee",
+    title: "Citizen Development - AI for Every Employee",
     description:
       "Turn informal Claude usage into governed capability. SDLC plugin, guardrails, and MCP connectivity deployed in weeks.",
     url: "/services/citizen-development/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/services-citizen-development.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Citizen Development — AI for Every Employee",
+        alt: "Alphabyte - Citizen Development - AI for Every Employee",
       },
     ],
   },
   twitter: {
-    title: "Citizen Development — AI for Every Employee",
+    title: "Citizen Development - AI for Every Employee",
     description:
       "Turn informal Claude usage into governed capability. SDLC plugin, guardrails, and MCP connectivity deployed in weeks.",
-    images: ["/og/default.png"],
+    images: ["/og/services-citizen-development.png"],
   },
 };
 

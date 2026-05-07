@@ -3,31 +3,31 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "Services — AI & Data Consulting",
+  title: "Services - AI & Data Consulting",
   description:
     "Five AI consulting services for mid-market organizations. Start where your situation actually is — citizen dev, executive enablement, discovery, and more.",
   alternates: {
     canonical: "/services/",
   },
   openGraph: {
-    title: "Services — AI & Data Consulting",
+    title: "Services - AI & Data Consulting",
     description:
       "Five AI consulting services for mid-market organizations. Start where your situation actually is.",
     url: "/services/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/services.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Services — AI & Data Consulting",
+        alt: "Alphabyte - Services - AI & Data Consulting",
       },
     ],
   },
   twitter: {
-    title: "Services — AI & Data Consulting",
+    title: "Services - AI & Data Consulting",
     description:
       "Five AI consulting services for mid-market organizations. Start where your situation actually is.",
-    images: ["/og/default.png"],
+    images: ["/og/services.png"],
   },
 };
 

@@ -1,11 +1,11 @@
 {
   "slug": "adam-nameh",
   "name": "Adam Nameh",
-  "role": "Co-Founder & Data Platform Architect",
+  "role": "Co-Founder, AI Practice",
   "company": "Alphabyte Solutions Inc.",
   "location": "Toronto, Ontario, Canada",
   "avatarSrc": "/team/adam-nameh.webp",
-  "eyebrow": "AUTHOR AT ALPHABYTE AI",
+  "eyebrow": "CO-FOUNDER, AI PRACTICE AT ALPHABYTE",
   "bio": [
     "Adam Nameh is the Co-Founder of Alphabyte Solutions Inc., a Toronto-based data and AI consulting firm that has helped over 100 clients across North America transform complex data environments into actionable business intelligence. With a decade of hands-on experience in data architecture and platform design, Adam works directly with leadership teams to deliver practical AI and data solutions that drive real business outcomes.",
     "A graduate of the University of Toronto's Computer Engineering program, Adam served as a Data Architect at BMO Financial Group before founding Alphabyte in 2016. He is also co-founder of Parlawatch AI — featured in Maclean's and the University of Toronto Magazine — and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
@@ -34,7 +34,7 @@
   "careerTimeline": [
     {
       "period": "2016 — Present",
-      "role": "Co-Founder & Data Platform Architect",
+      "role": "Co-Founder, AI Practice",
       "organization": "Alphabyte Solutions Inc."
     },
     {

@@ -22,8 +22,8 @@ const aeonik = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://alphabyte.ai"),
   title: {
-    default: "Alphabyte — AI & Data Consulting",
-    template: "%s — Alphabyte",
+    default: "Alphabyte - AI & Data Consulting",
+    template: "%s - Alphabyte",
   },
   description:
     "Alphabyte is an AI and data consultancy. We work with companies that have real data problems and want production systems, not prototypes.",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — AI & Data Consulting",
+        alt: "Alphabyte - AI & Data Consulting",
       },
     ],
   },

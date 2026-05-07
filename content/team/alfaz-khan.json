@@ -1,14 +1,14 @@
 {
   "slug": "alfaz-khan",
   "name": "Alfaz Khan",
-  "role": "Infrastructure Architect & Security Practitioner",
+  "role": "Security and Compliance Officer",
   "company": "Alphabyte Solutions Inc.",
   "location": "Vancouver, British Columbia, Canada",
   "avatarSrc": "/team/alfaz-khan.webp",
-  "eyebrow": "AUTHOR AT ALPHABYTE AI",
+  "eyebrow": "SECURITY AND COMPLIANCE OFFICER AT ALPHABYTE AI",
   "bio": [
-    "Alfaz Khan is an infrastructure and security practitioner with over 15 years of experience leading enterprise IT operations across cloud, on-premises, and hybrid environments. He specializes in multi-site infrastructure management, cybersecurity governance, and ITIL-aligned service delivery — with hands-on expertise across Microsoft Azure, AWS, and Microsoft 365. He holds CISSP and CCSP designations from ISC², alongside ITIL v4 Foundation and Microsoft Azure Solutions Architect Expert certifications.",
-    "Before settling in Vancouver, BC, Alfaz held senior technical leadership roles across East Africa's enterprise IT market, leading cloud migrations, security deployments, and Microsoft Azure engagements for clients across the region. He brings a uniquely international perspective to infrastructure and security — having managed IT budgets exceeding $2M and overseen technology operations for organizations spanning multiple sites and hundreds of end users."
+    "Alfaz Khan is an infrastructure and security practitioner with over 15 years of experience leading enterprise IT operations across cloud, on-premises, and hybrid environments. He specializes in multi-site infrastructure management, cybersecurity governance, and ITIL-aligned service delivery — with hands-on expertise across AWS, Microsoft Azure, and Microsoft 365. He holds CISSP and CCSP designations from ISC², alongside ITIL v4 Foundation and Microsoft Azure Solutions Architect Expert certifications.",
+    "Before settling in Vancouver, BC, Alfaz held senior technical leadership roles across East Africa's enterprise IT market, leading cloud migrations, security deployments, and Microsoft Azure engagements for clients across the region. He brings a uniquely international perspective to infrastructure and security — having managed seven-figure IT budgets and overseen technology operations for organizations spanning multiple sites and hundreds of end users."
   ],
   "contact": {
     "email": {
@@ -30,7 +30,7 @@
   "careerTimeline": [
     {
       "period": "2025 — Present",
-      "role": "Infrastructure Architect & Security Practitioner",
+      "role": "Security and Compliance Officer",
       "organization": "Alphabyte Solutions Inc."
     }
   ],
@@ -46,7 +46,7 @@
   ],
   "achievements": [
     "15+ years leading enterprise IT operations across cloud and on-premises environments",
-    "Managed IT budgets exceeding $2M across infrastructure, vendor contracts, and capital expenditure",
+    "Managed seven-figure IT budgets across infrastructure, vendor contracts, and capital expenditure",
     "Improved first-call resolution from 60% to 85% through service desk transformation",
     "Deployed enterprise-wide security awareness program for 1,500+ users, achieving phishing click rates below 1%",
     "Led 25+ Microsoft Azure and Office 365 enterprise deployments across East Africa"

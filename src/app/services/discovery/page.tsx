@@ -3,31 +3,31 @@ import { MessageSquare, Pin, Search, FileText } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
-  title: "Discovery — AI Strategy & Roadmap Consulting",
+  title: "Discovery - AI Strategy & Roadmap Consulting",
   description:
     "A four-week engagement that produces three prioritized use cases, a gap analysis, and a Findings & Recommendations document you can act on immediately.",
   alternates: {
     canonical: "/services/discovery/",
   },
   openGraph: {
-    title: "Discovery — AI Strategy & Roadmap Consulting",
+    title: "Discovery - AI Strategy & Roadmap Consulting",
     description:
       "Four weeks from kickoff to a clear AI strategy. Three use cases, gap analysis, and a plan you can execute immediately.",
     url: "/services/discovery/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/services-discovery.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Discovery — AI Strategy & Roadmap Consulting",
+        alt: "Alphabyte - Discovery - AI Strategy & Roadmap Consulting",
       },
     ],
   },
   twitter: {
-    title: "Discovery — AI Strategy & Roadmap Consulting",
+    title: "Discovery - AI Strategy & Roadmap Consulting",
     description:
       "Four weeks from kickoff to a clear AI strategy. Three use cases, gap analysis, and a plan you can execute immediately.",
-    images: ["/og/default.png"],
+    images: ["/og/services-discovery.png"],
   },
 };
 

@@ -5,31 +5,31 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "Our Team — Practitioners Behind Every Engagement",
+  title: "Our Team - Practitioners Behind Every Engagement",
   description:
     "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads — no junior bench.",
   alternates: {
     canonical: "/team/",
   },
   openGraph: {
-    title: "Our Team — Practitioners Behind Every Engagement",
+    title: "Our Team - Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",
     url: "/team/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/team.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Our Team — Practitioners Behind Every Engagement",
+        alt: "Alphabyte - Our Team - Practitioners Behind Every Engagement",
       },
     ],
   },
   twitter: {
-    title: "Our Team — Practitioners Behind Every Engagement",
+    title: "Our Team - Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",
-    images: ["/og/default.png"],
+    images: ["/og/team.png"],
   },
 };
 
@@ -46,13 +46,13 @@ const TEAM_DIR = path.join(process.cwd(), "content/team");
 
 const MEMBER_ORDER = [
   "adam-nameh",
-  "ibrahim-nameh",
   "ahmad-nameh",
-  "kevin-seto",
+  "ibrahim-nameh",
   "rugved-ambekar",
-  "alfaz-khan",
   "mitch-makos",
   "rabia-arabaci",
+  "kevin-seto",
+  "alfaz-khan",
 ];
 
 function getAllTeamMembers(): TeamMemberSummary[] {

@@ -3,7 +3,7 @@ import { BarChart3, FolderOpen, Lock, ClipboardList, Route } from "lucide-react"
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
-  title: "Data Readiness — AI Data Quality & Governance",
+  title: "Data Readiness - AI Data Quality & Governance",
   description:
     "Data quality audits, governance assessments, and AI readiness scorecards. Make sure your data foundation supports the AI you actually want to build.",
   alternates: {
@@ -11,24 +11,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Data Readiness — AI Data Quality & Governance",
+    title: "Data Readiness - AI Data Quality & Governance",
     description:
       "Data quality audits, governance assessments, and AI readiness scorecards for mid-market organizations.",
     url: "/services/data-readiness/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/services-data-readiness.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Data Readiness — AI Data Quality & Governance",
+        alt: "Alphabyte - Data Readiness - AI Data Quality & Governance",
       },
     ],
   },
   twitter: {
-    title: "Data Readiness — AI Data Quality & Governance",
+    title: "Data Readiness - AI Data Quality & Governance",
     description:
       "Data quality audits, governance assessments, and AI readiness scorecards for mid-market organizations.",
-    images: ["/og/default.png"],
+    images: ["/og/services-data-readiness.png"],
   },
 };
 

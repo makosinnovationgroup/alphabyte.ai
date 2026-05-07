@@ -1,11 +1,11 @@
 {
   "slug": "rugved-ambekar",
   "name": "Rugved Ambekar",
-  "role": "Senior Engineer & AI Delivery Lead",
+  "role": "Head of AI Engineering",
   "company": "Alphabyte Solutions Inc.",
   "location": "Toronto, Ontario, Canada",
   "avatarSrc": "/team/rugved-ambekar.webp",
-  "eyebrow": "SENIOR ENGINEER & AI DELIVERY LEAD AT ALPHABYTE AI",
+  "eyebrow": "HEAD OF AI ENGINEERING AT ALPHABYTE AI",
   "bio": [
     "Rugved Ambekar is an AI applications engineer with 15+ years shipping software across mobile, full-stack, desktop, and AI. He has led three fractional CTO engagements, raised a $1.3M seed round, and solo-built entire SaaS platforms. At Alphabyte, Rugved builds AI agents, custom MCP servers, and governed environments for mid-market clients.",
     "A graduate of the University of Toronto's Computer Engineering programme, Rugved spent his early career at IBM, CaseWare, and Agilent before becoming a contract Android engineer at Samsung, Bose, RBC, and The RealReal. He served as Fractional CTO at HOMI SmartHome (Hong Kong) and Coretext Sidekick, where he hired and managed engineering teams while staying hands-on in the code. His current focus is building AI products and enabling engineering teams to ship 2-3x faster with AI-first workflows."
@@ -30,7 +30,7 @@
   "careerTimeline": [
     {
       "period": "2024 — Present",
-      "role": "Senior Engineer & AI Delivery Lead",
+      "role": "Head of AI Engineering",
       "organization": "Alphabyte Solutions Inc."
     },
     {

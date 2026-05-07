@@ -3,31 +3,31 @@ import { Wrench, Lock, Cloud, ClipboardList } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
-  title: "MCP Servers — Model Context Protocol Integration",
+  title: "MCP Servers - Model Context Protocol Integration",
   description:
     "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured. You own the connection, we build the server.",
   alternates: {
     canonical: "/tools/mcp/",
   },
   openGraph: {
-    title: "MCP Servers — Model Context Protocol Integration",
+    title: "MCP Servers - Model Context Protocol Integration",
     description:
       "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured.",
     url: "/tools/mcp/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools-mcp.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — MCP Servers — Model Context Protocol Integration",
+        alt: "Alphabyte - MCP Servers - Model Context Protocol Integration",
       },
     ],
   },
   twitter: {
-    title: "MCP Servers — Model Context Protocol Integration",
+    title: "MCP Servers - Model Context Protocol Integration",
     description:
       "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured.",
-    images: ["/og/default.png"],
+    images: ["/og/tools-mcp.png"],
   },
 };
 

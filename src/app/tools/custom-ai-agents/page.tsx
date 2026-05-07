@@ -3,31 +3,31 @@ import { Container, Settings, BarChart3, UserCheck, ThumbsUp } from "lucide-reac
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
-  title: "Custom AI Agents — Task Automation",
+  title: "Custom AI Agents - Task Automation",
   description:
     "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates where stakes require it.",
   alternates: {
     canonical: "/tools/custom-ai-agents/",
   },
   openGraph: {
-    title: "Custom AI Agents — Task Automation",
+    title: "Custom AI Agents - Task Automation",
     description:
       "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates.",
     url: "/tools/custom-ai-agents/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools-custom-ai-agents.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Custom AI Agents — Task Automation",
+        alt: "Alphabyte - Custom AI Agents - Task Automation",
       },
     ],
   },
   twitter: {
-    title: "Custom AI Agents — Task Automation",
+    title: "Custom AI Agents - Task Automation",
     description:
       "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates.",
-    images: ["/og/default.png"],
+    images: ["/og/tools-custom-ai-agents.png"],
   },
 };
 

@@ -1,14 +1,14 @@
 {
   "slug": "ahmad-nameh",
   "name": "Ahmad Nameh",
-  "role": "Co-Founder & Lead Consultant",
+  "role": "Co-Founder, Data Practice",
   "company": "Alphabyte Solutions Inc.",
   "location": "Toronto, Ontario, Canada",
   "avatarSrc": "/team/ahmad-nameh.webp",
-  "eyebrow": "CO-FOUNDER & LEAD CONSULTANT AT ALPHABYTE",
+  "eyebrow": "CO-FOUNDER, DATA PRACTICE AT ALPHABYTE",
   "bio": [
-    "Ahmad co-founded Alphabyte and leads the firm's business intelligence and digital advisory practice. He partners with executive teams at mid-market companies across many industries, guiding them through the strategic choices that turn data, reporting, and operations into competitive advantage rather than overhead.",
-    "His engagements focus on the leadership questions that sit above tooling: where the business is trying to go, which capabilities matter most, what to invest in now versus later, and how to sequence the work so it compounds. He brings a senior advisor's judgment to clients navigating modernisation, growth, and operational complexity."
+    "Ahmad Nameh is the Co-Founder of Alphabyte Solutions Inc. and head of its Data Readiness practice — the foundation every Alphabyte AI engagement is built on. With a decade of hands-on experience across the full data lifecycle, Ahmad leads a team of 10 specialists turning fragmented operational data into AI-ready environments for clients across the US and Canada.",
+    "A graduate of the University of Toronto's Commerce program, Ahmad has built Alphabyte's data and analytics practice into the firm's largest delivery arm. He is also co-founder of Parlawatch AI — featured in Maclean's and the University of Toronto Magazine — and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
   ],
   "contact": {
     "linkedin": {
@@ -30,7 +30,7 @@
   "careerTimeline": [
     {
       "period": "2016 — Present",
-      "role": "Co-Founder & Lead Consultant",
+      "role": "Co-Founder, Data Practice",
       "organization": "Alphabyte Solutions Inc."
     },
     {

@@ -3,31 +3,31 @@ import { Target, Server, CheckCircle, Plug, Wrench } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
-  title: "On-Premise LLM — Self-Hosted AI",
+  title: "On-Premise LLM - Self-Hosted AI",
   description:
     "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For clients where cloud AI is ruled out by data sovereignty or security policy.",
   alternates: {
     canonical: "/tools/on-premise-llm/",
   },
   openGraph: {
-    title: "On-Premise LLM — Self-Hosted AI",
+    title: "On-Premise LLM - Self-Hosted AI",
     description:
       "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For data sovereignty and security.",
     url: "/tools/on-premise-llm/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools-on-premise-llm.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — On-Premise LLM — Self-Hosted AI",
+        alt: "Alphabyte - On-Premise LLM - Self-Hosted AI",
       },
     ],
   },
   twitter: {
-    title: "On-Premise LLM — Self-Hosted AI",
+    title: "On-Premise LLM - Self-Hosted AI",
     description:
       "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For data sovereignty and security.",
-    images: ["/og/default.png"],
+    images: ["/og/tools-on-premise-llm.png"],
   },
 };
 

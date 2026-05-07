@@ -182,7 +182,7 @@ export async function generateMetadata({
           url: `/blog/${slug}-hero.webp`,
           width: 1551,
           height: 1014,
-          alt: `Alphabyte — ${frontmatter.title}`,
+          alt: `Alphabyte - ${frontmatter.title}`,
         },
       ],
     },

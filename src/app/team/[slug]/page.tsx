@@ -99,6 +99,10 @@ export async function generateMetadata({
       ? member.bio[0].slice(0, 157) + "..."
       : member.bio[0];
 
+  const ogImage = fs.existsSync(path.join(process.cwd(), `public/og/team-${slug}.png`))
+    ? `/og/team-${slug}.png`
+    : "/og/default.png";
+
   return {
     title,
     description,
@@ -111,17 +115,17 @@ export async function generateMetadata({
       url: `/team/${slug}/`,
       images: [
         {
-          url: "/og/default.png",
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: `Alphabyte — ${member.name}, ${member.role}`,
+          alt: `Alphabyte - ${member.name}, ${member.role}`,
         },
       ],
     },
     twitter: {
       title,
       description,
-      images: ["/og/default.png"],
+      images: [ogImage],
     },
   };
 }

@@ -3,31 +3,31 @@ import { BookOpen, Plug, Settings, Bot, FileText, Link2 } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
-  title: "Claude — The Intelligence Layer for AI Engagements",
+  title: "Claude - The Intelligence Layer for AI Engagements",
   description:
     "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits — purpose-built for your team.",
   alternates: {
     canonical: "/tools/claude/",
   },
   openGraph: {
-    title: "Claude — The Intelligence Layer for AI Engagements",
+    title: "Claude - The Intelligence Layer for AI Engagements",
     description:
       "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits.",
     url: "/tools/claude/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools-claude.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Claude — The Intelligence Layer for AI Engagements",
+        alt: "Alphabyte - Claude - The Intelligence Layer for AI Engagements",
       },
     ],
   },
   twitter: {
-    title: "Claude — The Intelligence Layer for AI Engagements",
+    title: "Claude - The Intelligence Layer for AI Engagements",
     description:
       "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits.",
-    images: ["/og/default.png"],
+    images: ["/og/tools-claude.png"],
   },
 };
 

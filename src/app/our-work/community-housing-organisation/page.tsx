@@ -5,14 +5,14 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Community Housing Organisation — AI Enablement",
+  title: "Community Housing Organisation - AI Enablement",
   description:
     "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation. Data readiness first, then five purpose-built Claude agents.",
   alternates: {
     canonical: "/our-work/community-housing-organisation/",
   },
   openGraph: {
-    title: "Community Housing Organisation — AI Enablement",
+    title: "Community Housing Organisation - AI Enablement",
     description:
       "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation.",
     url: "/our-work/community-housing-organisation/",
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
         url: "/our-work/community-housing-organisation-roadmap-concept.webp",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Community Housing Organisation — AI Enablement",
+        alt: "Alphabyte - Community Housing Organisation - AI Enablement",
       },
     ],
   },
   twitter: {
-    title: "Community Housing Organisation — AI Enablement",
+    title: "Community Housing Organisation - AI Enablement",
     description:
       "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation.",
     images: ["/our-work/community-housing-organisation-roadmap-concept.webp"],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Community Housing Organisation — AI Enablement",
+  name: "Community Housing Organisation - AI Enablement",
   description:
     "How Alphabyte delivered an AI enablement roadmap for a community housing infrastructure organisation, including a seven-recommendation roadmap from data governance to purpose-built Claude agents.",
   url: "https://alphabyte.ai/our-work/community-housing-organisation/",

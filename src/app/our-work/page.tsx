@@ -3,38 +3,38 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "Our Work — AI Consulting Case Studies",
+  title: "Our Work - AI Consulting Case Studies",
   description:
     "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not POCs.",
   alternates: {
     canonical: "/our-work/",
   },
   openGraph: {
-    title: "Our Work — AI Consulting Case Studies",
+    title: "Our Work - AI Consulting Case Studies",
     description:
       "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
     url: "/our-work/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/our-work.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Our Work — AI Consulting Case Studies",
+        alt: "Alphabyte - Our Work - AI Consulting Case Studies",
       },
     ],
   },
   twitter: {
-    title: "Our Work — AI Consulting Case Studies",
+    title: "Our Work - AI Consulting Case Studies",
     description:
       "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
-    images: ["/og/default.png"],
+    images: ["/og/our-work.png"],
   },
 };
 
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Our Work — AI Consulting Case Studies",
+  name: "Our Work - AI Consulting Case Studies",
   description:
     "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",

@@ -5,14 +5,14 @@ import {
 } from "@/components/case-study-page";
 
 export const metadata: Metadata = {
-  title: "Construction Firm — Compliance Intelligence Agent",
+  title: "Construction Firm - Compliance Intelligence Agent",
   description:
     "How Alphabyte built an AI compliance agent for a multi-entity construction firm. Knowledge graph navigation across regulatory code libraries with citation-grade accuracy.",
   alternates: {
     canonical: "/our-work/fire-protection-compliance/",
   },
   openGraph: {
-    title: "Construction Firm — Compliance Intelligence Agent",
+    title: "Construction Firm - Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
     url: "/our-work/fire-protection-compliance/",
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
         url: "/our-work/fire-protection-compliance-knowledge-graph.webp",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Construction Firm — Compliance Intelligence Agent",
+        alt: "Alphabyte - Construction Firm - Compliance Intelligence Agent",
       },
     ],
   },
   twitter: {
-    title: "Construction Firm — Compliance Intelligence Agent",
+    title: "Construction Firm - Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
     images: ["/our-work/fire-protection-compliance-knowledge-graph.webp"],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Construction Firm — Compliance Intelligence Agent",
+  name: "Construction Firm - Compliance Intelligence Agent",
   description:
     "How Alphabyte built a custom AI compliance agent for a multi-entity construction firm, navigating regulatory code libraries with knowledge graph architecture and citation-grade accuracy.",
   url: "https://alphabyte.ai/our-work/fire-protection-compliance/",

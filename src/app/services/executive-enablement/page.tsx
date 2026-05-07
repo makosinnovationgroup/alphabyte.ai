@@ -3,31 +3,31 @@ import { Search, BookOpen, Zap, MessageCircle, Wrench, GraduationCap } from "luc
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
-  title: "Executive Enablement — AI for Leadership Teams",
+  title: "Executive Enablement - AI for Leadership Teams",
   description:
     "Custom Claude environment for your leadership team in two to four weeks. Knowledgebases, skills libraries, and prompt toolkits built from your operational data.",
   alternates: {
     canonical: "/services/executive-enablement/",
   },
   openGraph: {
-    title: "Executive Enablement — AI for Leadership Teams",
+    title: "Executive Enablement - AI for Leadership Teams",
     description:
       "Custom Claude environment for your leadership team in two to four weeks. Built from your operational data.",
     url: "/services/executive-enablement/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/services-executive-enablement.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — Executive Enablement — AI for Leadership Teams",
+        alt: "Alphabyte - Executive Enablement - AI for Leadership Teams",
       },
     ],
   },
   twitter: {
-    title: "Executive Enablement — AI for Leadership Teams",
+    title: "Executive Enablement - AI for Leadership Teams",
     description:
       "Custom Claude environment for your leadership team in two to four weeks. Built from your operational data.",
-    images: ["/og/default.png"],
+    images: ["/og/services-executive-enablement.png"],
   },
 };
 

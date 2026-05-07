@@ -3,31 +3,31 @@ import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
-  title: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
+  title: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
   description:
     "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty. Built to ship, not demo.",
   alternates: {
     canonical: "/tools/",
   },
   openGraph: {
-    title: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
+    title: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
     description:
       "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
     url: "/tools/",
     images: [
       {
-        url: "/og/default.png",
+        url: "/og/tools.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte — AI Tools — Claude, MCP, Agents, On-Premise LLM",
+        alt: "Alphabyte - AI Tools - Claude, MCP, Agents, On-Premise LLM",
       },
     ],
   },
   twitter: {
-    title: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
+    title: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
     description:
       "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
-    images: ["/og/default.png"],
+    images: ["/og/tools.png"],
   },
 };
 
@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "AI Tools — Claude, MCP, Agents, On-Premise LLM",
+  name: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
   description:
     "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
   url: "https://alphabyte.ai/tools/",

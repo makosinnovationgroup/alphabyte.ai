@@ -92,7 +92,7 @@ const homeTracks: Track[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Alphabyte AI — Consulting for Mid-Market Organizations",
+  title: "Alphabyte AI - Consulting for Mid-Market Organizations",
   description:
     "Alphabyte AI designs and delivers working AI for mid-market organizations. Four tracks. Real deployments. No junior bench.",
   alternates: {
