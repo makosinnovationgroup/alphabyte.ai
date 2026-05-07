@@ -127,6 +127,7 @@ export default function BlogPage() {
                 className="aspect-[4/3] w-full object-cover object-top md:aspect-auto md:h-full"
                 width={800}
                 height={600}
+                fetchPriority="high"
               />
 
               {/* Content */}

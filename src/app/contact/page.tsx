@@ -4,14 +4,14 @@ import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Alphabyte AI - Book a Free Discovery Call",
   description:
     "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation. Describe your situation and we tell you candidly what we would do.",
   alternates: {
     canonical: "/contact/",
   },
   openGraph: {
-    title: "Contact Us",
+    title: "Contact Alphabyte AI - Book a Free Discovery Call",
     description:
       "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation.",
     url: "/contact/",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Contact Us",
+    title: "Contact Alphabyte AI - Book a Free Discovery Call",
     description:
       "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation.",
     images: ["/og/contact.png"],

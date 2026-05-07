@@ -72,5 +72,5 @@
     "name": "Alphabyte AI",
     "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
   },
-  "pills": ["Azure", "SQL Server", "Python", "Power BI", ".NET"]
+  "pills": ["Cloud Architecture", "Data Architecture", "Project Delivery", "Account Management"]
 }

@@ -189,6 +189,7 @@ export function BlogPostPage({
               className="w-full rounded-md"
               width={1200}
               height={785}
+              fetchPriority="high"
             />
           </div>
         </section>
