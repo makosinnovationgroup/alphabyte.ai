@@ -1,48 +1,62 @@
 # Alphabyte AI
 
-> Claude-focused AI consulting for mid-market organizations in North America. Practitioner-led, no junior bench. Operating since 2016.
+> Alphabyte AI is a Claude-native consulting firm that designs and delivers working AI for mid-market organizations. Four service tracks. Real deployments. No junior bench. Operating across North America since 2016.
+
+Alphabyte is the AI and data consulting practice of Alphabyte Solutions Inc. Claude is the entire practice -- not a competency added to a service menu. The flagship offering is Citizen Developer Enablement: governed Claude environments that turn every employee into an AI developer.
 
 ## Services
-- /services/discovery/ — AI strategy sprint, 3-5 weeks
-- /services/data-readiness/ — Data quality audit and governance
-- /services/citizen-development/ — Governed Claude environment for every employee
-- /services/executive-enablement/ — Custom Claude environment for leadership
-- /services/infrastructure/ — MCP servers, agents, on-premise LLMs
+
+- [Citizen Development](https://alphabyte.ai/services/citizen-development/): Governed Claude environment, SDLC tooling, and guardrails deployed against existing workflows. Every employee becomes an AI developer. 3-12 weeks.
+- [Executive Enablement](https://alphabyte.ai/services/executive-enablement/): Custom Claude environment built from operational data -- knowledgebases, skills, prompt toolkit. Leadership sees measurable time savings in the first sprint. 2-4 weeks.
+- [Discovery](https://alphabyte.ai/services/discovery/): Four-week AI strategy engagement. Stakeholder workshops, use case prioritization, gap analysis, and an executable roadmap. 3-5 weeks.
+- [Data Readiness](https://alphabyte.ai/services/data-readiness/): Data quality audit, governance assessment, AI readiness scorecard, and remediation pathway for regulated industries. 4-8 weeks.
+- [Infrastructure](https://alphabyte.ai/services/infrastructure/): Custom MCP servers, autonomous agents, on-premise LLMs, and fine-tuned models. Where Claude connects to live operational systems. 4-36 weeks.
 
 ## Tools
-- /tools/claude/ — Claude configuration and integration
-- /tools/mcp/ — Model Context Protocol servers for enterprise systems
-- /tools/custom-ai-agents/ — Purpose-built AI agents for business workflows
-- /tools/on-premise-llm/ — Private LLM deployment for regulated environments
+
+- [Claude](https://alphabyte.ai/tools/claude/): The intelligence layer for all engagements. Alphabyte is Anthropic-certified and configures Claude across Teams, Enterprise, and API tiers.
+- [MCP](https://alphabyte.ai/tools/mcp/): Model Context Protocol servers for secure, governed connectivity between Claude and internal systems.
+- [Custom AI Agents](https://alphabyte.ai/tools/custom-ai-agents/): Autonomous task execution built on Claude, deployed with governance and observability.
+- [On-Premise LLM](https://alphabyte.ai/tools/on-premise-llm/): Self-hosted models for organizations where data cannot leave the network.
 
 ## Case Studies
-- /our-work/fire-protection-compliance/ — AI compliance intelligence agent for a multi-entity construction firm
-- /our-work/circular-economy-platform/ — AI-powered executive productivity suite for a major supplier
-- /our-work/community-housing-organisation/ — AI enablement assessment and seven-recommendation roadmap for a community housing organisation
+
+- [Construction Compliance Agent](https://alphabyte.ai/our-work/fire-protection-compliance/): Custom MCP server and knowledge graph navigating regulatory code with citation-grade accuracy for a multi-entity North American construction firm.
+- [Executive Productivity Suite](https://alphabyte.ai/our-work/circular-economy-platform/): Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies for a major global supplier.
+- [Community Housing AI Enablement](https://alphabyte.ai/our-work/community-housing-organisation/): Seven-recommendation roadmap from data governance to five purpose-built Claude agents for a Canadian public sector housing organization.
 
 ## Blog
-- /blog/ai-governance-framework-mid-market/ — An AI governance framework for mid-market companies
-- /blog/ai-readiness-assessment/ — The 2-week AI readiness assessment for operations leaders
-- /blog/citizen-developer-enablement-playbook/ — Citizen developer enablement: the 2026 playbook
-- /blog/claude-for-finance-teams/ — Claude for finance teams: 8 workflows that replace manual reporting
-- /blog/claude-vs-chatgpt-enterprise/ — Claude vs ChatGPT for the enterprise: an honest comparison
-- /blog/claude-vs-microsoft-copilot/ — Claude vs Microsoft Copilot for mid-market knowledge work
-- /blog/how-to-build-a-custom-mcp-server/ — How to build a custom MCP server for mid-market IT
-- /blog/private-llm-vs-claude-enterprise/ — Private LLM vs Claude Enterprise: when you need on-premise
-- /blog/shadow-ai-governance/ — Shadow AI is already in your company. Here is how to govern it
-- /blog/why-ai-pilots-stall/ — Why 80% of mid-market AI pilots stall
+
+- [Why Most Mid-Market AI Pilots Stall](https://alphabyte.ai/blog/why-ai-pilots-stall/): Mid-market AI pilots stall because the deployment model is wrong, not the technology. A bottom-up programme that compounds is the alternative.
+- [Shadow AI Governance Guide](https://alphabyte.ai/blog/shadow-ai-governance/): Shadow AI is already in your company. Here is how to govern it without killing productivity.
+- [Private LLM vs Claude Enterprise](https://alphabyte.ai/blog/private-llm-vs-claude-enterprise/): When you need on-premise AI and when Claude Enterprise is the better path.
+- [Claude vs Microsoft Copilot](https://alphabyte.ai/blog/claude-vs-microsoft-copilot/): An honest comparison for mid-market knowledge work.
+- [Claude vs ChatGPT Enterprise](https://alphabyte.ai/blog/claude-vs-chatgpt-enterprise/): Feature-by-feature comparison for enterprise buyers.
+- [Claude for Finance Teams](https://alphabyte.ai/blog/claude-for-finance-teams/): Eight workflows that replace manual reporting.
+- [AI Governance Framework for Mid-Market](https://alphabyte.ai/blog/ai-governance-framework-mid-market/): A practical governance framework for mid-market companies.
+- [AI Readiness Assessment](https://alphabyte.ai/blog/ai-readiness-assessment/): A practical 2-week diagnostic for operations leaders.
+- [Citizen Developer Enablement Playbook](https://alphabyte.ai/blog/citizen-developer-enablement-playbook/): The 2026 playbook for citizen developer programmes.
+- [How to Build a Custom MCP Server](https://alphabyte.ai/blog/how-to-build-a-custom-mcp-server/): Technical guide for mid-market IT teams.
 
 ## Team
-- /team/ — 8 practitioners with full profiles
-- /team/adam-nameh/ — Co-Founder and Data Platform Architect
-- /team/mitch-makos/ — Principal Architect & AI Delivery Lead
-- /team/ahmad-nameh/ — Co-Founder & Lead Consultant
-- /team/ibrahim-nameh/ — IT Director
-- /team/kevin-seto/ — Director, Analytics and Project Delivery
-- /team/rugved-ambekar/ — Senior Engineer & AI Delivery Lead
-- /team/alfaz-khan/ — Infrastructure Architect & Security Practitioner
-- /team/rabia-arabaci/ — Marketing Coordinator
+
+- [Team Overview](https://alphabyte.ai/team/): 8 senior practitioners with full profiles, credentials, and career timelines.
+- [Adam Nameh](https://alphabyte.ai/team/adam-nameh/): Co-Founder, AI Practice. 10+ years in data architecture and platform design.
+- [Ahmad Nameh](https://alphabyte.ai/team/ahmad-nameh/): Co-Founder & Lead Consultant.
+- [Mitchell Makos](https://alphabyte.ai/team/mitch-makos/): Principal Architect & AI Delivery Lead.
+- [Rugved Ambekar](https://alphabyte.ai/team/rugved-ambekar/): Head of AI Engineering.
+- [Ibrahim Nameh](https://alphabyte.ai/team/ibrahim-nameh/): IT Director.
+- [Kevin Seto](https://alphabyte.ai/team/kevin-seto/): Director, Analytics and Project Delivery.
+- [Alfaz Khan](https://alphabyte.ai/team/alfaz-khan/): Security and Compliance Officer.
+- [Rabia Arabaci](https://alphabyte.ai/team/rabia-arabaci/): Marketing Coordinator.
 
 ## Company
-- /about/ — Practice description, certifications, partnerships
-- /contact/ — Book a discovery call, office address in Vaughan, Ontario
+
+- **Founded:** 2016
+- **Legal Name:** Alphabyte Solutions Inc.
+- **Location:** 155 Winges Road, Unit 1, Vaughan, Ontario, Canada L4L 6C7
+- **Team Size:** 20+ practitioners
+- **Specialization:** Claude-certified, Anthropic partner
+- **Contact:** contact@alphabyte.ai
+- **Website:** https://alphabyte.ai
+- **LinkedIn:** https://www.linkedin.com/company/alphabyte-solutions-inc

@@ -87,6 +87,11 @@ const organizationSchema = {
     email: "contact@alphabyte.ai",
     availableLanguage: ["English"],
   },
+  foundingDate: "2016",
+  numberOfEmployees: {
+    "@type": "QuantitativeValue",
+    value: 20,
+  },
 };
 
 const siteNavigationSchema = {
