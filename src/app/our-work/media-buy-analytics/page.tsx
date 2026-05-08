@@ -202,6 +202,11 @@ export default function MediaBuyAnalyticsPage() {
           pullQuote:
             "They ask a plain-English question and receive an auditable, source-grounded answer in seconds. The questions the team can ask have expanded to match the depth of the data.",
         }}
+        figure={{
+          src: "/our-work/media-buy-analytics-hero.webp",
+          alt: "AI-powered media buy analytics agent returning a ranked profitability table with underlying DAX from a plain-English query",
+          caption: "Figure 1 — A media buyer asks a plain-English question and receives an auditable, DAX-grounded answer in seconds.",
+        }}
         closingCta={{
           heading:
             "Want to explore what we could build for your analytics environment?",
