@@ -85,10 +85,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://alphabyte.ai/our-work/",
       lastModified: new Date("2026-04-29"),
     },
-    {
-      url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
-      lastModified: new Date("2026-04-29"),
-    },
+    // {
+    //   url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
+    //   lastModified: new Date("2026-04-29"),
+    // },
     {
       url: "https://alphabyte.ai/our-work/circular-economy-platform/",
       lastModified: new Date("2026-04-29"),
