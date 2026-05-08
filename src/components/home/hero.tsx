@@ -5,7 +5,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 const stats = [
   { value: "10X", label: "Workforce output multiplier from governed citizen dev" },
   { value: "2 Wks", label: "Fastest time to a live Claude environment" },
-  { value: "3", label: "Active North American deployments in delivery today" },
+  { value: "4", label: "Active North American deployments in delivery today" },
 ];
 
 export function Hero() {

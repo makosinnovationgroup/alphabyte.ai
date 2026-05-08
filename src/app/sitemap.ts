@@ -94,6 +94,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-04-29"),
     },
     {
+      url: "https://alphabyte.ai/our-work/media-buy-analytics/",
+      lastModified: new Date("2026-05-08"),
+    },
+    {
       url: "https://alphabyte.ai/our-work/community-housing-organisation/",
       lastModified: new Date("2026-04-28"),
     },

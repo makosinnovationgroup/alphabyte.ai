@@ -3,6 +3,7 @@ import Link from "next/link";
 const clients = [
   { name: "Construction Firm", href: "/our-work/fire-protection-compliance/" },
   { name: "Major Supplier", href: "/our-work/circular-economy-platform/" },
+  { name: "DTC E-Commerce Brand", href: "/our-work/media-buy-analytics/" },
   { name: "Community Housing Organisation", href: "/our-work/community-housing-organisation/" },
 ];
 

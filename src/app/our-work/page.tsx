@@ -5,14 +5,14 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Work - AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not POCs.",
+    "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing. Real deployments, not POCs.",
   alternates: {
     canonical: "/our-work/",
   },
   openGraph: {
     title: "Our Work - AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
+      "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing.",
     url: "/our-work/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Our Work - AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing.",
+      "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing.",
     images: ["/og/our-work.png"],
   },
 };
@@ -36,7 +36,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Work - AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across construction, reverse logistics, and community housing. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
   isPartOf: { "@id": "https://alphabyte.ai/#website" },
 };
@@ -52,12 +52,12 @@ const breadcrumbSchema = {
 
 const caseStudies = [
   {
-    headerTags: "CONSTRUCTION \u00b7 MULTI-ENTITY \u00b7 NORTH AMERICA",
-    clientName: "Construction Firm",
-    projectTitle: "AI-Powered Compliance Intelligence Agent",
-    pills: ["Custom MCP Server", "Knowledge Graph", "Claude Cowork"],
-    body: "Custom AI compliance agent that navigates the firm's full regulatory code library with citation-grade accuracy. Knowledge graph architecture integrated into a custom MCP server with org-wide Claude Desktop access.",
-    href: "/our-work/fire-protection-compliance/",
+    headerTags: "DTC E-COMMERCE \u00b7 PAID MEDIA \u00b7 NORTH AMERICA",
+    clientName: "DTC E-Commerce Brand",
+    projectTitle: "AI-Powered Media Buy Analytics Agent",
+    pills: ["Custom MCP Server", "Power BI", "Microsoft Fabric"],
+    body: "Custom Power BI MCP server connecting Claude to Microsoft Fabric semantic models. Media buyers ask plain-English questions and get auditable, DAX-grounded answers in seconds.",
+    href: "/our-work/media-buy-analytics/",
   },
   {
     headerTags: "REVERSE LOGISTICS \u00b7 ELECTRONICS \u00b7 GLOBAL",
@@ -67,6 +67,14 @@ const caseStudies = [
     pills: ["Executive Enablement", "Claude Cowork", "Multi-System Integration"],
     body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, Fireflies, and more. Purpose-built agents delivering automated morning briefs, spend reports, and post-call summaries.",
     href: "/our-work/circular-economy-platform/",
+  },
+  {
+    headerTags: "CONSTRUCTION \u00b7 MULTI-ENTITY \u00b7 NORTH AMERICA",
+    clientName: "Construction Firm",
+    projectTitle: "AI-Powered Compliance Intelligence Agent",
+    pills: ["Custom MCP Server", "Knowledge Graph", "Claude Cowork"],
+    body: "Custom AI compliance agent that navigates the firm's full regulatory code library with citation-grade accuracy. Knowledge graph architecture integrated into a custom MCP server with org-wide Claude Desktop access.",
+    href: "/our-work/fire-protection-compliance/",
   },
   {
     headerTags:
@@ -107,7 +115,7 @@ export default function OurWorkPage() {
       {/* Case study cards */}
       <section className="bg-canvas px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto max-w-[1600px]">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {caseStudies.map((study) => (
               <Link
                 key={study.clientName}

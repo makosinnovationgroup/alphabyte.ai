@@ -21,6 +21,12 @@ const proofPoints: ProofPoint[] = [
     href: "/our-work/circular-economy-platform/",
   },
   {
+    eyebrow: "DTC E-COMMERCE \u00b7 PAID MEDIA \u00b7 NORTH AMERICA",
+    title: "Media buy analytics agent",
+    body: "Custom Power BI MCP server connecting Claude to Microsoft Fabric. Media buyers ask plain-English questions and get auditable, DAX-grounded answers in seconds.",
+    href: "/our-work/media-buy-analytics/",
+  },
+  {
     eyebrow: "COMMUNITY HOUSING \u00b7 PUBLIC SECTOR \u00b7 CANADA",
     title: "AI enablement roadmap",
     body: "Seven-recommendation roadmap from data governance to five purpose-built Claude agents, executable within 90 days.",
@@ -39,7 +45,7 @@ export function ProofPoints() {
           <span className="flex-1 border-t border-border-default" />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {proofPoints.map((pp) => (
             <Link
               key={pp.title}

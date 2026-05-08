@@ -23,6 +23,7 @@ Alphabyte is the AI and data consulting practice of Alphabyte Solutions Inc. Cla
 
 - [Construction Compliance Agent](https://alphabyte.ai/our-work/fire-protection-compliance/): Custom MCP server and knowledge graph navigating regulatory code with citation-grade accuracy for a multi-entity North American construction firm.
 - [Executive Productivity Suite](https://alphabyte.ai/our-work/circular-economy-platform/): Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies for a major global supplier.
+- [Media Buy Analytics Agent](https://alphabyte.ai/our-work/media-buy-analytics/): Custom Power BI MCP server connecting Claude to Microsoft Fabric semantic models for self-service media spend analytics for a DTC e-commerce brand.
 - [Community Housing AI Enablement](https://alphabyte.ai/our-work/community-housing-organisation/): Seven-recommendation roadmap from data governance to five purpose-built Claude agents for a Canadian public sector housing organization.
 
 ## Blog
