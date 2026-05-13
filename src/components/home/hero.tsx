@@ -15,9 +15,17 @@ export function Hero() {
         <div className="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-start">
           {/* Left column */}
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue mb-8">
-              &#9733; Claude Certified &middot; Mid-market
-            </span>
+            <div className="flex flex-wrap items-center gap-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
+                &#9733; Claude Certified
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
+                Microsoft Partner
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
+                Mid-Market
+              </span>
+            </div>
 
             <h1 className="text-display font-sans tracking-brand-tight mb-6">
               AI that <span className="text-alphabyte-blue">compounds</span>. Not
@@ -35,8 +43,8 @@ export function Hero() {
                 employee, now an AI developer.
               </p>
               <p className="text-lg text-foreground">
-                We are not a generalist AI consultancy. Claude is our entire
-                practice — not a competency we added to a service menu.
+                We are not a generalist AI consultancy. Claude is our flagship
+                practice. Not a checkbox on a service menu.
               </p>
             </div>
 
