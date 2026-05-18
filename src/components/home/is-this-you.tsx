@@ -1,51 +1,56 @@
-const scenarios = [
+import {
+  Chevron,
+  HexgridSection,
+  Manifest2x2,
+  SectionLabel,
+  type ManifestCell,
+} from "@/components/operator";
+
+const cells: [ManifestCell, ManifestCell, ManifestCell, ManifestCell] = [
   {
-    heading: "Shadow IT",
+    num: "01",
+    tag: "CASE \u00b7 SHADOW IT",
     body: "Your team is already using Claude informally — prompts in Slack threads, personal workflows nobody else can replicate, data exports running through tools IT has not reviewed.",
   },
   {
-    heading: "No Clear Strategy",
+    num: "02",
+    tag: "CASE \u00b7 NO CLEAR STRATEGY",
     body: "Leadership has been asked about AI strategy and the honest answer is: we do not have one yet. The board wants something. A competitor announced something.",
   },
   {
-    heading: "Stalled Investment",
+    num: "03",
+    tag: "CASE \u00b7 STALLED INVESTMENT",
     body: "You have already invested in AI. A pilot ran. Something was delivered. Not much is actually being used. You want to understand what went wrong before spending again.",
   },
   {
-    heading: "Regulatory Pressure",
+    num: "04",
+    tag: "CASE \u00b7 REGULATORY PRESSURE",
     body: "You are in a regulated industry or the public sector. You need an AI programme that can survive a compliance conversation, not just a demo.",
   },
 ];
 
 export function IsThisYou() {
   return (
-    <section className="bg-white px-6 py-10 md:py-14">
-      <div className="mx-auto max-w-[1600px]">
-        <div className="flex items-center gap-3 mb-10">
-          <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-            Is This You?
-          </p>
-          <span className="flex-1 border-t border-border-default" />
-        </div>
+    <HexgridSection className="bg-canvas pt-16 pb-6">
+      <div className="mx-auto max-w-[1400px] px-8">
+        <SectionLabel text="03 / MANIFEST / IS THIS YOU?" />
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {scenarios.map((scenario, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border-default bg-canvas p-6 shadow-sm md:p-8"
-            >
-              <p className="text-body font-bold text-foreground mb-2">{scenario.heading}</p>
-              <p className="text-body text-foreground">{scenario.body}</p>
-            </div>
-          ))}
-        </div>
+        <h2 className="text-[clamp(2rem,3.4vw,3rem)] font-black tracking-[-0.025em] mb-2">
+          Common signatures.
+        </h2>
+        <p className="font-mono text-[12px] text-muted-foreground mb-7 flex items-center">
+          <Chevron />
+          If two of these match, the discovery call is already worth the time.
+        </p>
+        <div className="h-px bg-ink mb-9" />
 
-        <div className="mt-10 rounded-md bg-alphabyte-blue/10 px-6 py-4">
-          <p className="text-body italic text-muted-foreground">
-            Whatever your situation — we have been here before. The discovery call is where we figure out which path fits.
-          </p>
+        <Manifest2x2 cells={cells} />
+
+        <div className="mt-6 px-5 py-[18px] border-l-2 border-alphabyte-blue bg-alphabyte-blue/[0.04] font-mono text-[13px] text-muted-foreground leading-[1.55]">
+          Whatever your situation &mdash; we have been here before. The discovery
+          call is where we figure out which path fits.
         </div>
       </div>
-    </section>
+    </HexgridSection>
   );
 }

@@ -108,7 +108,7 @@ function DesktopDropdown({
               transition: { duration: noMotion ? 0 : 0.1, ease: "easeIn" },
             }}
           >
-            <div className="w-64 rounded-md border border-border-default bg-white py-2 shadow-md">
+            <div className="w-64 border border-border-default bg-white py-2">
               {item.children!.map((child) => (
                 <Link
                   key={child.href}
@@ -229,34 +229,16 @@ export function Header() {
   const reducedMotion = useReducedMotion();
   const noMotion = !!reducedMotion;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [visible, setVisible] = React.useState(true);
-  const lastScrollY = React.useRef(0);
 
   React.useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  React.useEffect(() => {
-    function handleScroll() {
-      const currentY = window.scrollY;
-      if (currentY < 10) {
-        setVisible(true);
-      } else if (currentY < lastScrollY.current) {
-        setVisible(true);
-      } else if (currentY > lastScrollY.current) {
-        setVisible(false);
-      }
-      lastScrollY.current = currentY;
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <header
       className={cn(
-        "sticky top-0 z-30 bg-white border-b border-border-default transition-transform duration-200",
-        visible ? "translate-y-0" : "-translate-y-full",
+        "sticky top-0 z-30 border-b border-border-default",
+        "bg-canvas/[0.92] [backdrop-filter:saturate(140%)_blur(8px)] [-webkit-backdrop-filter:saturate(140%)_blur(8px)]",
       )}
     >
       <a
@@ -270,7 +252,7 @@ export function Header() {
         Skip to content
       </a>
 
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-8 py-3.5">
         <Wordmark />
 
         {/* Desktop nav */}

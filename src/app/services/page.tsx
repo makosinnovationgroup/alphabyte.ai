@@ -1,6 +1,102 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import {
+  Chevron,
+  EyebrowChip,
+  HardRule,
+  HexgridSection,
+  MonoIsh,
+  SectionLabel,
+  TrackTable,
+  TypedHero,
+  type Track,
+} from "@/components/operator";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
+
+const tracks: Track[] = [
+  {
+    label: "Citizen Dev",
+    flagship: true,
+    question: "How do our people use AI?",
+    heading: "Citizen Dev",
+    body: "Governed Claude environment, SDLC tooling, and guardrails \u2014 deployed against the workflows your team already owns. From informal usage to a managed, compounding capability. Most clients have something running in week three.",
+    rightForYou:
+      "Your team is using Claude informally, or you want every employee operating as an AI developer.",
+    cta: { label: "Get started \u2192", href: "/services/citizen-development/" },
+    pills: [
+      "Custom SDLC Plugin",
+      "Knowledgebases & Skills",
+      "Guardrails Framework",
+      "Governed Data via MCP",
+    ],
+    timeline: "3 to 12 weeks",
+  },
+  {
+    label: "Executive Enablement",
+    question: "How do our people use AI?",
+    heading: "Executive Enablement",
+    body: "A custom Claude environment built from your actual operational data \u2014 knowledgebases, skills, prompt toolkit. Most executives see measurable time savings in the first sprint. The internal proof point that makes the broader programme easy to resource.",
+    rightForYou:
+      "Leadership wants a concrete AI win before a board meeting or a broader rollout.",
+    cta: { label: "Get started \u2192", href: "/services/executive-enablement/" },
+    pills: [
+      "Custom Knowledgebases",
+      "Custom Skills Library",
+      "Prompt Toolkit",
+      "Claude Teams Configuration",
+      "Knowledge Transfer Session",
+    ],
+    timeline: "2 to 4 weeks",
+  },
+  {
+    label: "Discovery",
+    question: "What should our AI strategy be?",
+    heading: "Discovery",
+    body: "Four weeks, not six months. We come in with a point of view, not a blank whiteboard. Stakeholder workshops, use case prioritization, gap analysis, and a roadmap you leave with.",
+    rightForYou:
+      "You have not made a meaningful AI investment yet and want to know where to start without wasting the next six months.",
+    cta: { label: "Get started \u2192", href: "/services/discovery/" },
+    pills: [
+      "Stakeholder Sessions",
+      "Use Case Development \u00d73",
+      "Gap Analysis",
+      "Findings & Roadmap",
+    ],
+    timeline: "3 to 5 weeks",
+  },
+  {
+    label: "Data Readiness",
+    question: "Is our data ready for AI?",
+    heading: "Data Readiness",
+    body: "Most AI projects fail because nobody validated the data underneath before the build started. Data quality audit, governance assessment, AI readiness scorecard, and a remediation pathway.",
+    rightForYou:
+      "You are in a regulated industry and data compliance is a hard prerequisite to any AI deployment.",
+    cta: { label: "Get started \u2192", href: "/services/data-readiness/" },
+    pills: [
+      "Data Quality Audit",
+      "Governance Assessment",
+      "AI Readiness Scorecard",
+      "Remediation Pathway",
+    ],
+    timeline: "4 to 8 weeks",
+  },
+  {
+    label: "Infrastructure",
+    question: "How do our systems use AI?",
+    heading: "Infrastructure",
+    body: "Where Claude stops being a productivity tool and starts being an operational capability connected to your systems. Custom MCP servers, autonomous agents, on-premise LLMs, fine-tuned models.",
+    rightForYou:
+      "Your team is enabled and data is validated \u2014 ready to connect AI to live operational systems.",
+    cta: { label: "Get started \u2192", href: "/services/infrastructure/" },
+    pills: [
+      "Custom MCP Servers",
+      "Custom AI Agents",
+      "Agent Command Centre",
+      "On-Premise LLM",
+      "Fine-Tuned LLMs",
+    ],
+    timeline: "4 to 36 weeks",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Services - AI & Data Consulting",
@@ -31,43 +127,6 @@ export const metadata: Metadata = {
   },
 };
 
-const decisionRows = [
-  {
-    situation:
-      "Team using Claude informally — Slack prompts, personal workflows, unreviewed data access",
-    startHere: "Citizen Development ★",
-    href: "/services/citizen-development/",
-    next: "Data Readiness → Infrastructure",
-  },
-  {
-    situation:
-      "Leadership needs a visible AI win before committing to a broader programme",
-    startHere: "Executive Enablement",
-    href: "/services/executive-enablement/",
-    next: "Citizen Development → Infrastructure",
-  },
-  {
-    situation:
-      "No AI investment yet — want a plan you can execute, not a deck",
-    startHere: "Discovery",
-    href: "/services/discovery/",
-    next: "Data Readiness or Citizen Development",
-  },
-  {
-    situation: "Regulated industry or uncertain data quality",
-    startHere: "Data Readiness",
-    href: "/services/data-readiness/",
-    next: "Citizen Development or Infrastructure",
-  },
-  {
-    situation:
-      "Team enabled, data validated — ready to connect AI to live systems",
-    startHere: "Infrastructure",
-    href: "/services/infrastructure/",
-    next: "Ongoing agent expansion",
-  },
-];
-
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -96,113 +155,76 @@ export default function ServicesPage() {
           __html: JSON.stringify([webPageSchema, breadcrumbSchema]),
         }}
       />
-      {/* Hero */}
-      <section className="bg-white px-6 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="max-w-3xl">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-6">
-              Our Services
-            </p>
-            <h1 className="text-display font-sans tracking-brand-tight mb-6">
-              Five tracks. One{" "}
-              <span className="text-alphabyte-blue">methodology.</span> Start
-              where you are.
-            </h1>
-            <div className="space-y-4 max-w-[60ch]">
-              <p className="text-body text-foreground">
-                We are not a generalist AI consultancy. Claude is our entire
-                practice &mdash; every engagement, every engineer, every
-                methodology built specifically for Claude deployment in
-                mid-market organizations.
+
+      {/* 01 HERO */}
+      <HexgridSection className="relative pt-14 pb-[84px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="01 / INDEX / SERVICES" />
+
+          <div className="max-w-[60ch]">
+            <div className="mb-7">
+              <EyebrowChip>Services &middot; 5 Tracks</EyebrowChip>
+            </div>
+
+            <TypedHero
+              pre="Five tracks. One "
+              word="methodology"
+              post=". Start where you are."
+            />
+
+            <HardRule className="mb-7" />
+
+            <div className="space-y-4">
+              <p className="text-[17px] leading-[1.55] text-ink">
+                We are not a generalist AI consultancy.{" "}
+                <MonoIsh>Claude</MonoIsh> is our entire practice &mdash; every
+                engagement, every engineer, every methodology built specifically
+                for Claude deployment in mid-market organizations.
               </p>
-              <p className="text-body text-foreground">
+              <p className="text-[17px] leading-[1.55] text-ink">
                 Citizen Developer Enablement is our flagship. Everything else is
                 either preparation for it or what comes after it.
               </p>
             </div>
           </div>
         </div>
+      </HexgridSection>
+
+      {/* 02 TRACKS */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="02 / TRACKS / FIVE PATHS" />
+
+          <p className="font-mono text-[12px] text-muted-foreground mb-7 flex items-center">
+            <Chevron />
+            All tracks deploy on the same governed Claude substrate. Pick the
+            entry point that matches the question on your desk.
+          </p>
+          <div className="h-px bg-ink mb-9" />
+
+          <TrackTable tracks={tracks} />
+        </div>
       </section>
 
-      {/* Decision table */}
-      <section className="bg-canvas px-6 py-10 md:py-14">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="flex items-center gap-3 mb-6">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue whitespace-nowrap">
-              Where Do You Start?
+      {/* 03 CTA */}
+      <HexgridSection className="bg-white border-t border-border-default pt-[100px] pb-[90px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="03 / CTA / DISCOVERY CALL" />
+
+          <div className="max-w-[60ch]">
+            <h2 className="text-[clamp(2.5rem,4.4vw,4rem)] font-black tracking-[-0.03em] leading-[1.05] mb-5 max-w-[22ch]">
+              Not sure which fits?
+            </h2>
+            <p className="text-[16px] text-muted-foreground leading-[1.6] mb-7 max-w-[60ch]">
+              The discovery call is where we work that out. 45 minutes, no cost,
+              no obligation.
             </p>
-            <span className="flex-1 border-t border-border-default" />
+            <DiscoveryCallButton variant="dark" size="lg">
+              Book a Discovery Call
+            </DiscoveryCallButton>
           </div>
-
-          <p className="text-body text-muted-foreground mb-8 max-w-[70ch]">
-            All five services are available at any time. This is where you
-            enter, based on where you actually are.
-          </p>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-body-sm">
-              <thead>
-                <tr className="border-b-2 border-foreground">
-                  <th className="text-left py-3 pr-6 font-bold text-foreground">
-                    Your situation
-                  </th>
-                  <th className="text-left py-3 pr-6 font-bold text-foreground">
-                    Start here
-                  </th>
-                  <th className="text-left py-3 font-bold text-foreground">
-                    What comes next
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {decisionRows.map((row) => (
-                  <tr
-                    key={row.startHere}
-                    className="border-b border-border-default"
-                  >
-                    <td className="py-4 pr-6 text-muted-foreground align-top">
-                      {row.situation}
-                    </td>
-                    <td className="py-4 pr-6 align-top whitespace-nowrap">
-                      <Link
-                        href={row.href}
-                        className="font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-                      >
-                        {row.startHere}
-                      </Link>
-                    </td>
-                    <td className="py-4 text-muted-foreground align-top">
-                      {row.next}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-6 text-body-sm italic text-muted-foreground max-w-[80ch]">
-            These are entry points, not a mandatory sequence. Most clients start
-            with Citizen Dev or Executive Enablement, see the return, and
-            expand.
-          </p>
         </div>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="bg-alphabyte-grey border-t border-border-default px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-[1600px] text-center">
-          <h2 className="text-headline tracking-brand-snug text-foreground mb-4">
-            Not sure which fits?
-          </h2>
-          <p className="text-body text-muted-foreground mb-10 mx-auto max-w-[50ch]">
-            The discovery call is where we work that out. 45 minutes, no cost,
-            no obligation.
-          </p>
-          <DiscoveryCallButton variant="dark" size="lg">
-            Book a Discovery Call
-          </DiscoveryCallButton>
-        </div>
-      </section>
+      </HexgridSection>
     </main>
   );
 }

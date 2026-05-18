@@ -6,6 +6,7 @@ import { useDiscoveryCall } from "@/lib/discovery-call-context";
 export function DiscoveryCallButton({
   children = "Book a Discovery Call",
   onClick: onClickProp,
+  caret = "↵",
   ...props
 }: ButtonProps) {
   const { open } = useDiscoveryCall();
@@ -16,6 +17,7 @@ export function DiscoveryCallButton({
         open();
         onClickProp?.(e);
       }}
+      caret={caret}
       {...props}
     >
       {children}

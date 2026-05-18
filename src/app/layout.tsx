@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import localFont from "next/font/local";
+import { GeistMono } from "geist/font/mono";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DiscoveryCallProvider } from "@/lib/discovery-call-context";
@@ -14,8 +15,9 @@ const aeonik = localFont({
     { path: "../../public/fonts/Aeonik-Medium.woff2", weight: "500", style: "normal" },
     { path: "../../public/fonts/Aeonik-Bold.woff2", weight: "700", style: "normal" },
     { path: "../../public/fonts/Aeonik-BoldItalic.woff2", weight: "700", style: "italic" },
+    { path: "../../public/fonts/Aeonik-Black.woff2", weight: "900", style: "normal" },
   ],
-  variable: "--font-geist",
+  variable: "--font-aeonik",
   display: "swap",
 });
 
@@ -132,7 +134,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={aeonik.variable}>
+    <html lang="en" className={`${aeonik.variable} ${GeistMono.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9E4HR04ZFZ"

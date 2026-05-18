@@ -1,168 +1,78 @@
-"use client";
-
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { navigation } from "@/lib/navigation";
-import { companyLinks, legalLinks, contact } from "@/lib/footer-data";
-import { DiscoveryCallButton } from "@/components/discovery-call-button";
-
-const linkClasses = "text-body-sm text-foreground transition-colors hover:text-alphabyte-blue";
-
-const servicesNav = navigation.find((item) => item.label === "Services");
-const toolsNav = navigation.find((item) => item.label === "Tools");
-const ourWorkNav = navigation.find((item) => item.label === "Our Work");
+import { contact, legalLinks } from "@/lib/footer-data";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-canvas border-t border-border-default">
-      <div className="mx-auto max-w-[1600px] px-6 py-16 md:py-24">
-        {/* Wordmark */}
-        <div className="mb-10">
-          <Link
-            href="/"
-            aria-label="Alphabyte AI"
-            className="shrink-0 inline-flex items-center gap-0 text-xl font-medium tracking-brand-snug"
-          >
-            <img
-              src="/logos/alphabyte-logo-black.svg"
-              alt="Alphabyte"
-              className="h-10"
-            />
-            <span className="text-muted-foreground -translate-y-[1px] -ml-0.5 mr-0.5">&middot;</span>
-            <span className="text-alphabyte-blue -translate-y-[1px] ml-0.5">AI</span>
-          </Link>
+    <footer className="bg-ink text-white font-mono text-[13px] pt-9 pb-8">
+      <div className="mx-auto max-w-[1400px] px-8 flex flex-col gap-4">
+        {/* Footer logo */}
+        <Link
+          href="/"
+          aria-label="Alphabyte AI"
+          className="inline-flex items-center font-sans text-[18px] font-medium text-white"
+        >
+          <img
+            src="/logos/alphabyte-logo-white.svg"
+            alt="Alphabyte"
+            className="h-[22px] w-auto block"
+          />
+          <span className="text-white/45 mx-1 -translate-y-px">&middot;</span>
+          <span className="text-alphabyte-blue -translate-y-px">AI</span>
+        </Link>
+
+        {/* Prompt line */}
+        <div className="flex items-center gap-2.5 text-white/85">
+          <span>Book a discovery call &middot; 45 minutes &middot; No cost</span>
+          <span
+            aria-hidden
+            className="inline-block w-2 h-3.5 bg-brand-green animate-blink-pulse ml-0.5"
+          />
         </div>
 
-        {/* CTA */}
-        <div className="mb-16">
-          <DiscoveryCallButton variant="dark" size="sm">
-            Book a Discovery Call
-          </DiscoveryCallButton>
-        </div>
-
-        {/* Link columns */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {/* Contact */}
-          <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
-              Contact
-            </p>
-            <address className="not-italic text-body-sm text-muted-foreground leading-relaxed space-y-3">
-              <p>
-                {contact.address.line1}
-                <br />
-                {contact.address.line2}
-              </p>
-              <p>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue"
-                >
-                  {contact.email}
-                </a>
-              </p>
-              <p>
-                <a
-                  href={contact.linkedin.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(linkClasses, "inline-flex items-center gap-2 text-muted-foreground")}
-                >
-                  <Linkedin className="h-4 w-4" />
-                  {contact.linkedin.label}
-                </a>
-              </p>
-            </address>
-          </div>
-
-          {/* Services */}
-          {servicesNav?.children && (
-            <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
-                Services
-              </p>
-              <ul className="space-y-3">
-                {servicesNav.children.map((child) => (
-                  <li key={child.href}>
-                    <Link href={child.href} className={linkClasses}>
-                      {child.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Tools */}
-          {toolsNav?.children && (
-            <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
-                Tools
-              </p>
-              <ul className="space-y-3">
-                {toolsNav.children.map((child) => (
-                  <li key={child.href}>
-                    <Link href={child.href} className={linkClasses}>
-                      {child.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Our Work */}
-          {ourWorkNav?.children && (
-            <div>
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
-                Our Work
-              </p>
-              <ul className="space-y-3">
-                {ourWorkNav.children.map((child) => (
-                  <li key={child.href}>
-                    <Link href={child.href} className={linkClasses}>
-                      {child.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Company */}
-          <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-foreground mb-4">
-              Company
-            </p>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className={linkClasses}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Legal row */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-border-default pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-body-sm text-muted-foreground">
-            &copy; Alphabyte {new Date().getFullYear()}
-          </p>
-          <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2">
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+        {/* Meta row */}
+        <div className="flex flex-wrap gap-x-[18px] gap-y-2 pt-3.5 border-t border-white/10 text-white/45 text-[11px]">
+          <span>
+            <span className="text-alphabyte-blue">contact:</span>{" "}
+            <a
+              href={`mailto:${contact.email}`}
+              className="transition-colors hover:text-white"
+            >
+              {contact.email}
+            </a>
+          </span>
+          <span>
+            <span className="text-alphabyte-blue">hq:</span>{" "}
+            {contact.address.line1}, {contact.address.line2}
+          </span>
+          <span>
+            <span className="text-alphabyte-blue">linkedin:</span>{" "}
+            <a
+              href={contact.linkedin.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              /company/alphabyte-solutions-inc
+            </a>
+          </span>
+          {legalLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "transition-colors hover:text-white",
+                "text-white/45",
+              )}
+            >
+              {link.label.toLowerCase()}
+            </Link>
+          ))}
+          <span className="ml-auto uppercase tracking-[0.04em]">
+            &copy; ALPHABYTE {year}
+          </span>
         </div>
       </div>
     </footer>

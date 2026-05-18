@@ -3,10 +3,23 @@
 @tailwind utilities;
 
 /**
- * Base layer — brand-specific resets.
+ * Base layer — brand-specific resets + Corporate Terminal CSS variables.
  * Design tokens live in tailwind.config.ts; this file is for
  * global concerns that don't fit cleanly into a utility class.
  */
+:root {
+  /* Corporate Terminal palette — keep in sync with tailwind.config.ts */
+  --brand-blue: #00abf0;
+  --brand-live: #33bcf7;
+  --brand-green: #00ffa6; /* CURSORS ONLY */
+  --ink: #171717;
+  --canvas: #fafafa;
+  --grey: #ebebeb;
+  --border: #e5e5e5;
+  --muted: #737373;
+  --white: #ffffff;
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;

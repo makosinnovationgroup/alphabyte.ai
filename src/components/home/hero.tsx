@@ -1,84 +1,92 @@
-"use client";
-
+import {
+  EyebrowChip,
+  HardRule,
+  HexgridSection,
+  MonoIsh,
+  SectionLabel,
+  StatCard,
+  TypedHero,
+} from "@/components/operator";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
-const stats = [
-  { value: "10X", label: "Workforce output multiplier from governed citizen dev" },
-  { value: "2 Wks", label: "Fastest time to a live Claude environment" },
-  { value: "4", label: "Active North American deployments in delivery today" },
+const stats: { num: string; label: string }[] = [
+  {
+    num: "10×",
+    label: "Workforce output multiplier from governed citizen dev.",
+  },
+  {
+    num: "2 wks",
+    label: "Fastest time to a live Claude environment.",
+  },
+  {
+    num: "4",
+    label: "Active North American deployments in delivery today.",
+  },
 ];
 
 export function Hero() {
   return (
-    <section className="bg-white px-6 py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-[1600px]">
-        <div className="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-start">
-          {/* Left column */}
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap items-center gap-2 mb-8">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
-                &#9733; Claude Certified
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
-                Microsoft Partner
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-alphabyte-blue/30 bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue">
-                Mid-Market
-              </span>
+    <HexgridSection className="relative pt-14 pb-[84px]">
+      <div className="mx-auto max-w-[1400px] px-8">
+        <SectionLabel text="01 / HERO / ENTRY" />
+
+        <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+          <div>
+            <div className="mb-7 flex flex-wrap items-center gap-2">
+              <EyebrowChip star>Claude Certified</EyebrowChip>
+              <EyebrowChip>Microsoft Partner</EyebrowChip>
+              <EyebrowChip>Mid-Market</EyebrowChip>
             </div>
 
-            <h1 className="text-display font-sans tracking-brand-tight mb-6">
-              AI that <span className="text-alphabyte-blue">compounds</span>. Not
-              pilots that stall.
-            </h1>
+            <TypedHero
+              pre="AI that "
+              word="compounds"
+              post={
+                <>
+                  . Not pilots that stall.
+                </>
+              }
+            />
 
-            <div className="space-y-4 mb-10 max-w-[60ch]">
-              <p className="text-lg text-foreground">
+            <HardRule className="mb-7" />
+
+            <div className="mb-9 max-w-[60ch] space-y-4">
+              <p className="text-[17px] leading-[1.55] text-ink">
                 The models are ready. The tools are here. The window to get ahead
-                of your competition is open right now — and it is not going to
-                stay open.
+                of your competition is open right now &mdash; and it is not going
+                to stay open.
               </p>
-              <p className="text-lg text-foreground">
+              <p className="text-[17px] leading-[1.55] text-ink">
                 Our flagship offering is Citizen Developer Enablement. Every
                 employee, now an AI developer.
               </p>
-              <p className="text-lg text-foreground">
-                We are not a generalist AI consultancy. Claude is our flagship
-                practice. Not a checkbox on a service menu.
+              <p className="text-[17px] leading-[1.55] text-ink">
+                We are not a generalist AI consultancy.{" "}
+                <MonoIsh>Claude</MonoIsh> is our flagship practice. Not a
+                checkbox on a service menu.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center gap-7">
               <DiscoveryCallButton variant="dark" size="lg">
                 Book a Discovery Call
               </DiscoveryCallButton>
               <a
-                href="#tracks"
-                className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
+                href="/services/"
+                className="font-mono text-[13px] font-medium text-alphabyte-blue transition-colors duration-[120ms] hover:text-ink"
               >
-                See How it Works &rarr;
+                See how it works &rarr;
               </a>
             </div>
           </div>
 
-          {/* Right column — stats */}
-          <div className="flex flex-row gap-4 lg:flex-col lg:gap-4 lg:pt-16">
-            {stats.map((stat) => (
-              <div
-                key={stat.value}
-                className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
-              >
-                <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue">
-                  {stat.value}
-                </p>
-                <p className="text-body-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </p>
-              </div>
+          <div className="flex flex-col gap-2.5 lg:pt-[60px]">
+            {stats.map((s) => (
+              <StatCard key={s.num} num={s.num} label={s.label} />
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </HexgridSection>
   );
 }

@@ -52,17 +52,32 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  /** Corporate Terminal: append a brand-live mono caret after the children. "↵" for primary CTAs, "→" for secondary. */
+  caret?: "↵" | "→";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, caret, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    const content =
+      asChild || !caret ? (
+        children
+      ) : (
+        <>
+          {children}
+          <span className="ml-2 font-mono text-brand-live text-[12px]" aria-hidden>
+            {caret}
+          </span>
+        </>
+      );
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      />
+      >
+        {content}
+      </Comp>
     );
   },
 );
