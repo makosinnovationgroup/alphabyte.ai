@@ -161,31 +161,29 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-[1400px] px-8">
           <SectionLabel text="01 / INDEX / SERVICES" />
 
-          <div className="max-w-[60ch]">
-            <div className="mb-7">
-              <EyebrowChip>Services &middot; 5 Tracks</EyebrowChip>
-            </div>
+          <div className="mb-7">
+            <EyebrowChip>Services &middot; 5 Tracks</EyebrowChip>
+          </div>
 
-            <TypedHero
-              pre="Five tracks. One "
-              word="methodology"
-              post=". Start where you are."
-            />
+          <TypedHero
+            pre="Five tracks. "
+            word="One methodology"
+            post=". We start where you are today."
+          />
 
-            <HardRule className="mb-7" />
+          <HardRule className="mb-7" />
 
-            <div className="space-y-4">
-              <p className="text-[17px] leading-[1.55] text-ink">
-                We are not a generalist AI consultancy.{" "}
-                <MonoIsh>Claude</MonoIsh> is our entire practice &mdash; every
-                engagement, every engineer, every methodology built specifically
-                for Claude deployment in mid-market organizations.
-              </p>
-              <p className="text-[17px] leading-[1.55] text-ink">
-                Citizen Developer Enablement is our flagship. Everything else is
-                either preparation for it or what comes after it.
-              </p>
-            </div>
+          <div className="max-w-[60ch] space-y-4">
+            <p className="text-[17px] leading-[1.55] text-ink">
+              We are not a generalist AI consultancy.{" "}
+              <MonoIsh>Claude</MonoIsh> is our entire practice &mdash; every
+              engagement, every engineer, every methodology built specifically
+              for Claude deployment in mid-market organizations.
+            </p>
+            <p className="text-[17px] leading-[1.55] text-ink">
+              Citizen Developer Enablement is our flagship. Everything else is
+              either preparation for it or what comes after it.
+            </p>
           </div>
         </div>
       </HexgridSection>
