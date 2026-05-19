@@ -42,6 +42,7 @@ interface TeamMemberData {
     date: string;
     slug: string;
   }[];
+  pills?: string[];
   footerBio: { name: string; description: string };
 }
 
@@ -192,6 +193,7 @@ export default async function TeamMemberSlugPage({
         }}
       />
       <TeamMemberPage
+        slug={slug}
         breadcrumb={{
           items: [
             { label: "Home", href: "/" },
@@ -213,6 +215,7 @@ export default async function TeamMemberSlugPage({
         achievements={member.achievements}
         thoughtLeadership={member.thoughtLeadership}
         articles={getArticlesByAuthor(slug)}
+        pills={member.pills}
         footerBio={member.footerBio}
       />
     </>
