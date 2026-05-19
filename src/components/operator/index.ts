@@ -16,3 +16,4 @@ export { FitColumns } from "./fit-columns";
 export { QAGrid } from "./qa-grid";
 export { CapabilityGrid, type Capability } from "./capability-grid";
 export { PullQuote } from "./pull-quote";
+export { TableOfContents } from "./table-of-contents";
