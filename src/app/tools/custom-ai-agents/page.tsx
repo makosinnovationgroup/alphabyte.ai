@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Container, Settings, BarChart3, UserCheck, ThumbsUp } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
@@ -132,6 +131,7 @@ export default function CustomAiAgentsPage() {
         }}
       />
       <ToolPage
+        slug="custom-ai-agents"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/tools/" },
@@ -151,27 +151,22 @@ export default function CustomAiAgentsPage() {
         deliverablesLayout="list"
         deliverables={[
           {
-            icon: <Container className="h-5 w-5" />,
             title: "Agent sandbox and production runtime",
             body: "Each agent developed and tested in an isolated cloud sandbox before production. A separate, stable production runtime provisioned for live agents \u2014 monitoring, alerting, and rollback from day one.",
           },
           {
-            icon: <Settings className="h-5 w-5" />,
             title: "CI/CD pipelines for agentic workloads",
             body: "Automated testing, deployment pipelines for agent code updates, rollback mechanisms for production incidents. Agentic development has specific requirements that generic CI/CD patterns do not address.",
           },
           {
-            icon: <BarChart3 className="h-5 w-5" />,
             title: "Agent Command Centre",
             body: "Our observatory dashboard for the full agent estate. Real-time visibility into what every agent is doing, waiting on, completing, and flagging. Your team stays in control without inspecting logs.",
           },
           {
-            icon: <UserCheck className="h-5 w-5" />,
             title: "Human-in-the-loop approval workflows",
             body: "Every agent routes through approval workflows at the decision points your team has defined. The agent waits. The reviewer decides. Architectural requirement, not retrofitted governance.",
           },
           {
-            icon: <ThumbsUp className="h-5 w-5" />,
             title: "Self-improvement feedback",
             body: "Thumbs-up and thumbs-down correction flows that let your team flag incorrect outputs in real time. That feedback refines agent behaviour through hypercare and subsequent iteration.",
           },

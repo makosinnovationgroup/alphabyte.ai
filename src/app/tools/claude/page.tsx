@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { BookOpen, Plug, Settings, Bot, FileText, Link2 } from "lucide-react";
 import { ToolPage } from "@/components/tool-page";
 
 export const metadata: Metadata = {
@@ -132,6 +131,7 @@ export default function ClaudePage() {
         }}
       />
       <ToolPage
+        slug="claude"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/tools/" },
@@ -161,32 +161,26 @@ export default function ClaudePage() {
         deliverablesLayout="grid"
         deliverables={[
           {
-            icon: <BookOpen className="h-5 w-5" />,
             title: "Custom knowledgebases",
             body: "Claude Projects populated with your policies, SOPs, strategic documents, and regulatory frameworks. Your team works from an environment that understands your business \u2014 not a blank canvas.",
           },
           {
-            icon: <Plug className="h-5 w-5" />,
             title: "SDLC plugins",
             body: "The custom Claude software development lifecycle plugin standardizing how any employee begins a new project. Published once, available to every authorized user.",
           },
           {
-            icon: <Settings className="h-5 w-5" />,
             title: "Custom skills",
             body: "Built around how your team actually works. Report generation, data parsing, strategic analysis \u2014 specific to your workflows, not recycled from another client.",
           },
           {
-            icon: <Bot className="h-5 w-5" />,
             title: "Agent development",
             body: "Claude Code is the engineering substrate for all integration and custom solutions work. Every agent, every MCP connector, every automated workflow.",
           },
           {
-            icon: <FileText className="h-5 w-5" />,
             title: "Prompt libraries",
             body: "Structured around the patterns of thought your team uses when working through real business problems. Tested against your actual data.",
           },
           {
-            icon: <Link2 className="h-5 w-5" />,
             title: "MCP connectivity",
             body: "Custom MCP servers connecting Claude to your databases, APIs, CRM, and ERP \u2014 secure, governed access, full audit logging.",
           },
