@@ -139,6 +139,8 @@ export default function HousingServicesCorpPage() {
         }}
       />
       <CaseStudyPage
+        slug="community-housing-organisation"
+        caseLabel="Community Housing"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },

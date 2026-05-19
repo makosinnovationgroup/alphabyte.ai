@@ -145,6 +145,8 @@ export default function MediaBuyAnalyticsPage() {
         }}
       />
       <CaseStudyPage
+        slug="media-buy-analytics"
+        caseLabel="Media Buy Analytics"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },

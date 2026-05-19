@@ -136,6 +136,8 @@ export default function CircularEconomyPlatformPage() {
         }}
       />
       <CaseStudyPage
+        slug="circular-economy-platform"
+        caseLabel="Circular Economy"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },

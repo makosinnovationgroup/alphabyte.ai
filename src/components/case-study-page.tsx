@@ -1,7 +1,14 @@
-"use client";
-
-import type React from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
+import {
+  Chevron,
+  EyebrowChip,
+  HardRule,
+  HexgridSection,
+  PullQuote,
+  SectionLabel,
+  StatCard,
+} from "@/components/operator";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export interface BreadcrumbItem {
@@ -22,6 +29,8 @@ export interface CaseStudyFigure {
 }
 
 export interface CaseStudyPageProps {
+  slug: string;
+  caseLabel: string;
   breadcrumb: BreadcrumbItem[];
   eyebrow: string;
   h1: string;
@@ -44,6 +53,7 @@ export interface CaseStudyPageProps {
 }
 
 export function CaseStudyPage({
+  caseLabel,
   breadcrumb,
   eyebrow,
   h1,
@@ -55,261 +65,303 @@ export function CaseStudyPage({
   closingCta,
   figure,
 }: CaseStudyPageProps) {
+  const eyebrowChips = eyebrow.split(" · ").map((s) => s.trim()).filter(Boolean);
+
   return (
     <main>
-      {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="border-b border-border-default px-6 py-4 md:px-10 lg:px-16">
-        <ol className="mx-auto max-w-[1600px] flex items-center gap-2 text-body-sm">
-          {breadcrumb.map((item, i) => {
-            const isLast = i === breadcrumb.length - 1;
-            return (
-              <li key={i} className="flex items-center gap-2">
-                {i > 0 && (
-                  <span aria-hidden="true" className="text-muted-foreground">
-                    /
-                  </span>
-                )}
-                {item.href && !isLast ? (
-                  <Link
-                    href={item.href}
-                    className="text-alphabyte-blue transition-colors hover:text-foreground"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span className="font-medium text-foreground">
-                    {item.label}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
+      <Breadcrumb items={breadcrumb} />
 
-      {/* 1. Dark hero band */}
-      <section className="bg-foreground px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-green">
-            {eyebrow}
-          </p>
-          <h1 className="mt-4 text-display tracking-brand-tight text-white">
-            {h1}
-          </h1>
-          <p className="mt-3 text-2xl text-white/70">{subhead}</p>
+      {/* 01 HERO */}
+      <HexgridSection className="relative pt-14 pb-[84px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text={`01 / CASE / ${caseLabel.toUpperCase()}`} />
 
-          {/* Tag pills */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {tagPills.map((pill, i) => (
-              <span
-                key={i}
-                className="rounded-full border border-alphabyte-blue bg-alphabyte-blue/10 px-4 py-1.5 text-body-sm font-medium text-alphabyte-blue"
+          <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <div>
+              <div className="mb-7 flex flex-wrap items-center gap-2">
+                {eyebrowChips.map((chip, i) => (
+                  <EyebrowChip key={i} star={i === 0}>
+                    {chip}
+                  </EyebrowChip>
+                ))}
+              </div>
+
+              <h1
+                className={
+                  "font-sans font-black text-display text-ink mb-7 min-h-[1.95em] text-balance tracking-[-0.02em] leading-[0.98]"
+                }
               >
-                {pill}
-              </span>
-            ))}
+                {h1}
+                <span className="text-alphabyte-blue">.</span>
+              </h1>
+
+              <HardRule className="mb-7" />
+
+              <p className="mb-7 max-w-[60ch] text-[22px] leading-[1.35] tracking-[-0.01em] text-ink font-medium">
+                {subhead}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {tagPills.map((pill, i) => (
+                  <span
+                    key={i}
+                    className="font-mono text-[12px] px-3 py-1.5 bg-canvas border border-border-default text-ink flex items-center gap-2 before:content-[''] before:w-[7px] before:h-[7px] before:bg-brand-live before:shrink-0"
+                  >
+                    {pill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Client meta sidebar */}
+            <aside className="border border-border-default bg-white">
+              <div className="border-b border-border-default px-5 py-5">
+                <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-muted-foreground mb-1.5 flex items-center">
+                  <Chevron />
+                  Client
+                </div>
+                <p className="text-[14.5px] font-bold text-ink">
+                  {sidebar.client.name}
+                </p>
+                <p className="mt-1 font-mono text-[11.5px] text-muted-foreground">
+                  {sidebar.client.meta}
+                </p>
+              </div>
+
+              <SidebarList
+                label="Services Delivered"
+                items={sidebar.servicesDelivered}
+              />
+
+              <SidebarList
+                label="Technology"
+                items={sidebar.technology}
+                last
+              />
+            </aside>
+          </div>
+        </div>
+      </HexgridSection>
+
+      {/* 02 WHAT WE BUILT */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="02 / NARRATIVE / WHAT WE BUILT" />
+
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            The shape of the engagement, top to bottom.
+          </p>
+
+          <div className="max-w-[70ch] space-y-5">
+            <BodyRenderer sections={body} />
           </div>
         </div>
       </section>
 
-      {/* 2. Figure (left) + stats (right, vertical) — combined when figure provided.
-              Falls back to full-width 4-col stats grid when no figure. */}
-      {figure ? (
-        <section className="border-b border-border-default bg-white px-6 py-10 md:px-10 md:py-12 lg:px-16">
-          <div className="mx-auto grid max-w-[1600px] gap-8 lg:grid-cols-[7fr_2fr] lg:items-start lg:gap-10">
-            {/* Figure (left) */}
-            <figure className="overflow-hidden rounded-md border border-border-default">
+      {/* 03 OUTCOMES */}
+      {stats.length > 0 && (
+        <section className="bg-canvas pt-20 pb-20">
+          <div className="mx-auto max-w-[1400px] px-8">
+            <SectionLabel text="03 / OUTCOMES / WHAT IT PRODUCED" />
+
+            <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+              <Chevron />
+              Real measurements, no rounding.
+            </p>
+
+            <div
+              className={`grid gap-4 ${
+                stats.length === 4
+                  ? "grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1"
+                  : stats.length === 3
+                    ? "grid-cols-3 max-lg:grid-cols-1"
+                    : "grid-cols-2 max-md:grid-cols-1"
+              }`}
+            >
+              {stats.map((s, i) => (
+                <StatCard key={i} num={s.value} label={s.label} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 04 IN THEIR WORDS */}
+      {sidebar.pullQuote && (
+        <HexgridSection className="bg-white border-y border-border-default pt-20 pb-20">
+          <div className="mx-auto max-w-[1400px] px-8">
+            <SectionLabel text="04 / VOICE / IN THEIR WORDS" />
+
+            <PullQuote quote={sidebar.pullQuote} />
+          </div>
+        </HexgridSection>
+      )}
+
+      {/* 05 FIGURE (optional) */}
+      {figure && (
+        <section className="bg-canvas pt-20 pb-20">
+          <div className="mx-auto max-w-[1400px] px-8">
+            <SectionLabel text="05 / FIGURE / REFERENCE" />
+
+            <figure className="border border-border-default bg-white">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={figure.src}
                 alt={figure.alt}
-                className="w-full"
+                className="w-full block"
                 width={1200}
                 height={800}
                 loading="lazy"
               />
               {figure.caption && (
-                <figcaption className="border-t border-border-default bg-canvas px-4 py-3 text-body-sm text-muted-foreground">
+                <figcaption className="border-t border-border-default px-5 py-3 font-mono text-[12px] text-muted-foreground tracking-[0.02em]">
                   {figure.caption}
                 </figcaption>
               )}
             </figure>
-
-            {/* Stats (right, vertical on desktop, 2-up on mobile) — homepage stat card pattern */}
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-1 lg:gap-4">
-              {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
-                >
-                  <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue break-words">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-body-sm text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : (
-        <section className="border-b border-border-default px-6 py-10 md:px-10 md:py-12 lg:px-16">
-          <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-border-default bg-white p-5 shadow-sm"
-              >
-                <p className="text-headline font-bold tracking-brand-tight text-alphabyte-blue break-words">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-body-sm text-muted-foreground">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </section>
       )}
 
-      {/* 3. Two-column body */}
-      <section className="border-b border-border-default">
-        <div className="mx-auto max-w-[1600px] grid grid-cols-1 md:grid-cols-[1fr_340px]">
-          {/* Left column — body content */}
-          <div className="space-y-5 py-12 pl-6 pr-6 md:py-16 md:pl-10 md:pr-12 lg:pl-16">
-            {(() => {
-              const elements: React.ReactNode[] = [];
-              let i = 0;
-              while (i < body.length) {
-                if (body[i].indent) {
-                  const group: typeof body = [];
-                  while (i < body.length && body[i].indent) {
-                    group.push(body[i]);
-                    i++;
-                  }
-                  elements.push(
-                    <div key={`indent-${i}`} className="border-l-4 border-alphabyte-blue pl-6 space-y-4">
-                      {group.map((section, j) => {
-                        switch (section.type) {
-                          case "heading":
-                            return (
-                              <h2 key={j} className="text-lg font-bold text-foreground">
-                                {section.text}
-                              </h2>
-                            );
-                          case "paragraph":
-                            return (
-                              <p key={j} className="text-body text-foreground">
-                                {section.text}
-                              </p>
-                            );
-                        }
-                      })}
-                    </div>
-                  );
-                } else {
-                  const section = body[i];
-                  switch (section.type) {
-                    case "heading":
-                      elements.push(
-                        <h2 key={i} className="pt-4 text-lg font-bold text-foreground first:pt-0">
-                          {section.text}
-                        </h2>
-                      );
-                      break;
-                    case "paragraph":
-                      elements.push(
-                        <p key={i} className="text-body text-foreground">
-                          {section.text}
-                        </p>
-                      );
-                      break;
-                    case "callout":
-                      elements.push(
-                        <blockquote key={i} className="border-l-4 border-alphabyte-blue py-2 pl-6 text-body italic text-foreground">
-                          {section.text}
-                        </blockquote>
-                      );
-                      break;
-                  }
-                  i++;
-                }
-              }
-              return elements;
-            })()}
-          </div>
+      {/* 06 CTA */}
+      <HexgridSection className="bg-white border-t border-border-default pt-[100px] pb-[90px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="06 / CTA / DISCOVERY CALL" />
 
-          {/* Right column — sidebar */}
-          <aside className="relative mt-12 border-l border-border-default bg-canvas py-12 pl-8 pr-6 md:mt-0 md:py-16 md:pr-10 lg:pr-16 after:absolute after:inset-y-0 after:left-full after:w-[50vw] after:bg-canvas">
-            {/* Client */}
-            <div className="pb-6">
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
-                Client
-              </p>
-              <p className="mt-2 text-body font-bold text-foreground">
-                {sidebar.client.name}
-              </p>
-              <p className="mt-1 text-body-sm text-muted-foreground">
-                {sidebar.client.meta}
-              </p>
-            </div>
-
-            {/* Services Delivered */}
-            <div className="border-t border-border-default py-6">
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
-                Services Delivered
-              </p>
-              <ul className="mt-3 divide-y divide-border-default">
-                {sidebar.servicesDelivered.map((item, i) => (
-                  <li key={i} className="py-2 text-body-sm text-foreground first:pt-0">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Technology */}
-            <div className="border-t border-border-default py-6">
-              <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
-                Technology
-              </p>
-              <ul className="mt-3 divide-y divide-border-default">
-                {sidebar.technology.map((item, i) => (
-                  <li key={i} className="py-2 text-body-sm text-foreground first:pt-0">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Pull-quote */}
-            <div className="border-t border-border-default pt-6">
-              <div className="rounded-md border border-border-default bg-white p-5">
-                <p className="text-body-sm italic text-muted-foreground">
-                  &ldquo;{sidebar.pullQuote}&rdquo;
-                </p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      {/* 4. Closing CTA */}
-      <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="mx-auto max-w-[1600px] text-center">
-          <h2 className="text-headline tracking-brand-snug text-foreground">
-            {closingCta.heading}
-          </h2>
-          <p className="mt-3 text-body text-muted-foreground">
-            {closingCta.subhead}
-          </p>
-          <div className="mt-8">
-            <DiscoveryCallButton variant="dark" size="md">
+          <div className="max-w-[60ch]">
+            <h2 className="text-[clamp(2.5rem,4.4vw,4rem)] font-black tracking-[-0.03em] leading-[1.05] mb-5 max-w-[24ch]">
+              {closingCta.heading}
+            </h2>
+            <p className="text-[16px] text-muted-foreground leading-[1.6] mb-7">
+              {closingCta.subhead}
+            </p>
+            <DiscoveryCallButton variant="dark" size="lg">
               {closingCta.cta.label}
             </DiscoveryCallButton>
           </div>
         </div>
-      </section>
+      </HexgridSection>
     </main>
+  );
+}
+
+function SidebarList({
+  label,
+  items,
+  last = false,
+}: {
+  label: string;
+  items: string[];
+  last?: boolean;
+}) {
+  return (
+    <div className={last ? "px-5 py-5" : "px-5 py-5 border-b border-border-default"}>
+      <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-muted-foreground mb-3 flex items-center">
+        <Chevron />
+        {label}
+      </div>
+      <ul className="space-y-2 font-mono text-[12.5px]">
+        {items.map((item, i) => (
+          <li
+            key={i}
+            className="text-ink flex items-center gap-2 before:content-[''] before:w-[6px] before:h-[6px] before:bg-brand-live before:shrink-0"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function BodyRenderer({ sections }: { sections: BodySection[] }) {
+  const elements: ReactNode[] = [];
+  let i = 0;
+  while (i < sections.length) {
+    if (sections[i].indent) {
+      const group: BodySection[] = [];
+      const startIndex = i;
+      while (i < sections.length && sections[i].indent) {
+        group.push(sections[i]);
+        i += 1;
+      }
+      elements.push(
+        <div
+          key={`indent-${startIndex}`}
+          className="border-l-2 border-brand-live pl-6 my-2 space-y-4"
+        >
+          {group.map((section, j) => renderSection(section, j))}
+        </div>,
+      );
+    } else {
+      elements.push(renderSection(sections[i], i));
+      i += 1;
+    }
+  }
+  return <>{elements}</>;
+}
+
+function renderSection(section: BodySection, key: number) {
+  switch (section.type) {
+    case "heading":
+      return (
+        <h3
+          key={key}
+          className="pt-3 first:pt-0 font-mono text-[12px] tracking-[0.08em] uppercase text-alphabyte-blue flex items-center"
+        >
+          <Chevron />
+          {section.text}
+        </h3>
+      );
+    case "paragraph":
+      return (
+        <p key={key} className="text-[16.5px] leading-[1.65] text-ink">
+          {section.text}
+        </p>
+      );
+    case "callout":
+      return (
+        <blockquote
+          key={key}
+          className="border-l-2 border-ink pl-6 py-1 font-mono italic text-[15px] leading-[1.6] text-ink"
+        >
+          {section.text}
+        </blockquote>
+      );
+  }
+}
+
+function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className="border-b border-border-default bg-canvas"
+    >
+      <ol className="mx-auto max-w-[1400px] flex items-center gap-2 px-8 py-3 font-mono text-[11px] tracking-[0.04em] uppercase">
+        {items.map((item, i) => {
+          const isLast = i === items.length - 1;
+          return (
+            <li key={i} className="flex items-center gap-2">
+              {i > 0 && (
+                <span aria-hidden className="text-muted-foreground">
+                  /
+                </span>
+              )}
+              {item.href && !isLast ? (
+                <Link
+                  href={item.href}
+                  className="text-alphabyte-blue transition-colors hover:text-ink"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-ink">{item.label}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

@@ -136,6 +136,8 @@ export default function FireProtectionCompliancePage() {
         }}
       />
       <CaseStudyPage
+        slug="fire-protection-compliance"
+        caseLabel="Fire Protection"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
