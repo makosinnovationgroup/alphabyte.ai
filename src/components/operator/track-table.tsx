@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Chevron } from "./chevron";
 
 export interface Track {
+  slug: string;
   label: string;
   flagship?: boolean;
   question: string;

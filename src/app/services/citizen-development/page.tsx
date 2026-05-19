@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Search, Monitor, GraduationCap, ClipboardList, Shield, Link2, Wrench } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -132,6 +131,7 @@ export default function CitizenDevelopmentPage() {
       />
 
       <ServicePage
+        slug="citizen-development"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services/" },
@@ -185,42 +185,34 @@ export default function CitizenDevelopmentPage() {
         }}
         deliverables={[
           {
-            icon: <Search className="h-5 w-5" />,
             title: "Workflow and capability discovery",
             body: "Direct conversations with the people doing the real work \u2014 finding what each person owns, what they have already built, and where the highest-value automation opportunities are.",
           },
           {
-            icon: <Monitor className="h-5 w-5" />,
             title: "Custom SDLC plugin",
             body: "Four to five purpose-built Claude skills standardizing how any employee begins a new project. Published once to your Claude Teams environment, available to every authorized user.",
           },
           {
-            icon: <GraduationCap className="h-5 w-5" />,
             title: "Enablement workshop",
             body: "Hands-on session \u2014 every participant builds something on their own laptop. Not a slide presentation about AI potential. Recorded for future team members and onboarding.",
           },
           {
-            icon: <ClipboardList className="h-5 w-5" />,
             title: "Context engineering templates",
             body: "CLAUDE.md files, project-level context structure patterns, and proven approaches to instructing Claude effectively. Every citizen developer builds on a shared foundation.",
           },
           {
-            icon: <Shield className="h-5 w-5" />,
             title: "Guardrails scaffolding",
             body: "Branch protection, required review on Claude-generated pull requests, per-project sandbox environments, and least-privilege data access. Built before anyone starts building.",
           },
           {
-            icon: <Link2 className="h-5 w-5" />,
             title: "Governed data connectivity via MCP",
             body: "Your team builds against real operational data, not exports. Custom MCP servers with governed access, role-based permissions, and full audit logging.",
           },
           {
-            icon: <GraduationCap className="h-5 w-5" />,
             title: "Graduation playbook",
             body: "A documented path for moving a proven citizen developer application from the R&D stack into full production on GCR, AWS, or Azure.",
           },
           {
-            icon: <Wrench className="h-5 w-5" />,
             title: "Hypercare support",
             body: "Dedicated channel, weekly sync calls, prompt bug resolution, and skills iteration based on observed usage. We stay on until it\u2019s running reliably.",
           },

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Search, BookOpen, Zap, MessageCircle, Wrench, GraduationCap } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -128,6 +127,7 @@ export default function ExecutiveEnablementPage() {
       />
 
       <ServicePage
+        slug="executive-enablement"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services/" },
@@ -181,32 +181,26 @@ export default function ExecutiveEnablementPage() {
         }}
         deliverables={[
           {
-            icon: <Search className="h-5 w-5" />,
             title: "Executive workflow discovery",
             body: "One-on-one sessions with each leader on the team \u2014 mapping the highest-frequency workflows on their calendar and identifying the specific interventions most likely to save measurable time.",
           },
           {
-            icon: <BookOpen className="h-5 w-5" />,
             title: "Custom knowledgebases",
             body: "Your policies, SOPs, strategic documents, board materials, and product data ingested into a structured Claude Project each executive works from daily. Claude understands your business before the conversation starts.",
           },
           {
-            icon: <Zap className="h-5 w-5" />,
             title: "Custom skills library",
             body: "Claude Skills that automate the workflows surfaced during discovery \u2014 report generation, data parsing, strategic analysis, board preparation. Built for your executives, not recycled from another client.",
           },
           {
-            icon: <MessageCircle className="h-5 w-5" />,
             title: "Prompt toolkit",
             body: "A curated library structured around the patterns of thought your leadership team uses when working through real business problems. Tested against your actual data. Refined during knowledge transfer.",
           },
           {
-            icon: <Wrench className="h-5 w-5" />,
             title: "Claude Teams configuration",
             body: "Domain-level context arbitration producing a differentiated experience for each functional leader. The CFO\u2019s environment and the COO\u2019s draw from the same foundation but surface different data and skills.",
           },
           {
-            icon: <GraduationCap className="h-5 w-5" />,
             title: "Knowledge transfer session",
             body: "Hands-on session for the full executive cohort, recorded for future reference and for the onboarding of new executives. Your team leaves knowing how to use what we built \u2014 and how to extend it.",
           },

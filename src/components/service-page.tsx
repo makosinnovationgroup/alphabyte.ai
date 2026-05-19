@@ -1,12 +1,19 @@
-"use client";
-
-import type { ReactNode } from "react";
 import Link from "next/link";
-import { Check, X, Plus, XIcon } from "lucide-react";
-import * as Accordion from "@radix-ui/react-accordion";
+import {
+  Chevron,
+  EyebrowChip,
+  FitColumns,
+  HardRule,
+  HexgridSection,
+  QAGrid,
+  SectionLabel,
+  StatCard,
+  TrackTableCompact,
+  TypedHero,
+} from "@/components/operator";
 import { Button } from "@/components/ui/button";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
-import { ThirtyDays } from "@/components/thirty-days";
+import { tracks } from "@/lib/tracks";
 
 export interface BreadcrumbItem {
   label: string;
@@ -19,6 +26,7 @@ export interface ServiceFaqEntry {
 }
 
 export interface ServicePageProps {
+  slug: string;
   breadcrumb: BreadcrumbItem[];
   eyebrow: string;
   h1: string;
@@ -33,17 +41,12 @@ export interface ServicePageProps {
     label: string;
     href: string;
   };
-  stats: [
-    { value: string; label: string },
-    { value: string; label: string },
-    { value: string; label: string },
-  ];
+  stats: { value: string; label: string }[];
   thirtyDays: {
     weeks: { label: string; body: string }[];
     dayThirty: { label: string; body: string };
   };
   deliverables: {
-    icon: ReactNode;
     title: string;
     body: string;
   }[];
@@ -54,6 +57,7 @@ export interface ServicePageProps {
 }
 
 export function ServicePage({
+  slug,
   breadcrumb,
   eyebrow,
   h1,
@@ -69,127 +73,131 @@ export function ServicePage({
   timeline,
   faq,
 }: ServicePageProps) {
+  const currentTrack = tracks.find((t) => t.slug === slug);
+  const trackLabel = (currentTrack?.label ?? h1).toUpperCase();
+  const relatedTracks = tracks.filter((t) => t.slug !== slug);
+
+  const methodSteps = [
+    ...thirtyDays.weeks.map((w) => ({ label: w.label, body: w.body })),
+    { label: thirtyDays.dayThirty.label, body: thirtyDays.dayThirty.body },
+  ];
+
   return (
     <main>
-      {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="border-b border-border-default px-6 py-4 md:px-10 lg:px-16">
-        <ol className="mx-auto max-w-[1600px] flex items-center gap-2 text-body-sm">
-          {breadcrumb.map((item, i) => {
-            const isLast = i === breadcrumb.length - 1;
-            return (
-              <li key={i} className="flex items-center gap-2">
-                {i > 0 && (
-                  <span aria-hidden="true" className="text-muted-foreground">
-                    /
-                  </span>
-                )}
-                {item.href && !isLast ? (
-                  <Link
-                    href={item.href}
-                    className="text-alphabyte-blue transition-colors hover:text-foreground"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span className="font-medium text-foreground">
-                    {item.label}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
+      <Breadcrumb items={breadcrumb} />
 
-      {/* 1. Hero */}
-      <section className="px-6 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-            {eyebrow}
-          </p>
-          <h1 className="mt-3 text-display tracking-brand-tight">{h1}</h1>
-          <p className="mt-3 text-2xl text-muted-foreground">
-            {subhead}
-          </p>
-          <div className="mt-6 max-w-3xl space-y-4">
-            {body.map((paragraph, i) => (
-              <p key={i} className="text-lg text-foreground">
-                {paragraph}
+      {/* 01 HERO */}
+      <HexgridSection className="relative pt-14 pb-[84px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text={`01 / SERVICE / ${trackLabel}`} />
+
+          <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <div>
+              <div className="mb-7">
+                <EyebrowChip>{eyebrow}</EyebrowChip>
+              </div>
+
+              <TypedHero pre="" word={h1} post="." />
+
+              <HardRule className="mb-7" />
+
+              <p className="mb-6 max-w-[60ch] text-[22px] leading-[1.35] tracking-[-0.01em] text-ink font-medium">
+                {subhead}
               </p>
+
+              <div className="mb-9 max-w-[60ch] space-y-4">
+                {body.map((p, i) => (
+                  <p
+                    key={i}
+                    className="text-[17px] leading-[1.55] text-ink"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-6">
+                {primaryCta.action === "modal" ? (
+                  <DiscoveryCallButton variant="dark" size="md">
+                    {primaryCta.label}
+                  </DiscoveryCallButton>
+                ) : (
+                  <Button variant="dark" size="md" caret="↵" asChild>
+                    <Link href={primaryCta.href!}>{primaryCta.label}</Link>
+                  </Button>
+                )}
+                {secondaryCta && (
+                  <Link
+                    href={secondaryCta.href}
+                    className="font-mono text-[13px] text-alphabyte-blue transition-colors hover:text-ink"
+                  >
+                    ← {secondaryCta.label}
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              {stats.map((stat, i) => (
+                <StatCard key={i} num={stat.value} label={stat.label} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </HexgridSection>
+
+      {/* 02 METHOD / FIRST 30 DAYS */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="02 / METHOD / FIRST 30 DAYS" />
+
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            Three weeks to running. Day 30 to operating.
+          </p>
+
+          <div className="border-t border-ink">
+            {methodSteps.map((step, i) => (
+              <div
+                key={i}
+                className="grid gap-8 py-8 border-b border-border-default grid-cols-[180px_1fr] max-lg:grid-cols-1 max-lg:gap-3"
+              >
+                <div className="font-mono text-[14px] tracking-[0.04em] uppercase text-alphabyte-blue pt-1">
+                  {step.label}
+                </div>
+                <p className="text-[16px] leading-[1.6] text-ink max-w-[65ch]">
+                  {step.body}
+                </p>
+              </div>
             ))}
           </div>
-
-          {/* 2. CTA row */}
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            {primaryCta.action === "modal" ? (
-              <DiscoveryCallButton variant="dark" size="md">
-                {primaryCta.label}
-              </DiscoveryCallButton>
-            ) : (
-              <Button variant="dark" size="md" asChild>
-                <Link href={primaryCta.href!}>{primaryCta.label}</Link>
-              </Button>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-              >
-                &larr; {secondaryCta.label}
-              </Link>
-            )}
-          </div>
         </div>
       </section>
 
-      {/* 3. Stat bar */}
-      <section className="bg-foreground">
-        <div className="flex flex-col sm:flex-row">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className={`flex-1 px-6 py-10 md:px-10 md:py-14 text-center${
-                i > 0
-                  ? " border-t border-white/20 sm:border-l sm:border-t-0"
-                  : ""
-              }`}
-            >
-              <p className="text-headline tracking-brand-snug text-alphabyte-green">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-body-sm text-white/70">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 03 DELIVERABLES */}
+      <section className="bg-canvas pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="03 / DELIVERABLES / WHAT'S INCLUDED" />
 
-      {/* 4. 30-days box */}
-      <section className="px-6 py-12 md:px-10 md:py-16 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <ThirtyDays weeks={thirtyDays.weeks} dayThirty={thirtyDays.dayThirty} />
-        </div>
-      </section>
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            Every engagement ships these. No upsells, no add-ons.
+          </p>
 
-      {/* 5. Deliverables */}
-      <section className="px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="flex items-center gap-4">
-            <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-              What we deliver
-            </h2>
-            <div className="h-px flex-1 bg-border-default" />
-          </div>
-          <div className="mt-8 divide-y divide-border-default">
+          <div className="border-t border-ink">
             {deliverables.map((item, i) => (
-              <div key={i} className={`flex gap-4${i > 0 ? " pt-8" : ""} pb-8 last:pb-0`}>
-                <span className="mt-0.5 shrink-0 text-2xl" aria-hidden="true">
-                  {item.icon}
-                </span>
+              <div
+                key={i}
+                className="grid gap-8 py-7 border-b border-border-default grid-cols-[60px_1fr] max-lg:grid-cols-[40px_1fr] max-lg:gap-4"
+              >
+                <div className="font-mono text-[12px] tracking-[0.08em] uppercase text-muted-foreground pt-[6px]">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
                 <div>
-                  <p className="text-body font-bold text-foreground">
+                  <h3 className="text-[18px] font-bold tracking-[-0.01em] mb-2 leading-[1.3]">
                     {item.title}
-                  </p>
-                  <p className="mt-1 text-body text-muted-foreground">
+                  </h3>
+                  <p className="text-[15px] leading-[1.6] text-ink/85 max-w-[65ch]">
                     {item.body}
                   </p>
                 </div>
@@ -199,109 +207,122 @@ export function ServicePage({
         </div>
       </section>
 
-      {/* 6. Right / Not-right panels */}
-      <section className="bg-alphabyte-grey/50 px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {/* Right for you */}
-            <div>
-              <div className="mb-6 flex items-center gap-4">
-                <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-                  Right for you if
-                </h2>
-                <div className="h-px flex-1 bg-border-default" />
-              </div>
-              <div className="rounded-md border border-emerald-200 bg-emerald-50 p-6 md:p-8">
-                <ul>
-                  {rightForYou.map((item, i) => (
-                    <li key={i} className="flex gap-3 border-b border-emerald-200/60 py-4 text-body text-foreground first:pt-0">
-                      <Check
-                        className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500"
-                        aria-hidden="true"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+      {/* 04 FIT */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="04 / FIT / IS THIS YOU?" />
 
-            {/* Not right for you */}
-            <div>
-              <div className="mb-6 flex items-center gap-4">
-                <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-                  Not right for you if
-                </h2>
-                <div className="h-px flex-1 bg-border-default" />
-              </div>
-              <div className="rounded-md border border-red-200 bg-red-50 p-6 md:p-8">
-                <ul>
-                  {notRightForYou.map((item, i) => (
-                    <li key={i} className="flex gap-3 border-b border-red-200/60 py-4 text-body text-foreground first:pt-0">
-                      <X
-                        className="mt-0.5 h-5 w-5 shrink-0 text-red-500"
-                        aria-hidden="true"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            Where this engagement compounds. Where it does not.
+          </p>
+
+          <FitColumns
+            rightForYou={rightForYou}
+            notRightForYou={notRightForYou}
+          />
         </div>
       </section>
 
-      {/* 7. FAQ */}
+      {/* 05 Q&A */}
       {faq && faq.length > 0 && (
-        <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16">
-          <div className="mx-auto max-w-[1600px]">
-            <div className="mb-10 flex items-center gap-4">
-              <h2 className="shrink-0 text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-                Frequently Asked Questions
-              </h2>
-              <div className="h-px flex-1 bg-border-default" />
-            </div>
-            <Accordion.Root type="single" collapsible className="divide-y divide-border-default border-t border-border-default">
-              {faq.map((entry, i) => (
-                <Accordion.Item key={i} value={`faq-${i}`} className="group">
-                  <Accordion.Trigger className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-alphabyte-blue">
-                    <span className="text-body font-bold text-foreground group-hover:text-alphabyte-blue transition-colors">
-                      {entry.question}
-                    </span>
-                    <span className="shrink-0 text-muted-foreground">
-                      <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
-                      <XIcon className="h-5 w-5 hidden group-data-[state=open]:block" />
-                    </span>
-                  </Accordion.Trigger>
-                  <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <p className="pb-5 text-body text-muted-foreground">
-                      {entry.answer}
-                    </p>
-                  </Accordion.Content>
-                </Accordion.Item>
-              ))}
-            </Accordion.Root>
+        <section className="bg-canvas pt-20 pb-20">
+          <div className="mx-auto max-w-[1400px] px-8">
+            <SectionLabel text="05 / Q&A / WHAT WE GET ASKED" />
+
+            <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+              <Chevron />
+              Direct answers. No qualifiers.
+            </p>
+
+            <QAGrid items={faq} />
           </div>
         </section>
       )}
 
-      {/* 8. Timeline footer */}
-      <section className="border-t border-border-default">
-        <div className="mx-auto max-w-[1600px] flex flex-wrap items-center justify-between gap-4 px-6 py-8 md:px-10 md:py-12 lg:px-16">
-          <div>
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground">
-              Timeline
+      {/* 06 RELATED TRACKS */}
+      {relatedTracks.length > 0 && (
+        <section className="bg-white border-y border-border-default pt-20 pb-20">
+          <div className="mx-auto max-w-[1400px] px-8">
+            <SectionLabel text="06 / RELATED / OTHER PATHS" />
+
+            <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+              <Chevron />
+              All tracks deploy on the same governed substrate. Pick a different
+              entry point.
             </p>
-            <p className="mt-1 text-body text-foreground">
-              {timeline}
-            </p>
+
+            <TrackTableCompact tracks={relatedTracks} />
           </div>
-          <DiscoveryCallButton variant="dark" size="md">
-            Book a Discovery Call
-          </DiscoveryCallButton>
+        </section>
+      )}
+
+      {/* 07 CTA */}
+      <HexgridSection className="bg-white border-t border-border-default pt-[100px] pb-[90px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="07 / CTA / DISCOVERY CALL" />
+
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
+            <div className="max-w-[60ch]">
+              <h2 className="text-[clamp(2.5rem,4.4vw,4rem)] font-black tracking-[-0.03em] leading-[1.05] mb-5 max-w-[22ch]">
+                Ready to start?
+              </h2>
+              <p className="text-[16px] text-muted-foreground leading-[1.6] mb-7">
+                The discovery call is where we work out what this track looks
+                like inside your organization. 45 minutes, no cost, no
+                obligation.
+              </p>
+              <DiscoveryCallButton variant="dark" size="lg">
+                Book a Discovery Call
+              </DiscoveryCallButton>
+            </div>
+
+            <div className="border border-ink bg-canvas p-6 lg:max-w-[360px]">
+              <div className="font-mono text-[10.5px] tracking-[0.08em] text-muted-foreground uppercase mb-3 flex items-center">
+                <Chevron />
+                Timeline
+              </div>
+              <p className="font-mono text-[15px] text-ink leading-[1.5]">
+                {timeline}
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
+      </HexgridSection>
     </main>
+  );
+}
+
+function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className="border-b border-border-default bg-canvas"
+    >
+      <ol className="mx-auto max-w-[1400px] flex items-center gap-2 px-8 py-3 font-mono text-[11px] tracking-[0.04em] uppercase">
+        {items.map((item, i) => {
+          const isLast = i === items.length - 1;
+          return (
+            <li key={i} className="flex items-center gap-2">
+              {i > 0 && (
+                <span aria-hidden className="text-muted-foreground">
+                  /
+                </span>
+              )}
+              {item.href && !isLast ? (
+                <Link
+                  href={item.href}
+                  className="text-alphabyte-blue transition-colors hover:text-ink"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-ink">{item.label}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

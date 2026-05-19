@@ -11,3 +11,6 @@ export { SpecCard } from "./spec-card";
 export { HexgridSection } from "./hexgrid-section";
 export { TypedHero } from "./typed-hero";
 export { TrackTable, type Track } from "./track-table";
+export { TrackTableCompact } from "./track-table-compact";
+export { FitColumns } from "./fit-columns";
+export { QAGrid } from "./qa-grid";

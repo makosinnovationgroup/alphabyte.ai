@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { BarChart3, FolderOpen, Lock, ClipboardList, Route } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -129,6 +128,7 @@ export default function DataReadinessPage() {
       />
 
       <ServicePage
+        slug="data-readiness"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services/" },
@@ -182,27 +182,22 @@ export default function DataReadinessPage() {
         }}
         deliverables={[
           {
-            icon: <BarChart3 className="h-5 w-5" />,
             title: "Full data quality audit",
             body: "Deduplication, completeness, accuracy, consistency across every data source feeding your AI deployment. Gaps mapped, risks quantified.",
           },
           {
-            icon: <FolderOpen className="h-5 w-5" />,
             title: "Data governance assessment",
             body: "Retention policies, DLP tagging, classification frameworks, SOC 2, PIPEDA, and FIPPA compliance alignment. Required documentation for regulated industries and the public sector.",
           },
           {
-            icon: <Lock className="h-5 w-5" />,
             title: "Infrastructure and security posture review",
             body: "A targeted review from the perspective of Claude deployment \u2014 data access patterns, credential management, network segmentation, and the controls required to operate safely.",
           },
           {
-            icon: <ClipboardList className="h-5 w-5" />,
             title: "AI readiness scorecard",
             body: "Formal rating across five dimensions: data quality, data governance, infrastructure readiness, security posture, and integration maturity.",
           },
           {
-            icon: <Route className="h-5 w-5" />,
             title: "Remediation pathway",
             body: "Specific, prioritized steps to close each gap. You leave with problems and the sequence of fixes \u2014 not just a list of concerns.",
           },

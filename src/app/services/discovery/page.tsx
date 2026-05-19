@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { MessageSquare, Pin, Search, FileText } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
@@ -128,6 +127,7 @@ export default function DiscoveryPage() {
       />
 
       <ServicePage
+        slug="discovery"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services/" },
@@ -181,22 +181,18 @@ export default function DiscoveryPage() {
         }}
         deliverables={[
           {
-            icon: <MessageSquare className="h-5 w-5" />,
             title: "Stakeholder sessions that surface real problems",
             body: "We talk to the people doing the actual work \u2014 operations, finance, sales, product. We are finding the workflows that are genuinely painful and the people who have already started solving them.",
           },
           {
-            icon: <Pin className="h-5 w-5" />,
             title: "Three use cases worth building",
             body: "Not a list of twenty ideas. Three, each with a feasibility assessment, a preliminary architecture, and a concrete outcome statement. Prioritized by impact and buildability.",
           },
           {
-            icon: <Search className="h-5 w-5" />,
             title: "Current state and gap analysis",
             body: "What is in your environment, and what is missing, and what must be fixed before any build starts. Infrastructure, data quality, governance, security posture.",
           },
           {
-            icon: <FileText className="h-5 w-5" />,
             title: "Findings and Recommendations document",
             body: "Not a slide deck. Exactly what to build, in what order, with what dependencies, against what timeline. You leave with a plan, not a process.",
           },
