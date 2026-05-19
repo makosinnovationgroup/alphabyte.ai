@@ -3,6 +3,16 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
+import {
+  Chevron,
+  CommitRow,
+  EyebrowChip,
+  HardRule,
+  HexgridSection,
+  SectionLabel,
+  TypedHero,
+} from "@/components/operator";
+import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
   title: "Blog - AI Deployment for Mid-Market",
@@ -80,13 +90,15 @@ function getAllPosts(): BlogPostSummary[] {
 
 function formatDate(isoDate: string): string {
   const d = new Date(isoDate + "T00:00:00");
-  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  return d.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 export default function BlogPage() {
   const posts = getAllPosts();
-  const featured = posts[0];
-  const gridPosts = posts.slice(1);
 
   return (
     <main>
@@ -97,123 +109,121 @@ export default function BlogPage() {
         }}
       />
 
-      {/* Hero */}
-      <section className="border-b border-border-default bg-white px-6 pb-16 pt-16 md:px-10 md:pb-20 md:pt-20 lg:px-16">
-        <div className="mx-auto max-w-[1600px]">
-          <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue">
-            Alphabyte AI &middot; Perspectives
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog" },
+        ]}
+      />
+
+      {/* 01 HERO */}
+      <HexgridSection className="relative pt-14 pb-[84px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="01 / INDEX / BLOG" />
+
+          <div className="mb-7">
+            <EyebrowChip>Alphabyte AI · Perspectives</EyebrowChip>
+          </div>
+
+          <TypedHero
+            pre="AI Deployment for "
+            word="Mid-Market"
+            post="."
+          />
+
+          <HardRule className="mb-7" />
+
+          <div className="max-w-[60ch] space-y-4">
+            <p className="text-[17px] leading-[1.55] text-ink">
+              Practical writing on AI deployment, citizen development, and the
+              operational reality of making AI work inside a real mid-market
+              business.
+            </p>
+          </div>
+        </div>
+      </HexgridSection>
+
+      {/* 02 POSTS */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text={`02 / POSTS / ${posts.length} ARTICLES`} />
+
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            Most recent first.
           </p>
-          <h1 className="mt-4 text-display tracking-brand-tight">AI Deployment for Mid-Market</h1>
-          <p className="mt-6 max-w-[42ch] text-body text-muted-foreground">
-            Practical writing on AI deployment, citizen development, and the
-            operational reality of making AI work inside a real mid-market
-            business.
-          </p>
+
+          <div className="border-t border-ink">
+            {posts.map((post) => (
+              <CommitRow
+                key={post.slug}
+                author={post.tags[0] ?? "Blog"}
+                title={post.title}
+                body={post.excerpt}
+                tag={`${formatDate(post.publishedDate)} · ${post.readTime}`}
+                href={`/blog/${post.slug}/`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Featured post */}
-      {featured && (
-        <section className="bg-canvas px-6 pt-12 md:px-10 md:pt-16 lg:px-16">
-          <div className="mx-auto max-w-[1600px]">
-            <Link
-              href={`/blog/${featured.slug}/`}
-              className="group overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md md:grid md:grid-cols-2"
-            >
-              {/* Featured hero image */}
-              <img
-                src={`/blog/${featured.slug}-hero.webp`}
-                alt={featured.title}
-                className="aspect-[4/3] w-full object-cover object-top md:aspect-auto md:h-full"
-                width={800}
-                height={600}
-                fetchPriority="high"
-              />
+      {/* 03 CTA */}
+      <HexgridSection className="bg-white border-t border-border-default pt-[100px] pb-[90px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="03 / CTA / DISCOVERY CALL" />
 
-              {/* Content */}
-              <div className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-10">
-                <div className="flex flex-wrap gap-2">
-                  {featured.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h2 className="mt-3 text-headline tracking-brand-snug text-foreground">
-                  {featured.title}
-                </h2>
-                <p className="mt-4 text-body text-foreground">
-                  {featured.excerpt}
-                </p>
-                <p className="mt-6 text-body-sm text-muted-foreground">
-                  Alphabyte AI &middot; {formatDate(featured.publishedDate)}
-                </p>
-                <span className="mt-4 self-end text-body-sm font-medium text-alphabyte-blue transition-colors group-hover:text-foreground">
-                  Read more &rarr;
-                </span>
-              </div>
-            </Link>
+          <div className="max-w-[60ch]">
+            <h2 className="text-[clamp(2.5rem,4.4vw,4rem)] font-black tracking-[-0.03em] leading-[1.05] mb-5 max-w-[24ch]">
+              Want to talk through any of this in your context?
+            </h2>
+            <p className="text-[16px] text-muted-foreground leading-[1.6] mb-7">
+              45 minutes. No cost. No obligation.
+            </p>
+            <DiscoveryCallButton variant="dark" size="lg">
+              Book a Discovery Call
+            </DiscoveryCallButton>
           </div>
-        </section>
-      )}
-
-      {/* Post grid */}
-      {gridPosts.length > 0 && (
-        <section className="bg-canvas px-6 py-12 md:px-10 md:py-16 lg:px-16">
-          <div className="mx-auto max-w-[1600px]">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {gridPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}/`}
-                  className="group flex flex-col overflow-hidden rounded-lg border border-border-default bg-white transition-shadow duration-200 motion-safe:hover:shadow-md"
-                >
-                  {/* Post hero image */}
-                  <img
-                    src={`/blog/${post.slug}-hero.webp`}
-                    alt={post.title}
-                    className="w-full"
-                    width={1200}
-                    height={785}
-                    loading="lazy"
-                  />
-
-                  {/* Card body */}
-                  <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="mt-2 text-lg font-bold text-foreground">
-                      {post.title}
-                    </h2>
-                    <p className="mt-3 flex-1 text-body-sm text-muted-foreground">
-                      {post.excerpt}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <p className="text-body-sm text-muted-foreground">
-                        Alphabyte AI &middot; {formatDate(post.publishedDate)}
-                      </p>
-                      <span className="text-body-sm font-medium text-alphabyte-blue transition-colors group-hover:text-foreground">
-                        Read more &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </HexgridSection>
     </main>
+  );
+}
+
+function Breadcrumb({
+  items,
+}: {
+  items: { label: string; href?: string }[];
+}) {
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className="border-b border-border-default bg-canvas"
+    >
+      <ol className="mx-auto max-w-[1400px] flex items-center gap-2 px-8 py-3 font-mono text-[11px] tracking-[0.04em] uppercase">
+        {items.map((item, i) => {
+          const isLast = i === items.length - 1;
+          return (
+            <li key={i} className="flex items-center gap-2">
+              {i > 0 && (
+                <span aria-hidden className="text-muted-foreground">
+                  /
+                </span>
+              )}
+              {item.href && !isLast ? (
+                <Link
+                  href={item.href}
+                  className="text-alphabyte-blue transition-colors hover:text-ink"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-ink">{item.label}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  Chevron,
+  EyebrowChip,
+  HardRule,
+  HexgridSection,
+  Manifest2x2,
+  SectionLabel,
+  StatCard,
+  TypedHero,
+} from "@/components/operator";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 export const metadata: Metadata = {
@@ -35,18 +45,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://alphabyte.ai/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Tools",
-      item: "https://alphabyte.ai/tools/",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alphabyte.ai/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://alphabyte.ai/tools/" },
   ],
 };
 
@@ -63,7 +63,7 @@ const webPageSchema = {
 const stats = [
   {
     headline: "Anthropic Claude Certified",
-    description: "Certified delivery team \u2014 exclusively Claude",
+    description: "Certified delivery team — exclusively Claude",
   },
   {
     headline: "Every engagement",
@@ -79,7 +79,7 @@ const tools = [
   {
     title: "Claude",
     subtitle: "Reasoning, writing, and analysis.",
-    body: "The intelligence layer across every engagement we deliver. Not a generic assistant \u2014 a purpose-configured system built around your organizational data, your team\u2019s workflows, and your operational context.",
+    body: "The intelligence layer across every engagement we deliver. Not a generic assistant — a purpose-configured system built around your organizational data, your team's workflows, and your operational context.",
     bullets: [
       "Custom knowledgebases",
       "Custom skills",
@@ -93,7 +93,7 @@ const tools = [
   {
     title: "MCP",
     subtitle: "Connect models to your tools.",
-    body: "Model Context Protocol is the open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives Claude governed, auditable, real-time access to your CRM, ERP, data warehouses, and APIs \u2014 without data leaving your environment.",
+    body: "Model Context Protocol is the open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives Claude governed, auditable, real-time access to your CRM, ERP, data warehouses, and APIs — without data leaving your environment.",
     bullets: [
       "Custom MCP servers",
       "OAuth 2.0 security",
@@ -121,7 +121,7 @@ const tools = [
   {
     title: "On-Premise LLM",
     subtitle: "Private, self-hosted models.",
-    body: "For organizations that cannot send their data to a cloud AI provider. We deploy capable open-source language models \u2014 Llama, Mistral \u2014 on your own infrastructure. The model runs inside your environment. Your data never leaves your control.",
+    body: "For organizations that cannot send their data to a cloud AI provider. We deploy capable open-source language models — Llama, Mistral — on your own infrastructure. The model runs inside your environment. Your data never leaves your control.",
     bullets: [
       "Model selection",
       "Infrastructure provisioning",
@@ -136,24 +136,24 @@ const tools = [
 
 const layers = [
   {
-    label: "Layer 1",
-    title: "Claude",
-    body: "Intelligence \u2014 reasons, writes, analyzes, and builds against your operational context",
+    num: "01",
+    tag: "Layer 1 · Claude",
+    body: "Intelligence — reasons, writes, analyzes, and builds against your operational context",
   },
   {
-    label: "Layer 2",
-    title: "MCP",
-    body: "Connectivity \u2014 governs secure real-time access between Claude and your internal systems",
+    num: "02",
+    tag: "Layer 2 · MCP",
+    body: "Connectivity — governs secure real-time access between Claude and your internal systems",
   },
   {
-    label: "Layer 3",
-    title: "Agents",
-    body: "Automation \u2014 executes defined workflows end-to-end with human oversight gates",
+    num: "03",
+    tag: "Layer 3 · Agents",
+    body: "Automation — executes defined workflows end-to-end with human oversight gates",
   },
   {
-    label: "Layer 4",
-    title: "On-premise LLM",
-    body: "Sovereignty \u2014 runs the full stack inside your own infrastructure when cloud AI is not an option",
+    num: "04",
+    tag: "Layer 4 · On-Premise LLM",
+    body: "Sovereignty — runs the full stack inside your own infrastructure when cloud AI is not an option",
   },
 ];
 
@@ -162,183 +162,188 @@ export default function ToolsPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([webPageSchema, breadcrumbSchema]),
+        }}
       />
 
-      {/* Breadcrumb */}
-      <nav
-        aria-label="Breadcrumb"
-        className="border-b border-border-default px-6 py-4 md:px-10 lg:px-16"
-      >
-        <ol className="mx-auto flex max-w-[1600px] items-center gap-2 text-body-sm">
-          <li className="flex items-center gap-2">
-            <Link
-              href="/"
-              className="text-alphabyte-blue transition-colors hover:text-foreground"
-            >
-              Home
-            </Link>
-          </li>
-          <li className="flex items-center gap-2">
-            <span aria-hidden="true" className="text-muted-foreground">
-              /
-            </span>
-            <span className="text-muted-foreground">Tools</span>
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Tools" },
+        ]}
+      />
 
-      {/* Hero */}
-      <section className="bg-white px-6 pt-10 pb-10 md:pt-14 md:pb-12">
-        <div className="mx-auto max-w-[1600px]">
-          <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-4">
-            Our Tools
-          </p>
-          <h1 className="text-display tracking-brand-tight mb-6 max-w-2xl">
-            We don&rsquo;t sell platforms.
-            <br />
-            <span className="text-alphabyte-blue">
-              We build with what actually works.
-            </span>
-          </h1>
-          <div className="max-w-2xl space-y-4">
-            <p className="text-body text-foreground">
-              A deliberate stack. Claude as the intelligence layer. MCP is the
-              connective tissue between Claude and your internal systems. Custom
-              agents as the operational layer. On-premise LLMs for clients where
-              cloud AI is not an option.
-            </p>
-            <p className="text-body text-foreground">
-              Not because we are obligated to use them &mdash; because they are
-              the best tools available for what we are building.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 01 HERO */}
+      <HexgridSection className="relative pt-14 pb-[84px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="01 / INDEX / TOOLS" />
 
-      {/* Three-stat bar */}
-      <section className="bg-foreground">
-        <div className="mx-auto flex max-w-[1600px] flex-col md:flex-row">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.headline}
-              className={`flex-1 px-6 py-6 md:py-8 md:px-8 first:md:pl-6 last:md:pr-6 ${
-                i > 0 ? "border-t border-white/[0.08] md:border-t-0 md:border-l" : ""
-              }`}
-            >
-              <p className="text-body font-bold text-alphabyte-green mb-1">
-                {stat.headline}
-              </p>
-              <p className="text-body-sm text-white/50">{stat.description}</p>
+          <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <div>
+              <div className="mb-7">
+                <EyebrowChip>Tools · A Deliberate Stack</EyebrowChip>
+              </div>
+
+              <TypedHero
+                pre="We don't sell platforms. We build with "
+                word="what actually works"
+                post="."
+              />
+
+              <HardRule className="mb-7" />
+
+              <div className="mb-9 max-w-[60ch] space-y-4">
+                <p className="text-[17px] leading-[1.55] text-ink">
+                  A deliberate stack. Claude as the intelligence layer. MCP is
+                  the connective tissue between Claude and your internal
+                  systems. Custom agents as the operational layer. On-premise
+                  LLMs for clients where cloud AI is not an option.
+                </p>
+                <p className="text-[17px] leading-[1.55] text-ink">
+                  Not because we are obligated to use them &mdash; because they
+                  are the best tools available for what we are building.
+                </p>
+              </div>
             </div>
-          ))}
+
+            <div className="flex flex-col gap-3">
+              {stats.map((s, i) => (
+                <StatCard key={i} num={s.headline} label={s.description} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </HexgridSection>
+
+      {/* 02 LAYERS */}
+      <section className="bg-white border-y border-border-default pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="02 / STACK / FOUR LAYERS" />
+
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            How the stack fits together.
+          </p>
+
+          <Manifest2x2
+            cells={[
+              { num: layers[0].num, tag: layers[0].tag, body: layers[0].body },
+              { num: layers[1].num, tag: layers[1].tag, body: layers[1].body },
+              { num: layers[2].num, tag: layers[2].tag, body: layers[2].body },
+              { num: layers[3].num, tag: layers[3].tag, body: layers[3].body },
+            ]}
+          />
         </div>
       </section>
 
-      {/* The Full Stack — 2×2 tool card grid */}
-      <section className="bg-canvas px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="flex items-center gap-3 mb-8">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue shrink-0">
-              The Full Stack
-            </p>
-            <span className="flex-1 border-t border-border-default" />
-          </div>
+      {/* 03 TOOLS LIST */}
+      <section className="bg-canvas pt-20 pb-20">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="03 / TOOLS / WHAT WE CONFIGURE" />
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <p className="font-mono text-[12px] text-muted-foreground mb-9 flex items-center">
+            <Chevron />
+            Four tools. Each engagement uses one or more.
+          </p>
+
+          <div className="grid gap-px bg-border-default border border-border-default lg:grid-cols-2">
             {tools.map((tool) => (
-              <div
+              <Link
                 key={tool.title}
-                className="flex flex-col rounded-md border border-border-default bg-white p-6 md:p-8 shadow-sm"
+                href={tool.href}
+                className="group bg-white px-7 py-7 flex flex-col transition-colors hover:bg-alphabyte-blue/[0.04]"
               >
-                <h2 className="text-body font-bold text-foreground">
+                <h2 className="text-[24px] font-bold text-ink mb-1 tracking-[-0.015em]">
                   {tool.title}
                 </h2>
-                <p className="text-body-sm font-bold text-alphabyte-blue mt-1 mb-4">
+                <p className="font-mono text-[12px] text-alphabyte-blue tracking-[0.02em] mb-5">
                   {tool.subtitle}
                 </p>
-
-                <p className="text-body-sm text-foreground mb-6">{tool.body}</p>
-
-                <ul className="mb-6">
-                  {tool.bullets.map((bullet) => (
+                <p className="text-[14.5px] leading-[1.55] text-ink/85 mb-5 flex-1">
+                  {tool.body}
+                </p>
+                <ul className="space-y-2 font-mono text-[12px] mb-5">
+                  {tool.bullets.map((b) => (
                     <li
-                      key={bullet}
-                      className="flex items-start gap-2 border-b border-border-default py-2.5 text-body-sm text-foreground"
+                      key={b}
+                      className="text-ink flex items-center gap-2 before:content-[''] before:w-[6px] before:h-[6px] before:bg-brand-live before:shrink-0"
                     >
-                      <span
-                        aria-hidden="true"
-                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-alphabyte-blue"
-                      />
-                      {bullet}
+                      {b}
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-auto flex items-center justify-between border-t border-border-default pt-4">
-                  <p className="text-body-sm text-muted-foreground italic">
+                <div className="border-t border-border-default pt-4 flex items-center justify-between mt-auto">
+                  <p className="font-mono text-[11.5px] text-muted-foreground tracking-[0.02em]">
                     {tool.footerLeft}
                   </p>
-                  <Link
-                    href={tool.href}
-                    className="text-body-sm font-medium text-alphabyte-blue transition-colors hover:text-foreground"
-                  >
-                    Learn more &rarr;
-                  </Link>
+                  <span className="font-mono text-[12px] text-alphabyte-blue group-hover:text-ink transition-colors flex items-center gap-1.5">
+                    Learn more
+                    <span className="text-brand-live">→</span>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How the Stack Fits Together */}
-      <section className="bg-white px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="flex items-center gap-3 mb-8">
-            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue shrink-0">
-              How the Stack Fits Together
+      {/* 04 CTA */}
+      <HexgridSection className="bg-white border-t border-border-default pt-[100px] pb-[90px]">
+        <div className="mx-auto max-w-[1400px] px-8">
+          <SectionLabel text="04 / CTA / DISCOVERY CALL" />
+
+          <div className="max-w-[60ch]">
+            <h2 className="text-[clamp(2.5rem,4.4vw,4rem)] font-black tracking-[-0.03em] leading-[1.05] mb-5 max-w-[24ch]">
+              Want to see how the stack applies to your situation?
+            </h2>
+            <p className="text-[16px] text-muted-foreground leading-[1.6] mb-7">
+              45 minutes. No cost. No obligation.
             </p>
-            <span className="flex-1 border-t border-border-default" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-md border border-border-default overflow-hidden">
-            {layers.map((layer, i) => (
-              <div
-                key={layer.label}
-                className={`p-6 ${
-                  i > 0 ? "border-t sm:border-t-0 sm:border-l border-border-default" : ""
-                } ${i >= 2 ? "lg:border-t-0" : i >= 1 ? "sm:border-t-0" : ""}`}
-              >
-                <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue mb-2">
-                  {layer.label}
-                </p>
-                <h3 className="text-body font-bold text-foreground mb-2">
-                  {layer.title}
-                </h3>
-                <p className="text-body-sm text-muted-foreground">
-                  {layer.body}
-                </p>
-              </div>
-            ))}
+            <DiscoveryCallButton variant="dark" size="lg">
+              Book a Discovery Call
+            </DiscoveryCallButton>
           </div>
         </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="border-t border-b border-border-default bg-canvas px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-[1600px] text-center">
-          <h2 className="text-headline tracking-brand-snug text-foreground mb-3">
-            Want to see how the stack applies to your situation?
-          </h2>
-          <p className="text-body text-muted-foreground mb-8">
-            45 minutes. No cost. No obligation.
-          </p>
-          <DiscoveryCallButton variant="dark" size="lg">
-            Book a Discovery Call
-          </DiscoveryCallButton>
-        </div>
-      </section>
+      </HexgridSection>
     </main>
+  );
+}
+
+function Breadcrumb({
+  items,
+}: {
+  items: { label: string; href?: string }[];
+}) {
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className="border-b border-border-default bg-canvas"
+    >
+      <ol className="mx-auto max-w-[1400px] flex items-center gap-2 px-8 py-3 font-mono text-[11px] tracking-[0.04em] uppercase">
+        {items.map((item, i) => {
+          const isLast = i === items.length - 1;
+          return (
+            <li key={i} className="flex items-center gap-2">
+              {i > 0 && (
+                <span aria-hidden className="text-muted-foreground">
+                  /
+                </span>
+              )}
+              {item.href && !isLast ? (
+                <Link
+                  href={item.href}
+                  className="text-alphabyte-blue transition-colors hover:text-ink"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-ink">{item.label}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }
