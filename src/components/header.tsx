@@ -5,8 +5,58 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/* Custom inline SVGs for nav affordances (rule 23-24: hand-authored, currentColor) */
+function MenuGlyph({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <line x1="3" y1="7" x2="21" y2="7" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="17" x2="21" y2="17" />
+    </svg>
+  );
+}
+function CloseGlyph({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <line x1="5" y1="5" x2="19" y2="19" />
+      <line x1="19" y1="5" x2="5" y2="19" />
+    </svg>
+  );
+}
+function DownChevronGlyph({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="3,6 8,11 13,6" />
+    </svg>
+  );
+}
 import { navigation, type NavItem } from "@/lib/navigation";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
@@ -181,7 +231,7 @@ function MobileSection({
           aria-label={`Show ${item.label} submenu`}
           onClick={() => setExpanded((v) => !v)}
         >
-          <ChevronDown
+          <DownChevronGlyph
             className={cn(
               "h-4 w-4 transition-transform duration-200",
               expanded && "rotate-180",
@@ -296,7 +346,7 @@ export function Header() {
               className="lg:hidden flex items-center justify-center min-w-[44px] min-h-[44px] text-foreground"
               aria-label="Open menu"
             >
-              <Menu className="h-6 w-6" />
+              <MenuGlyph className="h-6 w-6" />
             </button>
           </DialogPrimitive.Trigger>
 
@@ -337,7 +387,7 @@ export function Header() {
                           className="flex items-center justify-center min-w-[44px] min-h-[44px] text-foreground"
                           aria-label="Close menu"
                         >
-                          <X className="h-6 w-6" />
+                          <CloseGlyph className="h-6 w-6" />
                         </button>
                       </DialogPrimitive.Close>
                     </div>
