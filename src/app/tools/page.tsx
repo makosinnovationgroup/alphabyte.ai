@@ -187,8 +187,8 @@ export default function ToolsPage() {
 
               <TypedHero
                 pre="We don't sell platforms. We build with "
-                word="what actually works"
-                post="."
+                word="what actually works."
+                post=""
               />
 
               <HardRule className="mb-7" />

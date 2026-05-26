@@ -81,8 +81,8 @@ export default function ServicesPage() {
 
           <TypedHero
             pre="Five tracks. "
-            word="One methodology"
-            post=". We start where you are today."
+            word="One methodology."
+            post=" We start where you are today."
           />
 
           <HardRule className="mb-7" />

@@ -127,8 +127,8 @@ export default function BlogPage() {
 
           <TypedHero
             pre="AI Deployment for "
-            word="Mid-Market"
-            post="."
+            word="Mid-Market."
+            post=""
           />
 
           <HardRule className="mb-7" />

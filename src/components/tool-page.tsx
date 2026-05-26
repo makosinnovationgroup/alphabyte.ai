@@ -109,7 +109,7 @@ export function ToolPage({
                 <EyebrowChip>{eyebrow}</EyebrowChip>
               </div>
 
-              <TypedHero pre="" word={h1} post="." />
+              <TypedHero pre="" word={`${h1}.`} post="" />
 
               <HardRule className="mb-7" />
 

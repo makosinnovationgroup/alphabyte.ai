@@ -114,7 +114,7 @@ export function TeamMemberPage({
                 ))}
               </div>
 
-              <TypedHero pre="" word={name} post="." />
+              <TypedHero pre="" word={`${name}.`} post="" />
 
               <HardRule className="mb-7" />
 

@@ -40,10 +40,10 @@ export function Hero() {
 
             <TypedHero
               pre="AI that "
-              word="compounds"
+              word="compounds."
               post={
                 <>
-                  . Not pilots that stall.
+                  {" "}Not pilots that stall.
                 </>
               }
             />

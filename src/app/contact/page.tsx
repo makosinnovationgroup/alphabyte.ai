@@ -99,8 +99,8 @@ export default function ContactPage() {
 
             <TypedHero
               pre="A discovery conversation takes "
-              word="45 minutes"
-              post="."
+              word="45 minutes."
+              post=""
             />
 
             <HardRule className="mb-7" />

@@ -118,8 +118,8 @@ export default function OurWorkPage() {
 
           <TypedHero
             pre="The most credible proof is the work we are "
-            word="shipping today"
-            post="."
+            word="shipping today."
+            post=""
           />
 
           <HardRule className="mb-7" />

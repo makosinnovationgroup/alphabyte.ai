@@ -147,8 +147,8 @@ export default function TeamPage() {
 
               <TypedHero
                 pre="The practitioners behind "
-                word="every engagement"
-                post="."
+                word="every engagement."
+                post=""
               />
 
               <HardRule className="mb-7" />

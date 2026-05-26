@@ -122,8 +122,8 @@ export default function AboutPage() {
 
           <TypedHero
             pre="Practitioner-led. "
-            word="Claude-native"
-            post=". Bottom-up by design."
+            word="Claude-native."
+            post=" Bottom-up by design."
           />
 
           <HardRule className="mb-7" />
