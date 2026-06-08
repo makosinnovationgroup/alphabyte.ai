@@ -36,15 +36,26 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "Major Supplier — AI-Powered Executive Productivity Suite",
+  "@type": "Article",
+  headline: "Major Supplier — AI-Powered Executive Productivity Suite",
   description:
     "How Alphabyte built a custom Claude plugin for a major supplier in electronic reverse logistics, giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies.",
   url: "https://alphabyte.ai/our-work/circular-economy-platform/",
+  image: "https://alphabyte.ai/our-work/circular-economy-platform-msi-concept.webp",
+  datePublished: "2026-04-29",
+  dateModified: "2026-04-29",
   author: {
     "@type": "Organization",
     name: "Alphabyte",
     url: "https://alphabyte.ai",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
+    },
   },
   about: {
     "@type": "Service",

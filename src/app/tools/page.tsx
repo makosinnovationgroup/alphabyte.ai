@@ -61,6 +61,20 @@ const webPageSchema = {
   isPartOf: { "@id": "https://alphabyte.ai/#website" },
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "AI Tools",
+  url: "https://alphabyte.ai/tools/",
+  numberOfItems: 4,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Claude", url: "https://alphabyte.ai/tools/claude/" },
+    { "@type": "ListItem", position: 2, name: "MCP", url: "https://alphabyte.ai/tools/mcp/" },
+    { "@type": "ListItem", position: 3, name: "Custom AI Agents", url: "https://alphabyte.ai/tools/custom-ai-agents/" },
+    { "@type": "ListItem", position: 4, name: "On-Premise LLM", url: "https://alphabyte.ai/tools/on-premise-llm/" },
+  ],
+};
+
 const stats = [
   {
     headline: "Anthropic Claude Certified",
@@ -163,7 +177,7 @@ export default function ToolsPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, itemListSchema]) }}
       />
 
       {/* Breadcrumb */}

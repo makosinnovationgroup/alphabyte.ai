@@ -36,15 +36,26 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "DTC E-Commerce Brand - Media Buy Analytics Agent",
+  "@type": "Article",
+  headline: "DTC E-Commerce Brand - Media Buy Analytics Agent",
   description:
     "How Alphabyte built an AI-powered media buy analytics agent using a custom Power BI MCP server, connecting Claude directly to Microsoft Fabric for self-service media spend analytics.",
   url: "https://alphabyte.ai/our-work/media-buy-analytics/",
+  image: "https://alphabyte.ai/our-work/media-buy-analytics-hero.webp",
+  datePublished: "2026-05-08",
+  dateModified: "2026-05-08",
   author: {
     "@type": "Organization",
     name: "Alphabyte",
     url: "https://alphabyte.ai",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
+    },
   },
   about: {
     "@type": "Service",

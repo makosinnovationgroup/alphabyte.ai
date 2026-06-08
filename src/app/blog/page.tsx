@@ -89,12 +89,26 @@ export default function BlogPage() {
   const featured = posts[0];
   const gridPosts = posts.slice(1);
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Alphabyte Blog",
+    url: "https://alphabyte.ai/blog/",
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: post.title,
+      url: `https://alphabyte.ai/blog/${post.slug}/`,
+    })),
+  };
+
   return (
     <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(collectionPageSchema),
+          __html: JSON.stringify([collectionPageSchema, itemListSchema]),
         }}
       />
 

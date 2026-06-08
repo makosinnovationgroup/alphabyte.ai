@@ -69,8 +69,9 @@ const activeDelivery = [
 const certifications = [
   "Microsoft Solutions Partner \u00b7 Data & AI",
   "Anthropic Academy \u00b7 Claude Certified",
-  "SOC 2 Type II \u00b7 In progress",
 ];
+
+const inProgressCertifications = ["SOC 2 Type II"];
 
 const aboutPageSchema = {
   "@context": "https://schema.org",
@@ -244,6 +245,22 @@ export default function AboutPage() {
               <span
                 key={cert}
                 className="inline-flex items-center rounded-md border border-border-default bg-canvas px-5 py-3 text-body-sm font-medium text-foreground"
+              >
+                {cert}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-3 mb-3">
+            <p className="text-body-sm font-bold uppercase tracking-brand-wide text-muted-foreground whitespace-nowrap">
+              In Progress
+            </p>
+            <span className="flex-1 border-t border-border-default" />
+          </div>
+          <div className="flex flex-wrap gap-3 mb-6">
+            {inProgressCertifications.map((cert) => (
+              <span
+                key={cert}
+                className="inline-flex items-center rounded-md border border-dashed border-border-default bg-transparent px-5 py-3 text-body-sm font-medium text-muted-foreground"
               >
                 {cert}
               </span>

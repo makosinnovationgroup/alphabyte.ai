@@ -48,6 +48,7 @@ interface BlogFrontmatter {
   };
   tableOfContents: { label: string; anchorId: string }[];
   faq?: { question: string; answer: string }[];
+  mentions?: { name: string; url: string }[];
 }
 
 interface TeamMember {
@@ -237,6 +238,15 @@ export default async function BlogSlugPage({
       name: "Alphabyte Blog",
       url: "https://alphabyte.ai/blog/",
     },
+    ...(frontmatter.mentions && frontmatter.mentions.length > 0
+      ? {
+          mentions: frontmatter.mentions.map((m) => ({
+            "@type": "SoftwareApplication",
+            name: m.name,
+            url: m.url,
+          })),
+        }
+      : {}),
   };
 
   const breadcrumbSchema = {

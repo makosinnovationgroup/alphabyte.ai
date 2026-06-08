@@ -143,6 +143,8 @@ const professionalServiceSchema = {
   description:
     "AI and data consulting for mid-market organizations.",
   serviceType: "AI and Data Consulting",
+  email: "contact@alphabyte.ai",
+  telephone: "+1-647-204-4581",
   areaServed: [
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United States" },

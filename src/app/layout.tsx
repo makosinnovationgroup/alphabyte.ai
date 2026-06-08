@@ -119,11 +119,6 @@ const webSiteSchema = {
   publisher: {
     "@id": "https://alphabyte.ai/#organization",
   },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://alphabyte.ai/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
 };
 
 export default function RootLayout({
@@ -134,6 +129,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={aeonik.variable}>
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Alphabyte Blog"
+          href="/feed.xml"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9E4HR04ZFZ"
           strategy="afterInteractive"

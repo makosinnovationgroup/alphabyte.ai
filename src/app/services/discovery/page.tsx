@@ -122,7 +122,7 @@ export default function DiscoveryPage() {
           { label: "Discovery" },
         ]}
         eyebrow="Services · Discovery"
-        h1="Discovery"
+        h1="AI Discovery Workshop"
         subhead="What should our AI strategy be?"
         body={[
           "You have probably already been through this. The workshops. The use case prioritization exercise. The roadmap document that took eight weeks to produce and was obsolete before anyone acted on it.",

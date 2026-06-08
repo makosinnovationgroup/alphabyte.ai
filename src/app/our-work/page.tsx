@@ -51,6 +51,20 @@ const breadcrumbSchema = {
   ],
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Alphabyte Case Studies",
+  url: "https://alphabyte.ai/our-work/",
+  numberOfItems: 4,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "DTC E-Commerce Brand — Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
+    { "@type": "ListItem", position: 2, name: "Major Supplier — Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
+    { "@type": "ListItem", position: 3, name: "Construction Firm — Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/fire-protection-compliance/" },
+    { "@type": "ListItem", position: 4, name: "Community Housing Organisation — AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
+  ],
+};
+
 const caseStudies = [
   {
     headerTags: "DTC E-COMMERCE \u00b7 PAID MEDIA \u00b7 NORTH AMERICA",
@@ -93,7 +107,7 @@ export default function OurWorkPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, itemListSchema]) }}
       />
 
       {/* Hero */}

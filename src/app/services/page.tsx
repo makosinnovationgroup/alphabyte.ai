@@ -88,13 +88,28 @@ const breadcrumbSchema = {
   ],
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "AI Consulting Services",
+  url: "https://alphabyte.ai/services/",
+  numberOfItems: 5,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Citizen Development", url: "https://alphabyte.ai/services/citizen-development/" },
+    { "@type": "ListItem", position: 2, name: "Executive Enablement", url: "https://alphabyte.ai/services/executive-enablement/" },
+    { "@type": "ListItem", position: 3, name: "Discovery", url: "https://alphabyte.ai/services/discovery/" },
+    { "@type": "ListItem", position: 4, name: "Data Readiness", url: "https://alphabyte.ai/services/data-readiness/" },
+    { "@type": "ListItem", position: 5, name: "Infrastructure", url: "https://alphabyte.ai/services/infrastructure/" },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([webPageSchema, breadcrumbSchema]),
+          __html: JSON.stringify([webPageSchema, breadcrumbSchema, itemListSchema]),
         }}
       />
       {/* Hero */}

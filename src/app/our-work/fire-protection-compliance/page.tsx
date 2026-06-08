@@ -36,15 +36,26 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "Construction Firm - Compliance Intelligence Agent",
+  "@type": "Article",
+  headline: "Construction Firm - Compliance Intelligence Agent",
   description:
     "How Alphabyte built a custom AI compliance agent for a multi-entity construction firm, navigating regulatory code libraries with knowledge graph architecture and citation-grade accuracy.",
   url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
+  image: "https://alphabyte.ai/our-work/fire-protection-compliance-knowledge-graph.webp",
+  datePublished: "2026-04-29",
+  dateModified: "2026-04-29",
   author: {
     "@type": "Organization",
     name: "Alphabyte",
     url: "https://alphabyte.ai",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
+    },
   },
   about: {
     "@type": "Service",

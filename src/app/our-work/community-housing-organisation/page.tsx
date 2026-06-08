@@ -36,15 +36,26 @@ export const metadata: Metadata = {
 
 const caseStudySchema = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "Community Housing Organisation - AI Enablement",
+  "@type": "Article",
+  headline: "Community Housing Organisation - AI Enablement",
   description:
     "How Alphabyte delivered an AI enablement roadmap for a community housing infrastructure organisation, including a seven-recommendation roadmap from data governance to purpose-built Claude agents.",
   url: "https://alphabyte.ai/our-work/community-housing-organisation/",
+  image: "https://alphabyte.ai/our-work/community-housing-organisation-roadmap-concept.webp",
+  datePublished: "2026-04-28",
+  dateModified: "2026-04-28",
   author: {
     "@type": "Organization",
     name: "Alphabyte",
     url: "https://alphabyte.ai",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Alphabyte",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
+    },
   },
   about: {
     "@type": "Service",

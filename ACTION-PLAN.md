@@ -174,42 +174,34 @@ Insert a 4-6 row `<table>` near the top of each post (after intro, before first 
 
 ---
 
-### 9. Fix the sitemap.ts `lastmod` issue
-**Effort:** 2 hours
-**File:** `src/app/sitemap.ts`
+### 9. ✅ DONE — Sitemap.ts `lastmod` derived from data
+**Status:** Shipped 2026-06-08
 
-Replace static date constants with derived dates:
-- Hubs (`/blog/`, `/team/`, `/our-work/`, `/services/`, `/tools/`): `lastmod = Math.max(...children.map(c => c.lastModified))`
-- Service/tool/team pages: use file mtime or add a per-entry `updatedDate` field that gets updated on real changes
-- Decide what to do with `/our-work/fire-protection-compliance/`: either re-add to sitemap with correct date, or add `robots: { index: false }` to its page metadata
+Rewrote `src/app/sitemap.ts` to derive `lastModified` from file mtimes and frontmatter dates instead of hardcoded constants. Behavior:
+- Homepage / about / contact / each service / tool / case-study page: derived from `page.tsx` mtime.
+- Hubs (`/services/`, `/tools/`, `/our-work/`, `/blog/`, `/team/`): `Math.max(children.lastModified)` so the hub reflects its newest child.
+- Team bios: file mtime of `content/team/<slug>.json`.
+- Blog posts: prefer frontmatter `publishedDate`, fall back to file mtime when older.
+
+`/our-work/fire-protection-compliance/` decision: still omitted (case study client privacy decision predates this audit — leave as-is, page has self-canonical and noindex stays off it).
 
 **Score impact:** Sitemap +12
 
 ---
 
-### 10. Add `ItemList` schema to 4 hub pages
-**Effort:** 1 hour
-**Files:**
-- `src/app/services/page.tsx`
-- `src/app/tools/page.tsx`
-- `src/app/our-work/page.tsx`
-- `src/app/blog/page.tsx`
+### 10. ✅ DONE — ItemList schema on 4 hub pages
+**Status:** Shipped 2026-06-08
 
-Each hub visually lists children but emits no `ItemList` JSON-LD. Cheapest schema add on the site. Template in `FULL-AUDIT-REPORT.md` Schema section.
+Added `ItemList` JSON-LD to `/services/`, `/tools/`, `/our-work/`, `/blog/`. Blog list is dynamically built from `getAllPosts()` so it reflects post additions automatically. Verified `"ItemList"` emits 1× each in `out/{services,tools,our-work,blog}/index.html`.
 
 **Score impact:** Schema +4
 
 ---
 
-### 11. Upgrade case study schema from `CreativeWork` to `Article`
-**Effort:** 1 hour
-**Files:**
-- `src/app/our-work/circular-economy-platform/page.tsx`
-- `src/app/our-work/media-buy-analytics/page.tsx`
-- `src/app/our-work/community-housing-organisation/page.tsx`
-- `src/app/our-work/fire-protection-compliance/page.tsx`
+### 11. ✅ DONE — Case study schema upgraded to Article
+**Status:** Shipped 2026-06-08
 
-Add `datePublished`, `author` (Organization), `publisher`, `image`. Unlocks Google rich-result eligibility (which `CreativeWork` does not have).
+All 4 case study `caseStudySchema` blocks switched from `CreativeWork` to `Article` with: `headline` (was `name`), `image`, `datePublished`, `dateModified`, `publisher` (Organization + logo `ImageObject`). Verified `@type:"Article"` emits on all 4 `/our-work/*/` built pages.
 
 **Score impact:** Schema +3
 
@@ -245,11 +237,10 @@ Unverifiable claims read as fabricated to quality raters. Link each badge to its
 
 ---
 
-### 15. Fix `/services/discovery/` H1
-**Effort:** 5 min
-**File:** `src/app/services/discovery/page.tsx`
+### 15. ✅ DONE — `/services/discovery/` H1
+**Status:** Shipped 2026-06-08
 
-Change "Discovery" to "AI Discovery Workshop: 30-Day Strategy & Roadmap Engagement". Exact-match intent for the target query, communicates scope immediately.
+Changed H1 from "Discovery" to "AI Discovery Workshop". Picked the short form over the longer SEO recommendation ("AI Discovery Workshop: 30-Day Strategy & Roadmap Engagement") to fit the display H1 styling pattern used on other service pages — exact-match keyword is preserved.
 
 **Score impact:** On-Page +2
 
@@ -300,21 +291,19 @@ The "95% of AI pilots fail" stat appears in 4 of 10 ranking pages. Current hook 
 
 ---
 
-### 20. Add `mentions` schema to comparison blog posts
-**Effort:** 1 hour
-**File:** `src/app/blog/[slug]/page.tsx`
+### 20. ✅ DONE — Mentions schema on comparison blog posts
+**Status:** Shipped 2026-06-08
 
-Add a `mentions` field to MDX frontmatter for comparison posts, then assert each named platform as a `SoftwareApplication` mention in `BlogPosting` JSON-LD. Strengthens correlation between the post and the entities being compared.
+Added `mentions?: { name; url }[]` to `BlogFrontmatter` interface; renders as `SoftwareApplication` entries in `BlogPosting` JSON-LD when present. Added `mentions:` to frontmatter of `claude-vs-chatgpt-enterprise.mdx`, `claude-vs-microsoft-copilot.mdx`, `private-llm-vs-claude-enterprise.mdx`. Verified `"mentions":` appears in all 3 built post pages.
 
 **Score impact:** Schema +2, GEO +2
 
 ---
 
-### 21. Add FAQ schema to service and tool pages
-**Effort:** 3 hours
-**Files:** all 5 service and 4 tool child pages
+### 21. ✅ ALREADY DONE — FAQ schema on service + tool pages
+**Status:** Verified already implemented 2026-06-08
 
-Question-format H2s already exist ("Right for you if", "Not right for you if"). Wrap as `FAQPage` JSON-LD. Note: FAQ rich results no longer render in Google SERPs for commercial sites, but AI engines actively cite from FAQ schema.
+Audit report flagged this as missing but built HTML shows `FAQPage` JSON-LD emits 1× on every service page (5) and every tool child page (4). No code change required.
 
 **Score impact:** GEO +3, Schema +1
 
@@ -330,21 +319,21 @@ Currently use near-identical "Week 2 / Week 3 / Day 30" language. Differentiate 
 
 ---
 
-### 23. Reword Adam Nameh's bio to remove "transform"
-**Effort:** 5 min
-**File:** `content/team/adam-nameh.json`
+### 23. ✅ DONE — Removed "transform" from Adam's bio
+**Status:** Shipped 2026-06-08
 
-Brand voice violation. Replace "transform complex data environments into actionable business intelligence" with concrete outcome language.
+Two instances replaced in `content/team/adam-nameh.json`:
+- Bio: "transform complex data environments…" → "turn complex data environments…"
+- Achievements: "data transformation projects" → "data modernization projects"
 
 **Score impact:** Content +0.5
 
 ---
 
-### 24. Move "SOC 2 Type II — In progress" out of Certifications
-**Effort:** 10 min
-**File:** `src/app/about/page.tsx`
+### 24. ✅ DONE — SOC 2 moved to "In Progress" label
+**Status:** Shipped 2026-06-08
 
-Move to a separate "In Progress" label so the page doesn't appear to assert a certification that doesn't yet exist.
+Added `inProgressCertifications` array on `/about/` and a separate "In Progress" subheader below the Certifications chips. Dashed-border styling on the chip + muted text so visitors immediately see it's pending. SOC 2 Type II is no longer commingled with shipped certifications.
 
 **Score impact:** Content +1
 
@@ -371,17 +360,19 @@ Targets "AI consulting agency" and adjacent head terms with the format Google re
 
 ---
 
-### 27. Add `/feed.xml` RSS feed
-**Effort:** 1 hour
+### 27. ✅ DONE — RSS feed at `/feed.xml`
+**Status:** Shipped 2026-06-08
 
-Low value for SEO directly, helpful for feed readers + news aggregators.
+Added `src/app/feed.xml/route.ts` with `dynamic = "force-static"` (compatible with Cloudflare Pages static export). Reads `content/blog/*.mdx`, sorts by `publishedDate`, emits RSS 2.0 with `atom:link` self-reference and per-post `<item>` blocks. Discovery: `<link rel="alternate" type="application/rss+xml" href="/feed.xml" />` added to layout `<head>` (sitewide).
 
 ---
 
-### 28. Wire up IndexNow
-**Effort:** 1 hour
+### 28. ✅ DONE — IndexNow integration
+**Status:** Shipped 2026-06-08
 
-Ping Bing/Yandex on content updates. Low-priority for B2B but cheap.
+- Verification key file at `public/2c7a65716354b576e6ede8500d8c4f20.txt` (matches filename — required by IndexNow spec).
+- `scripts/ping-indexnow.sh` posts URL list to `api.indexnow.org/indexnow`. Defaults to all sitemap URLs; can take specific URLs as args.
+- `pnpm indexnow` runs the script. Best invoked post-deploy from CI or manually after a content update.
 
 ---
 
@@ -392,28 +383,28 @@ Replaces lab CWV estimates with real user metrics. Run `python scripts/google_au
 
 ---
 
-### 30. Capture seo-drift baseline
-**Effort:** 10 min
+### 30. ✅ DONE — seo-drift baseline captured
+**Status:** Captured 2026-06-08
 
-Run `/seo-drift baseline https://alphabyte.ai/` so the next audit can diff against this snapshot. Detects regressions on every deploy.
+Captured 9 baseline snapshots (homepage + 8 key sub-pages) via `drift_baseline.py --skip-cwv`. Stored in `~/.cache/claude-seo/drift/baselines.db`. Each baseline records title, meta description, canonical, robots, H1, H2 count, H3 count, schema count, OG tag count, status code, and HTML hash. Next deploy can run `drift_compare.py` to detect regressions.
+
+Baselines: `/`, `/services/`, `/services/discovery/`, `/tools/`, `/tools/mcp/`, `/our-work/`, `/blog/`, `/about/`, `/contact/` — IDs 1–9.
 
 ---
 
-### 31. Remove dead `WebSite.potentialAction` search markup
-**Effort:** 5 min
-**File:** `src/app/layout.tsx` (~line 122-126)
+### 31. ✅ DONE — Removed dead WebSite.potentialAction
+**Status:** Shipped 2026-06-08
 
-Targets `/blog/?q={search_term_string}` — there is no search. Remove `potentialAction` block.
+Deleted the `potentialAction` block from `webSiteSchema` in `src/app/layout.tsx`. Verified `potentialAction` count = 0 in built `out/index.html`.
 
 **Score impact:** Schema +0.5
 
 ---
 
-### 32. Add `ProfessionalService.email` and `telephone` to homepage schema
-**Effort:** 10 min
-**File:** `src/app/page.tsx` (~line 137-158)
+### 32. ✅ DONE — Added email + telephone to ProfessionalService
+**Status:** Shipped 2026-06-08
 
-Recommended fields for ProfessionalService rich-result eligibility.
+Added `email: "contact@alphabyte.ai"` and `telephone: "+1-647-204-4581"` to `professionalServiceSchema` in `src/app/page.tsx`. Verified both fields emit in built homepage HTML.
 
 **Score impact:** Schema +0.5
 
