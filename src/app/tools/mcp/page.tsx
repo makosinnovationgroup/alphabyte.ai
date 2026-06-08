@@ -37,9 +37,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Custom MCP Servers",
   provider: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   serviceType: "MCP Server Development",
   description:

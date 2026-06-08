@@ -129,22 +129,28 @@ const webPageSchema = {
     "Alphabyte AI designs and delivers working AI for mid-market organizations. Four tracks. Real deployments. No junior bench.",
   url: "https://alphabyte.ai/",
   isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#website",
+  },
+  about: {
+    "@id": "https://alphabyte.ai/#organization",
   },
 };
 
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://alphabyte.ai/#professionalservice",
   name: "Alphabyte",
+  alternateName: "Alphabyte AI",
   url: "https://alphabyte.ai",
   description:
     "AI and data consulting for mid-market organizations.",
   serviceType: "AI and Data Consulting",
   email: "contact@alphabyte.ai",
   telephone: "+1-647-204-4581",
+  parentOrganization: {
+    "@id": "https://alphabyte.ai/#organization",
+  },
   areaServed: [
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United States" },

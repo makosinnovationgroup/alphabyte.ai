@@ -44,28 +44,28 @@ const caseStudySchema = {
   image: "https://alphabyte.ai/our-work/community-housing-organisation-roadmap-concept.webp",
   datePublished: "2026-04-28",
   dateModified: "2026-04-28",
+  articleSection: "Case Studies",
+  keywords: [
+    "AI enablement",
+    "data governance",
+    "Claude agents",
+    "public sector",
+    "community housing",
+    "AI roadmap",
+  ],
   author: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   publisher: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
-    },
+    "@id": "https://alphabyte.ai/#organization",
   },
   about: {
     "@type": "Service",
     name: "AI Enablement Assessment",
-    provider: { "@type": "Organization", name: "Alphabyte" },
+    provider: { "@id": "https://alphabyte.ai/#organization" },
   },
   isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#website",
   },
 };
 

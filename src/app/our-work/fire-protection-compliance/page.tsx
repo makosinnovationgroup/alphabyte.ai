@@ -44,28 +44,28 @@ const caseStudySchema = {
   image: "https://alphabyte.ai/our-work/fire-protection-compliance-knowledge-graph.webp",
   datePublished: "2026-04-29",
   dateModified: "2026-04-29",
+  articleSection: "Case Studies",
+  keywords: [
+    "Claude AI agent",
+    "custom MCP server",
+    "knowledge graph",
+    "regulatory compliance",
+    "construction",
+    "Claude Cowork",
+  ],
   author: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   publisher: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
-    },
+    "@id": "https://alphabyte.ai/#organization",
   },
   about: {
     "@type": "Service",
     name: "AI Compliance Intelligence",
-    provider: { "@type": "Organization", name: "Alphabyte" },
+    provider: { "@id": "https://alphabyte.ai/#organization" },
   },
   isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#website",
   },
 };
 

@@ -143,14 +143,13 @@ export default async function TeamMemberSlugPage({
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `https://alphabyte.ai/team/${slug}/#person`,
     name: member.name,
     jobTitle: member.role,
     description: member.bio[0] || "",
     image: `https://alphabyte.ai${member.avatarSrc}`,
     worksFor: {
-      "@type": "Organization",
-      name: member.company,
-      url: "https://alphabyte.ai",
+      "@id": "https://alphabyte.ai/#organization",
     },
     url: `https://alphabyte.ai/team/${slug}/`,
     knowsAbout: member.expertise,

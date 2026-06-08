@@ -37,9 +37,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "On-Premise LLM Deployment",
   provider: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   serviceType: "On-Premise LLM Deployment",
   description:

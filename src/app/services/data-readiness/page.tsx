@@ -37,9 +37,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Data Readiness",
   provider: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   serviceType: "AI Data Quality & Governance Consulting",
   description:

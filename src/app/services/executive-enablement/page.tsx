@@ -37,9 +37,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Executive Enablement",
   provider: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   serviceType: "Executive AI Enablement Consulting",
   description:

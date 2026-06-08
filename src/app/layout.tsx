@@ -66,6 +66,7 @@ const organizationSchema = {
   "@id": "https://alphabyte.ai/#organization",
   name: "Alphabyte",
   legalName: "Alphabyte Solutions Inc.",
+  alternateName: "Alphabyte AI",
   url: "https://alphabyte.ai",
   logo: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
   description:
@@ -94,21 +95,15 @@ const organizationSchema = {
   },
 };
 
-const siteNavigationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SiteNavigationElement",
-  name: "Main Navigation",
-  url: "https://alphabyte.ai",
-  hasPart: [
-    { "@type": "WebPage", name: "Services", url: "https://alphabyte.ai/services/" },
-    { "@type": "WebPage", name: "Tools", url: "https://alphabyte.ai/tools/" },
-    { "@type": "WebPage", name: "Our Work", url: "https://alphabyte.ai/our-work/" },
-    { "@type": "WebPage", name: "Team", url: "https://alphabyte.ai/team/" },
-    { "@type": "WebPage", name: "About", url: "https://alphabyte.ai/about/" },
-    { "@type": "WebPage", name: "Blog", url: "https://alphabyte.ai/blog/" },
-    { "@type": "WebPage", name: "Contact", url: "https://alphabyte.ai/contact/" },
-  ],
-};
+const siteNavigationSchema = [
+  { "@type": "SiteNavigationElement", name: "Services", url: "https://alphabyte.ai/services/" },
+  { "@type": "SiteNavigationElement", name: "Tools", url: "https://alphabyte.ai/tools/" },
+  { "@type": "SiteNavigationElement", name: "Our Work", url: "https://alphabyte.ai/our-work/" },
+  { "@type": "SiteNavigationElement", name: "Team", url: "https://alphabyte.ai/team/" },
+  { "@type": "SiteNavigationElement", name: "About", url: "https://alphabyte.ai/about/" },
+  { "@type": "SiteNavigationElement", name: "Blog", url: "https://alphabyte.ai/blog/" },
+  { "@type": "SiteNavigationElement", name: "Contact", url: "https://alphabyte.ai/contact/" },
+];
 
 const webSiteSchema = {
   "@context": "https://schema.org",
@@ -157,7 +152,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, webSiteSchema, siteNavigationSchema]),
+            __html: JSON.stringify([organizationSchema, webSiteSchema, ...siteNavigationSchema]),
           }}
         />
         <DiscoveryCallProvider>

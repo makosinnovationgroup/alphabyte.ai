@@ -209,7 +209,10 @@ export default async function BlogSlugPage({
   const author = getTeamMember(frontmatter.author);
   const otherPosts = getOtherPosts(slug);
 
-  const dateAndReadTime = `${formatDate(frontmatter.publishedDate)} · ${frontmatter.readTime}`;
+  const dateAndReadTime =
+    frontmatter.modifiedDate && frontmatter.modifiedDate !== frontmatter.publishedDate
+      ? `${formatDate(frontmatter.publishedDate)} · Updated ${formatDate(frontmatter.modifiedDate)} · ${frontmatter.readTime}`
+      : `${formatDate(frontmatter.publishedDate)} · ${frontmatter.readTime}`;
 
   const blogPostingSchema = {
     "@context": "https://schema.org",
@@ -222,16 +225,12 @@ export default async function BlogSlugPage({
     dateModified: frontmatter.modifiedDate || frontmatter.publishedDate,
     author: {
       "@type": "Person",
+      "@id": `https://alphabyte.ai/team/${author.slug}/#person`,
       name: author.name,
       url: `https://alphabyte.ai/team/${author.slug}/`,
     },
     publisher: {
-      "@type": "Organization",
-      name: "Alphabyte",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
-      },
+      "@id": "https://alphabyte.ai/#organization",
     },
     isPartOf: {
       "@type": "Blog",

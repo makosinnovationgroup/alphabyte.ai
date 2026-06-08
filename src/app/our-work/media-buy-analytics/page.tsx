@@ -44,28 +44,29 @@ const caseStudySchema = {
   image: "https://alphabyte.ai/our-work/media-buy-analytics-hero.webp",
   datePublished: "2026-05-08",
   dateModified: "2026-05-08",
+  articleSection: "Case Studies",
+  keywords: [
+    "custom MCP server",
+    "Power BI",
+    "Microsoft Fabric",
+    "media buy analytics",
+    "DAX",
+    "DTC e-commerce",
+    "Claude integration",
+  ],
   author: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   publisher: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
-    },
+    "@id": "https://alphabyte.ai/#organization",
   },
   about: {
     "@type": "Service",
     name: "AI Media Buy Analytics",
-    provider: { "@type": "Organization", name: "Alphabyte" },
+    provider: { "@id": "https://alphabyte.ai/#organization" },
   },
   isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#website",
   },
 };
 

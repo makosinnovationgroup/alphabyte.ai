@@ -37,9 +37,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Custom AI Agents & Systems",
   provider: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   serviceType: "AI Agent Development",
   description:

@@ -44,28 +44,29 @@ const caseStudySchema = {
   image: "https://alphabyte.ai/our-work/circular-economy-platform-msi-concept.webp",
   datePublished: "2026-04-29",
   dateModified: "2026-04-29",
+  articleSection: "Case Studies",
+  keywords: [
+    "custom Claude plugin",
+    "executive productivity",
+    "Power BI",
+    "Slack integration",
+    "Fireflies",
+    "GSuite",
+    "reverse logistics",
+  ],
   author: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#organization",
   },
   publisher: {
-    "@type": "Organization",
-    name: "Alphabyte",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://alphabyte.ai/logos/alphabyte-logo-blue.svg",
-    },
+    "@id": "https://alphabyte.ai/#organization",
   },
   about: {
     "@type": "Service",
     name: "Executive AI Productivity Suite",
-    provider: { "@type": "Organization", name: "Alphabyte" },
+    provider: { "@id": "https://alphabyte.ai/#organization" },
   },
   isPartOf: {
-    "@type": "WebSite",
-    name: "Alphabyte",
-    url: "https://alphabyte.ai",
+    "@id": "https://alphabyte.ai/#website",
   },
 };
 

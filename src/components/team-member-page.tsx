@@ -205,6 +205,9 @@ export function TeamMemberPage({
               <img
                 src={avatarSrc}
                 alt={name}
+                width={160}
+                height={160}
+                fetchPriority="high"
                 className="h-36 w-36 rounded-lg bg-alphabyte-grey object-cover md:h-40 md:w-40"
               />
             </div>
