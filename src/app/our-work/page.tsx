@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/our-work/",
   },
   openGraph: {
+    type: "website",
     title: "Our Work - AI Consulting Case Studies",
     description:
       "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing.",

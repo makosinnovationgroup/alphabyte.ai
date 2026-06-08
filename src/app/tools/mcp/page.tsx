@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/tools/mcp/",
   },
   openGraph: {
+    type: "website",
     title: "MCP Servers - Model Context Protocol Integration",
     description:
       "Custom MCP servers connect Claude to your databases, APIs, CRM, and ERP. OAuth 2.0 secured.",

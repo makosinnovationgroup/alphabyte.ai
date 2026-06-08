@@ -117,18 +117,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://alphabyte.ai/contact/",
       lastModified: new Date("2026-04-29"),
     },
-    {
-      url: "https://alphabyte.ai/terms/",
-      lastModified: new Date("2026-04-29"),
-    },
-    {
-      url: "https://alphabyte.ai/privacy/",
-      lastModified: new Date("2026-04-29"),
-    },
-    {
-      url: "https://alphabyte.ai/cookies/",
-      lastModified: new Date("2026-04-29"),
-    },
+    // /terms/, /privacy/, /cookies/ are intentionally excluded — they carry
+    // `noindex` meta tags, so including them in the sitemap created a
+    // self-contradictory signal that Ahrefs flagged. They remain discoverable
+    // via the footer.
     ...getTeamMemberEntries(),
     ...getBlogPostEntries(),
   ];

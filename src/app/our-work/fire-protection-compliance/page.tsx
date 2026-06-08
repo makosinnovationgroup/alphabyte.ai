@@ -7,11 +7,12 @@ import {
 export const metadata: Metadata = {
   title: "Construction Firm - Compliance Intelligence Agent",
   description:
-    "How Alphabyte built an AI compliance agent for a multi-entity construction firm. Knowledge graph navigation across regulatory code libraries with citation-grade accuracy.",
+    "AI compliance agent for a multi-entity construction firm. Knowledge graph navigation across regulatory code with citation-grade accuracy.",
   alternates: {
     canonical: "/our-work/fire-protection-compliance/",
   },
   openGraph: {
+    type: "article",
     title: "Construction Firm - Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",

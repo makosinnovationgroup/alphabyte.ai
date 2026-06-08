@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/services/infrastructure/",
   },
   openGraph: {
+    type: "website",
     title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
     description:
       "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models.",
@@ -104,26 +105,13 @@ const faqSchema = {
   })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "How Alphabyte builds AI Infrastructure in 30 days",
-  description: "Custom MCP servers, agents, and on-premise LLMs connecting Claude to your live operational systems.",
-  step: [
-    { "@type": "HowToStep", name: "Week 1 — Requirements and architecture", text: "Define the systems Claude needs to connect to, the data access patterns, the security and governance requirements, and the right build sequence." },
-    { "@type": "HowToStep", name: "Weeks 2–3 — Build", text: "Custom MCP server development, security configuration, tool and API integration. Agent development begins in parallel for clients pursuing that track." },
-    { "@type": "HowToStep", name: "Week 4 — Integration and deployment", text: "Integration testing, production deployment, knowledge transfer. Your team leaves with full technical documentation and the capability to extend what was built." },
-    { "@type": "HowToStep", name: "Day 30 — What you have", text: "Claude connected to your live operational systems through a production-grade MCP server with full audit logging, OAuth 2.0 security, and governed access." },
-  ],
-};
-
 export default function InfrastructurePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema, howToSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 

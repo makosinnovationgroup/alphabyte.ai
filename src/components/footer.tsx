@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { navigation } from "@/lib/navigation";
 import { companyLinks, legalLinks, contact } from "@/lib/footer-data";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
+import { EmailAddress } from "@/components/email-address";
 
 const linkClasses = "text-body-sm text-foreground transition-colors hover:text-alphabyte-blue";
 
@@ -55,12 +56,13 @@ export function Footer() {
                 {contact.address.line2}
               </p>
               <p>
-                <a
-                  href={`mailto:${contact.email}`}
+                <EmailAddress
+                  user={contact.emailUser}
+                  domain={contact.emailDomain}
                   className="text-body-sm text-muted-foreground transition-colors hover:text-alphabyte-blue"
-                >
-                  {contact.email}
-                </a>
+                  fallbackHref="/contact/"
+                  fallbackLabel="Contact us"
+                />
               </p>
               <p>
                 <a

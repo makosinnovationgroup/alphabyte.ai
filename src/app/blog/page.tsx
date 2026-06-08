@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "/blog/",
   },
   openGraph: {
+    type: "website",
     title: "Blog - AI Deployment for Mid-Market",
     description:
       "Practical writing on AI deployment, citizen development, and the operational reality of making AI work inside a real mid-market business.",

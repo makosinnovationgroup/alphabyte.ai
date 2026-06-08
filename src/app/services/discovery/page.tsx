@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/services/discovery/",
   },
   openGraph: {
+    type: "website",
     title: "Discovery - AI Strategy & Roadmap Consulting",
     description:
       "Four weeks from kickoff to a clear AI strategy. Three use cases, gap analysis, and a plan you can execute immediately.",
@@ -104,26 +105,13 @@ const faqSchema = {
   })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "How Alphabyte runs an AI Discovery sprint in 30 days",
-  description: "Stakeholder sessions, three use cases, gap analysis, and a Findings and Recommendations document in four weeks.",
-  step: [
-    { "@type": "HowToStep", name: "Week 1 — Stakeholder sessions", text: "Talk to the people doing the actual work. Find what is genuinely painful, automatable, and what has already been built informally." },
-    { "@type": "HowToStep", name: "Week 2 — Use case development", text: "Three defined use cases, each with a feasibility assessment, preliminary architecture, and concrete business outcome." },
-    { "@type": "HowToStep", name: "Week 3 — Gap analysis", text: "Map what is in your environment, what is missing, and what must be fixed before any build starts." },
-    { "@type": "HowToStep", name: "Day 30 — What you have", text: "A Findings and Recommendations document, three use cases with architectures, a prioritized gap list, and a staging pathway." },
-  ],
-};
-
 export default function DiscoveryPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema, howToSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 

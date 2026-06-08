@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/tools/on-premise-llm/",
   },
   openGraph: {
+    type: "website",
     title: "On-Premise LLM - Self-Hosted AI",
     description:
       "Llama, Mistral, and other open-source LLMs deployed on your infrastructure. For data sovereignty and security.",

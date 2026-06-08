@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DiscoveryCallButton } from "@/components/discovery-call-button";
+import { EmailAddress } from "@/components/email-address";
 
 export const metadata: Metadata = {
   title: "About Alphabyte AI - Claude-Native Consulting",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "/about/",
   },
   openGraph: {
+    type: "website",
     title: "About Alphabyte AI - Claude-Native Consulting",
     description:
       "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
@@ -269,8 +271,14 @@ export default function AboutPage() {
             Book a Discovery Call &rarr;
           </DiscoveryCallButton>
           <p className="text-body-sm text-muted-foreground mt-8">
-            contact@alphabyte.ai &middot; 155 Winges Road, Unit 1, Vaughan,
-            Ontario
+            <EmailAddress
+              user="contact"
+              domain="alphabyte.ai"
+              className="text-body-sm text-muted-foreground hover:text-alphabyte-blue"
+              fallbackHref="/contact/"
+              fallbackLabel="Contact us"
+            />{" "}
+            &middot; 155 Winges Road, Unit 1, Vaughan, Ontario
           </p>
         </div>
       </section>

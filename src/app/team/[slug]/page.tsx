@@ -110,6 +110,7 @@ export async function generateMetadata({
       canonical: `/team/${slug}/`,
     },
     openGraph: {
+    type: "profile",
       title,
       description,
       url: `/team/${slug}/`,

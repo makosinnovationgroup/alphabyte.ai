@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "/team/",
   },
   openGraph: {
+    type: "website",
     title: "Our Team - Practitioners Behind Every Engagement",
     description:
       "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads.",

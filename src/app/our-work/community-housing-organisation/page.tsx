@@ -7,11 +7,12 @@ import {
 export const metadata: Metadata = {
   title: "Community Housing Organisation - AI Enablement",
   description:
-    "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation. Data readiness first, then five purpose-built Claude agents.",
+    "AI enablement assessment and seven-recommendation roadmap for a community housing organisation. Data readiness, then purpose-built Claude agents.",
   alternates: {
     canonical: "/our-work/community-housing-organisation/",
   },
   openGraph: {
+    type: "article",
     title: "Community Housing Organisation - AI Enablement",
     description:
       "AI enablement assessment and seven-recommendation roadmap for a community housing infrastructure organisation.",

@@ -1,77 +1,485 @@
 # SEO Action Plan — alphabyte.ai
 
-**Generated:** 2026-05-07
-**Current Score:** 88 / 100 (up from 52 initial, 81 pre-deploy)
-**Target Score:** 93+ / 100
+**Generated:** 2026-06-08 (revised after Ahrefs cross-check)
+**Current Score:** 65 / 100 (Ahrefs Site Audit: 58/100 Fair)
+**Target Score:** 88+ / 100 (achievable in ~14 hours of focused work)
+**Full report:** `FULL-AUDIT-REPORT.md`
+
+Items grouped by priority. Effort estimates are for a single engineer familiar with this codebase. Score impact is the estimated point gain on the relevant category if the fix is shipped.
+
+Items prefixed 🆕 were caught by the Ahrefs cross-check and not by the first-pass multi-agent audit.
 
 ---
 
-## Completed
+## CRITICAL — Fix this week
 
-| # | Task | Score Impact |
-|---|---|---|
-| ~~1~~ | ~~Compress blog hero images~~ | Performance +15 |
-| ~~2~~ | ~~Convert team PNGs to WebP~~ | Performance +10 |
-| ~~5~~ | ~~Security headers~~ | Already existed |
-| ~~6~~ | ~~Expand tool page content + FAQ~~ | Content +3 |
-| ~~8~~ | ~~Remove unused Geist fonts~~ | Performance +1 |
-| ~~9~~ | ~~Update image dimensions~~ | Performance (CLS) |
-| ~~10~~ | ~~Add loading="lazy" to below-fold images~~ | Performance +2 |
-| ~~11~~ | ~~Add modifiedDate to blog posts~~ | Already present |
-| ~~12~~ | ~~Create llms-full.txt~~ | AI Readiness +4 |
-| ~~13~~ | ~~SiteNavigationElement schema~~ | Schema +2 |
-| ~~14~~ | ~~CreativeWork schema for case studies~~ | Schema +1 |
-| ~~15~~ | ~~HowTo schema on service pages~~ | Schema +2 |
-| ~~17~~ | ~~Custom 404 page~~ | Technical +1 |
+### 🆕 0. ✅ DONE — Bypass Cloudflare Email Address Obfuscation via code
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~20 min
 
----
+**What changed:**
+- Created `src/components/email-address.tsx` — client component that renders a placeholder link to `/contact/` server-side, then swaps to a real `mailto:` after hydration via `useEffect`.
+- Split `contact@alphabyte.ai` into `emailUser` + `emailDomain` in `src/lib/footer-data.ts` so the full email string never appears in serialized RSC payload (which Cloudflare may also scan).
+- Replaced visible email displays on 3 surfaces: `src/components/footer.tsx` (global, 39 pages), `src/app/about/page.tsx`, `src/app/contact/page.tsx`.
 
-## Waiting on Team
+**Result (verified in built HTML):**
+- `mailto:` count: 0 across all pages.
+- Visible `contact@alphabyte.ai` text: 0 in body HTML.
+- Email only remains in Organization JSON-LD (which Cloudflare doesn't obfuscate — verified on prod) and in split form (`emailUser`/`emailDomain`) in props that don't concatenate until client.
+- Users still see the real email and a working mailto: after JS hydrates (~50ms).
+- Crawlers see "Contact us" / "Use the form below" / link to `/contact/`.
 
-### 3. Generate page-specific OG images
-**Status:** Waiting on design direction
-**Impact:** Images score 68 → ~85
-**Action needed:** Design team decides visual approach, then generate for 15+ pages
+**Expected Ahrefs delta:** "Page has links to broken page" should drop from 39 → 0 on the next crawl.
 
-### 4. Compress default OG image
-**Status:** Bundle with #3 when OG images are redesigned
-**Impact:** Bundled with above
-
-### 7. Add quantifiable metrics to case studies
-**Status:** Waiting on CEO for real numbers
-**Impact:** Content score 85 → ~90
-**Pages:** All 3 case study pages need specific outcomes (time saved, error reduction, users enabled)
-
-### 6b. Confirm GA4 setup
-**Status:** Waiting on CEO to verify Cloudflare Zaraz configuration
-**Impact:** No score impact, but needed for measurement
-**Measurement ID:** G-9E4HR04ZFZ
-
-### 16. Add telephone to Organization schema
-**Status:** Need actual business phone number
-**Impact:** Minimal
+**Score impact:** Technical +8
 
 ---
 
-## Progress Tracker
+### 🆕 1. ✅ DONE — Re-compress 3 oversized case study illustrations
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~5 min
 
-| # | Priority | Task | Status |
+**Root cause found:** The three files had `.webp` extensions but were actually PNG data (likely renamed at export time without re-encoding). Only `media-buy-analytics-hero.webp` was a real WebP.
+
+**Result (in-place re-encode with `cwebp -q 80`, same 1536×1024 dimensions):**
+
+| File | Before | After | Reduction |
 |---|---|---|---|
-| 1 | Critical | Compress blog hero images | ✅ Done |
-| 2 | Critical | Convert team PNGs to WebP | ✅ Done |
-| 3 | High | Generate page-specific OG images | ⏳ Waiting on design |
-| 4 | High | Compress default OG image | ⏳ Waiting on design |
-| 5 | High | Add security headers | ✅ Already existed |
-| 6 | High | Expand tool page content | ✅ Done |
-| 7 | Medium | Add metrics to case studies | ⏳ Waiting on CEO |
-| 8 | Medium | Remove unused Geist fonts | ✅ Done |
-| 9 | Medium | Add responsive image markup | ✅ Done |
-| 10 | Medium | Add lazy loading to below-fold images | ✅ Done |
-| 11 | Medium | Add modifiedDate to blog posts | ✅ Already present |
-| 12 | Medium | Create llms-full.txt | ✅ Done |
-| 13 | Low | SiteNavigationElement schema | ✅ Done |
-| 14 | Low | CreativeWork for case studies | ✅ Done |
-| 15 | Low | HowTo schema for services | ✅ Done |
-| 16 | Low | Organization telephone | ⏳ Need phone number |
-| 17 | Low | Custom 404 page | ✅ Done |
-| 18 | Low | H1 keyword optimization | ✅ Kept as-is (brand voice compliant, titles handle SEO) |
+| `circular-economy-platform-msi-concept.webp` | 1302 KB | 85 KB | −94% |
+| `community-housing-organisation-roadmap-concept.webp` | 1430 KB | 116 KB | −92% |
+| `fire-protection-compliance-knowledge-graph.webp` | 1254 KB | 68 KB | −95% |
+
+Total bytes saved per case study page load: ~3.6 MB across the three pages.
+
+No code changes — filenames/extensions/dimensions unchanged. `next build` clean.
+
+**Score impact:** Performance +15, Images +25
+
+---
+
+### 🆕 2. ✅ DONE — Add `og:type` to every page wrapper
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~10 min
+
+**Root cause:** Next.js App Router doesn't merge child `openGraph` blocks with the parent's — when a child page wrapper defines `openGraph: {...}` without `type:`, the layout's `type: "website"` default is dropped. Only `src/app/services/data-readiness/page.tsx` and `src/app/blog/[slug]/page.tsx` had set their own type — every other page wrapper inherited nothing.
+
+**What changed:** Added `type:` as the first property of `openGraph: {...}` on 21 page wrappers:
+- `article` on 4 case studies under `/our-work/`
+- `profile` on `/team/[slug]/`
+- `website` on the remaining 16 (homepage, hubs, about, contact, services children, tools children, etc.)
+
+**Verified in built HTML:** all sampled pages now emit the right `og:type` — `/` → website, `/our-work/media-buy-analytics/` → article, `/team/adam-nameh/` → profile, `/blog/why-ai-pilots-stall/` → article (was already correct).
+
+**Expected Ahrefs delta:** "Open Graph tags incomplete" should drop from 28 → 0 on the next crawl.
+
+**Score impact:** On-Page +6
+
+---
+
+### 🆕 3. ✅ DONE — Fix the noindex-in-sitemap contradiction
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~3 min
+
+Removed the 3 explicit `/terms/`, `/privacy/`, `/cookies/` entries from `src/app/sitemap.ts`. Replaced with an inline comment so the omission is intentional and discoverable.
+
+**Verified in built output:**
+- `out/sitemap.xml` now contains 38 URLs (was 41).
+- No occurrences of "terms", "privacy", or "cookies" in the sitemap.
+- All three pages still build (`out/terms/index.html`, etc.) and still ship with `<meta name="robots" content="noindex, follow">`.
+- Pages remain footer-linked, so they stay reachable for users without polluting Google's crawl signal.
+
+**Expected Ahrefs delta:** "Noindex page in sitemap" (3) and "Page links to broken page (not indexable)" (3) both drop to 0.
+
+**Note:** the audit summary previously called this a "39-URL" sitemap — actual prod count was 41 (I miscounted on the first pass). The new count of 38 is correct.
+
+**Score impact:** Sitemap +6, Technical +2
+
+---
+
+### 🆕 4. ✅ DONE — Trim 5 long meta descriptions to ≤155 chars
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~5 min
+
+| Page | Before | After |
+|---|---|---|
+| `/our-work/circular-economy-platform/` | 194 chars | **139** |
+| `/our-work/media-buy-analytics/` | 173 chars | **142** |
+| `/our-work/community-housing-organisation/` | 171 chars | **145** |
+| `/our-work/fire-protection-compliance/` | 170 chars | **137** |
+| `/tools/` | 161 chars | **136** |
+
+Only the top-level `metadata.description` was edited; `openGraph.description` and `twitter.description` were already short. Value proposition front-loaded in each.
+
+**Verified:** all 29 main pages now ≤160 chars (longest is `/services/executive-enablement/` at 160 — borderline but acceptable, and `/about/` also at 160).
+
+**Expected Ahrefs delta:** "Meta description too long" drops from 5 → 0.
+
+**Score impact:** On-Page +4
+
+---
+
+### 5. ✅ DONE — Remove deprecated HowTo schema from 5 service pages
+**Status:** Shipped 2026-06-08
+**Effort taken:** ~3 min
+
+Deleted the `const howToSchema = { ... };` block and the matching `, howToSchema` array reference on all 5 service pages. Each page lost 13 lines.
+
+**Verified in built HTML:**
+- `"HowTo"` count: 0 on all 5 service pages.
+- Remaining schemas (`Service`, `FAQPage`, `BreadcrumbList`) still emit 1 each per page.
+
+**Why:** Google retired HowTo rich results in Sept 2023 — was emitting dead markup that adds payload weight with zero rendering benefit.
+
+**Score impact:** Schema +5
+
+---
+
+### 6. Source or reframe the homepage statistics
+**Effort:** 1 hour
+**File:** `src/app/page.tsx`
+
+"10X workforce output", "2 weeks fastest deployment", "4 active North American deployments" — AI engines (and quality raters) discount unsourced proprietary stats. Three options:
+- Link each stat to the case study that produced it
+- Reframe as customer-specific outcome ("One client achieved 10X in 30 days — read the case study")
+- Replace with cited industry stat followed by the Alphabyte claim
+
+**Score impact:** GEO +6, Content +3
+
+---
+
+### 7. Stop targeting "AI consulting agency" with the homepage
+**Effort:** 1 hour (decision + meta update) + future page work
+**File:** `src/app/page.tsx`
+
+That SERP is owned by aggregator listicles ("Top 10 AI consulting firms"). A brand homepage cannot rank for it. Two parts:
+- Update homepage title/description/OG to target branded + long-tail terms ("Anthropic partner consulting Toronto", "Claude implementation partner Canada")
+- Plan a future `/why-alphabyte/` comparison page (Alphabyte vs Big 4 vs freelancer) as the SEO target for the head term
+
+**Score impact:** On-Page +4
+
+---
+
+## HIGH — Fix within 2 weeks
+
+### 8. Add HTML comparison tables to 3 comparison blog posts
+**Effort:** 2 hours total
+**Files:**
+- `content/blog/claude-vs-chatgpt-enterprise.mdx`
+- `content/blog/claude-vs-microsoft-copilot.mdx`
+- `content/blog/private-llm-vs-claude-enterprise.mdx`
+
+Insert a 4-6 row `<table>` near the top of each post (after intro, before first H2). Dimensions: integration, governance, deployment speed, cost model, best-for. MDX renders tables as real `<table>` elements natively. This is the format Google AI Overviews and featured snippets pull from on comparison queries.
+
+**Score impact:** SXO/On-Page +6, GEO +4
+
+---
+
+### 9. Fix the sitemap.ts `lastmod` issue
+**Effort:** 2 hours
+**File:** `src/app/sitemap.ts`
+
+Replace static date constants with derived dates:
+- Hubs (`/blog/`, `/team/`, `/our-work/`, `/services/`, `/tools/`): `lastmod = Math.max(...children.map(c => c.lastModified))`
+- Service/tool/team pages: use file mtime or add a per-entry `updatedDate` field that gets updated on real changes
+- Decide what to do with `/our-work/fire-protection-compliance/`: either re-add to sitemap with correct date, or add `robots: { index: false }` to its page metadata
+
+**Score impact:** Sitemap +12
+
+---
+
+### 10. Add `ItemList` schema to 4 hub pages
+**Effort:** 1 hour
+**Files:**
+- `src/app/services/page.tsx`
+- `src/app/tools/page.tsx`
+- `src/app/our-work/page.tsx`
+- `src/app/blog/page.tsx`
+
+Each hub visually lists children but emits no `ItemList` JSON-LD. Cheapest schema add on the site. Template in `FULL-AUDIT-REPORT.md` Schema section.
+
+**Score impact:** Schema +4
+
+---
+
+### 11. Upgrade case study schema from `CreativeWork` to `Article`
+**Effort:** 1 hour
+**Files:**
+- `src/app/our-work/circular-economy-platform/page.tsx`
+- `src/app/our-work/media-buy-analytics/page.tsx`
+- `src/app/our-work/community-housing-organisation/page.tsx`
+- `src/app/our-work/fire-protection-compliance/page.tsx`
+
+Add `datePublished`, `author` (Organization), `publisher`, `image`. Unlocks Google rich-result eligibility (which `CreativeWork` does not have).
+
+**Score impact:** Schema +3
+
+---
+
+### 12. Add `/tools/mcp/` (and other tool pages) an explainer-first section
+**Effort:** 2-3 hours total
+**Files:** `src/app/tools/mcp/page.tsx` (and likely `/tools/claude/`, `/tools/custom-ai-agents/`, `/tools/on-premise-llm/`)
+
+Add a 300-500 word "What is MCP?" section above the fold before any service content. 7 of 10 SERP results for "MCP implementation" are educational — Google is rewarding explainer-first content because the query is still in "what is this?" phase. Apply same pattern to the other 3 tool pages after verifying their target SERPs.
+
+**Score impact:** SXO/On-Page +5
+
+---
+
+### 13. Add `sameAs` URLs to Organization schema
+**Effort:** 30 min
+**File:** `src/app/layout.tsx` (~line 73-75)
+
+Currently only LinkedIn. Add Crunchbase, Canadian business registry, G2 / Clutch profiles if they exist. Each additional `sameAs` reduces LLM entity-confusion risk.
+
+**Score impact:** GEO +3, Schema +1
+
+---
+
+### 14. Link the Microsoft Partner and Anthropic Certified badges
+**Effort:** 30 min
+**Files:** `src/app/about/page.tsx`, `src/app/tools/claude/page.tsx`, homepage trust bar
+
+Unverifiable claims read as fabricated to quality raters. Link each badge to its directory listing.
+
+**Score impact:** Content +3
+
+---
+
+### 15. Fix `/services/discovery/` H1
+**Effort:** 5 min
+**File:** `src/app/services/discovery/page.tsx`
+
+Change "Discovery" to "AI Discovery Workshop: 30-Day Strategy & Roadmap Engagement". Exact-match intent for the target query, communicates scope immediately.
+
+**Score impact:** On-Page +2
+
+---
+
+## MEDIUM — Fix within 1 month
+
+### 16. Author 5 net-new blog posts targeting dark pillars
+**Effort:** 5-10 hours per post (40-50 hours total)
+
+In priority order — each targets a pillar currently with zero supporting content:
+1. "What Is Data Readiness for AI? A Mid-Market Checklist" → `/services/data-readiness/`
+2. "How to Build a Custom AI Agent for Your Business (Without a Developer)" → `/tools/custom-ai-agents/`
+3. "AI for the C-Suite: What Every Mid-Market Executive Needs to Know in 2026" → `/services/executive-enablement/`
+4. "How to Write an AI Acceptable Use Policy for a Mid-Market Company" → Cluster A consolidation
+5. "On-Premise LLM Setup Guide: Hardware, Costs, and When It's Worth It" → `/tools/on-premise-llm/` + `/services/infrastructure/`
+
+**Score impact:** Cluster +25, Content +4
+
+---
+
+### 17. Publish primary research
+**Effort:** 4-6 hours
+
+Publish one piece of original data: e.g., "average workflow count per client at 90 days", "median time-to-first-production across our engagements", "% of pilots that compound vs stall in our portfolio". Single highest-leverage improvement for AI citability and E-E-A-T. Could be a standalone blog post or a recurring "Alphabyte Index" reference page.
+
+**Score impact:** Content +5, GEO +3
+
+---
+
+### 18. Add named-client or titled testimonials to case studies
+**Effort:** 4 hours (mostly client outreach)
+**Files:** all 4 `/our-work/*` pages
+
+Even title-only attribution ("VP Operations, major reverse-logistics supplier") plus a pull quote would meaningfully lift Experience score. Reach out to existing clients for permission.
+
+**Score impact:** Content +4
+
+---
+
+### 19. Open `/blog/why-ai-pilots-stall/` with a stat-backed lede
+**Effort:** 30 min
+**File:** `content/blog/why-ai-pilots-stall.mdx`
+
+The "95% of AI pilots fail" stat appears in 4 of 10 ranking pages. Current hook ("AI that compounds") is brand-consistent but SEO-opaque. Open with the sourced stat, then transition to the brand POV.
+
+**Score impact:** On-Page +1, GEO +1
+
+---
+
+### 20. Add `mentions` schema to comparison blog posts
+**Effort:** 1 hour
+**File:** `src/app/blog/[slug]/page.tsx`
+
+Add a `mentions` field to MDX frontmatter for comparison posts, then assert each named platform as a `SoftwareApplication` mention in `BlogPosting` JSON-LD. Strengthens correlation between the post and the entities being compared.
+
+**Score impact:** Schema +2, GEO +2
+
+---
+
+### 21. Add FAQ schema to service and tool pages
+**Effort:** 3 hours
+**Files:** all 5 service and 4 tool child pages
+
+Question-format H2s already exist ("Right for you if", "Not right for you if"). Wrap as `FAQPage` JSON-LD. Note: FAQ rich results no longer render in Google SERPs for commercial sites, but AI engines actively cite from FAQ schema.
+
+**Score impact:** GEO +3, Schema +1
+
+---
+
+### 22. Differentiate service-page timeline language
+**Effort:** 1 hour
+**Files:** `src/app/services/citizen-development/page.tsx`, `src/app/services/executive-enablement/page.tsx`
+
+Currently use near-identical "Week 2 / Week 3 / Day 30" language. Differentiate copy so two service pages aren't structurally identical.
+
+**Score impact:** Content +1
+
+---
+
+### 23. Reword Adam Nameh's bio to remove "transform"
+**Effort:** 5 min
+**File:** `content/team/adam-nameh.json`
+
+Brand voice violation. Replace "transform complex data environments into actionable business intelligence" with concrete outcome language.
+
+**Score impact:** Content +0.5
+
+---
+
+### 24. Move "SOC 2 Type II — In progress" out of Certifications
+**Effort:** 10 min
+**File:** `src/app/about/page.tsx`
+
+Move to a separate "In Progress" label so the page doesn't appear to assert a certification that doesn't yet exist.
+
+**Score impact:** Content +1
+
+---
+
+### 25. Fix Adam Nameh's null thoughtleadership links
+**Effort:** 30 min
+**File:** `content/team/adam-nameh.json`
+
+4 entries have `null` hrefs — either link them or remove.
+
+**Score impact:** Content +0.5
+
+---
+
+## LOW — Backlog
+
+### 26. Add `/why-alphabyte/` comparison page
+**Effort:** 8-12 hours
+
+Targets "AI consulting agency" and adjacent head terms with the format Google rewards: comparison matrix (Alphabyte vs Big 4 vs freelancer vs offshore). Replaces the misaligned homepage targeting.
+
+**Score impact:** On-Page +3
+
+---
+
+### 27. Add `/feed.xml` RSS feed
+**Effort:** 1 hour
+
+Low value for SEO directly, helpful for feed readers + news aggregators.
+
+---
+
+### 28. Wire up IndexNow
+**Effort:** 1 hour
+
+Ping Bing/Yandex on content updates. Low-priority for B2B but cheap.
+
+---
+
+### 29. Wire up Google Search Console + CrUX field data
+**Effort:** 1-2 hours
+
+Replaces lab CWV estimates with real user metrics. Run `python scripts/google_auth.py` per `seo-google` agent. Future audits will gain real INP/LCP/CLS data and indexation status.
+
+---
+
+### 30. Capture seo-drift baseline
+**Effort:** 10 min
+
+Run `/seo-drift baseline https://alphabyte.ai/` so the next audit can diff against this snapshot. Detects regressions on every deploy.
+
+---
+
+### 31. Remove dead `WebSite.potentialAction` search markup
+**Effort:** 5 min
+**File:** `src/app/layout.tsx` (~line 122-126)
+
+Targets `/blog/?q={search_term_string}` — there is no search. Remove `potentialAction` block.
+
+**Score impact:** Schema +0.5
+
+---
+
+### 32. Add `ProfessionalService.email` and `telephone` to homepage schema
+**Effort:** 10 min
+**File:** `src/app/page.tsx` (~line 137-158)
+
+Recommended fields for ProfessionalService rich-result eligibility.
+
+**Score impact:** Schema +0.5
+
+---
+
+### 33. Append cited stats to llms.txt blog descriptions
+**Effort:** 30 min
+**File:** `public/llms.txt`
+
+LLMs reading llms.txt alone get more credibility signal when each blog description ends with the post's lead sourced stat.
+
+**Score impact:** GEO +1
+
+---
+
+### 34. Whitelist AhrefsBot in Cloudflare bot management
+**Effort:** 5 min
+**Where:** Cloudflare dashboard → Security → Bots
+
+Ahrefs Site Audit reported "Robots.txt not accessible" — local `curl` returns 200, so Cloudflare's Super Bot Fight Mode is blocking AhrefsBot specifically. Doesn't affect Googlebot, but means Ahrefs crawls are incomplete. Whitelist AhrefsBot so future site audits return clean data.
+
+**Score impact:** Tooling improvement (no direct SEO score impact)
+
+---
+
+### 35. Decide on the `/our-work/circular-economy-platform/` slug mismatch
+**Effort:** 30 min if redirect
+
+Slug doesn't match content (executive productivity suite, not circular economy). Either accept as legacy or add a redirect to `/our-work/executive-productivity-suite/`.
+
+---
+
+### 36. Establish YouTube presence (3-5 explainer videos)
+**Effort:** 20-40 hours
+
+YouTube brand mentions have the highest known correlation with AI citation rates. Each video can mirror an existing comparison post. List channel in `sameAs` and llms.txt.
+
+**Score impact:** GEO +5 (over 6 months)
+
+---
+
+## Estimated Score Progression
+
+| Stage | Items | Effort | This audit | Ahrefs Health |
+|---|---|---|---|---|
+| Today | — | — | 65 | 58 |
+| 🆕 Critical hygiene | 0–4 | ~1.5 hours | 78 | ~80 |
+| + Strategic critical | 5–7 | + ~3 hours | 83 | ~85 |
+| + High items | 8–15 | + ~10 hours | 88 | ~90 |
+| + Medium items | 16–25 | + ~50 hours (mostly content) | 92 | ~92 |
+| + Low backlog | 26–36 | + ~70 hours | 95+ | ~95 |
+
+**The 5 🆕 critical items (0–4) take ~1.5 hours and resolve every Ahrefs Health Score deduction except the AhrefsBot-blocked robots.txt** (which doesn't affect Googlebot, but is fixable as item 34). Run Ahrefs Site Audit again after shipping items 0–4 — expected Health Score jump from 58 → 85+.
+
+Beyond that, gains come from content (new blog posts, primary research, named client testimonials, video) rather than code changes.
+
+---
+
+## What the first version of this audit got wrong
+
+The initial 75/100 score was generated by 7 strategic sub-agents (SXO, content E-E-A-T, schema, cluster architecture, GEO, sitemap, plus an inline technical pass) that spot-checked individual pages rather than crawling the full site. Ahrefs Site Audit crawled all 110 URLs and surfaced hygiene issues that strategic analysis was structurally blind to:
+
+1. **`og:type` missing on 28 pages.** I only checked the homepage's OG block. og:title/description/image/url were all present, so I called it "complete." Ahrefs caught the missing `og:type` because it checks the full Open Graph spec across every page.
+2. **Cloudflare email-protection 404.** I never crawled the footer links, only the canonical/og/h1 elements. The 39-page link-health issue was invisible to a strategic audit.
+3. **Oversized images.** I noted homepage images had alt text and stopped there. The case study illustrations were never fetched.
+4. **Meta descriptions over 160 chars.** I checked for presence, not length, on the few pages I sampled.
+5. **Noindex + sitemap contradiction.** I knew the legal pages were in the sitemap (sitemap audit caught it) and I knew they had noindex (technical pass spot-checked terms/), but I didn't connect them as a contradiction signal until Ahrefs reported "Noindex page in sitemap" as a distinct issue.
+
+**Lesson:** strategic multi-agent audits and full-site crawlers find different things. Always pair them.

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/tools/claude/",
   },
   openGraph: {
+    type: "website",
     title: "Claude - The Intelligence Layer for AI Engagements",
     description:
       "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits.",

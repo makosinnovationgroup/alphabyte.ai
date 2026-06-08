@@ -7,11 +7,12 @@ import {
 export const metadata: Metadata = {
   title: "DTC E-Commerce Brand - Media Buy Analytics Agent",
   description:
-    "How Alphabyte built an AI-powered media buy analytics agent for a DTC e-commerce brand. Power BI MCP server connecting Claude to Microsoft Fabric for self-service analytics.",
+    "AI media buy analytics agent for a DTC e-commerce brand. Power BI MCP server connecting Claude to Microsoft Fabric for self-service analytics.",
   alternates: {
     canonical: "/our-work/media-buy-analytics/",
   },
   openGraph: {
+    type: "article",
     title: "DTC E-Commerce Brand - Media Buy Analytics Agent",
     description:
       "AI analytics agent that gives media buyers plain-English access to live Power BI data with auditable, DAX-grounded answers.",

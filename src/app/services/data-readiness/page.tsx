@@ -105,26 +105,13 @@ const faqSchema = {
   })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "How Alphabyte runs a Data Readiness assessment in 30 days",
-  description: "Data quality audit, governance review, AI readiness scorecard, and remediation pathway in four to eight weeks.",
-  step: [
-    { "@type": "HowToStep", name: "Week 1 — Data environment audit", text: "Assess operational data across every source feeding your AI deployment. Deduplication, completeness, accuracy, consistency. Map gaps and quantify their cost." },
-    { "@type": "HowToStep", name: "Week 2 — Governance and security review", text: "Retention policies, classification, DLP tagging, compliance alignment against SOC 2, PIPEDA, and FIPPA. Infrastructure reviewed for AI deployment requirements." },
-    { "@type": "HowToStep", name: "Weeks 3–4 — AI readiness scorecard", text: "Scorecard delivered across five dimensions. Where gaps exist, a specific prioritized remediation plan with options for closing them." },
-    { "@type": "HowToStep", name: "Day 30 — What you have", text: "A formal AI readiness scorecard for board or compliance conversations. A clear remediation pathway. No ambiguity about what needs to happen before any build can begin." },
-  ],
-};
-
 export default function DataReadinessPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema, howToSchema]),
+          __html: JSON.stringify([serviceSchema, breadcrumbSchema, faqSchema]),
         }}
       />
 

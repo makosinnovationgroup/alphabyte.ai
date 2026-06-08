@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
+import { EmailAddress } from "@/components/email-address";
 
 export const metadata: Metadata = {
   title: "Contact Alphabyte AI - Book a Free Discovery Call",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "/contact/",
   },
   openGraph: {
+    type: "website",
     title: "Contact Alphabyte AI - Book a Free Discovery Call",
     description:
       "Book a 45-minute discovery conversation with Alphabyte. No cost, no obligation.",
@@ -133,12 +135,13 @@ export default function ContactPage() {
                     </span>
                     <div>
                       <p className="text-body font-bold text-white">Email</p>
-                      <a
-                        href="mailto:contact@alphabyte.ai"
+                      <EmailAddress
+                        user="contact"
+                        domain="alphabyte.ai"
                         className="text-body-sm text-white/60 hover:text-alphabyte-blue"
-                      >
-                        contact@alphabyte.ai
-                      </a>
+                        fallbackHref="#contact-form"
+                        fallbackLabel="Use the form below"
+                      />
                     </div>
                   </div>
 

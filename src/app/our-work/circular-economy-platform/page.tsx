@@ -7,11 +7,12 @@ import {
 export const metadata: Metadata = {
   title: "Major Supplier - Executive Productivity Suite",
   description:
-    "How Alphabyte built a custom Claude plugin that gives leadership a single command surface across GSuite, Slack, Power BI, Fireflies, and more. Priority alerts and briefs delivered automatically.",
+    "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Briefs and alerts delivered.",
   alternates: {
     canonical: "/our-work/circular-economy-platform/",
   },
   openGraph: {
+    type: "article",
     title: "Major Supplier - Executive Productivity Suite",
     description:
       "Custom Claude plugin giving leadership a single command surface across every system they use. Priority alerts and briefs delivered automatically.",

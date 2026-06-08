@@ -99,6 +99,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    type: "website",
     title: "AI Consulting for Mid-Market Organizations",
     description:
       "Alphabyte AI designs and delivers working AI for mid-market organizations.",

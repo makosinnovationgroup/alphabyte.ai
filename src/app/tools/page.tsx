@@ -5,11 +5,12 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
   description:
-    "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty. Built to ship, not demo.",
+    "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",
   alternates: {
     canonical: "/tools/",
   },
   openGraph: {
+    type: "website",
     title: "AI Tools - Claude, MCP, Agents, On-Premise LLM",
     description:
       "A deliberate stack. Claude as the intelligence layer. MCP for connectivity. Custom agents for autonomy. On-premise LLMs for sovereignty.",

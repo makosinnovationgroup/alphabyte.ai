@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/tools/custom-ai-agents/",
   },
   openGraph: {
+    type: "website",
     title: "Custom AI Agents - Task Automation",
     description:
       "Autonomous AI agents that handle workflows end-to-end. Command Centre dashboard. Human-in-the-loop approval gates.",
