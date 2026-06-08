@@ -28,16 +28,16 @@ Alphabyte is the AI and data consulting practice of Alphabyte Solutions Inc. Cla
 
 ## Blog
 
-- [Why Most Mid-Market AI Pilots Stall](https://alphabyte.ai/blog/why-ai-pilots-stall/): Mid-market AI pilots stall because the deployment model is wrong, not the technology. A bottom-up programme that compounds is the alternative.
-- [Shadow AI Governance Guide](https://alphabyte.ai/blog/shadow-ai-governance/): Shadow AI is already in your company. Here is how to govern it without killing productivity.
-- [Private LLM vs Claude Enterprise](https://alphabyte.ai/blog/private-llm-vs-claude-enterprise/): When you need on-premise AI and when Claude Enterprise is the better path.
-- [Claude vs Microsoft Copilot](https://alphabyte.ai/blog/claude-vs-microsoft-copilot/): An honest comparison for mid-market knowledge work.
-- [Claude vs ChatGPT Enterprise](https://alphabyte.ai/blog/claude-vs-chatgpt-enterprise/): Feature-by-feature comparison for enterprise buyers.
-- [Claude for Finance Teams](https://alphabyte.ai/blog/claude-for-finance-teams/): Eight workflows that replace manual reporting.
-- [AI Governance Framework for Mid-Market](https://alphabyte.ai/blog/ai-governance-framework-mid-market/): A practical governance framework for mid-market companies.
-- [AI Readiness Assessment](https://alphabyte.ai/blog/ai-readiness-assessment/): A practical 2-week diagnostic for operations leaders.
-- [Citizen Developer Enablement Playbook](https://alphabyte.ai/blog/citizen-developer-enablement-playbook/): The 2026 playbook for citizen developer programmes.
-- [How to Build a Custom MCP Server](https://alphabyte.ai/blog/how-to-build-a-custom-mcp-server/): Technical guide for mid-market IT teams.
+- [Why Most Mid-Market AI Pilots Stall](https://alphabyte.ai/blog/why-ai-pilots-stall/): Mid-market AI pilots stall because the deployment model is wrong, not the technology. A bottom-up programme that compounds is the alternative. McKinsey 2024: 72% of organisations report AI adoption, yet most pilots never ship.
+- [Shadow AI Governance Guide](https://alphabyte.ai/blog/shadow-ai-governance/): Shadow AI is already in your company. Here is how to govern it without killing productivity. McKinsey 2024 puts AI adoption at 72% across organisations, up from 55% one year prior.
+- [Private LLM vs Claude Enterprise](https://alphabyte.ai/blog/private-llm-vs-claude-enterprise/): When you need on-premise AI and when Claude Enterprise is the better path. Most mid-market companies do not need on-prem; Anthropic maintains SOC 2 Type II compliance with independent audits.
+- [Claude vs Microsoft Copilot](https://alphabyte.ai/blog/claude-vs-microsoft-copilot/): An honest comparison for mid-market knowledge work. Microsoft Work Trend Index: 75% of knowledge workers now use AI at work.
+- [Claude vs ChatGPT Enterprise](https://alphabyte.ai/blog/claude-vs-chatgpt-enterprise/): Feature-by-feature comparison for enterprise buyers. McKinsey 2024: 72% of organisations now report AI adoption, up from 55% the year prior.
+- [Claude for Finance Teams](https://alphabyte.ai/blog/claude-for-finance-teams/): Eight workflows that replace manual reporting. McKinsey 2024 documents accelerating AI adoption across enterprise finance functions.
+- [AI Governance Framework for Mid-Market](https://alphabyte.ai/blog/ai-governance-framework-mid-market/): A practical governance framework for mid-market companies. McKinsey 2024: 72% of organisations use AI in at least one business function — most without a governance framework.
+- [AI Readiness Assessment](https://alphabyte.ai/blog/ai-readiness-assessment/): A practical 2-week diagnostic for operations leaders. McKinsey and Deloitte both find readiness gaps remain the dominant blocker to production AI deployment.
+- [Citizen Developer Enablement Playbook](https://alphabyte.ai/blog/citizen-developer-enablement-playbook/): The 2026 playbook for citizen developer programmes. In practice, low-code tools cover only about 20% of the workflows teams want to automate.
+- [How to Build a Custom MCP Server](https://alphabyte.ai/blog/how-to-build-a-custom-mcp-server/): Technical guide for mid-market IT teams. Anthropic released the Model Context Protocol in 2024 as the open standard for connecting AI to enterprise systems.
 
 ## Team
 

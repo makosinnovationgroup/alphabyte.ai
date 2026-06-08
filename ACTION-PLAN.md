@@ -410,11 +410,10 @@ Added `email: "contact@alphabyte.ai"` and `telephone: "+1-647-204-4581"` to `pro
 
 ---
 
-### 33. Append cited stats to llms.txt blog descriptions
-**Effort:** 30 min
-**File:** `public/llms.txt`
+### 33. ✅ DONE — Cited stats appended to llms.txt blog descriptions
+**Status:** Shipped 2026-06-08
 
-LLMs reading llms.txt alone get more credibility signal when each blog description ends with the post's lead sourced stat.
+Extracted the lead sourced stat from each of the 10 blog posts and appended one short attributed line to the corresponding `## Blog` entry in `public/llms.txt`. Citations span McKinsey 2024, Deloitte's State of AI, Microsoft Work Trend Index, and Anthropic MCP documentation — pulled verbatim from sources already cited in the posts. Verified in built `out/llms.txt`.
 
 **Score impact:** GEO +1
 
