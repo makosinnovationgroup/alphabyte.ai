@@ -3,7 +3,7 @@ import { Wrench, Bot, BarChart3, Building2, Brain } from "lucide-react";
 import { ServicePage } from "@/components/service-page";
 
 export const metadata: Metadata = {
-  title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
+  title: "Infrastructure: Custom MCP, AI Agents, On-Premise LLMs",
   description:
     "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models. AI as operational infrastructure, not a demo.",
   alternates: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
+    title: "Infrastructure: Custom MCP, AI Agents, On-Premise LLMs",
     description:
       "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models.",
     url: "/services/infrastructure/",
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
         url: "/og/services-infrastructure.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte \u2014 Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
+        alt: "Alphabyte Infrastructure: Custom MCP, AI Agents, On-Premise LLMs",
       },
     ],
   },
   twitter: {
-    title: "Infrastructure \u2014 Custom MCP, AI Agents, On-Premise LLMs",
+    title: "Infrastructure: Custom MCP, AI Agents, On-Premise LLMs",
     description:
       "Custom MCP servers, autonomous AI agents, on-premise LLM deployments, fine-tuned models.",
     images: ["/og/services-infrastructure.png"],
@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 const faq = [
   {
     question: "What is a custom MCP server?",
-    answer: "A lightweight application that gives Claude structured access to your business systems \u2014 CRM, ERP, databases, file storage. Each server inherits your existing permissions, logs every interaction, and connects through OAuth 2.0 with role-based access controls.",
+    answer: "A lightweight application that gives Claude structured access to your business systems: CRM, ERP, databases, file storage. Each server inherits your existing permissions, logs every interaction, and connects through OAuth 2.0 with role-based access controls.",
   },
   {
     question: "Do we need to complete enablement before infrastructure work?",
@@ -160,7 +160,7 @@ export default function InfrastructurePage() {
             },
           ],
           dayThirty: {
-            label: "Day 30 \u2014 what you have",
+            label: "Day 30: what you have",
             body: "Your AI environment connected to live operational systems through a production-grade MCP server. Full audit logging, OAuth 2.0 security, governed access. Your team working against real data, not exports.",
           },
         }}

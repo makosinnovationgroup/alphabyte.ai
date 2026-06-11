@@ -27,7 +27,7 @@ const homeTracks: Track[] = [
     label: "Executive Enablement",
     question: "How do our people use AI?",
     heading: "Executive Enablement",
-    body: "A custom Claude environment built from your actual operational data \u2014 knowledgebases, skills, prompt toolkit. Most executives see measurable time savings in the first sprint. The internal proof point that makes the broader programme easy to resource.",
+    body: "A custom Claude environment built from your actual operational data: knowledgebases, skills, prompt toolkit. Most executives see measurable time savings in the first sprint. The internal proof point that makes the broader programme easy to resource.",
     rightForYou:
       "Leadership wants a concrete AI win before a board meeting or a broader rollout.",
     cta: { label: "Get started \u2192", href: "/services/executive-enablement/" },
@@ -78,7 +78,7 @@ const homeTracks: Track[] = [
     heading: "Infrastructure",
     body: "Where Claude stops being a productivity tool and starts being an operational capability connected to your systems. Custom MCP servers, autonomous agents, on-premise LLMs, fine-tuned models.",
     rightForYou:
-      "Your team is enabled and data is validated \u2014 ready to connect AI to live operational systems.",
+      "Your team is enabled and data is validated, and ready to connect AI to live operational systems.",
     cta: { label: "Get started \u2192", href: "/services/infrastructure/" },
     pills: [
       "Custom MCP servers",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte \u2014 AI Consulting for Mid-Market Organizations",
+        alt: "Alphabyte: AI Consulting for Mid-Market Organizations",
       },
     ],
   },

@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 const faq = [
   {
     question: "What is citizen developer enablement with Claude?",
-    answer: "A governed path for non-engineers to build working tools using natural language against live operational data. Claude provides the reasoning layer, MCP servers connect to your systems, and an SDLC plugin enforces governance. It is not low-code drag-and-drop \u2014 there is no ceiling on what your team can build.",
+    answer: "A governed path for non-engineers to build working tools using natural language against live operational data. Claude provides the reasoning layer, MCP servers connect to your systems, and an SDLC plugin enforces governance. It is not low-code drag-and-drop. There is no ceiling on what your team can build.",
   },
   {
     question: "How long does it take to get the first tool into production?",
@@ -89,7 +89,7 @@ const faq = [
   },
   {
     question: "Do employees need technical skills to use this?",
-    answer: "No. Employees describe their work in plain English. Claude builds the tool. The governed environment catches mistakes. The people who know the work build the tools \u2014 they do not need to write code.",
+    answer: "No. Employees describe their work in plain English. Claude builds the tool. The governed environment catches mistakes. The people who know the work build the tools. They do not need to write code.",
   },
   {
     question: "What happens after the engagement ends?",
@@ -165,7 +165,7 @@ export default function CitizenDevelopmentPage() {
             },
           ],
           dayThirty: {
-            label: "Day 30 \u2014 what you have",
+            label: "Day 30: what you have",
             body: "A governed AI environment deployed across your team. Every authorized employee working from the same standardized starting point. Live data connectivity through MCP. A graduation path for moving proven applications into production. Your team actually using it.",
           },
         }}

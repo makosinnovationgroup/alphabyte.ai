@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 const faq = [
   {
     question: "How is this different from a typical AI strategy engagement?",
-    answer: "Four weeks, not six months. We come in with a point of view, not a blank whiteboard. You leave with three buildable use cases with preliminary architecture and a Findings and Recommendations document you can execute immediately \u2014 not a slide deck.",
+    answer: "Four weeks, not six months. We come in with a point of view, not a blank whiteboard. You leave with three buildable use cases with preliminary architecture and a Findings and Recommendations document you can execute immediately, not a slide deck.",
   },
   {
     question: "What does the deliverable look like?",
@@ -89,7 +89,7 @@ const faq = [
   },
   {
     question: "What happens if our data is not ready?",
-    answer: "The gap analysis in week three identifies exactly what needs fixing \u2014 infrastructure, data quality, governance, and security posture. Data Readiness is the natural next step if data quality is a blocker.",
+    answer: "The gap analysis in week three identifies exactly what needs fixing: infrastructure, data quality, governance, and security posture. Data Readiness is the natural next step if data quality is a blocker.",
   },
 ];
 
@@ -161,7 +161,7 @@ export default function DiscoveryPage() {
             },
           ],
           dayThirty: {
-            label: "Day 30 \u2014 what you have",
+            label: "Day 30: what you have",
             body: "A Findings and Recommendations document. Three use cases with architectures. A prioritized gap list. A staging pathway. Everything you need to go into a budget conversation.",
           },
         }}

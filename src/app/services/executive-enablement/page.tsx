@@ -77,11 +77,11 @@ const breadcrumbSchema = {
 const faq = [
   {
     question: "What does the executive team actually get?",
-    answer: "A custom Claude environment populated with your operational data \u2014 knowledgebases built from your policies, SOPs, board materials, and product data. Custom skills that automate your leadership team\u2019s specific workflows. A prompt toolkit tested against your actual data. Each functional leader gets a differentiated experience.",
+    answer: "A custom Claude environment populated with your operational data: knowledgebases built from your policies, SOPs, board materials, and product data. Custom skills that automate your leadership team\u2019s specific workflows. A prompt toolkit tested against your actual data. Each functional leader gets a differentiated experience.",
   },
   {
     question: "How much time does the executive team need to invest?",
-    answer: "One-on-one discovery sessions in week one, typically thirty to sixty minutes each. Then a hands-on knowledge transfer session for the full cohort. Active use is required for the environment to produce value \u2014 this is not a demo.",
+    answer: "One-on-one discovery sessions in week one, typically thirty to sixty minutes each. Then a hands-on knowledge transfer session for the full cohort. Active use is required for the environment to produce value. This is not a demo.",
   },
   {
     question: "How quickly does this produce measurable results?",
@@ -161,7 +161,7 @@ export default function ExecutiveEnablementPage() {
             },
           ],
           dayThirty: {
-            label: "Day 30 \u2014 what you have",
+            label: "Day 30: what you have",
             body: "A live AI environment used by your entire leadership team, built from your actual operational data, with measurable productivity gains visible in the first sprint. The internal proof point that makes the broader programme significantly easier to resource.",
           },
         }}

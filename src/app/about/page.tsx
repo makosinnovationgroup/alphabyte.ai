@@ -40,7 +40,7 @@ const pillars = [
   },
   {
     heading: "Our Capability",
-    body: "Ten years of mid-market and public sector delivery across data warehousing, analytics, business intelligence, and custom application development. The AI practice runs on top of that delivery experience. Claude is the primary AI platform we deploy, and our team\u2019s depth in Claude \u2014 backed by 10+ certified practitioners \u2014 means faster configuration and more consistent outputs than a generalist AI firm can offer.",
+    body: "Ten years of mid-market and public sector delivery across data warehousing, analytics, business intelligence, and custom application development. The AI practice runs on top of that delivery experience. Claude is the primary AI platform we deploy, and our team\u2019s depth in Claude (backed by 10+ certified practitioners) means faster configuration and more consistent outputs than a generalist AI firm can offer.",
   },
   {
     heading: "No Junior Bench",

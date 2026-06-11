@@ -161,7 +161,7 @@ export default function DataReadinessPage() {
             },
           ],
           dayThirty: {
-            label: "Day 30 \u2014 what you have",
+            label: "Day 30: what you have",
             body: "A formal AI readiness scorecard you can take into a board or compliance conversation. A clear remediation pathway. No ambiguity about what needs to happen before any build can begin.",
           },
         }}
