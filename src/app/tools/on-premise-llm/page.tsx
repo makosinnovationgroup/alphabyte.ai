@@ -187,23 +187,23 @@ export default function OnPremiseLlmPage() {
         faq={[
           {
             question: "Which open-source models do you deploy?",
-            answer: "Llama and Mistral are our defaults. The specific model and parameter count depend on your use cases, compute budget, and accuracy requirements. We benchmark two to three candidates against your actual data before recommending a model — not based on benchmarks from someone else's dataset.",
+            answer: "Llama and Mistral are our defaults. The specific model and parameter count depend on your use cases, compute budget, and accuracy requirements. We benchmark two to three candidates against your actual data before recommending a model, not based on benchmarks from someone else's dataset.",
           },
           {
             question: "What hardware do we need?",
-            answer: "It depends on the model size and expected throughput. A 7B-parameter model for internal use cases can run on a single high-memory GPU server. Larger models or higher concurrency requirements need multi-GPU infrastructure. We scope hardware requirements during the engagement and provision accordingly — you are not buying GPUs before you know what you need.",
+            answer: "It depends on the model size and expected throughput. A 7B-parameter model for internal use cases can run on a single high-memory GPU server. Larger models or higher concurrency requirements need multi-GPU infrastructure. We scope hardware requirements during the engagement and provision accordingly, you are not buying GPUs before you know what you need.",
           },
           {
             question: "Can an on-premise LLM connect to MCP like Claude does?",
-            answer: "Yes. The MCP servers we build expose a standard interface. Whether the model calling them is Claude in the cloud or Llama on your hardware, the integration pattern is the same. This means you can run sensitive workflows on-premise and less restricted workflows through Claude — same MCP infrastructure for both.",
+            answer: "Yes. The MCP servers we build expose a standard interface. Whether the model calling them is Claude in the cloud or Llama on your hardware, the integration pattern is the same. This means you can run sensitive workflows on-premise and less restricted workflows through Claude, same MCP infrastructure for both.",
           },
           {
             question: "How does fine-tuning work?",
-            answer: "Fine-tuning adapts a base model to your specific domain — your terminology, your document formats, your decision patterns. We prepare training datasets from your existing data, run the fine-tuning pipeline on your infrastructure, and validate the results against accuracy benchmarks. The fine-tuned model stays on your hardware. We never remove training data from your environment.",
+            answer: "Fine-tuning adapts a base model to your specific domain, your terminology, your document formats, your decision patterns. We prepare training datasets from your existing data, run the fine-tuning pipeline on your infrastructure, and validate the results against accuracy benchmarks. The fine-tuned model stays on your hardware. We never remove training data from your environment.",
           },
           {
             question: "Is on-premise always the right choice for regulated industries?",
-            answer: "Not always. Claude Enterprise provides strong data handling commitments — conversations are not used for training, and Anthropic offers contractual data protection. For many regulated clients, Claude Enterprise with MCP is sufficient. On-premise is the right choice when regulations explicitly prohibit data transmission to any third party, or when your security posture requires air-gapped infrastructure.",
+            answer: "Not always. Claude Enterprise provides strong data handling commitments, conversations are not used for training, and Anthropic offers contractual data protection. For many regulated clients, Claude Enterprise with MCP is sufficient. On-premise is the right choice when regulations explicitly prohibit data transmission to any third party, or when your security posture requires air-gapped infrastructure.",
           },
         ]}
         closingCta={{

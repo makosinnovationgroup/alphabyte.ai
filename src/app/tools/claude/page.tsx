@@ -5,7 +5,7 @@ import { ToolPage } from "@/components/tool-page";
 export const metadata: Metadata = {
   title: "Claude - The Intelligence Layer for AI Engagements",
   description:
-    "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits — purpose-built for your team.",
+    "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits, purpose-built for your team.",
   alternates: {
     canonical: "/tools/claude/",
   },
@@ -41,7 +41,7 @@ const serviceSchema = {
   },
   serviceType: "AI Implementation",
   description:
-    "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits — purpose-built for your team.",
+    "Claude is the intelligence layer across every Alphabyte engagement. Custom knowledgebases, skills libraries, prompt toolkits, purpose-built for your team.",
   areaServed: {
     "@type": "Place",
     name: "North America",
@@ -91,7 +91,7 @@ const faqSchema = {
       name: "Can Claude access our internal data without sending it to Anthropic?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers — Claude queries the data in real time without it leaving your environment.",
+        text: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers, Claude queries the data in real time without it leaving your environment.",
       },
     },
     {
@@ -115,7 +115,7 @@ const faqSchema = {
       name: "What happens after the engagement ends?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You own everything we build — the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently.",
+        text: "You own everything we build, the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently.",
       },
     },
   ],
@@ -200,7 +200,7 @@ export default function ClaudePage() {
           "You want a chatbot on your website. Claude is an operational tool, not a customer-facing widget.",
           "You need a pure Microsoft Copilot deployment with no Claude component. That is a different engagement.",
         ]}
-        inActiveUseSectionTitle="In active use today — what we built, what it produced"
+        inActiveUseSectionTitle="In active use today, what we built, what it produced"
         inActiveUse={[
           {
             eyebrow: "Construction Firm · North America",
@@ -228,7 +228,7 @@ export default function ClaudePage() {
           },
           {
             question: "Can Claude access our internal data without sending it to Anthropic?",
-            answer: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers — Claude queries the data in real time without it leaving your environment. For the most restrictive requirements, we deploy on-premise LLMs that run entirely inside your infrastructure.",
+            answer: "Yes. Claude Teams and Enterprise conversations are not used to train models. For clients who need data to remain entirely on-premise, we connect Claude to your systems through custom MCP servers, Claude queries the data in real time without it leaving your environment. For the most restrictive requirements, we deploy on-premise LLMs that run entirely inside your infrastructure.",
           },
           {
             question: "How long does it take to get a Claude environment configured?",
@@ -236,11 +236,11 @@ export default function ClaudePage() {
           },
           {
             question: "Why does Alphabyte only work with Claude?",
-            answer: "Focus produces depth. Every engineer on our team configures Claude full-time — not switching between GPT, Gemini, and Claude depending on the engagement. That means faster delivery, fewer configuration errors, and architectural patterns that compound across clients. Firms that evaluate ten models on every engagement spread expertise thin.",
+            answer: "Focus produces depth. Every engineer on our team configures Claude full-time, not switching between GPT, Gemini, and Claude depending on the engagement. That means faster delivery, fewer configuration errors, and architectural patterns that compound across clients. Firms that evaluate ten models on every engagement spread expertise thin.",
           },
           {
             question: "What happens after the engagement ends?",
-            answer: "You own everything we build — the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently. Most clients bring us back for quarterly reviews or new capability sprints, but there is no lock-in.",
+            answer: "You own everything we build, the knowledgebases, skills, plugins, and MCP servers. We provide documentation and a knowledge transfer session so your team can maintain and extend the environment independently. Most clients bring us back for quarterly reviews or new capability sprints, but there is no lock-in.",
           },
         ]}
         closingCta={{

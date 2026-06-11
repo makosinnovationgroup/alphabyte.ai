@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Major Supplier — AI-Powered Executive Productivity Suite",
+  headline: "Major Supplier: AI-Powered Executive Productivity Suite",
   description:
     "How Alphabyte built a custom Claude plugin for a major supplier in electronic reverse logistics, giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies.",
   url: "https://alphabyte.ai/our-work/circular-economy-platform/",
@@ -89,7 +89,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Major Supplier — Executive Productivity",
+      name: "Major Supplier: Executive Productivity",
       item: "https://alphabyte.ai/our-work/circular-economy-platform/",
     },
   ],
@@ -152,7 +152,7 @@ export default function CircularEconomyPlatformPage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "Major Supplier — Executive Productivity" },
+          { label: "Major Supplier: Executive Productivity" },
         ]}
         eyebrow="CASE STUDY · REVERSE LOGISTICS · ELECTRONICS · GLOBAL"
         h1="AI-Powered Executive Productivity Suite"

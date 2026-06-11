@@ -58,10 +58,10 @@ const itemListSchema = {
   url: "https://alphabyte.ai/our-work/",
   numberOfItems: 4,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "DTC E-Commerce Brand — Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
-    { "@type": "ListItem", position: 2, name: "Major Supplier — Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
+    { "@type": "ListItem", position: 1, name: "DTC E-Commerce Brand: Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
+    { "@type": "ListItem", position: 2, name: "Major Supplier: Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
     { "@type": "ListItem", position: 3, name: "Construction Firm: Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/construction-compliance-agent/" },
-    { "@type": "ListItem", position: 4, name: "Community Housing Organisation — AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
+    { "@type": "ListItem", position: 4, name: "Community Housing Organisation: AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
   ],
 };
 

@@ -74,8 +74,8 @@ export default function CookiesPage() {
             Performance Cookies
           </h2>
           <p>
-            These cookies collect information about how you use our websites —
-            for instance, which pages you go to most. This data may be used to
+            These cookies collect information about how you use our websites,
+            for instance which pages you go to most. This data may be used to
             help optimize our websites and make them easier for you to navigate.
             These cookies are also used to let affiliates know if you came to one
             of our websites from an affiliate and if your visit resulted in the

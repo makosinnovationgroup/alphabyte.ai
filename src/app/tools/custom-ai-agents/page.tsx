@@ -208,7 +208,7 @@ export default function CustomAiAgentsPage() {
         faq={[
           {
             question: "What is the difference between a Claude environment and a custom AI agent?",
-            answer: "A Claude environment is a configured workspace where people interact with Claude directly — knowledgebases, skills, and prompt libraries. A custom AI agent operates autonomously against a defined workflow, connecting to systems through MCP, executing tasks, and routing to humans only at the decision points you specify. People use Claude environments. Agents run on their own.",
+            answer: "A Claude environment is a configured workspace where people interact with Claude directly, knowledgebases, skills, and prompt libraries. A custom AI agent operates autonomously against a defined workflow, connecting to systems through MCP, executing tasks, and routing to humans only at the decision points you specify. People use Claude environments. Agents run on their own.",
           },
           {
             question: "What does the Agent Command Centre show?",

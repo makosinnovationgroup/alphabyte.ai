@@ -126,8 +126,8 @@ export default function AboutPage() {
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Alphabyte holds Microsoft Solutions Partner status with three
-              Azure designations &mdash; Infrastructure, Data &amp; AI, and
-              Digital &amp; App Innovation &mdash; and we have 10+
+              Azure designations (Infrastructure, Data &amp; AI, and Digital
+              &amp; App Innovation), and we have 10+
               Anthropic-certified practitioners on the path to Claude
               partnership.
             </p>
@@ -281,7 +281,7 @@ export default function AboutPage() {
           </div>
           <p className="text-body-sm text-muted-foreground">
             One of the few Claude Certified teams explicitly focused on
-            mid-market &mdash; not enterprise, not startups.
+            mid-market, not enterprise, not startups.
           </p>
         </div>
       </section>

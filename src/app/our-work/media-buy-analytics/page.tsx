@@ -89,7 +89,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "DTC E-Commerce Brand — Media Buy Analytics Agent",
+      name: "DTC E-Commerce Brand: Media Buy Analytics Agent",
       item: "https://alphabyte.ai/our-work/media-buy-analytics/",
     },
   ],
@@ -161,7 +161,7 @@ export default function MediaBuyAnalyticsPage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "DTC E-Commerce Brand — Media Buy Analytics Agent" },
+          { label: "DTC E-Commerce Brand: Media Buy Analytics Agent" },
         ]}
         eyebrow="CASE STUDY · DTC E-COMMERCE · PAID MEDIA · NORTH AMERICA"
         h1="AI-Powered Media Buy Analytics Agent"

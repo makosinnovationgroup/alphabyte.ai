@@ -210,7 +210,7 @@ export default function McpPage() {
           },
           {
             question: "How is MCP different from giving Claude a file upload?",
-            answer: "File uploads are static snapshots — stale the moment the source changes. MCP gives Claude live, governed, real-time access to the current state of your systems. The difference is between someone reading last month's report and someone querying the database directly. MCP also provides audit logging, role-based access, and tool-level permissions that file uploads do not.",
+            answer: "File uploads are static snapshots, stale the moment the source changes. MCP gives Claude live, governed, real-time access to the current state of your systems. The difference is between someone reading last month's report and someone querying the database directly. MCP also provides audit logging, role-based access, and tool-level permissions that file uploads do not.",
           },
           {
             question: "How long does it take to build a custom MCP server?",

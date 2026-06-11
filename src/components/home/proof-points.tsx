@@ -40,7 +40,7 @@ export function ProofPoints() {
       <div className="mx-auto max-w-[1600px]">
         <div className="flex items-center gap-3 mb-10">
           <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue whitespace-nowrap">
-            Proof — What We Built. What It Produced
+            Proof, What We Built. What It Produced
           </p>
           <span className="flex-1 border-t border-border-default" />
         </div>
