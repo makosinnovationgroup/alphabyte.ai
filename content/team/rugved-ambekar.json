@@ -29,7 +29,7 @@
   },
   "careerTimeline": [
     {
-      "period": "2024 — Present",
+      "period": "2024 – Present",
       "role": "Head of AI Engineering",
       "organization": "Alphabyte Solutions Inc."
     },
@@ -39,27 +39,27 @@
       "organization": "Coretext Sidekick"
     },
     {
-      "period": "2024 — Present",
+      "period": "2024 – Present",
       "role": "Fractional CTO",
       "organization": "Fraq"
     },
     {
-      "period": "2022 — 2024",
+      "period": "2022 – 2024",
       "role": "Senior Android Developer",
       "organization": "ThoughtWorks"
     },
     {
-      "period": "2019 — 2022",
+      "period": "2019 – 2022",
       "role": "Fractional CTO",
       "organization": "HOMI SmartHome"
     },
     {
-      "period": "2013 — 2018",
+      "period": "2013 – 2018",
       "role": "Contract Android Engineer",
       "organization": "Samsung · Bose · RBC · The RealReal"
     },
     {
-      "period": "2009 — 2013",
+      "period": "2009 – 2013",
       "role": "Developer",
       "organization": "IBM · CaseWare · Agilent Technologies"
     }
@@ -89,7 +89,7 @@
   "articles": [],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   },
   "pills": ["AI Agents", "MCP Servers", "Fractional CTO", "Claude Engineering", "Kotlin Multiplatform"]
 }

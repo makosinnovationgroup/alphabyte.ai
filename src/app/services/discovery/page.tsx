@@ -124,7 +124,7 @@ export default function DiscoveryPage() {
         subhead="What should our AI strategy be?"
         body={[
           "You have probably already been through this. The workshops. The use case prioritization exercise. The roadmap document that took eight weeks to produce and was obsolete before anyone acted on it.",
-          "We are not that. Discovery at Alphabyte is four weeks, not six months. We come in with a point of view, not a blank whiteboard. We find out what your team is already building, identify the three workflows worth automating right now, and hand you an architecture and a plan you can execute immediately.",
+          "Discovery at Alphabyte is four weeks, not six months. We come in with a point of view. We find out what your team is already building, identify the three workflows worth automating right now, and hand you an architecture and a plan you can execute immediately.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all services", href: "/services/" }}
@@ -149,15 +149,15 @@ export default function DiscoveryPage() {
           weeks: [
             {
               label: "Week 1",
-              body: "Stakeholder and technical sessions \u2014 we talk to the people doing the actual work and find out what is genuinely painful, genuinely automatable, and what has already been built informally.",
+              body: "Stakeholder and technical sessions. We talk to the people doing the actual work and find out what is genuinely painful, genuinely automatable, and what has already been built informally.",
             },
             {
               label: "Week 2",
-              body: "Use case development \u2014 three defined use cases, each with a feasibility assessment, a preliminary architecture, and a concrete statement of what it will produce for your business.",
+              body: "Use case development. Three defined use cases, each with a feasibility assessment, a preliminary architecture, and a concrete statement of what it will produce for your business.",
             },
             {
               label: "Week 3",
-              body: "Gap analysis \u2014 what is in your environment, what is missing, what must be fixed before any build starts. No surprises six months in.",
+              body: "Gap analysis. What is in your environment, what is missing, what must be fixed before any build starts. No surprises six months in.",
             },
           ],
           dayThirty: {
@@ -169,22 +169,22 @@ export default function DiscoveryPage() {
           {
             icon: <MessageSquare className="h-5 w-5" />,
             title: "Stakeholder sessions that surface real problems",
-            body: "We talk to the people doing the actual work \u2014 operations, finance, sales, product. We are finding the workflows that are genuinely painful and the people who have already started solving them.",
+            body: "We talk to the people doing the actual work in operations, finance, sales, and product. We are finding the workflows that are genuinely painful and the people who have already started solving them.",
           },
           {
             icon: <Pin className="h-5 w-5" />,
             title: "Three use cases worth building",
-            body: "Not a list of twenty ideas. Three, each with a feasibility assessment, a preliminary architecture, and a concrete outcome statement. Prioritized by impact and buildability.",
+            body: "Three prioritized use cases, each with a feasibility assessment, a preliminary architecture, and a concrete outcome statement. Prioritized by impact and buildability.",
           },
           {
             icon: <Search className="h-5 w-5" />,
             title: "Current state and gap analysis",
-            body: "What is in your environment, and what is missing, and what must be fixed before any build starts. Infrastructure, data quality, governance, security posture.",
+            body: "What is in your environment, what is missing, and what must be fixed before any build starts. Infrastructure, data quality, governance, security posture.",
           },
           {
             icon: <FileText className="h-5 w-5" />,
             title: "Findings and Recommendations document",
-            body: "Not a slide deck. Exactly what to build, in what order, with what dependencies, against what timeline. You leave with a plan, not a process.",
+            body: "Exactly what to build, in what order, with what dependencies, against what timeline. You leave with a plan, not a process.",
           },
         ]}
         rightForYou={[
@@ -193,8 +193,8 @@ export default function DiscoveryPage() {
           "You are in a regulated industry or the public sector and need governance in the roadmap from day one",
         ]}
         notRightForYou={[
-          "You already have a clear roadmap and just need someone to execute \u2014 skip to Citizen Dev, Executive Enablement, or Infrastructure",
-          "You want a strategic document to satisfy a stakeholder without a real intent to execute \u2014 we scope for execution, not for optics",
+          "You already have a clear roadmap and just need someone to execute. Skip to Citizen Dev, Executive Enablement, or Infrastructure.",
+          "You want a strategic document to satisfy a stakeholder without a real intent to execute. We scope for execution, not for optics.",
         ]}
         timeline="3 to 5 weeks from kickoff"
         faq={faq}

@@ -140,9 +140,9 @@ export default function CustomAiAgentsPage() {
         h1="Custom AI Agents"
         subhead="Purpose-built task automation."
         body={[
-          "A custom AI agent executes a defined operational workflow end-to-end without someone manually running it. It connects to your data through MCP. It operates in an isolated cloud sandbox. It routes to a human at the decision points you define as requiring oversight. It runs in production — not in a demo environment that never ships.",
+          "A custom AI agent executes a defined operational workflow end-to-end without someone manually running it. It connects to your data through MCP. It operates in an isolated cloud sandbox. It routes to a human at the decision points you define as requiring oversight. It runs in production, not in a demo environment that never ships.",
           "Production systems with CI/CD pipelines, monitoring, and rollback capability. Built to the same engineering standards as any other production software in your organization.",
-          "Agents sit at the top of the stack — they depend on Claude for reasoning, MCP for data access, and your governance framework for guardrails. That is why we build agents after enablement and data connectivity are in place. An agent built before people are using Claude and data is connected produces a system nobody trusts and nobody uses.",
+          "Agents sit at the top of the stack. They depend on the AI reasoning layer for intelligence, MCP for data access, and your governance framework for guardrails. That is why we build agents after enablement and data connectivity are in place. An agent built before the team is using AI and data is connected produces a system nobody trusts and nobody uses.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
@@ -152,7 +152,7 @@ export default function CustomAiAgentsPage() {
           {
             icon: <Container className="h-5 w-5" />,
             title: "Agent sandbox and production runtime",
-            body: "Each agent developed and tested in an isolated cloud sandbox before production. A separate, stable production runtime provisioned for live agents \u2014 monitoring, alerting, and rollback from day one.",
+            body: "Each agent developed and tested in an isolated cloud sandbox before production. A separate, stable production runtime provisioned for live agents with monitoring, alerting, and rollback from day one.",
           },
           {
             icon: <Settings className="h-5 w-5" />,
@@ -181,13 +181,13 @@ export default function CustomAiAgentsPage() {
             eyebrow: "Construction Firm · North America",
             title: "Compliance intelligence agent, live in production",
             body: "Custom AI agent navigating a full regulatory code library via knowledge graph. Operates against a custom MCP server. Citation-grade accuracy with traceable source pages.",
-            href: "/our-work/fire-protection-compliance/",
+            href: "/our-work/construction-compliance-agent/",
           },
           {
             eyebrow: "Construction Firm · Multi-Entity",
             title: "Modular agent architecture",
             body: "Agent architecture built for expansion across estimating, operations management, and project documentation. Each agent operates within established access controls.",
-            href: "/our-work/fire-protection-compliance/",
+            href: "/our-work/construction-compliance-agent/",
           },
           {
             eyebrow: "Major Supplier · Reverse Logistics",
@@ -197,13 +197,13 @@ export default function CustomAiAgentsPage() {
           },
         ]}
         rightForYou={[
-          "You have enabled your team and validated your data \u2014 now ready to automate workflows end-to-end",
+          "You have enabled your team and validated your data, and are now ready to automate workflows end-to-end",
           "You have clearly defined operational workflows that are high-volume and rule-governed",
           "You want AI that runs in production, not a perpetual pilot",
         ]}
         notRightForYou={[
-          "Your team is not yet using Claude consistently \u2014 agents built before enablement produce systems nobody uses",
-          "Your workflows are not yet well-defined enough to automate \u2014 Discovery or Citizen Dev first",
+          "Your team is not yet using AI consistently. Agents built before enablement produce systems nobody uses.",
+          "Your workflows are not yet well-defined enough to automate. Discovery or Citizen Dev comes first.",
         ]}
         faq={[
           {

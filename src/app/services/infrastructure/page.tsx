@@ -123,9 +123,9 @@ export default function InfrastructurePage() {
         h1="Infrastructure"
         subhead="How do our systems use AI?"
         body={[
-          "Your team is enabled. Your data is validated. The question now is how your systems work with AI \u2014 not just your people.",
-          "Infrastructure is where Claude stops being a productivity tool on someone\u2019s laptop and starts being an operational capability connected to the systems that actually run your business.",
-          "Custom MCP servers \u2014 the connective tissue between Claude and your internal systems. Autonomous agents. On-premise LLMs. Fine-tuned models. Built in production, not in demos.",
+          "Your team is enabled. Your data is validated. The question now is how your systems work with AI, not just your people.",
+          "Infrastructure is where AI stops being a productivity tool on someone\u2019s laptop and starts being an operational capability connected to the systems that actually run your business.",
+          "Custom MCP servers connect your AI environment to internal systems. Autonomous agents handle operational workflows. On-premise LLMs and fine-tuned models serve clients with sovereignty or domain-depth requirements. All built in production, not in demos.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all services", href: "/services/" }}
@@ -141,18 +141,18 @@ export default function InfrastructurePage() {
           {
             value: "Production",
             label:
-              "All agents built to production engineering standards \u2014 not demos",
+              "All agents built to production engineering standards, not demos",
           },
         ]}
         thirtyDays={{
           weeks: [
             {
               label: "Week 1",
-              body: "Requirements and architecture \u2014 we define the systems Claude needs to connect to, the data access patterns, the security and governance requirements, and the right build sequence.",
+              body: "Requirements and architecture. We define the systems that need to connect to your AI environment, the data access patterns, the security and governance requirements, and the right build sequence.",
             },
             {
               label: "Weeks 2 to 3",
-              body: "Build \u2014 custom MCP server development, security configuration, tool and API integration. Agent development begins in parallel for clients pursuing that track.",
+              body: "Build. Custom MCP server development, security configuration, tool and API integration. Agent development begins in parallel for clients pursuing that track.",
             },
             {
               label: "Week 4",
@@ -161,14 +161,14 @@ export default function InfrastructurePage() {
           ],
           dayThirty: {
             label: "Day 30 \u2014 what you have",
-            body: "Claude connected to your live operational systems through a production-grade MCP server. Full audit logging, OAuth 2.0 security, governed access. Your team using Claude against real data, not exports.",
+            body: "Your AI environment connected to live operational systems through a production-grade MCP server. Full audit logging, OAuth 2.0 security, governed access. Your team working against real data, not exports.",
           },
         }}
         deliverables={[
           {
             icon: <Wrench className="h-5 w-5" />,
             title: "Custom MCP servers",
-            body: "Model Context Protocol servers connecting Claude to your internal databases, APIs, CRM, ERP, data warehouses, and proprietary systems. Governed, auditable, real-time access \u2014 with OAuth 2.0, role-based access controls, and full audit logging.",
+            body: "Model Context Protocol servers connecting your AI environment to internal databases, APIs, CRM, ERP, data warehouses, and proprietary systems. Governed, auditable, real-time access with OAuth 2.0, role-based access controls, and full audit logging.",
           },
           {
             icon: <Bot className="h-5 w-5" />,
@@ -188,17 +188,17 @@ export default function InfrastructurePage() {
           {
             icon: <Brain className="h-5 w-5" />,
             title: "Fine-tuned custom LLMs",
-            body: "A domain-specific model trained on your proprietary data \u2014 your terminology, your document structure, your institutional knowledge \u2014 for use cases that require depth a general-purpose model cannot provide.",
+            body: "A domain-specific model trained on your proprietary data, your terminology, your document structure, your institutional knowledge, for use cases that require depth a general-purpose model cannot provide.",
           },
         ]}
         rightForYou={[
-          "Your team is enabled and data is validated \u2014 ready to connect AI to live operational systems.",
-          "You have validated workflows through enablement that are worth automating end-to-end.",
-          "Data sovereignty or security policy rules out cloud AI for your environment.",
+          "Your team is enabled and data is validated, and you are ready to connect AI to live operational systems",
+          "You have validated workflows through enablement that are worth automating end-to-end",
+          "Data sovereignty or security policy rules out cloud AI for your environment",
         ]}
         notRightForYou={[
-          "Your team is not yet using Claude consistently \u2014 infrastructure built before enablement produces systems nobody uses.",
-          "Your data foundation has not been validated \u2014 we enforce Data Readiness before any integration or agent work begins.",
+          "Your team is not yet using AI consistently. Infrastructure built before enablement produces systems nobody uses.",
+          "Your data foundation has not been validated. We enforce Data Readiness before any integration or agent work begins.",
         ]}
         timeline="4 to 36 weeks depending on scope"
         faq={faq}

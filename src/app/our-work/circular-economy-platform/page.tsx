@@ -216,7 +216,7 @@ export default function CircularEconomyPlatformPage() {
         figure={{
           src: "/our-work/circular-economy-platform-msi-concept.webp",
           alt: "Architecture diagram showing the custom Claude plugin connecting isolated agents to business tools",
-          caption: "Figure 1 — Plugin architecture: isolated agents connected to business systems (illustrative).",
+          caption: "Figure 1. Plugin architecture: isolated agents connected to business systems (illustrative).",
         }}
       />
     </>

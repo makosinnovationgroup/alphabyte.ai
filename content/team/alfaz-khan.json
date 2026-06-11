@@ -7,8 +7,8 @@
   "avatarSrc": "/team/alfaz-khan.webp",
   "eyebrow": "SECURITY AND COMPLIANCE OFFICER AT ALPHABYTE AI",
   "bio": [
-    "Alfaz Khan is an infrastructure and security practitioner with over 15 years of experience leading enterprise IT operations across cloud, on-premises, and hybrid environments. He specializes in multi-site infrastructure management, cybersecurity governance, and ITIL-aligned service delivery — with hands-on expertise across AWS, Microsoft Azure, and Microsoft 365. He holds CISSP and CCSP designations from ISC², alongside ITIL v4 Foundation and Microsoft Azure Solutions Architect Expert certifications.",
-    "Before settling in Vancouver, BC, Alfaz held senior technical leadership roles across East Africa's enterprise IT market, leading cloud migrations, security deployments, and Microsoft Azure engagements for clients across the region. He brings a uniquely international perspective to infrastructure and security — having managed seven-figure IT budgets and overseen technology operations for organizations spanning multiple sites and hundreds of end users."
+    "Alfaz Khan is an infrastructure and security practitioner with over 15 years of experience leading enterprise IT operations across cloud, on-premises, and hybrid environments. He specializes in multi-site infrastructure management, cybersecurity governance, and ITIL-aligned service delivery, with hands-on expertise across AWS, Microsoft Azure, and Microsoft 365. He holds CISSP and CCSP designations from ISC², alongside ITIL v4 Foundation and Microsoft Azure Solutions Architect Expert certifications.",
+    "Before settling in Vancouver, BC, Alfaz held senior technical leadership roles across East Africa's enterprise IT market, leading cloud migrations, security deployments, and Microsoft Azure engagements for clients across the region. He brings a uniquely international perspective to infrastructure and security, having managed seven-figure IT budgets and overseen technology operations for organizations spanning multiple sites and hundreds of end users."
   ],
   "contact": {
     "email": {
@@ -29,7 +29,7 @@
   },
   "careerTimeline": [
     {
-      "period": "2025 — Present",
+      "period": "2025 – Present",
       "role": "Security and Compliance Officer",
       "organization": "Alphabyte Solutions Inc."
     }
@@ -80,6 +80,6 @@
   ],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   }
 }

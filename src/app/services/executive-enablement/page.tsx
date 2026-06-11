@@ -123,8 +123,8 @@ export default function ExecutiveEnablementPage() {
         h1="Executive Enablement"
         subhead="A fast, visible AI win for your leadership team."
         body={[
-          "Executives do not need a generic AI tool. They need a Claude environment that understands their business \u2014 populated with the operational data they actually work from, equipped with skills that automate the specific workflows on their leadership calendar, and configured so that each functional leader gets a differentiated experience.",
-          "We deliver that in two to four weeks. Most clients see measurable time savings in the first sprint. And because the CFO and COO are actively using it, it becomes significantly easier to resource the broader programme that follows.",
+          "Executives do not need a generic AI tool. They need a purpose-built environment that understands their business, populated with the operational data they actually work from, equipped with skills that automate the specific workflows on their leadership calendar, and configured so that each functional leader gets a differentiated experience.",
+          "We deliver that in two to four weeks. Most clients see measurable time savings in the first sprint. Because the CFO and COO are actively using it, it becomes significantly easier to resource the broader programme that follows.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all services", href: "/services/" }}
@@ -132,12 +132,12 @@ export default function ExecutiveEnablementPage() {
           {
             value: "2 to 4 weeks",
             label:
-              "From kickoff to a live Claude environment for your leadership team",
+              "From kickoff to a live AI environment for your leadership team",
           },
           {
             value: "Day 1",
             label:
-              "Executives using Claude against their actual operational data",
+              "Executives working against their actual operational data",
           },
           {
             value: "Fast win",
@@ -149,37 +149,37 @@ export default function ExecutiveEnablementPage() {
           weeks: [
             {
               label: "Week 1",
-              body: "Executive workflow discovery \u2014 one-on-one sessions with each leader. We map the highest-frequency workflows on their calendar and identify the specific interventions most likely to produce measurable time savings.",
+              body: "Executive workflow discovery. One-on-one sessions with each leader. We map the highest-frequency workflows on their calendar and identify the specific interventions most likely to produce measurable time savings.",
             },
             {
               label: "Week 2",
-              body: "Build \u2014 we ingest your organizational data into structured Claude knowledgebases, build the custom skills surfaced during discovery, and configure the Claude Teams environment with domain-level context arbitration for each functional leader.",
+              body: "Build. We ingest your organizational data into structured knowledgebases, build the custom skills surfaced during discovery, and configure the AI environment with domain-level context arbitration for each functional leader.",
             },
             {
               label: "Weeks 3 to 4",
-              body: "Deploy and transfer \u2014 the environment goes live. We run a hands-on knowledge transfer session with the full executive cohort. Every participant leaves the session using what we built. Recorded for onboarding of future executives.",
+              body: "Deploy and transfer. The environment goes live. We run a hands-on knowledge transfer session with the full executive cohort. Every participant leaves the session using what we built. Recorded for onboarding of future executives.",
             },
           ],
           dayThirty: {
             label: "Day 30 \u2014 what you have",
-            body: "A live Claude environment used by your entire leadership team, built from your actual operational data, with measurable productivity gains visible in the first sprint. The internal proof point that makes the broader programme significantly easier to resource.",
+            body: "A live AI environment used by your entire leadership team, built from your actual operational data, with measurable productivity gains visible in the first sprint. The internal proof point that makes the broader programme significantly easier to resource.",
           },
         }}
         deliverables={[
           {
             icon: <Search className="h-5 w-5" />,
             title: "Executive workflow discovery",
-            body: "One-on-one sessions with each leader on the team \u2014 mapping the highest-frequency workflows on their calendar and identifying the specific interventions most likely to save measurable time.",
+            body: "One-on-one sessions with each leader on the team, mapping the highest-frequency workflows on their calendar and identifying the specific interventions most likely to save measurable time.",
           },
           {
             icon: <BookOpen className="h-5 w-5" />,
             title: "Custom knowledgebases",
-            body: "Your policies, SOPs, strategic documents, board materials, and product data ingested into a structured Claude Project each executive works from daily. Claude understands your business before the conversation starts.",
+            body: "Your policies, SOPs, strategic documents, board materials, and product data ingested into a structured project each executive works from daily. The AI environment understands your business before the conversation starts.",
           },
           {
             icon: <Zap className="h-5 w-5" />,
             title: "Custom skills library",
-            body: "Claude Skills that automate the workflows surfaced during discovery \u2014 report generation, data parsing, strategic analysis, board preparation. Built for your executives, not recycled from another client.",
+            body: "Skills that automate the workflows surfaced during discovery: report generation, data parsing, strategic analysis, board preparation. Built for your executives, not recycled from another client.",
           },
           {
             icon: <MessageCircle className="h-5 w-5" />,
@@ -188,24 +188,24 @@ export default function ExecutiveEnablementPage() {
           },
           {
             icon: <Wrench className="h-5 w-5" />,
-            title: "Claude Teams configuration",
+            title: "AI environment configuration",
             body: "Domain-level context arbitration producing a differentiated experience for each functional leader. The CFO\u2019s environment and the COO\u2019s draw from the same foundation but surface different data and skills.",
           },
           {
             icon: <GraduationCap className="h-5 w-5" />,
             title: "Knowledge transfer session",
-            body: "Hands-on session for the full executive cohort, recorded for future reference and for the onboarding of new executives. Your team leaves knowing how to use what we built \u2014 and how to extend it.",
+            body: "Hands-on session for the full executive cohort, recorded for future reference and for the onboarding of new executives. Your team leaves knowing how to use what we built and how to extend it.",
           },
         ]}
         rightForYou={[
           "Leadership wants a concrete AI win they can point to while the broader programme gets resourced",
-          "Your leadership team wants to understand AI by using it \u2014 not by sitting through presentations",
+          "Your leadership team wants to understand AI by using it, not by sitting through presentations",
           "You want the executive team enabled before rolling out citizen development to the wider workforce",
           "Your board is asking what the return on AI investment looks like and you need something to show them",
         ]}
         notRightForYou={[
-          "Your executive team is not prepared to engage with a new tool actively \u2014 the environment requires use to produce value",
-          "You are expecting a one-size-fits-all environment \u2014 the value is in the customisation, which requires time from your executives in week one",
+          "Your executive team is not prepared to engage with a new tool actively. The environment requires use to produce value.",
+          "You are expecting a one-size-fits-all environment. The value is in the customisation, which requires time from your executives in week one.",
         ]}
         timeline="2 to 4 weeks from kickoff"
         faq={faq}

@@ -125,10 +125,10 @@ export default function CitizenDevelopmentPage() {
         ]}
         eyebrow="Services · Flagship Offering"
         h1="Citizen Development"
-        subhead="Every employee, now an AI developer."
+        subhead="Every employee, now a developer."
         body={[
-          "The technology is finally ready. Claude \u2014 combined with Projects, Skills, Model Context Protocol, and Claude Code \u2014 means any employee who can describe their work can now build applications, automate workflows, and query live operational data against real systems. Without a software engineering background.",
-          "Your team is already building. Someone automated a workflow on her laptop that saves three hours a week. A sales coordinator built a tool nobody else can use. None of it is governed. None of it scales. Citizen Development installs the infrastructure that changes that \u2014 and connects it to your live operational data.",
+          "Modern AI tools, including Claude, Projects, Skills, Model Context Protocol, and Claude Code, mean any employee who can describe their work can now build applications, automate workflows, and query live operational data against real systems. Without a software engineering background.",
+          "Your team is already building. Someone automated a workflow on her laptop that saves three hours a week. A sales coordinator built a tool nobody else can use. None of it is governed. None of it scales. Citizen Development installs the infrastructure that changes that and connects it to your live operational data.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all services", href: "/services/" }}
@@ -136,7 +136,7 @@ export default function CitizenDevelopmentPage() {
           {
             value: "Week 3",
             label:
-              "Most clients have something running by production.",
+              "Most clients have something running in production",
           },
           {
             value: "2 to 12 weeks",
@@ -153,47 +153,47 @@ export default function CitizenDevelopmentPage() {
           weeks: [
             {
               label: "Week 1",
-              body: "Discovery and design \u2014 we talk to the people doing the actual work, find out what they have already built, and design the SDLC plugin and guardrails architecture around what we find. Not a template.",
+              body: "Discovery and design. We talk to the people doing the actual work, find out what they have already built, and design the SDLC plugin and guardrails architecture around what we find. Not a template.",
             },
             {
               label: "Week 2",
-              body: "Build and configure \u2014 we build the custom SDLC plugin with four to five purpose-built skills, configure the guardrails scaffolding, and connect the governed data layer through MCP.",
+              body: "Build and configure. We build the custom SDLC plugin with four to five purpose-built skills, configure the guardrails scaffolding, and connect the governed data layer through MCP.",
             },
             {
               label: "Week 3",
-              body: "Deploy and enable \u2014 the plugin goes live in your Claude Teams environment. We run the hands-on enablement workshop. Every participant builds something on their own laptop. Recorded for future team members.",
+              body: "Deploy and enable. The plugin goes live in your AI environment. We run the hands-on enablement workshop. Every participant builds something on their own laptop. Recorded for future team members.",
             },
           ],
           dayThirty: {
             label: "Day 30 \u2014 what you have",
-            body: "A governed Claude environment deployed across your team. Every authorized employee working from the same standardized starting point. Live data connectivity through MCP. A graduation path for moving proven applications into production. Your team actually using it.",
+            body: "A governed AI environment deployed across your team. Every authorized employee working from the same standardized starting point. Live data connectivity through MCP. A graduation path for moving proven applications into production. Your team actually using it.",
           },
         }}
         deliverables={[
           {
             icon: <Search className="h-5 w-5" />,
             title: "Workflow and capability discovery",
-            body: "Direct conversations with the people doing the real work \u2014 finding what each person owns, what they have already built, and where the highest-value automation opportunities are.",
+            body: "Direct conversations with the people doing the real work, finding what each person owns, what they have already built, and where the highest-value automation opportunities are.",
           },
           {
             icon: <Monitor className="h-5 w-5" />,
             title: "Custom SDLC plugin",
-            body: "Four to five purpose-built Claude skills standardizing how any employee begins a new project. Published once to your Claude Teams environment, available to every authorized user.",
+            body: "Four to five purpose-built skills standardizing how any employee begins a new project. Published once to your AI environment, available to every authorized user.",
           },
           {
             icon: <GraduationCap className="h-5 w-5" />,
             title: "Enablement workshop",
-            body: "Hands-on session \u2014 every participant builds something on their own laptop. Not a slide presentation about AI potential. Recorded for future team members and onboarding.",
+            body: "Hands-on session where every participant builds something on their own laptop. Recorded for future team members and onboarding.",
           },
           {
             icon: <ClipboardList className="h-5 w-5" />,
             title: "Context engineering templates",
-            body: "CLAUDE.md files, project-level context structure patterns, and proven approaches to instructing Claude effectively. Every citizen developer builds on a shared foundation.",
+            body: "Project context files, structure patterns, and proven approaches to instructing AI effectively. Every citizen developer builds on a shared foundation.",
           },
           {
             icon: <Shield className="h-5 w-5" />,
             title: "Guardrails scaffolding",
-            body: "Branch protection, required review on Claude-generated pull requests, per-project sandbox environments, and least-privilege data access. Built before anyone starts building.",
+            body: "Branch protection, required review on AI-generated pull requests, per-project sandbox environments, and least-privilege data access. Built before anyone starts building.",
           },
           {
             icon: <Link2 className="h-5 w-5" />,
@@ -208,19 +208,19 @@ export default function CitizenDevelopmentPage() {
           {
             icon: <Wrench className="h-5 w-5" />,
             title: "Hypercare support",
-            body: "Dedicated channel, weekly sync calls, prompt bug resolution, and skills iteration based on observed usage. We stay on until it\u2019s running reliably.",
+            body: "Dedicated channel, weekly sync calls, prompt bug resolution, and skills iteration based on observed usage. We stay on until it is running reliably.",
           },
         ]}
         rightForYou={[
-          "Your team is already using Claude informally and you need governance before the sprawl becomes a liability",
-          "You want every employee operating at the level of your best AI user \u2014 not just the ones who figured it out themselves",
+          "Your team is already using AI informally and you need governance before the sprawl becomes a liability",
+          "You want every employee operating at the level of your best AI user, not just the ones who figured it out themselves",
           "You want to multiply workforce output without waiting six months for a top-down deployment",
           "You are ready to connect your team\u2019s AI capability to live operational data through MCP",
         ]}
         notRightForYou={[
-          "Your organization has fewer than five people who could realistically use a Claude-based development environment",
-          "Your data environment has not been stabilized \u2014 we will find the gaps in week one, and the engagement requires addressing them",
-          "You are looking for a pilot with no defined governance or production path \u2014 we do not deliver proofs of concept that are not designed to ship",
+          "Your organization has fewer than five people who could realistically use an AI development environment",
+          "Your data environment has not been stabilized. We will find the gaps in week one, and the engagement requires addressing them.",
+          "You are looking for a pilot with no defined governance or production path. We build proofs of concept that are designed to ship.",
         ]}
         timeline="3 to 12 weeks from kickoff depending on delivery tier"
         faq={faq}

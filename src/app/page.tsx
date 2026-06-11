@@ -11,9 +11,9 @@ const homeTracks: Track[] = [
     label: "Citizen Dev \u2605",
     question: "How do our people use AI?",
     heading: "Citizen Dev \u2605",
-    body: "Governed Claude environment, SDLC tooling, and guardrails \u2014 deployed against the workflows your team already owns. From informal usage to a managed, compounding capability. Most clients have something running in week three.",
+    body: "A governed AI environment with SDLC tooling and guardrails deployed against the workflows your team already owns. From informal usage to a managed, compounding capability. Most clients have something running in week three.",
     rightForYou:
-      "Your team is using Claude informally, or you want every employee operating as an AI developer.",
+      "Your team is using AI informally, or you want every employee operating as a developer.",
     cta: { label: "Get started \u2192", href: "/services/citizen-development/" },
     pills: [
       "Custom SDLC plugin",

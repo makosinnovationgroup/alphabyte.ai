@@ -4,7 +4,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 
 const stats = [
   { value: "10X", label: "Workforce output multiplier from governed citizen dev" },
-  { value: "2 Wks", label: "Fastest time to a live Claude environment" },
+  { value: "2 Wks", label: "Fastest time to a live AI environment" },
   { value: "4", label: "Active North American deployments in delivery today" },
 ];
 
@@ -35,7 +35,7 @@ export function Hero() {
             <div className="space-y-4 mb-10 max-w-[60ch]">
               <p className="text-lg text-foreground">
                 The models are ready. The tools are here. The window to get ahead
-                of your competition is open right now — and it is not going to
+                of your competition is open right now, and it is not going to
                 stay open.
               </p>
               <p className="text-lg text-foreground">
@@ -43,8 +43,10 @@ export function Hero() {
                 employee, now an AI developer.
               </p>
               <p className="text-lg text-foreground">
-                We are not a generalist AI consultancy. Claude is our flagship
-                practice. Not a checkbox on a service menu.
+                Alphabyte holds Microsoft Solutions Partner status with three
+                Azure designations: Infrastructure, Data &amp; AI, and Digital
+                &amp; App Innovation. We also hold 10+ Anthropic-certified
+                practitioners and are on the path to Claude partnership.
               </p>
             </div>
 

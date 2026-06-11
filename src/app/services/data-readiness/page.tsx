@@ -124,7 +124,7 @@ export default function DataReadinessPage() {
         subhead="Is our data ready for AI?"
         body={[
           "Most AI projects do not fail because of the model. They fail because nobody validated the data underneath it before the build started.",
-          "You do not know which of your data is clean and which is a problem until something breaks in production \u2014 usually six months and a significant budget into an engagement. We find that out in week two, before anything is built on top of it.",
+          "You do not know which of your data is clean and which is a problem until something breaks in production, usually six months and a significant budget into an engagement. We find that out in week two, before anything is built on top of it.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all services", href: "/services/" }}
@@ -132,12 +132,12 @@ export default function DataReadinessPage() {
           {
             value: "Week 2",
             label:
-              "When we find data problems \u2014 not month six",
+              "When we find data problems, not month six",
           },
           {
             value: "5 dimensions",
             label:
-              "AI readiness scorecard: quality, governance, infrastructure, security, integration",
+              "AI readiness scorecard covering quality, governance, infrastructure, security, and integration",
           },
           {
             value: "Zero",
@@ -149,11 +149,11 @@ export default function DataReadinessPage() {
           weeks: [
             {
               label: "Week 1",
-              body: "Data environment audit \u2014 we assess your operational data across every source that will feed your AI deployment. Deduplication, completeness, accuracy, consistency. We map what you have and what the gaps cost you.",
+              body: "Data environment audit. We assess your operational data across every source that will feed your AI deployment: deduplication, completeness, accuracy, consistency. We map what you have and what the gaps cost you.",
             },
             {
               label: "Week 2",
-              body: "Governance and security review \u2014 retention policies, classification, DLP tagging, compliance alignment against SOC 2, PIPEDA, and where relevant FIPPA. Infrastructure and security reviewed for AI deployment requirements.",
+              body: "Governance and security review. Retention policies, classification, DLP tagging, compliance alignment against SOC 2, PIPEDA, and where relevant FIPPA. Infrastructure and security reviewed for AI deployment requirements.",
             },
             {
               label: "Weeks 3 to 4",
@@ -169,7 +169,7 @@ export default function DataReadinessPage() {
           {
             icon: <BarChart3 className="h-5 w-5" />,
             title: "Full data quality audit",
-            body: "Deduplication, completeness, accuracy, consistency across every data source feeding your AI deployment. Gaps mapped, risks quantified.",
+            body: "Deduplication, completeness, accuracy, and consistency across every data source feeding your AI deployment. Gaps mapped, risks quantified.",
           },
           {
             icon: <FolderOpen className="h-5 w-5" />,
@@ -179,7 +179,7 @@ export default function DataReadinessPage() {
           {
             icon: <Lock className="h-5 w-5" />,
             title: "Infrastructure and security posture review",
-            body: "A targeted review from the perspective of Claude deployment \u2014 data access patterns, credential management, network segmentation, and the controls required to operate safely.",
+            body: "A targeted review from the perspective of AI deployment covering data access patterns, credential management, network segmentation, and the controls required to operate safely.",
           },
           {
             icon: <ClipboardList className="h-5 w-5" />,
@@ -189,7 +189,7 @@ export default function DataReadinessPage() {
           {
             icon: <Route className="h-5 w-5" />,
             title: "Remediation pathway",
-            body: "Specific, prioritized steps to close each gap. You leave with problems and the sequence of fixes \u2014 not just a list of concerns.",
+            body: "Specific, prioritized steps to close each gap. You leave with problems identified and the sequence of fixes, not just a list of concerns.",
           },
         ]}
         rightForYou={[
@@ -199,8 +199,8 @@ export default function DataReadinessPage() {
           "A previous AI engagement underdelivered and you want to understand why",
         ]}
         notRightForYou={[
-          "You are in early-stage discovery and do not yet know which data sources your AI deployment will require \u2014 complete Discovery first",
-          "You have recent, validated data documentation and just need a scoped integration \u2014 we will confirm this in the first conversation",
+          "You are in early-stage discovery and do not yet know which data sources your AI deployment will require. Complete Discovery first.",
+          "You have recent, validated data documentation and just need a scoped integration. We will confirm this in the first conversation.",
         ]}
         timeline="4 to 8 weeks from kickoff"
         faq={faq}

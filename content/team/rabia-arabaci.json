@@ -33,12 +33,12 @@
   },
   "careerTimeline": [
     {
-      "period": "2025 — Present",
+      "period": "2025 – Present",
       "role": "Marketing Coordinator",
       "organization": "Alphabyte Solutions Inc."
     },
     {
-      "period": "2023 — 2024",
+      "period": "2023 – 2024",
       "role": "Marketing Communications & Product Marketing Intern",
       "organization": "BlackBerry · BlackBerry IoT-QNX"
     },
@@ -73,7 +73,7 @@
   "articles": [],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   },
   "pills": ["Content Strategy", "Product Marketing", "Campaign Management", "Analytics"]
 }

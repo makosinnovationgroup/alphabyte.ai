@@ -35,21 +35,21 @@ export const metadata: Metadata = {
 const decisionRows = [
   {
     situation:
-      "Team using Claude informally — Slack prompts, personal workflows, unreviewed data access",
+      "Team using AI informally, with ungoverned prompts, personal workflows, and unreviewed data access",
     startHere: "Citizen Development ★",
     href: "/services/citizen-development/",
-    next: "Data Readiness → Infrastructure",
+    next: "Data Readiness, then Infrastructure",
   },
   {
     situation:
       "Leadership needs a visible AI win before committing to a broader programme",
     startHere: "Executive Enablement",
     href: "/services/executive-enablement/",
-    next: "Citizen Development → Infrastructure",
+    next: "Citizen Development, then Infrastructure",
   },
   {
     situation:
-      "No AI investment yet — want a plan you can execute, not a deck",
+      "No AI investment yet. Want a plan you can execute, not a deck",
     startHere: "Discovery",
     href: "/services/discovery/",
     next: "Data Readiness or Citizen Development",
@@ -62,7 +62,7 @@ const decisionRows = [
   },
   {
     situation:
-      "Team enabled, data validated — ready to connect AI to live systems",
+      "Team enabled, data validated, ready to connect AI to live systems",
     startHere: "Infrastructure",
     href: "/services/infrastructure/",
     next: "Ongoing agent expansion",
@@ -126,10 +126,13 @@ export default function ServicesPage() {
             </h1>
             <div className="space-y-4 max-w-[60ch]">
               <p className="text-body text-foreground">
-                We are not a generalist AI consultancy. Claude is our entire
-                practice &mdash; every engagement, every engineer, every
-                methodology built specifically for Claude deployment in
-                mid-market organizations.
+                Alphabyte is a Microsoft Solutions Partner with Azure
+                designations in Infrastructure, Data &amp; AI, and Digital
+                &amp; App Innovation. We have 10+ Anthropic-certified
+                practitioners and are on the path to Claude partnership. Our
+                AI engagements use Claude as the intelligence layer across a
+                full stack that covers data infrastructure, cloud, and
+                application delivery.
               </p>
               <p className="text-body text-foreground">
                 Citizen Developer Enablement is our flagship. Everything else is

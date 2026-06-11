@@ -78,7 +78,7 @@ const itemListSchema = {
 const stats = [
   {
     headline: "Anthropic Claude Certified",
-    description: "Certified delivery team \u2014 exclusively Claude",
+    description: "10+ certified practitioners on the path to Claude partnership",
   },
   {
     headline: "Every engagement",
@@ -93,8 +93,8 @@ const stats = [
 const tools = [
   {
     title: "Claude",
-    subtitle: "Reasoning, writing, and analysis.",
-    body: "The intelligence layer across every engagement we deliver. Not a generic assistant \u2014 a purpose-configured system built around your organizational data, your team\u2019s workflows, and your operational context.",
+    subtitle: "The intelligence layer.",
+    body: "Purpose-configured around your organizational data, your team\u2019s workflows, and your operational context.",
     bullets: [
       "Custom knowledgebases",
       "Custom skills",
@@ -108,11 +108,11 @@ const tools = [
   {
     title: "MCP",
     subtitle: "Connect models to your tools.",
-    body: "Model Context Protocol is the open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives Claude governed, auditable, real-time access to your CRM, ERP, data warehouses, and APIs \u2014 without data leaving your environment.",
+    body: "Model Context Protocol is the open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives your AI environment governed, auditable, real-time access to your CRM, ERP, data warehouses, and APIs without data leaving your environment.",
     bullets: [
       "Custom MCP servers",
       "OAuth 2.0 security",
-      "Cloud infrastructure",
+      "Azure cloud infrastructure",
       "Full audit logging",
       "Tool and API integration",
     ],
@@ -136,7 +136,7 @@ const tools = [
   {
     title: "On-Premise LLM",
     subtitle: "Private, self-hosted models.",
-    body: "For organizations that cannot send their data to a cloud AI provider. We deploy capable open-source language models \u2014 Llama, Mistral \u2014 on your own infrastructure. The model runs inside your environment. Your data never leaves your control.",
+    body: "For organizations that cannot send their data to a cloud AI provider. We deploy capable open-source language models, Llama and Mistral, on your own infrastructure. The model runs inside your environment. Your data never leaves your control.",
     bullets: [
       "Model selection",
       "Infrastructure provisioning",
@@ -153,22 +153,22 @@ const layers = [
   {
     label: "Layer 1",
     title: "Claude",
-    body: "Intelligence \u2014 reasons, writes, analyzes, and builds against your operational context",
+    body: "Intelligence. Reasons, writes, analyzes, and builds against your operational context.",
   },
   {
     label: "Layer 2",
     title: "MCP",
-    body: "Connectivity \u2014 governs secure real-time access between Claude and your internal systems",
+    body: "Connectivity. Governs secure real-time access between your AI environment and internal systems.",
   },
   {
     label: "Layer 3",
     title: "Agents",
-    body: "Automation \u2014 executes defined workflows end-to-end with human oversight gates",
+    body: "Automation. Executes defined workflows end-to-end with human oversight gates.",
   },
   {
     label: "Layer 4",
-    title: "On-premise LLM",
-    body: "Sovereignty \u2014 runs the full stack inside your own infrastructure when cloud AI is not an option",
+    title: "On-Premise LLM",
+    body: "Sovereignty. Runs the full stack inside your own infrastructure when cloud AI is not an option.",
   },
 ];
 
@@ -210,22 +210,23 @@ export default function ToolsPage() {
             Our Tools
           </p>
           <h1 className="text-display tracking-brand-tight mb-6 max-w-2xl">
-            We don&rsquo;t sell platforms.
-            <br />
             <span className="text-alphabyte-blue">
               We build with what actually works.
             </span>
           </h1>
           <div className="max-w-2xl space-y-4">
             <p className="text-body text-foreground">
-              A deliberate stack. Claude as the intelligence layer. MCP is the
-              connective tissue between Claude and your internal systems. Custom
-              agents as the operational layer. On-premise LLMs for clients where
-              cloud AI is not an option.
+              A deliberate stack. Claude as the intelligence layer. MCP as the
+              connective tissue between your AI environment and internal
+              systems. Custom agents as the operational layer. On-premise LLMs
+              for clients where cloud AI is not an option.
             </p>
             <p className="text-body text-foreground">
-              Not because we are obligated to use them &mdash; because they are
-              the best tools available for what we are building.
+              We use this stack because it is the best available for what we
+              are building, and because our team is certified across all of it.
+              Alphabyte holds Microsoft Solutions Partner status with three
+              Azure designations and 10+ Anthropic-certified practitioners on
+              the path to Claude partnership.
             </p>
           </div>
         </div>

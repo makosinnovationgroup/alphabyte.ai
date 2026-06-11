@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "tools/custom-ai-agents",
     "tools/on-premise-llm",
   ];
-  // Case study children (fire-protection-compliance intentionally omitted from
+  // Case study children (construction-compliance-agent intentionally omitted from
   // discovery here too — its sitemap presence is decided in its own page meta)
   const caseStudies = [
     "our-work/circular-economy-platform",

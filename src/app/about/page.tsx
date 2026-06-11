@@ -4,47 +4,47 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 import { EmailAddress } from "@/components/email-address";
 
 export const metadata: Metadata = {
-  title: "About Alphabyte AI - Claude-Native Consulting",
+  title: "About Alphabyte AI - Practitioner-Led AI Consulting",
   description:
-    "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench. Operating across North America since 2016.",
+    "Alphabyte AI is the AI practice of Alphabyte Solutions. Practitioner-led, ten years of delivery, bottom-up by design. Operating across North America since 2016.",
   alternates: {
     canonical: "/about/",
   },
   openGraph: {
     type: "website",
-    title: "About Alphabyte AI - Claude-Native Consulting",
+    title: "About Alphabyte AI - Practitioner-Led AI Consulting",
     description:
-      "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
+      "Alphabyte AI is the AI practice of Alphabyte Solutions. Practitioner-led, ten years of delivery, bottom-up by design.",
     url: "/about/",
     images: [
       {
         url: "/og/about.png",
         width: 1200,
         height: 630,
-        alt: "Alphabyte - About Alphabyte AI - Claude-Native Consulting",
+        alt: "Alphabyte - About Alphabyte AI - Practitioner-Led AI Consulting",
       },
     ],
   },
   twitter: {
-    title: "About Alphabyte AI - Claude-Native Consulting",
+    title: "About Alphabyte AI - Practitioner-Led AI Consulting",
     description:
-      "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench.",
+      "Alphabyte AI is the AI practice of Alphabyte Solutions. Practitioner-led, ten years of delivery, bottom-up by design.",
     images: ["/og/about.png"],
   },
 };
 
 const pillars = [
   {
-    heading: "Bottom-up by design",
-    body: "Every mid-market organization has someone who has quietly built something extraordinary with Claude. We find that person, understand what was built, and install the infrastructure that makes her capability visible, scalable, and available to the entire team. Then the next person. Until AI is compounding across the organization.",
+    heading: "Bottom-up by Design",
+    body: "Every mid-market organization has someone who has quietly built something extraordinary with AI. We find that person, understand what was built, and install the infrastructure that makes her capability visible, shareable, and available to the entire team. Then the next person. Until AI is compounding across the organization.",
   },
   {
-    heading: "Claude is the entire practice",
-    body: "Not a tool we use alongside others. The foundation every engagement is built on. Every engineer works exclusively with Claude. That focus is what makes us faster, more consistent, and more capable than a firm dividing its attention across ten platforms.",
+    heading: "Our Capability",
+    body: "Ten years of mid-market and public sector delivery across data warehousing, analytics, business intelligence, and custom application development. The AI practice runs on top of that delivery experience. Claude is the primary AI platform we deploy, and our team\u2019s depth in Claude \u2014 backed by 10+ certified practitioners \u2014 means faster configuration and more consistent outputs than a generalist AI firm can offer.",
   },
   {
-    heading: "No junior bench",
-    body: "The senior engineer who designs your solution builds it. The consultant who runs your initial discovery personally delivers your sprint. Two dedicated Claude engineers backed by a twenty-person delivery organization \u2014 but the people who show up for your engagement own it.",
+    heading: "No Junior Bench",
+    body: "The senior engineer who designs your deployment builds it. The consultant who runs your initial discovery personally delivers your sprint. Two dedicated AI engineers backed by a twenty-person delivery organization, and the people who show up for your engagement own it from start to finish.",
   },
 ];
 
@@ -57,7 +57,7 @@ const activeDelivery = [
   {
     tag: "MAJOR SUPPLIER · REVERSE LOGISTICS · GLOBAL",
     title: "AI-Powered Executive Productivity Suite",
-    body: "Custom Claude plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Purpose-built agents delivering automated briefs and on-demand workflows org-wide.",
+    body: "Custom AI plugin giving leadership a single command surface across GSuite, Slack, Power BI, and Fireflies. Purpose-built agents delivering automated briefs and on-demand workflows org-wide.",
   },
   {
     tag: "HOUSING SERVICES CORP. \u00b7 PUBLIC SECTOR \u00b7 HOUSING \u00b7 NATIONAL \u00b7 CANADA",
@@ -67,8 +67,12 @@ const activeDelivery = [
 ];
 
 const certifications = [
-  "Microsoft Solutions Partner \u00b7 Data & AI",
-  "Anthropic Academy \u00b7 Claude Certified",
+  "Microsoft Solutions Partner \u00b7 Infrastructure (Azure)",
+  "Microsoft Solutions Partner \u00b7 Data & AI (Azure)",
+  "Microsoft Solutions Partner \u00b7 Digital & App Innovation (Azure)",
+  "Anthropic \u00b7 Claude Certified",
+  "Anthropic \u00b7 10+ Certified Practitioners",
+  "Anthropic \u00b7 On the Path to Claude Partnership",
 ];
 
 const inProgressCertifications = ["SOC 2 Type II"];
@@ -78,7 +82,7 @@ const aboutPageSchema = {
   "@type": "AboutPage",
   name: "About Alphabyte AI",
   description:
-    "Alphabyte AI is the Claude-focused practice of Alphabyte Solutions. Practitioner-led, Claude-native, no junior bench. Operating across North America since 2016.",
+    "Alphabyte AI is the AI practice of Alphabyte Solutions. Practitioner-led, ten years of delivery, bottom-up by design. Operating across North America since 2016.",
   url: "https://alphabyte.ai/about/",
   isPartOf: {
     "@type": "WebSite",
@@ -103,20 +107,29 @@ export default function AboutPage() {
           <h1 className="text-display font-sans tracking-brand-tight mb-8">
             Practitioner-led.
             <br />
-            <span className="text-alphabyte-blue">Claude-native.</span>
+            <span className="text-alphabyte-blue">Ten years of delivery.</span>
             <br />
             Bottom-up by design.
           </h1>
           <div className="max-w-[55ch]">
             <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-              Alphabyte AI is the Claude-focused practice of Alphabyte
-              Solutions, operating across North America since 2016.
+              Alphabyte AI is the AI practice of Alphabyte Solutions, operating
+              across North America since 2016.
+            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground mb-4">
+              Our parent practice has spent ten years delivering data
+              warehousing, reporting and analytics, business intelligence, and
+              custom application development to mid-market and public sector
+              organizations across Canada. That track record is what lets us
+              engage credibly on the full technology stack beneath an AI
+              deployment.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              We are not a generalist AI consultancy with a Claude competency.
-              Claude is the entire practice &mdash; every engagement, every
-              engineer, every methodology built specifically for Claude
-              deployment in mid-market organizations.
+              Alphabyte holds Microsoft Solutions Partner status with three
+              Azure designations &mdash; Infrastructure, Data &amp; AI, and
+              Digital &amp; App Innovation &mdash; and we have 10+
+              Anthropic-certified practitioners on the path to Claude
+              partnership.
             </p>
           </div>
         </div>
@@ -147,37 +160,37 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1600px]">
           <div className="flex items-center gap-3 mb-10">
             <p className="text-body-sm font-bold uppercase tracking-brand-wide text-alphabyte-blue whitespace-nowrap">
-              Our Practice and Team
+              Our Team
             </p>
             <span className="flex-1 border-t border-border-default" />
           </div>
           <div className="grid gap-12 md:grid-cols-[1fr_1fr] lg:grid-cols-[55fr_45fr] lg:gap-16">
             <div>
               <p className="text-lg leading-relaxed text-foreground mb-6">
-                Our parent practice has delivered data warehousing, reporting and
-                analytics, business intelligence, and custom application
-                development to Canada&rsquo;s largest mechanical contractor, a
-                provincial government, a professional regulatory body, a
-                national public sector housing organization, multiple Canadian
-                municipalities, and a substantial roster of mid-market operators
-                across e-commerce, manufacturing, industrial services, and
-                financial services.
+                Ten years of mid-market and public sector delivery across data
+                warehousing, analytics, business intelligence, and custom
+                application development. That history means we can look at your
+                data infrastructure, your cloud environment, your governance
+                posture, and your application layer and tell you what needs to
+                change before an AI deployment will stick.
               </p>
               <p className="text-lg leading-relaxed text-foreground">
-                That heritage is what allows us to engage credibility on the
-                full technology stack beneath an AI deployment. The AI practice
-                is built on that foundation &mdash; not grafted onto it.
+                The AI practice runs on top of that delivery experience. Claude
+                is the primary AI platform we deploy. Our team&rsquo;s depth in
+                Claude, backed by 10+ certified practitioners, means faster
+                configuration and more consistent outputs than a generalist AI
+                firm can offer.
               </p>
             </div>
             <div className="space-y-6">
               <div className="rounded-lg border border-border-default bg-alphabyte-grey p-6">
                 <h2 className="text-body font-bold text-foreground mb-2">
-                  Two dedicated Claude engineers
+                  Two dedicated AI engineers
                 </h2>
                 <p className="text-body-sm text-muted-foreground">
-                  Full-time, exclusively Claude &mdash; MCP server development,
-                  context engineering, agentic system design, and Claude Code
-                  delivery. Both trained through Anthropic Academy.
+                  Full-time focus covering MCP server development, context
+                  engineering, agentic system design, and Claude Code delivery.
+                  Both trained through Anthropic Academy.
                 </p>
               </div>
               <div className="rounded-lg border border-border-default bg-alphabyte-grey p-6">
@@ -267,8 +280,8 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="text-body-sm text-muted-foreground">
-            We are one of the only Claude Certified teams explicitly focused
-            on mid-market &mdash; not enterprise, not startups.
+            One of the few Claude Certified teams explicitly focused on
+            mid-market &mdash; not enterprise, not startups.
           </p>
         </div>
       </section>
@@ -289,7 +302,7 @@ export default function AboutPage() {
           </DiscoveryCallButton>
           <p className="text-body-sm text-muted-foreground mt-8">
             <EmailAddress
-              user="contact"
+              user="info"
               domain="alphabyte.ai"
               className="text-body-sm text-muted-foreground hover:text-alphabyte-blue"
               fallbackHref="/contact/"

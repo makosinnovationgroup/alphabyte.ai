@@ -22,24 +22,24 @@
       "subtitle": "Operations Management & Information Systems"
     },
     "institution": {
-      "title": "York University — Schulich School of Business",
+      "title": "York University, Schulich School of Business",
       "subtitle": "Toronto, Ontario, Canada"
     },
     "keyCoursework": "Operations Management · Information Systems · Data Science · Python · Statistics · Machine Learning"
   },
   "careerTimeline": [
     {
-      "period": "2019 — Present",
+      "period": "2019 – Present",
       "role": "IT Director",
       "organization": "Alphabyte Solutions Inc."
     },
     {
-      "period": "2018 — 2019",
+      "period": "2018 – 2019",
       "role": "Analyst, BI & Trade Promotions",
       "organization": "PepsiCo"
     },
     {
-      "period": "2016 — 2018",
+      "period": "2016 – 2018",
       "role": "Associate Analyst, TPM",
       "organization": "PepsiCo"
     },
@@ -70,7 +70,7 @@
   "articles": [],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   },
   "pills": ["Cloud Architecture", "Data Architecture", "Project Delivery", "Account Management"]
 }

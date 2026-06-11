@@ -7,7 +7,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Team - Practitioners Behind Every Engagement",
   description:
-    "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads — no junior bench.",
+    "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads. No junior bench.",
   alternates: {
     canonical: "/team/",
   },
@@ -108,7 +108,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Team",
   description:
-    "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads — no junior bench.",
+    "Meet the practitioners behind every Alphabyte engagement. Senior engineers, Claude specialists, and delivery leads. No junior bench.",
   url: "https://alphabyte.ai/team/",
   isPartOf: {
     "@type": "WebSite",
@@ -166,7 +166,7 @@ export default function TeamPage() {
               No junior bench. The senior engineer who designs your solution
               builds it. The consultant who runs your discovery workshop delivers
               your sprints. Two dedicated Claude engineers backed by a
-              twenty-person delivery organization &mdash; but the people who show
+              twenty-person delivery organization, and the people who show
               up for your engagement are the people who own it.
             </p>
           </div>

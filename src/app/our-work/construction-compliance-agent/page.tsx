@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   description:
     "AI compliance agent for a multi-entity construction firm. Knowledge graph navigation across regulatory code with citation-grade accuracy.",
   alternates: {
-    canonical: "/our-work/fire-protection-compliance/",
+    canonical: "/our-work/construction-compliance-agent/",
   },
   openGraph: {
     type: "article",
     title: "Construction Firm - Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
-    url: "/our-work/fire-protection-compliance/",
+    url: "/our-work/construction-compliance-agent/",
     images: [
       {
-        url: "/our-work/fire-protection-compliance-knowledge-graph.webp",
+        url: "/our-work/construction-compliance-agent-knowledge-graph.webp",
         width: 1200,
         height: 630,
         alt: "Alphabyte - Construction Firm - Compliance Intelligence Agent",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Construction Firm - Compliance Intelligence Agent",
     description:
       "AI compliance agent that navigates a full regulatory code library with citation-grade accuracy. Every response is traceable and citable.",
-    images: ["/our-work/fire-protection-compliance-knowledge-graph.webp"],
+    images: ["/our-work/construction-compliance-agent-knowledge-graph.webp"],
   },
 };
 
@@ -40,8 +40,8 @@ const caseStudySchema = {
   headline: "Construction Firm - Compliance Intelligence Agent",
   description:
     "How Alphabyte built a custom AI compliance agent for a multi-entity construction firm, navigating regulatory code libraries with knowledge graph architecture and citation-grade accuracy.",
-  url: "https://alphabyte.ai/our-work/fire-protection-compliance/",
-  image: "https://alphabyte.ai/our-work/fire-protection-compliance-knowledge-graph.webp",
+  url: "https://alphabyte.ai/our-work/construction-compliance-agent/",
+  image: "https://alphabyte.ai/our-work/construction-compliance-agent-knowledge-graph.webp",
   datePublished: "2026-04-29",
   dateModified: "2026-04-29",
   articleSection: "Case Studies",
@@ -88,8 +88,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Construction Firm — Compliance Agent",
-      item: "https://alphabyte.ai/our-work/fire-protection-compliance/",
+      name: "Construction Firm: Compliance Agent",
+      item: "https://alphabyte.ai/our-work/construction-compliance-agent/",
     },
   ],
 };
@@ -151,7 +151,7 @@ export default function FireProtectionCompliancePage() {
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Our Work", href: "/our-work/" },
-          { label: "Construction Firm — Compliance Agent" },
+          { label: "Construction Firm: Compliance Agent" },
         ]}
         eyebrow="CASE STUDY · CONSTRUCTION · MULTI-ENTITY · NORTH AMERICA"
         h1="AI-Powered Compliance Intelligence Agent"
@@ -210,9 +210,9 @@ export default function FireProtectionCompliancePage() {
           cta: { label: "Book a Discovery Call", action: "modal" },
         }}
         figure={{
-          src: "/our-work/fire-protection-compliance-knowledge-graph.webp",
+          src: "/our-work/construction-compliance-agent-knowledge-graph.webp",
           alt: "A query being routed through a knowledge graph to a cited page-level response",
-          caption: "Figure 1 — Knowledge graph routing a compliance query to the exact source page.",
+          caption: "Figure 1. Knowledge graph routing a compliance query to the exact source page.",
         }}
       />
     </>

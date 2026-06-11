@@ -140,9 +140,9 @@ export default function McpPage() {
         h1="MCP"
         subhead="Connect models to your tools."
         body={[
-          "Model Context Protocol (MCP) is an open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives Claude governed, auditable, real-time access to your CRM, ERP, data warehouse, databases, and APIs — without any data leaving your environment through a third-party intermediary.",
-          "Before MCP: your team copies and pastes data into Claude conversations. After MCP: Claude retrieves it directly, reasons over it, and produces output in real time — all inside your governed environment, all with a full audit trail.",
-          "Each MCP server is purpose-built for your systems. We define the tools Claude can invoke, the data it can access, and the operations it can perform. Role-based access controls determine which users can invoke which tools. Every invocation is logged. The architecture is explicit about what Claude can and cannot do — there are no implicit permissions.",
+          "Model Context Protocol (MCP) is an open standard from Anthropic that defines how AI models communicate securely with external systems. A custom MCP server gives your AI environment governed, auditable, real-time access to your CRM, ERP, data warehouse, databases, and APIs without any data leaving your environment through a third-party intermediary.",
+          "Before MCP, your team copies and pastes data into AI conversations. After MCP, the model retrieves it directly, reasons over it, and produces output in real time, all inside your governed environment, all with a full audit trail.",
+          "Each MCP server is purpose-built for your systems. We define the tools the model can invoke, the data it can access, and the operations it can perform. Role-based access controls determine which users can invoke which tools. Every invocation is logged. The architecture is explicit about what the model can and cannot do. There are no implicit permissions.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
@@ -152,7 +152,7 @@ export default function McpPage() {
           {
             icon: <Wrench className="h-5 w-5" />,
             title: "Custom MCP server development",
-            body: "MCP servers built from scratch for your specific data sources and use cases. Each exposes purpose-built tools Claude can invoke to query, retrieve, and where appropriate write to your systems. The architecture defines exactly what Claude can access \u2014 nothing more.",
+            body: "MCP servers built from scratch for your specific data sources and use cases. Each exposes purpose-built tools the model can invoke to query, retrieve, and where appropriate write to your systems. The architecture defines exactly what the model can access.",
           },
           {
             icon: <Lock className="h-5 w-5" />,
@@ -162,22 +162,22 @@ export default function McpPage() {
           {
             icon: <Cloud className="h-5 w-5" />,
             title: "Cloud infrastructure",
-            body: "We provision and configure the infrastructure \u2014 typically Azure Container Apps \u2014 with monitoring, alerting, and deployment pipelines appropriate to a production workload.",
+            body: "We provision and configure the infrastructure, typically Azure Container Apps, with monitoring, alerting, and deployment pipelines appropriate to a production workload.",
           },
           {
             icon: <ClipboardList className="h-5 w-5" />,
             title: "Context and tool definitions",
-            body: "Organizational context, system definitions, available tools, and resource configurations baked into the server. Claude understands what it has access to and how to navigate it accurately before any conversation begins.",
+            body: "Organizational context, system definitions, available tools, and resource configurations baked into the server. The model understands what it has access to and how to navigate it accurately before any conversation begins.",
           },
         ]}
         rightForYou={[
-          "Your team is using Claude but still copying data in and out of conversations manually",
-          "You have business-critical data in systems that Claude needs to reason over in real time",
+          "Your team is using AI but still copying data in and out of conversations manually",
+          "You have business-critical data in systems that need to be reasoned over in real time",
           "You need an audit trail for every interaction between AI and your operational data",
         ]}
         notRightForYou={[
-          "You are not yet clear on your use cases — MCP is an integration layer, not a discovery exercise. Start with Discovery.",
-          "Your team is not yet using Claude consistently — connect systems after people are enabled, not before",
+          "You are not yet clear on your use cases. MCP is an integration layer, not a discovery exercise. Start with Discovery.",
+          "Your team is not yet using AI consistently. Connect systems after people are enabled, not before.",
         ]}
         inActiveUseSectionTitle="In active use today"
         inActiveUse={[
@@ -185,7 +185,7 @@ export default function McpPage() {
             eyebrow: "Construction Firm",
             title: "Regulatory code library connection",
             body: "Full regulatory code library accessible to Claude through a custom MCP server integrated into Claude Desktop. Powers the live compliance intelligence agent in production.",
-            href: "/our-work/fire-protection-compliance/",
+            href: "/our-work/construction-compliance-agent/",
           },
           {
             eyebrow: "Major Supplier · Reverse Logistics",

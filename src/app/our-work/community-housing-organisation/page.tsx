@@ -217,7 +217,7 @@ export default function HousingServicesCorpPage() {
           src: "/our-work/community-housing-organisation-roadmap-concept.webp",
           alt: "Seven-recommendation AI enablement roadmap from data governance to purpose-built agents",
           caption:
-            "Figure 1 — Seven-recommendation roadmap: data readiness as the path to AI enablement.",
+            "Figure 1. Seven-recommendation roadmap: data readiness as the path to AI enablement.",
         }}
       />
     </>

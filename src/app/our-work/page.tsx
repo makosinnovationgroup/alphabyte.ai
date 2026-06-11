@@ -60,7 +60,7 @@ const itemListSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "DTC E-Commerce Brand — Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
     { "@type": "ListItem", position: 2, name: "Major Supplier — Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
-    { "@type": "ListItem", position: 3, name: "Construction Firm — Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/fire-protection-compliance/" },
+    { "@type": "ListItem", position: 3, name: "Construction Firm: Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/construction-compliance-agent/" },
     { "@type": "ListItem", position: 4, name: "Community Housing Organisation — AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
   ],
 };
@@ -89,7 +89,7 @@ const caseStudies = [
     projectTitle: "AI-Powered Compliance Intelligence Agent",
     pills: ["Custom MCP Server", "Knowledge Graph", "Claude Cowork"],
     body: "Custom AI compliance agent that navigates the firm's full regulatory code library with citation-grade accuracy. Knowledge graph architecture integrated into a custom MCP server with org-wide Claude Desktop access.",
-    href: "/our-work/fire-protection-compliance/",
+    href: "/our-work/construction-compliance-agent/",
   },
   {
     headerTags:

@@ -8,7 +8,7 @@
   "eyebrow": "CO-FOUNDER, AI PRACTICE AT ALPHABYTE",
   "bio": [
     "Adam Nameh is the Co-Founder of Alphabyte Solutions Inc., a Toronto-based data and AI consulting firm that has helped over 100 clients across North America turn complex data environments into actionable business intelligence. With a decade of hands-on experience in data architecture and platform design, Adam works directly with leadership teams to deliver practical AI and data solutions that drive real business outcomes.",
-    "A graduate of the University of Toronto's Computer Engineering program, Adam served as a Data Architect at BMO Financial Group before founding Alphabyte in 2016. He is also co-founder of Parlawatch AI — featured in Maclean's and the University of Toronto Magazine — and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
+    "A graduate of the University of Toronto's Computer Engineering program, Adam served as a Data Architect at BMO Financial Group before founding Alphabyte in 2016. He is also co-founder of Parlawatch AI, featured in Maclean's and the University of Toronto Magazine, and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
   ],
   "contact": {
     "linkedin": {
@@ -33,7 +33,7 @@
   },
   "careerTimeline": [
     {
-      "period": "2016 — Present",
+      "period": "2016 – Present",
       "role": "Co-Founder, AI Practice",
       "organization": "Alphabyte Solutions Inc."
     },
@@ -68,7 +68,7 @@
   "thoughtLeadership": [
     {
       "type": "LinkedIn Article",
-      "title": "Trusting Your Data — What You Need to Know",
+      "title": "Trusting Your Data, What You Need to Know",
       "description": "Comprehensive guide on data validation, cleansing, and governance.",
       "href": null
     },
@@ -95,6 +95,6 @@
   "pills": ["AI Strategy", "Data Architecture", "Client Engagement", "Programme Design"],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   }
 }

@@ -218,7 +218,7 @@ export default function MediaBuyAnalyticsPage() {
         figure={{
           src: "/our-work/media-buy-analytics-hero.webp",
           alt: "AI-powered media buy analytics agent returning a ranked profitability table with underlying DAX from a plain-English query",
-          caption: "Figure 1 — A media buyer asks a plain-English question and receives an auditable, DAX-grounded answer in seconds.",
+          caption: "Figure 1. A media buyer asks a plain-English question and receives an auditable, DAX-grounded answer in seconds.",
         }}
         closingCta={{
           heading:

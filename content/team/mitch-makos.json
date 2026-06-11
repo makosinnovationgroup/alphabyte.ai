@@ -7,8 +7,8 @@
   "avatarSrc": "/team/mitch-makos.webp",
   "eyebrow": "PRINCIPAL ARCHITECT & AI DELIVERY LEAD AT ALPHABYTE AI",
   "bio": [
-    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale — from IBM Cloud Garage to Hertz, NCR, Fidelity, Royal Bank of Canada, Pacific Gas & Electric, and Erie Insurance.",
-    "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He designs the agentic systems, custom MCP servers, and governed AI environments that mid-market organizations run in production — connecting their existing tools, knowledge bases, and cloud infrastructure into Claude workflows their teams actually use."
+    "Mitchell is a senior platform architect and full-stack engineer with a decade of experience shipping production systems at enterprise scale, from IBM Cloud Garage to Hertz, NCR, Fidelity, Royal Bank of Canada, Pacific Gas & Electric, and Erie Insurance.",
+    "At Alphabyte, Mitchell leads Claude platform engineering and infrastructure delivery. He designs the agentic systems, custom MCP servers, and governed AI environments that mid-market organizations run in production, connecting their existing tools, knowledge bases, and cloud infrastructure into Claude workflows their teams actually use."
   ],
   "contact": {
     "linkedin": {
@@ -29,22 +29,22 @@
   },
   "careerTimeline": [
     {
-      "period": "2026 — Present",
+      "period": "2026 – Present",
       "role": "Principal Architect & AI Delivery Lead",
       "organization": "Alphabyte Solutions Inc."
     },
     {
-      "period": "2020 — Present",
+      "period": "2020 – Present",
       "role": "Founder & Principal Architect",
       "organization": "Makos Tech Solutions"
     },
     {
-      "period": "2018 — 2020",
+      "period": "2018 – 2020",
       "role": "Team Lead",
       "organization": "IBM Cloud Garage"
     },
     {
-      "period": "2016 — 2018",
+      "period": "2016 – 2018",
       "role": "GBS Engineer",
       "organization": "IBM Global Business Services"
     }
@@ -68,13 +68,13 @@
     "Contributed to NCR's $130M Zynstra contract through cloud-native POS modernisation",
     "Built an AI-powered regulatory document search for PG&E using Watson",
     "Led 60 engineers in full-scale reconstruction of Auto Approve's technology stack",
-    "AWS Certified Solutions Architect — Associate"
+    "AWS Certified Solutions Architect, Associate"
   ],
   "thoughtLeadership": [],
   "articles": [],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   },
   "pills": ["Platform Architecture", "Claude Engineering", "MCP", "AWS", "Multi-Agent Systems"]
 }

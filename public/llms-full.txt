@@ -34,7 +34,7 @@ Alphabyte Solutions Inc. is a data and AI consulting firm that works exclusively
 
 - /our-work/ — Active client engagements demonstrating production AI systems, not prototypes.
 
-- /our-work/fire-protection-compliance/ — AI compliance intelligence agent built for a multi-entity construction firm. Navigates a full regulatory code library using a knowledge graph architecture. Returns applicable standards, relevant passages, and exact source pages in seconds. Integrated into Claude Desktop via a custom MCP server for org-wide access. Built on Claude and Claude Cowork. Live in production.
+- /our-work/construction-compliance-agent/ — AI compliance intelligence agent built for a multi-entity construction firm. Navigates a full regulatory code library using a knowledge graph architecture. Returns applicable standards, relevant passages, and exact source pages in seconds. Integrated into Claude Desktop via a custom MCP server for org-wide access. Built on Claude and Claude Cowork. Live in production.
 
 - /our-work/circular-economy-platform/ — AI-powered executive productivity suite for a major supplier in reverse logistics. Custom Claude plugin connecting GSuite, Slack, Power BI, and Fireflies through purpose-built agents. Delivers automated morning briefs, spend reports, and post-call summaries.
 

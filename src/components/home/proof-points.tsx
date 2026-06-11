@@ -12,7 +12,7 @@ const proofPoints: ProofPoint[] = [
     eyebrow: "CONSTRUCTION FIRM · MULTI-ENTITY · NORTH AMERICA",
     title: "AI compliance intelligence agent",
     body: "Custom MCP server and knowledge graph navigating a full regulatory code library with citation-grade accuracy. Live in production.",
-    href: "/our-work/fire-protection-compliance/",
+    href: "/our-work/construction-compliance-agent/",
   },
   {
     eyebrow: "MAJOR SUPPLIER · REVERSE LOGISTICS · GLOBAL",

@@ -140,14 +140,15 @@ export default function ClaudePage() {
         h1="Claude"
         subhead="Reasoning, writing, and analysis."
         body={[
-          "Claude is the intelligence layer across every engagement we deliver — configured around your organizational data, your team\u2019s workflows, and your operational context.",
-          "We are Anthropic Claude Certified. Every engineer in our practice works exclusively with Claude — not evaluating which model to use on each engagement. That focus means faster configuration, deeper expertise, and a coherent architectural point of view that a firm evaluating ten different models cannot match.",
-          "Claude ships in three tiers: Claude Teams for governed team environments, Claude Enterprise for organization-wide deployment with SSO and admin controls, and Claude API for custom integrations and agent development. We configure whichever tier fits your scale, security posture, and use cases — most mid-market clients start with Teams and expand as their programme grows.",
+          "Claude is the intelligence layer across every engagement we deliver, configured around your organizational data, your team\u2019s workflows, and your operational context.",
+          "Alphabyte is one of the most certified Claude practices in Canada. We have 10+ Anthropic-certified practitioners and are on the path to Claude partnership. Our team’s depth in Claude means faster configuration, more consistent outputs, and a coherent architectural approach that a generalist AI firm cannot match.",
+          "That Claude specialism sits alongside our Microsoft Solutions Partner credentials across three Azure designations: Infrastructure, Data & AI, and Digital & App Innovation. The two capabilities work together. Claude handles the intelligence layer. Azure handles the infrastructure beneath it.",
+          "Claude ships in three tiers: Claude Teams for governed team environments, Claude Enterprise for organization-wide deployment with SSO and admin controls, and Claude API for custom integrations and agent development. We configure whichever tier fits your scale, security posture, and use cases. Most mid-market clients start with Teams and expand as their programme grows.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         partnerCard={{
           eyebrow: "Claude Certified",
-          body: "Anthropic-certified delivery team. Every engagement, every engineer, exclusively Claude.",
+          body: "10+ Anthropic-certified practitioners on the path to Claude partnership.",
         }}
         usedAcrossServices={[
           { label: "Citizen Development", href: "/services/citizen-development/" },
@@ -162,7 +163,7 @@ export default function ClaudePage() {
           {
             icon: <BookOpen className="h-5 w-5" />,
             title: "Custom knowledgebases",
-            body: "Claude Projects populated with your policies, SOPs, strategic documents, and regulatory frameworks. Your team works from an environment that understands your business \u2014 not a blank canvas.",
+            body: "Claude Projects populated with your policies, SOPs, strategic documents, and regulatory frameworks. Your team works from an environment that understands your business.",
           },
           {
             icon: <Plug className="h-5 w-5" />,
@@ -172,7 +173,7 @@ export default function ClaudePage() {
           {
             icon: <Settings className="h-5 w-5" />,
             title: "Custom skills",
-            body: "Built around how your team actually works. Report generation, data parsing, strategic analysis \u2014 specific to your workflows, not recycled from another client.",
+            body: "Built around how your team actually works. Report generation, data parsing, strategic analysis, specific to your workflows, not recycled from another client.",
           },
           {
             icon: <Bot className="h-5 w-5" />,
@@ -187,17 +188,17 @@ export default function ClaudePage() {
           {
             icon: <Link2 className="h-5 w-5" />,
             title: "MCP connectivity",
-            body: "Custom MCP servers connecting Claude to your databases, APIs, CRM, and ERP \u2014 secure, governed access, full audit logging.",
+            body: "Custom MCP servers connecting Claude to your databases, APIs, CRM, and ERP with secure, governed access and full audit logging.",
           },
         ]}
         rightForYou={[
           "Your team is already using Claude informally and you want to govern it, scale it, and connect it to real data",
           "Leadership wants a concrete proof point before resourcing a broader AI programme",
-          "You want one AI platform across the organization — not a different tool per team",
+          "You want one AI platform across the organization, not a different tool per team",
         ]}
         notRightForYou={[
-          "You need a model comparison exercise — we only work with Claude, and that focus is the point",
-          "You want a chatbot on your website — Claude is an operational tool, not a customer-facing widget",
+          "You want a chatbot on your website. Claude is an operational tool, not a customer-facing widget.",
+          "You need a pure Microsoft Copilot deployment with no Claude component. That is a different engagement.",
         ]}
         inActiveUseSectionTitle="In active use today — what we built, what it produced"
         inActiveUse={[
@@ -205,7 +206,7 @@ export default function ClaudePage() {
             eyebrow: "Construction Firm · North America",
             title: "Compliance intelligence agent",
             body: "Custom AI agent navigating a full regulatory code library via knowledge graph and MCP server. Citation-grade accuracy. Live in production.",
-            href: "/our-work/fire-protection-compliance/",
+            href: "/our-work/construction-compliance-agent/",
           },
           {
             eyebrow: "Major Supplier · Reverse Logistics",
@@ -217,7 +218,7 @@ export default function ClaudePage() {
             eyebrow: "Construction Firm · Multi-Entity",
             title: "Executive Claude environment",
             body: "Custom knowledgebases, skills library, and prompt toolkit deployed to the full executive team. Used daily across multiple functional leaders.",
-            href: "/our-work/fire-protection-compliance/",
+            href: "/our-work/construction-compliance-agent/",
           },
         ]}
         faq={[

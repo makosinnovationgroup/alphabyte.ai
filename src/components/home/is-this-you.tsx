@@ -1,7 +1,7 @@
 const scenarios = [
   {
     heading: "Shadow IT",
-    body: "Your team is already using Claude informally — prompts in Slack threads, personal workflows nobody else can replicate, data exports running through tools IT has not reviewed.",
+    body: "Your team is already using AI informally, with prompts in Slack threads, personal workflows nobody else can replicate, and data exports running through tools IT has not reviewed.",
   },
   {
     heading: "No Clear Strategy",
@@ -42,7 +42,7 @@ export function IsThisYou() {
 
         <div className="mt-10 rounded-md bg-alphabyte-blue/10 px-6 py-4">
           <p className="text-body italic text-muted-foreground">
-            Whatever your situation — we have been here before. The discovery call is where we figure out which path fits.
+            Whatever your situation, we have been here before. The discovery call is where we figure out which path fits.
           </p>
         </div>
       </div>

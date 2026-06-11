@@ -7,8 +7,8 @@
   "avatarSrc": "/team/ahmad-nameh.webp",
   "eyebrow": "CO-FOUNDER, DATA PRACTICE AT ALPHABYTE",
   "bio": [
-    "Ahmad Nameh is the Co-Founder of Alphabyte Solutions Inc. and head of its Data Readiness practice — the foundation every Alphabyte AI engagement is built on. With a decade of hands-on experience across the full data lifecycle, Ahmad leads a team of 10 specialists turning fragmented operational data into AI-ready environments for clients across the US and Canada.",
-    "A graduate of the University of Toronto's Commerce program, Ahmad has built Alphabyte's data and analytics practice into the firm's largest delivery arm. He is also co-founder of Parlawatch AI — featured in Maclean's and the University of Toronto Magazine — and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
+    "Ahmad Nameh is the Co-Founder of Alphabyte Solutions Inc. and head of its Data Readiness practice, the foundation every Alphabyte AI engagement is built on. With a decade of hands-on experience across the full data lifecycle, Ahmad leads a team of 10 specialists turning fragmented operational data into AI-ready environments for clients across the US and Canada.",
+    "A graduate of the University of Toronto's Commerce program, Ahmad has built Alphabyte's data and analytics practice into the firm's largest delivery arm. He is also co-founder of Parlawatch AI, featured in Maclean's and the University of Toronto Magazine, and MailSmart, an AI-powered direct mail optimization tool for Shopify merchants."
   ],
   "contact": {
     "linkedin": {
@@ -18,7 +18,7 @@
   },
   "credentials": {
     "degree": {
-      "title": "Bachelor of Commerce — Accounting Specialization, Economics Minor",
+      "title": "Bachelor of Commerce, Accounting Specialization, Economics Minor",
       "subtitle": "Bachelor of Commerce"
     },
     "institution": {
@@ -29,22 +29,22 @@
   },
   "careerTimeline": [
     {
-      "period": "2016 — Present",
+      "period": "2016 – Present",
       "role": "Co-Founder, Data Practice",
       "organization": "Alphabyte Solutions Inc."
     },
     {
-      "period": "2015 — 2016",
+      "period": "2015 – 2016",
       "role": "Project Specialist",
       "organization": "Rogers Communications Inc."
     },
     {
-      "period": "2013 — 2014",
+      "period": "2013 – 2014",
       "role": "Data Analyst, Sales",
       "organization": "Toys R Us Canada"
     },
     {
-      "period": "2012 — 2013",
+      "period": "2012 – 2013",
       "role": "Data Analyst, Procurement",
       "organization": "Sears Canada Inc."
     }
@@ -65,7 +65,7 @@
   "articles": [],
   "footerBio": {
     "name": "Alphabyte AI",
-    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up — citizen development, executive enablement, MCP integration, and autonomous agents."
+    "description": "The Claude-focused practice of Alphabyte Solutions. Mid-market AI from the ground up, citizen development, executive enablement, MCP integration, and autonomous agents."
   },
   "pills": ["Business Intelligence", "Digital Advisory", "Data Strategy", "Reporting", "Mid-Market"]
 }

@@ -140,9 +140,9 @@ export default function OnPremiseLlmPage() {
         h1="On-Premise LLM"
         subhead="Private, self-hosted models."
         body={[
-          "Some organizations cannot send their data to a cloud AI provider. Data sovereignty requirements. Security classifications. Regulatory mandates. Institutional risk posture. For those clients, we deploy capable open-source language models on their own infrastructure.",
-          "The model runs inside your environment. Your team interacts with it through a standard API. Your data never leaves your control. Production deployment — compute, MLOps, observability, and governance from the start.",
-          "We deploy Llama and Mistral as defaults — proven, well-documented models with strong performance across enterprise use cases. The choice depends on your compute constraints, accuracy requirements, and regulatory environment. We benchmark candidates against your actual data and use cases before selecting a model, not after.",
+          "Some organizations cannot send their data to a cloud AI provider. Data sovereignty requirements, security classifications, regulatory mandates, and institutional risk posture all create situations where cloud AI is not viable. For those clients, we deploy capable open-source language models on their own infrastructure.",
+          "The model runs inside your environment. Your team interacts with it through a standard API. Your data never leaves your control. Production deployment covers compute, MLOps, observability, and governance from the start.",
+          "We deploy Llama and Mistral as defaults, proven and well-documented models with strong performance across enterprise use cases. The choice depends on your compute constraints, accuracy requirements, and regulatory environment. We benchmark candidates against your actual data and use cases before selecting a model, not after.",
         ]}
         primaryCta={{ label: "Book a Discovery Call", action: "modal" }}
         secondaryCta={{ label: "Back to all tools", href: "/tools/" }}
@@ -152,7 +152,7 @@ export default function OnPremiseLlmPage() {
           {
             icon: <Target className="h-5 w-5" />,
             title: "Model selection",
-            body: "Optimal model for your use cases, infrastructure, and compliance constraints. Llama and Mistral are our defaults. The decision depends on performance, memory, and regulatory requirements \u2014 not which model is trending.",
+            body: "Optimal model for your use cases, infrastructure, and compliance constraints. Llama and Mistral are our defaults. The decision depends on performance, memory, and regulatory requirements, not which model is trending.",
           },
           {
             icon: <Server className="h-5 w-5" />,
@@ -181,8 +181,8 @@ export default function OnPremiseLlmPage() {
           "Regulatory environment mandates AI outputs be generated from within your own environment",
         ]}
         notRightForYou={[
-          "You are not yet clear on your use cases \u2014 on-premise deployment without a defined application is significant compute investment with no return",
-          "Cloud AI is available to you \u2014 on-premise adds infrastructure overhead that cloud deployments do not carry",
+          "You are not yet clear on your use cases. On-premise deployment without a defined application is significant compute investment with no return.",
+          "Cloud AI is available to you. On-premise adds infrastructure overhead that cloud deployments do not carry.",
         ]}
         faq={[
           {
