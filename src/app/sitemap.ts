@@ -80,6 +80,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Case study children (construction-compliance-agent intentionally omitted from
   // discovery here too — its sitemap presence is decided in its own page meta)
   const caseStudies = [
+    "our-work/citizen-development-pipeline",
+    "our-work/warehouse-platform-rebuild",
+    "our-work/restaurant-scheduling-agent",
     "our-work/circular-economy-platform",
     "our-work/media-buy-analytics",
     "our-work/community-housing-organisation",

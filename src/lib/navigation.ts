@@ -37,6 +37,9 @@ export const navigation: NavItem[] = [
     label: "Our Work",
     href: "/our-work/",
     children: [
+      { label: "Citizen Development Pipeline", href: "/our-work/citizen-development-pipeline/" },
+      { label: "Warehouse Platform Rebuild", href: "/our-work/warehouse-platform-rebuild/" },
+      { label: "Restaurant Scheduling Agent", href: "/our-work/restaurant-scheduling-agent/" },
       { label: "Media Buy Analytics Agent", href: "/our-work/media-buy-analytics/" },
       { label: "Construction Compliance Agent", href: "/our-work/construction-compliance-agent/" },
       { label: "Executive Productivity Suite", href: "/our-work/circular-economy-platform/" },

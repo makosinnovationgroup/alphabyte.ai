@@ -5,7 +5,7 @@ import { DiscoveryCallButton } from "@/components/discovery-call-button";
 export const metadata: Metadata = {
   title: "Our Work - AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing. Real deployments, not POCs.",
+    "Active AI engagements with mid-market organizations across third-party logistics, restaurant, construction, reverse logistics, e-commerce, and community housing. Real deployments, not POCs.",
   alternates: {
     canonical: "/our-work/",
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Our Work - AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing.",
+      "Active AI engagements with mid-market organizations across third-party logistics, restaurant, construction, reverse logistics, e-commerce, and community housing.",
     url: "/our-work/",
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Our Work - AI Consulting Case Studies",
     description:
-      "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing.",
+      "Active AI engagements with mid-market organizations across third-party logistics, restaurant, construction, reverse logistics, e-commerce, and community housing.",
     images: ["/og/our-work.png"],
   },
 };
@@ -37,7 +37,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Our Work - AI Consulting Case Studies",
   description:
-    "Active AI engagements with mid-market organizations across construction, reverse logistics, e-commerce, and community housing. Real deployments, not proofs-of-concept.",
+    "Active AI engagements with mid-market organizations across third-party logistics, restaurant, construction, reverse logistics, e-commerce, and community housing. Real deployments, not proofs-of-concept.",
   url: "https://alphabyte.ai/our-work/",
   isPartOf: { "@id": "https://alphabyte.ai/#website" },
 };
@@ -56,16 +56,43 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Alphabyte Case Studies",
   url: "https://alphabyte.ai/our-work/",
-  numberOfItems: 4,
+  numberOfItems: 7,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "DTC E-Commerce Brand: Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
-    { "@type": "ListItem", position: 2, name: "Major Supplier: Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
-    { "@type": "ListItem", position: 3, name: "Construction Firm: Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/construction-compliance-agent/" },
-    { "@type": "ListItem", position: 4, name: "Community Housing Organisation: AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
+    { "@type": "ListItem", position: 1, name: "3PL Operator: Citizen Development Pipeline", url: "https://alphabyte.ai/our-work/citizen-development-pipeline/" },
+    { "@type": "ListItem", position: 2, name: "3PL Operator: Warehouse Platform Rebuild", url: "https://alphabyte.ai/our-work/warehouse-platform-rebuild/" },
+    { "@type": "ListItem", position: 3, name: "Restaurant Group: AI Scheduling Agent", url: "https://alphabyte.ai/our-work/restaurant-scheduling-agent/" },
+    { "@type": "ListItem", position: 4, name: "DTC E-Commerce Brand: Media Buy Analytics Agent", url: "https://alphabyte.ai/our-work/media-buy-analytics/" },
+    { "@type": "ListItem", position: 5, name: "Major Supplier: Executive Productivity Suite", url: "https://alphabyte.ai/our-work/circular-economy-platform/" },
+    { "@type": "ListItem", position: 6, name: "Construction Firm: Compliance Intelligence Agent", url: "https://alphabyte.ai/our-work/construction-compliance-agent/" },
+    { "@type": "ListItem", position: 7, name: "Community Housing Organisation: AI Enablement", url: "https://alphabyte.ai/our-work/community-housing-organisation/" },
   ],
 };
 
 const caseStudies = [
+  {
+    headerTags: "THIRD-PARTY LOGISTICS \u00b7 CITIZEN DEVELOPMENT \u00b7 NORTH AMERICA",
+    clientName: "North American 3PL Operator",
+    projectTitle: "Citizen Development Pipeline",
+    pills: ["Claude Plugins", "Claude Cowork", "Citizen Development"],
+    body: "Two-plugin pipeline in Claude Cowork that puts operator-built applications onto the company's standard stack, GitHub organization, and Railway workspace on the first run. Governance inherited, not configured per app.",
+    href: "/our-work/citizen-development-pipeline/",
+  },
+  {
+    headerTags: "THIRD-PARTY LOGISTICS \u00b7 WAREHOUSE OPERATIONS \u00b7 NORTH AMERICA",
+    clientName: "North American 3PL Operator",
+    projectTitle: "Operations-Critical Warehouse Platform Rebuild",
+    pills: ["Application Rebuild", "Claude Code", "Data Migration"],
+    body: "Rebuild of a 14,000-line legacy warehouse platform onto TypeScript, Next.js, and Postgres. 46,066 rows migrated in a single transactional run with zero downtime, and the operations lead kept full ownership of the codebase.",
+    href: "/our-work/warehouse-platform-rebuild/",
+  },
+  {
+    headerTags: "RESTAURANT \u00b7 MULTI-LOCATION \u00b7 NORTH AMERICA",
+    clientName: "Multi-Location Restaurant Group",
+    projectTitle: "AI-Powered Scheduling Agent",
+    pills: ["Claude AI Agent", "Scheduling", "WhatsApp Integration"],
+    body: "Custom scheduling agent that generates full shift schedules with employee constraints baked in. WhatsApp-native distribution, mid-week replacement logic, and three shipped iterations across four locations.",
+    href: "/our-work/restaurant-scheduling-agent/",
+  },
   {
     headerTags: "DTC E-COMMERCE \u00b7 PAID MEDIA \u00b7 NORTH AMERICA",
     clientName: "DTC E-Commerce Brand",
